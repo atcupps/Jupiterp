@@ -1,0 +1,589 @@
+{
+  "name": "SLLC",
+  "courses": [
+    {
+      "code": "SLLC108P",
+      "name": "Beg Less Commonly Taught Language I; Akkadian",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "This is a Big Ten Academic Alliance CourseShare course. The instructor is at Penn State University, but you enroll and receive credit for it at Maryland.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "MW": [
+                  [
+                    4,
+                    0,
+                    "Pm"
+                  ],
+                  [
+                    5,
+                    15,
+                    "Pm"
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "SLLC286",
+      "name": "Living the Good Life: Chinese Philosophy in the Modern World",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHU",
+        "SCIS"
+      ],
+      "description": "Confucius, Mencius, Zhuangzi and other Chinese thinkers who lived more than 2,000 years ago would argue that the contemporary Western emphasis on self-discovery (Find yourself) and self-acceptance has led you astray. See what they have to say and discuss what relevance it has for the modern world as we study how early Chinese thinkers wrestled with questions of existence, morality, and governance. No previous knowledge of Chinese philosophy and history will be assumed and no prerequisites are required. We will discuss ideas that are both historical and relevant to students' lives. What is \"the Way\"? How do we cultivate spontaneity? Is there a stable self? How can we be more alive? These are questions important for ancient kings but also for UMD students choosing a major, or wondering how ARHU can benefit them.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Andrew Schonebaum"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "2206"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "SLLC305",
+      "name": "Language, Identity and Diversity in the U.S.",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSSP",
+        "DVUP"
+      ],
+      "description": "Introduces issues of linguistic diversity in the framework of the U.S. as a multilingual society. Special emphasis is placed on attitudes toward language diversity, specifically, how regional, social, generational, ethnic, racial and gender differences in language use contribute to notions of identity.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Ali Abasi"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "0120"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "SLLC309",
+      "name": "Language Partner Program",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "Students interested in enrolling must first apply and be accepted to the Language Partner Program. Decisions on admission are typically made after the registration period begins, so please keep this in mind when planning your schedule, and be sure to keep the course dates/times open.<br><br> Students must be able to meet on Monday, January 29, 2024 and Monday, April 22, 2024.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Ahmed Hanafy"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            },
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Ahmed Hanafy"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            },
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Ahmed Hanafy"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            },
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0104",
+          "instructors": [
+            "Ahmed Hanafy"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            },
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0105",
+          "instructors": [
+            "Ahmed Hanafy"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            },
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0106",
+          "instructors": [
+            "Ahmed Hanafy"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            },
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0107",
+          "instructors": [
+            "Lindsay Yotsukura"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            },
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0108",
+          "instructors": [
+            "Lindsay Yotsukura"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            },
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0109",
+          "instructors": [
+            "Ahmed Hanafy"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            },
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0110",
+          "instructors": [
+            "Ahmed Hanafy"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            },
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0111",
+          "instructors": [
+            "Ahmed Hanafy"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            },
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "SLLC312",
+      "name": "Language House Immersion",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "This course provides credit for students participating in the Language House Living-Learning program. It focuses on the further development of skills in the target language and the acquisition of cultural knowledge of the countries and communities where people speak the target language. It requires hands-on immersive linguistic and cultural activities led by a native-speaking mentor and supplements the learning that takes place in the language classroom and in the living-learning environment of the Language House.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Marilyn Matar"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Marilyn Matar"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Marilyn Matar"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0104",
+          "instructors": [
+            "Marilyn Matar"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0105",
+          "instructors": [
+            "Marilyn Matar"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0106",
+          "instructors": [
+            "Marilyn Matar"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0107",
+          "instructors": [
+            "Marilyn Matar"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0108",
+          "instructors": [
+            "Marilyn Matar"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0109",
+          "instructors": [
+            "Marilyn Matar"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0110",
+          "instructors": [
+            "Marilyn Matar"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "SLLC399L",
+      "name": "Special Topics in World Cultures; Languages in Community",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Provides students with context for understanding, communicating with, and working with local multilingual communities. Topics include local demographics, cultures, communities, work opportunities, and developing cultural proficiencies. Requires outside service-learning work at a local site.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Ana Rodriguez"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "3120"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

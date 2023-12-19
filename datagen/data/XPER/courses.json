@@ -1,0 +1,70 @@
+{
+  "name": "XPER",
+  "courses": [
+    {
+      "code": "XPER433",
+      "name": "Xperiment to Address Grand Challenges",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Students will collaborate with each other using creative approaches to address complex real-world challenges. You will develop skills for interdisciplinary teamwork, problem-solving, and idea testing through hands-on experiences and guided discussions and reflections. By the end, you will form a multidisciplinary team of co-innovators ready to design a solution to a well-defined, real-world problem.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Gerald Suarez",
+            "Martha Wang",
+            "Christina Hnatov"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "2101"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "2101"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

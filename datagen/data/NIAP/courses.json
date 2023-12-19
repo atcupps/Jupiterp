@@ -1,0 +1,28 @@
+{
+  "name": "NIAP",
+  "courses": [
+    {
+      "code": "NIAP788A",
+      "name": "Special Topics in National Institue of Aerospace Engineering; Applied Numerical Method",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "01",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    }
+  ]
+}

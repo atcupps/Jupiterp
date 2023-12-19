@@ -1,0 +1,81 @@
+{
+  "name": "MSQC",
+  "courses": [
+    {
+      "code": "MSQC603",
+      "name": "Principles of Machine Learning",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "A broad introduction to machine learning and statistical pattern recognition. Topics include: Supervised learning: Bayes decision theory, discriminant functions, maximum likelihood estimation, nearest neighbor rule, linear discriminant analysis, support vector machines, neural networks, deep learning networks. Unsupervised learning: clustering, dimensionality reduction, PCA, auto-encoders. The course will also discuss recent applications of machine learning, such as computer vision, data mining, autonomous navigation, and speech recognition.",
+      "sections": [
+        {
+          "sec_code": "1",
+          "instructors": [
+            "Kemal Davaslioglu"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      6,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      8,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "MSQC604",
+      "name": "Quantum Computing Architectures and Algorithms",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Quantum computing aims to utilize quantum properties of matter to efficiently solve problems that classical computing systems would take too long to solve. This course reviews modern noisy-intermediate scale quantum (NISQ) quantum computing architectures and algorithms for these platforms. We focus on mapping of optimization and machine learning problems onto NISQ architectures and also discuss how to leverage state-of-the-art classical simulation methods for these quantum-inspired algorithms. We review several NISQ architectures and associated software interfaces, we analyze performance for optimization and statistical sampling. We survey current literature to review and implement methods for mapping optimization and machine learning problems onto NISQ architectures and modern simulators and use them to solve and study example problems.",
+      "sections": [
+        {
+          "sec_code": "1",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      6,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      8,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

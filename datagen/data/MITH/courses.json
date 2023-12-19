@@ -1,0 +1,151 @@
+{
+  "name": "MITH",
+  "courses": [
+    {
+      "code": "MITH388",
+      "name": "Digital Humanities Research Assistantship",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "Cross-listed with ENGL388T. Credit only granted for MITH388 or ENGL388T.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Jeffrey Moro"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "MITH498E",
+      "name": "Special Topics in Applied Digital Humanities; Digital Storytelling with Archives",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: Instructor permission required. Priority given to majors in Cinema and Media Studies. Cross-listed with CINE419E. Credit only granted for CINE419E or MITH498E.<br><br> An examination and exercise of the reuse and repurposing of archival audiovisual content in new scholarly or creative work. Part of the course will be a survey and discussion of how different genres incorporate such visuals (experimental film vs. documentaries vs. narrative features vs. transmedia/storytelling vs. journalistic outlets), and the other part will be a lab wherein students will create a final media project - short documentary film, video essay, transmedia project, or news story - utilizing archival footage from select sources.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Stephanie Sapienza"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "1103"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "MITH610",
+      "name": "Introduction to Digital Studies in the Arts and Humanities",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "An introduction to digital studies in the arts and humanities, broadly conceived as the critical, creative, and practical engagement with digital media, methods, tools, and experiences, as well as the theoretical and conceptual bases for understanding them.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Catherine Steele"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SKN",
+                  "3117"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "MITH729",
+      "name": "Colloquium in Digital Studies",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "Cross-listed with COMM698M. Credit only granted for MITH729 or COMM698M.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Catherine Steele"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "1118"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

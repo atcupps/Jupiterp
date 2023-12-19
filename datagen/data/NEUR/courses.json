@@ -1,0 +1,517 @@
+{
+  "name": "NEUR",
+  "courses": [
+    {
+      "code": "NEUR200",
+      "name": "Introduction to Neuroscience",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSNS"
+      ],
+      "description": "In an evolutionary sense, the job of the nervous system is to produce, control, and coordinate behaviors that help an animal survive and reproduce. Neuroscience is the study of how the nervous system does that. Provides a broad introduction to neuroscience, always keeping the behavioral consequences in view.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Ana Navarro Cebrian"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "BPS",
+                  "1243"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Ana Navarro Cebrian"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "BPS",
+                  "1243"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "NEUR305",
+      "name": "Neural Systems and Circuits",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Overview of the fundamental principles underlying the systems and circuits of the human nervous system, with a focus on cognitive processes and how these systems interact. Students will engage in the analysis of case studies, apply their knowledge of the neural circuitry to explain everyday phenomena, hypothesize ways to further investigate the nervous system, and propose how knowledge of  neural circuits can be used in human society and the resulting implications.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Amanda Chicoli"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "2212"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "NEUR306",
+      "name": "Cellular and Molecular Neuroscience",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Students will gain an appreciation of neuroscience as the nexus of chemistry, physics, and biology. Additionally, they will gain an understanding of how: both individual and networks of neurons function as variable electrical circuits; our nervous systems transduce signals from the outside world and sets-off molecular cascades; the behavior of a neuron can be changed and or remain the same in response to changing variables.  Techniques used to study the nervous system at a cellular and molecular level will be discussed.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Chan Lin"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "BPS",
+                  "1243"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Chan Lin"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "BPS",
+                  "1250"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "NEUR329",
+      "name": "Instructional Assistance Practicum",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "Repeatable to 9 credits. Additional information: Course not acceptable toward major requirements in the Neuroscience.<br><br> Students serve as instructional assistants in selected undergraduate neuroscience courses. Roles and responsibilities and pre/co-requisites are determined on a course- specific basis and approved by the Program Curriculum Committee.",
+      "sections": null
+    },
+    {
+      "code": "NEUR379",
+      "name": "Special Topics: Research in Neuroscience",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "Recommended: At least a 3.0 neuroscience track GPA and no records of academic misconduct. Restriction: Permission of Neuroscience Program. Repeatable to 12 credits.<br><br> Research and/or integrated reading in a topic related to neuroscience, under the direction and close supervision of a member of the University of Maryland faculty.",
+      "sections": null
+    },
+    {
+      "code": "NEUR379H",
+      "name": "Special Topics: Research in Neuroscience",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "NEUR398H",
+      "name": "Neuroscience Honors Seminar",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: NEUR200. Corequisite: NEUR379, NEUR479, or equivalent research credit with instructor permission. Repeatable to 4 credits.<br><br> This seminar provides an opportunity for the honors students to share their research projects and sharpen their communication skills through presentations, discussions, and peer-review thesis writing. Guest speakers will be invited to provide additional information and insights into various topics in professional development practice, graduate school info and application, etc.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Nikolas Francis"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      20,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "BPS",
+                  "1208"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "NEUR405",
+      "name": "Neuroscience Laboratory",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSSP"
+      ],
+      "description": "Students will utilize neurophysiological techniques to examine fundamental principles of  neurons and neural circuits. This course will reinforce content from prerequisite NEUR courses. Students will also strengthen skills in experimental design and scientific writing.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Hilary Bierman"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "2212"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "BPS",
+                  "0257"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Hilary Bierman"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "2212"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "BPS",
+                  "0257"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Hilary Bierman"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "2212"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "BPS",
+                  "0263"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0104",
+          "instructors": [
+            "Hilary Bierman"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "2212"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "BPS",
+                  "0257"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "NEUR479",
+      "name": "Advanced Research in Neuroscience",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: Complete at least 3 credits of NEUR379 (or equivalent) with the same faculty member as NEUR479 credit. Recommended: Minimum neuroscience track GPA of 3.0. Restriction: Permission of the Neuroscience Program. Repeatable to 12 credits.<br><br> Research and/or integrated reading in neuroscience under the direction and close supervision of a faculty member.",
+      "sections": null
+    },
+    {
+      "code": "NEUR479H",
+      "name": "Advanced Research in Neuroscience",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    }
+  ]
+}

@@ -1,0 +1,481 @@
+{
+  "name": "RUSS",
+  "courses": [
+    {
+      "code": "RUSS102",
+      "name": "Intensive Elementary Russian II",
+      "credits": {
+        "Amount": 6
+      },
+      "gen_eds": null,
+      "description": "A continuation of RUSS101 which will further develop the four skills: reading, writing, listening and speaking with an emphasis on communicative competence.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Inna Hardman"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "3122"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "3122"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Inna Hardman"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "3122"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "3122"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "RUSS202",
+      "name": "Intermediate Russian II",
+      "credits": {
+        "Amount": 5
+      },
+      "gen_eds": null,
+      "description": "Continued activation and expansion of skills and knowledge acquired in RUSS201 with the goal of communicative competence.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Zhanna Gerus-Vernola"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "2125"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "2125"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "RUSS287",
+      "name": "The Power of the Word: Freedom of Speech in the U.S. and Russia",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHU",
+        "SCIS"
+      ],
+      "description": "The central theme is the abiding human propensity to ask questions, to use language to pursue inquiry. To be a \"critical thinker,\" one must develop the habit and discipline of asking questions and challenging assumptions. Through a comparative approach to the US and Russian experiences, we will explore the role of language and its power in different political and social systems. We will explore such questions as: Why is free speech so fiercely defended in a democracy and such a threat to totalitarianism? What is the relationship between free speech, political power and dissent? Is the pen still mightier than the sword, even in the nuclear age? What has shaped our current attitudes toward freedom of expression? How has the concept of political free speech been extended to include freedom of expression in general, such as in the creative arts? What role do new technologies play in the arena of free speech debates? We will explore how freedom of speech and expression has been defended or its suppression justified in the US and Russia. We will practice the art of questioning and constructing counter-arguments throughout the course.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Cynthia Martin"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "HJP",
+                  "2242"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "RUSS302",
+      "name": "Advanced Russian II",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Advanced training in written Russian communicative structures.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Michael Lavery"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "1103"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "RUSS386",
+      "name": "Experiential Learning",
+      "credits": {
+        "Range": [
+          3,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "<div><div><div><strong>Restriction:</strong> Junior standing or higher; and permission of ARHU-School of Languages, Literatures, and Cultures department.</div></div></div>",
+      "sections": null
+    },
+    {
+      "code": "RUSS398F",
+      "name": "Selected Topics in Russian Language and Literature; Soviet Film: Soviet Cinema and Culture after Stalin",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Cross-listed with CINE329E. Credit only granted for RUSS398F or CINE329E.<br><br> Provides a survey of post-Stalin Soviet cinema and culture. Examines thecomplexities of Soviet culture and everyday life, exploring the role of art and culture in an ever-shifting Soviet socialist system, and the place of the individual within that system.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Elizabeth Papazian"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "0103"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "RUSS398T",
+      "name": "Selected Topics in Russian Language and Literature; Contemporary Russian-Language Theater: History and Practice",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: RUSS202 or equivalent proficiency.<br><br> Taught in Russian.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Mikhail Durnenkov"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      4,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "3203"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "RUSS402",
+      "name": "Practicum in Written Russian",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Designed to improve comprehension of functional varieties of written Russian and develop ability to present in written form concise syntheses of source texts.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Cynthia Martin"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "1124"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "RUSS439R",
+      "name": "Selected Topics in Russian Literature; Digital Approaches to Russophone Cultures in Exile",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: RUSS302 or equivalent proficiency.<br><br> Explores selected texts, films, and other media with a focus on representations of the experience of exile and emigration in Russophone cultures in the 20th and 21st centuries. We will learn about the historical and cultural contexts of the five waves of emigration from the Soviet Union and modern Russia. Students will also become familiar with various digital humanities platforms and create online resources that \"map\" Russian-speaking culture in exile around the world today and over the past century. Taught in Russian.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Michael Lavery"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "1103"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "RUSS499",
+      "name": "Independent Study in Russian",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "RUSS798",
+      "name": "Independent Study",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "3190",
+          "instructors": [
+            "Michael Lavery"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    }
+  ]
+}

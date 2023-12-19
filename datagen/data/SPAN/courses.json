@@ -1,0 +1,2283 @@
+{
+  "name": "SPAN",
+  "courses": [
+    {
+      "code": "SPAN103",
+      "name": "Intensive Elementary Spanish",
+      "credits": {
+        "Amount": 4
+      },
+      "gen_eds": null,
+      "description": "Covers speaking, reading, writing, listening, and culture of Spanish-speaking world.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Noelia Mantilla"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "1117"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "0118"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Ana Cuevas Albarran"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "1120"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "0120"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0301",
+          "instructors": [
+            "Maria Srur"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "1215"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "0120"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0401",
+          "instructors": [
+            "Maria Srur"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "0122"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "0120"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "SPAN203",
+      "name": "Intensive Intermediate Spanish",
+      "credits": {
+        "Amount": 4
+      },
+      "gen_eds": null,
+      "description": "Covers speaking, reading, writing, listening, and culture of Spanish-speaking world.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Ramiro Caces Barbosa"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "2122"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "0118"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Samuel Aguayo"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "0122"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "0135"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0301",
+          "instructors": [
+            "Ofelia Montelongo Valencia"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "1122"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "0120"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0401",
+          "instructors": [
+            "Ofelia Montelongo Valencia"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "2207"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "0120"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0501",
+          "instructors": [
+            "Ofelia Montelongo Valencia"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "2207"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "0120"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "SPAN204",
+      "name": "Spanish Grammar Review",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "An in-depth study and analysis of selected grammatical topics in a contextualized framework.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Ana Acedo Garcia"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "1120"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Karina De Sande"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "3120"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0301",
+          "instructors": [
+            "Jose Magro"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "1120"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0401",
+          "instructors": [
+            "Jose Magro"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "2207"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "SPAN207",
+      "name": "Reading and Writing in Spanish",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHU"
+      ],
+      "description": "Selected readings with emphasis on reading comprehension and the development of reading strategies. Work in composition writing and a review of selected grammatical topics. Complements material of SPAN204.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Chila Hidalgo"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "1215"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Chila Hidalgo"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "1215"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0301",
+          "instructors": [
+            "Chila Hidalgo"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "1120"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0401",
+          "instructors": [
+            "Isadora Quintana"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "0118"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0501",
+          "instructors": [
+            "Angela Pico Pinto"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "0118"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "SPAN235",
+      "name": "Issues in Latin American and Caribbean Studies II",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS",
+        "DSHU",
+        "DVUP"
+      ],
+      "description": "Major issues shaping Latin American and Caribbean societies including the changing constructions of race, ethnicity, gender and class as well as expressions of popular cultures and revolutionary practices. Taught in English.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Juan Diaz"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "1201"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "SPAN301",
+      "name": "Advanced Grammar and Composition I",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Practice of complex grammatical structures through reading and writing of compositions and essays. Specific lexical, syntactic, rhetorical, and stylistic devices will be highlighted.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Jackson Monzon"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "2207"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Ana Acedo Garcia"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "1224"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0401",
+          "instructors": [
+            "Jorge Bayas"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "0122"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0501",
+          "instructors": [
+            "Jorge Bayas"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "1122"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "SPAN303",
+      "name": "Approaches to Cultural Materials in the Hispanic World",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHU"
+      ],
+      "description": "Development of proficiency in critical thought through the reading, viewing, and analytical discussion of major genres and styles of cultural materials selected from Spanish-speaking world. Taught in Spanish.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Andrea Torres Armas"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "3120"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Andrea Torres Armas"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "2207"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0401",
+          "instructors": [
+            "Tatiana Chi Miranda"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "2207"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0501",
+          "instructors": [
+            "Ligia Gonzalez"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "2123"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "SPAN306",
+      "name": "Spanish for Heritage Speakers II",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Practice of complex grammatical structures through reading and writing of compositions and essays. Specific lexical, syntactic, rhetorical and stylistic devices will be highlighted. Designed for Spanish speakers educated in English.  Taught in Spanish.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Evelyn Canabal-Torres"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "2122"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "SPAN307",
+      "name": "Oral Communication Skills for Heritage Speakers of Spanish",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Development of techniques for formal public speaking in Spanish. Writing and delivering oral presentations for varied audiences and purposes. Includes strategies for organization, the use of rhetorical patterns, and the development of effective discourse. Designed for Heritage speakers of Spanish with native or near native knowledge of Spanish, but no formal education in Spanish.  Taught in Spanish.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Evelyn Canabal-Torres"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "3120"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "SPAN311",
+      "name": "Advanced Communication I",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Further development of listening, speaking, and writing skills in Spanish. Opportunity to develop oral and written fluency, improve pronunciation and increase vocabulary. Individual and/or group oral presentations. Taught in Spanish.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Ana Acedo Garcia"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "3120"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Ana Acedo Garcia"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "2120"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0301",
+          "instructors": [
+            "Chris Lewis"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "0103"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "SPAN316",
+      "name": "Spanish Translation I",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Translation of texts into Spanish and/or English. Taught in Spanish.",
+      "sections": [
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Ginette Eldredge"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "3205"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "SPAN332",
+      "name": "Spanish Culture, Civilization and Literature II: Renaissance and Baroque",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHU"
+      ],
+      "description": "An overview of cultural and literary production of Spain from the late 15th through late 17th centuries, exploring the production of literary texts in their socio-historical, political, religious and cultural contexts and development. Taught in Spanish.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Ginette Eldredge"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "2207"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "SPAN333",
+      "name": "Spanish Culture, Civilization and Literature III: Modern Times",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHU"
+      ],
+      "description": "An overview of cultural and literary production of Spain from the late 17th century through the present day, exploring the production of literary texts in their socio-historical, political, religious and cultural contexts and development. Taught in Spanish.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Mehl Penrose"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "2122"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "SPAN359E",
+      "name": "Spanish for the Professions; Performing U.S. Latina/e/o Experiences",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "This course is an introduction to the ways that Latina/e/o artists and activists have used music, literature, theater, performance art, film, and social media to document, represent, and engage with their communities as they have shown up and spoken out throughout the United States.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Chris Lewis"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "2122"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "SPAN359P",
+      "name": "Spanish for the Professions; Spanish in Politics",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "This course is designed to strengthen communication and critical thinking skills to understand and analyze political and international issues. Taught in Spanish, this course provides approaches to historical and cultural contexts in order to engage in class discussions on issues that affect the Hispanic/Latino world, Hispanics in the US, and the region's relationship with the US. Among others, these will include migration, the growing fascination with fascism, strengthening democratic institutions, and voting rights. Assignments will include practical engagement with, for instance, Spanish-speaking stakeholders.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Saul Sosnowski"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "0125"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "SPAN362",
+      "name": "Latin American Literatures and Cultures II: From Independence to Nation Formation",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHU",
+        "DVUP"
+      ],
+      "description": "An overview of cultural and literary production of Latin America from the 18th Century to approximately 1900, exploring the production of literary texts in their socio-historical, political, and cultural contexts and development. Taught in Spanish.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "2123"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Laura Demaria"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "2122"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "SPAN363",
+      "name": "Latin American Literatures and Cultures III: From Modernism  to Neo-Liberalism",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHU",
+        "DVUP"
+      ],
+      "description": "An overview of cultural and literary production of Latin America from the late 19th through the early 21st centuries, exploring the production of literary texts in their socio-historical, political, and cultural contexts and development. Taught in Spanish.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Saul Sosnowski"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "2207"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Juan Carlos Quintero-Herencia"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "2122"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "SPAN370",
+      "name": "Spanish for Business I",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Business Spanish terminology, vocabulary and practices. Emphasis on everyday spoken and written Spanish. Readings and discussions of Spanish commercial topics. May include exposure to Spanish commercial topics. May include exposure to Spanish business environments.  Taught in Spanish.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Maria Herrera Arvay"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "2207"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "SPAN371",
+      "name": "Spanish for the Health Professions",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Exploration of cultural and linguistic skills for the health professions including vocabulary, listening, speaking, reading and strategies. No experience in the professional area necessary. Taught in Spanish.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Evelyn Canabal-Torres"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "2122"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "SPAN373",
+      "name": "Spanish in the Media",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Exploration of Spanish in current events in the Hispanic world in local and international press and varied media, and production of journalistic articles.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Chila Hidalgo"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "2123"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "SPAN386",
+      "name": "Experiential Learning",
+      "credits": {
+        "Range": [
+          3,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "<div><div><div><strong>Prerequisite:</strong> Permission of ARHU-School of Languages, Literatures, and Cultures department.  </div><div><strong>Restriction:</strong> Junior standing or higher.</div></div></div>",
+      "sections": null
+    },
+    {
+      "code": "SPAN388W",
+      "name": "Writing Center Internship",
+      "credits": {
+        "Range": [
+          1,
+          6
+        ]
+      },
+      "gen_eds": [
+        "DSSP"
+      ],
+      "description": "Examines face-to-face and online writing center theory and practice through readings, exercises, and supervised tutoring. Students investigate the writing process and help other writers to negotiate it.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Thomas Earles"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0224"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "2001",
+          "instructors": [
+            "Thomas Earles"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "SPAN399",
+      "name": "Independent Study in Spanish",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: permission of department.",
+      "sections": null
+    },
+    {
+      "code": "SPAN426",
+      "name": "Hispanic Linguistics III: Language in Use",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Designed for students without previous experience in Linguistics. Focus on language variation and use, linguistic change, and bilingualism. Taught in Spanish.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Manel Lacorte"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "2123"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "SPAN431",
+      "name": "Mexican Women Writers",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Focuses on Mexican women writers from the colonial period to the present. It consists of various types of texts, including poetry, short story, essay, and novel. Its principal themes include the relations among experience, knowledge, and expression; the presence or absence of women in literary histories, including Wikipedia pages; feminism; and the opportunities and challenges presented by the category of women writers. Taught in Spanish.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Ryan Long"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "2123"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "SPAN451",
+      "name": "Paradise Lost: Cuban Cinematic Culture",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Explores the cinematic journey of the Cuban revolution from socialist utopia to bitter disillusionment. Taking as a point of departure the national postulates of an \"Imperfect Cinema\" and the different theorizations of \"New Latin American cinema,\" the course will concentrate on the emergence and development of Cuban cinematic culture that has taken place during the revolution. Our objective is to explore how art and politics collide to reveal contested visions of a social process. Visual materials will include films and documentaries. Readings will include selections from historiographic and literary works, as well as contemporary critical studies. Taught in Spanish",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Eyda Merediz"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "2122"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "SPAN452",
+      "name": "Reflecting on Neoliberalism and Contemporary Southern Cone Culture",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "An exploration of how neoliberalism and its market-driven economy have shaped Latin American culture of the last decades. In particular, we will explore how contemporary cultural artifacts are inscribed into a value system that quantifies the unquantifiable, that is to say, a system that only values a book or an artist based on sales. In this class, we will work with a variety of cultural artifacts from Argentina, Chile, and Uruguay--films, chronicles, music, newspapers, cartoons, literature, and documentaries--to map how culture and markets intersect. Taught in Spanish.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Laura Demaria"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "2123"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "SPAN478I",
+      "name": "Special Topics in United States Latino Cultures; Community Interpreting: The Intersection of Language Access,Advocacy &amp; Autonomy",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "This course provides a practical and engaging approach for students to expand their knowledge around the concept of language access, to contextualize language advocacy and justice, and to apply the fundamentals of communicative autonomy. Students will explore the world of community interpreting, inclusive of ethics and effective practices, through engagement in meaningful communicative activities and reflection.Taught in Spanish and English. An ACTFL/OPI Advanced-Low level in both Spanish and English according to ACTFL Guidelines is strongly recommended for successful participation in this course.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Jennifer Love"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "2206"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "SPAN479",
+      "name": "Honors Thesis",
+      "credits": {
+        "Range": [
+          3,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "SPAN495",
+      "name": "Honors Reading",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Supervised reading.",
+      "sections": null
+    },
+    {
+      "code": "SPAN626",
+      "name": "Hispanic Linguistics II: Language in Use",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "This course will focus on issues related to language variation and use with a more in-depth analysis of the semantics, pragmatics, and sociolinguistics of Spanish. Students will be introduced to current research in the fields of dialectology, bilingualism and language policy, and the social aspects of language change. This course will include an analysis of current research as it relates to the field of linguistics and other social sciences.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Manel Lacorte"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "2123"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "SPAN699",
+      "name": "Independent Study in Spanish",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "SPAN798J",
+      "name": "Open Seminar; Ghettos and Peripheries:From th Iberian Hinge to an UnhingedReality",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "This seminar explores the poetic topology of Iberia from the perspective of marginal(ized) cultures in a multifaceted contemporary context. While the Spanish background is ever present, the focus is on Basque, Catalan, Galician, Calo, Sefardi, and hood hubs with their new migratorypat terns. Because the landscape is so vast, the first iteration will focus on pairs of poets speaking in closely related language(s) and about comparable quests: Cunqueiro, Aresti, Margarit, Camaron as contrasted with Yolanda Castano, Bernardo Atxaga, Mireia Calafell, or Maria Terremoto.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Juan Uriagereka"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "2125"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "SPAN798K",
+      "name": "Open Seminar; Archipelago: Literature and Politics in the Caribbean",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "This graduate seminar conducted in Spanish will discuss the existential singularity of the literature-politics coupling in the Caribbean. The seminar will explore ways of de-framing and un-disciplining the hegemonic university discourse that instrumentalizes the archipelago poetics and specificities. Our conversations want to think about the ways literary enunciation, marked by the Caribbean archipelagic experience, intervenespolitically or abandon the scene of hegemonic politics. Focus is placed on the terms and images of existing in, or passing through, the Caribbean. It will be dedicated to rethinking thisproblem through a limited series of texts written by Caribbean authors in the 20th and 21st centuries.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Juan Carlos Quintero-Herencia"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "2125"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "SPAN798P",
+      "name": "Open Seminar; Central American Futurities and Pasts",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "This course examines imaginings of Central American futurities and pasts, from the Popul Vuh to Territorios Olvidados and beyond. Key questions focus on de/coloniality, extractivism, war, violence, waste, migration, AI, and the (post)human. Genres explored include Central American extreme realism, speculative fiction, science fiction, and eco-horror. Authors include among others: Gioconda Belli, Ernesto Cardenal, Horacio Castellanos Moya, Ruben Dario, Carlos Gagini, Jorge Galan, Franz Galich,Pedro Gaspar Gonzalez, Claudia Hernandez, Alvaro Menendez Leal, Tatiana Lobo, Rodrigo Rey Rosa, Salarrue, Maximo Soto Hall, and Ramon Varela Morales. Readings in Spanish and English.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Ana Rodriguez"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "2125"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "SPAN799",
+      "name": "Master's Thesis Research",
+      "credits": {
+        "Range": [
+          1,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "SPAN898",
+      "name": "Pre-Candidacy Research",
+      "credits": {
+        "Range": [
+          1,
+          8
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "SPAN899",
+      "name": "Doctoral Dissertation Research",
+      "credits": {
+        "Amount": 6
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    }
+  ]
+}

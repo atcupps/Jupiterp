@@ -1,0 +1,1098 @@
+{
+  "name": "MLAW",
+  "courses": [
+    {
+      "code": "MLAW150",
+      "name": "Law in a Just Society",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS",
+        "SCIS"
+      ],
+      "description": "An exploration of the theoretical questions relating to such fundamental questions of jurisprudence as \"what is law?\" and \"how can law be deployed as both an enemy and ally of justice?",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "David Gray"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "CCC",
+                  "1205"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0201"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "David Gray"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "CCC",
+                  "1205"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0201"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "David Gray"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "CCC",
+                  "1205"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0201"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "MLAW215",
+      "name": "Nonviolence and Restorative Justice Practices",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "Students will learn about restorative justice practices including restorative inquiries, dialogues, circles and conferences and actively engage in each of these processes. Students will also practice restorative intakes and restorative mentoring techniques while building an understanding of the foundational mindset, values and key structural elements for designing and conducting restorative processes.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Robert Koulish"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "0103"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Sa": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "0103"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Su": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "0103"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "MLAW304",
+      "name": "Introduction to Law and Social Inquiry",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSSP"
+      ],
+      "description": "An exploration of the relationship between law and society from an interdisciplinary perspective. Major themes cover the impact of law on society, society on law and social change.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Robert Koulish"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "1222"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "MLAW305",
+      "name": "Law and Legal Institutions in Social Context",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "An exploration of case law, statutes, and regulations separately and together in their social context.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Brian Gilmore"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "1100"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Brian Gilmore"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "1106"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "MLAW325",
+      "name": "Naturalization Workshop Practicum",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "The focus of this Practicum is a naturalization workshop whereby students will assist eligible Marylanders in applying for citizenship. Students will work with faculty and law students to design, plan, and implement a naturalization workshop, to take place on a Saturday in the spring semester. Students will work directly with law students and faculty.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Grace Benton"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      5,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "1103"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "MLAW358J",
+      "name": "Selected Topics in Law and Society; Critical Issues in Healthcare",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Diane Hoffmann"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "1221"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "MLAW358T",
+      "name": "Selected Topics in Law and Society; Tackling Trafficking: The Legal System's Responses to Human Trafficking",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "An examination of domestic and international legal responses to the perpetration of the various forms of human trafficking. Students will explore policy initiatives along with civil and criminal law techniques designed to punish traffickers and protect victims.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Christine White"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "3215"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "MLAW358U",
+      "name": "Selected Topics in Law and Society; The Politics of Immigration Law",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Robert Koulish"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "WDS",
+                  "1114"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "MLAW358W",
+      "name": "Selected Topics in Law and Society; Courts, Law and Justice",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Restriction: Must be enrolled in the Law and Society minor program. Cross-listed with GVPT331. Credit only granted for GVPT331 or MLAW358W.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Michael Spivey"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "2203"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "1220"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Michael Spivey"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "2203"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "1220"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Michael Spivey"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "2203"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "1220"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0104",
+          "instructors": [
+            "Michael Spivey"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "2203"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "1102"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0105",
+          "instructors": [
+            "Michael Spivey"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "2203"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "1102"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0106",
+          "instructors": [
+            "Michael Spivey"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "2203"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "1132"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "MLAW358Y",
+      "name": "Selected Topics in Law and Society; Civil Rights and the Constitution",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: GVPT170; and GVPT331 or MLAW358W. Restriction: Must be enrolled in the Law and Society minor program. Credit only granted for GVPT432 or MLAW358Y.<br><br> A study of civil rights in the American consitutional context, emphasizing freedom of religion, freedom of expression, minority discrimination, and the rights of defendants.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Michael Spivey"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EGR",
+                  "0108"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "MLAW358Z",
+      "name": "Selected Topics in Law and Society; Police Discretion and the 4th Amendment",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "An exploration of the power police officers display when they apply their discretion to stop, question or arrest individuals. Students will dissect State and Federal Court decisions regarding appropriate use of these powers sanctioned by the Fourth Amendment.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Christine White"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "1220"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "MLAW378F",
+      "name": "Special topics in Law and Society; Land, Shelter, and Social Justice",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "From the evolution of tenant rights in the 20th century to the mortgage crisis of 2008, housing and land rights and disputes have figured prominently in how societies are shaped and develop over time. This course aims to explore some aspects of the diverse and increasingly complex body of laws, policies, and attempted solutions related to housing and land in a largely unequal world and society. How has private land ownership changed societies in the modern era? What is the role of the state in addressing housing shortages and injustices related to land and housing? What does a fundamental human right to housing look like in the real world? These issues, and others, including urbanization, re-colonization, climate change, and discrimination form the core of a course that will provide students with both local, national and international perspectives on a fundamental issue for all humans living today - shelter and sustenance.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Brian Gilmore"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1168"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "MLAW378J",
+      "name": "Special topics in Law and Society; Bioethics and the Law",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "This seminar will examine the impact of advancements in biosciences on avariety of legal and policy issues. Topics will likely include the doctrine of informed consent, physician-assisted suicide and euthanasia,assisted reproduction, conscientious refusals to provide medical care, the allocation and sale/donation of body parts and services, and medicaland law enforcement uses of genetic information, aswell as topics arising out of the Covid-19 pandemic. In examining these various issues,students will consider the content and consistency of current law, the policy goals motivating legal regulation, the impactoftechnological innovation, and directions for legal reform.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Natalie Ram"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "HBK",
+                  "0123"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "MLAW388",
+      "name": "Law and Society Internship",
+      "credits": {
+        "Range": [
+          1,
+          4
+        ]
+      },
+      "gen_eds": null,
+      "description": "Restricted to students within the Law and Society minor.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Brandee Pettus"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Brandee Pettus"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "MLAW404",
+      "name": "Law &amp; Society Capstone",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "An exploration of the implications of technology on law and society from a variety of perspectives.Significant issues will be taken from contemporary scholarship and court cases.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Christine White"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "2309"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

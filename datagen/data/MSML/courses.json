@@ -1,0 +1,207 @@
+{
+  "name": "MSML",
+  "courses": [
+    {
+      "code": "MSML603",
+      "name": "Principles of Machine Learning",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "A broad introduction to machine learning and statistical pattern recognition. Topics include: Supervised learning: Bayes decision theory, discriminant functions, maximum likelihood estimation, nearest neighbor rule, linear discriminant analysis, support vector machines, neural networks, deep learning networks. Unsupervised learning: clustering, dimensionality reduction, PCA, auto-encoders. The course will also discuss recent applications of machine learning, such as computer vision, data mining, autonomous navigation, and speech recognition.",
+      "sections": [
+        {
+          "sec_code": "1",
+          "instructors": [
+            "Kemal Davaslioglu"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      6,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      8,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "MSML604",
+      "name": "Introduction to Optimization",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Focuses on recognizing, solving, and analyzing optimization problems. Linear algebra overview: vector spaces and matrices, linear transformations, matrix algebra, projections, similarity transformations, norms, eigen-decomposition and SVD. Convex sets, convex functions, duality theory and optimality conditions. Unconstrained optimization: 1D search, steepest descent, Newton's method, conjugate gradient method, DFP and BFGS methods, stochastic gradient descent. Constrained optimization: projected gradient methods, linear programming, quadratic programming, penalty functions, and interior-point methods. Global search methods: simulated annealing, genetic algorithms, particle swarm optimization.",
+      "sections": [
+        {
+          "sec_code": "1",
+          "instructors": [
+            "Richard La"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      6,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      8,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "CSI",
+                  "2107"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "MSML605",
+      "name": "Computing Systems for Machine Learning",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Programming, software and hardware design and implementation issues of computing systems for machine learning. Topics in the programming/software domain will include: basic Python program structure, variables and assignment, built-in data types, flow control, functions and modules; basic I/O, and file operations. Classes, object-oriented programming and exceptions. Regular expressions, database access, network programming and sockets. Introduction to the Numpy, Scipy and Matplotlib libraries. Topics in the hardware domain include computer architecture, CPUs, single- and multi-core architectures, GPUs, memory and I/O systems, persistent storage, and virtual memory. Parallel processing architectures, multiprocessing and cluster processing.",
+      "sections": [
+        {
+          "sec_code": "1",
+          "instructors": [
+            "Mohammad Nayeem Teli"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      6,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      8,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "CSI",
+                  "1121"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "MSML640",
+      "name": "Computer Vision",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "An introduction to basic concepts and techniques in computer vision. Topics include low-level operations such as image filtering, correlation, edge detection and Fourier analysis. Image segmentation, texture and color analysis. Perspective, cameras and 3D reconstruction of scenes using stereo and structure from motion. Deep learning for object detection, recognition and classification in images and video.",
+      "sections": [
+        {
+          "sec_code": "1",
+          "instructors": [
+            "Jerry Wu"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "CSI",
+                  "1121"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "MSML641",
+      "name": "Natural Language Processing",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Introduces fundamental concepts and techniques involved in getting computers to deal more intelligently with human language. Focused primarily on text (as opposed to speech), the class will offer a grounding in core NLP methods for text processing (such as lexical analysis, sequential tagging, syntactic parsing, semantic representations, text classification, unsupervised discovery of latent structure),  key ideas in the application of deep learning to language tasks, and consideration of the role of language technology in modern society.",
+      "sections": [
+        {
+          "sec_code": "1",
+          "instructors": [
+            "Shabnam Tafreshi"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      6,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      8,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "CSI",
+                  "2117"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

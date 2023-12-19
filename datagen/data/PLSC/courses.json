@@ -1,0 +1,1273 @@
+{
+  "name": "PLSC",
+  "courses": [
+    {
+      "code": "PLSC110",
+      "name": "Introduction to Horticulture",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSNL",
+        "DSNS"
+      ],
+      "description": "An overview to the art and science of horticulture. Relationships between plant science and plant production, the use of horticultural plants and plant stress as influenced by cultural practices.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Diana Cochran"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "2208"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "PLSC111",
+      "name": "Introduction to Horticulture Laboratory",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "The goal of this course is to expand your knowledge of the growth and development of horticultural crops. An integrated understanding of horticulture will come from laboratory experiments and field trips. This course is designed to complement lecture material from PLSC 110.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Diana Cochran"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      20,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1153"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Diana Cochran"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      20,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1153"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Diana Cochran"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      20,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1153"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0104",
+          "instructors": [
+            "Diana Cochran"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      20,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1153"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0105",
+          "instructors": [
+            "Diana Cochran"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1153"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "PLSC250",
+      "name": "Lawns in the Landscape: Environmental Hero or Villain?",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSNS",
+        "SCIS"
+      ],
+      "description": "Examination of the lawn as an element in the anthropogenic landscape and its influence on global warming, regional air and water quality, ecological diversity, mammalian pesticide exposure and consumptive water use. Demographic and socioeconomic factors are examined in the context of being predictors of landscape aesthetic desires and lawn management behaviors. Policies that incentivize lawn alternatives or changes in lawn management behavior are discussed.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Mark Carroll"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SYM",
+                  "0209"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "PLSC254",
+      "name": "Woody Plants for Mid-Atlantic Landscape II",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "A field and laboratory study of trees, shrubs, and vines used in ornamental plantings. Major emphasis is placed on introduced and evergreen plant materials.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Karen Petroff"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "WF": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1130"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1153"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Karen Petroff"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "WF": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1130"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1140"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "PLSC271",
+      "name": "Plant Propagation",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "A study of the principles and practices in the propagation of plants.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Gary Coleman"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1117"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1117"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Gary Coleman"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1117"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1117"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "PLSC303",
+      "name": "Global Food Systems",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSNS"
+      ],
+      "description": "An introduction to the global food system and its agricultural, biophysical, and socioeconomic domains. The problems and potentials for increasing world food supply based on current agronomic knowledge. Emphasis on international aspects of food crop production as its interrelationships with people and the environment in the developing world.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Sean Sharp"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1164"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Sean Sharp"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1164"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "PLSC388",
+      "name": "Honors Thesis Research",
+      "credits": {
+        "Range": [
+          3,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            "Unspecified",
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "PLSC399",
+      "name": "Special Problems in Plant Science",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "PLSC400",
+      "name": "Plant Physiology",
+      "credits": {
+        "Amount": 4
+      },
+      "gen_eds": null,
+      "description": "An in-depth examination of the unique molecular and physiological principles necessary to understand how plants grow and respond to the environment at the cellular and organismal levels. Plants evolved unique metabolism and survival strategies, so students should be prepared to enter a world that may be new to them.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Jose Feijo",
+            "Daniel Rodriguez Leal"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1130"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1153"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Jose Feijo",
+            "Daniel Rodriguez Leal"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1130"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1153"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Jose Feijo",
+            "Daniel Rodriguez Leal"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1130"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1153"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "PLSC401",
+      "name": "Pest Management Strategies for Turfgrass",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Interdisciplinary view of weed, disease, and insect management from an agronomy perspective. Plant responses to pest invasion, diagnosis of pest-related disorders, and principles of weed, disease and insect suppression through cultural, biological and chemical means are discussed.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Fereshteh Shahoveisi",
+            "Geoffrey Rinehart"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1164"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "PLSC411",
+      "name": "Plant Genetics",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "An introduction to genetic principles and technologies in plants, centered on linking phenotype to genotype. Topics include Mendelian inheritance of single and complex traits, epigenetics, population genetics and plant breeding. Examples on creating and mapping genetic mutations in both model plants and non-model crops are discussed. Current genetic and genomic approaches are highlighted, such as genome engineering and reprogramming, TILLING, and genome-wide association mapping.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Adam Schoen",
+            "Vijay Tiwari"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1146"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "PLSC434",
+      "name": " The Quest for Color",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Finding sources of color in nature has motivated mindful inquiry and technical innovation across cultures. Yet, the quest for new colors has been both a result of and an excuse for colonization, appropriation of indigenous knowledge, and enslavement. When natural dyestuffs were largely replaced by synthetic dyes derived from coal tar in the late 1800s, color development posed new ecological and cultural challenges. In spite of these threats, practitioners worldwide have maintained their traditional methods without exploitation or petroleum products. This course integrates the history and chemistry of dye materials from plants and insects with hands-on practice in sustainable color creation. Students will hone the practical skills needed to source and process foraged dye materials, and apply them sustainably to fibers. Via this scientific process students will gain insight into the benefits of a naturally sourced approach to color and to life.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Maile Neel"
+          ],
+          "class_meetings": [
+            "OnlineAsync",
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "0123"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "0123"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "PLSC452",
+      "name": "Environmental Horticulture",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Environmental horticulture principles used in the establishment and maintenance of plant materials in residential and commercial landscapes will be addressed. The effect of soil conditions, environmental factors, and commercial practices will be discussed in relation to the growth and development of newly-installed plant materials. Field diagnostics will be used by students to assess significant problems of plant decline. Environmental sustainability will be combined with current commercial practices of storm water management, nutrient management, and irrigation management to achieve an integrated approach to plant management.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Diana Cochran"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1115"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1115"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "PLSC460",
+      "name": "Application of Knowledge in Plant Sciences",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSSP"
+      ],
+      "description": "A capstone course based on interactions with plant science professionals and student-led class discussions. Students will apply their knowledge and experience to practical issues in the discipline, further develop critical thinking ability, and enhance their communication, teamwork, and professional skills. Topics will include nutrient management, integrated pest management, plant interactions with urban and rural ecosystems, planning of public grounds, plant biotechnology, and teaching skills.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Bill Phillips"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1119"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1119"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "PLSC489W",
+      "name": "Special Topics in Plant Science; Plant-Microbe Associations",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Understanding the diverse relationships between plants and their associated microbes is important for crop protection and food security. A comparative analysis of the ecology, physiology and molecular genetics of plant - microbe interactions along with their impact on society and the surrounding ecosystem. Students will learn and gain an understanding of various microbiomes and their impact on plant growth, pathogenic strategies used to overcome plant immune systems and derive nutrients from host plants, the molecular mechanisms used by plants to recognize and respond to invading pathogens, symbiotic relationships between plants and microbes, prospects of genetic engineering of plants for disease resistance.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Shunyuan Xiao",
+            "James Culver"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1113"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "PLSC608T",
+      "name": "Research Methods; Supervised Teaching",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "4401",
+          "instructors": [
+            "Bill Phillips"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "7501",
+          "instructors": [
+            "Wendy Peer"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "PLSC618",
+      "name": "Advances in Research; Critiquing Primary Plant Science Literature",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "James Culver"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1164"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "PLSC619",
+      "name": "Seminars in Plant Science and Landscape Architecture",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Vijay Tiwari",
+            "Colby Silvert"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "2107"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "PLSC689W",
+      "name": "Special Topics; Plant-Microbe Associations",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Understanding the diverse relationships between plants and their associated microbes is important for crop protection and food security. A comparative analysis of the ecology, physiology and molecular genetics of plant - microbe interactions along with their impact on society and the surrounding ecosystem. Students will learn and gain an understanding of various microbiomes and their impact on plant growth, pathogenic strategies used to overcome plant immune systems and derive nutrients from host plants, the molecular mechanisms used by plants to recognize and respond to invading pathogens, symbiotic relationships between plants and microbes, prospects of genetic engineering of plants for disease resistance.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Shunyuan Xiao",
+            "James Culver"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1113"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "PLSC799",
+      "name": "Master's Thesis Research",
+      "credits": {
+        "Range": [
+          1,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "PLSC898",
+      "name": "Pre-Candidacy Research",
+      "credits": {
+        "Range": [
+          1,
+          8
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "PLSC899",
+      "name": "Doctoral Dissertation Research",
+      "credits": {
+        "Amount": 6
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    }
+  ]
+}

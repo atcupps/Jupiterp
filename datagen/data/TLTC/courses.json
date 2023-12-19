@@ -1,0 +1,255 @@
+{
+  "name": "TLTC",
+  "courses": [
+    {
+      "code": "TLTC310",
+      "name": "Leadership in Collaborative Learning Groups",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSSP"
+      ],
+      "description": "Experiential learning opportunity that applies principles of leadership, peer mentoring, and learning theory to the planning and facilitation of peer-led collaborative learning sessions. Incorporates research, reasoning, evidence, and feedback to develop a reflective practice.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Danielle Pafe"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "0103"
+                ]
+              }
+            },
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Danielle Pafe"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "0103"
+                ]
+              }
+            },
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLTC333",
+      "name": "Fundamentals of Academic Peer Mentoring",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "How should scientific research influence the way we study and advance the academic performance of others? Learn about the scholarship of teaching and learning and develop the applied skills to support active learning as an academic peer mentor. Whether or not you ultimately pursue a career as an educator, the more effectively you can coach and support the performance of other people, and the more successful you will be. Guided online and face-to-face participation will culminate in a portfolio of your teaching activities and professional development.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Mona Thompson"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "M": [
+                  [
+                    10,
+                    0,
+                    "Am"
+                  ],
+                  [
+                    10,
+                    50,
+                    "Am"
+                  ]
+                ]
+              }
+            },
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Mona Thompson"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "M": [
+                  [
+                    11,
+                    0,
+                    "Am"
+                  ],
+                  [
+                    11,
+                    50,
+                    "Am"
+                  ]
+                ]
+              }
+            },
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0105",
+          "instructors": [
+            "Mona Thompson"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "Tu": [
+                  [
+                    12,
+                    30,
+                    "Pm"
+                  ],
+                  [
+                    1,
+                    20,
+                    "Pm"
+                  ]
+                ]
+              }
+            },
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLTC399",
+      "name": "Independent Study in Academic Peer Mentoring",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: Must have completed or be concurrently enrolled in TLTC333.  Restriction: Permission of TLTC required - enrollment restriction.  Repeatable to 6 credits.<br><br> Earn academic credit for the time spent supporting a course in TLTC's Academic Peer Mentoring Program (AMP).",
+      "sections": null
+    },
+    {
+      "code": "TLTC499A",
+      "name": "Independent Study in Teaching and Learning",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: Must have completed TLTC333. Restriction: Permission of TLTC department required. Contact department for information to register for this course.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Mona Thompson"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Danielle Pafe"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLTC798",
+      "name": "University Teaching and Learning",
+      "credits": {
+        "Range": [
+          1,
+          2
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Marco Molinaro"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "1103"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

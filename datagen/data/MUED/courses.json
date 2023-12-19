@@ -1,0 +1,599 @@
+{
+  "name": "MUED",
+  "courses": [
+    {
+      "code": "MUED155",
+      "name": "Fundamentals for the Classroom Teacher",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "The fundamentals of music theory and practice, related to the needs of the classroom and the kindergarten teacher.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Darren Shillingford"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      4,
+                      15,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "2168"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "MUED187",
+      "name": "Pre-Professional Experiences II",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "Regular on-site school visitation at elementary, middle and high school levels arranged to expand student understandings and reflections of music instruction in classroom settings.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Allison Durbin",
+            "Josanne Francis"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            },
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "MUED216",
+      "name": "Percussion Technique and Pedagogy",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": null,
+      "description": "Playing experience on percussion instruments. Historical and acoustical background. Scoring for percussion. Principles of improvisation. Basic concepts of teaching. Methods and materials. Techniques of individual and class instruction.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Josanne Francis"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      8,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      8,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "2540"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "MUED305",
+      "name": "Marching Band Techniques",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": null,
+      "description": "Designed to aid the student in learning how to prepare, organize, teach, and rehearse the contemporary high school marching band. Through class discussions, practical assignments, guest lecturers and audio/visual aids, students will gain a command of the terminology, pedagogy, and structure of a marching ensemble and its potential.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Craig Potter"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "MUED311",
+      "name": "Teaching Elementary Instrumental Music I",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": null,
+      "description": "Prepare instrumental-emphasis music education majors to synthesize the knowledge and skills that will enable them to teach fundamental musical skills at the elementary level.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Mike Hewitt"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "2540"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "MUED322",
+      "name": "Teaching General Music I",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": null,
+      "description": "Teaching General Music I is designed as a fundamental music methods course for students who are preparing for a career in general music. This course will focus on developmentally appropriate teaching practices for building musicianship in a general music setting.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Robin Giebelhausen"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "2170"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "MUED411",
+      "name": "Teaching Elementary Instrumental Music II",
+      "credits": {
+        "Amount": 4
+      },
+      "gen_eds": null,
+      "description": "Prepare instrumental-emphasis music education majors to synthesize the knowledge and skills that will enable them to develop and/or maintain an exemplary curricular-oriented, research-based, comprehensive elementary instrumental music program.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Stephanie Prichard"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "2130A"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      8,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "MUED433",
+      "name": "Teaching Choral Music",
+      "credits": {
+        "Amount": 4
+      },
+      "gen_eds": [
+        "DSSP"
+      ],
+      "description": "Preparation for teaching choral classes through the integration of conducting technique, vocal pedagogy, knowledge of repertoire, and the application of appropriate instructional strategies in the context of peer teaching and field experience assignments.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Kenneth Elpus"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "2130A"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      8,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "MUED474",
+      "name": "Field Experiences: Pre-Student Teaching",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": null,
+      "description": "Field experiences to fulfill teaching requirements in K-12 music teacher education program.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Bri'Ann Wright",
+            "Justin Caithaml"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      8,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "2130A"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "MUED484",
+      "name": "Student Teaching in Elementary School: Music",
+      "credits": {
+        "Amount": 6
+      },
+      "gen_eds": null,
+      "description": "Fulfills elementary teaching requirements in K-12 music teacher education program. Limited to music education majors who have previously applied.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Lauren McGinley",
+            "Amy Sierzega",
+            "Justin Caithaml"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "2130A"
+                ]
+              }
+            },
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "MUED494",
+      "name": "Student Teaching in Secondary School: Music",
+      "credits": {
+        "Amount": 6
+      },
+      "gen_eds": null,
+      "description": "Fulfill secondary teaching requirements in K-12 music teacher education program. Limited to music education majors who have previously applied.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Amy Sierzega",
+            "Christian Folk"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "MUED692",
+      "name": "Foundations and Perspectives of Music Education",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "An introduction to historical, sociological, and philosophical perspectives of music education.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Robin Giebelhausen"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "2130A"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "MUED729",
+      "name": "Doctoral Colloquium in Music Education",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Stephanie Prichard"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "2130A"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "MUED780",
+      "name": "Seminar in Music Teacher Education",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Development of knowledge and skills necessary for music teacher educators. Topics include history of and reform movements in music teacher education, recruitment, education and certification of music teachers and inservice programs.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Mike Hewitt"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "2130A"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

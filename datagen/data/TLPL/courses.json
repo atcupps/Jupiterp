@@ -1,0 +1,4297 @@
+{
+  "name": "TLPL",
+  "courses": [
+    {
+      "code": "TLPL101",
+      "name": "Inquiry Approach to Teaching STEM (Step 1)",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "Explore STEM teaching and learning and classroom complexity, and develop teaching skills through discussion-based, collaborative class sessions, and experiences in local schools. To explore/understand the fundamentals of inquiry teaching, students will observe, plan and teach student-centered lessons.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Milen Matthews"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      20,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PHY",
+                  "1120"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Steven Karig"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PHY",
+                  "1108"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0301",
+          "instructors": [
+            "Jennifer Mesiner"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PHY",
+                  "1120"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL102",
+      "name": "Inquiry Teaching of STEM in Middle School",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": [
+        "DSSP"
+      ],
+      "description": "Second course in the Terrapin Teachers teacher preparation sequence. Students gain field experience and continue exploring teaching as a career by conducting teacher observations, and planning and implementing lessons in local, high-need middle school classrooms. Students work closely with UM master teachers to build upon the inquiry-based teaching practices developed in TLPL 101.  Students work with mathematics and science curricula while attending to state and district standards, in order to develop and enact lessons that are responsive to students' reasoning in math and science.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Sarah Henson-Darko"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PHY",
+                  "1120"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Anita Sanyal"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PHY",
+                  "1108"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL250",
+      "name": "Historical and Philosophical Perspectives on Education",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHU"
+      ],
+      "description": "An examination of illustrative historical and philosophical examples of the interplay of ideas and events in the shaping of educational aims and practices from ancient cultures to modern technological societies.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Stephanie Chou"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      15,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "1106"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Lisa Eaker"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EDU",
+                  "2119"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0301",
+          "instructors": [
+            "Chelsea Stolt"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EDU",
+                  "3315"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0401",
+          "instructors": [
+            "Lisa Lopez-Escobar"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0205"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL251",
+      "name": "Community, Learners, and Classroom Climate",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Focuses on classroom community building as an ethic of caring for students and examines the connection between classroom climate and learning. Topics include students' funds of knowledge, social-emotional competency, and the practices that maintain a safe and inclusive classroom climate. Wellness strategies to support teacher resilience are also addressed.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Karen Rehder"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EDU",
+                  "2121"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      8,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Karen Rehder"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EDU",
+                  "2121"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      8,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Karen Rehder"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EDU",
+                  "2121"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      8,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL252",
+      "name": "Students, Schooling, and Communities",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSSP"
+      ],
+      "description": "Facilitates pre-service teachers' initial look at their personal backgrounds and the ways in which they view the world. Exploration of schools, students and their connections to communities. Draws on preservice teachers' concurrent field experiences.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      15,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "0135"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL286",
+      "name": "A Socially Just Introduction to STEM Teaching",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "A one-semester accelerated introduction (equivalent to TLPL101 and TLPL102) to STEM teaching as a career, specifically designed for students interested in exploring the intersection of social justice and STEM teaching in middle and high school settings. Students can expect a highly collaborative and discussion-based exploration of STEM teaching and learning, classroom complexity, and social justice in school settings.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Sarah Henson-Darko"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PHY",
+                  "1108"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL287",
+      "name": "Inquiry Into Issues in US Public Schooling: Policies, Practice and Promise",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS",
+        "SCIS"
+      ],
+      "description": "Students will inquire into enduring issues faced by US public education, focusing on the forces and stakeholders that have shaped current policy and practice. In addition, students will work to consider the real daily consequences of policy on the lives of students and teachers. Through crafting and researching a question of interest, employing a project based learning approach, students will take a deep dive into the most vexing issues faced by public education in the United States.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Sarah Moore"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "1119"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL288E",
+      "name": "Special Problems in Education; Developmental Heuristics",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Sharon Vanwright"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL288K",
+      "name": "Reinventing Childhood: Unschooling and Other School Alternatives",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS",
+        "SCIS"
+      ],
+      "description": "While a movement toward educational alternatives was underway in the US prior to the Covid 19 pandemic, school shutdowns led to a tremendous increase in numbers of families seeking these alternatives. Some families who began homeschooling or unschooling during the pandemic are continuing, despite the reopening of schools. In this course, we explore distance learning, unschooling, homeschooling and other alternative forms of education for children through reviewing research, readings, and videos, and by conducting in person and zoom interviews with parents, teachers and students of each of these education approaches. We address questions such as, How can an understanding of unschooling, homeschooling, distance schooling and other alternative learning experiences help educators improve their practices? What effects might these various alternatives have on children, families, communities, and society? What new alternatives to education are people using, and what innovations might be next?",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Kellie Rolstad"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "MCB",
+                  "1207"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL288P",
+      "name": "Special Problems in Education; Experiential Learning of Geoscience:An Agency and school Visit Experience",
+      "credits": {
+        "Range": [
+          1,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Candice Duncan"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "F": [
+                  [
+                    10,
+                    0,
+                    "Am"
+                  ],
+                  [
+                    12,
+                    0,
+                    "Pm"
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL298",
+      "name": "Special Problems in Education",
+      "credits": {
+        "Range": [
+          1,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "TLPL300",
+      "name": "Digital Learning Tools and Communities",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "An exploration of the digital tools available for P12 students and their teachers that enhance learning and help build classroom community. This hybrid course will prepare P12 teachers to incorporate instructional technology, digital learning resources, and social media in P12 classrooms.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Sarah McGrew"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Sarah McGrew"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        },
+        {
+          "sec_code": "0301",
+          "instructors": [
+            "Sarah McGrew"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        },
+        {
+          "sec_code": "0401",
+          "instructors": [
+            "Sarah McGrew"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL305A",
+      "name": "Curriculum and Instruction Cluster",
+      "credits": {
+        "Amount": 0
+      },
+      "gen_eds": null,
+      "description": "Restriction: This is for Seniors only.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0301",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL305B",
+      "name": "Curriculum and Instruction Cluster",
+      "credits": {
+        "Amount": 0
+      },
+      "gen_eds": null,
+      "description": "This is for Juniors only.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0301",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL332",
+      "name": "Arts Integration in Elementary Classrooms",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "An exploration of the theories and core practices associated with integrating the arts in ways that promote student learning in the core subjects.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Khaleshia Thorpe-Price"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EDU",
+                  "2212"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Khaleshia Thorpe-Price"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EDU",
+                  "2212"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0301",
+          "instructors": [
+            "Christine Alexander"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EDU",
+                  "2212"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL340",
+      "name": "Introduction to Children's Literature and Critical Literacy",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Analysis of literary materials for children and youth. Timeless and ageless books, and outstanding examples of contemporary publishing. Evaluation of the contributions of individual authors, illustrators and children's book awards.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Cody Norton"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "1111"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Olivia Saracho"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EDU",
+                  "1121"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL342",
+      "name": "Promoting Skilled and Motivated Readers in Diverse Elementary Classrooms (Part 1)",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "An investigation of the materials, curriculum, teaching and learning practices and assessment methods associated with promoting skilled and motivated readers in diverse elementary classrooms.  Teacher candidates will learn to use assessments to design instruction in the core components of reading, in line with students' individual needs and the Maryland College and Career Ready Standards.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Olivia Saracho"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EDU",
+                  "2121"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Shannon Kane"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EDU",
+                  "2121"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0301",
+          "instructors": [
+            "Ayanna Baccus"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EDU",
+                  "2212"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL344",
+      "name": "Culturally Responsive Language and Literacy Instruction in Diverse Elementary Classrooms",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Application of the asset-based practices associated with culturally responsive language and literacy programs. Teacher candidates will learn to plan, guide and assess students' integrated language and literacy practices (reading, writing, speaking and listening), with emphasis on writing instruction, in line with students' individual needs and Maryland College and Career Ready Standards.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Shannon Kane"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Rose Cherussery"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        },
+        {
+          "sec_code": "0301",
+          "instructors": [
+            "Hongye Zeng"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL360",
+      "name": "Foundations of Education",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS"
+      ],
+      "description": "Social context of education and conflicts over philosophies, values, an goals that are reflected in educational institutions in our pluralistic society. Helps teachers become reflective, critical thinkers about the social and philosophical issues they face and the choices they make.",
+      "sections": [
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Colin McCarthy"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "1106"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0301",
+          "instructors": [
+            "Lisa Eaker"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EDU",
+                  "3315"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL361",
+      "name": "Community, Learners, and Classroom Engagement",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Focuses on classroom community building as an ethic of caring for students and examines the connection between classroom engagement and learning. Topics include student agency, the context and design of learning experiences, and the practices that sustain students' engagement in learning. Wellness strategies to support teacher resilience are also addressed.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Lisa Bote"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EDU",
+                  "2212"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Lisa Bote"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EDU",
+                  "2121"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0301",
+          "instructors": [
+            "Lisa Bote"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EDU",
+                  "2121"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL362",
+      "name": "Curriculum and Instruction in Elementary Education: Social Studies",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Curriculum, organization and methods of teaching, evaluation of materials, and utilization of environmental resources. Emphasis on multicultural education. Includes laboratory/field experiences.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Elizabeth Crooks"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      4,
+                      15,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EDU",
+                  "3315"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Lisa Eaker"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EDU",
+                  "2121"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        },
+        {
+          "sec_code": "0301",
+          "instructors": [
+            "Joann Kang"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EDU",
+                  "2212"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL379",
+      "name": "Professional Engagement In and Beyond the Secondary/MS/K-12 Classroom",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "Repeatable to 3 credits. Additional information: Students need to be available for a half day once a week to engage in the field based tutoring experience.<br><br> Provides an early field experience (e.g., tutoring young children) in secondary school settings (e.g., middle school). Recommended for students exploring the possibility of or intending to minor in Education or major in Secondary/MS/K-12 education. Credit will not be granted for experience accrued prior to registration. This course is open to all students but best suited for those interested in a career in education. Students need to be prepared to participate in as many as 10 in-person tutoring sessions over the course of the semester. Transportation is provided.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Joann Kang"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL406",
+      "name": "Teaching and Learning Mathematics in the Elementary School, Part 1",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Focuses on teaching and learning whole numbers. Special emphasis will be placed on developing equitable teaching practices that enable culturally and linguistically diverse students to develop knowledge and skills that promote mathematical proficiency. Mathematical concepts: Content knowledge: some aspects of early numeracy, whole numbers and the four arithmetic operations, some aspects of algebraic thinking.",
+      "sections": [
+        {
+          "sec_code": "2",
+          "instructors": [
+            "Angela Stoltz"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      8,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL407",
+      "name": "Teaching and Learning Mathematics in the Elementary School, Part 2",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Focuses on teaching and learning rational numbers (fractions and decimals) and developing algebraic thinking. Special emphasis will be placed on developing equitable teaching practices that enable culturally and linguistically diverse students to develop knowledge and skills that promote mathematical proficiency. Mathematical concepts: Content knowledge: rational numbers (fractions and decimals) and the four arithmetic operations, algebraic thinking, some aspects of geometry and measurement.",
+      "sections": [
+        {
+          "sec_code": "1",
+          "instructors": [
+            "Carolina Napp-Avelli"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      8,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL414",
+      "name": "Knowing and Learning in Mathematics and Science",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS"
+      ],
+      "description": "Special and intensive treatment of current topics and issues in mathematics and science teaching and learning, policy and leadership. The overall goal of the course is to orient future teachers to the discourses and theories that shape what we know about how students learn math and science.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Anita Sanyal"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PHY",
+                  "1120"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL415",
+      "name": "Perspectives in Science",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Overview of the history of science and philosophical perspectives on science, particularly as they apply to science teaching.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Daniel Levin"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PHY",
+                  "1120"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL421",
+      "name": "Practices in Secondary School Science Teaching",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": null,
+      "description": "Analyses of student thinking, instructional interpretations, strategies, and techniques in the teaching internship.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Tranae Johnson"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      5,
+                      15,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "1125"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL424",
+      "name": "Interdisciplinary Teaching in the Middle Grades II",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": null,
+      "description": "For prospective middle school teachers. Planning and implementing interdisciplinary instructional practices in middle school. Draws on the context of and experiences in the student teaching placement. Use of technology and incorporation of technology into instruction.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Angela Stoltz"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EDU",
+                  "2212"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL435",
+      "name": "Art Education Methods I",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSSP"
+      ],
+      "description": "Methods I provides future art teachers with a knowledge base of the theories and best practices of effective pedagogy for: teaching methods and strategies, diversity, motivational techniques, classroom management, assessment and evaluation methods, and accommodating all students including those with special needs.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Margaret Walker"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EDU",
+                  "1315"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL437",
+      "name": "Studio Processes and Materials: 3D",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "A lecture-studio course to develop skills, material resources, and educational strategies for three-dimensional projects in school settings.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Katherine Coogan"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EDU",
+                  "1315"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL441",
+      "name": "Pedagogy of Teaching English Language Learners",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "A survey of the historical and current approaches, methods, and techniques of teaching English to speakers of other languages, from grammar translation and audiolingual to communicative and task-based approaches will be presented. Additionally, successful classroom practices that address the needs of culturally diverse and language minority students will be analyzed. Students will have the opportunity to discuss, probe and apply theories and principles to hands-on teaching practices in real-life settings. Digital technologies that assist teaching English language learners (ELLs) will be emphasized as well.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Megan Peercy"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EDU",
+                  "3233"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL443",
+      "name": "Understanding Cross-Cultural Communication for Teaching English Language Learners",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DVCC"
+      ],
+      "description": "Theories of intercultural communication and techniques for applying them in the teaching of English as a second language (ESL) and content classes. Research and evaluation of selected aspects of a culture as basis for creating, selecting and using culturally-responsive teaching materials and methods.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Astrid Sierra Mejia"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0221"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL444",
+      "name": "English Grammar Pedagogy for Teachers of English Language Learners",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Methods of teaching English grammar to English language learners. The role of teaching grammar. Effective methods and techniques for incorporating grammar in other communication activities.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Kellie Rolstad"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL452",
+      "name": "Bases for English Language Instruction",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Examines current theory, research, best practice, curricula and materials focused on the teaching of English language to native and non-native English learners. Topics include morphology, syntax, semantics, vocabulary, pragmatics, argument, discourse structure, dialects, edited academic English, English language proficiency (listening, speaking, reading, writing) assessment, and instructional planning. English Language Learner (TESOL and SIOP) and special needs (inclusion) pupil issues considered.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Franklin Horstman"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0201"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL453",
+      "name": "Life in Two Languages: Understanding Bilingual Communities and Individuals",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS",
+        "DVUP"
+      ],
+      "description": "Overview of society and individual multilingualism. Topics include diglossia, language shift, codeswitching, bilingual first language acquisition, language attrition, dual language education policy and practice.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Jeff MacSwan"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL476",
+      "name": "Equity and Pedagogy",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": null,
+      "description": "An exploration and application of major theoretical frameworks surrounding equity and critical pedagogy. Pedagogical decision making that leads to greater equity and improved student learning for all students. Draws on the concurrent student teaching experience.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Carla Blackwell"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "1111"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL477",
+      "name": "Teaching Academically, Culturally, and Linguistically Diverse Students in Middle School and Secondary Education",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": null,
+      "description": "Instruction on methods of teaching academically, culturally, and linguistically diverse students in middle school and secondary classrooms.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Lindsey Allen"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL478A",
+      "name": "Professional Seminar in Education; Professional Seminar in Education: Art Education",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Katherine Coogan"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      4,
+                      15,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "1117"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL478B",
+      "name": "Professional Seminar in Education; Professional Seminar in Education: Social Studies",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Alison Jovanovic"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0201"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL478C",
+      "name": "Professional Seminar in Education; Professional Seminar in Education: English",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Peggy Wilson"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      4,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL478D",
+      "name": "Professional Seminar in Education; Professional Seminar in Education: Mathematics",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Dana Grosser-Clarkson"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "M": [
+                  [
+                    4,
+                    0,
+                    "Pm"
+                  ],
+                  [
+                    5,
+                    30,
+                    "Pm"
+                  ]
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL478G",
+      "name": "Professional Seminar in Education; Elementary Education",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Deborah Lewin"
+          ],
+          "class_meetings": [
+            "Unspecified",
+            "OnlineAsync"
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Brooke Dalesio"
+          ],
+          "class_meetings": [
+            "Unspecified",
+            "OnlineAsync"
+          ]
+        },
+        {
+          "sec_code": "0301",
+          "instructors": [
+            "Tracy Dunheimer"
+          ],
+          "class_meetings": [
+            "Unspecified",
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL478I",
+      "name": "Professional Seminar in Education; Elementary Education",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Stacy Currie"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Stacy Currie"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0301",
+          "instructors": [
+            "Stacy Currie"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL478K",
+      "name": "Professional Seminar in Education; World Languages",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Antonio Perez Belda"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "1105"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL478L",
+      "name": "Professional Seminar in Education; Agriculture",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Melissa Welsh"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL479G",
+      "name": "Field Experiences in Education; Internship",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "Students must pay $135 lab fee.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Deborah Lewin"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Brooke Dalesio"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0301",
+          "instructors": [
+            "Tracy Dunheimer"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL481",
+      "name": "Embracing Diversity in the Classroom Community",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "An exploration of the richness and complexity of student diversity that teacher candidates will encounter in K-12 classrooms. Students will engage in critical reflection around diversity and equity issues.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Crystal Charity"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      4,
+                      15,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "1101"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL488K",
+      "name": "Special Topics in Education; STEM Participatory Action Research Project 2",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Vivian Zohery"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL489",
+      "name": "Internship in Education",
+      "credits": {
+        "Range": [
+          1,
+          12
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "TLPL489A",
+      "name": "Internship in Education; Internship in Education: Art",
+      "credits": {
+        "Amount": 12
+      },
+      "gen_eds": null,
+      "description": "Students must pay a $350.00 lab fee.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Katherine Coogan"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL489B",
+      "name": "Internship in Education; Internship in Education: Social Studies/History",
+      "credits": {
+        "Amount": 12
+      },
+      "gen_eds": null,
+      "description": "Students must pay a $350.00 lab fee.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Alison Jovanovic"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL489C",
+      "name": "Internship in Education; Internship in Education: English",
+      "credits": {
+        "Amount": 12
+      },
+      "gen_eds": null,
+      "description": "Students must pay a $350.00 lab fee.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Peggy Wilson"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL489D",
+      "name": "Internship in Education; Internship in Education: Mathematics",
+      "credits": {
+        "Amount": 12
+      },
+      "gen_eds": null,
+      "description": "Students must pay a $350.00 lab fee.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Dana Grosser-Clarkson"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      9,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL489E",
+      "name": "Internship in Education; Internship in Education: Middle School",
+      "credits": {
+        "Amount": 12
+      },
+      "gen_eds": null,
+      "description": "Students must pay a $350.00 lab fee.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Angela Stoltz"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL489F",
+      "name": "Internship in Education; Internship in Education: Science",
+      "credits": {
+        "Amount": 12
+      },
+      "gen_eds": null,
+      "description": "Students must pay a $350.00 lab fee.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Tranae Johnson"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL489G",
+      "name": "Internship in Education; Internship in Education: Elementary Education Residency",
+      "credits": {
+        "Amount": 9
+      },
+      "gen_eds": null,
+      "description": "Students must pay a $350.00 lab fee.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Deborah Lewin"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Brooke Dalesio"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0301",
+          "instructors": [
+            "Tracy Dunheimer"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL489K",
+      "name": "Internship in Education; World Language",
+      "credits": {
+        "Amount": 12
+      },
+      "gen_eds": null,
+      "description": "Please add a BPO to this course",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Antonio Perez Belda"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL489L",
+      "name": "Internship in Education; Agriculture",
+      "credits": {
+        "Amount": 12
+      },
+      "gen_eds": null,
+      "description": "Students must pay a $350 lab fee.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Melissa Welsh"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL498",
+      "name": "Special Problems in Education",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "TLPL600",
+      "name": "Teaching and Learning with Technology",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Provides a concrete, hands-on introduction to teaching and learning with technology. We will explore digital technology and its impact on learning and institutions. We will consider big ideas of the field as well as specific types of learning technologies and pedagogies for use in K-12 classrooms. We will discuss K-12 teaching methods that address the interdisciplinary nature of technology integration. The course will draw on class discussions, inquiry, instructional technology, and collaborative lab-based activities and prepare you to merge technology with your current teaching practice. Assessment with and of technology will also be explored.",
+      "sections": [
+        {
+          "sec_code": "1",
+          "instructors": [
+            "Charlotte Avery"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      8,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL615",
+      "name": "Teaching and Learning Geometry in the Middle Grades",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Designed to enhance both the pedagogical and geometric content knowledg of middle school mathematics teachers.",
+      "sections": [
+        {
+          "sec_code": "1",
+          "instructors": [
+            "Sara Kirschner"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL641",
+      "name": "Reading, Cognition, and Instruction: Reading in the Content Areas I",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Provides middle and secondary education students with an understanding of the interactive nature of the reading process, the use of research-based instructional strategies, the relationship between vocabulary development and student concept development, the design of strategic reading instruction, the methods for assessing content area literacy, and the ability to plan instruction and communicate with students, parents, and allied professionals.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Ying Alice Zhang"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      5,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      8,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "1171"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL646",
+      "name": "Linguistics in Education",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Provides teachers and educational researchers with the theoretical and technical knowledge of linguistics necessary to engage effectively in their fields.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Jeff MacSwan"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "1103"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL647",
+      "name": "Diagnostic Reading Assessment and Instruction",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Survey course in diagnostic reading assessment and instruction for graduate students not majoring in reading.",
+      "sections": [
+        {
+          "sec_code": "2",
+          "instructors": [
+            "Dnia Walker"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      8,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL654",
+      "name": "Clinical Instruction in Reading",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Clinical procedures and materials for reading instruction.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Ayanna Baccus"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "1221"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL655",
+      "name": "Student Assessment in the Second Language Classroom",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Analysis of standardized and teacher-made FL/ESL tests; emphasis on principles of FL/ESL test construction. Field testing of commercial and teacher-made materials.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Antonio Perez Belda"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "0125"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        },
+        {
+          "sec_code": "1",
+          "instructors": [
+            "Antonio Perez Belda"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "0125"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL657",
+      "name": "Teaching for Cross Cultural Communication",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Theories of intercultural communication and techniques for applying them in the teaching of English as a second language (ESL) and content classes. Research and evaluation of selected aspects of a culture as basis for creating, selecting and using culturally-responsive teaching materials and methods.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Astrid Sierra Mejia"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0221"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL660",
+      "name": "Foundations of Literacy and Biliteracy Development",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "An overview of the research on literacy and biliteracy development for English learners. Specifically, the course explores the theoretical models and processes of teaching reading and writing, current literacy/biliteracy issues, assessment, and strategies for developing literacy and biliteracy skills for English learners.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Shenika Hankerson"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "1215"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL661",
+      "name": "Multiliteracies: Theory and Practice",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Explores the theoretical constructs and practical manifestations of multiliteracies in communities and schools by presenting an overview of the research on the constructs of New Literacy Studies, Critical Literacy, Digital Literacy, and Funds of Knowledge, as well as the practical implications of teaching reading and writing to culturally and linguistically diverse learners in content areas (i.e., language arts, math, science, social studies, etc.) in classrooms.",
+      "sections": [
+        {
+          "sec_code": "1",
+          "instructors": [
+            "Sarah Moore"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL662",
+      "name": "Second Language Acquisition",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Major theoretical approaches to second language acquisition. For teaching English to speakers of other languages (TESOL).",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Laura Mahalingappa"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "3215"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL663",
+      "name": "Practice and Theory in Teaching Second Language Learners",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Focuses on issues that arise while teaching second language (ESOL or foreign language) learners. Supports implementation of theory into practice and research-based best practices during teaching internship, and completion of teaching portfolio during a second field experience.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Antonio Perez Belda"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      8,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "1105"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL665",
+      "name": "Methods of Teaching ESOL",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "This course presents a survey of the historical and current approaches, methods, and techniques of teaching English to speakers of other languages, from grammar to translation to audiolingual and communicative approaches. Additionally, successful classroom practices that address the needs of culturally diverse and language minority students will be analyzed.",
+      "sections": [
+        {
+          "sec_code": "1",
+          "instructors": [
+            "Loren Jones"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL670",
+      "name": "Economics of Education",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "An introduction to the application of economic principles to the study of education policy. The course content revolves around issues of efficiency, equity, and freedom of choice. Specific attention is devoted to school finance litigation and reform, practices for raising and allocating resources, and education productivity issues.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Jing Liu"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      4,
+                      15,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0223"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL671",
+      "name": "Education Policy Analysis",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Policy making in education from planning to evaluation with emphasis on the identification of policy problems and the resources available to analysts through multi-disciplinary approaches. An introductory experience with education policy analysis.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Meghan Comstock"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EDU",
+                  "3233"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL682",
+      "name": "Philosophy of Education",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "A study of the great educational philosophers and systems of thought affecting the development of modern education, with particular emphasis on recent scholarship on philosophical problems in education.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Campbell Scribner"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      4,
+                      15,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "2120"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL689",
+      "name": "Internship in Education; Teaching Internship",
+      "credits": {
+        "Range": [
+          1,
+          12
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Antonio Perez Belda"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL691",
+      "name": "Research Methods",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "The interpretation and conduct of research relevant to curriculum, teaching and learning.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Wayne Slater"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "3221"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL698",
+      "name": "Conducting Research on Teaching; Conducting Research on Teaching",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "1",
+          "instructors": [
+            "Beatriz Quintos Alonso"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      8,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            },
+            "OnlineAsync"
+          ]
+        },
+        {
+          "sec_code": "1",
+          "instructors": [
+            "Theresa Robinson"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            },
+            "OnlineAsync"
+          ]
+        },
+        {
+          "sec_code": "2",
+          "instructors": [
+            "Theresa Robinson"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL699",
+      "name": "Master's Seminar",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "TLPL703",
+      "name": "Research on Technology in Education",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Students explore the research methodologies used by those doing research with and on learning technologies, focusing on cultural, experimental, design and learning analytic approaches. Emphasis will be on asking meaningful research questions related to technology and exploring methodological and analytical approaches for answering them. This course will also explore research methods that examine the efficacy of new technologies, research about technology, design methods.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "David Weintrop"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      4,
+                      15,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "3217"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL708A",
+      "name": "Special Topics in Technology, Learning &amp; Leadership",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "David Weintrop"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "1123"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL711",
+      "name": "Foundations of Mathematics Education II: Theory and Research on Mathematics Teaching",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Knowledge of and insights into how mathematics has been and is being taught; theories about how it might be taught. Familiarity with the methods used to do research on teaching and to improve teaching.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Daniel Chazan"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "1201"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL728",
+      "name": "Research Seminar in Mathematics and Science Education",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Andrew Elby"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      1,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EDU",
+                  "2121"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL766",
+      "name": "Impact Evaluation for Education and Public Policy",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Students will learn about and practice using a variety of quantitative research methods that allow for causal inferences and can be applied to estimate the impact of policies or programs in education and other policy sectors.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Francisco Lagos Marin"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      4,
+                      15,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "1122"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL772",
+      "name": "Teaching, Professional Development and School Change",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Examines currrent scholarship on professional development for K-12 teachers, characteristics of good professional development, and its relationship to teaching, learning, and school improvement.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Keisha Allen"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      4,
+                      15,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EDU",
+                  "3236"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL788B",
+      "name": "Special Topics in Education; Conservative Education Thought",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Campbell Scribner"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "2120"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL788G",
+      "name": "Special Topics in Education; Critical Race Theory",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Rossina Liu"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      4,
+                      15,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EDU",
+                  "2101"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL788I",
+      "name": "Special Topics in Education; Introduction to Interaction Analysis",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Janet Walkoe"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      4,
+                      15,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EDU",
+                  "2121"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL788L",
+      "name": "Special Topics in Education; Participatory Action Research",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Tara Brown"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      4,
+                      15,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "1117"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL788M",
+      "name": "Special Topics in Education; Research Development Workshop",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "David Blazar"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "1125"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL788P",
+      "name": "Special Topics in Education; Black Language and Culture",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Restriction: Must be in Teaching and Learning, Policy and Leadership (Doctoral) program\" or \"Permission of Department\"",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Shenika Hankerson"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ARC",
+                  "1123"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL788Q",
+      "name": "Special Topics in Education; Seminar in Teacher Education and Professional Development",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Astrid Sierra Mejia"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EDU",
+                  "3233"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL788X",
+      "name": "Special Topics in Education; Capstone Research and Writing",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Melanie Hardy-Skeberdis"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      4,
+                      15,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EDU",
+                  "3315"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL789",
+      "name": "Internship in Education",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "TLPL791",
+      "name": "Qualitative Research I: Design and Fieldwork",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Examines the theoretical and epistemological moorings of different types of qualitative research.  Students apply selected field research methods to problems of professional practice in schools and communities while considering central issues and dilemmas that arise while engaging in fieldwork.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Jennifer Turner"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      4,
+                      35,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      20,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "1171"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL792",
+      "name": "Qualitative Research II: Analysis and Interpretation of Data",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Considers methods of on-going data analysis, ways of knowing and writing about field research, issues of reflexivity, and the ethical and political decisions involved in crafting text.  Students read literature on and exemplars of multiple modes of qualitative data analysis and interpretation.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Tara Brown"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      4,
+                      15,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EDU",
+                  "2212"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL798",
+      "name": "Special Problems in Education",
+      "credits": {
+        "Range": [
+          1,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "TLPL799",
+      "name": "Master's Thesis Research",
+      "credits": {
+        "Range": [
+          1,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "TLPL840",
+      "name": "Seminar in Reading Education",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "<div><div><div><strong>Credit only granted for:</strong> EDCI860 or TLPL840.  </div><div><strong>Formerly:</strong> EDCI860.</div></div></div>",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Jennifer Turner"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "M": [
+                  [
+                    1,
+                    0,
+                    "Pm"
+                  ],
+                  [
+                    3,
+                    45,
+                    "Pm"
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL860",
+      "name": "Seminar on Case Study Methods",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Conceived as both an analysis of case study methods and a laboroatory for applying course content to research topics or projects of interest to students, it addresses a range of conceptual, methodological, ethical, political, and logistical issues embedded in efforts to conduct thoughtful, \"disciplined\" case study research. Since this focuses on case study research, it may be particularly helpful to students who are exploring various approaches to research or who are contemplating using case study methods in their theises and/or dissertations.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Sophia Rodriguez"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      4,
+                      15,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "1123"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TLPL888",
+      "name": "Apprenticeship in Education",
+      "credits": {
+        "Range": [
+          1,
+          8
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "TLPL889",
+      "name": "Internship in Education",
+      "credits": {
+        "Range": [
+          3,
+          8
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "TLPL898",
+      "name": "Pre-Candidacy Research",
+      "credits": {
+        "Range": [
+          1,
+          8
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "TLPL899",
+      "name": "Doctoral Dissertation Research",
+      "credits": {
+        "Range": [
+          1,
+          8
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    }
+  ]
+}

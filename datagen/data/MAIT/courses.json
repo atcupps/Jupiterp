@@ -1,0 +1,64 @@
+{
+  "name": "MAIT",
+  "courses": [
+    {
+      "code": "MAIT699",
+      "name": "Independent Masters Project",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "John Benedetto"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Wojciech Czaja"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0501",
+          "instructors": [
+            "John Benedetto"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0902",
+          "instructors": [
+            "Wojciech Czaja"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "2911",
+          "instructors": [
+            "Andrew Kebo"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    }
+  ]
+}

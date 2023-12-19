@@ -1,0 +1,3203 @@
+{
+  "name": "PHIL",
+  "courses": [
+    {
+      "code": "PHIL100",
+      "name": "Introduction to Philosophy",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHU"
+      ],
+      "description": "An introduction to the literature, problems, and methods of philosophy either through a study of some of the main figures in philosophic thought or through an examination of some of the central and recurring problems of philosophy.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Dan Moller"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SHM",
+                  "2102"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "3217"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Dan Moller"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SHM",
+                  "2102"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "1206"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Dan Moller"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SHM",
+                  "2102"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "1123"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0104",
+          "instructors": [
+            "Dan Moller"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SHM",
+                  "2102"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EDU",
+                  "2101"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0105",
+          "instructors": [
+            "Dan Moller"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SHM",
+                  "2102"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "1105"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0106",
+          "instructors": [
+            "Dan Moller"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SHM",
+                  "2102"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "1171"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "PHIL140",
+      "name": "Contemporary Moral Issues",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHU"
+      ],
+      "description": "The uses of philosophical analysis in thinking clearly about such widely debated moral issues as abortion, euthanasia, homosexuality, pornography, reverse discrimination, the death penalty, business ethics, sexual equality, and economic justice.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Hallie Liberto"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "0220"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1113"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Hallie Liberto"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "0220"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1113"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Hallie Liberto"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "0220"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "1206"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0104",
+          "instructors": [
+            "Hallie Liberto"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "0220"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "HBK",
+                  "0105"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0105",
+          "instructors": [
+            "Hallie Liberto"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "0220"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "HBK",
+                  "0105"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0106",
+          "instructors": [
+            "Hallie Liberto"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "0220"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EDU",
+                  "1315"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "PHIL202",
+      "name": "Know Thyself: Wisdom Through Cognitive Science",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS",
+        "DSHU",
+        "SCIS"
+      ],
+      "description": "How do we improve our decision making? Cognitive science demonstrates that self-knowledge isn't as easy as we think, and that there are numerous biases and fallacies that impact our decision-making in ways that are hard for us to be aware of. In this course you will learn what some of these are and how they have been discovered, and you will explore potential strategies for avoiding these fallacies and for making wiser choices.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Peter Carruthers"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SHM",
+                  "2102"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "0103"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Peter Carruthers"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SHM",
+                  "2102"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "0103"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Peter Carruthers"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SHM",
+                  "2102"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EDU",
+                  "3236"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0104",
+          "instructors": [
+            "Peter Carruthers"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SHM",
+                  "2102"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "HBK",
+                  "1112"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0105",
+          "instructors": [
+            "Peter Carruthers"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SHM",
+                  "2102"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "HBK",
+                  "1112"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0106",
+          "instructors": [
+            "Peter Carruthers"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SHM",
+                  "2102"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "1105"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0107",
+          "instructors": [
+            "Peter Carruthers"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SHM",
+                  "2102"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "0110"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0108",
+          "instructors": [
+            "Peter Carruthers"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SHM",
+                  "2102"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "0110"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0109",
+          "instructors": [
+            "Peter Carruthers"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SHM",
+                  "2102"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "1103"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "PHIL203",
+      "name": "The Rights and Wrongs of Killing People",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHU",
+        "SCIS"
+      ],
+      "description": "Virtually everyone thinks it's permissible to kill people only in special circumstances. But why is killing usually wrong? Is it ever acceptable to kill an innocent human being intentionally? This course raises these and related questions and examines cases such as terrorism, suicide, abortion, euthanasia, the death penalty, war. Except for a brief discussion of animals, all the controversies considered deal with killing and causing death to human beings.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Daniel Blair"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SKN",
+                  "0200"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "1111"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Daniel Blair"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SKN",
+                  "0200"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "1171"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Daniel Blair"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SKN",
+                  "0200"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SYM",
+                  "0209"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0104",
+          "instructors": [
+            "Daniel Blair"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SKN",
+                  "0200"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "1120"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0105",
+          "instructors": [
+            "Daniel Blair"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SKN",
+                  "0200"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "1222"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0106",
+          "instructors": [
+            "Daniel Blair"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SKN",
+                  "0200"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EDU",
+                  "3236"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0107",
+          "instructors": [
+            "Daniel Blair"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SKN",
+                  "0200"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "1123"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0108",
+          "instructors": [
+            "Daniel Blair"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SKN",
+                  "0200"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "1123"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0109",
+          "instructors": [
+            "Daniel Blair"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SKN",
+                  "0200"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "1121"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "PHIL205",
+      "name": "Are Sports Ethical?",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHU",
+        "SCIS"
+      ],
+      "description": "Things happen routinely in sports that would seem morally unacceptable in other context: violence between the participants, attempts to trick the referee, fans hoping that some players would do embarrassingly badly, spectators feeling anger towards whole nations. Nonetheless, all of this may seem reasonable and even justifiable within a sporting context. This course will investigate the ethical structure of sports, and what it tells us about the ethics of everyday life. Philosophy will provide the primary disciplinary context, but we will also think about sociological, legal and anthropological perspectives on sports. Issues will include the nature of sportsmanship, what types of violence in sports are acceptable, drug use in sports, what it means to be a fan (for example, asking why loyalty to your team is valuable) and how our view of sports interacts with our view of nations. By the end of the course you should have gained familiarity with a variety of ethical concepts and a sensitivity to the ethical issues in sports. You should also find that by thinking about morality in the context of sports, you will look at larger ethical issues in new ways.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Harjit Bhogal"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "1120"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EDU",
+                  "1315"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Harjit Bhogal"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "1120"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "1220"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Harjit Bhogal"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "1120"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SKN",
+                  "1112"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "PHIL211",
+      "name": "AI &amp; ETHICS",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSSP"
+      ],
+      "description": "An introduction to a major subfield of contemporary Philosophy, namely applied ethics, and the experience of using some major tools in the practice of philosophy more generally, namely, the construction and formal evaluation of arguments, conceptual analysis, the use of thought experiments, and clear, direct and persuasive writing. Learning how to execute the latter will involve an intense iterative process. The substantive focus of the course will be the ethical evaluation of Artificial Intelligence (AI) in some of its current and potentially future incarnations. We'll examine algorithmic opacity, algorithmic bias and decision-making, autonomous weapons systems, human-robot interaction, and artificial moral agents, in order to uncover what, if any, ethical issues they give rise to.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Susan Dwyer"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "1120"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "HBK",
+                  "0125"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Susan Dwyer"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "1120"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "HBK",
+                  "0125"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Susan Dwyer"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "1120"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EDU",
+                  "2102"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "PHIL220",
+      "name": "Bioethics: Regulating Right and Wrong",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHU",
+        "DSSP"
+      ],
+      "description": "Bioethicists formulate ethical guidelines. They answer questions such as: When life-saving health resources are scarce, who should get them? Should we increase supply of one such resource, kidneys, by buying them from living \"donors\"? If drug trials in developing countries benefit patients who consent to participate, are the trials ethical, even if the same research would be forbidden in the US? If a sick person aims to hasten her death, how, if at all, might her doctor permissibly help her? In this course, students construct and defend ethical rules in four domains: research ethics, allocation of scarce resources, markets in organs, and physician-assisted dying.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Shen Pan"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      15,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "1105"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "PHIL236",
+      "name": "Philosophy of Religion",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHU"
+      ],
+      "description": "A philosophical study of some of the main problems of religious thought: the nature of religious experience, the justification of religious belief, the conflicting claims of religion and science, and the relation between religion and morality.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Cody Gomez"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "Tu": [
+                  [
+                    2,
+                    0,
+                    "Pm"
+                  ],
+                  [
+                    3,
+                    15,
+                    "Pm"
+                  ]
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "PHIL245",
+      "name": "Political and Social Philosophy I",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHU"
+      ],
+      "description": "A critical examination of such classical political theories as those of Plato, Hobbes, Locke, Rousseau, Mill, Marx, and such contemporary theories as those of Hayek, Rawls, and recent Marxist thinkers.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Antong Liu"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      20,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0310"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "1171"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Antong Liu"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      20,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0310"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "1222"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Antong Liu"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      20,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0310"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "0135"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "PHIL271",
+      "name": "Symbolic Logic",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "FSAR"
+      ],
+      "description": "This course provides students with a thorough treatment of the basic concepts and techniques of modern symbolic logic, through classical first-order logic with identity.  We will concentrate on the construction of natural deduction proofs and on the evaluation of logical statements in semantic models. Along the way, we will study some of the concepts from set theory (sets, functions, relations) used in the definition of semantic models for logical systems.  We may also introduce some alternative, or non-classical logics. Although the subject of symbolic logic was developed by mathematicians and philosophers for their own special purposes (which we will discuss), logical concepts and techniques have found applications in a variety of disciplines, including computer science, economics, law, linguistics, and psychology. We may also consider some of these applications.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Fabrizio Cariani"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "1123"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "PHIL309D",
+      "name": "Philosophical Problems; Philosophy of Negative Emotions",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Is anger simply a cognitive distortion we should eliminate from our minds? Is it better understood as a response to injustice, capable of motivating social change? Is shame a morally effective form of punishment? Is it rational for grief to diminish after a short time despite the persistence of loss? The course will examine answers to these and other questions about the philosophical nature of anger, shame, fear, anxiety,and grief. A theme of the course will be the good of these so-called negative emotions and the extent to which they are ethically and politically significant. Readings will draw on historical and contemporary philosophy as well as psychology and literary art.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Jeremiah Tillman"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "1123"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "PHIL318B",
+      "name": "Studies in Epistemology/Metaphysics; The Wisdom of Crowds",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "An investigation of how the ability to obtain knowledge can be enhanced or distorted by different kinds of social structures. We will look at classic work about how different kinds of interactions within groups create new ways of knowing or being deceived. We'll also look at recent work on the nature of disagreement, polarization, and the use of networks in scientific research.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Daniel Blair"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0221"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "PHIL320",
+      "name": "Knowing Oneself and Knowing the World: Early Modern Philosophy from Descartes to Kant",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHU"
+      ],
+      "description": "A study of major philosophical issues of the 16th, 17th, and 18th centuries through an examination of such philosophers as Descartes, Spinoza, Leibniz, Cavendish, Locke, Berkeley, Hume and Kant",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Benjamin Fan"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0201"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "PHIL360",
+      "name": "Philosophy of Language",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "The nature and function of language and other forms of symbolism from a philosophical perspective.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Alexander Williams"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "HBK",
+                  "0105"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "PHIL362",
+      "name": "Theory of Knowledge",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Some central topics in the theory of knowledge, such as perception, memory, knowledge, and belief, skepticism, other minds, truth, and the problems of induction.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Jonathan Kendrick"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "1201"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "PHIL366",
+      "name": "Philosophy of Mind",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "An introduction to core issues in the philosophy of mind, focusing especially on the basic metaphysical question of dualism versus physicalism.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Shen Pan"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0205"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "PHIL386",
+      "name": "Experiential Learning",
+      "credits": {
+        "Range": [
+          3,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "<div><div><div><strong>Restriction:</strong> Permission of ARHU-Philosophy department; and junior standing or higher.</div></div></div>",
+      "sections": null
+    },
+    {
+      "code": "PHIL408L",
+      "name": "Topics in Contemporary Philosophy; Philosophy of Childhood",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Elizabeth Schechter"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1113"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "PHIL408P",
+      "name": "Topics in Contemporary Philosophy; Philosophy of Psychiatry",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Elizabeth Schechter"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0207"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "PHIL408Q",
+      "name": "Topics in Contemporary Philosophy; Fairness",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Eric Pacuit"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1117"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "PHIL409J",
+      "name": "Advanced Studies in Contemporary Philosophy; Social Ontology",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Nicholas Laskowski"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "HBK",
+                  "1112"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "PHIL409X",
+      "name": "Advanced Studies in Contemporary Philosophy; Quantum Mechanics and Metaphysics",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "An introduction to the basic mathematics and concepts needed to see why quantum mechanics raises philosophical issues, and a discussion of some questions about quantum entanglement. A basic understanding of the issues calls for mathematics, though less than you might expect. There are no specific mathematical prerequisites, but a taste for abstraction will be essential. Ideally, students should be comfortable at least with the material in MATH107 (Mathematical modeling and probability).",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Allen Stairs"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0201"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "PHIL414",
+      "name": "The Philosophy of Aristotle",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "A critical study of selected portions of Aristotle's writings.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Rachel Singpurwalla"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0234"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "PHIL418B",
+      "name": "Topics in Epistemology/Metaphysics; Conditionals and Conditional Reasoning",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Paolo Santorio"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0205"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "PHIL428C",
+      "name": "Topics in the History of Philosophy; Confucius and Socrates",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Antong Liu"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "1117"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "PHIL446",
+      "name": "Law, Morality, and War",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "An exploration of fundamental moral and legal issues concerning war.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Zhaoqi Hu"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      15,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "1220"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "PHIL470",
+      "name": "Logical Theory II: Incompleteness and Undecidability",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Introduces the formal theory of computation, and then presents the the central limitative results of modern first-order logic: Church's undecidability theorem and Godel's first and second incompleteness theorems.  The primary focus of the course is a thorough technical study of these fundamental results, but we will also discuss some of the philosophical issues they raise. Further topics may include second-order logic.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Eric Pacuit"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "2120"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "PHIL498F",
+      "name": "Topical Investigations; Topical Investigation",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "Prerequisite:Two courses in philosophy or permission of the department.",
+      "sections": null
+    },
+    {
+      "code": "PHIL498G",
+      "name": "Topical Investigations; Topical Investigation",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "Prerequisite:Two courses in philosophy or permission of the department.",
+      "sections": null
+    },
+    {
+      "code": "PHIL640",
+      "name": "Value Theory",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "A basic course in value theory for beginning graduate students, covering  a number of topics in depth, to provide a springboard for further study  and research in the area.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Dan Moller"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SKN",
+                  "1116"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "PHIL788G",
+      "name": "Research in Philosophy; Research in Philosophy",
+      "credits": {
+        "Range": [
+          1,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "PHIL788I",
+      "name": "Research in Philosophy; Research in Philosophy",
+      "credits": {
+        "Range": [
+          1,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "PHIL799",
+      "name": "Master's Thesis Research; Masters Thesis Research",
+      "credits": {
+        "Range": [
+          1,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "PHIL808J",
+      "name": "Seminar in the Problems of Philosophy",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Harjit Bhogal"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      2,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SKN",
+                  "1116"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "PHIL808K",
+      "name": "Seminar in the Problems of Philosophy; Recent Work in the Philosophy of Language",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Paolo Santorio"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SKN",
+                  "1116"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "PHIL879",
+      "name": "Seminar in Philosophy and Cognitive Studies; Human Nature",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Peter Carruthers"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SKN",
+                  "1116"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "PHIL888",
+      "name": "Professional Mentoring for Doctoral Students",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "PHIL889",
+      "name": "Pedagogical Mentoring for Doctoral Students",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "PHIL898",
+      "name": "Pre-Candidacy Research",
+      "credits": {
+        "Range": [
+          1,
+          8
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "PHIL899",
+      "name": "Doctoral Dissertation Research; Doctoral Dissertation Research",
+      "credits": {
+        "Amount": 6
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    }
+  ]
+}

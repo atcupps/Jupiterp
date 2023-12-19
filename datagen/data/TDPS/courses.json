@@ -1,0 +1,373 @@
+{
+  "name": "TDPS",
+  "courses": [
+    {
+      "code": "TDPS201",
+      "name": "Introduction to Technical Production",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Students are provided with an overview of topics related to the technical production of theatre and dance including: scenic, prop and costume construction, lighting, sound and video execution and management structures.",
+      "sections": [
+        {
+          "sec_code": "5501",
+          "instructors": [
+            "Michael Driggers"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "1809"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TDPS408D",
+      "name": "Seminar in Theory and Practice of Critical Difference; Contemporary History of Black Performance: Theory &amp; Practice",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Ama Law"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "1815"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TDPS440",
+      "name": "Arts Leadership Seminar",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "An advanced seminar in arts leadership exposing students to the foundations of arts leadership in not-for-profit organizations as it intersects with current trends in technology, demographics, government policy, and the economy. In case studies based on examples drawn from local arts organizations, students will learn about audience engagement as well as institutional development terminology and best practices.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Kate Keeney"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "1815"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TDPS458K",
+      "name": "Special Topics in Advanced Performing Arts; Stock Motion Performances",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Cross-listed with THET669E and DANC689K.  Credit only granted for TDPS458K, THET669E, or DANCE689K. Student must pay a $25 lab fee.<br><br> Students will build a series of performance studies using Unity software and stock animation available on public motion libraries. Students will string together animations in various patterns and interactive systems, and design performance environments for them. Students will gain an understanding of motion that is assumed \"default,\" \"normal,\" and \"useful,\" and use their work to interrogate and challenge such assumptions and their social and political connotations. Then, students will try to recreate their digital action sequences in physical space, and re-translate them back into the virtual, building a new and improvednon-stock motionlibrary.\"",
+      "sections": [
+        {
+          "sec_code": "5501",
+          "instructors": [
+            "Kate Ladenheim"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "2727"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TDPS458P",
+      "name": "Special Topics in Advanced Performing Arts; Motion Capture for Mixed Reality Performance",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Prerequisites: A minimum grade of C- in IMDM290. Restriction: Permission of department. Cross-listed with DANC689Q and THET669Q. Credit only granted for TDPS458P, DANCE689Q, or THET669Q.<br><br> This class will introduce students to creative and technical application for motion capture. Using analog, inertial, optical, and AI systems, students will engage in collaborative projects that span digital and physical spaces. Students will also engage with the history of mocap development, as well as the aesthetics and ethics surrounding digital motion.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Kate Ladenheim"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "IRB",
+                  "0110"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TDPS469",
+      "name": "Advanced Practicum in Stage Management",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Jenn Schwartz"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TDPS479",
+      "name": "Production Practicum",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: TDPS201. Formerly THET479. A specified practical aspect of mounting a theatre or dance production with hands-on, laboratory experience.",
+      "sections": [
+        {
+          "sec_code": "1001",
+          "instructors": [
+            "Andrew Cissna"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "1002",
+          "instructors": [
+            "Andrew Cissna"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "1003",
+          "instructors": [
+            "Andrew Cissna"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "1004",
+          "instructors": [
+            "Andrew Cissna"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "1005",
+          "instructors": [
+            "Andrew Cissna"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "1006",
+          "instructors": [
+            "Andrew Cissna"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "1007",
+          "instructors": [
+            "Andrew Cissna"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "2001",
+          "instructors": [
+            "Andrew Cissna"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "2002",
+          "instructors": [
+            "Andrew Cissna"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "2003",
+          "instructors": [
+            "Andrew Cissna"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "2004",
+          "instructors": [
+            "Andrew Cissna"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "2005",
+          "instructors": [
+            "Andrew Cissna"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "2006",
+          "instructors": [
+            "Andrew Cissna"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "3001",
+          "instructors": [
+            "Andrew Cissna"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    }
+  ]
+}

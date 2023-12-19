@@ -1,0 +1,2521 @@
+{
+  "name": "THET",
+  "courses": [
+    {
+      "code": "THET110",
+      "name": "Introduction to the Theatre",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHU"
+      ],
+      "description": "In the age of pop music and blockbuster films, of memes and viral videos, we often forget that theatre was one of the original forms of popular entertainment.   We will focus on theatre practitioners including actors, directors, designers and backstage personnel to understand how theatre is produced.  We will also consider popular entertainment in Europe and America, with a particular focus on musical theatre and Broadway to explore how theatre communicates, resonates, and remains relevant to all audiences.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Kristopher Pourzal"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "MWF": [
+                  [
+                    11,
+                    0,
+                    "Am"
+                  ],
+                  [
+                    11,
+                    50,
+                    "Am"
+                  ]
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Caitlin Woods"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EGR",
+                  "2154"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Yasmin Eubanks"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "1121"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0104",
+          "instructors": [
+            "James Sivert"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "1103"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0105",
+          "instructors": [
+            "Patrick Saunders"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "2120"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0106",
+          "instructors": [
+            "Margaret Lapinski"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "1103"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0107",
+          "instructors": [
+            "Eran Eads"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "1101"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0108",
+          "instructors": [
+            "Matre Grant"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "2120"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "THET116",
+      "name": "Fundamentals of Theatrical Design",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Examines theatre as an environmental art that is realized through collaboration between set, costume, and lighting designers.",
+      "sections": [
+        {
+          "sec_code": "5501",
+          "instructors": [
+            "Jerran Kowalski",
+            "Cody Von Ruden",
+            "Luis Garcia"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      1,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      20,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "2733"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "THET120",
+      "name": "Introduction to Acting",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Through scene study, exercises, and improvisation, an appreciation is developed for the working habits of actors, which will aid them in rehearsal as well as performance.",
+      "sections": [
+        {
+          "sec_code": "5501",
+          "instructors": [
+            "Scot Reese"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "2740"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "THET222",
+      "name": "Foundations of Acting and Performance",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Students will become familiar with the tools and process of acting through the discipline of acting exercises, analyzing character and performing. Students will research various theatre artists that have contributed  to the  acting process. Through monologue and scene work students will learn listening skills, communicative, collaborative and embodiment skills and will learn how to use the self in the imaginative process and research. And, most importantly, students will learn creative process through practice.",
+      "sections": [
+        {
+          "sec_code": "5501",
+          "instructors": [
+            "Jennifer  Newsham"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "3730"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "THET223",
+      "name": "Text and Context in Western Theatre",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Introduction to the analysis and critique of the play script.  Students will have the opportunity to read, analyze, and interpret western dramatic literature from a range of periods and styles.  Texts are analyzed from a variety of theatrical analytical perspectives, with an eye towards choices theatre artists must make in the creation of a theatrical production.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Melissa Sturges"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "1809"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "THET251",
+      "name": "Broadway Mashup: Remixing America Through Musical Theater",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHU",
+        "DVUP",
+        "SCIS"
+      ],
+      "description": "Interrogate musical theater's political history, investigating how this uniquely American genre uses narrative, song, and dance to weave critical differences across race, ethnicity, immigration status, religion, gender, sexuality, and ability into our national fabric.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Caitlin Marshall"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "1809"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Amber Daniels"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "1809"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "THET274",
+      "name": "Introduction to Stage Management",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Familiarization with the techniques and skills required of a Stage Manager in a theatrical production, including organization, production meetings, rehearsals, tech and running a show. The outcome at the conclusion of the course is the ability to function as an Assistant Stage Manager in a supervised situation.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Jenn Schwartz"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      1,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "1924"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "THET285",
+      "name": "The Art of Communication and Presentation",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "FSOC"
+      ],
+      "description": "An introduction to the fundamental practice and theory of public speaking and oral communication using theatrical techniques of both performance and the craft of storytelling.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Ronya Anderson"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      20,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "3736"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Robert Smith"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "3732"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Robert Smith"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "3732"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "THET287",
+      "name": "Subversive Cultures and Performance",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS",
+        "SCIS"
+      ],
+      "description": "Every society has rebels - those who refuse to conform to the mainstream's rigid rules, aesthetics, and beliefs. From unruly skateboarders, punk rockers, bohemian poets, and radical theater performers, to national revolutionary movements and brick-throwing anarchists - such groups form niches that are defined by their exclusion from society. We will look at how their beliefs and actions fit into a particular historical context, and how their actions drive social change.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Van Tran Nguyen"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "HBK",
+                  "1112"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Van Tran Nguyen"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      1,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "HBK",
+                  "1112"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "THET294",
+      "name": "Black Theatre and Performance II",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHU",
+        "DVUP"
+      ],
+      "description": "Thematic and historical survey of African-American drama from the 1960s to the present. Emphasis on sociopolitical context, thematic thrust, issues, styles, the aesthetic reflected in the work, impact on African-American and general theatre audiences.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Fatima Quander"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "1809"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "THET310",
+      "name": "Voice for the Actor I",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Freeing the natural voice. In-depth experience of connection of actor's voice to thought, impulse and emotion. Tools for releasing tension, increasing resonance and range, and refining articulation will be explored.",
+      "sections": [
+        {
+          "sec_code": "5501",
+          "instructors": [
+            "Lisa Nathans"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "3732"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "THET328L",
+      "name": "Special Topics in Intermediate Theatre and Performance; Acting for Digital and Live Performance",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Students must pay a $25 lab fee.",
+      "sections": [
+        {
+          "sec_code": "5501",
+          "instructors": [
+            "Fatima Quander"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "3736"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "THET328N",
+      "name": "Special Topics in Intermediate Theatre and Performance; Movement Techniques for Actors",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Students must pay a $25 lab fee.",
+      "sections": [
+        {
+          "sec_code": "5501",
+          "instructors": [
+            "Adriane Fang"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "3736"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "THET363",
+      "name": "The Business of the Business",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "An in depth study of the business of working in the theatre. Explores early career opportunities and entry-level positions in the entertainment industry.  Analyzes publicity, management, union, casting, and agency practices; how they apply to you and your career in the non-profit and commercial theatre.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Fatima Quander"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "1809"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "THET377",
+      "name": "Lighting Design for Performance",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "A study of the theories of electrification, instruments, design, color, and control for the stage. Practical work on productions.",
+      "sections": [
+        {
+          "sec_code": "5501",
+          "instructors": [
+            "Michael Riggs"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "3731"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "THET380",
+      "name": "Sound Design",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Theatre Sound Design is a first course in designing sound for stage productions.",
+      "sections": [
+        {
+          "sec_code": "5501",
+          "instructors": [
+            "Samuel Crawford"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "2727"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "THET383",
+      "name": "Costume Design I",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Basic principles of theatre costume design and introduction to rendering skills. Emphasis on development of design conception, unity, character statement, basic clothing design and period style adaptation.",
+      "sections": [
+        {
+          "sec_code": "5501",
+          "instructors": [
+            "Rebecca Janney"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      1,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      20,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "2755"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "THET385",
+      "name": "Media Design",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Focuses on learning the grammar and conceptual thinking behind multimedia design for live performance.  Students will learn how our new multimedia tools can enhance the sense of liveness as well as explore the different ways in which technology can be implemented into preproduction thinking, rehearsal experimenting, and ultimately, effective use in performance.",
+      "sections": [
+        {
+          "sec_code": "5501",
+          "instructors": [
+            "Jared Mezzocchi",
+            "Kate Ladenheim"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "2727"
+                ]
+              }
+            },
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "THET386",
+      "name": "Experiential Learning",
+      "credits": {
+        "Range": [
+          3,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "<div><div><div><strong>Restriction:</strong> Junior standing or higher; and permission of ARHU-School of Theatre, Dance &amp; Performance Studies department.</div></div></div>",
+      "sections": [
+        {
+          "sec_code": "0401",
+          "instructors": [
+            "Scot Reese"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0801",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "2002",
+          "instructors": [
+            "KenYatta Rogers"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "2003",
+          "instructors": [
+            "Jenn Schwartz"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "THET391",
+      "name": "Theatre History II",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "The history of Western theatre from the mid seventeenth century to the early twentieth century, with emphasis on plays and playwrights, architecture and decor, acting and costuming, and significant personalities. Includes explorations of interrelationships between Western theatre and the theatre of other cultures.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Caitlin Marshall"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "1809"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "THET408O",
+      "name": "Seminar: Theory and Performance Studies; Techno Orientalism:Race, Technology, and Performance",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Techno-Orientalism is in collaboration with course JAPN447: Technologies of Japanese Performance. The course aims to weave theory, history, and practice-based creative research together to give students a holistic understanding of performance within the framework of Global Asias. To begin, we will contextualize what is considered to be Global Asias, including diasporas, and its formation through recent history. From thiscenter, wewill utilize case studies of traditional theatre as well as the transformations these stories take on with the introduction of new media. With digital media production and an introduction to other emergent media methodologies at the core of the practice component, students will have the opportunity to create an adaptation of their own from our historicized source material. As a result, students will get a holistic perspective of the racial formation and identities within Global Asias, read and write their own adaptations based on the stories sourced from East Asia, and produce a short teleplay based on their collaborative creative research.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Van Tran Nguyen"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "1815"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "THET408T",
+      "name": "Seminar: Theory and Performance Studies; Theatre in the 1960s",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "James Harding"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "1815"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "THET425",
+      "name": "Actor's Process II",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "A deeper exploration of the work begun in THET325. A continuation of creating a personal process through which the actor can confidently approach any genre of play. Special focus on status and subtext and the world of the playwright.",
+      "sections": [
+        {
+          "sec_code": "5501",
+          "instructors": [
+            "KenYatta Rogers"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "3736"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "THET428B",
+      "name": "Special Topics in Advanced Theatre and Performance; Project Based Learning",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "5501",
+          "instructors": [
+            "Alvin Mayes",
+            "Scot Reese"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "1912"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "THET429",
+      "name": "Actor's Studio",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0301",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0401",
+          "instructors": [
+            "Scot Reese"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0501",
+          "instructors": [
+            "Fatima Quander"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0601",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0701",
+          "instructors": [
+            "Jennifer  Newsham"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0801",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0901",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "1301",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "1501",
+          "instructors": [
+            "Lisa Nathans"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "1601",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "2001",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "2002",
+          "instructors": [
+            "KenYatta Rogers"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "2007",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "THET440",
+      "name": "Advanced Playwriting",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Ensemble-based writer's workshop. It is the second part of a two-course sequence and is designed for students who already have a foundation in the basics of playwriting or who are other wise well-versed in the art of theatre and dramatic structure. Through exploratory writing sequences, the reading of full-length plays, and in-class readings of work-in-progress, students will continue to deepen their craft and develop the script for a new full-length play.",
+      "sections": [
+        {
+          "sec_code": "5501",
+          "instructors": [
+            "Jennifer  Newsham"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "1815"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "THET452",
+      "name": "Musical Theatre Workshop II",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Development of the ability to move, act and express through the media of lyric and music from the integrated musicals of the 1960s through the development of concert and rock/pop musicals.",
+      "sections": [
+        {
+          "sec_code": "5501",
+          "instructors": [
+            "Lisa Nathans"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      1,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      20,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "2740"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "THET471",
+      "name": "Design Studio in Scenery",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Advanced study of scenic design for the theatre. Particular design projects will vary.",
+      "sections": [
+        {
+          "sec_code": "5501",
+          "instructors": [
+            "Misha Kachman"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "2733"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "THET477",
+      "name": "Design Studio in Lighting",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Designed for students who have successfully completed THET377 and wish to further develop their lighting design skills. Emphasis is on theoretical design of productions and realized light lab projects. Particular design projects will vary.",
+      "sections": [
+        {
+          "sec_code": "5501",
+          "instructors": [
+            "Andrew Cissna",
+            "Amith Chandrashaker"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "3731"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "THET480",
+      "name": "Advanced Sound Design",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Students will dive deeper into the technical elements of sound design, developing a working understanding of both software editing tools as well as the primary components of a live sound system.",
+      "sections": [
+        {
+          "sec_code": "5501",
+          "instructors": [
+            "Samuel Crawford"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      1,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      20,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "2727"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "THET489L",
+      "name": "Special Topics in Theatre History from 1800 to Present; LGBTQ Theatre",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Carla Della Gatta"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "1815"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "THET489T",
+      "name": "Special Topics in Theatre History from 1800 to Present; Latinx Theatre and Performance",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Carla Della Gatta"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "1815"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "THET499",
+      "name": "Independent Study",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "THET608O",
+      "name": "Seminar: Theory and Performance Studies; Techno Orientalism: Race, Technology, and Performance",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Techno-Orientalism is in collaboration with course JAPN447: Technologies of Japanese Performance. The course aims to weave theory, history, and practice-based creative research together to give students a holistic understanding of performance within the framework of Global Asias. To begin, we will contextualize what is considered to be Global Asias, including diasporas, and its formation through recent history. From this center, we will utilize case studies of traditional theatre as well as the transformations these stories take on with the introduction of new media. With digital media production and an introduction to other emergent media methodologies at the core of the practice component, students will have the opportunity to create an adaptation of their own from our historicized source material. As a result, students will get a holistic perspective of the racial formation and identities within Global Asias, read and write their own adaptations based on the stories sourced from East Asia, and produce a short teleplay based on their collaborative creative research.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Van Tran Nguyen"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "1815"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "THET608T",
+      "name": "Seminar: Theory and Performance Studies; Introduction to Archives and Digital Curation",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "01",
+          "instructors": [
+            "Eric Hung"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "Th": [
+                  [
+                    10,
+                    0,
+                    "Am"
+                  ],
+                  [
+                    12,
+                    45,
+                    "Pm"
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "THET608U",
+      "name": "Seminar: Theory and Performance Studies; Theatre in the 1960's",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "James Harding"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "1815"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "THET632",
+      "name": "Playwriting",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Lessons in playwriting, including character, plot, dramatic structure, dialogue, exposition, setting, and creating theatrical images.",
+      "sections": [
+        {
+          "sec_code": "5501",
+          "instructors": [
+            "Jennifer  Newsham"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "1815"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "THET639",
+      "name": "Graduate Design Studio - Scenery",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Students must pay a $25 lab fee.",
+      "sections": [
+        {
+          "sec_code": "5501",
+          "instructors": [
+            "Misha Kachman"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "2733"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "THET649",
+      "name": "Graduate Design Studio - Costume",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "For first year costume design students and other MFA students. Students must pay a $25 lab fee.",
+      "sections": [
+        {
+          "sec_code": "5501",
+          "instructors": [
+            "Helen Huang"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      1,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      20,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "2755"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "THET659",
+      "name": "Graduate Design Studio - Lighting",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "For first year lighting design students and other MFA students. Students must pay a $25 lab fee.",
+      "sections": [
+        {
+          "sec_code": "5501",
+          "instructors": [
+            "Amith Chandrashaker"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "3731"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "THET669",
+      "name": "Independent Study",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "THET669E",
+      "name": "Independent Study; Stock Motion Performances",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Cross-listed with THET669E and DANC689K.  Credit only granted for TDPS458K, THET669E, or DANCE689K. Student must pay a $25 lab fee.<br><br> Students will build a series of performance studies using Unity software and stock animation available on public motion libraries. Students will string together animations in various patterns and interactive systems, and design performance environments for them. Students will gain an understanding of motion that is assumed \"default,\" \"normal,\" and \"useful,\" and use their work to interrogate and challenge such assumptions and their social and political connotations. Then, students will try to recreate their digital action sequences in physical space, and re-translate them back into the virtual, building a new and improvednon-stock motionlibrary.\"",
+      "sections": [
+        {
+          "sec_code": "5501",
+          "instructors": [
+            "Kate Ladenheim"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "2727"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "THET669L",
+      "name": "Independent Study; Graduate Design Studio-Lighting III",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "5501",
+          "instructors": [
+            "Amith Chandrashaker"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "3731"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "THET669P",
+      "name": "Independent Study; Graduate Costume Construction",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      20,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "3749"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "THET672",
+      "name": "Scenography",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "An advanced  design studio which takes a comprehensive approach to design spanning across lines between specific disciplines and explores Scenography as an art form. Students are expected to concentrate in their primary design area while simultaneously conceiving, coordinating and developing other scenographic elements.",
+      "sections": [
+        {
+          "sec_code": "5501",
+          "instructors": [
+            "Misha Kachman"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "2755"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "THET678",
+      "name": "Collaborative Design &amp; Production for Performance",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Students must pay a $25 lab fee",
+      "sections": [
+        {
+          "sec_code": "5501",
+          "instructors": [
+            "Misha Kachman"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "2733"
+                ]
+              }
+            },
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "THET679",
+      "name": "Graduate Design Studio - Multimedia Design",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Students must pa a $25 lab fee.",
+      "sections": [
+        {
+          "sec_code": "5501",
+          "instructors": [
+            "Jared Mezzocchi"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "3730"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "THET698L",
+      "name": "Seminar: Theatre History; LGBTQ Theatre",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Carla Della Gatta"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "1815"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "THET698T",
+      "name": "Seminar: Theatre History; Latinx Theatre and Performance",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Carla Della Gatta"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "1815"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "THET788",
+      "name": "Design for Live Performance Tutorial",
+      "credits": {
+        "Range": [
+          1,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "THET789",
+      "name": "Theatre Design Process and Production",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "THET799",
+      "name": "MFA Theatre Design Thesis",
+      "credits": {
+        "Range": [
+          1,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "THET888",
+      "name": "Doctoral Practicum in Theatre",
+      "credits": {
+        "Range": [
+          1,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "THET889",
+      "name": "Doctoral Tutorial in Theatre",
+      "credits": {
+        "Range": [
+          1,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "THET898",
+      "name": "Pre-Candidacy Research",
+      "credits": {
+        "Range": [
+          1,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "THET899",
+      "name": "Doctoral Dissertation Research",
+      "credits": {
+        "Range": [
+          1,
+          10
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    }
+  ]
+}

@@ -1,0 +1,535 @@
+{
+  "name": "UMEI",
+  "courses": [
+    {
+      "code": "UMEI003",
+      "name": "English as a Foreign Language: Intermediate II",
+      "credits": {
+        "Amount": 12
+      },
+      "gen_eds": null,
+      "description": "Intensive course for the non-native speaker of English who has mastered the essential structures of English grammar. Emphasis on improving communicative skills for a wide range of linguistic situations, on rapid expansion of vocabulary, and on improving reading comprehension and basic writing skills. Special fee required for this course. This course does not carry credit towards any degree at the University and does not count in the retention plan.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Marilena Draganescu",
+            "Heather Mehrtens"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "UMEI005",
+      "name": "Advanced English as a Foreign Language",
+      "credits": {
+        "Amount": 6
+      },
+      "gen_eds": null,
+      "description": "Semi-intensive course for the nearly proficient non-native speaker of English needing additional language instruction prior to undertaking full-time academic study. Speaking and listening skills; improvement of reading speed and comprehension; and development of writing skills. Special fee required for this course. This course does not carry credit towards any degree at the University and does not count in the retention plan.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Charles Duquette"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MTuThF": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ARC",
+                  "1123"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Charles Duquette"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MTuThF": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "1222"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "UMEI006",
+      "name": "English Pronunciation",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": null,
+      "description": "Individualized class for the non-native speaker of English. Diagnosis of individual pronunciation problems. Practice in the correct pronunciation of English sounds and improvement of ability to speak English with proper stress and intonation patterns. Special fee required for this course. This course does not carry credit towards any degree at the University and does not count in the retention plan.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Raymond Smith"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "1106"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "UMEI007",
+      "name": "Advanced Writing for International Students",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "A writing skills course for the non-native speaker of English with a good command of spoken English. This course does not carry credit towards any degree at the University and does not count in the retention plan.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Heather Mehrtens"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EDU",
+                  "2101"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Louise Godley"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EDU",
+                  "2101"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0501",
+          "instructors": [
+            "Cornell Brellenthin"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        },
+        {
+          "sec_code": "0601",
+          "instructors": [
+            "Heather Mehrtens"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ARC",
+                  "1125"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0701",
+          "instructors": [
+            "Cornell Brellenthin"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        },
+        {
+          "sec_code": "0801",
+          "instructors": [
+            "Louise Godley"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EDU",
+                  "2102"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "UMEI012",
+      "name": "Integrated English: Intermediate",
+      "credits": {
+        "Range": [
+          5,
+          10
+        ]
+      },
+      "gen_eds": null,
+      "description": "English as a Second Language course for students at the intermediate level.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MTuWTh": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "2113"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "UMEI013",
+      "name": "Integrated English: Advanced",
+      "credits": {
+        "Range": [
+          5,
+          10
+        ]
+      },
+      "gen_eds": null,
+      "description": "English as a Second Language for students at the advanced level.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MTuWTh": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "1410"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "UMEI028A",
+      "name": "Special Topics in English as a Second Language",
+      "credits": {
+        "Range": [
+          1,
+          2
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      1,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "1111"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "1125"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

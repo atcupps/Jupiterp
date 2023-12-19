@@ -1,0 +1,87 @@
+{
+  "name": "WEID",
+  "courses": [
+    {
+      "code": "WEID139N",
+      "name": "Navigating Social Identity Difference through Intergroup Dialogue; Race, Gender, or Sexuality",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": [
+        "DVCC"
+      ],
+      "description": "Formerly: CHSE338N.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Sarah Scriven",
+            "Jazmin Pichardo"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      5,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "WEID139T",
+      "name": "Navigating Social Identity Difference through Intergroup Dialogue; Race, Gender, or Citizenship",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": [
+        "DVCC"
+      ],
+      "description": "Formerly: CHSE338T.",
+      "sections": [
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Sarah Scriven",
+            "Jazmin Pichardo"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      5,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

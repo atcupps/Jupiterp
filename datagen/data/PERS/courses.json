@@ -1,0 +1,585 @@
+{
+  "name": "PERS",
+  "courses": [
+    {
+      "code": "PERS102",
+      "name": "Elementary Persian II",
+      "credits": {
+        "Amount": 4
+      },
+      "gen_eds": null,
+      "description": "Continuation of PERS101 with emphasis on the use of formal language, vocabulary building, and reading.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Bahareh Jalehmahmoudi"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "HJP",
+                  "2114"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "PERS202",
+      "name": "Intermediate Persian II",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Further development of speaking, writing, listening and cultural knowledge, with special focus on culture.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Bahareh Jalehmahmoudi"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "HJP",
+                  "2114"
+                ]
+              }
+            },
+            {
+              "OnlineSync": {
+                "F": [
+                  [
+                    11,
+                    0,
+                    "Am"
+                  ],
+                  [
+                    11,
+                    50,
+                    "Am"
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "PERS251",
+      "name": "Modern Iran",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS"
+      ],
+      "description": "General sociopolitical introduction to modern Iran from establishment of the Qajar dynasty in the late 18th century to the present day. Taught in English.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Marjan Moosavi"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "MTH",
+                  "0306"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "PERS302",
+      "name": "Advanced Persian II",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Further development of speaking, reading, writing, listening and cultural knowledge, with special focus on reading, in a variety of literary genres.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Nahal Akbari-Saneh"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "HJP",
+                  "2114"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "PERS312",
+      "name": "Contemporary Iranian Culture",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Study of the culture of contemporary Iran (post-evolution) with focus on the contemporary social, political, literary and artistic life in Iran. Taught in Persian.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Manizhe Galledari"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "HJP",
+                  "2114"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "PERS385",
+      "name": "Theatre and Dance in Iran and Afghanistan",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHU"
+      ],
+      "description": "Students will learn about stories, plays, and movements in Iran and Afghanistan from past to present. Through watching performances, readings, and discussions, we explore the relationship between storytelling, body, space, and power in forming and performing identity and life experiences. Looking at case studies from traditional, popular, and western style dance and theater are an exciting part of the course. Note: This course requires no prior knowledge of Persian culture or dance and theatre studies on the part of the students.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Marjan Moosavi"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "1224"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "PERS386",
+      "name": "Experiential Learning",
+      "credits": {
+        "Range": [
+          3,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "Pre-professional experience in research, analysis and writing in a work setting. Project proposal approved by faculty and internship sponsor.",
+      "sections": null
+    },
+    {
+      "code": "PERS399",
+      "name": "Directed Study in Persian",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "PERS498A",
+      "name": "Special Topics in Persian Studies; Advanced Literacy Skills in Persian",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Taught in Persian.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Manizhe Galledari"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "HJP",
+                  "3115"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "PERS498D",
+      "name": "Special Topics in Persian Studies; Political, Economic, and Social Thought in Today's Iran",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Taught in Persian.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Ali Abasi"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "HJP",
+                  "3115"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "PERS498E",
+      "name": "Special Topics in Persian Studies; Translation of Contemporary Persian Texts",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Taught in Persian.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Manizhe Galledari"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "HJP",
+                  "3115"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "PERS498G",
+      "name": "Special Topics in Persian Studies; Masterpieces of Modern Persian Literature",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "The genesis of Iran s first generation of Modern writers was one of the main consequences of Iran s Constitutional Revolution (1905-1907), and the effect of publication of numerous newspapers and journals. Being acquainted with modern literary techniques, modern approaches and attitudes in prose and poetry created a fertile ground for flourishing of the most notable writers and poets with social and political concernsin Iran. The Course will cast a light on some of the most renowned Persian contemporary writers and poets. The assessment of the works, careers andstyles of several writers and poets in modern Persian literature is the main objective of this class. Also, it aims to develop student's abilities to research and present oral and written works effectively andimprove their analytical skills and interactive capacities.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Mohammad Bazargan"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "1123"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "PERS498M",
+      "name": "Special Topics in Persian Studies; Sex, Gender, and Sexuality in the Islamic World",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Cross-listed with CMLT679D, HIST419C, PERS689M, RELS429B, WGSS498D, and WGSS698D. Credit granted for CMLT679D, HIST419C, PERS498M, PERS689M, RELS429B, WGSS498D, or WGSS698D.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Matthew Miller"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "1123"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "PERS498P",
+      "name": "Special Topics in Persian Studies; Performing Arts of Iran",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Taught in Persian.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Marjan Moosavi"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "HJP",
+                  "3115"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "PERS689M",
+      "name": "Special Topics in Persian Studies; Sex, Gender, and Sexuality in the Islamic World",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Cross-listed with CMLT679D, HIST419C, PERS498M, RELS429B, WGSS498D, and WGSS698D. Credit granted for CMLT679D, HIST419C, PERS498M, PERS689M, RELS429B, WGSS498D, or WGSS698D.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Matthew Miller"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "1123"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

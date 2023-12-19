@@ -1,0 +1,773 @@
+{
+  "name": "URSP",
+  "courses": [
+    {
+      "code": "URSP372",
+      "name": "Diversity and the City",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DVUP"
+      ],
+      "description": "Exploration of the different needs of diverse economic, racial/ethnic, and gender groups that live and work in cities, the historical background of differences, the impact of societal structures and group cultures, and how public and private policies do and can affect different groups.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Priscila Alves"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "1222"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "URSP399I",
+      "name": "Independent Study",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "URSP600",
+      "name": "Research Design and Application",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Techniques in urban research, policy analysis, and planning. Survey of descriptive and normative models. Objective and subjective measurements. Emphasis on assumptions of research.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Marccus Hendricks"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ARC",
+                  "1127"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "URSP601",
+      "name": "Research Methods",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Use of measurement, statistics, quantitative analysis, and micro-computers in urban studies and planning.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Chengri Ding"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ARC",
+                  "1125"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "URSP604",
+      "name": "The Planning Process",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Legal framework for U.S. planning; approaches to the planning process; tools and technology; systems thinking; defining problems and issues; soliciting goals and values; developing and making good presentations; public participation; developing and evaluating alternatives and scenarios; plan evaluation; developing RFPs.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Ariel Bierbaum"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      1,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ARC",
+                  "1119"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "URSP606",
+      "name": "Planning Economics",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Resource allocation in a market economy, the nature of market failures, and the justifications for public sector intervention. The limits and possibilities for planning in a market economy.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Chengri Ding"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ARC",
+                  "1119"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "URSP631",
+      "name": "Transportation and Land Use",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "The interrelationship between transportation and land use. What are the impacts of various transportation modes on land use patterns, and how can land use solutions influence travel demand. The integration of transportation into master planning and site impact analysis. Using quantitative methods to understand the land use and transportation linkage.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Hiroyuki Iseki"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ARC",
+                  "1119"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "URSP640",
+      "name": "Growth Management and Environmental Planning",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Topics associated with growth management, defined as policies and strategies by which governments attempted to control the amount, location, pace, pattern and quality of development within their jurisdictions.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Casey Dawkins"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "B0320"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "URSP673",
+      "name": "Community Development",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Examines and identifies planning approaches and methods that can help communities - particularly low income communities - become stronger, more cohesive, and more capable of serving their interests.  Examines urban poverty; urban politics; history, concepts and practice of community development; and community development approaches and methods.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      9,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ARC",
+                  "1105"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "URSP688J",
+      "name": "Recent Developments in Urban Studies; Economics for a Just and Sustainable World",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Students will interrogate alternatives to market-centric perspectives to gain an appreciation of, and contribute to, the rich history of economic thinking to support equitable and sustainable cities. They will analyze ongoing projects in the DMV and make proposals for their improvement. This course incorporates real-world precedents from across the globe, which demonstrate the potential for progressive economics in practice.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Jordan Ayala",
+            "Clara Irazabal Zurita"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "M": [
+                  [
+                    4,
+                    0,
+                    "Pm"
+                  ],
+                  [
+                    6,
+                    40,
+                    "Pm"
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "URSP688M",
+      "name": "Recent Developments in Urban Studies; Intermediate Geographic Information Systems",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Andrew Bernish"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "Tu": [
+                  [
+                    7,
+                    0,
+                    "Pm"
+                  ],
+                  [
+                    9,
+                    45,
+                    "Pm"
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "URSP688O",
+      "name": "Recent Developments in Urban Studies; US Housing Policy &amp; Planning",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Casey Dawkins"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ARC",
+                  "1119"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "URSP688P",
+      "name": "Recent Developments in Urban Studies; Creative Placemaking and Placekeeping",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      9,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ARC",
+                  "1119"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "URSP688Y",
+      "name": "Recent Developments in Urban Studies; Smart Cities and Urban Data Science",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Cross-listed with URSP688Y. Credit granted for URSP688Y or INST728G.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Chester Harvey"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      9,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ARC",
+                  "1105"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "URSP708",
+      "name": "Community Planning Studio; Community Planning Studio",
+      "credits": {
+        "Amount": 6
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Nicholas Finio",
+            "Kathryn Howell"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PKT",
+                  "1112V"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "URSP709",
+      "name": "Field Instruction",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Prerequistes: URSP600, URSP604, URSP605 or permission of the department.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Casey Dawkins"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "1001",
+          "instructors": [
+            "Gerrit Knaap"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        },
+        {
+          "sec_code": "1201",
+          "instructors": [
+            "Chengri Ding"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        },
+        {
+          "sec_code": "1401",
+          "instructors": [
+            "Marccus Hendricks"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        },
+        {
+          "sec_code": "1501",
+          "instructors": [
+            "Ariel Bierbaum"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        },
+        {
+          "sec_code": "1601",
+          "instructors": [
+            "Hiroyuki Iseki"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        },
+        {
+          "sec_code": "1701",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        },
+        {
+          "sec_code": "2103",
+          "instructors": [
+            "Willow Lung Amam"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        },
+        {
+          "sec_code": "2107",
+          "instructors": [
+            "Clara Irazabal Zurita"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "URSP788",
+      "name": "Independent Study in Urban Studies and Planning",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "URSP798",
+      "name": "Readings in Urban Studies and Planning",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "URSP799",
+      "name": "Master's Thesis Research",
+      "credits": {
+        "Range": [
+          1,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "URSP805",
+      "name": "Seminar in Research Design",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Addresses fundamental aspects of research desing for Ph.D students in urban planning and policy-related fields. Topics include principles of research design, formulating a feasible hypothesis and identifying appropriate methodology for testing hypotheses eg. qualitative methods, quantitative methods, survey research. Writing of proposals and dissertation. Publication, presentation, and funding.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Ariel Bierbaum"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "URSP898",
+      "name": "Pre-Candidacy Research",
+      "credits": {
+        "Range": [
+          1,
+          8
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "URSP899",
+      "name": "Doctoral Dissertation Research",
+      "credits": {
+        "Amount": 6
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    }
+  ]
+}

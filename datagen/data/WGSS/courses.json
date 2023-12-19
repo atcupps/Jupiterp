@@ -1,0 +1,2103 @@
+{
+  "name": "WGSS",
+  "courses": [
+    {
+      "code": "WGSS115",
+      "name": "Gender, Race and Computing",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSSP",
+        "DVUP"
+      ],
+      "description": "Race and gender have shaped computing from its earliest histories to contemporary debates over bias in search algorithms, surveillance, and AI. As computational processes shape ever more dimensions of everyday life from the personal to the global scale, understanding how they operate and how power operates within them grows ever more important. Combating racism and sexism is not as simple as ensuring the pool of programmers and engineers is more diverse; structures of power are embedded in digital technologies as they are in all aspects of our society, and we must learn to perceive their operation if we hope to transform them. We will examine how racism and sexism operate in the field of computer science and in everyday uses of digital technologies, while studying how feminist and racial justice movements have created alternative approaches. This class is for anyone who wishes to better understand the relationships between digital technology, structural power, and social justice.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Alexis Lothian",
+            "Jennifer Manly"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "IRB",
+                  "2207"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "IRB",
+                  "2207"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Alexis Lothian",
+            "Jennifer Manly"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "IRB",
+                  "2207"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "IRB",
+                  "2207"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "WGSS200",
+      "name": "Introduction to WGSS: Gender, Power, and Society",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS",
+        "DVUP"
+      ],
+      "description": "Examines constructions of race, class, sexuality, ability, and gender relations from a social science multi-disciplinary perspective. The course interrogates the ways that systems of hierarchy and privilege are created, enforced, and intersect through the language of race, class, sexuality, and national belonging. The course will provide students with the skills to examine how systems of power manifest in areas such as poverty, division of labor, health disparities, policing, violence. In addition to examining the impact of systems of power, students will reflect on their own location within the exercise of racialized, and gendered power relations.  This course encourages students to understand and critique these systems both personally and politically.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Neel Ahuja"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "MW": [
+                  [
+                    10,
+                    0,
+                    "Am"
+                  ],
+                  [
+                    10,
+                    50,
+                    "Am"
+                  ]
+                ]
+              }
+            },
+            {
+              "OnlineSync": {
+                "F": [
+                  [
+                    10,
+                    0,
+                    "Am"
+                  ],
+                  [
+                    10,
+                    50,
+                    "Am"
+                  ]
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Neel Ahuja"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "MW": [
+                  [
+                    10,
+                    0,
+                    "Am"
+                  ],
+                  [
+                    10,
+                    50,
+                    "Am"
+                  ]
+                ]
+              }
+            },
+            {
+              "OnlineSync": {
+                "F": [
+                  [
+                    11,
+                    0,
+                    "Am"
+                  ],
+                  [
+                    11,
+                    50,
+                    "Am"
+                  ]
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Neel Ahuja"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "MW": [
+                  [
+                    10,
+                    0,
+                    "Am"
+                  ],
+                  [
+                    10,
+                    50,
+                    "Am"
+                  ]
+                ]
+              }
+            },
+            {
+              "OnlineSync": {
+                "F": [
+                  [
+                    12,
+                    0,
+                    "Pm"
+                  ],
+                  [
+                    12,
+                    50,
+                    "Pm"
+                  ]
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0104",
+          "instructors": [
+            "Neel Ahuja"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "MW": [
+                  [
+                    10,
+                    0,
+                    "Am"
+                  ],
+                  [
+                    10,
+                    50,
+                    "Am"
+                  ]
+                ]
+              }
+            },
+            {
+              "OnlineSync": {
+                "F": [
+                  [
+                    1,
+                    0,
+                    "Pm"
+                  ],
+                  [
+                    1,
+                    50,
+                    "Pm"
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "WGSS211",
+      "name": "Women in America Since 1880",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS",
+        "DVUP"
+      ],
+      "description": "An examination of women's changing roles in working class and middle class families, the effects of industrialization on women's economic activities and status, and women's involvement in political and social struggles, including those for women's rights, birth control, and civil rights.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Katarina Keane"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "1100"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "2108"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Katarina Keane"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "1100"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "2108"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Katarina Keane"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "1100"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "2108"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "WGSS250",
+      "name": "Introduction to WGSS: Art and Culture",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHU",
+        "DVUP"
+      ],
+      "description": "Provides students with a critical introduction to the ways that art and art activism have served as a conduit to understanding and challenging systems of inequity and practices of normativity. Interrogating the categories of gender, sexuality, race, class, ability, the course will provide students with an examination of how artists have responded to pressing social justice issues of their eras. While the course centers visual art, students will also engage genres such as music, plays, literature, digital and performance art as arenas of social change.",
+      "sections": [
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Jaime Madden"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "BPS",
+                  "1243"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "1111"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0104",
+          "instructors": [
+            "Jaime Madden"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "BPS",
+                  "1243"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EDU",
+                  "1315"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Jaime Madden"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "1213"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0301",
+          "instructors": [
+            "Rahma Haji"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "TuTh": [
+                  [
+                    8,
+                    0,
+                    "Am"
+                  ],
+                  [
+                    9,
+                    15,
+                    "Am"
+                  ]
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0401",
+          "instructors": [
+            "Renee Scott"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "MWF": [
+                  [
+                    10,
+                    0,
+                    "Am"
+                  ],
+                  [
+                    10,
+                    50,
+                    "Am"
+                  ]
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0501",
+          "instructors": [
+            "Melissa Stevens"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "TuTh": [
+                  [
+                    3,
+                    30,
+                    "Pm"
+                  ],
+                  [
+                    4,
+                    45,
+                    "Pm"
+                  ]
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0601",
+          "instructors": [
+            "Taylor York"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "MW": [
+                  [
+                    8,
+                    30,
+                    "Am"
+                  ],
+                  [
+                    9,
+                    45,
+                    "Am"
+                  ]
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0701",
+          "instructors": [
+            "Damien Hagen"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "2120"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0801",
+          "instructors": [
+            "Damien Hagen"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "2120"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0901",
+          "instructors": [
+            "Damien Hagen"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "2120"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "1101",
+          "instructors": [
+            "Damien Hagen"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "TuTh": [
+                  [
+                    11,
+                    0,
+                    "Am"
+                  ],
+                  [
+                    12,
+                    15,
+                    "Pm"
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "WGSS255",
+      "name": "Reading Women Writing",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHU",
+        "DVUP"
+      ],
+      "description": "Explores literary and cultural expressions by women and their receptions within a range of historical periods and genres. Topics such as what does a woman need in order to write, what role does gender play in the production, consumption, and interpretation of texts, and to what extent do women comprise a distinct literary subculture. Interpretation of texts will be guided by feminist and gender theory, ways of reading that have emerged as important to literary studies over the last four decades.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Morgan Robinson"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0221"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "WGSS264",
+      "name": "Quare/Queer Contentions: Exploration of Sexualities in the Black Community",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Centering the subjectivities of queer people of color generally and more specifically, Black people (as the word \"quare\" invites us to do), Quare/Queer Contentions takes up key moments within the history of the Black community and asks us to consider the work and presence of LGBTQ people in these moments.  The course also contends with the everyday experiences of LGBTQ subjects in the Black community.  Quare/Queer Contentions, therefore, interrogates the material realities of Black queer people in the context of family, religion, cultural/creative work, among others. Interdisciplinary in orientation, the course will employ primary and secondary texts, film, art, autobiographical narratives and policy data.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Michelle Rowley"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "2120"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "WGSS275",
+      "name": "World Literature by Women",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHU",
+        "DVUP"
+      ],
+      "description": "Comparative study of selected works by women writers of several countries, exploring points of intersection and divergence in women's literary representations.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Xiaofang Huang"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0234"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "WGSS280",
+      "name": "Gender and Science in Film and Media",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHU"
+      ],
+      "description": "Isaac Azimov once said of science fiction that it is the genre that \"deals with the reaction of human beings to changes in science and technology.\" With this definition in mind, we will embark on a critical exploration of sci-fi film and other media, using it as a lens for analyzing society's deepest fears and most furtive hopes. Our investigation will center on the liminal space between hegemonic culture and its prescribed excesses. These liminal spaces--between self and other, disability and enhancement, cultural hybridization, and gender crossing--shift in response to real-world sociopolitical tensions. We will consider feminist and anti-racist media scholars' concerns over representation, authorship and ideology alongside questions of technological change. Students will use analytical and creative assignments to explore not only how the scientific imaginary serves as fertile ground for feminist, disability, and anti-racist critique, but also provides a locus for alternative futures.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Jessica Mathiason"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "1121"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "WGSS290",
+      "name": "Bodies in Contention",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS",
+        "DVUP",
+        "SCIS"
+      ],
+      "description": "Explores the contributions of feminist scholarship in framing and resolving contemporary controversies concerning gendered bodies. It includes the ways in which knowledge about the human body has been shaped by cultural ideas of gender, race, sexuality and ability.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Jessica Mathiason"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "1121"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "WGSS291",
+      "name": "Racialized Gender and Rebel Media",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSSP"
+      ],
+      "description": "An introduction to the interdisciplinary field of women's studies and an exploration of the ways in which media has been used as a platform for racial justice, feminist activism, and cultural transformation, with a principal focus on the expressions of women of color. The goals of the course are to explore how  different forms of media shape the stories which circulate about race, femininities, masculinities, ethnicities, sexualities, religiosity, power and difference, and to examine how  various media formats been used to disrupt dominant stories, to tell new stories, and to create differing understandings of citizenship.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Will Mosley"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0201"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "WGSS298N",
+      "name": "The Politics of Sexuality in America: A Historical Approach",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS",
+        "DVUP",
+        "SCIS"
+      ],
+      "description": "Why do particular issues about sexuality hold such an important place in American political debates? What animates these controversies and what can a historical perspective on these issues add to our understanding of modern sexual politics? This class explores the historical sexual politics that undergird contemporary debates concerning sexuality in America. It focuses on topics that garner significant public attention - Reproductive rights - LGBTQ rights - Sexting - and explores the histories that undergird Americans disagreements.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Clare Lyons"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "0215"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "2108"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Clare Lyons"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "0215"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "2108"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Clare Lyons"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "0215"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "2108"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "WGSS302",
+      "name": "Feminist, Critical Race, and Queer Theories",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Introduces students to some of the major concepts in feminist, critical race, and queer theories. It examines the questions: What is theory? What forms does theory take? What is the relationship between theory and practice? What is the role of theory in political and social action? In art? In personal life? What does it mean to do theory?",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Sydney Lewis"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "1815"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "WGSS319D",
+      "name": "Workshops in Gender, Race, and Queer Studies; Disability Justice",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "The Disability Collective, a group of Black, brown, queer and trans activists, developed disability justice, an intersectional framework that examines disability and ableism as they relate to other forms of structural oppression. Using a disability justice lens we'll explore debates within academic disability studies, examine historical and contemporary disability movements and modes of organizing, and build a repertoire of skills to engage in direct action as well as social policy and technological innovation using principles of universal design. We will consider a range of social theories centering disabled standpoints: the social model of disability, feminist disability theories, disability critical race theory (DisCrit), and queer crip theory. We'll also explore what it means to live a fulfilling crip life by exploring disability justice within the domains of education, parenting, and sexuality particularly while navigating the mental health and criminal justice systems.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Jessica Mathiason"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "1121"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "WGSS320",
+      "name": "Women in Classical Antiquity",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHU",
+        "DVUP"
+      ],
+      "description": "A study of women's image and reality in ancient Greek and Roman societies through an examination of literary, linguistic, historical, legal, and artistic evidence; special emphasis in women's role in the family, views of female sexuality, and the place of women in creative art. Readings in primary sources in translation and modern critical writings.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Chiara Graf"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "B0320"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "WGSS358",
+      "name": "Undergraduate Teaching Assistantship",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Restriction: Permission of ARHU-Women's Studies department. Repeatable to 9 credits.<br><br> Students work under the supervision of a faculty mentor to assist with an undergraduate LGBT or WMST course while also becoming conversant in feminist, critical race, and queer pedagogical debates and approaches.",
+      "sections": null
+    },
+    {
+      "code": "WGSS368",
+      "name": "Undergraduate WGSS Internship",
+      "credits": {
+        "Range": [
+          3,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "Restriction: Permission of the Harriet Tubman Department of Women, Gender, and Sexuality Studies.",
+      "sections": null
+    },
+    {
+      "code": "WGSS370",
+      "name": "Black Feminist Thought",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Examines the ideas, words and actions of Black women writers, speakers, artists, and activists in the United States.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Zenzele Isoke"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "2120"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "WGSS378",
+      "name": "Undergraduate Research and Creative Works Assistantship",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "Restriction: Permission of the Harriet Tubman Department of Women, Gender, and Sexuality Studies. Repeatable to 9 credits if content differs. Formerly: WMST378.",
+      "sections": null
+    },
+    {
+      "code": "WGSS379I",
+      "name": "Topics in Women, Gender, and Sexuality Studies; Indigenous Feminisms",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "In Indigenous Feminisms, students will engage with scholarship concerning Indigenous conceptions of gender, sexuality, family, and governance. In each unit, participants will study traditional practices,conceptions,and expressions of Indigenous feminisms; identify the disruptive tactics of settler colonialism, centering the resilience and resurgence of Indigenous communities. In a collaborative \"pod\" framework, students will engage in discussions and projects throughout the term. By the end of the course, students will craft a creative project reflecting their insights and intended contribution to Indigenous feminist movements. Key focal points include the deep dive into traditional conceptions of gender, the impact of colonial interventions, the complexities of Indigenous sexualities, familial adaptations under colonial strain, Indigenous governance, and Indigenous-led resistance and reclamation such as pipeline protests, protection of sacred Mauna Kea, and the MMIW movement.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Shelbi Meissner"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "WGSS452",
+      "name": "Women in the Media",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DVUP"
+      ],
+      "description": "Participation and portrayal of women in the mass media from colonial to contemporary times.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Gea Ujcic"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "1103"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "WGSS471",
+      "name": "Women's Health",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "The women's health movement from the perspective of consumerism and feminism. The physician-patient relationship in the gynecological and other medical settings. The gynecological exam, gynecological problems, contraception, abortion, pregnancy, breast and cervical cancer and surgical procedures. Psychological aspects of gynecological concerns.",
+      "sections": [
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "M Reynolds"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "WGSS487",
+      "name": "Advanced Research Seminar in Gender, Race, and Queer Studies",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "A research seminar that allows students to focus their developed skills on a single topic of their own choosing while meeting regularly in seminar to discuss, critique, support, and learn from their peers' projects and assessments. Students choose a topic based on their own interests and prior coursework, perform advanced research appropriate to the question, and formulate an appropriate method of presentation of their research findings. The culminating presentation may take the form of a written paper or a creative, digital, or activist project.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Jaime Madden"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "4103"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "WGSS488F",
+      "name": "Senior Seminar; Blackness, Gender, and Sexuality: Women Writing Self in the African Diaspora",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Restriction: Permission of the Harriet Tubman Department of Women,omen Gender, and Sexuality Studies.<br><br> In this broadly configured course, we examine the way that Black women write new narratives and possibilities for themselves in the midst of hierarchies and harms such as trans and homophobia, patriarchy, colonialism, ableism, and white supremacy. Multi-textual in content, we will examine visual art, songs, folklore, film, literature, policy and legislative reform as conduits for how Black women flip the script and imagine new possibilities for self and community. The texts we engage will reflect key moments, movements and events from the mid-twentieth century to the present day.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Michelle Rowley"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "4116"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "WGSS489",
+      "name": "Individual Research in Gender, Race and Queer Studies",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "WGSS489A",
+      "name": "Individual Research in Gender, Race and Queer Studies; WGSS Honors Thesis Writing",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "WGSS489B",
+      "name": "Individual Research in Gender, Race and Queer Studies",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "2001",
+          "instructors": [
+            "Neel Ahuja"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "WGSS498I",
+      "name": "Advanced Special Topics in Women, Gender, and Sexuality Studies; Asian American Women and Gender",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Cross-listed with AAST498G. Credit only granted for AAST498G or WGSS498I.<br><br> Examines Asian American identities through a transnational, gendered framework, and studies the impacts of exclusion and immigration laws and U.S. histories of (neo)colonialism and war on domestic, sexual, repr oductive, and economic labor of Asian American women. Also explores Asia n American feminism in context of Women of Color feminisms and queer of color critique.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Jennifer Cho"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "1101"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "WGSS498Y",
+      "name": "Advanced Special Topics in Women, Gender, and Sexuality Studies; Dickinson, Erotics, Poetics, Biopics: Some (Queer) Ways We Read Poetry",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: Two English courses in literature; or permission of ARHU-English department. Cross-listed with LGBT448Y and ENGL439D. Credit only granted for ENGL439D, LGBT448Y, WGSS498Y, or WMST498Y.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Martha Nell Smith"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "1313"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "WGSS499",
+      "name": "Independent Study",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "WGSS602",
+      "name": "Methodologies and Epistemologies in Women, Gender, and Sexuality Studies",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Examines the politics and practice of knowledge production in the interdisciplinary field of Women, Gender, and Sexuality Studies. Explores how theory is connected to the formation of raced/gendered/sexed bodies, subjectivities, and existences that unsettle Eurocentric genealogies of disciplinary knowledge formation. Introduces students to methodological and epistemological frameworks for attending to the impact of relations of power and domination on how research and scholarship are created and defined within and across disciplinary boundaries, cultures, and paradigms.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Zenzele Isoke"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "4116"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "WGSS619",
+      "name": "Women, Gender, and Sexuality Studies Teaching Practicum",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "WGSS628",
+      "name": "Women, Gender, and Sexuality Studies Colloquium",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Neda Atanasoski"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "4116"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "WGSS698G",
+      "name": "Special Topics in Women, Gender, and Sexuality Studies; Afterworlds",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Restriction: Must be in the Women, Gender and Sexuality Studies doctoral or graduate certificate programs.<br><br> This seminar brings together varied theoretical interventions that disrupt the totalizing frameworks of biopolitics and necropolitics. The class will engage with fiction, new media, ethnography and critical theory from the interdisciplinary fields of Black Studies, Dalit Studies, South Asian Studies, queer, trans and feminist studies and indigenous studies to ask what social worlds are generated by violence and most importantly how life persists surrounded by death. Hortense Spillers, Saidiya Hartman, Christina Sharpe, Eva Tuck, Shailaja Paik, Anand Taneja, Omar Kasmani, Lisa Stevenson, Nayanika Mookherjee, Juana Maria Rodriguez and Malik Sajad are some of the authors we will engage with.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Sayan Bhattacharya"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "1111"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "WGSS698I",
+      "name": "Special Topics in Women, Gender, and Sexuality Studies; Indigenous Aesthetics",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Restriction: Must be in the Women, Gender and Sexuality Studies doctoral or graduate certificate programs.<br><br> This course offers a comprehensive examination of Indigenous aesthetics across four distinct units. The curriculum draws upon the works of renowned artists such as Kent Monkman and Rebecca Belmore, as well as the insights of theorists like Gerald Vizenor and Leanne Betasamosake Simpson. These units encompass foundational understandings of aesthetics and contemporary Indigenous art; a contrastive study of Indigenous aesthetictheory with settler perspectives; an immersive focus on the artistry and significance of basket-making in Indigenous cultures;and reflections on Indigenous futurity in juxtaposition with settler temporal conceptions. Each unit is punctuated by a week of theoretical study, interactive coursework, and experiential learning through crafting and tactile interactions. A confluence of readings, multimedia resources, and hands-on experiences ensures participants gain a profound grasp of Indigenous artforms, histories, and visions for the future. For the course culmination, students will produce a final paper complemented by a reflective portfolio and a unique creative component.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Shelbi Meissner"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "2120"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "WGSS698P",
+      "name": "Special Topics in Women, Gender, and Sexuality Studies",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Christina Hanhardt"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0134"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "WGSS699",
+      "name": "Independent Study",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "WGSS708",
+      "name": "Research Seminar in Women, Gender, and Sexuality Studies",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Neel Ahuja"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "4116"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "WGSS709",
+      "name": "Directed Independent Reading for Major Field Exam",
+      "credits": {
+        "Range": [
+          1,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "WGSS799",
+      "name": "Masters Thesis Research",
+      "credits": {
+        "Range": [
+          1,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "WGSS898",
+      "name": "Pre-Candidacy Research",
+      "credits": {
+        "Range": [
+          1,
+          8
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "WGSS899",
+      "name": "Doctoral Dissertation Research",
+      "credits": {
+        "Range": [
+          1,
+          8
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    }
+  ]
+}

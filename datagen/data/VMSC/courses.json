@@ -1,0 +1,246 @@
+{
+  "name": "VMSC",
+  "courses": [
+    {
+      "code": "VMSC660",
+      "name": "Emerging and Re-emerging Infectious Diseases",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": null,
+      "description": "The global burden of emerging and re-emerging infectious diseases is growing and prompts the need for effective control of these pathogens. The objective of this course is to provide graduate students with knowledge of pathogenesis and transmission of globally evolving pathogens. Registered students for this course are expected to know fundamentals of infectious diseases. References from the peer reviewed journals will be provided to facilitate understanding of the selected topics. Opening of this course is necessary to help graduate students to stay up-to-date with currently emerging pathogens and their evolution with changes in environment. This course is complementary to other existing microbiology courses (i.e., Viral Pathogenesis) on campus. Lectures focus on an in-depth analysis of a variety of topics in current infectious diseases. The course highlights recently published literatures to evaluate evolving trends in infectious diseases. The covered topics include subjects related with various pathogens and their adaptation strategy to enhance pathogenicity and transmissibility. The lectures will also cover the control and prevention measures of these pathogens.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Sean Riley"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "VMSC688A",
+      "name": "Special Topics in Veterinary Medical Sciences; Advances in Reverse Genetics of Animal Viruses",
+      "credits": {
+        "Range": [
+          1,
+          4
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Siba Samal"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "VMSC698",
+      "name": "One Health Seminar",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Jaekeun Park"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "GVC",
+                  "1216"
+                ]
+              }
+            },
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "VMSC699",
+      "name": "Special Problems in Veterinary Medical Sciences",
+      "credits": {
+        "Range": [
+          1,
+          4
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "VMSC720",
+      "name": "Viral Pathogenesis",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": null,
+      "description": "This course will teach graduate students about mechanisms of infections by animal and human viral pathogens, including virus-cell interactions, host responses, and consequences of virus infection. Particular attention will be focused on the molecular mechanisms of the interactions between virus and host.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Yanjin Zhang"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "VMSC758",
+      "name": "Journal Club in Comparative Biomedical Sciences",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Seth Dickey"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "VMSC780",
+      "name": "Parasites of Medical and Veterinary Importance",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": null,
+      "description": "Provides students with the basic knowledge of parasites as well as research advancement in important parasites of humans and animals. Particular attention will be given to parasite biology, pathogenesis, and host responses to parasitic infection. A selection of parasites of medical and veterinary importance will be specifically covered with emphasis on recent research breakthroughs in the field.",
+      "sections": null
+    },
+    {
+      "code": "VMSC799",
+      "name": "Thesis Research",
+      "credits": {
+        "Range": [
+          1,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "VMSC898",
+      "name": "Pre-Candidacy Research",
+      "credits": {
+        "Range": [
+          1,
+          8
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "VMSC899",
+      "name": "Dissertation Research",
+      "credits": {
+        "Range": [
+          1,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    }
+  ]
+}
