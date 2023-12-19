@@ -1,0 +1,681 @@
+{
+  "name": "HACS",
+  "courses": [
+    {
+      "code": "HACS101",
+      "name": "Applied Cybersecurity Foundations",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": null,
+      "description": "Prepares students for team research that will be conducted in HACS 200.  Students gain an understanding across the breadth of cybersecurity including system monitoring, networking basics and penetration testing.  An applied approach to statistics is also included to prepare students to assess the data collected for their research projects.  The course is conducted with a hands-on approach applying virtual environments to practice the concepts learned in the technical lectures each week.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Michel Cukier"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PFR",
+                  "1111"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Michel Cukier"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PFR",
+                  "1111"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0301",
+          "instructors": [
+            "Michel Cukier"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PFR",
+                  "1111"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HACS201",
+      "name": "Introduction to UNIX",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "Introduction to the operating system UNIX through lectures and hands-on assignments.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Bertrand Sobesto"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      5,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      20,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PHY",
+                  "2211"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HACS202",
+      "name": "Group Project in Cybersecurity",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "The group project in this course will combine technical, analytical, and communication skills, further engaging students in the practice of cybersecurity. Students will learn about design concepts and data analysis as they engage in a team project designing, deploying, and collecting and analyzing data from a honeypot. The hands-on nature of the course will give students experiential insight about how and why attackers attack and how to engage in protective measures to prevent attacks.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Bertrand Sobesto"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      6,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      9,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PHY",
+                  "4311"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HACS208A",
+      "name": "Accounting and Economic Aspects of Cybersecurity",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS",
+        "SCIS"
+      ],
+      "description": "In today's interconnected digital world, cybersecurity has become one of the most important issues confronting organizations in both the private and public sectors of an economy. Indeed, cybersecurity is a national and economic security priority in countries throughout the world. This is an interdisciplinary Honors Seminar offered as part of UMD's ACES program. The primary objective of this course is to discuss the relationships among accounting, economics and cybersecurity, with a focus on the important roles of accounting and economics in understanding the issues related to cybersecurity. A basic framework for assessing the interactions among accounting, economics, and cybersecurity will be developed and discussed. A secondary objective of the course is to assist ACES students in developing their ability to conduct original and applied research on topics related to \"accounting and economic aspects of cybersecurity.\"",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Lawrence Gordon"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "VMH",
+                  "3330H"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HACS208E",
+      "name": "Introduction to Reverse Engineering",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSSP"
+      ],
+      "description": "An introduction to software reverse engineering tools and methodologies. Fundamental topics will be introduced: compilers, linkers, loaders, assembly language, as well as static and dynamic analysis tools. We will motivate some reasons for software reverse engineering and examine the background material necessary for an understanding of the subject. This will include computer architecture and low-level systems programming, as well as an introduction to x86_64 assembly language. We will apply this newly acquired knowledge while learning about static and dynamic analysis tools used by practitioners of software reverse engineering.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Aaron Hertz"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PFR",
+                  "0103"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HACS208I",
+      "name": "Security Incident Handling and Management",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSSP"
+      ],
+      "description": "Examines the many roles, capabilities, organizations, and objectives involved in security incident handling and management. Core course content includes three major components: learning about the skill sets that people use, participating in role playing exercises that increasingly build upon this knowledge, and finally conducting exercises in a lab environment simulating security incident discovery, handling, and management.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Benjamin Wall"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PFR",
+                  "1111"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HACS208Z",
+      "name": "Methods for Solving (And not Solving) Puzzles",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Surveys modern problems from different domains in computer science and cybersecurity to train our minds to appropriately approach puzzles we encounter in the future. This course covers graph theory, including what a graph is and the kinds of objects it can model, connectivity types, and vertex/edge covers algorithms. This course covers computer networks, including the models used for network stacks and what algorithms are used to solve difficult problems present in our current networks. This course covers algorithm analysis, including greedy algorithms, big O complexity, and how to analyze the capabilities and limitations of an algorithm. This course introduces cryptography, including the difference between public-key and symmetric-key cryptography, how RSA works, and the cryptanalysis of well-known cryptosystems.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Zulema Belyeu"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      5,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      8,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PFR",
+                  "1111"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HACS279",
+      "name": "Undergraduate Research in Cybersecurity",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "HACS287",
+      "name": "Undergraduate Research in Cybersecurity",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSSP"
+      ],
+      "description": "The Advanced Cybersecurity Experience for Students (ACES) program encourages its students to engage in research in order to gain greater insight into a specific area within cybersecurity, obtain an appreciation for the subtleties and difficulties associated with the production of knowledge and fundamental new applications, and to prepare for graduate school and the workforce.",
+      "sections": null
+    },
+    {
+      "code": "HACS297",
+      "name": "Cybersecurity Experience Reflection",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Cybersecurity experience is defined as an experiential learning activity either with a University of Maryland entity (such as the Division of Information Technology, the ACES competition team or in an ACES outreach program), or with an external organization that will provide valuable, hands-on experience to supplement the knowledge learned in the other ACES coursework.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Sarah Herberger"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PFR",
+                  "1111"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HACS318A",
+      "name": "Cybersecurity Professionals Colloquium Series; Current Issues",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "Restriction: Must be a student in the ACES (Advanced Cybersecurity Experience for Students) Minor Program",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Lindsey Schrott"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      6,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      8,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PFR",
+                  "1105"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HACS408C",
+      "name": "Interpersonal Cyber Communications",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Designed to prepare students to participate in culturally responsible and environmentally appropriate communication in the workforce. Students will explore the industry standards for writing technical reports, as well as the variances between persuasive, team, written, and oral communication styles.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Adam Nixon"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PHY",
+                  "4311B"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HACS408T",
+      "name": "Penetration Testing",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "A hands-on, technically rigorous experience that prepares students for real-world work in penetration testing and offensive security. This course will allow students to gain proficiency and become comfortable using the tools, techniques, and methodologies that represent the state of the art in penetration testing today. Students should be comfortable on the command line, and a technical exposure to networking and basic proficiency in some scripting language (Bash, Ruby, or Python) is expected.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Kevin Bock"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PHY",
+                  "4311B"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HACS408V",
+      "name": "Data Analysis and Visualization for Cybersecurity",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Focuses on exploratory and statistical data analysis, data and information visualization, and the presentation and communication of analysis results. These topics will be presented and explored in the context of and with applications to cyber security related data. Examples and illustrations will often involve the R programming language, but prior experience with R is not required and submitted work may involve the use of other languages and tools at times.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Edward Condon"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PHY",
+                  "4311B"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HACS479",
+      "name": "Undergraduate Research in Cybersecurity",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "HACS497",
+      "name": "Cybersecurity Experience Reflection",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Cybersecurity experience is defined as an experiential learning activity either with a University of Maryland entity or with an external organization that will provide valuable, hands-on experience to supplement the knowledge learned in other ACES coursework. This course is intended to help students reflect on their cybersecurity experience and to learn from others' cybersecurity experiences. It is also intended to help students gain professional skills that will aid in their future career.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Cassie Harrington"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PHY",
+                  "4311B"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HACS498",
+      "name": "Cybersecurity Group Problem Solving",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Restriction: Must be a student in the ACES (Advanced Cybersecurity Experience for Students) Minor Program; and permission of UGST-HCOL- ACES Cybersecurity Program.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Thomas Woods"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Neal Ziring"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0301",
+          "instructors": [
+            "David Raynor"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,466 @@
+{
+  "name": "LGBT",
+  "courses": [
+    {
+      "code": "LGBT200",
+      "name": "Introduction to Lesbian, Gay, Bisexual, and Transgender Studies",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS",
+        "DVUP"
+      ],
+      "description": "An interdisciplinary study of the historical and social contexts of personal, cultural and political aspects of LGBT life. Sources from a variety of fields, such as anthropology, history, psychology, sociology, and women's studies, focusing on writings by and about LGBT people.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Sayan Bhattacharya"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SYM",
+                  "0200"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EDU",
+                  "2102"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Sayan Bhattacharya"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SYM",
+                  "0200"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "1105"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Sayan Bhattacharya"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SYM",
+                  "0200"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "0135"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0104",
+          "instructors": [
+            "Sayan Bhattacharya"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SYM",
+                  "0200"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "1206"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "LGBT264",
+      "name": "Quare/Queer Contentions: Exploration of Sexualities in the Black Community",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Centering the subjectivities of queer people of color generally and more specifically, Black people (as the word \"quare\" invites us to do), Quare/Queer Contentions takes up key moments within the history of the Black community and asks us to consider the work and presence of LGBTQ people in these moments.  The course also contends with the everyday experiences of LGBTQ subjects in the Black community.  Quare/Queer Contentions, therefore, interrogates the material realities of Black queer people in the context of family, religion, cultural/creative work, among others. Interdisciplinary in orientation, the course will employ primary and secondary texts, film, art, autobiographical narratives and policy data.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Michelle Rowley"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "2120"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "LGBT265",
+      "name": "LGBTQ+ Literatures and Media",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHU",
+        "DVUP"
+      ],
+      "description": "A study of literary and cultural expressions of queer and trans identities, positionalities, and analytics through an exploration of literature, art, and media. We will examine historical and political power relations by considering the intersections of sexuality and gender with race, class, nation, and disability. Topics include the social construction and regulation of sexuality and gender, performance and performativity, intersectionality, and the relationship between aesthetic forms and queer/ trans subjectivity. Our interpretations will be informed by queer and trans theories.",
+      "sections": [
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Timmy Bridgeman"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0234"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "LGBT386",
+      "name": "Lesbian, Gay, Bisexual, and Transgender Community Organization Internship",
+      "credits": {
+        "Range": [
+          3,
+          6
+        ]
+      },
+      "gen_eds": [
+        "DSSP",
+        "DVCC"
+      ],
+      "description": "Supervised internship experience with a community organization that expressly serves lesbian, gay, bisexual, and transgender people. Students will be expected to relate course material to experience in an analysis of an organization's activities.",
+      "sections": null
+    },
+    {
+      "code": "LGBT448Y",
+      "name": "Special Topics in Lesbian, Gay, Bisexual, and Transgender Studies; Dickinson, Erotics, Poetics, Biopics: Some (Queer) Ways We Read Poetry",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DVUP"
+      ],
+      "description": "Prerequisite: Two English courses in literature; or permission of ARHU-English department. Cross-listed with ENGL439D and WGSS498Y. Credit only granted for ENGL439D, LGBT448Y, WGSS498Y, or WMST498Y.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Martha Nell Smith"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "1313"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "LGBT459D",
+      "name": "Selected Topics in Sexuality and Literature; Life Writings in Different Media",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Repeatable to 9 credits if content differs. Crosslisting with ENGL459C. Credit only granted for ENGL459C or LGBT459D.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "John Tobin"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "1313"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "LGBT488E",
+      "name": "Seminar in Lesbian, Gay, Bisexual, and Transgender Studies; Queering Black Femininties",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Students will use cultural studies and arts and humanitie s approaches in order to grapple with the intricacy of black femme identity as a radical critique of sexuality, whiteness, gender and intersecting categories of oppression. The complexity of \"femme\" is revealed when each of those terms in put into question. Who or what constitutes queer? How does one present feminine; is that merely an aesthetic choice? What constitutes feminine? Does one have to be a womanto be feminine? For black femmes, whose femininity has been circumscribed and defined not only against butchness but also against white femininity, claiming \"femme\" can be a means to radically critique static categories of gender, race, and sexuality.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Sydney Lewis"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "4103"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "LGBT499",
+      "name": "Independent Study",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    }
+  ]
+}

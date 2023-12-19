@@ -1,0 +1,267 @@
+{
+  "name": "IDEA",
+  "courses": [
+    {
+      "code": "IDEA201",
+      "name": "Innovation Tools &amp; Mindsets",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "Try on the behaviors of a creative problem-solver and leverage the methods and tools of design through a human-centered lens in this highly experiential -- and experimental -- introductory course. You will try on the behaviors and mindsets of a designer and reflect and build upon your own creative agency.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Mira Azarm",
+            "Mona Thompson"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      2,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "2101"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Brooke Smith"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Brooke Smith"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        },
+        {
+          "sec_code": "0104",
+          "instructors": [
+            "Brooke Smith"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "IDEA258U",
+      "name": "Special Topics in Innovation; Introduction to UI/UX Design",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "What does \"User Experience\" mean? It was a term coined by cognitive psychologist and designer Don Norman in the 1990s on the cusp of the new digital era; however, the field in practice has existed long before that. Unfortunately, due to its over use and misuse, the pure concept ofUX hasbecome lost in the weeds and details of all of its components and methods. In this course, we will take a deep look at the true meaning of UX as simply \"a user's experience\" and what that means for you as both a designer and a user. You will learn about core UX principles and methodologies from both an academic and practical standpoint and be challenged to apply what you learn in classroom workshops and assignments. Finally, you will be asked to think both inside and outside the bounds of technology to find innovative solutions to real world design problems.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Katherine-Aria Close",
+            "Mira Azarm"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "2101"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "IDEA311",
+      "name": "Design Your Purpose",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "What do you want to do once you graduate? What about with your life? These are the big questions we begin to tackle in this course. Use design methods and mindsets to explore your personal and professional development goals and explore potential career paths. Using empathy, brainstorming, and prototyping techniques, you'll imagine potential futures for yourself and test them to see if they are a good fit for you.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Christina Hnatov",
+            "Brooke Smith"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "IDEA459",
+      "name": "The Innovation Studio",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Students from across performing and visual arts disciplines will collaborate using human-centered design tools and mindsets. Experiments will be devised around themes of relevance, audience engagement, radicalcollaboration, and creative placemaking for potential implementation in future iterations of the National Orchestral Institute+ Festival. Each student will also conceptualize and prototype an interdisciplinary performance experiment connected to their personal,professional, and creative interests.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Christina Hnatov",
+            "Mira Azarm"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "2101"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "IDEA498",
+      "name": "Independent Study: Experiments in Innovation",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Mira Azarm"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "IDEA659",
+      "name": "The Innovation Studio",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Students from across performing and visual arts disciplines will collaborate using human-centered design tools and mindsets. Experiments will be devised around themes of relevance, audience engagement, radicalcollaboration, and creative placemaking for potential implementation in future iterations of the National Orchestral Institute+ Festival. Each student will also conceptualize and prototype an interdisciplinary performance experiment connected to their personal,professional, and creative interests.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Christina Hnatov",
+            "Mira Azarm"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "2101"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "IDEA698",
+      "name": "Independent Study in Design Thinking",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "Graduate students apply design thinking and/or lean startup concepts to a real-world project. This course requires a high degree of self-direction in all aspects of the project including defining specificmilestones and deliverables. There will be regular coaching froman Academy for Innovation and Entrepreneurship team member.<br><br> Restriction:Permission required by the Academy for Innovation and Entreurship",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Mira Azarm"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "name": "FGSM",
+  "courses": [
+    {
+      "code": "FGSM398",
+      "name": "Federal and Global Experiential Learning",
+      "credits": {
+        "Range": [
+          3,
+          9
+        ]
+      },
+      "gen_eds": [
+        "DSSP"
+      ],
+      "description": "Cross-listed with HNUH398P. Credit only granted for FGSM398 or HNUH398P.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Joan Burton",
+            "Jayakumar Arasan"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      6,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "1202"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Joan Burton",
+            "Jayakumar Arasan"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      6,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "1202"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2599 @@
+{
+  "name": "GEOG",
+  "courses": [
+    {
+      "code": "GEOG140",
+      "name": "Natural Disasters: Earthquakes, Floods, and Fires",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSNS",
+        "SCIS"
+      ],
+      "description": "Catastrophic Environmental Events (CCE) that are becoming more common in this time of global environmental change and it is essential that today's students be equipped with the knowledge and skills to be leaders as we, as a society, understand the upheaval that these CCEs are causing. Students will examine how CEEs shape human society and ecosystem from the interdisciplinary perspective afforded by the field of Geography. Students will use the latest geographic science concepts and techniques in exploring these events. Using satellite imagery they will gain a multi-scale perspective of the ecological and societal aspects of the events.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "George Hurtt"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ARC",
+                  "0204"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GEOG156",
+      "name": "How NASA Sees the Earth",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSSP"
+      ],
+      "description": "The world of Earth science data is complex and can be overwhelming with a wide range of data sources and formats, hefty downloads and the need for complicated analytical tools. To make use of enormous volumes of available data and geoinformation products, one has to know where and how to search and obtain the data, how to analyze the data, and how to extract useful information and knowledge. In this course, you will learn about the state-of-the-art Web-based tools that allow you to efficiently display and analyze a large number of datasets in a way many professionals working in the Earth science domain would. You will learn how to visualize multiple Earth science datasets produced by NASA in a variety of ways directly on the Internet, without the need to download, manage and store them. Students will be introduced to comprehensive functions to analyze the data and generate customized maps, animations, multi-variable correlations, regional subsetting, etc.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Sergii Skakun"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "0117"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GEOG172",
+      "name": "Earth From Space",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSNS",
+        "SCIS"
+      ],
+      "description": "Earth observations from space enable the mapping and monitoring of our changing planet.  This survey course reviews current observational capabilities and examines scientific applications in quantifying global environmental change. Drivers and outcomes of key dynamics will be illustrated and discussed, including sea and continental ice loss, deforestation, ocean warming, urbanization, agricultural expansion and intensification, and vegetation response to climate change.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Matthew Hansen"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "2205"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GEOG201",
+      "name": "Geography of Environmental Systems",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSNL"
+      ],
+      "description": "A systematic introduction to the processes and associated forms of the atmosphere and earth's surfaces emphasizing the interaction between climatology, hydrology and geomorphology.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Laura Duncanson"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "0224"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GEOG211",
+      "name": "Geography of Environmental Systems Laboratory",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "A laboratory course to accompany GEOG 201. Analysis of the components of the earth's energy balance using basic instrumentation; weather map interpretation; soil analysis; the application of map and air photo interpretation techniques to landform analysis.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Laura Duncanson",
+            "Baobao Liu"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Laura Duncanson",
+            "Baobao Liu"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        },
+        {
+          "sec_code": "0301",
+          "instructors": [
+            "Laura Duncanson",
+            "Baobao Liu"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        },
+        {
+          "sec_code": "0401",
+          "instructors": [
+            "Laura Duncanson",
+            "Baobao Liu"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        },
+        {
+          "sec_code": "0501",
+          "instructors": [
+            "Laura Duncanson",
+            "Baobao Liu"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        },
+        {
+          "sec_code": "0601",
+          "instructors": [
+            "Laura Duncanson",
+            "Shi Wee"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        },
+        {
+          "sec_code": "0701",
+          "instructors": [
+            "Laura Duncanson",
+            "Shi Wee"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        },
+        {
+          "sec_code": "0801",
+          "instructors": [
+            "Laura Duncanson",
+            "Shi Wee"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        },
+        {
+          "sec_code": "0901",
+          "instructors": [
+            "Laura Duncanson",
+            "Shi Wee"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        },
+        {
+          "sec_code": "1001",
+          "instructors": [
+            "Laura Duncanson",
+            "Shi Wee"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GEOG212",
+      "name": "Career Planning for Geographical Sciences, GIS, and ENSP Majors",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "Increase student knowledge of professional development opportunities in Geographical Sciences through classroom activities and invited speakers, and to build awareness of career development tools and strategies.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Keith Yearwood"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "1158"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GEOG301",
+      "name": "Advanced Geographical Environmental Systems",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "This course will provide the students with an overview of the key elements of physical geography, including biogeography (factors and processes that control the geographical distributions of plants and animals,  climatology (processes associated with controlling variations in weather and climate), and geomorphology (factors and processes that control changes to the physical structure of the earth surface in relation to geological structures).",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Ralph Dubayah"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "1310"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GEOG306",
+      "name": "Introduction to Quantitative Methods for the Geographical Environmental Sciences",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "FSAR"
+      ],
+      "description": "Essentials in the quantitative analysis of spatial and other data, with a particular emphasis on statistics and programming. Topics include data display, data description and summary, statistical inference and significance tests, analysis of variance, correlation, regression, and some advanced concepts, such as matrix methods, principal component analysis, and spatial statistics. Students will develop expertise in data analysis using advanced statistical software.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Naijun Zhou"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "2205"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "1136"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Naijun Zhou"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "2205"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "1136"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Naijun Zhou"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "2205"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "1136"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0104",
+          "instructors": [
+            "Naijun Zhou"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "2205"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "1136"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GEOG331",
+      "name": "Introduction to Human Dimensions of Global Change",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Introduction to global-scale interrelationship between human beings and the environment. The development of global issues including but not limited to the environment, food, energy, technology, population, and policy.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Meredith Gore"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "1120"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GEOG333",
+      "name": "The Social Geography of Metropolitan Areas in Global Perspective",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "A socio-spatial approach to human interaction within the urban environments: ways people perceive, define, behave in, and structure world cities and metropolitan areas. Cultural and social differences define spatial patterns of social activities which further define distinctions in distribution and interaction of people and their social institutions.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Laixiang Sun"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "1158"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GEOG373",
+      "name": "Geographic Information Systems",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Characteristics and organization of geographic data; creation and use of digital geospatial databases; metadata; spatial data models for thematic mapping and map analysis; use of geographic information system in society, government, and business.  Practical training with use of advanced software and geographic databases.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Naijun Zhou"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TMH",
+                  "0301"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "1136"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Naijun Zhou"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TMH",
+                  "0301"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "1136"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Naijun Zhou"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TMH",
+                  "0301"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "1136"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GEOG376",
+      "name": "Programming for Geospatial Analysis",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Covers conceptual and practical aspects of geospatial data modeling and analysis techniques using the Python programming language. The main focus is on developing a solid understanding of the programmatic conventions needed to create, manipulate, and process geospatial data types, such as point, line, &amp; polygon vectors, networks, trajectories, and space-time extensions. In addition, students will develop a proficiency in applying these data structures to perform automated geospatial analysis, such as GIS operations, agent-based models, and spatial statistics.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Guimin Zhu"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "2166"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GEOG384",
+      "name": "Internship in Geography I",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Supervised field training to provide career experience. Introduction to professional level activities, demands, opportunities. Placement at a public agency, non-profit organization, or private firm. Participation requires application to the internship advisor in preceding semester.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Keith Yearwood"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GEOG385",
+      "name": "Internship in Geography II",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Supervised field training to provide career experience. Introduction to professional-level activities, demands, opportunities. Placement at a public agency, nonprofit organization, or private firm. Participation requires application to the internship advisor in preceding semester.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Keith Yearwood"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GEOG398",
+      "name": "Special Topics in Geography",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "GEOG398E",
+      "name": "Special Topics in Geography; Introduction to Spatial Artificial Intelligence",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "An introductory course to spatial artificial intelligence (AI), providing a big picture of spatial AI applications (e.g., Google Maps, Uber/Lyft, Earth observation, smart cities, autonomous vehicles), techniques, platforms, trends, debates, etc. The course will cover basics of AI, identify challenges faced by AI techniques in the context of spatial data and applications, and introduce spatial-aware AI methods to address them. AI topics include but are not limited to: spatial data models and knowledge representation, pattern mining, machine learning, perception, planning, etc. Students are expected to have a broad understanding of spatial A concepts, develop intuitions and insights to AI techniques, and have some hands-on experience (Python) at the end of the course.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Yiqun Xie"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "2166"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GEOG416",
+      "name": "Conceptualizing and Modeling Human-Environmental Interactions",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Develops skills to carry out research that integrates environmental and economic aspects of sustainability by introducing extensively used quantitative tools for analyzing human-environmental interactions in the field of ecological economics. These include, e.g., index number calculations and decomposition analysis, Environmental Kuznets Curve (EKC), environmental input-output analysis and life-cycle analysis, and multi-criteria decisions aid (MCDA). Students will need laptops to run models during class.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Kuishuang Feng"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PHY",
+                  "2211"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GEOG417",
+      "name": "Land Cover Characterization Using Multi-Spectral Remotely Sensed Data Sets",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Students will be introduced to the image processing steps required for characterizing land cover extent and change. Key components of land cover characterization, including image interpretation, algorithm implementation, feature space selection, thematic output definition, and scripting will be discussed and implemented.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Xiaopeng Song"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "1158"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GEOG422",
+      "name": "Changing Geographies of Sub-Saharan Africa",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Students will develop an understanding of the geographic contexts of SubSaharan Africa, including an overview of the physical, bioclimatic, historical, cultural, political, demographic, health and economic geographies of Sub-Saharan Africa. Students will fill in the map of Africa by studying the spatial distribution within each of these geographic domains. In addition to an overview of geography South of the Sahara, the Congo will be taken as a more intensive case study through additional readings, lectures and discussions.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Catherine Nakalembe"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "B0320"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GEOG430",
+      "name": "Climate, Energy, and Policy",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Students will learn about climate change and energy policy from multiple perspectives includingsocial economic, technological, scientific, and behavioural aspects and their interdependence.The course will also consider the report of the Intergovernmental Panel onClimate Change on mitigation and applied cost/benefit analysis of Climate Change. Formatwill be discussion, supplemented with lecture segments and applied workshops asneeded. This course will make occasional use the popular open source statistical computerlanguage R for practical workshops",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Giovanni Baiocchi"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "2166"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GEOG441",
+      "name": "The Coastal Ocean",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Introduction to coastal oceanography, focusing on the physical, biological, and geological aspects of ocean areqs on the inner continental shelves. Wave, currents, and tidal dynamics of bays, open coast, estuaries, and deltas. Sedimentary environments of major coastal types. Ecology and biogeochemical relationships, including benthic and planktonic characteristics. Coastal evolution with sea level rise. Human impacts: eutrophication, modification of sedimentation. The coastal future: rising sea level, hypoxia, and increased storminess.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Keith Yearwood"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      4,
+                      15,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "2309"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GEOG470",
+      "name": "Algorithms for Geospatial Computing",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "An introduction to fundamental geospatial objects and geometric algorithms for spatio-temporal data processing and analysis. Point data representation and analysis: spatial data models and data structures, algorithms for spatial queries, point clustering algorithms.  Surface and scalar field modeling, such as terrains: raster and triangle-based models (TINs), algorithms for building and querying TINs. Algorithms for natural and urban terrain analysis: morphology computation and visibility analysis. Applications to processing and analysis of  LiDAR (Light Detection And Ranging) data in the context of terrain reconstruction, urban modeling, forest management and bathymetry reconstruction for coastal data management. Road network computation and analysis: algorithms for route computation in road networks, and for road network reconstruction from GPS and satellite data.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Leila De Floriani"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ARC",
+                  "1103"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GEOG472",
+      "name": "Remote Sensing: Digital Processing and Analysis",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Digital image processing and analysis applied to satellite and aircraft land remote sensing data. Consideration is given to image preprocessing techniques including radiometric calibration, geometric registration as well as atmospheric correction. Analysis methods include digital image exploration, feature extraction, thematic classification, change detection, and biophysical characterization. An application-oriented course project will be completed through the self-guided computer labs.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Dongdong Wang"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "1158"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "1136"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GEOG473",
+      "name": "Geographic Information Systems and Spatial Analysis",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Analytical uses of geographic information systems; data models for building geographic data bases; types of geographic data and spatial problems; practical experience using advanced software for thematic domains  such as terrain analysis, land suitability modeling, demographic analysis, and transportation studies.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Naijun Zhou"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "2166"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "1138"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Naijun Zhou"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "2166"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "1138"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GEOG498",
+      "name": "Topical Investigations",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "GEOG606",
+      "name": "Quantitative Spatial Analysis",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Multivariate statistical method applications to spatial problems. Linear and non-linear correlation and regression, factor analysis, cluster analysis. Spatial statistics including: trend surfaces, sequences, point distributions. Applications orientation.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Giovanni Baiocchi"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "2166"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GEOG608",
+      "name": "Comprehensive Portfolio Assessment Summary",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "GEOG617",
+      "name": "Land Cover Characterization Using Multi-Spectral Remotely Sensed Data Sets",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Students will be introduced to the image processing steps required for characterizing land cover extent and change. Key components of land cover characterization, including image interpretation, algorithm implementation, feature space selection, thematic output definition, and scripting will be discussed and implemented.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Xiaopeng Song"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "1158"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GEOG630",
+      "name": "Climate, Energy, and Policy",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Students will learn about climate change and energy policy from multiple perspectives including social economic, technological, scientific, and behavioural aspects and their interdependence. The course will also consider the report of the Intergovernmental Panel on Climate Change on mitigation and applied cost/benefit analysis of Climate Change.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Giovanni Baiocchi"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "2166"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GEOG646",
+      "name": "Programming for GIS",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "An introduction to computer programming using Python and web programming languages. It is required for students in the MSGIS program before they enroll in more advanced programming courses (GEOG656 and GEOG657). This course teaches students the fundamentals concepts of computer science. Students will learn about the components of a computer program such as data management, conditional statements, iterative statements, and file processing. Students will develop programs and web apps for the purpose of automating tasks and assisting with data analysis.",
+      "sections": [
+        {
+          "sec_code": "1",
+          "instructors": [
+            "Jonathan Resop"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      5,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      8,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "1158"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      5,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      8,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "1158"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "1",
+          "instructors": [
+            "Jonathan Resop"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "W": [
+                  [
+                    5,
+                    30,
+                    "Pm"
+                  ],
+                  [
+                    8,
+                    0,
+                    "Pm"
+                  ]
+                ]
+              }
+            },
+            {
+              "OnlineSync": {
+                "Th": [
+                  [
+                    5,
+                    30,
+                    "Pm"
+                  ],
+                  [
+                    8,
+                    0,
+                    "Pm"
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GEOG653",
+      "name": "Spatial Analysis",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Methods of spatial analysis including measuring aspects of geometric features and identifying spatial patterns of geospatial objects that are represented as point, line, network, areal data, and 3-D surfaces.",
+      "sections": [
+        {
+          "sec_code": "1",
+          "instructors": [
+            "Jianguo Ma"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      5,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      8,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "1158"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      5,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      8,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "1158"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "1",
+          "instructors": [
+            "Jianguo Ma"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "M": [
+                  [
+                    5,
+                    30,
+                    "Pm"
+                  ],
+                  [
+                    8,
+                    0,
+                    "Pm"
+                  ]
+                ]
+              }
+            },
+            {
+              "OnlineSync": {
+                "Tu": [
+                  [
+                    5,
+                    30,
+                    "Pm"
+                  ],
+                  [
+                    8,
+                    0,
+                    "Pm"
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GEOG661",
+      "name": "Fundamentals of Geospatial Intelligence",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Geospatial Intelligence (GEOINT) is the collection, analysis, visualization and dissemination of geospatial information to support decision-making. This course introduces the fundamental knowledge required to become a successful GEOINT practitioner, including the history of the GEOINT discipline, the intelligence applications of remote sensing and Geographic Information Systems (GIS) technologies, and how GEOINT products are used to support national security and humanitarian missions. Upon completion of this course you will understand the roles that technology, policy, doctrine, government, and industry play in shaping the Geospatial Intelligence discipline, and develop the technical knowledge and domain expertise to create basic GEOINT products that provide context for decision makers.",
+      "sections": [
+        {
+          "sec_code": "1",
+          "instructors": [
+            "David Cook"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      5,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      8,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "3215"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      5,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      8,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "3221"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "1",
+          "instructors": [
+            "David Cook"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "M": [
+                  [
+                    5,
+                    30,
+                    "Pm"
+                  ],
+                  [
+                    8,
+                    0,
+                    "Pm"
+                  ]
+                ]
+              }
+            },
+            {
+              "OnlineSync": {
+                "Tu": [
+                  [
+                    5,
+                    30,
+                    "Pm"
+                  ],
+                  [
+                    8,
+                    0,
+                    "Pm"
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GEOG670",
+      "name": "Open Source GIS",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "An exploration of techniques for using Free and Open Source Software for GIS (FOSS4g) from conception to final presentation of results. Advanced concepts and techniques including enterprise GIS, spatial SQL, parallel processing, and displaying the results of GIS analysis over the Internet will also be covered.",
+      "sections": [
+        {
+          "sec_code": "1",
+          "instructors": [
+            "Xin Tao"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      5,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      8,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "1166"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      5,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      8,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "1166"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "1",
+          "instructors": [
+            "Xin Tao"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "M": [
+                  [
+                    5,
+                    30,
+                    "Pm"
+                  ],
+                  [
+                    8,
+                    0,
+                    "Pm"
+                  ]
+                ]
+              }
+            },
+            {
+              "OnlineSync": {
+                "Tu": [
+                  [
+                    5,
+                    30,
+                    "Pm"
+                  ],
+                  [
+                    8,
+                    0,
+                    "Pm"
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GEOG677",
+      "name": "Web GIS",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "This course is designed to: (1) introduce the concepts and theories that are related to an increasingly important technology b (2) introduce various technologies or techniques for creating, analyzing, and disseminating GIS data and services via the Web. Students will be required to practice almost all of the Web GIS tools including client side mapping frameworks like the ArcGIS API for JavaScript, Mapbox, Leaflet, Google Map API, OpenLayers; server side systems including ArcGIS Enterprise (Server/Portal/DataStore), GeoServer; data formats for the web WMS, WFS, Feature Services, MapServices. Students will also be exposed to the experience of working with the Cloud environment such as AWS EC2 and Azure.",
+      "sections": [
+        {
+          "sec_code": "1",
+          "instructors": [
+            "Xin Tao"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      5,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      8,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "1166"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      5,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      8,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "1166"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "1",
+          "instructors": [
+            "Xin Tao"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "W": [
+                  [
+                    5,
+                    30,
+                    "Pm"
+                  ],
+                  [
+                    8,
+                    0,
+                    "Pm"
+                  ]
+                ]
+              }
+            },
+            {
+              "OnlineSync": {
+                "Th": [
+                  [
+                    5,
+                    30,
+                    "Pm"
+                  ],
+                  [
+                    8,
+                    0,
+                    "Pm"
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GEOG683",
+      "name": "Hazards and Emergency Management",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Timely and accurate Geospatial Intelligence (GEOINT) is essential for protecting people from hazardous events such as floods, wildfires, tsunamis, hurricanes, industrial accidents, and terrorist attacks. GEOINT plays a critical role in all four stages of emergency management: preparedness, mitigation, response, and recovery. The use of remote sensing and Geographic Information Systems (GIS) before, during, and after Hurricane Katrina and the 9/11 terror attacks are two of the case studies that are discussed during this course. You will develop a deeper understanding of the emergency management successes and failures that occurred during these historic and deadly events, and learn the technical skills to develop and disseminate GEOINT products that support decision-making at all four stages of emergency management.",
+      "sections": [
+        {
+          "sec_code": "1",
+          "instructors": [
+            "Jonathon Hathaway"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      5,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      8,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "1106"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      5,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      8,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "1106"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "1",
+          "instructors": [
+            "Jonathon Hathaway"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "W": [
+                  [
+                    5,
+                    30,
+                    "Pm"
+                  ],
+                  [
+                    8,
+                    0,
+                    "Pm"
+                  ]
+                ]
+              }
+            },
+            {
+              "OnlineSync": {
+                "Th": [
+                  [
+                    5,
+                    30,
+                    "Pm"
+                  ],
+                  [
+                    8,
+                    0,
+                    "Pm"
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GEOG685",
+      "name": "Machine Learning and Data Mining",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Introduces statistical and spatial analysis over machine learning in mining data sets (and tackling big data problems), primarily in geography and spatial sciences, but with broader appeal throughout the socio-behavioral sciences. Students will be introduced to a range of methods that can be applied to the exploration, modeling, and visualization of big quantitative data. This course explores data cleaning, statistical analysis, and data-mining for geospatial and non-geospatial data in structured and unstructured form, with an emphasis on large silos of data across diverse sources and assumptions. Topics will include open sourcing, metadata schemes, data standards and models, data-access, data-mining, clustering methods, classifiers, data reduction, machine learning, filtering schemes, real-time and streaming data, archiving and preservation, and handling uncertainty.",
+      "sections": [
+        {
+          "sec_code": "1",
+          "instructors": [
+            "Ruibo Han"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      5,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      8,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "1222"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      5,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      8,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "1222"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "1",
+          "instructors": [
+            "Ruibo Han"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "M": [
+                  [
+                    5,
+                    30,
+                    "Pm"
+                  ],
+                  [
+                    8,
+                    0,
+                    "Pm"
+                  ]
+                ]
+              }
+            },
+            {
+              "OnlineSync": {
+                "Tu": [
+                  [
+                    5,
+                    30,
+                    "Pm"
+                  ],
+                  [
+                    8,
+                    0,
+                    "Pm"
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GEOG732",
+      "name": "Spatial Econometrics",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "An introduction to modern econometric techniques in general and spatial econometrics in particular, using the popular open source statistical computer language R. A focus on using statistical computing to produce analytical reports for real-world applications, research papers, and dissertations.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Laixiang Sun"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "1158"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GEOG770",
+      "name": " Algorithms for Geospatial Computing",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Geometric primitives and algorithms for discrete and continuous spatial data processing. Point data representation and analysis: spatial data structures, neighbor finding and range queries, clustering algorithms. Terrain modeling: grids and TINs, algorithms and data structures for building and querying TINs, gridding and interpolation. Terrain analysis: segmentation through watershed computation, algorithms for visibility computation. Applications to LiDAR data processing and analysis for forest management, urban modeling, and coastal data mapping.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Leila De Floriani"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ARC",
+                  "1103"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GEOG788",
+      "name": "Selected Topics in Geography",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "Repeatable to 6 credits if content differs.",
+      "sections": null
+    },
+    {
+      "code": "GEOG788A",
+      "name": "Selected Topics in Geography; Changing Geographies of Sub-Saharan Africa",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Examines the diverse physical, bioclimatic, historical, cultural, political, demographic, health, and economic geographies of Sub-Saharan Africa. Develops advanced student understanding of regional contexts and spatial patterns. Includes an intensive case study of the Congo. Students will engage with academic literature, apply geographic research methods,and complete an independent research project on a topic related to the geography of Sub-Saharan Africa.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Catherine Nakalembe"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "B0302"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GEOG789",
+      "name": "Independent Readings",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "Repeatable to 6 credits if content differs.",
+      "sections": null
+    },
+    {
+      "code": "GEOG790",
+      "name": "Internship in Geography",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Field experience in the student's specialty in a Federal, state, or local agency or private business. Research paper required.",
+      "sections": null
+    },
+    {
+      "code": "GEOG797",
+      "name": "Professional Project",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Data and materials can originate from an internship (internal or external) or from relevant work experience with current employer. Under direction of faculty advisor, students will prepare a project report containing explanation of the requirements for the work, technical account of the activities undertaken, including literature review, description of methods and approaches taken, a critical discussion of results, along with conclusions and recommendations developed from the project. Final project will consist of a full-fledged GIS application that is up and running and can be tested, providing potential employers with a portfolio demonstrating student's ability to manage and develop a GIS application in real world situations.",
+      "sections": [
+        {
+          "sec_code": "1",
+          "instructors": [
+            "Jonathan Resop"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      5,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      8,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "1171"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      5,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      8,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "1",
+          "instructors": [
+            "Jonathan Resop"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "M": [
+                  [
+                    5,
+                    30,
+                    "Pm"
+                  ],
+                  [
+                    8,
+                    0,
+                    "Pm"
+                  ]
+                ]
+              }
+            },
+            {
+              "OnlineSync": {
+                "Tu": [
+                  [
+                    5,
+                    30,
+                    "Pm"
+                  ],
+                  [
+                    8,
+                    0,
+                    "Pm"
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GEOG798",
+      "name": "Selected Topics in Geography: Seminar Series; Seminar Series",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Tatiana Loboda"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "Th": [
+                  [
+                    3,
+                    45,
+                    "Pm"
+                  ],
+                  [
+                    5,
+                    15,
+                    "Pm"
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GEOG799",
+      "name": "Master's Thesis Research",
+      "credits": {
+        "Range": [
+          1,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "GEOG898",
+      "name": "Pre-Candidacy Research",
+      "credits": {
+        "Range": [
+          1,
+          8
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "GEOG899",
+      "name": "Doctoral Dissertation Research",
+      "credits": {
+        "Amount": 6
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    }
+  ]
+}

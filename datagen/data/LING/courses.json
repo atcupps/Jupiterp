@@ -1,0 +1,1403 @@
+{
+  "name": "LING",
+  "courses": [
+    {
+      "code": "LING200",
+      "name": "Introductory Linguistics",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS"
+      ],
+      "description": "An exploration of the nature of human language. Introduction to the basic concepts and methodology of modern linguistic analysis (sound systems, word formation, sentence structure). Examination of the factors that contribute to dialect differences and the social implications of language variation. Additional topics may include: semantics, pragmatics, language change, writing systems, typology, language universals, comparison with other communication systems.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Margaret Antonisse"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "MMH",
+                  "1400"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "MMH",
+                  "1304"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Margaret Antonisse"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "MMH",
+                  "1400"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "MMH",
+                  "1304"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Margaret Antonisse"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "MMH",
+                  "1400"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "MMH",
+                  "1304"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "LING240",
+      "name": "Language and Mind",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHU"
+      ],
+      "description": "The study of language as a cognitive phenomenon. Ways of representing people's knowledge of their native language, ways in which that knowledge is attained naturally by children, and how it is used in speaking and listening. Additional topics may include: animal communication, language and the brain, language and thought.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Tonia Bleam"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "1101"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "LING248",
+      "name": "Introduction to Laboratory Research in Linguistics",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: Permission of ARHU-Linguistics department.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Jeffrey Lidz"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "MMH",
+                  "1108B"
+                ]
+              }
+            },
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "LING272",
+      "name": "Biophysics of Language",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSNS",
+        "SCIS"
+      ],
+      "description": "Examines the nature of mental representation of language in the physiology of the mind/brain, how it evolved, how it emerges in learners' minds, and how it decays through injury and illness. Insights from linguistics, cognitive psychology, neuroscience, animal behavior, molecular biology, and biophysics are brought to bear on how an abstract systematic behavior can arise within an animal brain.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Juan Uriagereka"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      15,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "MMH",
+                  "1304"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "LING311",
+      "name": "Syntax I",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Basic concepts, analytical techniques of generative syntax, relation to empirical limits imposed by viewing grammars as representations of a component of human mind. Aspects of current theories.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Tonia Bleam"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "MMH",
+                  "1304"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "LING312",
+      "name": "Syntax II",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Continuation of LING311. Development of theories of syntax. Criteria for revising theories. Methods and strategies of scientific efforts to explain natural phenomena.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "MMH",
+                  "1304"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "LING321",
+      "name": "Phonology I",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Properties of sound systems of human languages, basic concepts and analytical techniques of generative phonology. Empirical limits imposed by viewing grammars as cognitive representations. Physiological properties and phonological systems; articulatory phonetics and distinctive feature theory.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Naomi Feldman"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "2120"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "LING322",
+      "name": "Phonology II",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Continuation of LING321. Further investigation of phonological phenomena and phonological theory. Revising and elaborating the theory of the phonological representation; interaction of phonology and morphology.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "MMH",
+                  "1304"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "LING330",
+      "name": "Historical Linguistics",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "A traditional presentation of language change. Language types and families, sounds and writing systems, grammatical categories. Reconstruction of proto-languages by internal and comparative methods.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Margaret Antonisse"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "MMH",
+                  "1304"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "LING350",
+      "name": "Philosophy of Language",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "The nature and function of language and other forms of symbolism from a philosophical perspective.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Alexander Williams"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "HBK",
+                  "0105"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "LING419M",
+      "name": "Topics in Syntax; Acquisition of understudied languages",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "PRE-REQUISITES: LING 311 Investigation of the acquisition of the morphosyntax of languages that are not extensively documented, with a particular focus on Tashlhiyt Berber. Methodologies reviewed include the construction of a corpus of child-directed speech and the design of behavioral studies to model the children's hypothesis space and developmental timeline. Knowledge from LING444 will be helpful but is not required.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Imane Bou-Saboun"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "MMH",
+                  "1304"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "LING444",
+      "name": "Child Language Acquisition",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Examines language acquisition in infancy and early childhood: the nature of children's linguistic representations and how these develop naturally. Role of (possible) innate linguistic structure and interaction of such structure with experience. Evaluation of methods and results of current and classic research leading to contemporary models of language development.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Jeffrey Lidz"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "0118"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "LING448",
+      "name": "Advanced Laboratory Research in Linguistics",
+      "credits": {
+        "Range": [
+          2,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: Permission of ARHU-Linguistics department.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Jeffrey Lidz"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "MMH",
+                  "1108B"
+                ]
+              }
+            },
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "LING449F",
+      "name": "Topics in Psycholinguistics; Acquisition of wh-questions",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "PRE-REQUISITES: LING 311 Examination of the role of argument structure in children's acquisition of wh-questions. Methods for probing children's (1) representation of events and thematic roles in relation to verbs and arguments and (2) representation of dependencies in statements vs. questions.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Yuanfan Ying"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "MMH",
+                  "1304"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "LING449G",
+      "name": "Topics in Psycholinguistics; Experimental morphosyntax",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "PRE-REQUISITES: LING 311 and LING 321 An examination of how analytical and psycholinguistic methods can inform morphosyntactic and morphophonological theories. Focus on Semitic languages and behavioral priming experiments.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Clara Cuonzo"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "MMH",
+                  "1304"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "LING499",
+      "name": "Directed Studies in Linguistics",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "LING499C",
+      "name": "Directed Studies in Linguistics; Teaching Assistantship",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Margaret Antonisse"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Tonia Bleam"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "LING499H",
+      "name": "Directed Studies in Linguistics",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "LING499R",
+      "name": "Directed Studies in Linguistics; Understanding Language Understanding",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Restriction: Permission of department. In this class we'll ask, what does it mean to understand language? We'll look at the pieces of the puzzle from two perspectives: the sciences of the artificial (to steal a term from Herbert Simon), and the sciences o f the natural world, i.e. the study within cognitive science of the human capacity for language. Contact the instructor for information about registering for this course.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Philip Resnik"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "0103"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "LING499S",
+      "name": "Directed Studies in Linguistics; Speech Technology",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "PRE-REQUISITES: Permission of instructor Introduction of techniques and models used in speech technology, including a survey of methods in the last several decades. Focus on the interaction between speech technology and human speech perception, or the lack thereof in some cases. Contact the instructor for information about registering for this course.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Leslie Li"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "LING611",
+      "name": "Issues in Syntax",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Topics of current theoretical interest examined through data from a variety of languages.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Aron Hirsch"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "MMH",
+                  "1108B"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "LING621",
+      "name": "Issues in Phonology",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Topics of current interest in phonological theory examined through data from several languages.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      15,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "MMH",
+                  "1108B"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "LING641",
+      "name": "Issues in Psycholinguistics",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Topics of current interest in psycholinguistics, including both theoretical approaches and experimental and analytical issues in language acquisition, language processing, and neurolinguistics.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Colin Phillips"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "MMH",
+                  "1108B"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "LING644",
+      "name": "Language Acquisition",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Interpretations of observational and experimental work on children's language development, and relationship between developmental stages and theories of human language faculties.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Jeffrey Lidz"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "MMH",
+                  "1108B"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "LING661",
+      "name": "Issues in Semantics",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "A second course in semantic theory. Application of basic concepts and methods to topics of current theoretical interest.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Valentine Hacquard"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "MMH",
+                  "1108B"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "LING689",
+      "name": "Independent Study",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "LING689T",
+      "name": "Independent Study; Pedagogy for Linguistics",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "Designed for novice instructors to collaboratively explore and evaluate methodologies that support teaching improvement and learner achievement.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Tonia Bleam"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "LING798",
+      "name": "Research Papers in Linguistics",
+      "credits": {
+        "Range": [
+          1,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "LING799",
+      "name": "Master's Thesis Research",
+      "credits": {
+        "Range": [
+          1,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "LING859",
+      "name": "Seminar in Language Acquisition",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Jeffrey Lidz"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "3122"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "LING879A",
+      "name": "Seminar in Semantics",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "MMH",
+                  "1108B"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "LING888",
+      "name": "Doctoral Research Paper",
+      "credits": {
+        "Range": [
+          1,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Howard Lasnik"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0401",
+          "instructors": [
+            "Jeffrey Lidz"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0601",
+          "instructors": [
+            "Juan Uriagereka"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0801",
+          "instructors": [
+            "William Idsardi"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0901",
+          "instructors": [
+            "Philip Resnik"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "1001",
+          "instructors": [
+            "Maria Polinsky"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "1201",
+          "instructors": [
+            "Colin Phillips"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "1401",
+          "instructors": [
+            "Valentine Hacquard"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "1501",
+          "instructors": [
+            "Alexander Williams"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "1601",
+          "instructors": [
+            "Naomi Feldman"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "1701",
+          "instructors": [
+            "Ellen Lau"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "LING889",
+      "name": "Directed Research",
+      "credits": {
+        "Range": [
+          1,
+          8
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "LING896",
+      "name": "Research Paper in Minor Area",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "This course is designed to strengthen the students' ability to do research in a minor area of expertise, and to help them create a publishable piece. In addition, the course constitutes part of a set of requirements to advance to doctoral candidacy.",
+      "sections": null
+    },
+    {
+      "code": "LING898",
+      "name": "Pre-Candidacy Research",
+      "credits": {
+        "Range": [
+          1,
+          8
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "LING899",
+      "name": "Doctoral Dissertation Research",
+      "credits": {
+        "Amount": 6
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    }
+  ]
+}

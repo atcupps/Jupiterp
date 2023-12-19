@@ -1,0 +1,6076 @@
+{
+  "name": "KNES",
+  "courses": [
+    {
+      "code": "KNES120A",
+      "name": "Fitness Walking",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "This is a co-ed physical activity course for beginning fitness walking.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Andrew Ginsberg"
+          ],
+          "class_meetings": [
+            "OnlineAsync",
+            "OnlineAsync"
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Andrew Ginsberg"
+          ],
+          "class_meetings": [
+            "OnlineAsync",
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES131N",
+      "name": "Physical Education Activities: Coed; Jogging (beginning)",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "Attendance is required on the first day of class. Students must pay a $40 instructional materials fee.<br><br> Restricted to students in KNES major. Credit only granted for KNES131V or KNES131N.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Andrew Ginsberg"
+          ],
+          "class_meetings": [
+            "OnlineAsync",
+            "OnlineAsync"
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Andrew Ginsberg"
+          ],
+          "class_meetings": [
+            "OnlineAsync",
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES140R",
+      "name": "Physical Education Activities: Coed; Trampoline (Beginning)",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "Attendance is required on the first day of class. Students must pay a $40.00 instructional materials fee. Restricted to KNES majors only. Non-majors may join a hold file.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Joshua Montfort"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1120"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES140V",
+      "name": "Physical Education Activities: Coed; Tumbling and Balancing (Beginning)",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "Attendance is required on the first day of class. Students must pay a $40.00 instructional materials fee. Restricted to KNES majors only. Non-majors may join a hold file.",
+      "sections": [
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Joshua Montfort"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1120"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES144Q",
+      "name": "Physical Education Activities: Coed; Martial Arts, Karate (Beginning)",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": null,
+      "description": "Attendance is required on the first day of class. Students must pay a $40.00 instructional materials fee.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Kenneth Klotz"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0107"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES144R",
+      "name": "Physical Education Activities: Coed; Martial Arts, Karate (Intermediate)",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": null,
+      "description": "Attendance is required on the first day of class. Students must pay a $40.00 instructional materials fee",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Michael Dorothy"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0107"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES144T",
+      "name": "Physical Education Activities: Coed; Self-Defense",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": null,
+      "description": "Attendance is required on the first day of class. Students must pay a $40.00 instructional materials fee.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Kenneth Klotz"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      8,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0107"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Kenneth Klotz"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "WF": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0107"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES151",
+      "name": "Professional Lifeguard Training",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "Lifeguarding will prepare students to respond to emergencies, promote safety in aquatic environments, and may even appeal to a future employer looking for a proven leader. Throughout the course, students will work towards American Red Cross certification requirements, including lifeguarding, CPR/AED, and First Aid. This class will also place an emphasis on professionalism, communication, teamwork, problem solving, and emergency response.",
+      "sections": [
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "John Felts"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ERC",
+                  "B0120"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES154N",
+      "name": "Physical Education Activities: Coed; Swimming (Beginning)",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "Attendance is required on the first day of class. Students must pay a $40.00 instructional materials fee.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Ashley David"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      8,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ERC",
+                  "B0120"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES156",
+      "name": "Pickleball",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "This is a co-ed physical activity course for pickleball.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Andrea Liberto"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "2101"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Andrea Liberto"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "2101"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES161T",
+      "name": "Physical Education Activities: Coed; Yoga",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "Attendance on the first day of class is mandatory. Students must pay a $40.00 instructional materials fee.<br><br> Restricted to students in KNES major.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Kate Shin"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0107"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Kate Shin"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0107"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES180",
+      "name": "Volleyball",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "This is a co-ed physical activity course for volleyball.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Emma Powell"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "2101"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Emma Powell"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "2101"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES182",
+      "name": "Soccer",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "This is a co-ed physical activity course for soccer.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Emma Powell"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "2101"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Emma Powell"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "2101"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES186",
+      "name": "Basketball",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "This is a co-ed physical activity course for basketball.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Ronald Mower"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ARM",
+                  "1122"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Ronald Mower"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ARM",
+                  "1122"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES190",
+      "name": "Flag Football",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "This is a co-ed physical activity course for flag football.",
+      "sections": [
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Sarah Glancy",
+            "Ross Miller"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "2101"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES192",
+      "name": "Ultimate Frisbee",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "This is a co-ed physical activity course for Ultimate Frisbee.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Emilio Weber"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "2101"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Emilio Weber"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "2101"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES200",
+      "name": "Introduction to Kinesiology",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Kinesiology is the interdisciplinary study of physical activity that includes seven sub-disciplines: 1) exercise physiology; 2) biomechanics; 3) sport psychology; 4) motor development; 5) motor control; 6) sport history; and 7) sport sociology. This course will examine these areas of study within Kinesiology from scientific and applied perspectives.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Andrea Liberto"
+          ],
+          "class_meetings": [
+            "OnlineAsync",
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1302"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Andrea Liberto"
+          ],
+          "class_meetings": [
+            "OnlineAsync",
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1302"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0105",
+          "instructors": [
+            "Andrea Liberto"
+          ],
+          "class_meetings": [
+            "OnlineAsync",
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1302"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0106",
+          "instructors": [
+            "Andrea Liberto"
+          ],
+          "class_meetings": [
+            "OnlineAsync",
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1302"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES214",
+      "name": "Science and Methods of Personal Fitness Instruction",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSSP"
+      ],
+      "description": "Basic concepts of human anatomy, exercise physiology, applied kinesiology, nutrition and the physiology of exercise training. Includes the CORE knowledge required for the American Council on Exercise (ACE) Personal Trainer certification.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Rosemary Lindle"
+          ],
+          "class_meetings": [
+            "OnlineAsync",
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0103"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Rosemary Lindle"
+          ],
+          "class_meetings": [
+            "OnlineAsync",
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0103"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES225",
+      "name": "Hoop Dreams: Black Masculinity and Sport",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS",
+        "SCIS"
+      ],
+      "description": "Has sport disadvantaged African American males? This course critically examines sport as a site where notions of black masculinity are publicly debated, critiqued, challenged, celebrated, and also transformed. Utilizing an interdisciplinary approach, this course explores how sport has been invoked across the political and ideological spectrum to interrogate a number of issues impacting the life chances of young, African Americans males including educational attainment, poverty, social mobility, racism, cultural production, and notions of masculinity.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Ronald Mower"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1303"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES246",
+      "name": "Transformational Leader in Sport: The Art and Science of Coaching",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSSP"
+      ],
+      "description": "Highlights the expectations and ethical problems facing developmental sport programs and youth athletic coaches today. Explores the continuum of coaching from Buttermaker (Bad News Bears) to Belichick (New England Patriots). We first examine the issues of sports, physical inactivity and obesity from a physiological, psychological, social, political, and economic perspective. Next, we will focus on how transformational leadership behaviors, knowledge, and communication influence changes in intrapersonal, interpersonal, and environmental aspects. Finally, we will employ a practical, manageable method for coaches to develop their athletes and programs.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Jay Goldstein"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1302"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "2101"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Jay Goldstein"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1302"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "2101"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES260",
+      "name": "Science of Physical Activity and Cardiovascular Health",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSNS",
+        "DSSP"
+      ],
+      "description": "Course details (1) the public health importance of and the processes underlying cardiovascular disease, (2) the risk factors for cardiovascular disease and the methods whereby they were identified, and (3) the principles of the scientific evidence supporting the use of physical activity to prevent cardiovascular disease.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "James Hagberg"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0302"
+                ]
+              }
+            },
+            "OnlineAsync",
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0125"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "James Hagberg"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0302"
+                ]
+              }
+            },
+            "OnlineAsync",
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0125"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES282",
+      "name": "Basic Care and Prevention of Athletic Injuries",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Theoretical and practical foundations of the prevention, treatment and rehabilitation of athletically related injuries. Topics include: physical conditioning, preventive taping, recognition of injuries, first aid and CPR.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Joanne Klossner"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0308"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES285",
+      "name": "History of Physical Culture, Sport, &amp; Science in America",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHU",
+        "DVUP"
+      ],
+      "description": "Examines the history of physical culture in America, focusing on the period from the end of the Civil War to the Cold War. Physical culture refers to a broad range of movement practices including sport, play, rehabilitative exercise, health and fitness training, and recreation and leisure. More specifically, we challenge the idea that historical physical culture practices--and the scientific processes from which they were derived--were 'neutral' or 'objective'; rather, we explore the cultural, social, political, and economic contexts shaping physical culture knowledge, study, structures, and policies across American history. The goal is for you to learn and apply techniques of historical analysis to develop a critical understanding of how knowledge about, and practices of, physical culture supported a particular social order via the construction of difference, norms, and/or hierarchies, and ultimately contributed to some of the inequalities that endure today.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Michael Friedman"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1312"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0303"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Michael Friedman"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1312"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0303"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Michael Friedman"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1312"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0303"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0104",
+          "instructors": [
+            "Michael Friedman"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1312"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0303"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0105",
+          "instructors": [
+            "Michael Friedman"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1312"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0303"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0106",
+          "instructors": [
+            "Michael Friedman"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1312"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0303"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0107",
+          "instructors": [
+            "Michael Friedman"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1312"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0303"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0108",
+          "instructors": [
+            "Michael Friedman"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1312"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0303"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES287",
+      "name": "Sport and American Society",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS",
+        "DVUP"
+      ],
+      "description": "Sport will be related to such social problems as delinquency, segregation, collective behavior, and leisure; to social processes such as socialization, stratification, mobility, and social control; and to those familiar social institutions the family, the school, the church, the military, the economy, the polity, and the mass media.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Ronald Mower"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1312"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      8,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      8,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0305"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Ronald Mower"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1312"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0305"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Ronald Mower"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1312"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0305"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0104",
+          "instructors": [
+            "Ronald Mower"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1312"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0305"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0105",
+          "instructors": [
+            "Ronald Mower"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1312"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0305"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0106",
+          "instructors": [
+            "Ronald Mower"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1312"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0305"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES289",
+      "name": "Topical Investigations",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: permission of department.",
+      "sections": null
+    },
+    {
+      "code": "KNES300",
+      "name": "Biomechanics of Human Motion",
+      "credits": {
+        "Amount": 4
+      },
+      "gen_eds": null,
+      "description": "The study of human movement and the physical and physiological principles upon which it depends. Body mechanics, posture, motor efficiency, sports, the performance of a typical individual and the influence of growth and development upon motor performance.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1312"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      8,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0223"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1312"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0223"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1312"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0223"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0104",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1312"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0223"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0107",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1312"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0223"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0108",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1312"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0223"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES300H",
+      "name": "Biomechanics of Human Motion",
+      "credits": {
+        "Amount": 4
+      },
+      "gen_eds": null,
+      "description": "The study of human movement and the physical and physiological principles upon which it depends. Body mechanics, posture, motor efficiency, sports, the performance of a typical individual and the influence of growth and development upon motor performance.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Ross Miller"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1312"
+                ]
+              }
+            },
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES305",
+      "name": "Principles &amp; Application of Exercise Rehabilitation",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "In-depth analysis of the basic principles of rehabilitation and exercise programming for common injuries encountered in a clinical setting. Basic assessment techniques, ranges of motion, muscular anatomy, rehabilitative protocols, and exercise modalities are a major focus.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Larry Plotkin"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      8,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      15,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0308"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES305H",
+      "name": "Principles &amp; Application of Exercise Rehabilitation",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "In-depth analysis of the basic principles of rehabilitation and exercise programming for common injuries encountered in a clinical setting. Basic assessment techniques, ranges of motion, muscular anatomy, rehabilitative protocols, and exercise modalities are a major focus.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Larry Plotkin"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      8,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      15,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0308"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES306",
+      "name": "Prosthetics for Limb Amputations",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Introduction to the science of prosthetics and the artificial devices that are designed, developed and fit to replace the missing body part or parts lost through trauma, disease or congenital conditions.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Michelle Jamin"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0308"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES306H",
+      "name": "Prosthetics for Limb Amputations",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Introduction to the science of prosthetics and the artificial devices that are designed, developed and fit to replace the missing body part or parts lost through trauma, disease or congenital conditions.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Michelle Jamin"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0308"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES320",
+      "name": "Physiological Basis of Physical Activity and Human Health",
+      "credits": {
+        "Amount": 4
+      },
+      "gen_eds": null,
+      "description": "A study of the responses and chronic adaptations to physical activity and exercise, with particular emphasis on the interaction between human health and physical activity. The laboratory component of course will focus on the assessment of physical activity and measurement of physiological adaptations to exercise. Students are expected to gain an understanding and appreciation for the benefits of physical activity and exercise in the context of public health.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Jeffrey Beans"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1312"
+                ]
+              }
+            },
+            "OnlineAsync",
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0125"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Jeffrey Beans"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1312"
+                ]
+              }
+            },
+            "OnlineAsync",
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0125"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Jeffrey Beans"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1312"
+                ]
+              }
+            },
+            "OnlineAsync",
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      8,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0125"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0104",
+          "instructors": [
+            "Jeffrey Beans"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1312"
+                ]
+              }
+            },
+            "OnlineAsync",
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0125"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0105",
+          "instructors": [
+            "Jeffrey Beans"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1312"
+                ]
+              }
+            },
+            "OnlineAsync",
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0125"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0106",
+          "instructors": [
+            "Jeffrey Beans"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1312"
+                ]
+              }
+            },
+            "OnlineAsync",
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0125"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0107",
+          "instructors": [
+            "Jeffrey Beans"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1312"
+                ]
+              }
+            },
+            "OnlineAsync",
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0125"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0108",
+          "instructors": [
+            "Jeffrey Beans"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1312"
+                ]
+              }
+            },
+            "OnlineAsync",
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0125"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES332",
+      "name": "Exercise Testing &amp; Prescription for Fitness Professionals",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Practical applications of exercise physiology and psychology to target fitness instruction for the general adult population Includes discussion of certification standards and professional development as well as evaluation of program safety and current trends.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Jo Zimmerman"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "WF": [
+                    [
+                      8,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0302"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES332H",
+      "name": "Exercise Testing &amp; Prescription for Fitness Professionals",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Practical applications of exercise physiology and psychology to target fitness instruction for the general adult population Includes discussion of certification standards and professional development as well as evaluation of program safety and current trends.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Jo Zimmerman"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "WF": [
+                    [
+                      8,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0302"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES334",
+      "name": "Adapted Physical Activity: Empowering People with Disabilities to Lead a Healthy and Active Lifestyle",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSSP",
+        "DVUP"
+      ],
+      "description": "Study of the field of adapted physical activity and its impact on the health and wellness of individuals with disabilities. Students will design an adapted physical activity program proposal and develop the skills needed to empower people with disabilities to participate in physical activity and sports programs. Students will explore their own perceptions towards disability and how people with disabilities are portrayed in our society. They will study the etiology of disabling conditions and the implications for participating in physical activity.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Ana Palla"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES350",
+      "name": "The Psychology of Sports &amp; Exercise",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS"
+      ],
+      "description": "An exploration of personality factors, including but not limited to motivation, aggression and emotion, as they affect sports participation and motor skill performance.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Elizabeth Brown"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1312"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Elizabeth Brown"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1312"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "J Carson Smith"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1312"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0104",
+          "instructors": [
+            "J Carson Smith"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1312"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES350H",
+      "name": "The Psychology of Sports &amp; Exercise",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS"
+      ],
+      "description": "An exploration of personality factors, including but not limited to motivation, aggression and emotion, as they affect sports participation and motor skill performance.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Elizabeth Brown"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1312"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "J Carson Smith"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1312"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES355",
+      "name": "Sport Management",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Application of concepts and issues related to management principles and business concerns across various sections of the sport industry. Principles pertaining to the management of sport organizations.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Stephen McDaniel"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0307"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES355H",
+      "name": "Sport Management",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Application of concepts and issues related to management principles and business concerns across various sections of the sport industry. Principles pertaining to the management of sport organizations.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Stephen McDaniel"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0307"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES360",
+      "name": "Physiology of Exercise",
+      "credits": {
+        "Amount": 4
+      },
+      "gen_eds": null,
+      "description": "A study of the physiology of exercise, including concepts of work, muscular contraction, energy transformation, metabolism, oxygen debt, and nutrition and athletic performance. Emphasis on cardiovascular and respiratory function in relation to physical activity and training.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Steven Prior"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1312"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      8,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0125"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Steven Prior"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1312"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0125"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Steven Prior"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1312"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0125"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0104",
+          "instructors": [
+            "Steven Prior"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1312"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0125"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0106",
+          "instructors": [
+            "Steven Prior"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1312"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0125"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0107",
+          "instructors": [
+            "Steven Prior"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1312"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0125"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0108",
+          "instructors": [
+            "Steven Prior"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1312"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0125"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES360H",
+      "name": "Physiology of Exercise",
+      "credits": {
+        "Amount": 4
+      },
+      "gen_eds": null,
+      "description": "A study of the physiology of exercise, including concepts of work, muscular contraction, energy transformation, metabolism, oxygen debt, and nutrition and athletic performance. Emphasis on cardiovascular and respiratory function in relation to physical activity and training.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Steven Prior"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1312"
+                ]
+              }
+            },
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES370",
+      "name": "Motor Development",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Motor development across the life span. The developmental sequences of motor skills from birth to old age; neuromaturation of neuromuscular system; analysis of the underlying mechanisms of motor skill development; and correlates of motor development.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Tim Kiemel"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1312"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      8,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      8,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0223"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Tim Kiemel"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1312"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0223"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Tim Kiemel"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1312"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0223"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0104",
+          "instructors": [
+            "Tim Kiemel"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1312"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0223"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0107",
+          "instructors": [
+            "Tim Kiemel"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1312"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0223"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0108",
+          "instructors": [
+            "Tim Kiemel"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1312"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0223"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES370H",
+      "name": "Motor Development",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Motor development across the life span. The developmental sequences of motor skills from birth to old age; neuromaturation of neuromuscular system; analysis of the underlying mechanisms of motor skill development; and correlates of motor development.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Tim Kiemel"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1312"
+                ]
+              }
+            },
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES385",
+      "name": "Motor Control and Learning",
+      "credits": {
+        "Amount": 4
+      },
+      "gen_eds": null,
+      "description": "This introductory course investigates how humans control and adapt their movements to perform and learn a variety of motor skills, ranging from activities of daily living to elite athlete performance. This course examines the underlying cognitive, sensory and motor processes of control and adaptation of human movements both at the behavioral and neurophysiological levels. Relevant applications to movement rehabilitation as well as performance optimization are employed to illustrate the concepts discussed in class. The cognitive, sensory and motor mechanisms underlying motor control are explored first and then in a motor learning context.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Rodolphe Gentili"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1312"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0223"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Rodolphe Gentili"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1312"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0223"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Rodolphe Gentili"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1312"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0223"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0104",
+          "instructors": [
+            "Rodolphe Gentili"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1312"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0223"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0106",
+          "instructors": [
+            "Rodolphe Gentili"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1312"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0223"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0107",
+          "instructors": [
+            "Rodolphe Gentili"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1312"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0223"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES385H",
+      "name": "Motor Control and Learning",
+      "credits": {
+        "Amount": 4
+      },
+      "gen_eds": null,
+      "description": "This introductory course investigates how humans control and adapt their movements to perform and learn a variety of motor skills, ranging from activities of daily living to elite athlete performance. This course examines the underlying cognitive, sensory and motor processes of control and adaptation of human movements both at the behavioral and neurophysiological levels. Relevant applications to movement rehabilitation as well as performance optimization are employed to illustrate the concepts discussed in class. The cognitive, sensory and motor mechanisms underlying motor control are explored first and then in a motor learning context.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Rodolphe Gentili"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1312"
+                ]
+              }
+            },
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES389",
+      "name": "Topical Investigations",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: permission of instructor and department. This class does NOT fulfill a KNES Options Requirement.",
+      "sections": null
+    },
+    {
+      "code": "KNES389K",
+      "name": "Topical Investigations; Kinesiology Internship",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: permission of instructor and department.",
+      "sections": null
+    },
+    {
+      "code": "KNES405",
+      "name": "Principles &amp; Techniques of Manual Muscle Testing",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "It is critical for sports medicine and sport performance specialists to understand the location and inter-relationships of the structures of the body that impact human movement. Thus, the primary purpose of this course is to facilitate an in-depth, understanding of the muscles of the body. Specifically, students will learn the origins, insertions, primary and secondary functions, as well as nervous innervations of the major muscle groups of the body. In addition, students will develop palpation skills and learn to grade the function of each muscle through manual muscle testing techniques. These skills form the foundation for assessing functional movement as well as performing safe and effective manual therapy techniques. Thus, while the focus of the class will be to develop sound, introductory palpation and manual muscle testing skills, basic principles of functional movement and manual therapy will also be addressed through hands-on application as well as case study.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Joanne Klossner",
+            "Larry Plotkin"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0121"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0121"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES405H",
+      "name": "Principles &amp; Techniques of Manual Muscle Testing",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "It is critical for sports medicine and sport performance specialists to understand the location and inter-relationships of the structures of the body that impact human movement. Thus, the primary purpose of this course is to facilitate an in-depth, understanding of the muscles of the body. Specifically, students will learn the origins, insertions, primary and secondary functions, as well as nervous innervations of the major muscle groups of the body. In addition, students will develop palpation skills and learn to grade the function of each muscle through manual muscle testing techniques. These skills form the foundation for assessing functional movement as well as performing safe and effective manual therapy techniques. Thus, while the focus of the class will be to develop sound, introductory palpation and manual muscle testing skills, basic principles of functional movement and manual therapy will also be addressed through hands-on application as well as case study.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Joanne Klossner",
+            "Larry Plotkin"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0121"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0121"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES442",
+      "name": "Psychology of Exercise and Health",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Examines the antecedents and consequences of exerciese behavior. Explores motivation, attitude, control, socialization. Proposes intervention strategies at the individual, organizational and societal levels.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Seppo Iso-Ahola"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0307"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES442H",
+      "name": "Psychology of Exercise and Health",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Examines the antecedents and consequences of exerciese behavior. Explores motivation, attitude, control, socialization. Proposes intervention strategies at the individual, organizational and societal levels.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Seppo Iso-Ahola"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0307"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES451",
+      "name": "Children and Sport: A Psychosocial Perspective",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Examination of youth sports from a psychosocial perspective, including the impact of highly structured sports on young athletes and the complex social network of coaches, parents and peers.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Elizabeth Brown"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0308"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES451H",
+      "name": "Children and Sport: A Psychosocial Perspective",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Examination of youth sports from a psychosocial perspective, including the impact of highly structured sports on young athletes and the complex social network of coaches, parents and peers.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Elizabeth Brown"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0308"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES457",
+      "name": "Managing Youth Programs: Educational, Fitness and Sport",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "An examination of the basic functions involved in managing physical education, fitness, and youth sports programs. Focus on leadership skills, organizational management, and techniques for applying learned skills in a variety of organizational settings that serve the nation's youth.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Jay Goldstein"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0302"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES464",
+      "name": "Exercise Metabolism: Role in Health and Disease",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Examines the role of metabolism in kinesiology, especially as it relates to physical inactivity, health and disease. Includes bioenergetics, substrate utilization, cell signaling, and metabolic gene expression and their impact on chronic health conditions or disease.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Sarah Glancy"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0307"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES464H",
+      "name": "Exercise Metabolism: Role in Health and Disease",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Examines the role of metabolism in kinesiology, especially as it relates to physical inactivity, health and disease. Includes bioenergetics, substrate utilization, cell signaling, and metabolic gene expression and their impact on chronic health conditions or disease.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Sarah Glancy"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0307"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES465",
+      "name": "Physical Activity and Disease Prevention and Treatment",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Critically examines the scientific evidence that supports the use of physical activity to prevent and treat age-related diseases, including cardiovascular disease, diabetes, abnormal lipoprotein-lipid levels, hypertension, obesity, osteoporosis and cancer.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Sushant Ranadive"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0307"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES465H",
+      "name": "Physical Activity and Disease Prevention and Treatment",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Critically examines the scientific evidence that supports the use of physical activity to prevent and treat age-related diseases, including cardiovascular disease, diabetes, abnormal lipoprotein-lipid levels, hypertension, obesity, osteoporosis and cancer.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Sushant Ranadive"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0307"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES471",
+      "name": "Assistive Technologies for Restoration of Human Motor Functions",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Through a combination of neuroscience and neural engineering this interdisciplinary course focuses on the fundamental principles underlying the interactions between the human cognitive-motor control/learning systems and rehabilitative technologies that aim to offer clinical solutions to individuals with motor impairments.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Rodolphe Gentili"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0302"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES477",
+      "name": "Honors Thesis",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSSP"
+      ],
+      "description": "Advisement will be on the individual basis. Thesis must be defended in the honors seminar.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Tim Kiemel"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0301"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES478",
+      "name": "Honors Seminar; Honors Seminar",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Tim Kiemel"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0301"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES483",
+      "name": "Sport Marketing and Media",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Industry practices in sport marketing and media. Marketing strategies and consumer behavior in different sport contexts. Critical examination of selected social and economic issues related to the buying and selling of sport.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Stephen McDaniel"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0307"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES483H",
+      "name": "Sport Marketing and Media",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Industry practices in sport marketing and media. Marketing strategies and consumer behavior in different sport contexts. Critical examination of selected social and economic issues related to the buying and selling of sport.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Stephen McDaniel"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0307"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES484",
+      "name": "Sporting Hollywood",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Popular representations of sport within the film media related to wider social discourses on bodies and the politics of various categories of subjectivity (gender, sex, race, class and nationality).",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Michael Friedman"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0308"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES485",
+      "name": "Sport and Globalization",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DVUP"
+      ],
+      "description": "Examination of sport culture from a global perspective; focuses on theorizing the similarities and differences between various national sporting cultures.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "David Andrews"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "W": [
+                  [
+                    10,
+                    0,
+                    "Am"
+                  ],
+                  [
+                    10,
+                    50,
+                    "Am"
+                  ]
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES498",
+      "name": "Special Topics in Kinesiology",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "This class does NOT fulfill a KNES Options Requirement.",
+      "sections": null
+    },
+    {
+      "code": "KNES498D",
+      "name": "Special Topics in Kinesiology; Type 2 Diabetes &amp; Physical Activity Seminar",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: KNES360 with a C- or better. Restriction: Must have completed a minimum of 90 credits.<br><br> Students will examine and critically analyze the recent research literature relevant to the diagnosis, prevalence, and impact of the current diabetes epidemic in the US. Students will also study the current state of knowledge relative to the use of physical activity to prevent and treat diabetes. This seminar format class is totally based on student presentations, student participation, and student writing assignments.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "James Hagberg"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      8,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      30,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0305"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES498V",
+      "name": "Special Topics in Kinesiology; Clinical Biomechanics: Musculoskeletal Injury",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: Minimum grade of C- in KNES300. Restriction: Must have earned a minimum of 75 credits.<br><br> This course will explore the mechanical bases of musculoskeletal injury to better understand the biomechanical mechanisms involved in causing the injury, the effect of injury on musculoskeletal tissue, and ultimately, based on our current knowledge, how injuries might be prevented.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Jae Kun Shim"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES602",
+      "name": "Physical Activity Program Planning and Evaluation",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "An in-depth analysis of the planning, implementation, and evaluation of physical activity interventions and programs intended to achieve physical activity and public health goals.",
+      "sections": [
+        {
+          "sec_code": "1",
+          "instructors": [
+            "Brit Saksvig"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES609",
+      "name": "Research Issues in Kinesiology",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "KNES610",
+      "name": "Methods and Techniques of Research",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Studies methods and techniques of research used in Kinesiology; an analysis of examples of their use; and practice in their application to problems of interest to the student.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Seppo Iso-Ahola"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "2334"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES618",
+      "name": "Current Readings in Exercise and Applied Physiology",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Sushant Ranadive"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "2334"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES658",
+      "name": "Teaching Internship in Physical Education",
+      "credits": {
+        "Range": [
+          1,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "01",
+          "instructors": [
+            "Cara Grant"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "Tu": [
+                  [
+                    4,
+                    30,
+                    "Pm"
+                  ],
+                  [
+                    6,
+                    30,
+                    "Pm"
+                  ]
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES662",
+      "name": "Psychology of Exercise and Health",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Examines the antecedents and consequences of exerciese behavior. Explores motivation, attitude, control, socialization. Proposes intervention strategies at the individual, organizational and societal levels.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Seppo Iso-Ahola"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0307"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES678",
+      "name": "Professional Seminar for Teacher Development in Physical Education",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "60",
+          "instructors": [
+            "Cara Grant"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "M": [
+                  [
+                    4,
+                    0,
+                    "Pm"
+                  ],
+                  [
+                    6,
+                    30,
+                    "Pm"
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES689",
+      "name": "Special Problems in Kinesiology",
+      "credits": {
+        "Range": [
+          1,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "KNES689F",
+      "name": "Special Problems in Kinesiology; Psychobiological Foundations of Skilled Motor Performance",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "This course examines the psychological aspects of motor skill learning and performance from a cognitive neuroscience perspective. The focus of the course is on the brain processes underlying superior psychomotor performance and their disruption by mental distress. The basic question addressed in the course is, \"What makes a great performer tick?\"",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Bradley Hatfield"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "2334"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES692",
+      "name": "Cardiovascular Aspects of Exercise Physiology",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "A comprehensive consideration of the various cardiovascular factors affecting human physical performance. Emphasis on the regulation of cardiovascular functions during physical activity. Energy liberation and transfer, circulation, respiration, temperature regulation, physiology of work at altitudes, aerobic endurance training, and exercise, health and aging.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Sushant Ranadive"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0125"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES711",
+      "name": "Professional Development and Grantsmanship",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Enhance continued professional development through an exploration of culture, climate, expectations and mentoring in research I universities. Generate a grant application including the hypothesis, structure, specific aims, background and significance, and submission of a total grant. Grant process and product will be emphasized.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "James Hagberg"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0301"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES778",
+      "name": "Practical Experience in Physical Activity and Public Health",
+      "credits": {
+        "Range": [
+          1,
+          4
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Shannon Jette"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES786",
+      "name": "Capstone Project in Physical Activity and Public Health",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "The culminating experience in which the student applies knowledge and skills learned in the MPH program to conduct independent work on a physical activity problem under the supervision of a faculty advisor.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Shannon Jette"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES789",
+      "name": "Advanced Projects in Kinesiology",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "KNES789B",
+      "name": "Advanced Projects in Kinesiology; Advanced Biomechanics",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Jae Kun Shim"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0223"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES789R",
+      "name": "Advanced Projects in Kinesiology; Brain Dynamics and EEG: Applications to Cognitive-motor Performance",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Recommended: NACS641 (Introduction to Neuroscience) and any signal processing course (e.g., KNES689D Special Problems in Kinesiology: Physiological Signal Processing). This course covers the theory and practice of electroencephalography, which includes, but not limited to, the basic principles of EEG (synaptic sources, volume conduction, electrodes, recording techniques, etc.), various EEG rhythms that reflect cognitive processing, signal processing, conventional analytic methods such as event-related potentials and spectral analysis as well as computational approaches like source localization and functional connectivity. This course may provide coverage of other electrography such as electrooculography (EOG) electromyography (EMG), and electrocardiography (ECG or EKG).",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Hyuk Oh"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0301"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "KNES799",
+      "name": "Master's Thesis Research",
+      "credits": {
+        "Range": [
+          1,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "KNES898",
+      "name": "Pre-Candidacy Research",
+      "credits": {
+        "Range": [
+          1,
+          8
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "KNES899",
+      "name": "Doctoral Dissertation Research",
+      "credits": {
+        "Amount": 6
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    }
+  ]
+}

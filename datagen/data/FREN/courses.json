@@ -1,0 +1,897 @@
+{
+  "name": "FREN",
+  "courses": [
+    {
+      "code": "FREN103",
+      "name": "Intensive Elementary French",
+      "credits": {
+        "Amount": 4
+      },
+      "gen_eds": null,
+      "description": "Covers speaking, reading, writing, listening, and culture of French-speaking world.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Morgan Stinson"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "1224"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Morgan Stinson"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "3120"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "FREN203",
+      "name": "Intensive Intermediate French",
+      "credits": {
+        "Amount": 4
+      },
+      "gen_eds": null,
+      "description": "Covers speaking, reading, writing, listening, and culture of French-speaking world.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Morgan Stinson"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "3205"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Richard Adle"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "3205"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        },
+        {
+          "sec_code": "0301",
+          "instructors": [
+            "Rachid Jaafar"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "3205"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        },
+        {
+          "sec_code": "0401",
+          "instructors": [
+            "Rachid Jaafar"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "3120"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "FREN204",
+      "name": "French Grammar and Composition",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Intensive study of French grammar and composition.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Apolline Lagarde"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "1117"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Inaam Ngadi"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "1215"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "FREN250",
+      "name": "Introduction to Cultural and Textual Analysis",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHU"
+      ],
+      "description": "Introduction to cultural and textual analysis of selected readings from various genres in French literature. Taught in French.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Cecile Accilien"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "1215"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Theavy Din"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "1215"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "FREN250H",
+      "name": "Introduction to Cultural and Textual Analysis",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHU"
+      ],
+      "description": "Introduction to cultural and textual analysis of selected readings from various genres in French literature. Taught in French.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Cecile Accilien"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "1215"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Theavy Din"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "1215"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "FREN301",
+      "name": "Composition and Style",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Grammatical analysis, elements of style; range of written genres.",
+      "sections": [
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Sarah Benharrech"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "1120"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "FREN302",
+      "name": "Introduction to Translation",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Hands-on practice in translation to include a variety of formats and texts (for example, advertising, legal, technical, literary, journalistic, media...) into French and/or English. Includes an extensive overview of translation techniques, theories and approaches. Taught mainly in French.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Herve Campangne"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "1122"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "FREN306",
+      "name": "Commercial French I",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Introduction to commercial French including correspondence and business terminology. Emphasis on cross-cultural concepts needed for successful interaction within business settings. Taught in French.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Hannah Wegmann"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "0125"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "FREN352",
+      "name": "From the Age of Epic and Romance to the Enlightenment",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "A survey of the chief authors and major movements of French literature from the Middle Ages to the end of the 18th century.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Sarah Benharrech"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "3120"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "FREN352H",
+      "name": "From the Age of Epic and Romance to the Enlightenment",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "A survey of the chief authors and major movements of French literature from the Middle Ages to the end of the 18th century.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Sarah Benharrech"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "3120"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "FREN386",
+      "name": "Experiential Learning",
+      "credits": {
+        "Range": [
+          3,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "<div><div><div><strong>Prerequisite:</strong> Permission of ARHU-School of Languages, Literatures, and Cultures department.  </div><div><strong>Restriction:</strong> Junior standing or higher.</div></div></div>",
+      "sections": null
+    },
+    {
+      "code": "FREN387",
+      "name": "Critical Writing on France and the French-Speaking World",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Intensive writing course based on focused study of issues and concerns drawn from French and Francophone literatures, films, and cultures. Elements of style, review of grammar. Taught in French.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Marilyn Matar"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "1117"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "FREN399",
+      "name": "Directed Study in French",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "Supervised work under professor of student's choice with permission of instructor. Contact department for details.",
+      "sections": null
+    },
+    {
+      "code": "FREN414",
+      "name": "French for International Relations",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Historically, French has played a key role in the development and organization of International Relations. It remains an important tool for diplomats and an official working language of major international organizations. Students will be introduced to the French vocabulary and terminology specific to diplomatic discourse and the field of International Relations. Through French-speaking media analysis and simulated work-related situations in an international context, students will learn how to pitch a project, present a country situation, give a thematic presentation, and engage in successful negotiations. Students will also acquire the skills and proficiency to understand and produce professional documents used in the International Relations field. Taught in French.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Herve Campangne"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "1122"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "FREN495H",
+      "name": "Honors Thesis Research",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "The writing of a paper under the direction of a professor in this department and an oral examination. Required to fulfill the departmental honors requirement.",
+      "sections": null
+    },
+    {
+      "code": "FREN499W",
+      "name": "Special Topics in French Studies; Carnaval in the French-Speaking World",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "This course will analyze the history and origins of carnival as well as the ways in which it is celebrated in various regions of the French speaking world including Guadeloupe, Guyana, Haiti, Martinique, New Orleans, Nice and Quebec.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Cecile Accilien"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "1117"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "FREN699Q",
+      "name": "Seminar; From the Surreal to the Real:Studies in French 20th-21st Century Fiction",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "This course explores the relationships between aesthetic innovations and political writing from the 1920s onwards through literary works and films by French writers and filmmakers. These works are brought into dialogue with the main artistic movements and political conflicts that shaped France during the 20th century and continue to resonate in the 21st century. Taught in French.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Valerie Orlando"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      4,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "3106A"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "FREN798",
+      "name": "Master's Independent Study",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "FREN799",
+      "name": "Master's Thesis Research",
+      "credits": {
+        "Range": [
+          1,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "FREN889",
+      "name": "Doctoral Independent Study",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "FREN898",
+      "name": "Pre-Candidacy Research",
+      "credits": {
+        "Range": [
+          1,
+          8
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "FREN899",
+      "name": "Doctoral Dissertation Research",
+      "credits": {
+        "Amount": 6
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    }
+  ]
+}

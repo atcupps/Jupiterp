@@ -1,0 +1,307 @@
+{
+  "name": "HLSC",
+  "courses": [
+    {
+      "code": "HLSC102",
+      "name": "Service-Learning in the Life Sciences",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "The Integrated Life Sciences (ILS) Honors Program includes a rigorous academic curriculum, a research requirement, a living-learning component, and a service-learning experience.  Service has been a tradition since 2012 and was initiated by our students, who wanted service incorporated as part of the ILS mission and values.  Our students have contributed more than 6,000 hours of their time and talent to campus and local organizations, and this experiential learning has provided an opportunity to apply classroom studies to the real world.  In general, these service experiences are directly relevant to their future careers as life scientists, because they contribute to improved access for all people to quality health care, to engaging STEM education, and/or to sustainable environments. The service-learning experience is introduced in the fall semester of the first year of ILS in HLSC100, and completed with a 1-credit course in the spring.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Jalah Townsend",
+            "Sabrina Kramer"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HLSC227",
+      "name": "Topics in Scientific Integrity and Medical Ethics",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "Explores ethical issues related to scientific research and integrity as well as issues surrounding medical ethics such as use of limited resources, euthanasia, and physician-assisted suicide.  This is a topics class, so we won't be going into detail of philosophical arguments, but we may bring them up as relevant. Moreover, especially as applied to medical ethics, there may be no \"right\" answer.  Instead, we would like you to be able to think critically about the issue, and make a moral argument (as opposed to a logistical argument).",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Najib El-Sayed",
+            "Sabrina Kramer"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "B0320"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HLSC322",
+      "name": "Principles of Genetics and Genomics",
+      "credits": {
+        "Amount": 4
+      },
+      "gen_eds": null,
+      "description": "Principles and mechanisms of heredity and gene expression, with a focus on the application of genomics to contemporary medicine, biotechnology, and societal issues.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Leslie Pick"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "BPS",
+                  "1250"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LPA",
+                  "0100"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Leslie Pick"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "BPS",
+                  "1250"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LPA",
+                  "0100"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Leslie Pick"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "BPS",
+                  "1250"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LPA",
+                  "0100"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0104",
+          "instructors": [
+            "Leslie Pick"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "BPS",
+                  "1250"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LPA",
+                  "0100"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HLSC329",
+      "name": "Teaching Practicum in the Life Sciences",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Sabrina Kramer"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1371 @@
+{
+  "name": "LARC",
+  "courses": [
+    {
+      "code": "LARC120",
+      "name": "Digital Fundamentals",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": null,
+      "description": "An introduction to fundamental computer tools and techniques commonly used in design communication and landscape architecture practice. Non-drafting computer tools will be used to orient basic digital image capture, manipulation, and presentation formatting.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "2137"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "2137"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "2137"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "2137"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "LARC151",
+      "name": "Urban Agriculture: Designing and Assessing Edible Landscapes",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSSP",
+        "SCIS"
+      ],
+      "description": "Students will examine the growing development of urban agriculture and edible landscapes. Urban agriculture has seen a recent growth and interest in cities across the globe. From Paris to New York, from Baltimore to Detroit, urban agriculture is an emerging land use to address a variety of needs. Redevelopment, food deserts, community engagement and environmental justice are just some of the issues and topics that are connected to the recent growth of urban agriculture. This course will take a critical examination of urban agriculture's contribution to the food system, its input and outputs in the urban landscape, and the planning and design of urban agriculture and edible landscapes.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Kelly Fleming"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1140"
+                ]
+              }
+            },
+            "OnlineAsync",
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1164"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Kelly Fleming"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1140"
+                ]
+              }
+            },
+            "OnlineAsync",
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1164"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Kelly Fleming"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1140"
+                ]
+              }
+            },
+            "OnlineAsync",
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1162"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0104",
+          "instructors": [
+            "Kelly Fleming"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1140"
+                ]
+              }
+            },
+            "OnlineAsync",
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1162"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "LARC160",
+      "name": "Introduction to Landscape Architecture and Environmental Design",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHU",
+        "DSSP"
+      ],
+      "description": "History, theory, philosophy and current practice of the profession of landscape architecture. Explores the interactive relationship between humans and their environment by examining people's perceptions of and changing attitude towards the landscape, as well as, an examination of how these are related to ecological and cultural influences. Topics include urban, ecological, community and creative design.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Deni Ruggeri"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1130"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1168"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Deni Ruggeri"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1130"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1168"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Deni Ruggeri"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1130"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1146"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0104",
+          "instructors": [
+            "Deni Ruggeri"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1130"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1146"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "LARC221",
+      "name": "Digital Design Tools",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "The development and application of computing skills as used by the landscape architecture profession. This Computer-Aided Design and Drafting (CADD) course develops computer drafting using a variety of software programs. It also introduces students to Geographic Information Systems (GIS) mapping technologies.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "John  Wray IV"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      8,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "2137"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "LARC240",
+      "name": "Graphic Communication and Design Studio",
+      "credits": {
+        "Amount": 4
+      },
+      "gen_eds": null,
+      "description": "Exploration of graphic presentation techniques and original concept development for landscape architecture planning and design.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Naomi Sachs"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "2152"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "2152"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "LARC263",
+      "name": "History of Landscape Architecture",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHU"
+      ],
+      "description": "A survey of landscape architecture history from the ancient Western civilizations to the twentieth century with consideration of parallel developments in the Eastern World, European Africa and the Americas.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Caren Yglesias"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1111"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Caren Yglesias"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1111"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "LARC321",
+      "name": "Landscape Structures and Materials",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "An examination of the use, properties, and detailing of materials used in landscape construction. The use and design of structures in the landscape.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "David Myers"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1115"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "2150"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "LARC341",
+      "name": "Regional Design Studio",
+      "credits": {
+        "Amount": 5
+      },
+      "gen_eds": null,
+      "description": "An examination of the landscape architect's role within the interdisciplinary regional design field incorporating GIS technologies, spatial modeling, and the regional design process.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Christopher Ellis"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "2150"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "2150"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "LARC454",
+      "name": "Principles for Planting Design",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Emphasis will be placed on the analysis of natural systems of the landscape as they relate to visual thinking and to the rigor of the design process. Planting Design will familiarize you with native habitats, reinforce the application of design principles, and assess human response to the built environment in terms of developing a planting scheme. Students will acquire an understanding of and an appreciation for complex, interdependent relationships that exist in a healthy plant community. Students will graphically represent planting plans as communication tools suitable for client and contractor discussion as well as the basic construction documentation process through plant schedules, details, technical specifications, soil analysis, cost estimating, site preparation, and landscape maintenance procedures.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Rachel Jawin"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "2137"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "LARC461",
+      "name": "People and the Environment",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Focus is placed on human and environmental interactions. Students will look at both natural and built environments and how they influence human health and well-being. Many environmental settings will be examined. These include hospitals, public housing neighborhoods, school settings, retirement communities, transportation corridors and green spaces. We will also explore how racial and socio-economic factors affect living and working environmental conditions. Ultimately, students will be using this knowledge to create environments that support individuals, families and various community groups' health and well-being.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Byoung-Suk Kweon"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1111"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1111"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "LARC471",
+      "name": "Capstone Studio: Community Design",
+      "credits": {
+        "Amount": 5
+      },
+      "gen_eds": null,
+      "description": "A capstone experience that emphasizes the integration of critical thinking skills and methodologies introduced throughout the landscape architecture curriculum. Students apply design and analysis methodologies, evaluate alternative solutions, involve community residents and engage in final design development, using the master plan and site design process, report writing, and oral and graphic presentations. Final presentations are open to the university and the community.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Kelly Fleming"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "2148"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "2148"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "LARC499",
+      "name": "Independent Studies in Landscape Architecture",
+      "credits": {
+        "Range": [
+          1,
+          4
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "LARC641",
+      "name": "Graduate Studio II",
+      "credits": {
+        "Amount": 5
+      },
+      "gen_eds": null,
+      "description": "Principles and techniques of site analysis, environmental design and site development for human settlements and interaction with natural systems. Will expand analytical skills through complex site design problems. Students will research, observe and apply low impact development and sustainable practices, become familiar with building and landscape types by investigating alternative arrangements on the land, and understand user needs and design for populations with a range of abilities. Will support LEED and sustainable practices and acknowledge the requirements of public health, safety, and welfare.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Byoung-Suk Kweon"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1142"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1142"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "LARC648",
+      "name": "Graduate Studio IV",
+      "credits": {
+        "Amount": 5
+      },
+      "gen_eds": null,
+      "description": "Students must pay a $300.00 Graduate Studio Fee.<br><br> An exploration that will focus on issues in landscape planning and design such as campus planning, urban housing and recreation, and neighborhood preservation, restoration and development. Projects will emphasize the value of responsible academic and civic landscapes, the place of historic resources in contemporary life, and innovative solutions for the integration of past and future landscapes.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Jack Sullivan"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "2154"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "2154"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "LARC663",
+      "name": "Landscape and Garden History",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "History of garden making and its evolution into design practice. Students will become familiar with narratives of garden art and landscape architecture through the study of selected key sites, designers, and visual written sources. A focus on gardens' past and afterlife; the nature of primary sources (both built and written), and how these can be evaluated and used. Primary sources will be drawn from several disciplines and include a wide array of genres: treatises, epistolary exchanges, tax returns, novels, poems, paintings and drawings.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Jack Sullivan"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1158"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1158"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "LARC671",
+      "name": "Landscape Architecture Research Methods",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Investigation and discussion of broad scope of research methods and the development of landscape design and planning research techniques and skills. The urban environment will be viewed primarily as a social and psychological environment, with concern for who uses these environments and the conflicts that can arise between user groups.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Naomi Sachs"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1172"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "LARC699",
+      "name": "Independent Studies in Landscape and Architecture",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "LARC720",
+      "name": "Environmental Analysis and Site Engineering",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Techniques for prediction of alterations in social and natural processes brought about by human use of the land; application of such assessments to environmental management; basic methods of landscape alteration, augmentation, and control including grading, drainage, road and trail design, and stormwater management.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Shihua Wang"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      8,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1142"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1142"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "LARC799",
+      "name": "Master's Thesis Research",
+      "credits": {
+        "Range": [
+          1,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "Students must pay a $300.00 Graduate Studio Fee.",
+      "sections": null
+    }
+  ]
+}

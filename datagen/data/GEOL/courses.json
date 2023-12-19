@@ -1,0 +1,2459 @@
+{
+  "name": "GEOL",
+  "courses": [
+    {
+      "code": "GEOL100",
+      "name": "Physical Geology",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSNL",
+        "DSNS"
+      ],
+      "description": "A general survey of the rocks and minerals composing the earth, its surface features and the agents that form them, and the dynamic forces of plate tectonics.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Tracey Centorbi"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "CCC",
+                  "1100"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Mengqiang Zhu"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "CCC",
+                  "1100"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GEOL102",
+      "name": "Historical Geology",
+      "credits": {
+        "Amount": 4
+      },
+      "gen_eds": null,
+      "description": "Earth's history as revealed through the principles of stratigraphy and the processes of physical geology. Emphasis on formations and geologic development of the North American continent.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Thomas Holtz"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "CCC",
+                  "1115"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "GEO",
+                  "2107"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GEOL110",
+      "name": "Physical Geology Laboratory",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "The basic materials and tools of physical geology stressing familiarization with rocks and minerals and the use of maps in geologic interpretations.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Tracey Centorbi"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "GEO",
+                  "2106"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Tracey Centorbi"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "GEO",
+                  "2106"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0301",
+          "instructors": [
+            "Tracey Centorbi"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "GEO",
+                  "2106"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0401",
+          "instructors": [
+            "Tracey Centorbi"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "GEO",
+                  "2106"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0501",
+          "instructors": [
+            "Tracey Centorbi"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "GEO",
+                  "2106"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0601",
+          "instructors": [
+            "Tracey Centorbi"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "GEO",
+                  "2106"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0901",
+          "instructors": [
+            "Tracey Centorbi"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "GEO",
+                  "2106"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GEOL120",
+      "name": "Environmental Geology",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSNL",
+        "DSNS"
+      ],
+      "description": "A review of geologic factors underlying many environmental problems and the interactions between population and physical environment: geologic hazards, land-use planning, conservation, mineral resources, waste disposal, land reclamation, and the geologic aspects of health and disease. The course is aimed at lower division students in education and liberal arts, and should be useful to any student concerned with geologic perspectives of environmental problems.",
+      "sections": [
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Sujay Kaushal"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "1224"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1162"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0202",
+          "instructors": [
+            "Sujay Kaushal"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "1224"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1162"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0203",
+          "instructors": [
+            "Sujay Kaushal"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "1224"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1162"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0204",
+          "instructors": [
+            "Sujay Kaushal"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "1224"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1164"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0205",
+          "instructors": [
+            "Sujay Kaushal"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "1224"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1164"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0206",
+          "instructors": [
+            "Sujay Kaushal"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "1224"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1164"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GEOL123",
+      "name": "Causes and Consequences of Global Change",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSNS",
+        "SCIS"
+      ],
+      "description": "Study of the major components of Earth's climate system and climate change history. Discussion of 21st century climate change prediction, mitigation and adaptation efforts.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Rachel Pinker"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "2324"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1162"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Rachel Pinker"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "2324"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1162"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Rachel Pinker"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "2324"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1162"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0104",
+          "instructors": [
+            "Rachel Pinker"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "2324"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1164"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0105",
+          "instructors": [
+            "Rachel Pinker"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "2324"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1164"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0106",
+          "instructors": [
+            "Rachel Pinker"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "2324"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1164"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GEOL204",
+      "name": "Dinosaurs, Early Humans, Ancestors, and Evolution; The Fossil Record of Vanished Worlds of the Prehistoric Past",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSNS",
+        "SCIS"
+      ],
+      "description": "Examination of evidence used to reconstruct critical events in the history of life by looking at case studies of significant evolutionary origins, transitions, and extinctions; addressing the role of paleontology in human society, including science education, conservation, and the media.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Thomas Holtz"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0320"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "1106"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Thomas Holtz"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0320"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "1106"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Thomas Holtz"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0320"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "1106"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0104",
+          "instructors": [
+            "Thomas Holtz"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0320"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "0201"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0105",
+          "instructors": [
+            "Thomas Holtz"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0320"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "0201"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0106",
+          "instructors": [
+            "Thomas Holtz"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0320"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "0201"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GEOL322",
+      "name": "Mineralogy",
+      "credits": {
+        "Amount": 4
+      },
+      "gen_eds": null,
+      "description": "Basic mineralogy for geology majors. The principles of morphologic crystallography, crystal chemistry, and determinative mineralogy.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Megan Newcombe"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1111"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "GEO",
+                  "2107"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GEOL340",
+      "name": "Geomorphology",
+      "credits": {
+        "Amount": 4
+      },
+      "gen_eds": null,
+      "description": "Analysis of landforms, organized on the basis of the geologic processes that have operated during the late Cenozoic. Constructional and erosional landforms related to physical systems operating on geologic structures through time.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Karen Prestegaard"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "1434"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "GEO",
+                  "2107"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GEOL391",
+      "name": "Biology of Extinct Animals",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "A survey of extinct animals that have few, if any, direct living descendants. The principles governing the functional design of animals will be used to infer life styles for extinct, and frequently bizarre, organisms.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "John Merck"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "CCC",
+                  "1205"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GEOL392",
+      "name": "Biology of Extinct Animals Laboratory",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "An overview of the techniques used in paleobiological reconstructions of extinct animals.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "John Merck"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1161"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GEOL393",
+      "name": "Geology Senior Thesis I: Proposal",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "The first semester of the two-semester Geology Senior Thesis. Emphasis is on developing a plan for original research in the geosciences and presenting that plan both in writing and in public presentations that adhere to geosciences professional standards.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Philip Piccoli"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      4,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "WDS",
+                  "1127"
+                ]
+              }
+            },
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GEOL394",
+      "name": "Geology Senior Thesis II: Research",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSSP"
+      ],
+      "description": "The second semester of the two-semester Geology Senior Thesis. Investigation of specific original research question in geosciences. Emphasis is on completion of original research proposed in GEOL393 and presentation of results both in writing and in public presentations that adhere to geosciences professional standards.",
+      "sections": null
+    },
+    {
+      "code": "GEOL437",
+      "name": "Global Climate Change: Past and Present",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Introduction to the processes by which climate varies, the paleoclimate record, and projections of climate change into the 21st century, including discussion of climate sensitivity to external radiative forcing.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Michael Evans"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "0201"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GEOL443",
+      "name": "Petrology",
+      "credits": {
+        "Amount": 4
+      },
+      "gen_eds": null,
+      "description": "Study of igneous and metamorphic rocks: petrogenesis, distributions, chemical and mineralogical relations, macroscopic and microscopic descriptions, geologic significance.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Sarah Penniston-Dorland"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      8,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      15,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1146"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "GEO",
+                  "2117"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GEOL445",
+      "name": "High Temperature Geochemistry",
+      "credits": {
+        "Amount": 4
+      },
+      "gen_eds": null,
+      "description": "Review of chemical principles and their use in understanding processes of Earth, and solar system formation and differentiation. Topics include nucleosynthesis and cosmochemical abundances of elements, bonding and element partitioning, equilibrium thermodynamics and phase stabilities, radiogenic isotopes and geochronology, kinetics, and diffusion.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Ricardo Arevalo"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "1226"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "1106"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GEOL447",
+      "name": "Observational Geophysics",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "An introduction to practical signal processing, data analysis, and inverse theory in geophysics.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Vedran Lekic"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1129"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GEOL457",
+      "name": "Seismology",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "General overview of the basics of seismology, starting with wave propagation, seismic reflection and refraction. Applications to the determination of the seismic velocity and anisotropy structure of the Earth. Earthquake generation, postseismic deformation and creep events, relation to faulting and plate tectonics.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Nicholas Schmerr"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "BPS",
+                  "1238"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GEOL488",
+      "name": "Geology Colloquium; Geology Colloquium",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Mengqiang Zhu"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "1202"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GEOL489X",
+      "name": "Special Topics; Preparing for the Artemis Missions -- the Geology and Geophysics of the Moon",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Exploration of the Moon is undergoing a new renaissance, with the planned return of humans under the NASA Artemis missions opening a new chapter of exploration and science. This class will be a combination of lecture, paper reading and student-led presentations, with a focus on grad student and advanced undergraduate engagement on the latest topics in lunar research and exploration. Topics would cover recent results that have furthered our understanding of lunar geology, geophysics, formation models, surface composition and evolution, internal dynamics and structure, and mission science. Students would lead paper discussions and a research project using the latest lunar datasets.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Nicholas Schmerr"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1117"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GEOL497",
+      "name": "Recent Advances: Geology",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "A survey of important recent advances in geological sciences in the context of the methods and practices of scientific research.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Michael Brown"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      8,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      8,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1115"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "1202"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1115"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GEOL497H",
+      "name": "Recent Advances: Geology",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "A survey of important recent advances in geological sciences in the context of the methods and practices of scientific research.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Michael Brown"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      8,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      8,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1115"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "1202"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1115"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GEOL499",
+      "name": "Special Problems in Geology",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "Prerequisites: GEOL100 or GEO120, GEOL110, GEOL102; or equivalent; and permission of department. In addition, non-degree-seeking students require the permission of the instructor. Intensive study of a special geologic subject or technique selected after consultation with instructor. Intended to provide training or instruction not available in other courses which will aid the student's development in his or her field of major interest.",
+      "sections": null
+    },
+    {
+      "code": "GEOL647",
+      "name": "Observational Geophysics",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Introduces graduate students to instrument design and performance, signal processing, data analysis and inverse theory in geophysics.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Vedran Lekic"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1129"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GEOL657",
+      "name": "Seismic Wave Propagation",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "A description of the physics of seismic wave propagation and their applications to the determination of the structure of the Earth and the mechanics of earthquakes.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Nicholas Schmerr"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "BPS",
+                  "1238"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GEOL688",
+      "name": "Geology Colloquium; Geology Colloquium",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Mengqiang Zhu"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "1202"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GEOL789C",
+      "name": "Recent Advances in Geology; Advanced Data Analysis Workshop",
+      "credits": {
+        "Range": [
+          2,
+          4
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Michael Evans"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "1123"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GEOL789R",
+      "name": "Recent Advances in Geology; Geoscience Communication",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Alan Kaufman"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      8,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1172"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GEOL789V",
+      "name": "Recent Advances in Geology; Remote Sensing in Geoscience",
+      "credits": {
+        "Range": [
+          2,
+          4
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Mong-Han Huang"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "2120"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GEOL789X",
+      "name": "Recent Advances in Geology; Preparing for the Artemis Missions -- the Geology and Geophysics of the Moon",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Exploration of the Moon is undergoing a new renaissance, with the planned return of humans under the NASA Artemis missions opening a new chapter of exploration and science. This class will be a combination of lecture, paper reading and student-led presentations, with a focus on grad student and advanced undergraduate engagement on the latest topics in lunar research and exploration. Topics would cover recent results that have furthered our understanding of lunar geology, geophysics, formation models, surface composition and evolution, internal dynamics and structure, and mission science. Students would lead paper discussions and a research project using the latest lunar datasets.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Nicholas Schmerr"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1117"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GEOL798",
+      "name": "Seminar in Geology",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "GEOL799",
+      "name": "Master's Thesis Research",
+      "credits": {
+        "Range": [
+          1,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "GEOL898",
+      "name": "Pre-Candidacy Research",
+      "credits": {
+        "Range": [
+          1,
+          8
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "GEOL899",
+      "name": "Doctoral Dissertation Research",
+      "credits": {
+        "Amount": 6
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    }
+  ]
+}

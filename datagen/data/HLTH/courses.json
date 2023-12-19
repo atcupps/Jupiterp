@@ -1,0 +1,2225 @@
+{
+  "name": "HLTH",
+  "courses": [
+    {
+      "code": "HLTH124",
+      "name": "Introduction to Behavioral and Community Health",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "Required of first semester Community Health majors to expose them to introductory-level concepts within the field of behavioral and community health as well as the Community Health degree program. Includes discussion on the delivery of behavioral and community health at the local, state, national, and global levels; career opportunities in the diverse sectors of the community health field; undergraduate programmatic information; and strategies for student success.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "M Reynolds"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "CCC",
+                  "1200"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HLTH140",
+      "name": "Personal and Community Health",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Meaning and significance of physical, mental and social health as related to the individual and to society; important phases of national health problems; constructive methods of promoting health of the individual and the community.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "James Butler"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "CHM",
+                  "1407"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HLTH140H",
+      "name": "Personal and Community Health",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Meaning and significance of physical, mental and social health as related to the individual and to society; important phases of national health problems; constructive methods of promoting health of the individual and the community.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "James Butler"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "CHM",
+                  "1407"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HLTH200",
+      "name": "Introduction to Research in Community Health",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "An overview of specific components and steps involved in the community health research process. Content includes, foundations of research, sampling, measurement design, and analysis in a community context.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Dina Borzekowski"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1303"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Dina Borzekowski"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1303"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HLTH230",
+      "name": "Introduction to Health Behavior",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS"
+      ],
+      "description": "Psychological, social psychological, and sociological approaches to the following health areas: development of health attitudes and behavior, patient-provider interaction and the organization of health care.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Zahra Saboori"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "CBD",
+                  "1140"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HLTH285",
+      "name": "Controlling Stress and Tension",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS"
+      ],
+      "description": "Health problems related to stress and tension. Analysis of causative psychosocial stressors and intervening physiological mechanisms. Emphasis on prevention and control of stress through techniques such as biofeedback, meditation and neuromuscular relaxation.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "M Reynolds"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      8,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      15,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1312"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HLTH285H",
+      "name": "Controlling Stress and Tension",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS"
+      ],
+      "description": "Health problems related to stress and tension. Analysis of causative psychosocial stressors and intervening physiological mechanisms. Emphasis on prevention and control of stress through techniques such as biofeedback, meditation and neuromuscular relaxation.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "M Reynolds"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      8,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      15,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1312"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HLTH289",
+      "name": "Topical Investigations",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "HLTH302",
+      "name": "Methods of Community Health Assessment",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Examination of research and evaluation tools that can be applied to community health promotion. Includes the application of qualitative research methods, community needs and strengths assessments, asset mapping, and monitoring and evaluating process, outcome and impact evaluation.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Kirsten Stoebenau"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "BPS",
+                  "1236"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HLTH302H",
+      "name": "Methods of Community Health Assessment",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Examination of research and evaluation tools that can be applied to community health promotion. Includes the application of qualitative research methods, community needs and strengths assessments, asset mapping, and monitoring and evaluating process, outcome and impact evaluation.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Kirsten Stoebenau"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "BPS",
+                  "1236"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HLTH306",
+      "name": "Macro Level Influences on Community Health",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "An examination of the effects and influences of policy decisions at the local, state and national levels on community health delivery. Historical and contemporary policy issues will be included with a focus on how the policies have impacted community organizations and the overall health of communities.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Zahra Saboori"
+          ],
+          "class_meetings": [
+            "OnlineAsync",
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "CCC",
+                  "1111"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HLTH306H",
+      "name": "Macro Level Influences on Community Health",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "An examination of the effects and influences of policy decisions at the local, state and national levels on community health delivery. Historical and contemporary policy issues will be included with a focus on how the policies have impacted community organizations and the overall health of communities.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Zahra Saboori"
+          ],
+          "class_meetings": [
+            "OnlineAsync",
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "CCC",
+                  "1111"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HLTH364",
+      "name": "Social Media &amp; Digital Tools for Community &amp; Public Health",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Examination of the characteristics and uses of media platforms and digital technologies to expand the capability to identify and reduce community and public health risks at all levels of prevention. Also considered will be the potential threats these new media can play on individual choice, privacy, confidentiality, and social influence -- which themselves can pose health threats to community and public health.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Sandra Saperstein"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1303"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HLTH364H",
+      "name": "Social Media &amp; Digital Tools for Community &amp; Public Health",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Examination of the characteristics and uses of media platforms and digital technologies to expand the capability to identify and reduce community and public health risks at all levels of prevention. Also considered will be the potential threats these new media can play on individual choice, privacy, confidentiality, and social influence -- which themselves can pose health threats to community and public health.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Sandra Saperstein"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1303"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HLTH366",
+      "name": "Behavioral and Community Issues in Public Health",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "The exploration of how social and behavioral science theories and public health concepts and methods can be applied to both the health-illness experience and community interventions.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Evelyn King-Marshall"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1312"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      20,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "CCC",
+                  "1105"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Evelyn King-Marshall"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1312"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      20,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0121"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Evelyn King-Marshall"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1312"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0121"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0104",
+          "instructors": [
+            "Evelyn King-Marshall"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1312"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0121"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0105",
+          "instructors": [
+            "Evelyn King-Marshall"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1312"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0121"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0106",
+          "instructors": [
+            "Evelyn King-Marshall"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1312"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      20,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "CCC",
+                  "1105"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "1",
+          "instructors": [
+            "Gayle Reznikov"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HLTH377",
+      "name": "Human Sexuality",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "The biological and developmental aspects of human sexuality; the psychological and emotional aspects of sexual behavior; sexual identity; the historical, cultural, social, linguistic, legal and moral forces affecting sexual issues; the importance of communication, disclosure and intimacy in interpersonal relationships; and research trends in the area of human sexuality.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Jenna Messman"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HLTH377H",
+      "name": "Human Sexuality",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "The biological and developmental aspects of human sexuality; the psychological and emotional aspects of sexual behavior; sexual identity; the historical, cultural, social, linguistic, legal and moral forces affecting sexual issues; the importance of communication, disclosure and intimacy in interpersonal relationships; and research trends in the area of human sexuality.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Jenna Messman"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HLTH386",
+      "name": "Experiential Learning",
+      "credits": {
+        "Range": [
+          3,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "<div><div><div><strong>Prerequisite:</strong> Permission of SPHL-Behavioral &amp; Community Health department.  </div><div><strong>Restriction:</strong> Junior standing or higher.</div></div></div>",
+      "sections": null
+    },
+    {
+      "code": "HLTH389",
+      "name": "Topical Investigations",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "HLTH391",
+      "name": "Making a Difference: Applying Community Health",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSSP"
+      ],
+      "description": "The exploration and application of community health concepts including theoretical models, advocacy, cultural competency, asset mapping, and needs assessment. Includes planning, implementing and evaluating a community health program with a designated community partner.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "James Butler"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1303"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HLTH391H",
+      "name": "Making a Difference: Applying Community Health",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSSP"
+      ],
+      "description": "The exploration and application of community health concepts including theoretical models, advocacy, cultural competency, asset mapping, and needs assessment. Includes planning, implementing and evaluating a community health program with a designated community partner.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "James Butler"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1303"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HLTH399",
+      "name": "Community Health Field Work",
+      "credits": {
+        "Range": [
+          1,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "HLTH420",
+      "name": "Effective Strategies for Public Health Practice",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "FSOC"
+      ],
+      "description": "The purpose of this course is to present the interrelationships of curriculum planning, methodology and the selection and use of successful public health presentation strategies. Special problems associated with public health presentations are discussed, and students become familiar with a variety of resources as well as with planning for and implementing demonstration presentations.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "M Reynolds"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0303"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "M Reynolds"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0303"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HLTH424",
+      "name": "Lesbian, Gay, Bisexual &amp; Transgender Health",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "The preparation of students to be knowledgeable advocates for the health of lesbian, gay, bisexual, and transgender (LGBT) populations. Course focus is defined by the Healthy People 2020 federal health objectives for LGBT populations: data collection for research, culturally competent healthcare, bullying in schools, suicide, homelessness, and sexually transmitted diseases including HIV.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Shanea Thomas"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1301"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Shanea Thomas"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1301"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HLTH424H",
+      "name": "Lesbian, Gay, Bisexual &amp; Transgender Health",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "The preparation of students to be knowledgeable advocates for the health of lesbian, gay, bisexual, and transgender (LGBT) populations. Course focus is defined by the Healthy People 2020 federal health objectives for LGBT populations: data collection for research, culturally competent healthcare, bullying in schools, suicide, homelessness, and sexually transmitted diseases including HIV.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Shanea Thomas"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1301"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Shanea Thomas"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1301"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HLTH431",
+      "name": "Health Literacy in Action",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "This course introduces the concept of health literacy and develops the knowledge and skills to understand the field and engage productively about health literacy with healthcare providers, systems, and policy makers. The class explores diverse perspectives about health information and communication, and different pathways and strategies to help create the conditions for more informed and engaged individuals and communities.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Catherine Maybury"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1302"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Catherine Maybury"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1302"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HLTH431H",
+      "name": "Health Literacy in Action",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "This course introduces the concept of health literacy and develops the knowledge and skills to understand the field and engage productively about health literacy with healthcare providers, systems, and policy makers. The class explores diverse perspectives about health information and communication, and different pathways and strategies to help create the conditions for more informed and engaged individuals and communities.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Catherine Maybury"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1302"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HLTH434",
+      "name": "Introduction to Public Health Informatics",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Provides an overview of the field of public health informatics and the influence of technology on the public's health and well-being. Emphasizes the application of various technologies and computer/internet applications to support public health research and practice, including strategies to address new and emerging threats.",
+      "sections": [
+        {
+          "sec_code": "1",
+          "instructors": [
+            "Sandra Saperstein"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HLTH471",
+      "name": "Women's Health",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "The women's health movement from the perspective of consumerism and feminism. The physician-patient relationship in the gynecological and other medical settings. The gynecological exam, gynecological problems, contraception, abortion, pregnancy, breast and cervical cancer and surgical procedures. Psychological aspects of gynecological concerns.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "M Reynolds"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "M Reynolds"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        },
+        {
+          "sec_code": "1",
+          "instructors": [
+            "M Reynolds"
+          ],
+          "class_meetings": [
+            "OnlineAsync",
+            "OnlineAsync"
+          ]
+        },
+        {
+          "sec_code": "1",
+          "instructors": [
+            "M Reynolds"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HLTH471H",
+      "name": "Women's Health",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "The women's health movement from the perspective of consumerism and feminism. The physician-patient relationship in the gynecological and other medical settings. The gynecological exam, gynecological problems, contraception, abortion, pregnancy, breast and cervical cancer and surgical procedures. Psychological aspects of gynecological concerns.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "M Reynolds"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HLTH489",
+      "name": "Field Laboratory Projects and Workshop",
+      "credits": {
+        "Range": [
+          1,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "HLTH490",
+      "name": "Professional Preparation in Community Health",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "The development of skills necessary for joining the public health work force post-graduation, as well as assistance in obtaining an appropriate internship that will serve as a final semester, capstone experience. Students will be exposed to various relevant professional experiences, and will be afforded the opportunity to strengthen their own individual skills by selecting from a menu of skills-based learning modules that best suit their perceived needs.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Carson Peters"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0308"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Carson Peters"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0308"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HLTH490H",
+      "name": "Professional Preparation in Community Health",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "The development of skills necessary for joining the public health work force post-graduation, as well as assistance in obtaining an appropriate internship that will serve as a final semester, capstone experience. Students will be exposed to various relevant professional experiences, and will be afforded the opportunity to strengthen their own individual skills by selecting from a menu of skills-based learning modules that best suit their perceived needs.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Carson Peters"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0308"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Carson Peters"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0308"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HLTH491",
+      "name": "Community Health Internship",
+      "credits": {
+        "Amount": 12
+      },
+      "gen_eds": null,
+      "description": "Integrating theory with practice in a community health setting.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Tracy Kennedy"
+          ],
+          "class_meetings": [
+            "Unspecified",
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HLTH492",
+      "name": "BS/MPH Community Health Internship",
+      "credits": {
+        "Amount": 9
+      },
+      "gen_eds": null,
+      "description": "Integrating theory with practice in a community health setting.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Tracy Kennedy"
+          ],
+          "class_meetings": [
+            "Unspecified",
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HLTH609",
+      "name": "Public Health Journal Club",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Dina Borzekowski"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HLTH624",
+      "name": "Advanced Lesbian, Gay, Bisexual &amp; Transgender Health",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "The preparation of students to be knowledgeable advocates for the health of lesbian, gay, bisexual, and transgender (LGBT) populations. Course focus is defined by the Healthy People 2020 federal health objectives for LGBT populations: data collection for research, culturally competent healthcare, bullying in schools, suicide, homelessness, and sexually transmitted diseases including HIV.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Shanea Thomas"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1301"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HLTH625",
+      "name": "Community Assessment through Qualitative Methods",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "A discussion of major paradigms in qualitative inquiry, an overview of the process of qualitative research, and an introduction to several qualitative research methods, including grounded theory, ethnography, phenomenology, and content analysis. Students will collect, transcribe, analyze, and present qualitative data using introductory interview and analytic techniques.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Kirsten Stoebenau"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "HBK",
+                  "0108"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "1",
+          "instructors": [
+            "Zahra Saboori"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HLTH653",
+      "name": "Quantitative Research Methods II in Public Health",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Intermediate and advanced statistics and procedures in health-related research for doctoral students with the focus on applications of these statistical methodological methods to public health research.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Min Wang"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0301"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HLTH665",
+      "name": "Health Behavior I: Theoretical Foundations of Health Behavior",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Provides students with an understanding of the application of the social and behavioral sciences to health; addressing behavioral, social, and cultural factors that influence individual and population health and health disparities over the life course. Public health issues related to individuals and populations will be examined in terms of social and behavioral theories, empirical research findings, and methodologies.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Hector Alcala"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "CCC",
+                  "1105"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "1",
+          "instructors": [
+            "Katherine Sharp"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HLTH666",
+      "name": "Health Behavior II: Applying Health Behavior Theory",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Develops students' expertise in applying health behavior theory, with an emphasis on cultural appropriateness and through a social justice lens. This course will build on material learned in HLTH 665, and will involve a particular emphasis on application of health behavior theory. The course will be taught using a \"hands-on\" approach, giving students a skill foundation in applying health behavior theories throughout the life course of an intervention from the research question and hypothesis, to intervention development, and evaluation.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Cheryl Knott"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "HBK",
+                  "0108"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HLTH671",
+      "name": "Public Health Communication",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "An exploration of the the broad and diverse field of health communication including medical encounters, everyday communication about health, advertising, news, public health campaigns, community outreach, public policy, and international programs. Theories and applied efforts that have been studied and documented will be examined.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Devlon Jackson"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0303"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "1",
+          "instructors": [
+            "Devlon Jackson"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HLTH688",
+      "name": "Special Problems in Health Education",
+      "credits": {
+        "Range": [
+          1,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "HLTH711",
+      "name": "Advanced Research Methods in Health",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Quantitative techniques, advanced research methods and design issues.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Elaine Doherty"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1242"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HLTH776",
+      "name": "Community Health Program Evaluation",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "An application of basic research methods, and the evaluation of community health programs. Students will evaluate the effectiveness of a community health intervention.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Amelia Arria"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "1106"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HLTH778",
+      "name": "Practical Experience in Public Health",
+      "credits": {
+        "Range": [
+          1,
+          4
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Evelyn King-Marshall"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "1",
+          "instructors": [
+            "Evelyn King-Marshall"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HLTH784",
+      "name": "Guided Capstone Preparation Seminar",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "The purpose of this seminar is to guide students through the major steps and deadlines associated with developing their capstone project, which is the MPH degree culminating experience.  The capstone project requires that students apply the knowledge and skills acquired during their MPH program to meet the needs of a stakeholder group or person. Some examples of needs (deliverables) include: an infographic, a website, a curriculum, a lesson plan, an app, an evaluation plan, a policy brief, etc. Some examples of stakeholders: include legislators, non-profit organizations, a faculty researcher, a government (county, state or federal) agency, etc. The project is very applied in nature and the result is a deliverable that can be used immediately by the stakeholder.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Hector Alcala"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "1",
+          "instructors": [
+            "Hector Alcala"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HLTH786",
+      "name": "Capstone Project in Public Health",
+      "credits": {
+        "Range": [
+          2,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "Capstone experience providing opportunity to apply knowledge and skills to a specific public health problem or issue. Completion of project relevant to public health under the direction of an advisor.",
+      "sections": null
+    },
+    {
+      "code": "HLTH898",
+      "name": "Pre-Candidacy Research",
+      "credits": {
+        "Range": [
+          1,
+          8
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "HLTH899",
+      "name": "Doctoral Dissertation Research",
+      "credits": {
+        "Amount": 6
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    }
+  ]
+}

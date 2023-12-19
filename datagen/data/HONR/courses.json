@@ -1,0 +1,71 @@
+{
+  "name": "HONR",
+  "courses": [
+    {
+      "code": "HONR270",
+      "name": "Dancing the Archive: Irish and African Cultural Encounters in the Americas",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHU",
+        "DVUP"
+      ],
+      "description": "An introduction for students to archival research in the arts through the history of cultural encounters between Irish and African peoples in the Americas. This history, termed the \"The Black and Green Atlantic,\" arises from African enslavement and Irish indentured servitude and has been described as both cooperative and conflicted over the past four centuries. This course examines parallel narratives of oppression and resistance among Irish and African communities specifically through dance, music, and festival practices in the United States, Caribbean, and Latin America. Students learn processes of building both tangible and intangible (or embodied) archives through directed readings, experiential movement sessions, methodology workshops, and individual archival research projects related to this complex history.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Kathleen Spanos"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0223"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HONR379W",
+      "name": "Maryland General Assembly Writing Internship",
+      "credits": {
+        "Amount": 6
+      },
+      "gen_eds": [
+        "DSSP"
+      ],
+      "description": "Experiential learning at the Maryland General Assembly (early January through early April). Interns participate in standard office tasks, research legislative issues, and draft legislative texts such as constituent letters, notes on bills, newsletters, policy memos, and testimony. Specific assignments vary according to the host legislator's needs and the intern's schedule.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Thomas Lowderbaugh"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    }
+  ]
+}

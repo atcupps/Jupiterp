@@ -1,0 +1,5946 @@
+{
+  "name": "GVPT",
+  "courses": [
+    {
+      "code": "GVPT170",
+      "name": "American Government",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS"
+      ],
+      "description": "A comprehensive study of national government in the United States.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Kristina Miler"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "0130"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "0101"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Kristina Miler"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "0130"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "0101"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Kristina Miler"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "0130"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "0101"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0104",
+          "instructors": [
+            "Kristina Miler"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "0130"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "0102"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0105",
+          "instructors": [
+            "Kristina Miler"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "0130"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "0102"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0106",
+          "instructors": [
+            "Kristina Miler"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "0130"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "2109"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0107",
+          "instructors": [
+            "Kristina Miler"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "0130"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "0111"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0108",
+          "instructors": [
+            "Kristina Miler"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "0130"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "0111"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0109",
+          "instructors": [
+            "Kristina Miler"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "0130"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "0111"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GVPT200",
+      "name": "International Political Relations",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS",
+        "DVUP"
+      ],
+      "description": "A study of the major factors underlying international relations, the causes of conflict and cooperation among international actors, the role of international institutions, the interactions of domestic and foreign policies, and major issues in security, economy and the environment.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Calvert Jones"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "0130"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "1108"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Calvert Jones"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "0130"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "1108"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Calvert Jones"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "0130"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "1224"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0104",
+          "instructors": [
+            "Calvert Jones"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "0130"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "2111"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0105",
+          "instructors": [
+            "Calvert Jones"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "0130"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "2111"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0106",
+          "instructors": [
+            "Calvert Jones"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "0130"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "2111"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0107",
+          "instructors": [
+            "Calvert Jones"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "0130"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "2166"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0108",
+          "instructors": [
+            "Calvert Jones"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "0130"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "0102"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0109",
+          "instructors": [
+            "Calvert Jones"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "0130"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "2166"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GVPT201",
+      "name": "Scope and Methods for Political Science Research",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSSP"
+      ],
+      "description": "An introduction to empirical research in political science.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Sarah Croco"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "0117"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "1101"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Sarah Croco"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "0117"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "1101"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Sarah Croco"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "0117"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "WDS",
+                  "1114"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0104",
+          "instructors": [
+            "Sarah Croco"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "0117"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "DOR",
+                  "0134"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Sarah Croco"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "2205"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KEY",
+                  "0123"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0202",
+          "instructors": [
+            "Sarah Croco"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "2205"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KEY",
+                  "0103"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0203",
+          "instructors": [
+            "Sarah Croco"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "2205"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KEY",
+                  "0125"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0204",
+          "instructors": [
+            "Sarah Croco"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "2205"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "HBK",
+                  "1108"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0205",
+          "instructors": [
+            "Sarah Croco"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "2205"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KEY",
+                  "0103"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0206",
+          "instructors": [
+            "Sarah Croco"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "2205"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KEY",
+                  "0123"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0207",
+          "instructors": [
+            "Sarah Croco"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "2205"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "DOR",
+                  "0134"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0208",
+          "instructors": [
+            "Sarah Croco"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "2205"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "DOR",
+                  "0134"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0209",
+          "instructors": [
+            "Sarah Croco"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "2205"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "DOR",
+                  "0134"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GVPT203",
+      "name": "The Challenge of Authoritarianism",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS",
+        "SCIS"
+      ],
+      "description": "An introduction to the persistent challenge of authoritarianism. The course explores the nature of authoritarianism and its evolution from ancient through modern times. Students will study how authoritarian regimes vary, why citizens sometimes comply with them, and when and how citizens rebel. The course concludes with a review of contemporary authoritarianism, focusing on its resilience in the Middle East and East Asia and its potential for a resurgence in the US and Europe.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Calvert Jones"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "2324"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "0111"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Calvert Jones"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "2324"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "1132"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Calvert Jones"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "2324"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "2106"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0104",
+          "instructors": [
+            "Calvert Jones"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "2324"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "1132"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0105",
+          "instructors": [
+            "Calvert Jones"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "2324"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "2166"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0106",
+          "instructors": [
+            "Calvert Jones"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "2324"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "0118"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GVPT241",
+      "name": "The Study of Political Philosophy: Ancient and Modern",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSSP"
+      ],
+      "description": "Examines some of the salient continuities and breaks between the ancient and modern traditions in Western political philosophy.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Sujith Kumar"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      20,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "2205"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "2106"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Sujith Kumar"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      20,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "2205"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "1201"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Sujith Kumar"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      20,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "2205"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "1201"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0104",
+          "instructors": [
+            "Sujith Kumar"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      20,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "2205"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "2102"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0105",
+          "instructors": [
+            "Sujith Kumar"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      20,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "2205"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "0111"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0106",
+          "instructors": [
+            "Sujith Kumar"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      20,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "2205"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "1201"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0107",
+          "instructors": [
+            "Sujith Kumar"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      20,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "2205"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SKN",
+                  "1115"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0108",
+          "instructors": [
+            "Sujith Kumar"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      20,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "2205"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "0101"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GVPT273",
+      "name": "Introduction to Environmental Politics",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSSP"
+      ],
+      "description": "An overview of modern environmental philosophy, politics, and policy, exploring environmental politics in the US by way of comparison with other developed and developing countries.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Allison Berland"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "1215"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EDU",
+                  "1107"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Allison Berland"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "1215"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EDU",
+                  "1107"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Allison Berland"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "1215"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "2102"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GVPT282",
+      "name": "The Politics of Global Development",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS",
+        "DVUP"
+      ],
+      "description": "A study of the domestic governmental institutions; processes and problems such as conflict and economic development; and the socio-economic environments that are common to lower-income countries around the world.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Jennifer Wallace"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TMH",
+                  "0301"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "1102"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Jennifer Wallace"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TMH",
+                  "0301"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "0101"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Jennifer Wallace"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TMH",
+                  "0301"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "2206"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0104",
+          "instructors": [
+            "Jennifer Wallace"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TMH",
+                  "0301"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "3207"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0105",
+          "instructors": [
+            "Jennifer Wallace"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TMH",
+                  "0301"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "3207"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0106",
+          "instructors": [
+            "Jennifer Wallace"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TMH",
+                  "0301"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "2206"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GVPT289D",
+      "name": "How to Make Better Decisions",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS",
+        "SCIS"
+      ],
+      "description": "The problem with decisions is that we rarely, if ever, find out if our decisions were good or bad.  Was choosing your major, for instance, a good decision or could you have made a better one?  I don't think most of us would ever know the answer to this question.  So, is it possible that we regularly make bad decisions but don't know that we do?  And, if so, how can we fix something if we don't know it is broken? In fact, we do regularly make bad decisions.  This has been shown in many experimental studies some of which will be covered in this class.  What is more, for some types of decision problems we are hardwired to make mistakes.  This means that we are bound to go wrong regardless of how much we know or how smart we are.  So, what can we do to remedy this problem?  Quite a bit, as it turns out.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Piotr Swistak"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "MMH",
+                  "1400"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "1114"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Piotr Swistak"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "MMH",
+                  "1400"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "1114"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Piotr Swistak"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "MMH",
+                  "1400"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "1114"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0104",
+          "instructors": [
+            "Piotr Swistak"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "MMH",
+                  "1400"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "1118"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0105",
+          "instructors": [
+            "Piotr Swistak"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "MMH",
+                  "1400"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "1118"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0106",
+          "instructors": [
+            "Piotr Swistak"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "MMH",
+                  "1400"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "1132"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GVPT306",
+      "name": "Global Environmental Politics",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Focus on three processes of international environmental policy development- identifying problems, negotiating solutions, and implementing agreements- through a range of case studies, including global climate change.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Allison Berland"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "1309"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GVPT317",
+      "name": "Mock Trial II: Advanced Trial Advocacy",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Development of trial advocacy skills through participation in practice trials and intercollegiate mock trial competitions. Student may have an opportunity to represent the university in intercollegiate mock trial tournaments, including the National Mock Trial Championships.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "William Mundy"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      6,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      9,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "1118"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GVPT320",
+      "name": "Advanced Empirical Research",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Allows students to build on the knowledge of statistical inference they gained from GVPT201. Topics include data collection, data cleaning, data analysis, and data visualization. By the time students complete this class, they will be able to do basic statistical modeling using OLS regression independently.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Candace Turitto"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "2111"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GVPT331",
+      "name": "Courts, Law and Justice",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "An introductory course to the study of law with emphasis on how lawyers and judges think and argue. Topics include, contract law, property, family law, torts, and criminal procedure.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Michael Spivey"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "2203"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "1220"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Michael Spivey"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "2203"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "1220"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Michael Spivey"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "2203"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "1220"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0104",
+          "instructors": [
+            "Michael Spivey"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "2203"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "1102"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0105",
+          "instructors": [
+            "Michael Spivey"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "2203"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "1102"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0106",
+          "instructors": [
+            "Michael Spivey"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "2203"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "1132"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GVPT355",
+      "name": "Capstone in International Conflict Management",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Serves as one of the two capstone courses for the Minor in International Development and Conflict Management. Focuses on advanced theory and the practice and profession of international conflict management and is designed to provide students an introduction to, and a chance to engage with, a core set of practical skills relevant to the field.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Michael Hess",
+            "Paul Hughes",
+            "James Covey"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "1309"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GVPT356",
+      "name": "Capstone in International Development",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSSP",
+        "DVCC"
+      ],
+      "description": "Serves as one of the two capstone courses for the Minor in International Development and Conflict Management. Focuses on advanced theory and the practice and profession of international development and is designed to provide students an introduction to, and a chance to engage with, a core set of practical skills relevant to the field.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Stacy Kosko"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "HBK",
+                  "0115"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GVPT368E",
+      "name": "Special Topics in Government and Politics; Israeli Foreign and Security Policy",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Cross-listed with ISRL329P. Credit only granted for ISRL329P or GVPT368E.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Ilai Saltzman"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "1101"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GVPT368J",
+      "name": "Special Topics in Government and Politics; The Arabs in Israel: Palestinian Arab Citizens of Israel",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Cross-listed with ISRL349N. Credit only granted for ISRL349N or GVPT368J.<br><br> This course examines the political, social, and economic experience of the Arab minority in Israel from the establishment of the State up until recent years. It addresses the relationship between the State and the Arab community and the distinctive internal dynamics of Arab society as well as the relationship between the Arab minority in Israel and the Palestinians, and the Arab world.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Morad Elsana"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      6,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      8,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KEY",
+                  "0126"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GVPT368K",
+      "name": "Special Topics in Government and Politics; Environment and Sustainable Development in Israel",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Cross-listed with ISRL349Y. Credit only granted for ISRL349Y or GVPT368K.<br><br> Relationships between the environment and different communities that share it, specifically in and around Israel, given the negative effects of climate change and environmental degradation throughout the Middle East. We will examine the ecological and environmental challenges Israel has faced over the years, the many innovative ways in which it has worked to overcome these challenges, and the tasks that still lie ahead. Finally, we will look at the nexus between sustainable development and sustainable peace within and between diverse communities.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "Th": [
+                  [
+                    5,
+                    0,
+                    "Pm"
+                  ],
+                  [
+                    7,
+                    30,
+                    "Pm"
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GVPT368N",
+      "name": "Special Topics in Government and Politics; American Jewry, Israel, and U.S. Public Policy: Peoplehood, Politics, and Power",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Cross-listed with ISRL349O. Credit only granted for ISRL349O or GVPT368N.<br><br> The Jewish people have long maintained a unique sense of peoplehood, which for much of Jewish history coincided with powerlessness and political marginalization. The modern American Jewish experience has been unique in Jewish history largely due to the opportunity structure afforded by the American political system; and power, specifically the American Jewish community s ability to adapt and participate in the policy arena to maximize its preferred outcomes. This upper-division course examines these features of American Jewry and its relationship with Israel in therealm of US public policy by focusing on historical development and Jewish political thought; organizational and representative structures; and highlighting several case studies and thematic topics.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Scott Lasensky"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KEY",
+                  "0126"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GVPT368O",
+      "name": "Special Topics in Government and Politics; Design and Democracy",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Cross-listed with ARTT489J and PLCY488A.  Credit only granted for ARTT489J, GVPT368O, or PLCY488A.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "2322"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GVPT377",
+      "name": "Experiential Learning: Government and Politics Internship Program",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "The application of major concepts of political science to the realities of the political process. The course connects internship experiences with larger themes of political science. Students must be admitted to the GVPT Internship Program.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Victoria Worley"
+          ],
+          "class_meetings": [
+            "OnlineAsync",
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      6,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      9,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "0111"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GVPT388",
+      "name": "Topical Investigations",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "Permission of Director of Undergraduate Studies required.",
+      "sections": null
+    },
+    {
+      "code": "GVPT388M",
+      "name": "Topical Investigations; Mock Trial Independent Study",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: Permission of department.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "William Mundy"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      6,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      9,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "1114"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GVPT390",
+      "name": "Game Theory",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Introduction to game theory with applications to political science, economics and sociology. Topics include preference theory, expected utility theory, Nash equilibria, subgame perfection, repeated games, folk theorems, and evolutionary stability.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Piotr Swistak"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "2102"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GVPT396",
+      "name": "Introduction to Honors Research",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "A required course for all honors students designed to emphasize library research, methodology, and writing skills in political science and political philosophy. A written proposal, bibliography and research design for an honors paper required of all students as a final project.",
+      "sections": null
+    },
+    {
+      "code": "GVPT397",
+      "name": "Honors Research",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Individual reading and research. Preparation of an original paper.",
+      "sections": null
+    },
+    {
+      "code": "GVPT406",
+      "name": "International Organizations",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "A basic introduction to the full range of international organizations that have come into being over the past century and one-half, including those that aspire to be universal or global, those with a geopolitical or regional focus, and those that address specific structural or functional areas of human endeavor or issue areas.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Todd Allee"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "0101"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GVPT409H",
+      "name": "Seminar in International Relations and World Politics; International Relations of the Middle East",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: GVPT200. Restriction: Must be in Government &amp; Politics Honors program.<br><br> This seminar will evaluate major issues of the international relations of the Middle East and the American role and responses to these issues. The seminar will focus on several post-Cold War cases in American foreign policy, including the 1991 and 2003 Gulf wars, policy toward Iran, American mediation in the Arab-Israeli conflict, responses to the Arab Uprisings, re-emerging competition with Russia, and broader issues such as regional reform and nuclear non-proliferation.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Shibley Telhami"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "CHI",
+                  "2113"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GVPT409I",
+      "name": "Seminar in International Relations and World Politics; International Security and International Law",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: GVPT200. Restriction: Must be in Government &amp; Politics program.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Paul Huth"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "1118"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GVPT409J",
+      "name": "Seminar in International Relations and World Politics; Youth and Conflict",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: GVPT200. Restriction: Must be in Government &amp; Politics program.<br><br> Youth engulfed by conflict and post-conflict situations face circumstances that substantially alter their lives and prospects. This course offers students the opportunity to critically analyze the discipline of contemporary armed conflicts and the youth. Particularly, it explores the various definitions of youth as a biological, cultural, and political category. We will discuss youth as victims of conflict, as perpetrators of violence, and as peace builders. The course aims to challenge assumptions about youth in conflict and the subsequent political effects especially in the African context.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Fiifi Edu-Afful"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "1101"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GVPT409N",
+      "name": "Seminar in International Relations and World Politics; Civil Wars",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Prerequisites: GVPT200 Restriction: Must be in Government &amp; Politics program. Why do civil wars last so much longer than interstate wars? What explains violence against civilians in civil wars? Do United Nations Peacekeeping work? This course focuses on different topics related to civil wars, with a special emphasis that civil war must be examined with a multidisciplinary lens. The course will begin with a rigorous definition of civil wars. Next, we will quickly move on to survey bargaining, economic,and sociological approaches to address the occurrence, duration, intensity, and termination of civil wars. Throughout the course, we will discuss different specific phenomenons often observed in the general context of civil wars. We will also discuss various historical cases along with each topic. These topics include ethnicity, counterinsurgency, warfare conduct, rebel inter-group dynamics, civilian victimization, foreign intervention, negotiated settlements, etc.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Mingyang Su"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "1102"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GVPT409U",
+      "name": "Seminar in International Relations and World Politics; Politics of Europe and the European Union",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: GVPT200 or GVPT280. Restriction: Must be in Government &amp; Politics program.<br><br> This course will serve as an introduction to the politics of contemporary Europe, from the historical conditions that led to the formation of the European Union, through contemporary conflicts over immigration, integration, and emerging challenges to liberal democracy. We will draw on insights from both comparative politics and international relations to analyze the complex power dynamics that shapethe politics of the region.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Neil Lund"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "0101"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GVPT409W",
+      "name": "Seminar in International Relations and World Politics; Southeast Asia in Contemporary Global Politics",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Restriction: Must be in Government &amp; Politics program or Government &amp; Politics: International Relations program.<br><br> Southeast Asia, home to three major religious cultures and various regime types, is one of the most politically and socially diverse regions of the world. While the region is unique for its diversity, its states face challenges that are common in other parts of the world including globalization; adjusting to the new geopolitical landscape of rising global powers; and external pressure to improve the standards of human rights, the environment and democracy. Given this dynamic political context, this course is designed to give students a greater understanding of the problems and prospects of the region, as well as the ability to assess its efforts to adapt to the changing regional and international environment.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Jennifer Wallace"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "0117"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GVPT423",
+      "name": "Elections and Electoral Behavior",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "An examination of various topics relating to elections; the focus includes the legal structure under which elections are conducted, the selection and nomination process, the conduct of election campaigns, and patterns of political participation and voting choice in different types of elections.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "James Gimpel"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "1118"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GVPT429B",
+      "name": "Problems in Political Behavior; Data Analysis for Political Behavior",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: GVPT201. Restriction: Must be in Government &amp; Politics program.<br><br> This course provides an opportunity to think about and to practice the most common statistical methods for doing research on political behavior. A major goal of this course is to provide practice with quantitative methods you have learned in earlier classes and offer additional exposure to statistical software used commonly by employers. Most importantly, the course will provide students with more exposure to what quantitative research on political behavior looks like, how to construct theories, how to assemble evidence, and how to relate theories and evidence through empirical testing.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "James Gimpel"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1129"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GVPT429K",
+      "name": "Problems in Political Behavior; Researching Contentious Politics",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: GVPT201 Restrictions: Must be in Government &amp; Politics program.<br><br> This course will critically assess empirical research on the causes and consequences of contentious political behaviors such strikes, riots, peaceful protests, and insurrections with a particular focus on efforts to address these questions using quantitative methods. Topics we will address throughout the course include: why some protest campaigns succeed while others fail, the role of social media in coordinating demonstrations, and the impact of riots on public opinion and government policy.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Neil Lund"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "1107"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GVPT429T",
+      "name": "Problems in Political Behavior; Social media politics",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: GVPT201. Restriction: Must be in Government &amp; Politics program.<br><br> This seminar presents students with an integrated view of media politics, combining political psychology, computational social science, and network analysis. The goal is to provide students with the technical know-how to work with social media data and the knowledge to interpret relevant information. In this seminar, students will learn to process social media data, program survey experiments, and identify political narratives in a multiplatform environment. The seminar will introduce students to the computational techniques required for big social media data analyses.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Ernesto Calvo"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "2120"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GVPT432",
+      "name": "Civil Rights and the Constitution",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "A study of civil rights in the American constitutional context, emphasizing freedom of religion, freedom of expression, minority discrimination, and the rights of defendants.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Michael Spivey"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EGR",
+                  "0108"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GVPT439I",
+      "name": "Seminar in Public Law; American Economic Inequality and the Law",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Restriction: Must be in Government &amp; Politics or Government &amp; Politics: International Relations program.<br><br> The United States has one of the highest levels of economic inequality in the developed world. While some level of economic inequality is inherent and even desirable in a capitalistic economy, many scholars believe that the level of inequality that prevails in the United States erodes generalized levels of trust, poisons interpersonal relationships, and ultimately makes it far more difficult to govern a democratic society. This course examines the roots of American economic inequality, with a tight focus on how laws adopted through democratic processes have resulted in a huge transfer of wealth from the hands of the many to the hands of the few.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Martin Kobren"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "2109"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GVPT439J",
+      "name": "Seminar in Public Law; We the People: Building a New Constitution for the U.S.",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: GVPT431. Restriction: Must be in Government &amp; Politics program.<br><br> The U.S. Constitution, written in 1787 and ratified in 1789, was a revolutionary achievement in political science. It was based on an Enlightenment Era theory of human behavior and the best political theory available at the time. But, because it was also a human creation it has a large number of flaws derived from the political and economic realities of the day. In this course, we reconsider the U.S. Constitution and the political structures it created, with a view to proposing either constitutional amendments or even replacing it entirely with something better. Students will learn about the current constitutional structure, consider changes and updates to it, and attempt to negotiate and draft new constituional language for the government we need today.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Martin Kobren"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "HBK",
+                  "0109"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GVPT439L",
+      "name": "Seminar in Public Law; Introduction to Moot Court",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Recommended Prerequisites: GVPT431, GVPT432, and GVPT439B.<br><br> Not open to students who have completed GVPT439M Moot Court.<br><br> This is an introductory class in appellate advocacy. It will teach you the skills and methods necessary to compete in regional and national Moot Court competitions. In moot courting, students assume the role of advocates in a hypothetical Supreme Court case. You will learn how to identify relevant case law, how to structure an oral argument and how to develop a written brief in the hypothetical case. The semester will conclude with each student arguing the case for his or her \"client\" before a panel of practicing lawyers and jurists. No prior experience in oral advocacy is necessary.<br><br> Students must commit to a virtual moot court practice which will take place in the evening. Contact the instructor for more information.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Kelsey Barnes"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      4,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "0205"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GVPT449E",
+      "name": "Seminar in Political Philosophy; Social Philosophy and Political Economy",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Also offered as PHPE401. Credit only granted for PHPE401 or GVPT449E.<br><br> Restriction: Must be in Government &amp; Politics program or Government &amp; Politics: International Relations program.<br><br> This course examines capitalism and socialism as differing modes of economic production through several different theoretical lenses. We begin by examining capitalism and socialism as they developed historically, by looking primarily at the work of Adam Smith and Karl Marx. Then, we turn our attention to one of the most important debates 20th century economics: to what extent rational economic calculation is possible in a socialist commonwealth. After this we turn our attention to how capitalist and socialist modes of production functioned in practice. We end by turning our attention to the ethics of capitalism and socialism: which mode of economic production is most just?",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Antong Liu"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "2166"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GVPT449G",
+      "name": "Seminar in Political Philosophy; Global Justice",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Restriction: Must be in Government &amp; Politics program; or must be in Government &amp; Politics: International Relations program.<br><br> The course begins by laying the foundation for the debate over the scope and limits of global justice, and then examines some topics that arise when thinking globally about justice, such as poverty, the environment and waging war. The course ends by considering the possibility of creating a cosmopolitan framework within which to adjudicate between competing interests in the globalized world.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Sujith Kumar"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "0101"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GVPT454",
+      "name": "Seminar in the International Relations of China",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Explores the foreign relations behavior of the People's Republic of China, with focus on the contemporary era.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Margaret Pearson"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "2309"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GVPT457",
+      "name": "American Foreign Relations",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "The principles and machinery of the conduct of American foreign relations and an analysis of the major foreign policies of the United States.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Shannon Carcelli"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "1132"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GVPT459C",
+      "name": "Seminar in Comparative Politics; Race and Ethnic Politics in Comparative Perspective",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Restriction: Must be in Government &amp; Politics program.<br><br> This course examines the multiple ways in which race and ethnicity become meaningful categories shaping political behavior. We will examine how race and ethnicity are socially constructed, why people accept (and sometimes reject) the categories imposed on them, and how categories and identities become drivers of political behavior. The course takes a comparative perspective on identity politics, looking at cases from multiple regions around the world.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Marcus Johnson"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "1118"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GVPT459H",
+      "name": "Seminar in Comparative Politics; East European Politics and Societies: Communism, Liberalism,Populism",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Restriction: Must be in Government &amp; Politics Honors Program.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Vladimir Tismaneanu"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "1108"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GVPT459J",
+      "name": "Seminar in Comparative Politics; Regime Types: Democracies and Nondemocracies",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Recommended Prerequisites: GVPT200 and GVPT280 Restriction: Must be in Government &amp; Politics program.<br><br> This course will address four main themes: 1) regime change from a democracy to an autocracy; 2) regime change from an autocracy to a democracy; 3) democracies becoming less democratic; and 4) autocracies becoming less autocratic.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Youngjoon Lee"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "0125"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GVPT459K",
+      "name": "Seminar in Comparative Politics; Russian Politics: From Lenin to Putin",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Restriction: Must be in Goverment &amp; Politics program.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Vladimir Tismaneanu"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "1101"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GVPT479B",
+      "name": "Seminar in American Politics; Black Politics",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: GVPT170. Restriction: Must be in Government &amp; Politics program.<br><br> The purpose of this course is to assist students in gaining an understanding of the relationship of people of African descent in the United States to the political system and other structures of power. We critically engage several themes/topics including Black political philosophies and ideologies, electoral politics, Black and mainstream political institutions, political behavior and psychology, gender politics, and public policy. We will also analyze and discuss the informal political spaces that serve as sites for Black politics including social media, entertainment, and pop culture.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Chryl Laird"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "1132"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GVPT479K",
+      "name": "Seminar in American Politics; Presidential Elections",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "This class will explore American Presidential elections. The nomination process and general election for the most important political office in the world are very distinctive and even unique in some ways. While noting the current campaign unfolding around us, we are interested in the process more broadly, NOT just the 2024 election. We will examine the institutions that have affected candidates' and voters' behavior and how they have developed historically. We also look at American Presidential elections in global perspective, noting how the U.S. system differs from arrangements in other countries, and consider potential reforms.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "David Karol"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "2109"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GVPT482",
+      "name": "Government and Politics of Latin America",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "A comparative study of the governmental systems and political processes of the Latin American countries.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Marcus Johnson"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "1118"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GVPT605",
+      "name": "Introduction to Conflict and Cooperation in the World Economy",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "This seminar examines major theoretical approaches and empirical studies of international political economy, contemporary dynamics of globalization, the role of domestic politics in the formation of foreign economic policies of states, the dynamics of international trade and investment disputes, and role of international institutions in multi-lateral governance of the world economy. The focus is on developing an understanding of central debates in the literature and primary empirical findings from quantitative and cross-national analyses that are of policy relevance.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Jennifer Wallace"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "1114"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "1",
+          "instructors": [
+            "Jennifer Wallace"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "1114"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GVPT606",
+      "name": "Introduction to International Institutions and International Law",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "This seminar examines major theoretical approaches and empirical studies of international law and institutions relating to international political economy and international security. Topics to be covered include the sources of international law and the development of core legal principles in the post-WWII ear, the role of international economic institutions such as WTO, IMF, and World Bank in the global economy, and the influence of international institutions such as the UN Security Council, World Court, and International Criminal Court in addressing international security issues. Larger questions about the effectiveness of the WTO, Laws of War, and International Human Rights Law will be considered. The focus is on developing an understanding of central debates in the literature and primary empirical findings from quantitative and cross-national analyses that are of policy relevance.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Deniz Cil"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "2102"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "1",
+          "instructors": [
+            "Deniz Cil"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "2102"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GVPT624",
+      "name": "National Security and International Relations",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Introduction to key areas of research in national security and international relations. Students will learn the major approaches to empirical research on national and international security and work with datasets focused on terrorist attacks and civil conflict.",
+      "sections": [
+        {
+          "sec_code": "1",
+          "instructors": [
+            "Neil Lund"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "WDS",
+                  "1131"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GVPT685",
+      "name": "Voting, Campaigns, and Elections",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Introduction to the theoretical and empirical research on political participation, campaigns, and elections.  By gaining an understanding of the literature and working with a variety of data sets, including surveys and voter history files, students will be equipped to carry out their own research on these topics.",
+      "sections": [
+        {
+          "sec_code": "1",
+          "instructors": [
+            "Candace Turitto"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "WDS",
+                  "1127"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GVPT715",
+      "name": "Public Policy: Process and Evaluation",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "The public policy approach at both state and federal levels; policy considerations and restrictions; methods of testing and evaluation; collecting and cleaning policy data.",
+      "sections": [
+        {
+          "sec_code": "1",
+          "instructors": [
+            "Richard Engstrom"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "Th": [
+                  [
+                    6,
+                    0,
+                    "Pm"
+                  ],
+                  [
+                    8,
+                    45,
+                    "Pm"
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GVPT718Q",
+      "name": "Selected Topics in Political Science; Qualitative and Multi-Method Research",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Jennifer Hadden"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "1111"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GVPT722",
+      "name": "Advanced Quantitative Methods For Political Science",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Introduction to multivariate analysis. Elementary matrix algebra, multiple linear and curvilinear correlation and regression, analysis of variance, canonical correlation and regression, discriminant analysis, and several types of factor analysis.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Michael Hanmer"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "1111"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GVPT729Q",
+      "name": "Special Topics in Quantitative Political Analysis; Quantitative Analyses of International Political Economy and International Security",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "1",
+          "instructors": [
+            "Jacob Aronson"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SKN",
+                  "1115"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GVPT771",
+      "name": "Seminar in American Political Behavior",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "This is the core seminar in American political behavior. The course will deal with prominent theoretical and empirical issues in the areas of voting, public opinion, political participation and other aspects of political behavior in the American context.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Chryl Laird"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "1111"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GVPT799",
+      "name": "Master's Thesis Research",
+      "credits": {
+        "Range": [
+          1,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "GVPT803",
+      "name": "Seminar in International Political Organization",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "An overview and critical analysis of contemporary theory on international organizations and global governance.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Virginia Haufler"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "1136"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GVPT808B",
+      "name": "Selected Topics in Functional Problems in International Relations; Conflict and World Politics",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "David Cunningham"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "1136"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GVPT808C",
+      "name": "Selected Topics in Functional Problems in International Relations; Prospectus Seminar",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Kathleen Cunningham"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "1136"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GVPT808I",
+      "name": "Selected Topics in Functional Problems in International Relations; The Impact of International Economics and Security on Developing Countries",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "1",
+          "instructors": [
+            "Hyunki Kim"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "2111"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GVPT849",
+      "name": "Readings in Government and Politics",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "GVPT873",
+      "name": "Seminar in Legislatures and Legislation",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Reports on topics assigned for individual study and reading about the composition and organization of legislatures and about the legislative process.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Kristina Miler"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "1111"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GVPT879R",
+      "name": "Topics on International Security; Research Design and Analysis in International Relations",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "1",
+          "instructors": [
+            "Hyunki Kim",
+            "Deniz Cil"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "2111"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GVPT888P",
+      "name": "Selected Topics in Comparative Governmental Institutions; Political Institutions",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Fiona Shen-Bayh"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "1111"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "GVPT898",
+      "name": "Pre-Candidacy Research",
+      "credits": {
+        "Range": [
+          1,
+          8
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "GVPT899",
+      "name": "Doctoral Dissertation Research",
+      "credits": {
+        "Amount": 6
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    }
+  ]
+}

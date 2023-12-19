@@ -1,0 +1,273 @@
+{
+  "name": "LATN",
+  "courses": [
+    {
+      "code": "LATN102",
+      "name": "Elementary Latin II",
+      "credits": {
+        "Amount": 4
+      },
+      "gen_eds": null,
+      "description": "<div><div><div><strong>Prerequisite:</strong> Must have completed LATN101 at University of Maryland, College Park; or permission of ARHU-Classics department.</div></div></div>",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Eugenia Lao"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "M": [
+                  [
+                    9,
+                    0,
+                    "Am"
+                  ],
+                  [
+                    10,
+                    15,
+                    "Am"
+                  ]
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "LATN301",
+      "name": "Plautus",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Plautine drama. Literary, linguistic and socio-cultural aspects. Readings are in Latin.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Francisco Barrenechea"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "MMH",
+                  "1218"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "LATN415",
+      "name": "Vergil's Aeneid",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Vergil's Aeneid: readings of selections in Latin and of the entire epic in English translation along with critical essays.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Katherine Wasdin"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "MMH",
+                  "1218"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "LATN488P",
+      "name": "Latin Readings; Latin Pedagogy",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: LATN201 or its equivalent",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Edward Parker"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "Sa": [
+                  [
+                    9,
+                    0,
+                    "Am"
+                  ],
+                  [
+                    3,
+                    30,
+                    "Pm"
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "LATN499",
+      "name": "Independent Study in Latin Language and Literature",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "LATN605",
+      "name": "Vergil",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "A study of Vergil's development as a literary artist and Augustan poet through readings in the Eclogues, Georgics, and Aeneid. Readings are in Latin.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Katherine Wasdin"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "MMH",
+                  "1218"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "LATN640",
+      "name": "Latin Pedagogy",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Learning styles and abilities in the Latin language classroom; textbooks and workbooks for teaching Latin; integrating Roman culture into language study; computer and technological resources for Latin Language instruction; using videos and feature films in Latin and classical civilization classes; the articulation between secondary school and college-level Latin study.  Meets in a series of five day-long Saturday workshops and culminates in an outreach program for secondary school Latin students. Recommended for teachers, graduate students and undergraduates planning to teach Latin.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Edward Parker"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "Sa": [
+                  [
+                    9,
+                    0,
+                    "Am"
+                  ],
+                  [
+                    3,
+                    30,
+                    "Pm"
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "LATN699",
+      "name": "Independent Studies in Latin Literature",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "LATN799",
+      "name": "Master's Thesis Research",
+      "credits": {
+        "Range": [
+          1,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    }
+  ]
+}

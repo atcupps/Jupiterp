@@ -1,0 +1,1692 @@
+{
+  "name": "FMSC",
+  "courses": [
+    {
+      "code": "FMSC110",
+      "name": "Families and Global Health",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS",
+        "DVCC"
+      ],
+      "description": "Students will explore, define, and study global health, social determinants of health, health inequalities, gender inequality, family violence, and maternal and child health using a global perspective.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Zeina Alkhalaf"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "TuTh": [
+                  [
+                    12,
+                    30,
+                    "Pm"
+                  ],
+                  [
+                    1,
+                    45,
+                    "Pm"
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "FMSC123",
+      "name": "Personal Financial Literacy: From Distress to Success",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Exploring strategic thinking, career, education, financial planning during college years as the foundation for success in living a meaningful life.  While introducing relevant institutions and tools &amp; techniques that are critical for financial planning, this course applies value-based goal setting and strategic planning that inform individuals' paths for a successful career, educational attainment, and optimum (mental, physical and financial) wellbeing throughout their life cycle.  The course particularly emphasizes the individual's responsibility of living in an institution rich society, where, continuous  learning, understanding institutions, rational decision-making, valuing relationships and networking, early career development, record keeping, budgeting, generating income and wealth, purposeful spending, saving and investing, tax planning, appropriate use of loans, risk taking and insurance, and retirement planning are well rewarded and ensure the optimum use of college years and the rest of life-course.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Manouchehr Mokhtari"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "FMSC177",
+      "name": "U SAD? Coping with Stress, Anxiety, and Depression",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "Students on UMD campus experience new challenges to their mental health and well-being every semester, and there are limited resources to help students manage their own health or to support their peers.  This experiential skill development workshop course is designed to assist students in developing their knowledge in ways to recognize, manage, and cope with symptoms of stress, anxiety, and depression. There is a focus on coping with pandemic-related and course-related concerns, relationship issues, and a range of other student concerns.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Coda Gerber"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0308"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Coda Gerber"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0308"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "FMSC190",
+      "name": "Man Up! Where Are The Fathers?",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS",
+        "SCIS"
+      ],
+      "description": "An examination of changing fatherhood roles, health, and inequality in diverse families.  Focus will be on masculinities and disparities among men by race and class; provider role expectations; and trauma and violence faced by men in contemporary society.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Kevin Roy"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0302"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "FMSC215",
+      "name": "Foster Care and Adoption; Law, Policy, and Family",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "In this Student Initiated Course, students will examine their preconceived notions of foster care and adoption as they work to become agents for change in the systems. Regular guest speakers will share their experiences. Along with your student instructor you'll explore various outcomes of the systems including trauma, mental health and later-life outcomes. Your faculty instructor will encourage you to critically think about legal and policy issues, both in Maryland and internationally, like the foster to prison pipeline and adopting from other cultures. Students will examine contentious issues like legal interventions, LGBTQ, Native American Indian, transracial, religious and others relating to the systems and the socioeconomic impacts on families. Classes are student-driven and discussion-based, allowing students to explore ethical considerations and possible life paths.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Kerry Tripp"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "M": [
+                  [
+                    10,
+                    0,
+                    "Am"
+                  ],
+                  [
+                    11,
+                    0,
+                    "Am"
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "FMSC260",
+      "name": "Couples, Marriage, and Families: Intimate Relationship Across the Life Course",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS"
+      ],
+      "description": "Covers the different aspects of couple relationships and family life. This includes common problems in couple relationships, and resources to strengthen couple and family relationships. You will also learn about stages of relationships, theories of love and family, policy related to couples and family formation, and how research is conducted with couples and families. Together, we will discuss and explore issues that couples and families face in modern times and will consider how many of these issues have changed due to policy, technology, attitudes, and a variety of other societal factors that impact relationships in the 21st century. You will also learn important methods of strengthening current and future relationships.",
+      "sections": [
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Zachary Berman"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1303"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "FMSC265S",
+      "name": "Teaching Menstrual Health: Dispelling Myths and Misconceptions",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Provides a platform to teach UMD undergraduate students and BHU Bachelor of Education students about the intersections of gender, culture, and health. We will explore how menstruation is addressed in different cultures and uncover myths and misconceptions that impact individuals, their families and communities. Furthermore, the course emphasizes the health cost (physical and mental) of not educating youth about this vital process and discusses the need for an intervention. The course provides essential skills to participating students for the development of an intervention. Key concepts include: theoretical understanding of menstrual health and its impact on girls and women's lives from cross cultural perspectives, the importance of deconstructing myths and misconceptions and the importance of educating both girls and boys; cultural taboos and patriarchal power relations that contribute to myths, misconceptions and practices; public health interventions addressing the cost of ignoring adolescent health issues including menstrual health; the impact of providing agency to young girls and boys to challenge the status-quo; and links between knowledge about menstruation, human rights, gender equality and the SDGs.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Elisabeth Maring"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      8,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      15,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "HJP",
+                  "1102"
+                ]
+              }
+            },
+            {
+              "OnlineSync": {
+                "Th": [
+                  [
+                    8,
+                    0,
+                    "Am"
+                  ],
+                  [
+                    9,
+                    15,
+                    "Am"
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "FMSC290",
+      "name": "Family Economics",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Application of economic methodology to study families under various economic situations. Examination of how decisions about marriage, divorce, fertility, consumption and time use are influenced by labor/housing markets, tax structure, social welfare benefits and other economic considerations.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Farhad Rassekh"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0302"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "FMSC302",
+      "name": "Research Methods in Family Science",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS",
+        "DSSP"
+      ],
+      "description": "Introduction to the methods of the social and behavioral sciences employed in family science. The role of theory, the development of hypotheses, measurement, design, and data analysis.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Sahra Ibrahimi"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "1117"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "FMSC310",
+      "name": "Maternal, Child and Family Health",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Overview of the major issues in Maternal, Child, and Family Health in the U.S. and the world. The course will cover the social, political, environmental, and economic factors that shape the health of women, children, and families throughout the life course. It will employ the core disciplines of public health -- 1) epidemiology/biostatistics, 2) environmental health, 3) health policy and administration, and 4) social and behavioral health -- to examine these factors. The course introduces specific issues and interventions and places these issues and interventions within their broad sociohistorical context.",
+      "sections": [
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Izidora Skracic"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "TuTh": [
+                  [
+                    11,
+                    0,
+                    "Am"
+                  ],
+                  [
+                    12,
+                    15,
+                    "Pm"
+                  ]
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0301",
+          "instructors": [
+            "Julia Steinberg"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0302"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0401",
+          "instructors": [
+            "Lindsay Mallick"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1301"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0501",
+          "instructors": [
+            "Izidora Skracic"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "TuTh": [
+                  [
+                    8,
+                    0,
+                    "Am"
+                  ],
+                  [
+                    9,
+                    15,
+                    "Am"
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "FMSC330",
+      "name": "Family Health:  Health Happens in Families",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS",
+        "DVUP"
+      ],
+      "description": "The objective of this gateway course is to help you understand and apply basic theories and empirical data on family health. The course is designed to provide you with skills to think critically about theories including: Life Course Theory, the Bio-Ecological and Social-Ecological Models, and Systems Theory. We will ask questions about the distinct qualities and intersections of contexts and characteristics that impact the functioning of families.  We will apply theory and research to topical issues in family health that are impacted by social structures such as conflict, crisis, migration, incarceration and inequalities.",
+      "sections": [
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Zeina Alkhalaf"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "MW": [
+                  [
+                    9,
+                    0,
+                    "Am"
+                  ],
+                  [
+                    9,
+                    50,
+                    "Am"
+                  ]
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        },
+        {
+          "sec_code": "0301",
+          "instructors": [
+            "Colton Kilpatrick"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1303"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "FMSC332",
+      "name": "Children in Families",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS"
+      ],
+      "description": "A family life education approach to the study of children and families. Emphasis on the interaction of children with parents, siblings, extended kin, and the community.",
+      "sections": [
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Martha Yumiseva"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0308"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0301",
+          "instructors": [
+            "Christine Schull"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0308"
+                ]
+              }
+            },
+            {
+              "OnlineSync": {
+                "F": [
+                  [
+                    9,
+                    0,
+                    "Am"
+                  ],
+                  [
+                    9,
+                    50,
+                    "Am"
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "FMSC340",
+      "name": "Mental Health and Healing in Families",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Using an interdisciplinary approach to study mental health, mental wellness, and substance use, we will answer questions such as: How has our understanding and treatment of mental health changed throughout history? What are the current prevalence patterns and risk factors associated with mental health conditions? What is the prevention to postvention continuum? What is the role of relationships, families, and communities in addressing mental health? How do we diagnose and treat various mental health disorders using the best available research? And, what are the various mental health disciplines and how do they differ? This course is designed to examine mental health issues across the life course. We will explore the influence of social contexts, including racism and additional forms of othering, on mental health and wellness, and introduce the health systems that support mental health prevention and treatment.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Salwa Shan"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1303"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "FMSC341",
+      "name": "Personal and Family Finance",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSSP"
+      ],
+      "description": "Individual and family financial strategies with emphasis on financial planning, savings, investments, insurance, income taxes, housing, and use of credit. Planning, analyzing, and controlling financial resources to resolve personal/family financial problems and to attain financial security.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Manouchehr Mokhtari"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        },
+        {
+          "sec_code": "1",
+          "instructors": [
+            "Manouchehr Mokhtari"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "FMSC374",
+      "name": "Working with Diverse Families in Public Health Services",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Focuses on the \"doing\" and modeling of skills required in navigating diverse social environments with families.  These skills are necessary to engage in authentic work as family scientists, public health professionals, and family health practitioners. Using an intersectional framework, we will examine cultural, ethnic, and linguistic diversity for families impacted by challenges to equity and privilege.  The course material emphasizes deep knowledge and skill building towards cultural sensitivity, including history, values, language, religion, and communication with families across multiple racial and ethnic backgrounds.  Students will also explore differences emerging from experiences of poverty, sexual orientation and gender identity, and disability.   The goal of the course is to support students in developing a family/professional alliance for health and well-being.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Rabiatu Barrie"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1111"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "FMSC381",
+      "name": "Family Inequality",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS",
+        "DVUP"
+      ],
+      "description": "Social, political, cultural and economic factors influencing income and wealth in American families.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Natasha Williams"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "MWF": [
+                  [
+                    9,
+                    0,
+                    "Am"
+                  ],
+                  [
+                    9,
+                    50,
+                    "Am"
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "FMSC383",
+      "name": "Health and Human Services Delivery and Evaluation",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Processes of service delivery with special emphasis upon relationships among managers, service providers and clients. The impact of human service systems on families.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Ghaffar Hurtado Choque"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1303"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "FMSC399",
+      "name": "Independent Study",
+      "credits": {
+        "Range": [
+          1,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "FMSC431",
+      "name": "Family Crises, Emergencies and Interventions",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Examines the stressors in life that may lead families into a state of crisis or emergency and what can be done to help families when the need arises.  Both internal stressors, such as substance abuse, finances, divorce, illness or parent-child conflict, and external stressors, such as community violence and natural disasters, are examined. Using theories and techniques for intervention and enhancement, the course examines factors involved in stressors turning into a family crisis and how factors such as emergency preparedness, social support and public policy can be a source of family resilience or protect families from negative outcomes.",
+      "sections": [
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Mona Mittal"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1302"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "FMSC432",
+      "name": "Adult Development and Aging in Families",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Theory, research, history, and programming related to adult development and aging in the intergenerational context of family.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Christine Schull"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0308"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "FMSC460",
+      "name": "Violence in Families",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS",
+        "DVUP"
+      ],
+      "description": "Theories of child, spouse, and elder abuse in the family setting. Emphasis on historical, psychological, sociological and legal trends relating to physical, emotional, and sexual abuse. Introduction to methods for prevention and remediation.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Christine Schull"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1303"
+                ]
+              }
+            },
+            {
+              "OnlineSync": {
+                "F": [
+                  [
+                    10,
+                    0,
+                    "Am"
+                  ],
+                  [
+                    10,
+                    50,
+                    "Am"
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "FMSC477",
+      "name": "Internship and Analysis in Family Science",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "A supervised internship and a seminar requiring analysis. Opportunities to integrate theory and practice including 120 hours of contracted field experience. Summer or fall internship contracts due May 1; Spring contracts due December 1. See department for application procedures.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Rebecca Foss"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1130"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "FMSC485",
+      "name": "Introduction to Family Therapy",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "The fundamental theoretical concepts and clinical procedures of marital and family therapy including premarital and divorce therapy issues.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Tiara Fennell"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1302"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "FMSC487",
+      "name": "Family Law",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Designed for students interested in studying the law, public health, and family science, this course provides students with a general overview of family law and the impact on healthy families. The course also includes the study of cutting-edge issues such as marriage equality, assisted reproduction and ethical issues that may arise.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Kerry Tripp"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "HBK",
+                  "0103"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "FMSC498",
+      "name": "Special Topics: Family Science; Family Studies",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "FMSC498H",
+      "name": "Special Topics: Family Science; Family Studies Honors Thesis",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "FMSC498P",
+      "name": "Special Topics: Family Science",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "Cross-listed with PLCY388A. Credit only granted for PLCY388A or FMSC498P.<br><br> For poor and low-income families, federal programs such as Medicaid, Child care, SNAP and child nutrition programs are a lifeline every day. Some programs also have policies that consider more than income eligibility, such as number of hours of work, disability, and immigration status. Budget choices have a significant impact on policy intentions. Students will learn about and analyze the major federal programs and federal budgets for these policy areas; understand from data the impact of such programs and policies; and be introduced to significant advocacy effortsand considerations that shaped these policy decisions.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Brandi Slaughter"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TMH",
+                  "0225"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "FMSC610",
+      "name": "Research Methods in Family Science",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Research methods in family science. The role of theory, design, use of qualitative and quantitative measurement techniques, data collection and data analysis. Development of research proposals.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Laura Golojuch"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "FMSC635",
+      "name": "Integrative LGBTQIA+ Clinical Knowledge and Techniques for Family, Couple and Varie",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Explores the physiological, psychological, and socio-cultural variables associated with sexual expression, identity, orientation, and behavior for the LGBTQ+ population in relation to mental health and clinical contexts. Attention will focus on the clinical context of sex and gender most often presented in therapy with LGBTQ+ individuals, couples, families, and other varied relationship dynamics within the LGBTQ+ Community. The course explores clinician's comfort and level of knowledge, practice, and foundational understanding of sexuality and gender, own self-care systems, and how to navigate challenges and establish support. The course discusses the developmental and biological components of sexuality and gender, clinical diagnosis, and relational theoretical perspectives, desire, and pleasure modalities, relationships around family building, as well caring for the elderly.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Shanea Thomas"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "FMSC641",
+      "name": "Couples Therapy, Theory, and Techniques",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Overview of theoretical models of couple relationships and methods of facilitating growth and interaction within those relationships. Emphasis on couples with conflicting needs and expectations, and dysfunctional communication and conflict negotiation skills.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Marjorie Nightingale"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "FMSC651",
+      "name": "Treatment of Emotional and Mental Disorders in Family Systems",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "This course is designed to assist beginning therapists in developing their knowledge of the major theoretical approaches to family therapy and applying those approaches to their clinical work.  In addition, the course addresses many procedural, professional, and ethical issues often faced by beginning therapists. Towards these ends, the primary foci of the course will be on developing competencies in (a) observing family process, (b) assessing and  conceptualizing family strengths and problems from different theoretical models, and (c) developing treatment plans from these different theoretical models.  Finally, attention will also be given to therapist self-care.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Laura Golojuch"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            },
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "FMSC653",
+      "name": "Advanced Application of CFT Models and Techniques",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "This course is an integration of advanced assessment, diagnosis, and treatment procedures with couples, families, individuals, and groups. Emphasis will be on the following areas:  (1) the advanced study of classic and emerging CFT models; (2) special topic areas (e.g., trauma, religious differences, grief &amp; loss, family rituals,) and/or collaborative CFT in varied settings (e.g., schools, medical facilities, in-home/family preservation work, foster care, alcohol &amp; drug centers); (3) development of a personal theory/philosophy of family therapy along with a case management system for that model. Additionally, development of the self of therapist, contributions to CFT as a profession, and employment as well as independent practice information including resume development, licensing laws and regulations in Maryland and other states will be explored. Also, procedures for preparing for the National MFT licensing exam will be discussed. Advanced professional practice will be demonstrated in case presentations related to the specific areas emphasized in the course.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Erica Turner"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0225"
+                ]
+              }
+            },
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "FMSC658",
+      "name": "Supervised Clinical Practice in Couple and Family Therapy; Theory and Practice of Clinical Supervision",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "Restriction: Permission of SPHL-Family Science Department",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Tiara Fennell"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "FMSC689",
+      "name": "Research Internship",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "FMSC698",
+      "name": "Advanced Topics in Family Science",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "Must have written permission of faculty member and chairperson.",
+      "sections": null
+    },
+    {
+      "code": "FMSC699",
+      "name": "Independent Study",
+      "credits": {
+        "Range": [
+          1,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "FMSC720",
+      "name": "Study Design in Maternal Child Health Epidemiology",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "A detailed survey of key epidemiologic study designs provided through readings, lectures, and exercises. Lectures begin by considering the evolution of epidemiologic thought and parallel developments in design of epidemiologic studies. Topics covered include assessment of causality in observational studies, investigation of acute outbreaks, survey design, cohort and case-control study designs, clinical randomized trials, and discussion of issues pertaining to measurement error in the assessment of exposures and outcomes in epdemiologic studies.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Edmond Shenassa"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "Tu": [
+                  [
+                    1,
+                    0,
+                    "Pm"
+                  ],
+                  [
+                    3,
+                    45,
+                    "Pm"
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "FMSC780",
+      "name": "Qualitative Methods in Family and Health Research",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Theoretical perspectives and methodological tools to conduct research with individuals and families across the life span. Review of research designs, participant fieldwork, observation and interview projects, data collection, computer-assisted data analysis, and development of grounded theory.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Rabiatu Barrie"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "FMSC789",
+      "name": "Non-Thesis Research",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "FMSC799",
+      "name": "Master's Thesis Research",
+      "credits": {
+        "Range": [
+          1,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "Must have written permission of faculty member and chairperson.",
+      "sections": null
+    },
+    {
+      "code": "FMSC820",
+      "name": "Advanced Quantitative Methods in Family and Health Research",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "This seminar is designed to help students understand, evaluate, and develop research conceptualization and design relevant to family science and family health. By the end of the course, students will be able to critique and develop theoretically grounded quantitative research in their respective area of study. Throughout the course, students will be exposed to a broad range of advanced methods that are core to the field of family science. The course will train students on how to conceptualize and develop rigorous empirical research studies relevant to family science and family health.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Jessica Fish"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "0116B"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "FMSC879",
+      "name": "Preparing Future Faculty and Professionals Seminar",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "Restriction: Permission of SPHL-Family Science Department",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Colton Kilpatrick"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "FMSC898",
+      "name": "Pre-Candidacy Research",
+      "credits": {
+        "Range": [
+          1,
+          8
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "FMSC899",
+      "name": "Doctoral Dissertation Research",
+      "credits": {
+        "Amount": 6
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "name": "HBUS",
+  "courses": [
+    {
+      "code": "HBUS105",
+      "name": "The Future of Analysis: Making Data Driven Decisions in Business",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Students will address questions regarding how business is being shaped by the increased use of data.  The course draws from various quantitative, computation, and technical fields to develop a big picture understanding of data science in business.  Through examples and applications, students will address the challenging questions related to artificial intelligence, data science bias, and privacy.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Joseph Bailey"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PFR",
+                  "1105"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HBUS205",
+      "name": "Capstone in Interdisciplinary Business",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "As the capstone course in the Interdisciplinary Business Honors (IBH) Program, this course will give students the opportunity to apply what they have learned in the IBH program to a real-world company.  This company will help present students with an opportunity to address a pressing challenge",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PFR",
+                  "1105"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

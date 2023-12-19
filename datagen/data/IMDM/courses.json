@@ -1,0 +1,408 @@
+{
+  "name": "IMDM",
+  "courses": [
+    {
+      "code": "IMDM101",
+      "name": "Introduction to Immersive Media",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "An introduction to the basic practices, concepts and issues in Immersive Media Design. Conducted as a hybrid studio/lecture course, students will work collaboratively in teams to complete both research and practical projects, including surveying current artists and practice in immersive media; completing studio-based interactive projects that fuse computational media into physical objects; and working in teams to ideate and execute large scale, immersive media works.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Mollye Bendell"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "AVW",
+                  "3258"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Stevens Miller"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "AVW",
+                  "3258"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "IMDM127",
+      "name": "Creative Coding for Digital Media",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "An introduction to the principles of Computer Science supported by exercises in computer programming with an emphasis on creative coding, algorithmic image creation and manipulation, and interactive experiences. Students will make use of both exploratory coding approaches, and problem/solution-driven approaches, to design and implement software with visual and auditory output. The course also includes an introduction to a wide variety of issues relating to computer science and software, including software design and construction, problem-solving, and fundamental questions about the nature, limitations, and ethical use of computers and algorithms.  It also explores how creativity tools can be used and as well as providing some insight into how they are implemented.  The course is targeted to students with a broad diversity in backgrounds and interests. No prerequisites are assumed beyond high school algebra.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Roger Eastman"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "CSI",
+                  "1121"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "IMDM150",
+      "name": "Digital Media Theory and Culture",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHU"
+      ],
+      "description": "An introduction to the fundamental structures and themes of digital culture in contemporary society. This course will provide you with a theoretical grounding in which to understand the current landscape of digital media culture, design and art. As an introductory course for the Immersive Media Design major, the focus will be on contextualizing immersive digital media such as virtual reality, augmented reality, immersive projection, and electronic art installation through reading, writing and discussion. Students will have opportunities to experience a range of these technologies first hand.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Cy Keener"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      15,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ANS",
+                  "0412"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "IMDM290",
+      "name": "Collaborative Studio I: Image + Time",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Concept-driven and team-based collaborative studio course in which students work together in groups to create intellectually engaging and technically innovative works of Immersive Media Design. Student teams will combine their skill sets, technical and artistic, to produce creative works that combine image manipulation, generative images, creation, image and animation output technologies, video and audio recording, manipulation and production, and other forms of digital media assets that can be integrated into immersive media pipelines such as virtual reality, augmented reality, and other interactive forms. In working collaboratively, student teams will use team and assest management processes and tools that reflects contemporary practices in the fields of art, design, software, and the creative industries.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Johab Silva"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "AVW",
+                  "3258"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Johab Silva"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "AVW",
+                  "3258"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "IMDM390",
+      "name": "Collaborative Studio II: Experiential Computing",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "A concept-driven, team-based collaborative studio course connecting inquiry, knowledge, and practice. Students will work together to create experiential works of immersive media. This course moves beyond the technical applications of software and emphasizes innovative thinking, social engagement, and problem-solving. Student teams will draw upon their unique skills to create works that participants can inhabit in a way that can only be achieved using new and emerging technologies. The process starts with small-scale \"sketch\" creation and evolves into larger-scale compelling works of immersive media. Teams will need to organize research methods and goals, engage in production, and explore how to communicate, display, and document their work. As projects develop, feedback will be provided through periodic presentations, peer-critique sessions, and instructor reviews.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "AVW",
+                  "3258"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "IMDM491",
+      "name": "Senior Capstone II",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "The second course in a two-semester senior capstone sequence. During IMDM491 students will continue to design, prototype and realize a large-scale immersive media design project intended for public exhibition. In doing so, students will adapt and improve their project in response to critical feedback from instructors and peers, to find an exhibition venue, and to market the project through public relations, social networking, and other strategies of promotion.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Evan Golub"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "AVW",
+                  "3258"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "IMDM498D",
+      "name": "Special Topics in Immersive Media; Motion Capture for Mixed Reality Performance",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Prerequisites: A minimum grade of C- in IMDM290. Restriction: Permission of department.<br><br> This class will introduce students to creative and technical application for motion capture. Using analog, inertial, optical, and AI systems, students will engage in collaborative projects that span digital and physical spaces. Students will also engage with the history of mocap development, as well as the aesthetics and ethics surrounding digital motion.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Kate Ladenheim"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "IRB",
+                  "0110"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "IMDM498E",
+      "name": "Special Topics in Immersive Media; Creative Experiments with AI",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: ARTT370 or Permission of IMDM-Immersive Media Design Program. Credit only granted for ARTT489E or IMDM498E.<br><br> In this course, students will use the most advanced forms of generative AI for artistic creation and exploration. The course will be a combination of lecture, workshops, studio time, and occasional class visits from Areas explored include: Generative AI - Imagery, video art, filmmaking, sound production, and literature. Tools used include Midjourney, Stable Diffusion, Runway, Dreambooth, Photoshop, Ableton, and Chat GPT.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      30,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "3304"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "IMDM499A",
+      "name": "Independent Undergraduate Research",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    }
+  ]
+}

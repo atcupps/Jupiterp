@@ -1,0 +1,6295 @@
+{
+  "name": "HIST",
+  "courses": [
+    {
+      "code": "HIST108A",
+      "name": "Freshman/Sophomore Seminar in History; Incarceration Nation",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "America leads the world in jailing its own citizens and there are now more than two million Americans behind bars. How did it come to this? This course examines America s long history of incarceration, with a particular focus on the period from the Revolution to the Civil War.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Richard Bell"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KEY",
+                  "0117"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST108D",
+      "name": "Freshman/Sophomore Seminar in History; A History of Drugs from Ayahuasca to Zantac",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "The term \"drug\" has meant many things over its long history, ranging from a remedy to a banned substance. In this seminar we'll explore the term's history/and see how it has changed over time. Topics include global trade, cultural appropriation, healthcare. politics, law, technology, and big pharma.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Zachary Dorner"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KEY",
+                  "0117"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST110",
+      "name": "The Ancient World",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHU"
+      ],
+      "description": "Interpretation of select literature and art of the ancient Mediterranean world with a view to illuminating the antecedents of modern culture; religion and myth in the ancient Near East; Greek philosophical, scientific, and literary invention; and the Roman tradition in politics and administration.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Elizabeth Conner"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SHM",
+                  "2102"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "1103"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Elizabeth Conner"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SHM",
+                  "2102"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "1103"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Elizabeth Conner"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SHM",
+                  "2102"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "1103"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST111",
+      "name": "The Medieval World",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS",
+        "DVUP"
+      ],
+      "description": "The development of Europe in the Middle Ages; the role of religious values in shaping new social, economic, and political institutions; medieval literature, art and architecture.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Christopher Halsted"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SHM",
+                  "2102"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "1103"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Christopher Halsted"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SHM",
+                  "2102"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "1103"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Christopher Halsted"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SHM",
+                  "2102"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "1103"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0104",
+          "instructors": [
+            "Christopher Halsted"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SHM",
+                  "2102"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "1101"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0105",
+          "instructors": [
+            "Christopher Halsted"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SHM",
+                  "2102"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "1101"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0106",
+          "instructors": [
+            "Christopher Halsted"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SHM",
+                  "2102"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "1101"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST113",
+      "name": "The Making of Modern Europe",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS"
+      ],
+      "description": "Evolution of modern nation states since late medieval times. Industrial-economic structure and demography. Emergence of modern secular society.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Stefano Villani"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KEY",
+                  "0103"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST131",
+      "name": "The History of the American Dream",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS",
+        "SCIS"
+      ],
+      "description": "An introduction to the way Americans thought of themselves in the past, and their often conflicting visions of what constituted the American Dream. Central questions will include whether or not Americans have always envisioned their country as a land of equality, opportunity, democracy, and freedom and whether or not their ideas of what these values meant changed or remained the same over time.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Michael Ross"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TMH",
+                  "0301"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "2103"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Michael Ross"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TMH",
+                  "0301"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "2103"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Michael Ross"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TMH",
+                  "0301"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "2103"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0104",
+          "instructors": [
+            "Michael Ross"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TMH",
+                  "0301"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "2103"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0105",
+          "instructors": [
+            "Michael Ross"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TMH",
+                  "0301"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "2103"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0106",
+          "instructors": [
+            "Michael Ross"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TMH",
+                  "0301"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "2103"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST200",
+      "name": "Interpreting American History: Beginnings to 1877",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS",
+        "DSHU"
+      ],
+      "description": "The United States from colonial times to the end of the Civil War. Establishment and development of American institutions.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Howard Smead"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "1100"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KEY",
+                  "0100"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Howard Smead"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "1100"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KEY",
+                  "0100"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Howard Smead"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "1100"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "1105"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST201",
+      "name": "Interpreting American History: From 1865 to the Present",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS",
+        "DSHU",
+        "DVUP"
+      ],
+      "description": "The United States from the end of the Civil War to the present. Economic, social, intellectual, and political developments. Rise of industry and emergence of the United States as a world power.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Howard Smead"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KEY",
+                  "0106"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "2103"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Howard Smead"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KEY",
+                  "0106"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "2103"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Howard Smead"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KEY",
+                  "0106"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "2103"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0104",
+          "instructors": [
+            "Howard Smead"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KEY",
+                  "0106"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "2103"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0105",
+          "instructors": [
+            "Howard Smead"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KEY",
+                  "0106"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "2103"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0106",
+          "instructors": [
+            "Howard Smead"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KEY",
+                  "0106"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "2103"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0107",
+          "instructors": [
+            "Howard Smead"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KEY",
+                  "0106"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "1103"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0108",
+          "instructors": [
+            "Howard Smead"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KEY",
+                  "0106"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "1103"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0109",
+          "instructors": [
+            "Howard Smead"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KEY",
+                  "0106"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "1103"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Robert Chiles"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      20,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "1224"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      20,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "2103"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0202",
+          "instructors": [
+            "Robert Chiles"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      20,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "1224"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "2103"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0203",
+          "instructors": [
+            "Robert Chiles"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      20,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "1224"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "2103"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0204",
+          "instructors": [
+            "Robert Chiles"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      20,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "1224"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      20,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "2103"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0205",
+          "instructors": [
+            "Robert Chiles"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      20,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "1224"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "2103"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0206",
+          "instructors": [
+            "Robert Chiles"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      20,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "1224"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "2103"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0301",
+          "instructors": [
+            "David Freund"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "1100"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      20,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KEY",
+                  "0100"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0302",
+          "instructors": [
+            "David Freund"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "1100"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KEY",
+                  "0100"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0303",
+          "instructors": [
+            "David Freund"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "1100"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      20,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KEY",
+                  "0100"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0304",
+          "instructors": [
+            "David Freund"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "1100"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "1103"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST205",
+      "name": "Environmental History",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS",
+        "DSHU"
+      ],
+      "description": "An exploration of the way different societies have used, imagined, and managed nature. Includes examination of questions of land use, pollution, conservation, and the ideology of nature, especially but not exclusively in Europe and North America.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0310"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KEY",
+                  "0100"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0310"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KEY",
+                  "0100"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0310"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KEY",
+                  "0100"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST208B",
+      "name": "Historical Research and Methods Seminar; Constructing, Imagining, and Narrating Pre-Modern Cities",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Restriction: Permission of department.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Kader Smail"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "2103"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Kader Smail"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "2100"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST208C",
+      "name": "Historical Research and Methods Seminar; Duck and Cover, Detante, and Decolonization: The Global Cold War, 1945-1991",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Restriction: Permission of department.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Nicholas Misukanis"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "2100"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Nicholas Misukanis"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "2100"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST208D",
+      "name": "Historical Research and Methods Seminar; Beyond Rosie and Just as Riveting: Women and War in American History",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Restriction: Permission of department.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Lauren Cain"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "2100"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Lauren Cain"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "2100"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST211",
+      "name": "Women in America Since 1880",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS",
+        "DVUP"
+      ],
+      "description": "An examination of women's changing roles in working class and middle class families, the effects of industrialization on women's economic activities and status, and women's involvement in political and social struggles, including those for women's rights, birth control, and civil rights.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Katarina Keane"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "1100"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "2108"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Katarina Keane"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "1100"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "2108"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Katarina Keane"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "1100"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "2108"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST219I",
+      "name": "Religions of the Ancient Near East",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHU"
+      ],
+      "description": "Introduction to ancient Near Eastern religious systems and mythology, from the third millennium BCE through the fourth century BCE. Particular emphasis on Mesopotamia and ancient Israel.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Matthew Suriano"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "HBK",
+                  "0105"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST219X",
+      "name": "Modern Iran",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS"
+      ],
+      "description": "General sociopolitical introduction to modern Iran from establishment of the Qajar dynasty in the late 18th century to the present day. Taught in English.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Marjan Moosavi"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "MTH",
+                  "0306"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST221",
+      "name": "Asian American History",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS",
+        "DVUP"
+      ],
+      "description": "Introduction to the history of Asian Americans and Asians in the United States and the Americas and to the field of Asian American Studies, from an interdisciplinary perspective. Topics include theories of race and ethnicity; Asian migration and diaspora to the Americas; Asian American work and labor issues; gender, family, and communities; nationalism and nativism, and anti-Asian movements; Asian Americans in World War II, the Cold War, and the issues in the civil rights &amp; post-civil rights era.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Madeline Hsu"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KEY",
+                  "0103"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST222",
+      "name": "Immigration and Ethnicity in America",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS",
+        "DVUP"
+      ],
+      "description": "The history of immigration and the development of diverse populations i the United States are examined. Topics include related political controversies, the social experiences of immigrants, ethnicity, generations, migration, inter-group relations, race, and diversity in American culture.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Robert Chiles"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KEY",
+                  "0116"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST223",
+      "name": "Globalizing the American Revolution",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS",
+        "SCIS"
+      ],
+      "description": "An examination of the global forces that shaped the American Revolution and the international consequences of this nation's break with Britain.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Richard Bell"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0310"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "1103"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Richard Bell"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0310"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "1103"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Richard Bell"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0310"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "1103"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST225",
+      "name": "Modern Military History, 1815-Present",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS"
+      ],
+      "description": "The military history of Europe through an examination of the economic, financial, strategic, tactical, and technological aspects of the development of military institutions and warfare from the Congress of Vienna in 1815 to the present.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Patrick Chung"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "1101"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST233",
+      "name": "Empire! The British Imperial Experience 1558-1997",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS",
+        "DVUP"
+      ],
+      "description": "Britain's empire from the mid-sixteenth century to the late twentieth century, focusing on the encounter between Britain and indigenous peoples. Topics include the origins of British imperialism in Ireland and North America, the slave trade, the East India Company and India, women in empire, transportation and the making of Australia, sex in empire, missionaries, racial theories, and decolonization.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Anne Rush"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KEY",
+                  "0103"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST235",
+      "name": "Divorced, Beheaded, Deposed: England and Britain 1485-1689",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS"
+      ],
+      "description": "British history from the War of the Roses to the Hanoverian succession; Yorkist and Tudor society and politics; the Renaissance and Reformation in England, Henry VIII through Elizabeth I; 17th-century crises and revolutions; intellectual and cultural changes; the beginnings of empire; the achievement of political and intellectual order.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Sabrina Baron"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KEY",
+                  "0103"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST245",
+      "name": "Reformers, Radicals, and Revolutionaries: The Middle East in the Twentieth Century",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS"
+      ],
+      "description": "The 20th century was a period of dramatic changes in the Middle East. Within the global context of the two World Wars and the Cold War, countries in the region struggled with the effects of colonialism and painful processes of decolonization. The course offers a thematic-comparative approach to issues such as social and political reform, nationalism, the colonial experience, independence struggles, models of governance, political violence, and Islamism. Course lectures and the analysis and discussion of primary sources will lead students to understand that the peoples of the Middle East found answers to the challenges posed by Western dominance based on their specific historical, cultural and socio-economic circumstances.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Peter Wien"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KEY",
+                  "0116"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST251",
+      "name": "Latin America Since Independence",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS",
+        "DVUP"
+      ],
+      "description": "Introductory survey of the history of Latin America from the era of independence (c. 1810-1825) through the early 1980s. Major themes include independence and sovereignty, postcolonialism and neocolonialism, nation- and state-building, liberalism, citizenship, economic development and modernization, social organization and stratification, race and ethnicity, gender relations, identity politics, reform and revolution, authoritarianism and democratization, and inter-American relations.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Karin Rosemblatt"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KEY",
+                  "0103"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST255",
+      "name": "African-American History, 1865 - Present",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS"
+      ],
+      "description": "An introductory course in the African-American experience in the United States from 1865 to the present. Topics include the aftermath of the Civil War on US race relations, the rise of segregation, northern migration, World War I and II, Civil Rights Movements, and the Black Power Movement.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Quincy Mills"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "CHM",
+                  "1228"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST285",
+      "name": "East Asian Civilization II",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS"
+      ],
+      "description": "A survey of the historical development of modern Asia since 1700. Primarily concerned with the efforts of East Asians to preserve their traditional cultures in the face of Western expansion in the 18th and 19th centuries, and their attempts to survive as nations in the 20th century.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Yujie Li"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KEY",
+                  "0116"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST287",
+      "name": "Why the Jews? Historical and Cultural Investigations",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS",
+        "DSHU",
+        "DVUP"
+      ],
+      "description": "Examines the history and culture of the Jews from the thirteenth century BCE/BC to the present through an examination of significant themes or problems (such as \"religion\" or \"diaspora\") that shape our understanding of the Jewish people. A primary focus in the course will be on texts, artifacts, and other cultural products by Jews and others that illustrate the history of the Jews help understand their cultural heritage.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Hayim Lapin"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "HBK",
+                  "0105"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST289A",
+      "name": "Jews, Christians, and Muslims in Medieval Spain: Tolerance, Oppression, and the Problematic Past",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS",
+        "DVUP",
+        "SCIS"
+      ],
+      "description": "For 800 years, medieval Spain was home to one of the most religiously diverse societies in European history. Despite frequent hostilities, the interactions of Spanish Jews, Christians, and Muslims produced a flowering of science, theology, and literature in an often remarkably tolerant climate. Students will learn how medieval Spanish people themselves experienced interreligious contact and conflict. They will also discover the modern pressures, prejudices, and ideals that have shaped historians interpretations of medieval Spain.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Janna Bianchini"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SYM",
+                  "0200"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SYM",
+                  "0209"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Janna Bianchini"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SYM",
+                  "0200"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "3217"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Janna Bianchini"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SYM",
+                  "0200"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "3217"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST289N",
+      "name": "The Politics of Sexuality in America: A Historical Approach",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS",
+        "DVUP",
+        "SCIS"
+      ],
+      "description": "Why do particular issues about sexuality hold such an important place in American political debates? What animates these controversies and what can a historical perspective on these issues add to our understanding of modern sexual politics? This class explores the historical sexual politics that undergird contemporary debates concerning sexuality in America. It focuses on topics that garner significant public attention - Reproductive rights - LGBTQ rights - Sexting - and explores the histories that undergird Americans disagreements.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Clare Lyons"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "0215"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "2108"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Clare Lyons"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "0215"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "2108"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Clare Lyons"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "0215"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "2108"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST289V",
+      "name": "What Does It Mean to be An American?",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS",
+        "SCIS"
+      ],
+      "description": "This course seeks to understand the on-going crisis over national identity and purpose by examining the many factors that go into the big stew known as America.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Howard Smead"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SYM",
+                  "0200"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      20,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KEY",
+                  "0100"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Howard Smead"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SYM",
+                  "0200"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KEY",
+                  "0100"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Howard Smead"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SYM",
+                  "0200"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      20,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KEY",
+                  "0100"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST291",
+      "name": "Jewish Texts and Cultures of the Second Temple Period",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHU",
+        "DVUP"
+      ],
+      "description": "An introduction to the literature, history, and culture of Jews in the period between the sixth century BCE and the second century CE. Special topics may include the rise of the formation of the biblical canon, scriptural interpretation, sectarian and revolutionary movements, and growth of the diaspora.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Hayim Lapin"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "2109"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST299",
+      "name": "Directed Research",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: permission of department.",
+      "sections": null
+    },
+    {
+      "code": "HIST319P",
+      "name": "Special Topics in History; Ukraine and Russia: Parallel Histories, Clashing Identities",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Previously offered as HIST429W. Credit only for HIST319P or HIST429W. The course addresses various interactions encounters as well as divergences between the processes of Ukrainian and Russian national identity and state formation, in a broader context of East European and Slavic history, from the Middle Ages up to Russia s aggression against Ukraine in 2022.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Mikhail Dolbilov"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KEY",
+                  "0126"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST319Z",
+      "name": "Special Topics in History; State and Society in Modern China: Opium War to the Present",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "A survey in the change of state-society relation in China as the country transformed from empire, to Republic, then to People's Republic.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Yujie Li"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KEY",
+                  "0126"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST320",
+      "name": "Early Christianity: Jesus to Constantine",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Social and religious history of early Christianity from its origin in the first century to the reign of Constantine.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Elizabeth Conner"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "1119"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST321",
+      "name": "Biblical History and Culture",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Study of the political, social, and religious development of the Jewish nation from its inception to its return from exile in Babylonia around 536 C.E. Focus on biblical texts, archeological finds, and source materials from neighboring cultures to reconstruct political history and the development of religious concepts.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Matthew Suriano"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ARC",
+                  "1103"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST328G",
+      "name": "Selected Topics in History; Heretics, Withches, and Slaves: Marginalized Communities in the Middle Ages",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Discover medieval people whose religious beliefs, sexuality, disability, or enslavement led to their exclusion--both from their own communities and from histories written about them today--and explore why and how societies choose whom to persecute.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Janna Bianchini"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KEY",
+                  "0100"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST328K",
+      "name": "Selected Topics in History; Borders and Memory-making in Times of War: A Global Classroom connecting College Park and Kyiv",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Russia's full-scale invasion of Ukraine has shone a spotlight on the need for evidence-based, critical discussion of borders and memory-making, grounded in History but speaking to a wider global public. This course will use the historian's toolkit to examine borders and memory-making at war through a global lens. Bringing together undergrads from College Park &amp; from Kyiv, Ukraine, this Global Classroom will both compare &amp; connect different stories across time and space, from the Polish-Ukrainian borderlands, to the US-Mexico border, to Korea, to Rwanda and Uganda. Content delivery will combine once-a-week online, real-time mini-lectures with small-group projects &amp; meetings. These will facilitate collaborative partnerships between US &amp; Ukrainian students.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Piotr H Kosicki"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "Th": [
+                  [
+                    11,
+                    0,
+                    "Am"
+                  ],
+                  [
+                    12,
+                    15,
+                    "Pm"
+                  ]
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST328W",
+      "name": "Women in Classical Antiquity",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHU",
+        "DVUP"
+      ],
+      "description": "A study of women's image and reality in ancient Greek and Roman societies through an examination of literary, linguistic, historical, legal, and artistic evidence; special emphasis in women's role in the family, views of female sexuality, and the place of women in creative art. Readings in primary sources in translation and modern critical writings.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Chiara Graf"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "B0320"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST328Y",
+      "name": "Selected Topics in History; Cities in Flux: Urban Environmental Histories of Water",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Everyday, massive volumes of water move in and out of the worlds cities. The way water moves in urban spaces, however, is more than a technical question: it is a historical problem that cities have confronted for centuries. In this class, we'll take a look at how water has shaped cities over time, and how increasing urbanization has shaped humanity s relationship to water, creating the hybrid waterscapes that undergird cities and occasionally undermine them.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "WDS",
+                  "1114"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST328Z",
+      "name": "Selected Topics in History; Chocolate Cities: Urban America and the Black Experience",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Cross-listed with AASP478G. Credit only granted for HIST328Z or AASP478G.<br><br> As early as the colonial area, cities have included significant numbers of people of African descent within their borders. By the twentieth century, war and mass migration had transformed African Americans into a predominantly urban people. This course examines a variety of urban areas in the United States, delineating how the opportunities and obstacles ofthese spaces have shaped African American life and culture from the colonial era to the present.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Dennis Doster"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "Tu": [
+                  [
+                    5,
+                    0,
+                    "Pm"
+                  ],
+                  [
+                    6,
+                    15,
+                    "Pm"
+                  ]
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "1101"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST329M",
+      "name": "Special Topics in History; From Damascus to Cordoba: The First Dynasty of Islam East and West",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Cross-listed with RELS429M. Credit only granted for HIST329M or RELS429M.<br><br> A global history of the first dynasty of Islam, from their Arabian origins to Syria and Iberia, with a focus on how the Umayyads wanted to memorialize themselves while questioning the construction of historical narratives in medieval Islam.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Antoine Borrut"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "1103"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST329Q",
+      "name": "Special Topics in History; Jews and Sports: Identities, Nationalisms, and Masculinities",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Cross-listed with JWST319A. Credit only granted for JWST319A or HIST329Q.<br><br> Modern Jewish culture is marked by competing visions of Jewish masculinity, from the traditional learned scholar to the muscle Jew of the 19th century. Athleticism plays an important role in this cultural formation. Attention to Jewish engagement in and with sports including boxing, baseball, basketball, and soccer allows for a better understanding of modern Jewish identity and its development and challenges.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "2206"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST333",
+      "name": "The European Reformations",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Examination of developments in European religion between 1450 and 1700; the late-medieval Church and its critics; rise of Protestant thought in Germany and its spread throughout Europe; reform efforts in the Catholic Church; religious wars and violence and their impact on state and society; consequences of religious reform in society and its impact on the family and women.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Philip Soergel"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "1101"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST339J",
+      "name": "Ancient Slavery and its American Impacts",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHU",
+        "DVUP"
+      ],
+      "description": "Interrogates how slavery permeated the ancient Mediterranean societies of Greece and Rome. We will pay particular attention to how hierarchical inequalities are institutionalized, experienced, and represented and to how different marginalized and dominant groups interacted. Enslaved persons performed necessary labor in Greece and Rome and their work was essential for the formation of ancient society in agriculture, mining, domestic spaces, literature, finance, and government. Studying ancient slavery offers a chance to examine Greece and Rome from the bottom up, parsing the scant literary and material evidence for the lives and struggles of enslaved persons. We will practice several different approaches in order to tease out the systematic, economic, political, and personal effects of slavery in the ancient world. The United States of America was also founded as a slave society, and discussions of slavery in the Americas often look back to the ancient Mediterranean. The course will therefore conclude with a unit on how enslavers and abolitionists in the United States utilized and responded to slavery in antiquity.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Katherine Wasdin"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      15,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SKN",
+                  "1115"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST339L",
+      "name": "Special Topics in History; Minorities, Minoritization, and Sectarianism in the Modern Middle East",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Minorities and Sectarianism are two categories that are commonly used in contemporary political and social analysis of the Modern Middle East. The course will look at the historical events and processes that have led to the emergence of such social structures that are more often the product of modern politics than markers of essential historical difference. We will analyze the roots of ethnic and religious diversity and their manipulation by colonial and post-colonial governments, and at the politics of self-assertion by minority groups in the Middle East and North Africa during the twentieth and twenty-first centuries.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Peter Wien"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KEY",
+                  "0100"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST339O",
+      "name": "Special Topics in History; Elizabeth I of England and Mary Queen of Scots: Between Propaganda and Myth",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "A study of both the propaganda strategies developed during the reigns of Elizabeth I and Mary Stuart in shaping their images and the literary and artistic representations that after their deaths transfigured their vicissitudes in dozens of portraits, poems, dramas, musical operas, novels and movies. We will also seek to investigate the different narrative codes utilized in these fictionalized narratives.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Stefano Villani"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "1103"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST354",
+      "name": "Ante-Bellum America 1815-1861",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Traces how the strong nationalism after the War of 1812 transformed int the sectionalism that led to Civil War. The course concentrates on the controversies over slavery and other issues contributing to North-South antagonism, including Jacksonian democracy, capitalism, racism, immigration, manifest destiny and religious, social, and intellectual movements, each of which produced its own social tendencies and tensions.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Robert Chiles"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KEY",
+                  "0116"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST356",
+      "name": "Emergence of Modern America, 1900-1945",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "The emergence of modern institutions and identities, 1900-1945. These institutions may include corporate enterprises and the welfare state; identities include homosexuality, the New Woman, and the New Negro.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Robert Chiles"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KEY",
+                  "0116"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST357",
+      "name": "Recent America: 1945-Present",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "American history from the inauguration of Harry S. Truman to the present with emphasis upon politics and foreign relations, but with consideration of special topics such as radicalism, conservatism, and labor.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Howard Smead"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KEY",
+                  "0116"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST376",
+      "name": "History of Modern Israel",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS"
+      ],
+      "description": "History of modern Israel since the beginning of the Zionist settlement in 1882. Attention to different interpretations and narratives of Israel's history, including the historical and ideological roots of Zionism, the establishment of the State of Israel, ideological forces, wars, and the triumphs and crises of democracy.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Paul Scham"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "1117"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST386",
+      "name": "Experiential Learning",
+      "credits": {
+        "Range": [
+          3,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "The History Department's Internship program.  Pre-professional experience in historical research, analysis, and writing in a variety of work settings.",
+      "sections": null
+    },
+    {
+      "code": "HIST396",
+      "name": "Honors Colloquium II",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSSP"
+      ],
+      "description": "Uses a seminar approach to examine a major problem of historical interpretation across two or more diverse cultures in different periods. Topics vary and include: religion and society, the city in history, gender, slavery and emancipation, and modernization.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Colleen Woods"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      1,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "2100"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST398",
+      "name": "Honors Thesis I",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "HIST399",
+      "name": "Honors Thesis II",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "HIST408B",
+      "name": "Senior Seminar; What Does Government Do? The State in American History",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSSP"
+      ],
+      "description": "Restriction: Permission of department.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "David Freund"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "2108"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST408J",
+      "name": "Senior Seminar; Gender and Sexuality in Early Modern Europe",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSSP"
+      ],
+      "description": "Restriction: Permission of department.<br><br> Recent years have witnessed an explosion of research on gender and sexuality in early modern Europe (1500-1800). This seminar will explore this challenging historiography and students will write an historiographical essay on a subject of their choosing.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Philip Soergel"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "2101"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST408W",
+      "name": "Senior Seminar; The Rise and Fall of the Slave South",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSSP"
+      ],
+      "description": "Restriction: Permission of department.<br><br> Capstone readings seminar for history majors. Explores the rise, maturation and ultimate destruction of the slave South by examining its constituent elements--slaves, slaveholders, yeoman farmers, white nonslaveholders, free people of African descent--and the sources of cohesion and conflict among them.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Leslie Rowland"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "2101"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST408Y",
+      "name": "Senior Seminar; Jewish Women in Modernity",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSSP"
+      ],
+      "description": "Restriction: Permission of department. Exploration of the role of Jewish women in the process of Jewish modernin and the impact of modernization on Jewish women in Europe and America e nineteenth and twentieth centuries.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Marsha Rozenblit"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "2101"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST419A",
+      "name": "Special Topics in History; From Neverland to Downton Abbey: History and Popular Culture in 20th Century Britain",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Examines Twentieth Century Britain through the lens of popular culture: both how popular culture reflected and was shaped by larger political and social events, from two world wars to sexual revolution, from Britain's peak of colonial power to its continuing \"decline\" in the age ofBrexi t. What role does film, TV, music, fashion, and literature play ingiving a voice to working class and youth culture? We'll also incorporate 21st century pop culture (for example, costume dramas like \"Downton Abbey\" and \"Peaky Blinders\") to \"look back\" at this history and how we romanticize the past. How do programs like \"The Great British Bake-Off\" and Roy alevents from weddings, births, and funerals keep nostalgia for the monarchy alive, while also recognizing the nation's evolution as a multiracial, democratic society? How does British popular culture address notions of identity and what it means to be \"British\" in the 20th-21st centuries?",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Julie Taddeo"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "1103"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST419C",
+      "name": "Special Topics in History; Sex, Gender, and Sexuality in the Islamic World",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Cross-listed with CMLT679D, PERS498M, PERS689M, RELS429B, WGSS498D, and WGSS698D. Credit granted for CMLT679D, HIST419C, PERS498M, PERS689M, RELS429B, WGSS498D, or WGSS698D.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Matthew Miller"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "1123"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST419N",
+      "name": "Special Topics in History; The Unending War: From the Korean War to the Korean Wave",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Seminar course on the Korean War and its legacies. We examine how the conflict, often dubbed the \"forgotten war\", sparked enduring changes to the politics, culture, and economies of the United States and the two Koreas.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Patrick Chung"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "2103"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST419W",
+      "name": "Special Topics in History; The African Side of the Black Diasporic Atlantic: People, Politics, and Faiths",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Cross-listed with AASP468A. Credit only granted for HIST419W or AASP468A.<br><br> The Black Atlantic- the African diaspora, and development of Atlantic- world Black communities- but with the focus on the African side. How did new Atlantic states and networks develop in Africa alongside the traffic in enslaved? How did the slave trade change Africa? Focuses include Asante, Dahomey, Yorubaland, African Islamic jihads, and abolition.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Paul Landau"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "2108"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST425",
+      "name": "Imperial Russia",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "The rise and fall of the Russian Empire, Peter the Great to the collapse of tsarism in revolution. Emphasis on the evolution of autocracy, social groups, national identities, and cultural change.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Mikhail Dolbilov"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KEY",
+                  "0126"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST428B",
+      "name": "Selected Topics in History; Seven Revolutions in Postwar Africa",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "The history of radical politics, anticolonial movements, and revolutionary violence in Africa from 1945 to the present.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Paul Landau"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "2108"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST428I",
+      "name": "Selected Topics in History; Contentious Historical Memories in/between Korea and Japan",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "History of modern Korea-Japan relations, with a focus on historical memories of the Japanese empire and two catastrophic wars (World War II and the Korean War). Topics include: Korean kamikaze pilots and the Yasukuni Shrine; Japanese colonial settlers in Korea; Hiroshima and Nagasaki and Korean hibakusha (atomic-bomb survivors); comfort women controversies.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "1101"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST428J",
+      "name": "Selected Topics in History; Global Revolutions in the Modern Era",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Examines the key social, cultural, political, and economic causes of revolution, and considers how and why modern revolutions migrated across borders, continents, and oceans. Seminar intended for both advanced undergraduate and graduate students.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Piotr H Kosicki"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "Th": [
+                  [
+                    6,
+                    0,
+                    "Pm"
+                  ],
+                  [
+                    8,
+                    30,
+                    "Pm"
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST429B",
+      "name": "Special Topics in History; Digital Methods in Historical Research",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Cross-listed with RELS419L. Credit only granted for HIST429B or RELS419L.<br><br> This course provides introductions and hands-on experience to a variety of digital approaches to historical analysis. Students will be able to plan and execute a basic digital historical project of their own and to identify resources for further development. No prior coding knowledge is necessary.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Hayim Lapin"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "2103"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST429F",
+      "name": "Special Topics in History; Islam in Africa and the African Diaspora",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Cross-listed with AASP498U and ARAB499J. Credit only granted for ARAB499J, AASP498U, or HIST429F.<br><br> Taught in English.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Rachel Schine"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "HJP",
+                  "2118"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST429M",
+      "name": "Special Topics in History; Constructing the Past in Early Islam",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Cross-listed with RELS419C. Credit only granted for HIST429M or RELS419C.<br><br> An exploration of historical writing in the medieval Islamic world. How did early Islamic-era scholars define their relationship to the past, torn between memory and oblivion? How did they build narratives about the formative period of Islam that became so influential and long-lasting, determining in a fundamental way the access that all future generations (including us) would have to alternative pasts?",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Antoine Borrut"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "2100"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST431",
+      "name": "Becoming Great Britain, 1603-1704",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "An examination of the political, religious, and social forces in English life, 1603-1714, with special emphasis on Puritanism and the English revolutions.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Sabrina Baron"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "1101"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST455",
+      "name": "Constitutional History of the United States: Since 1865",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "American public law and government, with emphasis on the interaction of government, law, and politics, and the relationship between the constitution and social forces and influences, the way in which constitutional principles, rules, ideas, and institutions affect events and are in turn affected by events.  Major crises in American government and politics such as Reconstruction,the rise of corporate power, civil liberties during wartime, the New Deal era, the civil disorders of the 1960s.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Michael Ross"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0205"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST465",
+      "name": "Oral History of Immigration",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSSP",
+        "DVCC"
+      ],
+      "description": "Uses oral history to explore experiences of migrants to the Washington, D.C. area since the mid-twentieth century in projects based on engagement with local immigrants.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Anne Rush"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "1103"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST499",
+      "name": "Independent Study",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: permission of department.",
+      "sections": null
+    },
+    {
+      "code": "HIST601",
+      "name": "History and Contemporary Theory",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "An introduction to contemporary theories in philosophy, literary criticism, cultural studies, anthropology, and other fields; and analysis of their usefulness to historians.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Saverio Giovacchini"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      6,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      8,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "2108"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST607",
+      "name": "The Teaching of History in Institutions of Higher Learning",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "For majors only.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Quincy Mills"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Holly Brewer"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST608B",
+      "name": "General Seminar; American History",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: permission of department.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Saverio Giovacchini"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "2108"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST608C",
+      "name": "General Seminar; Nationalism and Identity in Europe",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Marsha Rozenblit"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "2103"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST608K",
+      "name": "General Seminar; East Asian History",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Ting Zhang"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "2108"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST610",
+      "name": "Introduction to Museum Scholarship",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Provides students a basic understanding of museums as cultural and intellectual institutions. Topics include the historical development of museums, museums as resources for scholarly study, and the museum exhibition as medium for presentation of scholarship.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Lesley Langa"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "Tu": [
+                  [
+                    5,
+                    30,
+                    "Pm"
+                  ],
+                  [
+                    7,
+                    0,
+                    "Pm"
+                  ]
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST619A",
+      "name": "Special Topics in History; Independent Study",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: permission of department.",
+      "sections": null
+    },
+    {
+      "code": "HIST619B",
+      "name": "Special Topics in History; Independent Study",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: permission of department.",
+      "sections": null
+    },
+    {
+      "code": "HIST619Q",
+      "name": "Special Topics in History; The Unending War: From the Korean War to the Korean Wave",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Patrick Chung"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "2103"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST619V",
+      "name": "Special Topics in History; Readings in U.S. Labor History",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Julie Greene"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "2108"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST638F",
+      "name": "Special Topics in History; Readings in Colonial America and the Atlantic World",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Offers an overview of recent and canonical works covering a vast Early America and Atlantic World. Topics will include commodities, ecology, medicine, piracy, political economy, sexuality, and slavery.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Zachary Dorner"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "2100"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST638J",
+      "name": "Special Topics in History; Global Revolutions in the Modern Era",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Piotr H Kosicki"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "Th": [
+                  [
+                    6,
+                    0,
+                    "Pm"
+                  ],
+                  [
+                    8,
+                    30,
+                    "Pm"
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST638L",
+      "name": "Special Topics in History; Histories of Race in Latin America and the Caribbean",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "David Sartorius"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "2100"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST639B",
+      "name": "Special Topics in History; Digital Methods in Historical Research",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "This course provides introductions and hands-on experience to a variety of digital approaches to historical analysis. Students will be able to plan and execute a basic digital historical project of their own and to identify resources for further development. No prior coding knowledge is necessary.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Hayim Lapin"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "2103"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST639M",
+      "name": "Special Topics in History; Constructing the Past in Early Islam",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Antoine Borrut"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "2100"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST708",
+      "name": "Directed Independent Reading for Comprehensive Examinations I",
+      "credits": {
+        "Range": [
+          1,
+          4
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "HIST709",
+      "name": "Directed Independent Reading for Comprehensive Examinations II",
+      "credits": {
+        "Range": [
+          1,
+          4
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "HIST799",
+      "name": "Master's Thesis Research",
+      "credits": {
+        "Range": [
+          1,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "HIST810",
+      "name": "Museum Research Seminar",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "A research seminar focusing on the practice and presentation of cultural and historical scholarship in museums and historical sites. Students will complete an original research project on the challenges and opportunities of public exhibition and interpretation of cultural and historical research.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Jamila Moore-Pewu"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "Th": [
+                  [
+                    4,
+                    0,
+                    "Pm"
+                  ],
+                  [
+                    5,
+                    45,
+                    "Pm"
+                  ]
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST811",
+      "name": "Museum Scholarship Practicum",
+      "credits": {
+        "Range": [
+          3,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "Students devise and carry out a research program using the collections at the Smithsonian Institution or some other cooperating museum, working under joint supervision of a museum professional and a university faculty member.",
+      "sections": [
+        {
+          "sec_code": "01",
+          "instructors": [
+            "Paul Jaeger"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST819A",
+      "name": "Special Topics in History: Independent Research",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "Department permission required.",
+      "sections": null
+    },
+    {
+      "code": "HIST819B",
+      "name": "Special Topics in History: Independent Research",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "Department permission required.",
+      "sections": null
+    },
+    {
+      "code": "HIST819V",
+      "name": "Special Topics in History: Independent Research; U.S. Research Seminar: Atlantic History Before 1865",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Holly Brewer"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      6,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      8,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "2108"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "HIST898",
+      "name": "Pre-Candidacy Research",
+      "credits": {
+        "Range": [
+          1,
+          8
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "HIST899",
+      "name": "Doctoral Dissertation Research",
+      "credits": {
+        "Amount": 6
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    }
+  ]
+}

@@ -1,0 +1,636 @@
+{
+  "name": "JWST",
+  "courses": [
+    {
+      "code": "JWST225",
+      "name": "Religions of the Ancient Near East",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHU"
+      ],
+      "description": "Introduction to ancient Near Eastern religious systems and mythology, from the third millennium BCE through the fourth century BCE. Particular emphasis on Mesopotamia and ancient Israel.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Matthew Suriano"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "HBK",
+                  "0105"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JWST231",
+      "name": "Jewish Texts and Cultures of the Second Temple Period",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHU",
+        "DVUP"
+      ],
+      "description": "An introduction to the literature, history, and culture of Jews in the period between the sixth century BCE and the second century CE. Special topics may include the rise of the formation of the biblical canon, scriptural interpretation, sectarian and revolutionary movements, and growth of the diaspora.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Hayim Lapin"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "2109"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JWST233",
+      "name": "Why the Jews? Historical and Cultural Investigations",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS",
+        "DSHU",
+        "DVUP"
+      ],
+      "description": "Examines the history and culture of the Jews from the thirteenth century BCE/BC to the present through an examination of significant themes or problems (such as \"religion\" or \"diaspora\") that shape our understanding of the Jewish people. A primary focus in the course will be on texts, artifacts, and other cultural products by Jews and others that illustrate the history of the Jews help understand their cultural heritage.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Hayim Lapin"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "HBK",
+                  "0105"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JWST281",
+      "name": "Yiddish I",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Introduction to the Yiddish language, with emphasis on speaking, reading, and writing skills. Students will also learn the history of the language, its significance to Jewish culture, its origins and basic structure.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Adi Mahalel"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "3122"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JWST319A",
+      "name": "Special Topics in Jewish Studies; Jews and Sports: Identities, Nationalisms, and Masculinities",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Cross-listed with HIST329Q. Credit only granted for JWST319A or HIST329Q.<br><br> Modern Jewish culture is marked by competing visions of Jewish masculinity, from the traditional learned scholar to the muscle Jew of the 19th century. Athleticism plays an important role in this cultural formation. Attention to Jewish engagement in and with sports including boxing, baseball, basketball, and soccer allows for a better understanding of modern Jewish identity and its development and challenges.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "2206"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JWST319P",
+      "name": "Special Topics in Jewish Studies; Social Innovation, Change, and Justice: Do Good Now",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Cross-listed with ARHU380. For Spring 2022: Credit granted only for JWST319P, ARHU380, BSOS388B, or PLCY388D.<br><br> The course serves as the core course for the Arts-and-Humanities track in PLCY's minor in \"Nonprofit Leadership and Social Innovation.\" Students will be introduced to the role that the Arts and Humanities can play in social innovation and social change, while exploring various mechanisms for achieving impact with a focus on advancing social justice, equity and systems change. This course deepens understandings of nonprofit leadership, entrepreneurship and social innovation by guiding students through the creation and implementation of social change projects and ventures of their choice.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Lauren Kotkin"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      6,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      8,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KEY",
+                  "0100"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JWST319T",
+      "name": "Special Topics in Jewish Studies; American Jewish Comedy: From the Marx Brothers to \"The Marvelous Mrs. Maisel\"",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Cross-listed with CINE329I. Credit only granted for CINE329I or JWST319T.<br><br> Since the turn of the 20th century, from the films of the Marx Brothers to current tv series, internet shows, and stand-up comics, comedy has served to express Jewish Americanness, and at the same time has defined much of American cultural life in a broad sense. This course will explore comedy as an expression of both American Jewish identity and American culture writ large, across several media: literature, television, film, the internet, graphic literature, stand-up, and theater.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Eric Zakim"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "B0322"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JWST319W",
+      "name": "Special Topics in Jewish Studies; Israeli Slang",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Cross-listed with HEBR398W and ISRL349W. Credit only granted for HEBR398W, ISRL349W, or JWST319W.<br><br> Examination of the history, linguistics, politics and sociology of Modern Israeli Hebrew slang, including influences from popular American culture, technology, the military, Arabic and immigrant group languages. Taught in English; course materials in Hebrew with translation.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Avital Karpman"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JWST324",
+      "name": "Biblical History and Culture",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Study of the political, social, and religious development of the Jewish nation from its inception to its return from exile in Babylonia around 536 C.E. Focus on biblical texts, archeological finds, and source materials from neighboring cultures to reconstruct political history and the development of religious concepts.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Matthew Suriano"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ARC",
+                  "1103"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JWST331",
+      "name": "Early Christianity: Jesus to Constantine",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Social and religious history of early Christianity from its origin in the first century to the reign of Constantine.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Elizabeth Conner"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "1119"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JWST341",
+      "name": "American Jewish Literature",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "An exploration of the role played by literature in the development of American Jewish ethnic identity. Primary materials include essays, poetry, plays, short stories, novels, films and music.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Adi Mahalel"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "1101"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JWST386",
+      "name": "Experiential Learning in Jewish Studies",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "The Jewish Studies Program's internship program. Pre-professional experience in research, analysis, and writing related to Jewish Studies in a variety of work settings.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JWST409G",
+      "name": "Research Seminar in Jewish Studies; Jewish Women in Modernity",
+      "credits": {
+        "Range": [
+          3,
+          4
+        ]
+      },
+      "gen_eds": null,
+      "description": "Exploration of the role of Jewish women in the process of Jewish modernization and the impact of modernization on Jewish women in Europe and America in the nineteenth and twentieth centuries.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Marsha Rozenblit"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "2101"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JWST418",
+      "name": "Honors Thesis Research in Jewish Studies",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "JWST429G",
+      "name": "Advanced Topics in Jewish Studies; Modern Jewish Culture and Politics",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Cross-listed with JWST648G. Credit only granted for JWST429G or JWST648G.<br><br> This course provides students with a unique exploration of texts and visual media written by Jewish authors and creators who dared to explore new visions of society. The texts and film all carry within them an inspiring call to action and offer a clear and edgy alternative to the mainstream. This course does not require proficiency of any foreign language.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Adi Mahalel"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "2125"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JWST499",
+      "name": "Independent Study in Jewish Studies; Independent Study in Jewish Studies",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: permission of department.",
+      "sections": null
+    },
+    {
+      "code": "JWST609",
+      "name": "Supervised Instruction-Practicum in Jewish Studies",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "JWST648G",
+      "name": "Readings in Jewish History; Modern Jewish Culture and Politics",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Cross-listed with JWST429G. Credit only granted for JWST429G or JWST648G.<br><br> This course provides students with a unique exploration of texts and visual media written by Jewish authors and creators who dared to explore new visions of society. The texts and film all carry within them an inspiring call to action and offer a clear and edgy alternative to the mainstream. This course does not require proficiency of any foreign language.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Adi Mahalel"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "2125"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JWST799",
+      "name": "Masters Thesis Research",
+      "credits": {
+        "Range": [
+          1,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: permission of department.",
+      "sections": null
+    }
+  ]
+}

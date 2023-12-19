@@ -1,0 +1,5364 @@
+{
+  "name": "JOUR",
+  "courses": [
+    {
+      "code": "JOUR130",
+      "name": "Self-Presentation in the Age of YouTube",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "FSOC"
+      ],
+      "description": "Students, as they make use of evolving technologies, need to be able to present themselves effectively in front of any number of different audiences through any number of different outlets. Whether in an interview on radio, a guest presentation at a conference, in comments on a video blog, in commentary on TV, in the lead on a self-produced YouTube video, or as spokesperson in front of investors or management, professionals need strong oral communication skills. This class focuses on strengthening those skills through active individual and group presentations, as well as, through discussion of key techniques and group critique of presentation publicly available in the social media space on sites such as YouTube.",
+      "sections": [
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Amber Moore"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "1103"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR150",
+      "name": "Introduction to Mass Communication",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS",
+        "DSSP"
+      ],
+      "description": "Survey of the functions and effects of the mass media in the United States. A consumer's introduction to newspapers, television, radio, film, sound recording, books, magazines, and new media technology.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Edward Alwood"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "1105"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Sara Browning"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "1103"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0301",
+          "instructors": [
+            "Ho Chun Wong"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        },
+        {
+          "sec_code": "0401",
+          "instructors": [
+            "Denitsa Yotova"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        },
+        {
+          "sec_code": "0501",
+          "instructors": [
+            "Edward Alwood"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "1105"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0601",
+          "instructors": [
+            "Denitsa Yotova"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR152",
+      "name": "Introduction to Storytelling with Code",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "An introduction to the ways markup and programming languages and computational thinking are transforming news reporting and storytelling.",
+      "sections": [
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Naeemul Hassan"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR175",
+      "name": "Media Literacy",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSSP",
+        "DVUP"
+      ],
+      "description": "An analysis of the information, values and underlying messages conveyed via television, newspapers, the internet, magazines, radio and film. Examines the accuracy of those messages and explores how media shape views of politics, culture and society.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Susan Moeller"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR181",
+      "name": "Grammar for Journalists",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "The basic grammatical structures of standard American written English and its conventions of punctuation, diction and usage in journalistic writing.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Nicki Kern"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "M": [
+                  [
+                    10,
+                    0,
+                    "Am"
+                  ],
+                  [
+                    10,
+                    50,
+                    "Am"
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR199",
+      "name": "Survey Apprenticeship",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: permission of department. Repeatable to 6 credits if content differs. Students must meet with the Internship Director in KNI 1100 to receive permission to register. No requests to register after the Schedule Adjustment Period will be honored.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Karen Denny"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR200",
+      "name": "Journalism History, Roles and Structures",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Introduction to the study of journalism from the standpoint of media history and sociology.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "James Baxter"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "1208"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Christoph Mergerson"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "1103"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR201",
+      "name": "News Writing and Reporting I",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Introduction to news for the print and electronic media, development of new concepts: laboratory in news-gathering tools and writing skills. Students who earned 80% or higher on the JOUR181 diagnostic are exempt from the JOUR181 prerequisite.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "David Oliver"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "1101"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Joseph Weber"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      8,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "2103"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0401",
+          "instructors": [
+            "Merrilee Cox"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "1101"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0601",
+          "instructors": [
+            "Christine Harvey"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "1101"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0801",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "2103"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR202",
+      "name": "News Editing",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Copy editing, fact checking, verification and research across media platforms, including social, with consideration of story play and placement, graphic principles, headlines and SEO.",
+      "sections": [
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Jodi Friedman"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "2103"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR282",
+      "name": "Beyond Facebook: How Social Media are Transforming Society, Culture, Business and Politics",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHU",
+        "SCIS"
+      ],
+      "description": "Examining the rise of social media and their impact on culture, business, government, politics, journalism and society, this course provides students with a broad contextual understanding of the multidisciplinary impacts of social media such as Twitter, Facebook and similar Internet-based services.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Wei-Ping Li"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR283",
+      "name": "Probing War: Investigative Narratives and American Conflicts",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHU",
+        "SCIS"
+      ],
+      "description": "Students will explore the realities of war through the work of journalists who pushed beyond the daily headlines, some risking life and limb, to challenge official versions and document uncomfortable realities about American conflicts.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Christopher Hanson"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "1208"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR284",
+      "name": "Scandal: Exposing Corruption, Justice, and Vice in America",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS",
+        "SCIS"
+      ],
+      "description": "Students will examine the nature and meaning of scandals in society: how they are uncovered and constructed; why some forms of wrongdoing are considered scandalous but not others; how this definition has changed over time; and how scandals resonate in ways that reflect societal norms.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Mark Feldstein"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "1208"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR289I",
+      "name": "Information 3.0: Exploring Technological Tools",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSSP",
+        "SCIS"
+      ],
+      "description": "Students will expand their understanding of various digital information and the issues it raises, evaluate media research investigating how users interact with information for different purposes, analyze how diverse audiences seek, select, share and produce various types of digital information, and evaluate the ethics related to digital privacy and security.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Ronald Yaros"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "Tu": [
+                  [
+                    11,
+                    0,
+                    "Am"
+                  ],
+                  [
+                    12,
+                    15,
+                    "Pm"
+                  ]
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR320",
+      "name": "News Writing and Reporting II: Multiplatform",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Principles and practices of news reporting; covering news beats and other news sources, including researching news stories for accuracy, comprehensiveness and interpretation. Due to rigorous publication requirement, plan your schedule accordingly.",
+      "sections": [
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "David Lightman"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      8,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "1101"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0401",
+          "instructors": [
+            "Clarence Williams"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      1,
+                      20,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "2103"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR320U",
+      "name": "News Writing and Reporting II: Multiplatform",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Principles and practices of news reporting; covering news beats and other news sources, including researching news stories for accuracy, comprehensiveness and interpretation. Due to rigorous publication requirement, plan your schedule accordingly.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Jerry Zremski"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "2103"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR325",
+      "name": "Capital News Service Bureau",
+      "credits": {
+        "Amount": 9
+      },
+      "gen_eds": [
+        "DSSP"
+      ],
+      "description": "Advanced journalism training. Students report as part of college's Capital News Service program.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "James Carroll"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0301",
+          "instructors": [
+            "Adam Marton"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0401",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR327",
+      "name": "Urban Affairs Reporting",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSSP"
+      ],
+      "description": "Students are immersed in coverage of issues affecting cities, working on a semester-long multi-platform reporting project based in Baltimore.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Rob Wells"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "1210"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR328C",
+      "name": "Special Topics in News Writing and Reporting; Journalism Compass: Navigating Your College Path",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: JOUR200 or permission of instructor. Students will learn how to maximize your time in college so you can get a position in journalism (internship or job) that interests you. Information will include expectations and opportunities that are out there, and how to make the most of resumes and cover letters, classes, networking and professionalism and more.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Karen Denny"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      11,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      1,
+                      35,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "3202"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR328G",
+      "name": "Special Topics in News Writing and Reporting; Enterprise Sports Reporting",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: JOUR320.<br><br> Students will work as a team on a sports enterprise project. Previous topics have included gender equity in sports, youth sports &amp; the media, betting and college sports, the economic impact of a new stadium on a city, and the future of football.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Mark Hyman"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "2103"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR328I",
+      "name": "Special Topics in News Writing and Reporting; Turning Your Degree into Multiple Career Options",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "Restriction: Must have earned at least 60 credits.<br><br> Whether you love your major or hate it, it doesn't matter. That's because the many skills you're learning in journalism and other humanities majors like -- English, History, Government &amp; Politics, Philosophy, Sociology, etc -- are transferable into countless industries. You'll learn step-by-step how to inventory the most valuable skills you've gained inside and outside the classroom and translate them into tangible job functions that exist in almost any industry you can imagine. From Aeronautics to Architecture, from Hedge Funds to Health Care, from IG &amp; TikTok from Intelligence &amp; Foreign Affairs, this will be a course unlike any other you've taken in college because its sole focus is to help you identify at least three career options you'd be excited to pursue after you graduate and then show you how to use LinkedIn to uncover those jobs and internships.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Andrea Koppel"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      1,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      20,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "3200"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR328K",
+      "name": "Special Topics in News Writing and Reporting; Business and Economic Reporting",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: JOUR320.<br><br> Students will explore why economic and business themes are among the top stories generating reader interest. Topics vary each semester but can focus on the economic impact of immigration, employment, income inequality, wage stagnation, trade wars and affordable housing. Students will learn to identify newsworthy stories and interpret and integrate numbers and financial data into stories in a compelling way.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Constance Ford"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "1101"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR328O",
+      "name": "Special Topics in News Writing and Reporting; News Application Development",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: JOUR472 or permission of instructor (dpwillis@umd.edu).<br><br> A class that combines a survey of work in this area, featuring work done at organizations like ProPublica, the Associated Press, the San Francisco Chronicle and others, with practical skills in reporting and building news applications. Students will review and critique existing news apps, read materials from those who built them and develop projects in small groups that display data in a news app style. Key skills gained include: backend development, frontend development, command-line usage and some data analysis.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Derek Willis"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "2107"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR328T",
+      "name": "Special Topics in News Writing and Reporting; Data Visualization",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: JOUR352.<br><br> This course is focused on data visualization in the service of journalistic storytelling. Students will learn data visualization theory, best practices and methods, including how to create data visualizations using a variety of tools.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Adam Marton"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "2105"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR328V",
+      "name": "Special Topics in News Writing and Reporting; Covering Comic Book Culture in Entertainment",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: JOUR320.<br><br> Comic book culture's evolving impact in entertainment has been vast and rapidly growing. This course will look at the humble beginnings of comic book culture in entertainment, from the comic books themselves, to the adaptations that have become big business for movies, television, streaming and animation as well as how to write on/cover those moments.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "David Betancourt"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      6,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      8,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "3200"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR328Z",
+      "name": "Special Topics in News Writing and Reporting; Making a Career as a Freelance Journalist",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: JOUR201.<br><br> Freelancing can give early-career journalists their first big break in the industry. This course will cover the basics of launching a career as a freelance reporter: pitching, setting rates, forming relationships with editors, managing invoices and doing your taxes.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "chelsea Cirruzzo"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      5,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "2103"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR334",
+      "name": "Audio and Podcast Reporting",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Students will learn the tools needed to report and produce short- and long-form audio storytelling, including writing, reporting, interviewing, production, editing, hosting and delivery. Field reporting and audio gathering outside of class are required, along with writing and mixing broadcast-quality audio stories. Students will work together to produce a complete radio broadcast on deadline, with live and pre-recorded elements. Various interests in audio reporting are welcome and encouraged.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Steven Drummond"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      5,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      8,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "1101"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR347",
+      "name": "News Videography",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Introduction to shooting, editing and production of video stories for broadcast and the Web; includes newsgathering in the field.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Benjamin Worsley"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      8,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0222B"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Alanna Kopania"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0222B"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0401",
+          "instructors": [
+            "Alanna Kopania"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0222B"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0501",
+          "instructors": [
+            "Kara Dixon"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "2107"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0601",
+          "instructors": [
+            "Alanna Kopania"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0222B"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR352",
+      "name": "Interactive Design and Development",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Conceptualize, wireframe, design and build responsive Web pages using HTML, style sheets and other coding tools; work with open source interactive tools, JavaScript libraries, multimedia and text to create charts, timelines, maps and other forms of nonfiction storytelling.",
+      "sections": [
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Gagan Nirula"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      5,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      8,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "1101"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0401",
+          "instructors": [
+            "Stacey Decker"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "2105"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0501",
+          "instructors": [
+            "Kalani Gordon"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "Th": [
+                  [
+                    5,
+                    30,
+                    "Pm"
+                  ],
+                  [
+                    8,
+                    15,
+                    "Pm"
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR353",
+      "name": "News Bureau: Multimedia Reporting",
+      "credits": {
+        "Amount": 6
+      },
+      "gen_eds": [
+        "DSSP"
+      ],
+      "description": "Advanced reporting and writing in an online environment focusing on multimedia, non-traditional storytelling and investigative reporting.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "James Carroll"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0401",
+          "instructors": [
+            "Deborah Nelson"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR355",
+      "name": "News Bureau: Multimedia Editing and Production",
+      "credits": {
+        "Amount": 6
+      },
+      "gen_eds": [
+        "DSSP"
+      ],
+      "description": "Advanced online journalism training. Students work as multimedia and social media editors and producers, building interactive content and special reports.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Adam Marton"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0301",
+          "instructors": [
+            "Sean Mussenden"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0401",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0501",
+          "instructors": [
+            "James Carroll"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR357",
+      "name": "Capital News Service Broadcast Immersion",
+      "credits": {
+        "Amount": 6
+      },
+      "gen_eds": null,
+      "description": "Advanced broadcast journalism training. Students report as part of the College's Capital News Service program.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Melvin Coffee"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR360",
+      "name": "News Writing and Reporting II: Broadcast",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Writing and reporting for broadcast media: production of news stories.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Brandon Benavides"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "2107"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0301",
+          "instructors": [
+            "Alison Burns"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "2105"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR361",
+      "name": "Television Reporting and Production",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Writing and editing for the broadcast media. Interpretive and documentary news stories.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Linh Bui"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0222B"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR362",
+      "name": "Broadcast News Producing",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Producing TV news.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Cindy Wright"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      6,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      8,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0117"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0117"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Cindy Wright"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      6,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      8,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0117"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0117"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR364",
+      "name": "Advanced Audio and Podcast Reporting",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Students will receive professional skills training in the reporting, writing, editing, voicing and production of radio news. Students will be required to do extensive field reporting, along with writing and mixing radio pieces. They will also participate in other aspects of radio news production, including editing, directing, live interviewing and hosting. By the end of the semester, students will have created all the elements of a complete radio broadcast. The class will also delve into the history and evolution of radio news and its future in podcasting and other forms.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Robert Little"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      5,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      8,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "3210"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR367",
+      "name": "Broadcast News Bureau",
+      "credits": {
+        "Amount": 9
+      },
+      "gen_eds": [
+        "DSSP"
+      ],
+      "description": "Advanced broadcast journalism training. Students report as part of the college's Capital News Service program.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Melvin Coffee"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR368A",
+      "name": "Topics in Broadcast and Electronic Media; Sports Reporting: Broadcast and Storytelling",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: JOUR262, JOUR320 and JOUR360.<br><br> This class will focus on the art of storytelling for television. Students will get practical, hands-on experience in presentation, learning how to master interviewing skills as well as reporting and anchoring with a heavy focus on the details of writing for broadcast. Students will work creatively and collaboratively to understand how to take a story from an idea to an on-air finished product.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Robert Carlin"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0222A"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR368K",
+      "name": "Topics in Broadcast and Electronic Media; Video Lab",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: JOUR262. Recommended: JOUR361, JOUR368I or JOUR368X.<br><br> This course focuses on the future of video journalism, from documentary to 360 videos. In the class, students can experiment with cinematic techniques, motion graphics, choose-your-own-adventure style videos and more. The class is heavily influenced by independent documentary filmmaking and video storytelling. Students will be required to contribute to a weekly behind-the-scenes vlog of our class documenting the work we do.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Joshua Davidsburg"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0222A"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR368L",
+      "name": "Topics in Broadcast and Electronic Media; Introduction to Studio Production",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: JOUR262 or permission of instructor - nsteven5@umd.edu.<br><br> This course will take you through every production aspect related to studio production. This includes learning how to plan and execute a live studio production featuring camera crews, a floor director, producer, director, technical director, audio, and teleprompter. Labs will focus on putting together and executing a live newscast production. Students will also be able to go on live shots with reporters to run camera/lighting.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Nathaniel Stevens"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0116"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR368N",
+      "name": "Topics in Broadcast and Electronic Media; Advanced Photojournalism",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: JOUR370.<br><br> This course will provide a deeper dive into the storytelling medium of photojournalism. Students will learn the skills necessary to tell in-depth, long-term stories through the use of still photography. Topics of discussion will include the history of photojournalism, changing approaches to the photo story/photo essay over time, how to approach a variety of potential subject matter and situations, finding long-term photo story projects and organizing images for a variety of digital and traditional formats.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Timothy Jacobsen"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "2105"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR368O",
+      "name": "Topics in Broadcast and Electronic Media; Advanced Studio Production",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: JOUR368L or permission of instructor.<br><br> This course will take you through every production aspect related to studio production and work as production support for live sports or video game news shows. This includes learning how to plan and execute a live studio production featuring camera crews, a floor director, producer, director, technical director, audio, and teleprompter. It will also include post-production promo pieces for live shows, as well as social media components that are production-related.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Nathaniel Stevens"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0116"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR368U",
+      "name": "Topics in Broadcast and Electronic Media; Virtual Production Using Unreal Engine",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: JOUR368L or permission of instructor.<br><br> This course will explore the various uses of the Unreal Engine, provide students with hands-on experience with the software, and take students through the process of creating a virtual environment. It will feature gaming and video concepts that are relevant to the production and video game industries.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Nathaniel Stevens"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0116"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR368Y",
+      "name": "Topics in Broadcast and Electronic Media; Sports Producing",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: JOUR262 and JOUR360; or JOUR320. This class will take an analytical look at sports TV and sports content by deconstructing shows. We will examine the producer's role in creating the look, feel and direction of shows and learn how to choose a lead story, how to \"tease\" and the importance of identifying and telling good stories. We will watch live televised sporting events to better understand the techniques used by directors and producers. Students will get hands-on experience with BTN2GO and learn all aspects of live game production.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Joseph Yasharoff"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      9,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "2103"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR370",
+      "name": "Photojournalism",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Examining the basics of shooting, editing and storytelling with still photos taken with 35mm digital cameras. Students shoot portraits, feature photos and action shots. Final project is a photo story/essay.",
+      "sections": [
+        {
+          "sec_code": "0301",
+          "instructors": [
+            "Timothy Jacobsen"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "1101"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0501",
+          "instructors": [
+            "Jaclyn Borowski"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "2105"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0701",
+          "instructors": [
+            "Timothy Jacobsen"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "1101"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR382",
+      "name": "Sports Reporting and Writing",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Gives students full and wide-ranging instruction in all aspects of sports reporting and writing, including how to report, write, edit and lay out sports stories, incorporating photography and multimedia. We will also discuss ethics, objectivity, fairness and the future of sports journalism.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Kevin Blackistone"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      15,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "3202"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      15,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "2105"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR389I",
+      "name": "News Coverage of Special Topics; Investigative Reporting",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: JOUR320. Introduces students to the skills and techniques of investigative reporting. Students will learn how to report, write and publish investigative stories.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "James Risen"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "2103"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR389L",
+      "name": "News Coverage of Special Topics; Local News Investigation",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: JOUR320.<br><br> Students in this class will learn and put into practice classic investigative news techniques, including using data to find local officials and other people to interview; uncovering a network of confidential sources; approaching and interviewing confidential sources; gaining trust in order to gain hard truths; cultivating public officials as confidential and on-the-record sources; finding supporting documents and other public and non-public records. This is not a data class. The class emphasis is on finding, preparing for, and interviewing people with sensitive information. The subject of the investigation is still confidential.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Dana Priest"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      9,
+                      45,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "3200"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR389W",
+      "name": "News Coverage of Special Topics; News Alchemy: Journalism and Artificial Intelligence",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: JOUR201 or permission of instructor.<br><br> Students will explore and evaluate systems of Artificial Intelligence, learning how to use (and not use) them for journalism tasks. They will debate the ethical implications of bringing AI into news processes and experiment with building AI into everyday reporting.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Derek Willis"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "2107"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR396",
+      "name": "Supervised Internship",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": null,
+      "description": "Students will complete a minimum of 90 hours in a supervised journalism internship over a minimum of 10 weeks in spring and fall, and eight weeks in summer. Emphasis is on relating academic training to professional experience. To enroll, students must do the following: Fill out the internship proposal form, have their internship supervisor fill it out, and meet with the college's internship director to receive permission to register. No requests to register after the Schedule Adjustment Period will be granted.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Karen Denny"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR398",
+      "name": "Independent Study",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "JOUR402",
+      "name": "Journalism Law and Ethics",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "An examination of the legal rights and ethical problems and constraints of mass media, including libel, privacy, copyright, monopoly and contempt.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Megan Fromm"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "Tu": [
+                  [
+                    3,
+                    30,
+                    "Pm"
+                  ],
+                  [
+                    4,
+                    45,
+                    "Pm"
+                  ]
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "3202"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Megan Fromm"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "Tu": [
+                  [
+                    2,
+                    0,
+                    "Pm"
+                  ],
+                  [
+                    3,
+                    15,
+                    "Pm"
+                  ]
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "3202"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR405",
+      "name": "Breaking News With Numbers: Statistics for Journalists",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "FSAR"
+      ],
+      "description": "Common statistical tools, software and data visualization techniques will be used to allow students to analyze data and solve problems relevant to reporting and writing about politics, sports, criminal justice, business and other fields.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Tom Brune"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Derek Willis"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "3202"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR452",
+      "name": "Women in the Media",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DVUP"
+      ],
+      "description": "Participation and portrayal of women in the mass media from colonial to contemporary times.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Gea Ujcic"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "1103"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR453",
+      "name": "Media Coverage of Diversity",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DVUP"
+      ],
+      "description": "Analysis of media coverage of issues relating to diversity in the United States, with special attention to race, ethnicity, class, gender, sexual orientation and religious affiliation.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Anne Rosen"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "3202"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR455",
+      "name": "Media Entrepreneurship",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Basic business and entrepreneurship concepts will be covered and will explore how technology is transforming the business of media. Students develop and pitch ideas for media businesses, learn startup basics, do exercises in Internet advertising and business plan analysis, use social networks and other digital communication tools, and perform other hands-on exercises in business development and presentation.",
+      "sections": [
+        {
+          "sec_code": "1",
+          "instructors": [
+            "Thomas Davidson"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Sa": [
+                    [
+                      1,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "2105"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR456",
+      "name": "Literature in Journalism",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHU"
+      ],
+      "description": "From Truman Capote's In Cold Blood to Mark Bowden's Black Hawk Down, students will examine how literary works can help writers approach a subject in a different way than more traditional forms of journalism, including the advantages and limitations of the style.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Christopher Hanson"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      4,
+                      15,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "1208"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR458A",
+      "name": "Special Topics in Journalism; Machine Editors: Search Engines, Social Media, and The News",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Students will explore the deep and far-reaching impact that digital platforms (search engines and social media) have in the distribution of news. Through readings, discussions, and in-class exercises, we will investigate how these algorithmically-defined mediators have become external curators and editors of news, and how journalists have been adapting, resisting, or reframing their practices towards them.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Daniel Trielli Paiva Da Silva"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "3200"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR458B",
+      "name": "Special Topics in Journalism; Sports Media Today",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Students will discuss working with various organizations' communications/media relations staff, coaches and players; distributing news of the organizations; and creating/maintaining methods for disseminating that news to the public in an honest and forthright manner. Also, traditional, digital and social media elements will be explored.  Restriction: Junior Standing or higher.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Rose DiPaula"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "1105"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR458F",
+      "name": "Special Topics in Journalism; Campaign '24: An Election Unlike Any Other",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "You will study the daily coverage of the year's biggest story, where one frontrunner is indicted and the other faces investigation by a special counsel. We'll examine critical reporting and storytelling done under extreme deadline pressure.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Tom Bettag"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      10,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "1109"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR458J",
+      "name": "Special Topics in Journalism; Covering Social Justice",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Crosslisted with AASP499L Credit only granted for: JOUR458J or AASP499L.<br><br> The objective of this class is to expose students to the best journalistic practices in covering race and social justice issues. Students will explore how social justice is covered in the media through readings, discussions, guest lectures and research assignments to help students understand the history and background of social justice and how reporters cover these issues. Students will develop critical analytical skills through their research and will write a reported essay about a national or international social justice issue impacting society. This course is taught by an award-winning journalist who continues to cover social issues.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "DeNeen Brown"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "3202"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR458V",
+      "name": "Special Topics in Journalism; The Power of the Writing Voice: Covering Celebrities, Art Exhibits, Concerts and Theatre for the \"Style\" sections",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Students will be introduced to writing journalism profiles of celebrities, covering music concerts, art exhibitions and theatrical productions for \"Style\" sections of newspapers and magazines.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "DeNeen Brown"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "3202"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR458X",
+      "name": "Special Topics in Journalism; The Media and Mass Shootings",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "A rigorous and hands-on exploration of how these continuing American tragedies should be covered, focusing on ethics, writing about traumatic subjects, and explanatory reporting that can shape non-partisan discussions about ending this scourge on society.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Michael Rosenwald"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      6,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      8,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "3200"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR459I",
+      "name": "Special Topics in Journalism; History of Investigative Journalism",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Students will learn the history of investigative journalism in the U.S., focusing on key time periods from colonial times to the present.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Mark Feldstein"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "3202"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR459P",
+      "name": "Special Topics in Journalism; Censorship and Disinformation in the 21st Century: The New Global War for Political Power",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "We are living in unprecedented times, engaged in a fierce battle over the control of information as the precursor to political power. The internet, tech companies and President Donald Trump delivered us to this historic place, as did the aspirations for democratic government overseas and the authoritarian reactions against those instincts and movements. We will examine the two parallel movements that define this era: disinformation as it spread from Russia in 2000 westward to the United States and state censorship as it exploded across the globe in reaction to the powerful, but short-lived 2012 Arab Spring. Can these instruments of authoritarianism be stopped?",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Dana Priest"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      2,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "3200"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR459Y",
+      "name": "Special Topics in Journalism; Israel in Regional, International, and U.S. Media and Social Media",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Cross-listed with ISRL329Y. Credit only granted for ISRL329Y or JOUR459Y.<br><br> This course offers a comprehensive exploration of the multifaceted relationship between Israel and the media landscape in the regional, international, and U.S. media landscapes, providing students with the tools to critically analyze and understand the complex narratives on Israel, Arab-Israeli, Israeli-Palestinian affairs and the dynamics at play. Students will delve into the historical, cultural, and political context that shapes the portrayal of Israel in traditional media outlets, as well as the transformative power of social media platforms.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Marwa Maziad"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "TuTh": [
+                  [
+                    12,
+                    30,
+                    "Pm"
+                  ],
+                  [
+                    1,
+                    45,
+                    "Pm"
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR459Z",
+      "name": "Special Topics in Journalism; Race, Journalism, and Democracy in the United States",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Crosslisted with AASP499M Credit only granted for: JOUR459Z or AASP499M<br><br> This course provides a theoretical and practical foundation for covering news about, and of particular interest to, racially and ethnically diverse communities. We will examine theories of race, ethnicity, and systemic racism in the United States, explore the effects of racial disparities, and discuss how journalism can best serve democracy in a racially diverse society. We will also listen to the experiences of diverse journalists in today's profession and discuss recent racial controversies in the industry.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Christoph Mergerson"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "1208"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR471",
+      "name": "Follow the Money: Reporting on Business",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Business and economics reporting is one of the strongest sectors of journalism with lucrative employment opportunities. This class, designed for journalism and non-journalism majors, introduces students to the main economic and business themes that dominate news coverage. Topics will include: corporate money and power in Washington, the ups and downs of the stock market, rising income inequality, the immigration crisis, why we have a trade war with China and technology disruptors. This class will be helpful to students who want to enhance their career opportunities by understanding how the economy works, why globalization is important and how the biggest corporations--including technology companies--have such a big influence on the way we live.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Constance Ford"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "2107"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR472",
+      "name": "Data Journalism",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "A practical, skills-based course in the basics of modern data journalism, data literacy  and data storytelling. Students will learn to use data visualization, data analysis and other data-driven reporting techniques.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Daniel Trielli Paiva Da Silva"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "1101"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "1101"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Rob Wells"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "1101"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "1101"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR476",
+      "name": "Researching Emerging Media in Journalism: Past, Present and Future",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS"
+      ],
+      "description": "Students will examine developments billed as innovative in the current technology-laden news ecology -- such as social media, mobile reporting and virtual reality -- and the blurring of lines between hard news, informed opinion and advocacy. While questions about the future cannot be answered with any certainty, an exploration of the past allows us to see what happened when new technologies, information systems and practices appeared as possible tools for use by journalists and the communities they served. Students will learn to use resources for researching emerging media, including UMD library databases and open access sources. The course will include presentations by the instructor, discussions, field trips, in-class exercises and student presentations. Each student will engage in a research project to understand the experience of emerging media in a decade between 1820 and 1980. Students will also write an essay contemplating current trends and the future of emerging media.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Ira Chinoy"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "1101"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR479L",
+      "name": "Special Topics in Data Gathering and Analysis; The Art of Interviewing",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Restriction: Students are not eligible to take this course if they have completed JOUR328X/JOUR628X. This course will substantially deepen your skills at the most elemental act in journalism knowing how to ask questions that elicit more honest and illuminating answers. You'll learn by doing, watching, and listening-- looking at some of the best interviews ever -- and some of the not so best --and analyze the differences. Students will conduct various interviews of their own, watch and critique themselves and their fellow students, and hear from some of the most skilled interviewers in the field today.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Thomas Rosenstiel"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "3202"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR603",
+      "name": "News Videography",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Introduction to shooting, editing and production of video stories for broadcast and the Web; includes newsgathering in the field.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Benjamin Worsley"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      8,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0222B"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0401",
+          "instructors": [
+            "Alanna Kopania"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0222B"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0601",
+          "instructors": [
+            "Alanna Kopania"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0222B"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR625",
+      "name": "Advanced Capital News Service Bureau",
+      "credits": {
+        "Amount": 6
+      },
+      "gen_eds": null,
+      "description": "Advanced journalism training. Students report as part of College's Capital News Service program.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "James Carroll"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR627",
+      "name": "Urban Affairs Reporting",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Students are immersed in coverage of issues affecting cities, working on a semester-long multi-platform reporting project based in Baltimore.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Rob Wells"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "1210"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR628C",
+      "name": "Specialized Topics in News Writing and Reporting; Advanced Howard Center Investigations I",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Kathy Best"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR628D",
+      "name": "Specialized Topics in News Writing and Reporting; Journalism Compass: Navigating Your College Path",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: JOUR502 or permission of instructor Students will learn how to maximize your time in college so you can get a position in journalism (internship or job) that interests you. Information will include expectations and opportunities that are out there, and how to make the most of resumes and cover letters, classes, networking and professionalism and more.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Karen Denny"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      11,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      1,
+                      35,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "3202"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR628G",
+      "name": "Specialized Topics in News Writing and Reporting; Enterprise Sports Reporting",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: JOUR620.<br><br> Students will work as a team on a sports enterprise project. Previous topics have included gender equity in sports, youth sports &amp; the media, betting and college sports, the economic impact of a new stadium on a city, and the future of football.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Mark Hyman"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "2103"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR628I",
+      "name": "Specialized Topics in News Writing and Reporting; Advanced Howard Center Investigations II",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Kathy Best"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR628K",
+      "name": "Specialized Topics in News Writing and Reporting; Business and Economic Reporting",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: JOUR620.<br><br> Students will explore why economic and business themes are among the top stories generating reader interest. Topics vary each semester but can focus on the economic impact of immigration, employment, income inequality, wage stagnation, trade wars and affordable housing. Students will learn to identify newsworthy stories and interpret and integrate numbers and financial data into stories in a compelling way.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Constance Ford"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "1101"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR628O",
+      "name": "Specialized Topics in News Writing and Reporting; News Application Development",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: JOUR772 or permission of instructor (dpwillis@umd.edu).<br><br> A class that combines a survey of work in this area, featuring work done at organizations like ProPublica, the Associated Press, the San Francisco Chronicle and others, with practical skills in reporting and building news applications. Students will review and critique existing news apps, read materials from those who built them and develop projects in small groups that display data in a news app style. Key skills gained include: backend development, frontend development, command-line usage and some data analysis.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Derek Willis"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "2107"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR628T",
+      "name": "Specialized Topics in News Writing and Reporting; Data Visualization",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: JOUR652.<br><br> This course is focused on data visualization in the service of journalistic storytelling. Students will learn data visualization theory, best practices and methods, including how to create data visualizations using a variety of tools.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Adam Marton"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "2105"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR628V",
+      "name": "Specialized Topics in News Writing and Reporting; Covering Comic Book Culture in Entertainment",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: JOUR501.<br><br> Comic book culture's evolving impact in entertainment has been vast and rapidly growing. This course will look at the humble beginnings of comic book culture in entertainment, from the comic books themselves, to the adaptations that have become big business for movies, television, streaming and animation as well as how to write on/cover those moments.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "David Betancourt"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      6,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      8,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "3200"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR628Z",
+      "name": "Specialized Topics in News Writing and Reporting; Making a Career as a Freelance Journalist",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: JOUR502.<br><br> Freelancing can give early-career journalists their first big break in the industry. This course will cover the basics of launching a career as a freelance reporter: pitching, setting rates, forming relationships with editors, managing invoices and doing your taxes.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "chelsea Cirruzzo"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      5,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "2103"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR634",
+      "name": "Audio and Podcast Reporting",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Students will learn the tools needed to report and produce short- and long-form audio storytelling, including writing, reporting, interviewing, production, editing, hosting and delivery. Field reporting and audio gathering outside of class are required, along with writing and mixing broadcast-quality audio stories. The class will produce a complete newscast on deadline, with live and pre-recorded elements. Various interests in audio reporting are welcome and encouraged.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Steven Drummond"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      5,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      8,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "1101"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR635",
+      "name": "Advanced Public Affairs Reporting: Investigative Journalism",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Students will learn the essentials of accountability reporting while producing a publishable, in-depth project on an issue with national significance and impact on people's lives. Substantial fieldwork, teamwork and persistence are required.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Deborah Nelson"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR636",
+      "name": "Studio Production",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Moves through every production aspect related to studio production. This includes learning how to plan and execute a live studio production featuring camera crews, a floor director, producer, director, technical director, audio and teleprompter. Labs focus on executing a live newscast production. Students will also be able to go on live shots with reporters to run camera/lighting.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Nathaniel Stevens"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0116"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR652",
+      "name": "Interactive Design and Development",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Conceptualize, wireframe, design and build responsive Web pages using HTML, style sheets and other coding tools; work with open source interactive tools and JavaScript libraries to create charts, timelines and maps to tell stories.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Gagan Nirula"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      5,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      8,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "1101"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Kalani Gordon"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "Th": [
+                  [
+                    5,
+                    30,
+                    "Pm"
+                  ],
+                  [
+                    8,
+                    15,
+                    "Pm"
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR655",
+      "name": "Advanced Online News Bureau",
+      "credits": {
+        "Amount": 6
+      },
+      "gen_eds": null,
+      "description": "Advanced online journalism training. Students work as online reporters, editors and producers for a news site. Students also package copy from the print and broadcast news bureaus.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Adam Marton"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0301",
+          "instructors": [
+            "Sean Mussenden"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR657",
+      "name": "Social Media Content Creation, Audience Engagement and Analytics",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Provides students with an overview of social media best practices for journalists, and will work to develop their skills in social content creation, audience engagement, sourcing and verification and analytics. By the end of this course, students will have the practical skills needed to manage a social media account for themselves or contribute to the management of a news organization's social media presence.",
+      "sections": [
+        {
+          "sec_code": "1",
+          "instructors": [
+            "Emma Harris"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Sa": [
+                    [
+                      8,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "2105"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR660",
+      "name": "Broadcast News Writing",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Descriptive and critical analysis of broadcast news; methods of evaluation of news judgments; decision-making and organizational aspects of the broadcast news industry.",
+      "sections": [
+        {
+          "sec_code": "0301",
+          "instructors": [
+            "Alison Burns"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "2105"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR661",
+      "name": "Television Reporting and Production",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Reporting, writing, editing and production of broadcast news.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Joshua Davidsburg"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0222A"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR662",
+      "name": "Broadcast News Producing",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Learn and practice the basics of broadcast newscast producing. Design, write, edit and implement a news program.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Cindy Wright"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      6,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      8,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0117"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0117"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR664",
+      "name": "Advanced Audio and Podcast Reporting",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Students receive professional skills training in the reporting, writing, editing, voicing and production of radio news. Students will be required to do extensive field reporting, along with writing and mixing broadcast-quality radio pieces. They will also participate in other aspects of radio news production, including editing, directing, live interviewing and hosting. By the end of the semester, students will have created all the elements of a complete radio broadcast, including news spots, finished pieces, two-ways and a long-form audio segment. The class will also delve into the history and evolution of radio news and its future in podcasting and other forms.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Robert Little"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      5,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      8,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "3210"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR667",
+      "name": "Broadcast News Bureau",
+      "credits": {
+        "Amount": 6
+      },
+      "gen_eds": null,
+      "description": "Advanced broadcast journalism training. Students report as part of the College's Capital News Service program.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Melvin Coffee"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR668A",
+      "name": "Topics in Broadcasting and Electronic Media; Sports Reporting: Broadcast and Storytelling",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: JOUR603, JOUR620 and JOUR660.<br><br> This class will focus on the art of storytelling for television. Students will get practical, hands-on experience in presentation, learning how to master interviewing skills as well as reporting and anchoring with a heavy focus on the details of writing for broadcast. Students will work creatively and collaboratively to understand how to take a story from an idea to an on-air finished product.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Robert Carlin"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0222A"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR668K",
+      "name": "Topics in Broadcasting and Electronic Media; Video Lab",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: JOUR603. Recommended: JOUR661, JOUR668I or JOUR668X.<br><br> This course focuses on the future of video journalism, from documentary to 360 videos. In the class, students can experiment with cinematic techniques, motion graphics, choose-your-own-adventure style videos and more. The class is heavily influenced by independent documentary filmmaking and video storytelling. Students will be required to contribute to a weekly behind-the-scenes vlog of our class documenting the work we do.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Joshua Davidsburg"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0222A"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR668N",
+      "name": "Topics in Broadcasting and Electronic Media; Advanced Photojournalism",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: JOUR670.<br><br> This course will provide a deeper dive into the storytelling medium of photojournalism. Students will learn the skills necessary to tell in-depth, long-term stories through the use of still photography. Topics of discussion will include the history of photojournalism, changing approaches to the photo story/photo essay over time, how to approach a variety of potential subject matter and situations, finding long-term photo story projects and organizing images for a variety of digital and traditional formats.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Timothy Jacobsen"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "2105"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR668O",
+      "name": "Topics in Broadcasting and Electronic Media; Advanced Studio Production",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: JOUR636 or permission of instructor.<br><br> This course will take you through every production aspect related to studio production and work as production support for live sports or video game news shows. This includes learning how to plan and execute a live studio production featuring camera crews, a floor director, producer, director, technical director, audio, and teleprompter. It will also include post-production promo pieces for live shows, as well as social media components that are production-related.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Nathaniel Stevens"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0116"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR668U",
+      "name": "Topics in Broadcasting and Electronic Media; Virtual Production Using Unreal Engine",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: JOUR668L or permission of instructor.<br><br> This course will explore the various uses of the Unreal Engine, provide students with hands-on experience with the software, and take students through the process of creating a virtual environment. It will feature gaming and video concepts that are relevant to the production and video game industries.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Nathaniel Stevens"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0116"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR668Y",
+      "name": "Topics in Broadcasting and Electronic Media; Sports Producing",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: JOUR603 and JOUR660. This class will take an analytical look at sports TV and sports content by deconstructing shows. We will examine the producer's role in creating the look, feel and direction of shows and learn how to choose a lead story, how to \"tease\" effectively and the importance of identifying and telling good stories. We will watch live televised sporting events to better understand the techniques used by directors and producers. Students will get hands-on experience with BTN2 and learn all aspects of live game production.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Joseph Yasharoff"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      9,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "2103"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR670",
+      "name": "Photojournalism",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Examining the basics of shooting, editing and storytelling with still photos taken with 35mm digital cameras. Students shoot portraits, feature photos and action shots. Final project is a photo story/essay.",
+      "sections": [
+        {
+          "sec_code": "0301",
+          "instructors": [
+            "Timothy Jacobsen"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "1101"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR682",
+      "name": "Sports Reporting and Writing",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Gives students wide-ranging instruction in all aspects of sports reporting and writing, from the history of the craft to its mechanics, including how to report, write, edit and lay out sports stories, incorporating multimedia and interactive elements. Ethics, objectivity, fairness and the future of sports journalism will be discussed.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Kevin Blackistone"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      15,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "3202"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      15,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "2105"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR689I",
+      "name": "News Coverage of Specialized Topics; Investigative Reporting",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: JOUR620. Introduces students to the skills and techniques of investigative reporting. Students will learn how to report, write and publish investigative stories.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "James Risen"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "2103"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR689L",
+      "name": "News Coverage of Specialized Topics; Local News Investigation",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: JOUR620.<br><br> Students in this class will learn and put into practice classic investigative news techniques, including using data to find local officials and other people to interview; uncovering a network of confidential sources; approaching and interviewing confidential sources; gaining trust in order to gain hard truths; cultivating public officials as confidential and on-the-record sources; finding supporting documents and other public and non-public records. This is not a data class. The class emphasis is on finding, preparing for, and interviewing people with sensitive information. The subject of the investigation is still confidential.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Dana Priest"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      9,
+                      45,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "3200"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR689W",
+      "name": "News Coverage of Specialized Topics; News Alchemy: Journalism and Artificial Intelligence",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: JOUR502 or permission of instructor.<br><br> Students will explore and evaluate systems of Artificial Intelligence, learning how to use (and not use) them for journalism tasks. They will debate the ethical implications of bringing AI into news processes and experiment with building AI into everyday reporting.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Derek Willis"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "2107"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR698",
+      "name": "Special Problems in Communication",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "JOUR702",
+      "name": "Journalism Law and Ethics",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "An examination of the legal rights and ethical problems and constraints of mass media, including libel, privacy, copyright, monopoly and contempt.",
+      "sections": [
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Megan Fromm"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "Tu": [
+                  [
+                    2,
+                    0,
+                    "Pm"
+                  ],
+                  [
+                    3,
+                    15,
+                    "Pm"
+                  ]
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "3202"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR757",
+      "name": "History of Investigative Journalism",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Teaches the history of investigative journalism in the U.S., focusing on key time periods from colonial times to the present.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Mark Feldstein"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "3202"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR772",
+      "name": "Data Journalism",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "A practical, skills-based course in the basics of modern data journalism, data literacy and data storytelling. Students will learn to use data visualization, data analysis and other data-driven reporting techniques.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Daniel Trielli Paiva Da Silva"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "1101"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "1101"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Rob Wells"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "1101"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "1101"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR775",
+      "name": "Quantitative Methods in Journalism and Public Communication Research",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Logic and methods of quantitative data collection and statistical analysis as applied to journalism and public communication studies.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Ronald Yaros"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "2105"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR776",
+      "name": "Qualitative Research Methods in Journalism and Public Communication",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Methods of historical, critical and field research in journalism and public communication. Formulation of significant research questions, systematic collection of bibliographic and phenomenal information, formulating substantial claims, organizing and writing research for disciplinary outlets.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Linda Steiner"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "1109"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR798",
+      "name": "Master's Professional Fieldwork",
+      "credits": {
+        "Range": [
+          2,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "JOUR799",
+      "name": "Master's Thesis Research",
+      "credits": {
+        "Range": [
+          1,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "JOUR801",
+      "name": "Advanced Public Communication Theory",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Advanced selected survey of communication &amp; media theory.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Susan Moeller"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "2109"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "JOUR888",
+      "name": "Doctoral Professional Field Work",
+      "credits": {
+        "Range": [
+          3,
+          9
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "JOUR889",
+      "name": "Doctoral Tutorial in Journalism and Public Communication",
+      "credits": {
+        "Range": [
+          3,
+          9
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "JOUR898",
+      "name": "Pre-Candidacy Research",
+      "credits": {
+        "Range": [
+          1,
+          8
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "JOUR899",
+      "name": "Doctoral Dissertation Research in Journalism and Mass Communication",
+      "credits": {
+        "Amount": 6
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "name": "INFM",
+  "courses": [
+    {
+      "code": "INFM605",
+      "name": "Users and Use Context",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Use of information by individuals. Nature of information. Information behavior and mental models. Characteristics of problems, task analysis, problem solving, and decision making. Methods for determining information behavior and user needs. Information access. Information technology as a tool in information use.",
+      "sections": [
+        {
+          "sec_code": "01",
+          "instructors": [
+            "Chad Doran"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "INFM612",
+      "name": "Management Concepts and Principles for Information Professionals",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Key aspects of management - focusing on planning, organizing, leading and controlling. The evolution of management, innovative management for the changing world, management styles and leadership, managerial planning, goal setting and decision making. Ethical issues, designing adaptive organizations responding to change, global environment, diversity, and utilizing the appropriate technology to provide effective management of information programs and services.",
+      "sections": [
+        {
+          "sec_code": "01",
+          "instructors": [
+            "Waqas Shah"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      6,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      8,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "HBK",
+                  "0115"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "INFM737",
+      "name": "Information Management Capstone Experience",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "The Information Management Capstone Experience I and II are the culminating experience of the Master of Information Management program, taken in the students final two semesters. The capstone experience provide students with the opportunity to integrate and synthesize the knowledge and skills acquired throughout their MIM course work while working in a real world Information Management project. These courses must be taken in succession.",
+      "sections": [
+        {
+          "sec_code": "01",
+          "instructors": [
+            "David Loshin"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      6,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      8,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "HBK",
+                  "0302J"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
