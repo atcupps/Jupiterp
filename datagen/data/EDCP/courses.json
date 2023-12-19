@@ -1,0 +1,1690 @@
+{
+  "name": "EDCP",
+  "courses": [
+    {
+      "code": "EDCP108I",
+      "name": "College and Career Advancement: Concepts and Skills; Academic Transitions to Internships",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "Restricted to students with less than 105 cumulative credits.<br><br> Recommended for students who have never had an internship and are actively searching for one. Students participating in this course will engage in the full experience of searching for an internship. Course registration is closed to graduating seniors.\"",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Marisha Addison"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        },
+        {
+          "sec_code": "0301",
+          "instructors": [
+            "Caroline Bodnar"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        },
+        {
+          "sec_code": "0401",
+          "instructors": [
+            "Marisha Addison"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        },
+        {
+          "sec_code": "0501",
+          "instructors": [
+            "Jenny Sak"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        },
+        {
+          "sec_code": "0601",
+          "instructors": [
+            "Olivia Rosenburg"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        },
+        {
+          "sec_code": "0801",
+          "instructors": [
+            "Veronica Perrigan",
+            "Elizaveta Solovey",
+            "Brianne Gridley"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "EDCP210",
+      "name": "Peer Counseling Skills and Mental Health Advocacy",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSSP"
+      ],
+      "description": "Introduction to core helping skills in peer counseling settings and three predominant theoretical approaches used in the counseling field (humanistic, psychodynamic, cognitive-behavioral).  The course also explores mental health stigma and advocacy.  Students will build an understanding of the practical application of underlying principles and theory in counseling and the helping professions, while exploring their own, and societal, biases, assumptions, and attitudes toward mental health.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Bridget Moran"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EDU",
+                  "3233"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Laura Kelly"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "2125"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0301",
+          "instructors": [
+            "Romy Stancofski"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "1206"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0401",
+          "instructors": [
+            "Isabella Stoto"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      15,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EDU",
+                  "3236"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0501",
+          "instructors": [
+            "Brianna Ladd"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "3217"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "EDCP230",
+      "name": "The Science and Practice of Happiness and Psychological Well-Being",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS",
+        "DSSP"
+      ],
+      "description": "An introduction to theory and research on positive psychology, subjective well-being, and the psychology of happiness. This will include examination of hedonic and eudaimonic models of well-being and sociocultural understandings of happiness, together with how it relates to health, relationships, money, religion, work, and social media. Students will also explore common misconceptions and myths about happiness and well-being and will engage in a variety of activities designed to deepen their understanding of happiness in their own lives and broader societal trends related to well-being.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Amber Pasha"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      15,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EDU",
+                  "3233"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Stephanie Cerrato"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EDU",
+                  "2101"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0301",
+          "instructors": [
+            "Hailey Fleece"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "1206"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0401",
+          "instructors": [
+            "Daniel Moore"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      6,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "0205"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0501",
+          "instructors": [
+            "Manuel Teran Hernandez"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "MTH",
+                  "B0431"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0601",
+          "instructors": [
+            "Rabia Brown"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "1124"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "EDCP386",
+      "name": "Experiential Learning",
+      "credits": {
+        "Range": [
+          3,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "<div><div><div><strong>Restriction:</strong> Permission of EDUC-Counseling, Higher Education and Special Education department; and sophomore standing or higher.</div></div></div>",
+      "sections": null
+    },
+    {
+      "code": "EDCP489",
+      "name": "Field Experiences in Counseling and Personnel Services",
+      "credits": {
+        "Range": [
+          1,
+          4
+        ]
+      },
+      "gen_eds": [
+        "DVUP"
+      ],
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "EDCP498",
+      "name": "Special Problems in Counseling and Personnel Services",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "EDCP498T",
+      "name": "Special Problems in Counseling and Personnel Services; Contextual Leadership-Teaching Assistant",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Tori Shay",
+            "Selah Thom"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      5,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "1101"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "EDCP612",
+      "name": "Multicultural Issues in Counseling and Personnel Services",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Socio-psychological, philosophical, clinical, and research topics related to the provision of counseling and personnel services, academic support, and career development for minority students on predominantly white college and university campuses. Implications of race and/or national origin on opportunities for personal, social, academic, and career development in educational settings.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Richard Shin"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      4,
+                      15,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EDU",
+                  "2101"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "EDCP614",
+      "name": "Counseling Skills: Introduction to Practicum",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Development and utilization of counseling skills.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Roger Worthington"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EDU",
+                  "2102"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "0118"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "EDCP615",
+      "name": "Counseling I: Appraisal",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Collection and interpretation of appraisal data, synthesis of data through case study procedures. Development of interview skills.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Roger Worthington"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "1171"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "EDCP621",
+      "name": "Practicum in School Counseling",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Sequence of supervised counseling experiences of increasing complexity.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Ileana Gonzalez"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      4,
+                      15,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EDU",
+                  "2102"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Jessica McKechnie"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      9,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "1125"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "EDCP625",
+      "name": "Counseling the Chemically Dependent",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Chemical dependency and its effects on the individual's personal, social, and work functioning. Counseling procedures for persons with drug and alcohol problems.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Sylvia Huntley"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      4,
+                      15,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EDU",
+                  "3236"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "EDCP633",
+      "name": "Diagnostic Appraisal of Children I",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Assessment of development, emotional and learning problems of children.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Hedwig Teglasi"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      9,
+                      45,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "1123"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "EDCP636",
+      "name": "School Consultation II",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Didactic practicum in consultation services in the school setting. Case consultation and organizational consultation in the schools. Practicum experience.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Katie Burkhouse"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      4,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "EDCP651",
+      "name": "Group Counseling in Schools",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Issues and techniques of group counseling in schools.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Jorinna Tran"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      4,
+                      15,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EDU",
+                  "2102"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "EDCP680",
+      "name": "Basic Didactic Practicum in Counseling Psychology",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "In depth examination of counseling theories and techniques, and supervised experience in application of a range of counseling and therapy approaches.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Delida Sanchez"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ARC",
+                  "1127"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "EDCP686",
+      "name": "Counseling Psychology Didactic Practicum in Career Interventions",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "In depth examination of theorectical approaches and issues in career interventions; supervised experience in career counseling and assessment.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Taylor Morris"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "2113"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "EDCP691",
+      "name": "Research in Counseling Psychology II",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Critical analysis of trends and issues in counseling psychology science.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Dennis Kivlighan"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EDU",
+                  "1224"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "EDCP738",
+      "name": "Practicum in Child Assessment",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Class meets in 1102M Seneca Building.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Megan Vaganek"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      5,
+                      45,
+                      "Pm"
+                    ],
+                    [
+                      8,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "EDCP750",
+      "name": "Therapeutic Approaches with Children",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Theoretical and empirical underpinnings of the therapeutic process with children.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Meghan Green"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      5,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      8,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "3122"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "EDCP776",
+      "name": "Social Justice in Student Affairs and Higher Education",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "An exploration of differences, biases, assumptions, limitations, and challenge with diversity in the context of higher education and student affairs. Focusing on issues of inequities with social identity group membership and the systems of power, privilege, and oppression in society.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Christopher Travers"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      4,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EDU",
+                  "2101"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "EDCP788",
+      "name": "Advanced Practicum",
+      "credits": {
+        "Range": [
+          1,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "1101",
+          "instructors": [
+            "Bridget Kelly"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "5001",
+          "instructors": [
+            "John Zacker"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "5101",
+          "instructors": [
+            "Candace Moore"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "7001",
+          "instructors": [
+            "Julie Park"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "7301",
+          "instructors": [
+            "Kimberly Griffin"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "EDCP788A",
+      "name": "Advanced Practicum; Social Justice Practicum",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Restricted to Counseling Psychologe students only.<br><br> This course is designed to introduce students to social justice theories with the goal of developing systemic/macro level intervention and consultation skills. This course will prepare students with the awareness, knowledge, and skills necessary to serve as social justice advocates in their various roles (e.g., counselor, researcher, and educator) as counseling psychologists.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Jioni Lewis"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "WDS",
+                  "1131"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "EDCP789R",
+      "name": "Advanced Topics in Counseling and Personnel Services",
+      "credits": {
+        "Range": [
+          1,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Michelle Espino"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "5101",
+          "instructors": [
+            "Candace Moore"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "EDCP797",
+      "name": "Capstone Course: Program Planning",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "<div><div><div><strong>Restriction:</strong> Must be in the School Counseling program.  </div><div><strong>Credit only granted for:</strong> EDCP789T or EDCP797.  </div><div><strong>Formerly:</strong> EDCP789T.</div></div></div>",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Jorinna Tran"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EDU",
+                  "2102"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "EDCP798",
+      "name": "Special Problems in Counseling and Personnel Services",
+      "credits": {
+        "Range": [
+          1,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "EDCP798L",
+      "name": "Special Problems in Counseling and Personnel Services; Chicana/Latina Feminist Approaches to Educational Research",
+      "credits": {
+        "Range": [
+          1,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Michelle Espino"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      4,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "1215"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "EDCP799",
+      "name": "Master's Thesis Research",
+      "credits": {
+        "Range": [
+          1,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "EDCP870",
+      "name": "Professional Issues Seminar",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Examination of issues that bear on professional issues such as ethics, inter-professional relationships and research.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Paul Gold"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      4,
+                      15,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EDU",
+                  "3236"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "EDCP879",
+      "name": "Internship in School Counseling",
+      "credits": {
+        "Amount": 5
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Jessica McKechnie"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      7,
+                      15,
+                      "Pm"
+                    ],
+                    [
+                      10,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EDU",
+                  "2101"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      4,
+                      15,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "1103"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "EDCP888",
+      "name": "Apprenticeship in Counseling and Personnel Services",
+      "credits": {
+        "Range": [
+          1,
+          8
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "EDCP888A",
+      "name": "Apprenticeship in Counseling and Personnel Services; College Student Personnel",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Marsha Guenzler-Stevens"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "5101",
+          "instructors": [
+            "Candace Moore"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "7001",
+          "instructors": [
+            "Julie Park"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "7201",
+          "instructors": [
+            "Michelle Espino"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "EDCP888C",
+      "name": "Apprenticeship in Counseling and Personnel Services; School Psychology",
+      "credits": {
+        "Range": [
+          1,
+          8
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Colleen O'Neal"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EDU",
+                  "3236"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Hedwig Teglasi"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      1,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "WDS",
+                  "1130"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0401",
+          "instructors": [
+            "Annie Goldthrite"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        },
+        {
+          "sec_code": "0501",
+          "instructors": [
+            "Judith Kinney"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "EDCP889",
+      "name": "Internship in Counseling and Personnel Services; Internship in Counseling and Personnel Services",
+      "credits": {
+        "Range": [
+          1,
+          8
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "EDCP889C",
+      "name": "Internship in Counseling and Personnel Services",
+      "credits": {
+        "Range": [
+          1,
+          8
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Jioni Lewis"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "EDCP898",
+      "name": "Pre-Candidacy Research",
+      "credits": {
+        "Range": [
+          1,
+          8
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "EDCP899",
+      "name": "Doctoral Dissertation Research",
+      "credits": {
+        "Amount": 6
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    }
+  ]
+}

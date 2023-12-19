@@ -1,0 +1,341 @@
+{
+  "name": "BIOL",
+  "courses": [
+    {
+      "code": "BIOL609",
+      "name": "Special Problems in Biology",
+      "credits": {
+        "Range": [
+          1,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "BIOL705",
+      "name": "Statistics &amp; Modeling for Biologists",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "An overview of essential probability and statistics using R with a focus on biological problems. Topics include: parameter estimation (likelihood, Bayesian), confidence intervals and hypothesis testing, multiple testing, experimental design and power analysis, and resampling-based measures of uncertainty. Practical use of computers will be emphasized.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Philip Johnson"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "0215"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "BIOL708C",
+      "name": "Advanced Topics in Biology; Evolutionary Genomics",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Credit only granted for BSCI476 and BIOL708C.<br><br> Application of genomics to understanding evolutionary processes, including genome evolution, organismal evolution, genomic diversity across the tree of life, human evolution and disease. Relevant concepts of evolutionary genetics and genome biology will be covered.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Carlos Machado"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1115"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "BIOL708D",
+      "name": "Advanced Topics in Biology; Ecology and Evolution of Infectious Disease",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Credit only granted for BSCI477 or BIOL708D.<br><br> Parasites are a ubiquitous feature of ecological communities, and can strongly impact population growth, extinction risk, community structure and biodiversity, as well as pose serious risks to human health and food  security. This course will cover basic principles of disease ecology, including; the diversity of parasitic organisms and transmission modes, host and pathogen traits for defense and infection, mathematical models of disease spread, the impacts of disease at different ecological scales, and host-parasite co-evolution. In the latter half of the course  we will apply these basic concepts to current real-world problems in disease ecology including emerging infectious diseases in humans, wildlife and agriculture. We will use examples from plants, animals and humans to about an equal degree. This course will have a strong quantitative focus.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Emily Bruns"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "1309"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "BIOL708E",
+      "name": "Advanced Topics in Biology; Diseases of the Nervous System",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Cross-listed with NACS728N. Credit only granted for BSCI452, BIOL708E, and NACS728N.<br><br> An advanced course covering the neuroanatomy, function, and organization of the nervous system and its implication for pathology and disease.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Chan Lin"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "BPS",
+                  "0283"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "BIOL708R",
+      "name": "Advanced Topics in Biology; Population Ecology",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Credit only granted for BSCI462 and BIOL708R.<br><br> Theory of population growth and regulation, life tables, and theory of competition and predation, evolution in ecological settings, community structure and dynamics.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Bill Fagan"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "BPS",
+                  "1238"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "BIOL708V",
+      "name": "Advanced Topics in Biology; Hearing II, Translational Issues",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Cross-listed with NACS728V. Credit granted for BIOL708V or NACS728V.<br><br> Orient students toward the translational research in the Hearing sciences; to provide examples of how scientists incorporate applied/translational aspects into their research; to provide training in research development with a translational perspective. Classes will consist of presentations by scientists in the field, followed by discussion of reading and presentations by students. Topics include acoustic categories in auditory cortex, cortical plasticity, high order cortex EEG, speech perception; neural coding of speech in the brain, stem, auditory perception and psychophysics, speech processing, aging &amp; auditory processing, cochlear implants and binaural processing, language acquisition, and other auditory prostheses.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Catherine Carr"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "BPS",
+                  "1230"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "BIOL709V",
+      "name": "Selected Advanced Topics in Biology; Biology of Vision",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Credit only granted for BSCI403 and BIOL709V.<br><br> The physical, molecular, and neural basis of vision.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Juan Angueyra"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "BPS",
+                  "1236"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "BIOL799",
+      "name": "Master's Thesis Research",
+      "credits": {
+        "Range": [
+          1,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "BIOL898",
+      "name": "Pre-Candidacy Research",
+      "credits": {
+        "Range": [
+          1,
+          8
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "BIOL899",
+      "name": "Doctoral Dissertation Research",
+      "credits": {
+        "Amount": 6
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    }
+  ]
+}

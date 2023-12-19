@@ -1,0 +1,141 @@
+{
+  "name": "CPJT",
+  "courses": [
+    {
+      "code": "CPJT101",
+      "name": "Colloquium in Justice and Legal Thought",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "An exploration of contemporary issues related to justice and legal thought.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Justine DeCamillis"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "CCC",
+                  "1205"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "CPJT230",
+      "name": "Capstone for Justice and Legal Thought: Internship",
+      "credits": {
+        "Range": [
+          2,
+          3
+        ]
+      },
+      "gen_eds": [
+        "DSSP"
+      ],
+      "description": "The capstone of the four-semester College Park Scholars Justice and Legal thought  citation program is an exploration of justice and law within a rigorous academic and experiential framework. Students must develop and perform practicum internships in professional law related settings. In all settings, students must interact directly with legal professionals in law related fields and through law-related institutions under the supervision of legal professionals and program staff.  In conjunction with the experiential component, students will synthesize their experience within the learning outcomes of the Justice and Legal Thought Program through an innovative final project culminating in a poster presentation.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Evan Ash",
+            "Justine DeCamillis"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "CPJT240",
+      "name": "Capstone for Justice and Legal Thought: Service-Learning",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": [
+        "DSSP"
+      ],
+      "description": "The capstone of the four-semester College Park Scholars Justice and Legal Thought  citation program is an exploration of justice and law within a rigorous academic and experiential framework. Students must develop and perform practicum volunteer experiences in professional law related settings. In all settings, students must interact directly with legal professionals in law related fields and through law-related institutions under the supervision of legal professionals and program staff.  In conjunctions with the experiential component, students will synthesize their experience within the learning outcomes of the Justice and Legal Thought program through an innovative final project culminating in a poster presentation.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Evan Ash",
+            "Justine DeCamillis"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "CPJT250",
+      "name": "Capstone for Justice and Legal Thought: Research",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": [
+        "DSSP"
+      ],
+      "description": "The capstone of the four-semester College Park Scholars Justice and Legal Thought  citation program is an exploration of justice and law within a rigorous academic and experiential framework. Students must develop and perform applied research in a law related setting. Students must interact directly with legal professionals  under the supervision of program staff.  Students will synthesize their experience within the learning outcomes of the Justice and Legal Thought Program through an innovative final research project culminating in a poster presentation.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Justine DeCamillis",
+            "Rithvik Yarlagadda",
+            "Evan Ash"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "CCC",
+                  "1111"
+                ]
+              }
+            },
+            "Unspecified"
+          ]
+        }
+      ]
+    }
+  ]
+}

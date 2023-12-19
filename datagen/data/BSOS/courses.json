@@ -1,0 +1,296 @@
+{
+  "name": "BSOS",
+  "courses": [
+    {
+      "code": "BSOS188B",
+      "name": "Selected Topics in the Behavioral and Social Sciences; Introduction to Data Management",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "This course serves as an introduction to computers, data management, and popular analytics software (e.g., R, Excel) and is ideal for students who have minimal training in computers and software. You will learn best practices for file management and ways read in data, clean data sets, and perform other vital functions (mainly in Excel). You will develop fundamental skills that will ease your transition into future coursework in data science or analytics.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Jacob Coutts"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "BSOS233",
+      "name": "Data Science for the Social Sciences",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "An introduction to modern methods of data analysis for social scientists. This course emphasizes teaching students who have no previous coding experience how to analyze data and extract meaning in a social science context. Students will gain critical programming skills and learn inferential thinking through examples and projects with real-world relevance.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Hansol Kwak",
+            "Jacob Coutts"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "0215"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "B0322"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "0215"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "WDS",
+                  "0104"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "BSOS326",
+      "name": "Python Programming for the Social Sciences",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Python has become the most powerful programming language in advanced statistics and data analytics. It includes expansive packages for data handling and processing, including the latest developments in machine learning, and offers Integrated Development Environments (IDE) for code development, testing, debugging, and graphical representation. This course offers a thorough introduction to Python and those packages that are fundamental to data processing and analysis.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Brian Kim"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "1310"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "BSOS355",
+      "name": "Social Sciences Internship Practicum",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSSP"
+      ],
+      "description": "BSOS 355 is an internship course open to all majors. It will enable students to articulate and apply the scholarship from the discipline related to their specific internship placement into a real-work environment.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Liza Lebrun"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "BSOS361",
+      "name": "Academic and Career Planning for Transfer Students in the College of Behavioral and Social Sciences",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "Students will utilize the resources of the Feller Center for Academic and Career Planning and TerrapinSTRONG to explore how their individual social identities and strengths contribute to building strong communities in personal, academic, and professional career spaces.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "1102"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Felecia Greer",
+            "TC Lloyd"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "1114"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "BSOS448M",
+      "name": "Teaching Assistant Practicum",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Brandee Pettus"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    }
+  ]
+}

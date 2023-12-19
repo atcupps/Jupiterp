@@ -1,0 +1,1011 @@
+{
+  "name": "CINE",
+  "courses": [
+    {
+      "code": "CINE245",
+      "name": "Film Form and Culture",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHU"
+      ],
+      "description": "Introduction to film as art form and how films create meaning. Basic film terminology; fundamental principles of film form, film narrative, and film history. Examination of film technique and style over past one hundred years. Social and economic functions of film within broader institutional, economic, and cultural contexts.",
+      "sections": [
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Alan Montroso"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0320"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0301",
+          "instructors": [
+            "Alan Montroso"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0320"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "CINE280",
+      "name": "Film Art in a Global Society",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHU",
+        "DVUP"
+      ],
+      "description": "Comparative study of a variety of film traditions from around the world, including cinema from Hollywood, Europe, Asia and developing countries, with a stress on different cultural contexts for film-making and viewing.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Caroline Eades"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0320"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0221"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Caroline Eades"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0320"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0221"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Caroline Eades"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0320"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0221"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0104",
+          "instructors": [
+            "Caroline Eades"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0320"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0221"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "CINE282",
+      "name": "Heroes and Villains in American Film",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHU",
+        "DVUP"
+      ],
+      "description": "We will examine the complex, changing, and ever-present representations of heroes and villains in American film. Beginning with a foundational understanding of how heroes and, conversely, villains have been defined through classic Hollywood film, we will explore how these definitions have shifted throughout the 20th and 21st century in various narrative genres, including westerns, war films, film noir, fantasy, science fiction, and, of course, superhero movies. In particular, we will be focusing on how the hero and villain maintain or disrupt specific cultural ideologies concerning race/ethnicity, gender, sexuality, and ability. This course will examine how these various ideologies have evolved throughout the 20th and 21st century, impacting the ways in which heroes and villains are both represented in American film and perceived by diverse audiences. Finally, we will examine our own complicated and sometimes troubling identification with these heroes, even when they might stand in stark contrast to our cultural values and identities.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Susan Pramschufer"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0223"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "CINE302",
+      "name": "Cinema History II: The Sound Era",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Introduction to the international history of cinema from sound around 1930 to the present.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Mauro Resmini"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "B0322"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "CINE319F",
+      "name": "Special Topics in Documentary, Animation, Experimental Cinema, and Other Visual Media; Cartoons on the Page and on the Screen",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: ENGL245, FILM245, CINE245, CINE283, FILM283, or SLLC283; or permission of instructor. Cross-listed with ENGL329B. Credit only granted for CINE319F, FILM319F or ENGL329B.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Paul Cote"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "1105"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "CINE319G",
+      "name": "Special Topics in Documentary, Animation, Experimental Cinema, and Other Visual Media; Ecomedia",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: ENGL245, FILM245, SLLC283, CINE245 or FILM283 or CINE283; or permission of instructor.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Oliver Gaycken"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "1320"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "CINE319N",
+      "name": "Special Topics in Documentary, Animation, Experimental Cinema, and Other Visual Media; Introduction to Filmmaking II",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: CINE319M or permission of instructor Priority given to majors in Cinema and Media Studies.<br><br> Expands on filmmaking skills and techniques learned in \"Intro to Filmmaking\" that revolve around research, production and post-production. Students will work in groups to produce polished 6-10 minute nonfiction narrative works based on a topic of their choosing. Emphasis is on quality research, planning, and carefully executed production. Assignment deliverables (including pitch-decks, treatments, select reels, radio edits, rough drafts, and final edits) and critiques throughout the semester will be in service of the final film project.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Justin Foreman"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "1205"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "1205"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "CINE329E",
+      "name": "Special Topics in National/International Cinemas; Soviet Film: Soviet Cinema and Culture after Stalin",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Cross-listed with RUSS398F. Credit only granted for RUSS398F or CINE329E.<br><br> Provides a survey of post-Stalin Soviet cinema and culture. Examines thecomplexities of Soviet culture and everyday life, exploring the role of art and culture in an ever-shifting Soviet socialist system, and the place of the individual within that system.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Elizabeth Papazian"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "0103"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "CINE329I",
+      "name": "Special Topics in National/International Cinemas; American Jewish Comedy: From the Marx Brothers to \"The Marvelous Mrs. Maisel\"",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Cross-listed with JWST319T. Credit only granted for CINE329I or JWST319T.<br><br> Since the turn of the 20th century, from the films of the Marx Brothers to current tv series, internet shows, and stand-up comics, comedy has served to express Jewish Americanness, and at the same time has defined much of American cultural life in a broad sense. This course will explore comedy as an expression of both American Jewish identity and American culture writ large, across several media: literature, television, film, the internet, graphic literature, stand-up, and theater.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Eric Zakim"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "B0322"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "CINE329N",
+      "name": "Special Topics in National/International Cinemas; Politics and Memory on Screen: A History of Latin American Cinema",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Daniel Richter"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "B0322"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "CINE329Z",
+      "name": "Special Topics in National/International Cinemas; Cinema and Migration",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Study of how filmmakers illuminate human migration and complexities of labor, family migration, and diasporic worlds.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Daniel Richter"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "1201"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "CINE335",
+      "name": "Transnational Chinese Cinema",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHU"
+      ],
+      "description": "Chinese cinema has made a big impact on contemporary world film culture. This course will introduce students to the films directed by some of the most representative filmmakers working in different geopolitical locations (mainland China, Taiwan, Hong Kong) and the Chinese diaspora. The films of these directors, in a spectrum of genres, themes, and styles, have inspired global scholarship, not only in visual culture and cinema, but also in the study of women's issues, gender and ethnic studies, as well as the fields of adaptation and intermedia studies. Students will explore these films in their socio-historical and artistic contexts, considering the influences and innovations that have shaped them and analyzing their reception by audiences and critics. After reading about the films they view, and participating in class discussions, students will be ready to complete their analytical written assignments, for which they will critically examine the films by applying key concepts such as gender, sexuality, race, gaze, style, representation, power, diaspora, etc.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Jason Kuo"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "4213A"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "CINE359Q",
+      "name": "Special Topics in Genres/Auteurs/Cinema Movements; The Cinema of Steven Spielberg",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Prerequisites: ENGL245, FILM245, CINE245, CINE283, FILM283, or SLLC283, or permission of instructor. Cross-listed with ENGL329R. Credit only granted for ENGL329R, CINE359Q, or FILM359Q.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Paul Cote"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0214"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "CINE359Z",
+      "name": "Special Topics in Genres/Auteurs/Cinema Movements; The Global Western",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Focuses on the afterlife of the Western, that is, what happened to the genre after its ostensible demise. We will follow its continuation well beyond the 1960s, and examine a certain contradiction in this most American of American film genres. If the Western embodies and expresses American ideals, then why does its afterlife reside to a great extent in non-American spaces and cinemas or as a counter-voice in American culture?",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Eric Zakim",
+            "Elizabeth Papazian"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "B0322"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "CINE369T",
+      "name": "Special Topics in Film Theories; Post-Cinema: Theories of Media and Technological Change",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: ENGL245, FILM245, CINE245, CINE283, FILM283, or SLLC283; or permission of instructor. Cross-listed with ENGL329N. Credit only granted for CINE369T or ENGL329N.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Marianne Conroy"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "1321"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "CINE388",
+      "name": "Experiential Learning: Cinema and Media Studies",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "CINE419E",
+      "name": "Special Topics in Documentary, Animation, Experimental Cinema, and Other Media; Digital Storytelling with Archives",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: Instructor permission required. Priority given to majors in Cinema and Media Studies. Cross-listed with MITH498E. Credit only granted for CINE419E or MITH498E.<br><br> This course explores the practice of digital storytelling with the creative reuse of archival audiovisual materials. Students will write a media autobiography about their relationship to media throughout their lives (film, TV, radio, the internet, cell phones, video games, and more). One entry will be turned into a final media project - either a short documentary film, video essay, podcast, or digital exhibit - utilizing archival footage from select sources.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Stephanie Sapienza"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "1103"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "CINE429U",
+      "name": "Special Topics in National/International Cinemas; Chinese Cinemas and the Underground",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Cross-listed with CHIN418N. Credit only granted for CHIN418N or CINE429U.<br><br> This course digs into the hidden world of film and media across PRC China, Hong Kong, Taiwan, and other diasporic Sinophone areas. Issues tobe explored include cinema's relationship to the Chinese Hell, revolutionary espionage, and tunnel warfare, as well as guerilla filmmaking, media piracy, subversive data mining, and forms of secret voices, forbidden images, and unofficial memories. Taught in English.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Belinda Qian He"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "1103"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "CINE431",
+      "name": "Italian Cinema II (In Translation)",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "A study of Italian society and culture through the medium of film from the mid 1970's to the present. Taught in English.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Mauro Resmini"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "3205"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "CINE499",
+      "name": "Directed Study in Cinema and Media Studies",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    }
+  ]
+}

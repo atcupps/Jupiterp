@@ -1,0 +1,166 @@
+{
+  "name": "BIOI",
+  "courses": [
+    {
+      "code": "BIOI603",
+      "name": "Principles of Machine Learning",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "A broad introduction to machine learning and statistical pattern recognition. Topics include: Supervised learning: Bayes decision theory, discriminant functions, maximum likelihood estimation, nearest neighbor rule, linear discriminant analysis, support vector machines, neural networks, deep learning networks. Unsupervised learning: clustering, dimensionality reduction, PCA, auto-encoders. The course will also discuss recent applications of machine learning, such as computer vision, data mining, autonomous navigation, and speech recognition.",
+      "sections": [
+        {
+          "sec_code": "1",
+          "instructors": [
+            "Kemal Davaslioglu"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      6,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      8,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "BIOI605",
+      "name": "Data Sources and Data Management in Bioinformatics",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "An introduction to the different types of data generated for bioinformatics analyses and data management  principles required for scientific rigor and reproducibility. Data sources include, but are not limited to, sequencing  data, 'omics data (e.g., proteomics, metabolomics, lipidomics), imaging data, and clinical data. Data organization  will cover topics such as management and curation of metadata, downloading data from and submitting data to  public repositories, and using databases versus spreadsheets and tables.",
+      "sections": [
+        {
+          "sec_code": "1",
+          "instructors": [
+            "Michael Cummings"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      6,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      8,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1146"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "BIOI606",
+      "name": "Sequence Alignment",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "In-depth coverage of biological sequence alignment including the following: definitions, algorithms, and statistics  for local, global, pairwise, and multiple alignments; scoring schemes; BLAST, BLAST variants, and similar programs;  motif finding; and related topics.",
+      "sections": [
+        {
+          "sec_code": "1",
+          "instructors": [
+            "Stephen Altschul"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      6,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      8,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1172"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "BIOI607",
+      "name": "Data Structures and Algorithms for Bioinformatics",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "An introduction to the fundamental data structures and algorithms underlying many parts of Bioinformatics.  Standard data structures for efficient indexing and sequence search will be covered, including the suffix array and  the FM-index, as will alignment-free methods for sequence comparison. This course will also introduce the  fundamental algorithms in computational phylogenomics and biological network analysis. Finally, bioinformatics oriented applications of classic unsupervised learning algorithms (e.g., clustering and dimensionality reduction) and database techniques (e.g., sorting, selection, joining) will be examined. The focus will be both on formal  understanding of computational efficiency as well as the practical applications of these concepts.",
+      "sections": [
+        {
+          "sec_code": "1",
+          "instructors": [
+            "Robert Patro"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      6,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      8,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1168"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

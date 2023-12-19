@@ -1,0 +1,539 @@
+{
+  "name": "ENTS",
+  "courses": [
+    {
+      "code": "ENTS625",
+      "name": "Management and Organizational Behavior in the Telecommunications Industry",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Roles of the general manager in: determining target markets and designing strategies for them; formulating and implementing corporate and business level strategies; and staffing, developing, and managing human resources and coordinating them with the organization's financial and physical resources. Also emphasizes the building of interpersonal skills with respect to the selection of members for work teams and team formation, leadership of teams toward the achievement of strategic goals and total quality, the development and motivation of team members, and the evaluation of team and individual performance.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Clarence Wesley"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      5,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      8,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "1103"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENTS632",
+      "name": "Telecommunications Marketing Management",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Topics covered include strategic marketing, sales and customer service challenges confronting organizations in the computer, communications and media industries. The course also addresses volatile technology, regulatory and competitive environments as a backdrop to strategic planning and management in the marketing domain.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Henry Boyd"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0205"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENTS641",
+      "name": "Networks and Protocols II",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Techniques for the specification, design, analysis, verification and testing of communication protocols are discussed. The course includes detailed discussion on routing protocols in the Internet. This includes Routing Information Protocol (RIP), Enchanced Interior Gateway Routing Protocol (EIGRP). Open Shortest Path First (OSPF), and Border Gateway Protocol (BGP4).",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Mehdi Kalantari Khandani"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      5,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      8,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "CHM",
+                  "2201"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENTS656",
+      "name": "Introduction to Cellular Communication Networks",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Concepts and techniques involved in wireless digital communications with emphasis on cellular and PCS systems. Properties of Mobile radio channels; intersymbol interference, multipath, and fading effects; interleaving and diversity; multiple access schemes (TDMA, FDMA, CDMA); interuser interference, traffic issues, and cell capacity; power control strategies; frequency reuse and channel assignment; handoff, paging, and location update; cell layout; introduction to cellular and PCS standards.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Michael Dellomo"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      5,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      8,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "MTH",
+                  "0104"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      5,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      8,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "AVW",
+                  "1458"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENTS669D",
+      "name": "Special Topics in Computing; Introduction to Machine Learning",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Joseph JaJa"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "AJC",
+                  "2132"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENTS669J",
+      "name": "Special Topics in Computing; Internet of Things Lab",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Prerequisites: For ENTS Program students only",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Michael Dellomo"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "AVW",
+                  "1334"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENTS669K",
+      "name": "Special Topics in Computing; AI Applications for 6G",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Restriction: Must be in the Masters in Telecommunications (ENTS) program.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Alejandra Mercado"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "AVW",
+                  "1458"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENTS689F",
+      "name": "Special Topics in Telecommunications; .Fundamental of Wireless LANs",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "<a href=\"https://blog.umd.edu/telecom/courses#ENTS689F\"> Click here for more course information.</a>",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Rikin Thakker"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EGR",
+                  "2116"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENTS699M",
+      "name": "Independent Study in Telecommunications; Python Programming",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "<a href=\"https://telecom.umd.edu/courses/#ENTS699M\"> Please click here for further course information.</a>",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Michael Dellomo"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENTS749E",
+      "name": "Advanced Topics in Networking; Network Automation",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "<a href=\"http://www.telecom.umd.edu/courses/#ENTS749E\"> Click here for more course information.</a>",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Zoltan Safar"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "AVW",
+                  "1442"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENTS749F",
+      "name": "Advanced Topics in Networking; Security in Cloud Computing",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "<a href=\"https://telecom.umd.edu/courses/#ENTS749F\"> Please click here for further course information.</a>",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Zoltan Safar"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      5,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      8,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "AVW",
+                  "1442"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENTS759B",
+      "name": "Advanced Topics in Communications; Wireless OFDM Systems",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "<a href=\"http://www.telecom.umd.edu/courses/#ENTS759B\"> Please click here for further course information.</a>",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Alejandra Mercado"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "AVW",
+                  "1442"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENTS759G",
+      "name": "Advanced Topics in Communications; Radio Access Technologies, Networks and System Design",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Click <a href=\"https://telecom.umd.edu/courses#ENTS759G\"> here </a> for course description.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Kamran Etemad"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "WDS",
+                  "1114"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,247 @@
+{
+  "name": "ENTM",
+  "courses": [
+    {
+      "code": "ENTM667",
+      "name": "Aquatic Entomology",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Biology, ecology, and taxonomy of aquatic insects in lotic and lentic habitats, their adaptation to aquatic life, their function in aquatic ecosystems, and their relationship to environmental deterioration.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Bill Lamp"
+          ],
+          "class_meetings": [
+            "OnlineAsync",
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1161"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENTM699G",
+      "name": "Advanced Entomology; Sustainability of Socio-Environmental Systems",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "Cross-listed with BISI699G. Credit only granted for ENTM699G or BISI699G.<br><br> The seminar will begin with a focus on socio-environmental system dynamics, what they have in common with other complex adaptive systems and how solving environmental problems requires an integrated consideration of both the social and ecological dimensions. We will explore theories, concepts, and methods that different disciplines bring to this topic and learn about qualitative and quantitative approaches to grapple with problems of sustainability.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Margaret Palmer"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENTM699M",
+      "name": "Advanced Entomology; Tools &amp; Techniques in Genomics Research for the Applied Biologist-Part I",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Megan Fritz"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENTM699N",
+      "name": "Advanced Entomology; Tools &amp; Techniques in Genomics Research for the Applied Biologist-Part II",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Megan Fritz"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENTM720",
+      "name": "Native, Invasive, and Exotic Species",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "This course will examine introduced species impact, how invasive and exotic species spread, their impact of native species and methods of invasive species control.",
+      "sections": [
+        {
+          "sec_code": "1",
+          "instructors": [
+            "Magdalene Ngeve"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENTM725",
+      "name": "IPM Practices",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Introduction to the techniques of integrated pest management for proper pest control management. Integrated Pest Management (IPM) has been the most successful management paradigm for agriculture, forestry, and urban pest management for more than five decades. Students will learn the fundamental elements of IPM programs including recognition and monitoring of key pests, formation of decision-making guidelines, intervention tactics, and fundamentals of assessment.",
+      "sections": [
+        {
+          "sec_code": "1",
+          "instructors": [
+            "Galen Dively"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENTM788C",
+      "name": "Entomological Topics; Colloquium",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Dennis vanEngelsdorp"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1140"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENTM799",
+      "name": "Master's Thesis Research",
+      "credits": {
+        "Range": [
+          1,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "ENTM898",
+      "name": "Pre-Candidacy Research",
+      "credits": {
+        "Range": [
+          1,
+          8
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "ENTM899",
+      "name": "Doctoral Dissertation Research",
+      "credits": {
+        "Amount": 6
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    }
+  ]
+}

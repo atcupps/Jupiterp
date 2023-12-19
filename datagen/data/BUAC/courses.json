@@ -1,0 +1,470 @@
+{
+  "name": "BUAC",
+  "courses": [
+    {
+      "code": "BUAC706",
+      "name": "Business Ethics for Accountants and Auditors",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": null,
+      "description": "Considers all facets of business ethics issues within an accounting and auditing context. Ethical theory, corporate social responsibility, and individual decision-making are considered. Some of the applied topics that may be covered in this course include, but are not limited to, intellectual property issues, corporate downsizing, outsourcing, global ethics, crises management, and employment ethics.",
+      "sections": [
+        {
+          "sec_code": "0501",
+          "instructors": [
+            "Jeffrey Milton"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "VMH",
+                  "1333"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "BUAC714",
+      "name": "Forensic Accounting/Auditing",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": null,
+      "description": "Provides a theoretical background and practical application of fraud examinations and corporate investigations. Fraud prevention, detection, investigation, and related matters such as courtroom procedures will be included. Also considered are topics such as FCPA and securities fraud. A wide variety of teaching tools are used.",
+      "sections": [
+        {
+          "sec_code": "0501",
+          "instructors": [
+            "David Hilton",
+            "Ariel Ramirez"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      6,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "VMH",
+                  "1511"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "BUAC732",
+      "name": "Intermediate Accounting II",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": null,
+      "description": "Continuing the study of accounting information covering accounting principles found in US GAAP and IFRS as they apply to cash and receivables, inventory valuation, acquisition and disposition of plant, property and equipment, depreciation, impairments and depletion, intangible assets, current liabilities and contingencies, long-term liabilities, and stockholders equity.",
+      "sections": [
+        {
+          "sec_code": "0501",
+          "instructors": [
+            "Stephen Brown"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "VMH",
+                  "2505"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "BUAC735",
+      "name": "External Auditing",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": null,
+      "description": "The study of the independent accountants attest function, generally accepted auditing standards, compliance and substantive tests, and auditor reports and opinions. The course explores audit planning and the role of internal controls and their effect on the auditability of financial statements.  The course includes the study of various audit concepts, including how auditors develop an audit strategy, determine materiality in various contexts, set the acceptable level of audit risk, assess control and inherent risk and set detection risk, develop audit objectives, accumulate audit evidence and prepare workpapers, and audit firm quality control.",
+      "sections": [
+        {
+          "sec_code": "0501",
+          "instructors": [
+            "James McKinney"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "VMH",
+                  "2511"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "BUAC742",
+      "name": "Accounting Analytics",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": null,
+      "description": "The application of data analytics techniques in accounting. Topics such as identifying questions that can be answered by data; data extraction, cleaning and preparation; data visualization; audit data analytics; generating key performance indicators; financial statement analytics; and tax analytics will be covered. Students will gain hands-on experience with various data analytics software. By the end of this course, the students should have a basic understanding on how accounting analytics can help enhance the effectiveness of management control systems and improve the quality and relevance of financial reporting, as well as its implications in auditing and fraud detection.",
+      "sections": [
+        {
+          "sec_code": "0501",
+          "instructors": [
+            "Lei Zhou"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "VMH",
+                  "1412"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "BUAC744",
+      "name": "Valuation Measurement, Reporting, and Auditing for Accountants and Auditors",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": null,
+      "description": "An introduction to valuation for financial reporting (\"fair value\"), fair value reporting, and auditing fair value measurements. The number and complexity of financial reporting standards that require or allow assets and liabilities to be reported at fair value has increased substantially in recent years. The technical accounting standards that include fair value are complex in and of themselves, and the valuation measurements add substantially to the complexity. Further complexity is added to the dynamic because the audit firm is prohibited by the AICPA's independence rules from performing the valuation or providing significant assistance in technical accounting or the fair value measurement. Independent valuation/appraisal specialists are frequently preferred or required by the reporting company and/or the audit firm. From the perspective of the reporting company, this frequently results in complex and costly compliance, and from the auditor's perspective, a complex and high-risk area of the audit.",
+      "sections": [
+        {
+          "sec_code": "0501",
+          "instructors": [
+            "Brent Solomon"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "VMH",
+                  "1520"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "BUAC752",
+      "name": "Internal Auditing I: Assurance and Consulting Services",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": null,
+      "description": "Provides students with an overview and basic understanding of internal auditing. Internal audit's role in internal control, risk management, business processes and risks, and Sarbanes-Oxley, Section 404 compliance efforts compliance efforts are considered. Internal auditing is presented as an integral part of effective corporate governance. Examples of assurance and consulting activities undertaken by the internal audit function, as well as the sourcing strategy (i.e., full insourcing, co-sourcing or full outsourcing models) are discussed. Students are introduced to internal control theory, test design concepts and internal auditing best practices.",
+      "sections": [
+        {
+          "sec_code": "0501",
+          "instructors": [
+            "Elizabeth Folsom"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      6,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "VMH",
+                  "1333"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "BUAC758U",
+      "name": "Special Topics in Accounting and Information Assurance; Advanced Accounting",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0501",
+          "instructors": [
+            "Samuel Handwerger"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "VMH",
+                  "1336"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "BUAC759",
+      "name": "Independent Study in Accounting and Information Assurance",
+      "credits": {
+        "Range": [
+          1,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "BUAC766",
+      "name": "Taxation of Not-for-Profit Entities",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": null,
+      "description": "An introduction to the theory and practice of taxation as applied in the nonprofit sector.  The practice of taxation for nonprofits requires, inter alia, an understanding of the legal framework for these entities.  Therefore, the course will devote significant time to understanding the legal environment and framework associated with nonprofits.  The course goal is to enable students to become proficient in the major aspects of nonprofits that apply to the work of public accountants.",
+      "sections": [
+        {
+          "sec_code": "0501",
+          "instructors": [
+            "Samuel Handwerger"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "VMH",
+                  "1336"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "BUAC767",
+      "name": "Tax IV: Real Estate Taxation",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": null,
+      "description": "Provides an in-depth examination of the tax provisions and opportunities for planning transactions that involve real estate investments and transactions.  The course covers the tax implications of purchasing, holding, and selling real property.  These include the determination of tax basis and the treatment of mortgage interest, property taxes, like-kind exchanges, involuntary conversions, sales and dispositions, qualifying property, and capital gains and losses.  The various forms used for property transactions will be reviewed in detail.",
+      "sections": [
+        {
+          "sec_code": "0501",
+          "instructors": [
+            "Jeffrey Milton"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "VMH",
+                  "2505"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "BUAC770",
+      "name": "Tax V: International Taxation",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": null,
+      "description": "An introduction to the theory and practice of international taxation. The objective of the course is to provide students with the basic tools to approach international tax topics from a US perspective.  The course addresses the fundamentals of U.S. international taxation, but also offers insight into tax planning considerations.  Both the U.S. activities of foreign taxpayers, as well as the foreign activities of U.S. taxpayers are explored.",
+      "sections": [
+        {
+          "sec_code": "0501",
+          "instructors": [
+            "Samuel Handwerger"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "VMH",
+                  "2505"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

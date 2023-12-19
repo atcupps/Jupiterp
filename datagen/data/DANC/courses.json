@@ -1,0 +1,1871 @@
+{
+  "name": "DANC",
+  "courses": [
+    {
+      "code": "DANC109",
+      "name": "Choreography I: Improvisation",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Students must pay a $25.00 lab fee.",
+      "sections": [
+        {
+          "sec_code": "5501",
+          "instructors": [
+            "Sara Pearson"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "1912"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "DANC118",
+      "name": "Beginning Tap",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": null,
+      "description": "Students must pay a $25 course fee.",
+      "sections": [
+        {
+          "sec_code": "5501",
+          "instructors": [
+            "Jalen Rose"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "1908"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "DANC128",
+      "name": "Fundamentals of Ballet",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": null,
+      "description": "Students must pay a $25.00 lab fee.",
+      "sections": [
+        {
+          "sec_code": "5501",
+          "instructors": [
+            "Mary Ford"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "1908"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "DANC138A",
+      "name": "Global Dance Forms; Musical Theatre Jazz",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": null,
+      "description": "Students must pay a $25 lab fee.",
+      "sections": [
+        {
+          "sec_code": "5501",
+          "instructors": [
+            "Amber Daniels"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "1912"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "DANC138J",
+      "name": "Global Dance Forms; Afro Jazz",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "5501",
+          "instructors": [
+            "Kaela Lawrence"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "1908"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "DANC148",
+      "name": "Fundamentals of Modern Dance",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": null,
+      "description": "Students must pay a $25.00 lab fee.",
+      "sections": [
+        {
+          "sec_code": "5501",
+          "instructors": [
+            "Christina Collins"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "1912"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "DANC149",
+      "name": "Fundamentals of Modern Dance II",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": null,
+      "description": "Students must pay a $25 lab fee.",
+      "sections": [
+        {
+          "sec_code": "5501",
+          "instructors": [
+            "Patrik Widrig"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "1908"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "DANC179",
+      "name": "Movement Integration",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": null,
+      "description": "Students must pay a $25 lab fee.",
+      "sections": [
+        {
+          "sec_code": "5501",
+          "instructors": [
+            "Adriane Fang"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "1912"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "DANC199",
+      "name": "Practicum in Choreography, Production and Performance I",
+      "credits": {
+        "Range": [
+          1,
+          2
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "DANC200",
+      "name": "Introduction to Dance",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSSP"
+      ],
+      "description": "A study of dance as a form of communication and as an art form; a survey of the theories and styles of dance, and their relationships to other art forms.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Daniel Miramontes"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1146"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Peter Pattengill"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1146"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0301",
+          "instructors": [
+            "Mher Kandoyan"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "HBK",
+                  "1112"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0401",
+          "instructors": [
+            "Kevin Clark"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1113"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "DANC207",
+      "name": "Choreography II: The Creative Process",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Explorations in movement, music, words, objects, and environments through improvisation and choreographic problem solving.",
+      "sections": [
+        {
+          "sec_code": "5501",
+          "instructors": [
+            "Patrik Widrig"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "1908"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "DANC218",
+      "name": "Modern Dance I",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: permission of department.<br><br> Students must pay a $25 lab fee.",
+      "sections": [
+        {
+          "sec_code": "5501",
+          "instructors": [
+            "Alvin Mayes",
+            "Adriane Fang"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "1912"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "DANC219",
+      "name": "Modern Dance II",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: DANC218 and permission of department.<br><br> Students must pay a $25 lab fee.",
+      "sections": [
+        {
+          "sec_code": "5501",
+          "instructors": [
+            "Alvin Mayes",
+            "Adriane Fang"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "1912"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "DANC228",
+      "name": "Ballet I",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": null,
+      "description": "Students must pay a $25 lab fee.",
+      "sections": [
+        {
+          "sec_code": "5501",
+          "instructors": [
+            "Zoe Walders"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "1908"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "DANC229",
+      "name": "Ballet II",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": null,
+      "description": "Students must pay a $25 lab fee.",
+      "sections": [
+        {
+          "sec_code": "5501",
+          "instructors": [
+            "Zoe Walders"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "1908"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "DANC299",
+      "name": "Practicum in Choreography, Production and Performance II",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "DANC318",
+      "name": "Modern Dance III",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: DANC219 an permission of department. Students must pay $25 lab fee.",
+      "sections": [
+        {
+          "sec_code": "5501",
+          "instructors": [
+            "Alvin Mayes",
+            "Kendra Portier"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      30,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "1908"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "DANC319",
+      "name": "Modern Dance IV",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: DANC318 and permission of department. Students must pay $25 lab fee.",
+      "sections": [
+        {
+          "sec_code": "5501",
+          "instructors": [
+            "Alvin Mayes",
+            "Kendra Portier"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      30,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "1908"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "DANC328",
+      "name": "Ballet III",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": null,
+      "description": "Students must pay a $25.00 lab fee.",
+      "sections": [
+        {
+          "sec_code": "5501",
+          "instructors": [
+            "Kendra Portier"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "1908"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "DANC329",
+      "name": "Ballet IV",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": null,
+      "description": "Students must pay a $25.00 lab fee.",
+      "sections": [
+        {
+          "sec_code": "5501",
+          "instructors": [
+            "Kendra Portier"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "1908"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "DANC338C",
+      "name": "Dance Techniques; Contact Improvisation",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": null,
+      "description": "Students must pay a $25 lab fee. Students must have previous dance experience. Email Brit Falcon at bfalcon1@umd.edu for questions",
+      "sections": [
+        {
+          "sec_code": "5501",
+          "instructors": [
+            "Britney Falcon"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      6,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      8,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "1611"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "DANC338P",
+      "name": "Dance Techniques; Advanced Hip Hop",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": null,
+      "description": "Students must pay a $25 lab fee.",
+      "sections": [
+        {
+          "sec_code": "5501",
+          "instructors": [
+            "Ama Law"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "1116"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "DANC338T",
+      "name": "Dance Techniques; Int./Adv Tap",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": null,
+      "description": "Students must pay a $25 lab fee",
+      "sections": [
+        {
+          "sec_code": "5501",
+          "instructors": [
+            "Gerson Lanza Ruiz"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "1908"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "DANC383",
+      "name": "Dance History &amp; Theory",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "With a primary focus on Western concert dance from the 20th and 21st centuries, this course proposes an understanding of dance as it is situated in historical and cultural contexts.  Rather than proposing a canon of \"masterworks\", this course interrogates choreography and other dance practices from multiple perspectives such as feminist theories, race, gender, and sexuality studies.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Ama Law"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "1815"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "DANC398",
+      "name": "Directed Studies in Dance",
+      "credits": {
+        "Range": [
+          1,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "DANC399",
+      "name": "Practicum in Choreography, Production and Performance III",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0301",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0401",
+          "instructors": [
+            "Alvin Mayes"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0501",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0701",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "1001",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "DANC418",
+      "name": "Contemporary Modern",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "5501",
+          "instructors": [
+            "Javier Padilla Garcia"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "1611"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "DANC448",
+      "name": "Modern Dance V",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: DANC319 and audition. Students must pay a $25.00 lab fee.",
+      "sections": [
+        {
+          "sec_code": "5501",
+          "instructors": [
+            "Kendra Portier",
+            "Adriane Fang"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      30,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "1912"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "DANC449",
+      "name": "Modern Dance VI",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: DANC448. Students must pay a $25.00 lab fee.",
+      "sections": [
+        {
+          "sec_code": "5501",
+          "instructors": [
+            "Adriane Fang",
+            "Kendra Portier"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      30,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "1912"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "DANC468",
+      "name": "Dance Repertory",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Students must pay a $25.00 lab fee.",
+      "sections": [
+        {
+          "sec_code": "5501",
+          "instructors": [
+            "Kendra Portier"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "1912"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "DANC488",
+      "name": "Project-Based Learning",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Students must pay a $25 lab fee.",
+      "sections": [
+        {
+          "sec_code": "5501",
+          "instructors": [
+            "Alvin Mayes",
+            "Scot Reese"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "1912"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "DANC611",
+      "name": "Dance Technology and Media",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "Project-based development of media and technological support for dance performance, archiving, and portfolio design, development and implementation.",
+      "sections": [
+        {
+          "sec_code": "5501",
+          "instructors": [
+            "Samuel Crawford"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "3731"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "DANC628",
+      "name": "Graduate Ballet",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "5501",
+          "instructors": [
+            "Kendra Portier"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "1908"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "DANC648",
+      "name": "Advanced Modern Dance Technique I",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "Students must pay a $25 lab fee.",
+      "sections": [
+        {
+          "sec_code": "5501",
+          "instructors": [
+            "Kendra Portier",
+            "Adriane Fang"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      30,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "1912"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "DANC649",
+      "name": "Advanced Modern Dance Technique II",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "Students must pay a $25 lab fee.",
+      "sections": [
+        {
+          "sec_code": "5501",
+          "instructors": [
+            "Kendra Portier",
+            "Adriane Fang"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      30,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "1912"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "DANC689G",
+      "name": "Special Topics in Dance; Advanced Hip Hop",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "Students must pay a $25 lab fee.",
+      "sections": [
+        {
+          "sec_code": "5501",
+          "instructors": [
+            "Ama Law"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "1116"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "DANC689I",
+      "name": "Special Topics in Dance; Pedagogy Practicum: Dance History",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Ama Law"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "1815"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "DANC689K",
+      "name": "Special Topics in Dance; Stock Motion Performances",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Cross-listed with THET669E and DANC689K.  Credit only granted for TDPS458K, THET669E, or DANCE689K. Student must pay a $25 lab fee.<br><br> Students will build a series of performance studies using Unity software and stock animation available on public motion libraries. Students will string together animations in various patterns and interactive systems, and design performance environments for them. Students will gain an understanding of motion that is assumed \"default,\" \"normal,\" and \"useful,\" and use their work to interrogate and challenge such assumptions and their social and political connotations. Then, students will try to recreate their digital action sequences in physical space, and re-translate them back into the virtual, building a new and improvednon-stock motionlibrary.\"",
+      "sections": [
+        {
+          "sec_code": "5501",
+          "instructors": [
+            "Kate Ladenheim"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "2727"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "DANC689R",
+      "name": "Special Topics in Dance; Graduate Dance Repertory",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "Students must pay a $25 lab fee.",
+      "sections": [
+        {
+          "sec_code": "5501",
+          "instructors": [
+            "Kendra Portier"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "1912"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "DANC698",
+      "name": "Independent Study in Dance",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "DANC708",
+      "name": "Graduate Choreography II: Collaboration; Collaborative Work",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Students must pay a $25.00 lab fee.",
+      "sections": [
+        {
+          "sec_code": "5501",
+          "instructors": [
+            "Sara Pearson"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "1912"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "DANC777",
+      "name": "Internship in Dance",
+      "credits": {
+        "Range": [
+          1,
+          5
+        ]
+      },
+      "gen_eds": null,
+      "description": "Internship in dance advocacy, administration, education, community building, choreography, or performance with an agency off campus and with a national or international profile.",
+      "sections": [
+        {
+          "sec_code": "0701",
+          "instructors": [
+            "Kendra Portier"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "DANC779",
+      "name": "Master's Tutorial for Performance",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Patrik Widrig"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Sara Pearson"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0501",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0601",
+          "instructors": [
+            "Kendra Portier"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0701",
+          "instructors": [
+            "Crystal Davis"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "1001",
+          "instructors": [
+            "Adriane Fang"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "DANC784",
+      "name": "Dance in a Global Context",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Topics that illuminate dance in global context and provides an overview of methods, challenges and perspectives to the study of dance cross-culturally will be considered. Simultaneously, surveys select dance practices spanning many geographical areas, and offers insight into the diverse social, cultural, religious, and political environments from which dance extends.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Maura Keefe"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "1924"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "DANC799",
+      "name": "Master's Thesis Project",
+      "credits": {
+        "Range": [
+          1,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    }
+  ]
+}

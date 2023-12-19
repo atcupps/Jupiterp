@@ -1,0 +1,181 @@
+{
+  "name": "CPET",
+  "courses": [
+    {
+      "code": "CPET101",
+      "name": "College Park Scholars: Environment, Technology &amp; Economy First-Year Colloquium II",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSSP",
+        "DVUP"
+      ],
+      "description": "Introductory colloquium II: Continued examination of issues related to the convergence of the environment, technology and the economy. Group projects in sustainable development.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Tim Knight"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "1215"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "CPET230",
+      "name": "College Park Scholars: Environment, Technology &amp; Economy Internship Practicum",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "Supervised internship project in an area related to the environment, technology and the economy.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Tim Knight"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      10,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "CCC",
+                  "1100"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "CPET240",
+      "name": "College Park Scholars: Environment, Technology &amp; Economy Service-Learning Practicum",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "Supervised Service-Learning project in an area related to the environment, technology and the economy.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Tim Knight"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      10,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "CCC",
+                  "1100"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "CPET250",
+      "name": "College Park Scholars: Environment, Technology &amp; Economy Research Practicum",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "Supervised research project in an area related to the environment, technology and the economy.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Tim Knight"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      10,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "CCC",
+                  "1100"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

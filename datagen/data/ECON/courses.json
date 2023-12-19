@@ -1,0 +1,3743 @@
+{
+  "name": "ECON",
+  "courses": [
+    {
+      "code": "ECON175",
+      "name": "Inequality: Determinants and Policy Remedies",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS",
+        "SCIS"
+      ],
+      "description": "History shows that the gap between the rich and the poor has varied over time within and between countries, most recently seeming to increase within many countries while somewhat decreasing between countries. This course challenges students to investigate why people make different amounts of money, why income inequality has changed dramatically in recent years, what public policy tools exist to counter inequality increases, and what different institutional arrangements different countries use to lower inequality. This course will introduce students to theoretical tools used by economists to understand the sources of inequality and will also examine various empirical measures of inequality.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Sergio Urzua"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      8,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "0117"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ECON185",
+      "name": "Energy: Crisis or Breakthrough?",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS",
+        "SCIS"
+      ],
+      "description": "Will we face an energy crisis in the near future, or will technological breakthroughs solve problems? Will we destroy the environment by careless use of polluting energy, or we will find new and clean sources of energy that resolves the environmental issue once and for all? Will politicians and governments succeed in agreeing on a coherent strategy to deal with global issues related to energy, or do we expect individual countries to move in different directions and exacerbate the problems? Students will explore the demand and supply sides of the energy market and their relationships with government policies and environmental concerns. Students will also analyze empirical evidence to better understand the factors affecting energy production and consumption in the past and possible directions in the future. By examining past situations when technological change mitigated problems in energy markets, we can make informed predictions about what could happen next.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Hossein Abbasi"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "0220"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ECON200",
+      "name": "Principles of Microeconomics",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS"
+      ],
+      "description": "Introduces economic models used to analyze economic behavior by individuals and firms and consequent market outcomes. Applies conceptual analysis to several policy issues and surveys a variety of specific topics within the broad scope of microeconomics.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Stefania Scandizzo"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "0130"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Stefania Scandizzo"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "0130"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ECON201",
+      "name": "Principles of Macroeconomics",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS"
+      ],
+      "description": "An introduction to how market economies behave at the aggregate level. The determination of national income/output and the problems of unemployment inflation, will be examined, along with monetary and fiscal policy.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Alka Gandhi"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "0130"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Naveen Sarna"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "0130"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ECON230",
+      "name": "Applied Economic Statistics",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "FSAR"
+      ],
+      "description": "Introductory course to develop understanding of statistical concepts used in applied economics. Students will acquire skills needed to calculate and interpret statistical concepts, including descriptive statistics, probability, discrete and continuous distributions, sampling, point and interval estimations, hypothesis testing, basic analysis of variance, and simple linear regression models. Students will apply these concepts to data using both handheld calculators and spreadsheets(Excel), and students will be introduced to an econometric software package such as SPSS or SAS or R.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Pierre De Leo"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "0101"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ECON300",
+      "name": "Methods and Tools for Economic Analysis",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Economic application of mathematical tools and concepts necessary for intermediate and advanced coursework in economics. Topics include: multivariable calculus, constrained optimization, foundational coverage of probability theory, and exponential/logarithmic functions.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Chenyu Yang"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "1102"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ECON305",
+      "name": "Intermediate Macroeconomic Theory and Policy",
+      "credits": {
+        "Amount": 4
+      },
+      "gen_eds": null,
+      "description": "Analysis of the determination of national income, employment, and price levels. Discussion of consumption, investment, inflation, and government fiscal and monetary policy.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Martina Copelman"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "0117"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KEY",
+                  "0126"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Martina Copelman"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "0117"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KEY",
+                  "0126"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Martina Copelman"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "0117"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KEY",
+                  "0126"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0202",
+          "instructors": [
+            "Martina Copelman"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "0117"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KEY",
+                  "0126"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ECON306",
+      "name": "Intermediate Microeconomic Theory &amp; Policy",
+      "credits": {
+        "Amount": 4
+      },
+      "gen_eds": null,
+      "description": "Analysis of the theories of consumer behavior, producer behavior, different market structures, and various sources of inefficient outcomes. Analysis of microeconomic policies designed to improve market outcomes.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Aaron Finkle"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "1224"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "0117"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Aaron Finkle"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "1224"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "0117"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Aaron Finkle"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "1224"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "0117"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0202",
+          "instructors": [
+            "Aaron Finkle"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "1224"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "0117"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ECON311",
+      "name": "American Economic History Before the Civil War",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Economic concepts are used to analyze various aspects of the founding and early history of the U.S., including the British settlement of the North American colonies, the economics of the American Revolutionary war, the writing of the Constitution, the development of financial markets, policies on public lands and the spread of western agriculture, slavery, banking, and early industrialization.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "John Wallis"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "0117"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ECON312",
+      "name": "American Economic History After the Civil War",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Topics include: the economics of the Civil War, the performance of southern agriculture in the late 19th century, the rise of large corporations, industrialization, the development of financial markets, the creation of the Federal Reserve Board, the economics of the Great Depression and the New Deal, the economic impact of World War II, and the rise of the modern service economy in the late 20th century. Utilizes basic economic theories to understand these episodes as well as the progress of the U.S. economy over this period.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Alka Gandhi"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "2106"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ECON317",
+      "name": "Global Economic Policies",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Analysis of policy options and debates on fostering economic growth and development in a global economy where national boundaries are no longer relevant. Topics covered will include real loanable funds markets in both local and international contexts during normal conditions and during financial crises, the design of trade and industrial policies, and the role of the World Bank, IMF, WTO, and other international agencies as well as regional and bilateral trade agreements. Emerging economies will be emphasized.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Naveen Sarna"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "0111"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Naveen Sarna"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "0111"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ECON321",
+      "name": "Economic Statistics",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Introduction to the use of statistics in economics. Topics include: Probability, random variables and their distributions, sampling theory, estimation, hypothesis testing, analysis of variance, regression analysis and correlation.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Alka Gandhi"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "0102"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ECON325",
+      "name": "Intermediate Macroeconomic Analysis",
+      "credits": {
+        "Amount": 4
+      },
+      "gen_eds": null,
+      "description": "Analysis of macroeconomic behavior and policy with emphasis on theoretical rigor. Topics include the determinants of economic growth, unemployment, inflation, and international economic flows.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "L Stevens"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "0102"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "0101"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "L Stevens"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "0102"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "2109"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ECON326",
+      "name": "Intermediate Microeconomic Analysis",
+      "credits": {
+        "Amount": 4
+      },
+      "gen_eds": null,
+      "description": "Analysis of economic decision-making by individuals and firms, the resulting market outcomes, and applications to real-world problems. Emphasis on analytical logic and theoretical rigor. Topics covered include consumer preferences and utility maximization, perfect competition and market power, uncertainty and risk, externalities, and asymmetric information.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Melissa Kearney"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "0102"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "2106"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Melissa Kearney"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "0102"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "2106"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ECON330",
+      "name": "Money and Banking",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "The structure of financial institutions and their role in the provision of money and near money.  Analysis of the Federal Reserve System, the techniques of central banks, and the control of supply of financial assets in stabilization policy.  Relationship of money and credit to economic activity and the price level.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Thomas Drechsel"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ARC",
+                  "0204"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ECON354",
+      "name": "Using Big Data to Solve Economic and Social Problems",
+      "credits": {
+        "Amount": 4
+      },
+      "gen_eds": [
+        "DSSP"
+      ],
+      "description": "Shows how \"big data\" can be used to understand and address some of the most important social and economic problems of our time. The course will give students an introduction to frontier research and policy applications in economics and social science in a less-technical manner. Topics include equality of opportunity, education, racial disparities, innovation and entrepreneurship, health care, climate change, criminal justice, and tax policy. In the context of these topics, the course will also provide an introduction to basic methods in data science, including regression, causal inference, and machine learning.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Erin Moody"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "2102"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "2109"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Erin Moody"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "2102"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "2109"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ECON386",
+      "name": "Experiential Learning",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "See Department Advising Office for course eligibility, course requirements, and application information.",
+      "sections": null
+    },
+    {
+      "code": "ECON387",
+      "name": "Career Preparation for Economics Majors",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": null,
+      "description": "Increase student knowledge of career paths, job search tools, and strategies for successfully obtaining a job with a BA or BS in economics. Students will engage in a range of different activities which build their understanding of job opportunities in economics and hone their abilities to find positions they want. Students will reflect on specific skills employers seek from economics graduates and incorporate that knowledge in their own individual job search and career plan.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Stefania Scandizzo"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "1108"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Stefania Scandizzo"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "1108"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        },
+        {
+          "sec_code": "0301",
+          "instructors": [
+            "Ronda Ansted"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "1132"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ECON397",
+      "name": "Honors Thesis",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "General supervision will be provided through assembled meetings with the professor in charge of the course.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Nolan Pope"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "1108"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ECON399",
+      "name": "Independent Study in Economics",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "Permission of instructor must be arranged in advance. Open only to students who have previously earned 6 or more credits in upper division economics courses.",
+      "sections": null
+    },
+    {
+      "code": "ECON407",
+      "name": "Advanced Macroeconomics",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "An in-depth analysis of current issues in macroeconomic theory and policy. Topics covered include: 1. alternative perspectives on macroeconomics including monetarism, new classical equilibrium models, rational expectations, and real business cycle models; 2. long term growth, the slowdown in productivity growth, and concerns about U.S. competitiveness; 3. the effectiveness of macroeconomic policy in an open economy; 4. the effects of finance on the real sector.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Martina Copelman"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "1132"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ECON414",
+      "name": "Game Theory",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Studies the competitive and cooperative behavior that results when several parties find that their individual outcomes are jointly determined. Students will learn how to use game theory to analyze situations of potential conflict. Applications are drawn from economics, business, and political science.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Peter Coughlin"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "1118"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Peter Coughlin"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "1118"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ECON417",
+      "name": "Estimating Policy and Program Impact",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Governments, businesses, non-profits, funders, and other organizations must allocate scarce resources between competing uses. Understanding the causal effect of policies, programs or investments on key outcomes can guide the choices of these decision-makers. Correlations between policies and outcomes or changes in outcomes after new policies are adopted are rarely sufficient for estimating the causal effect, however. This course focuses on econometric strategies for obtaining unbiased causal estimates, including experimental methods, instrumental variables, regression discontinuity, and differences-in-differences. There will be an emphasis on using Stata and on interpreting the results of econometric analysis",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Jessica Goldberg"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "2106"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ECON422",
+      "name": "Econometrics",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Emphasizes the interaction between economic problems and the assumptions employed in statistical theory. Formulation, estimation, and testing of economic models, including single variable and multiple variable regression techniques, theory of identification, and issues relating to inference.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Maureen Cropper"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "1101"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ECON424",
+      "name": "Applied Econometrics",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Provide the knowledge and skills necessary to accomplish and utilize basic applied econometric analysis utilized by many business service providers, government agencies, and nonprofits engaged in policy analysis. Topics include simple and multiple regressions using cross section, time series, and panel data, issues of heteroskedasticity, serial correlation, and multicollinearity, models with binary dependent variable, and program evaluation. Course emphasizes application of knowledge using software packages but still covers essential theoretical background.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Hossein Abbasi"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "2106"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Hossein Abbasi"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "2106"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ECON427",
+      "name": "Experimental Economics",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "An introduction to the methodology of experimental economics and its application to issues such as decision-making under uncertainty, auctions, and public goods. Also an introduction to behavioral economics as a relatively new area of economic research.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Emel Filiz Ozbay"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "1114"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ECON433",
+      "name": "Economics of Big Data",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "The importance of big data in the global economy is rising. Students will explore the definition and characteristics of big data, the impact of big data on individuals, use of big data by firms, entrepreneurs and non-profits, as well as how big data reshapes various public policies.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Ginger Jin"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "2106"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ECON442",
+      "name": "Globalization and Capital Markets",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Uses models of open-economy macroeconomics to explain the causes and consequences of international capital flows. Analysis is made of private consumption, investment, the government sector, current accounts, the labor market, and the money and foreign exchange markets in small open economies. This framework is then used to study examples of how speculative attacks on currencies, sudden reversals of capital inflows, and the effects of the lack of credibility of economic policy affect economic development.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Sebnem Kalemli-Ozcan"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      15,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "2109"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ECON443",
+      "name": "International Trade and Trade Policy in the New Global Economy",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Examines the economics of international economic integration, including the theory of customs unions and free trade areas, the role of GATT and the WTO, changes in individual countries' foreign trade policies during the new era of globalization, the special role of multinational firms in world trade, and recent controversies about the benefits and costs of globalized trade.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Sebastian Galiani"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "2109"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ECON456",
+      "name": "Law and Economics",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Relationship of the exchange process to the system of institutions and rules that society develops to carry out economic transactions. Topics covered include: Property rights; torts, negligence, and liability; contracts and exchanges; criminal control and enforcement; equity and efficiency issues .",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Aaron Finkle"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "0117"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ECON465",
+      "name": "Health Economics",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Analyze markets for health care and related products by understanding the incentives and constraints for various participants, including individuals, family units, doctors, pharmaceutical companies, hospitals, and insurance providers. Analysis will combine both theoretical models and empirical tools.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Sebastian Galiani"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "2102"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ECON470",
+      "name": "Labor Economics: Theory and Evidence",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Analysis of labor markets in theory and the real world. Topics include labor supply, labor demand, human capital, performance incentives, unemployment, discrimination, and immigration. Students will develop an understanding of how formal economic research is used to analyze U.S. labor markets and how research influences policy debates.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Ethan Kaplan"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "2106"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ECON481",
+      "name": "Environmental Economics",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "An exploration of the use of economic incentives for protection of the environment and the determination of appropriate (or efficient) level of environmental quality. Also covers the choice of policy instruments for the attainment of environmental standards.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Roberton Williams"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SYM",
+                  "0200"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ECON486",
+      "name": "Energy and Environmental Economics",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Economic theory and empirical methods are used to study problems of energy, the environment, and the economy. It examines the extraction, production, and use of energy and market institutions and regulatory approaches used to correct market failures. Topics covered include: oil and natural gas markets, management and design of electricity markets, renewable energy, non-market valuation , climate change, and transportation policies.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Joshua Linn"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "1113"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ECON499",
+      "name": "Independent Research in Economics",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "ECON602",
+      "name": "Macroeconomic Analysis II",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Further issues regarding macroeconomic topics. First half emphasis will be placed on dynamic macroeconomic theory as pertaining to monetary issues, policy ineffectiveness and effectiveness. The second half of the course will focus on theories of investment and growth.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "John Haltiwanger",
+            "Sebnem Kalemli-Ozcan"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      11,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "2109"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "2106"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ECON604",
+      "name": "Microeconomic Analysis II",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Analysis of markets and market equilibria; the Arrow-Debreu model of general equilibrium, the two-sector model, welfare theorems, externalities, public goods, markets with incomplete and asymmetric information.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Daniel Vincent",
+            "Erkut Ozbay"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "2109"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      5,
+                      15,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "2106"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ECON613",
+      "name": "Origins and Development of Capitalism",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Institutions and technology shaping pre-capitalist economies: Archaic, Greek and Roman, Feudal, and Mercantile. Rise of the market system, national economies, and capitalism. The nature of industrial society. Imperialism.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "John Wallis"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "1221"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ECON615",
+      "name": "Development Economics I",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Explore both the causes and consequences in development economics from a historical and scientific approach. Presents theoretical models and applied work that test alternative hypotheses.  Explore models of economic growth and institutions, with emphasis on property rights and political regimes as causal factors affecting development. Discuss empirical methods widely used in the field and important related topics including poverty, inequality, education and health.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Sebastian Galiani"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "1114"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ECON624",
+      "name": "Econometrics II",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "A continuation of ECON623. Topics include: Nonlinear models and nonlinear estimation methods (generalized method of moments and maximum likelihood estimation), panel data models, univariate dynamic models, multivariate dynamic models including simultaneous equation models, and non-parametric/semiparametric estimation methods. The course will also provide instructions on the use of a major statistical package such as Stata or TSP.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Ingmar Prucha",
+            "John Chao"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "2111"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      5,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "2111"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ECON637",
+      "name": "Decision Theory",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Decision making is a process in which we select a course of action among available options. This course will explore the various behavioral biases observed in decision making processes by adjusting our normative theories to capture these biases.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Yusuf Masatlioglu"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "1108"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ECON641",
+      "name": "Microeconomic Analysis",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Microeconomic analysis applied to public policy problems with an emphasis on practical examples and how they illustrate microeconomic theories. Policy issues such as pollution, welfare and income distribution, market design, industry regulation, price controls, tax policy and health insurance are practical examples used to illustrate the abstract principles of microeconomics.",
+      "sections": [
+        {
+          "sec_code": "01",
+          "instructors": [
+            "Aaron Finkle"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      6,
+                      45,
+                      "Pm"
+                    ],
+                    [
+                      9,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ECON643",
+      "name": "Empirical Analysis I: Foundations of Empirical Research",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Fundamental aspects of data management and interpretation emphasizing sampling, descriptive statistics, index numbers and construction of aggregated variables. Students will learn probability theory, confidence intervals, hypothesis testing and regression analysis using the EXCEL spreadsheet program and STATA statistical software.",
+      "sections": [
+        {
+          "sec_code": "01",
+          "instructors": [
+            "John Straub"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      6,
+                      45,
+                      "Pm"
+                    ],
+                    [
+                      9,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ECON644",
+      "name": "Empirical Analysis II: Introduction to Economic Models",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "An introduction to econometric methods with applications to public policy analysis.  Primary focus on application and interpretation of multiple regression analysis.",
+      "sections": [
+        {
+          "sec_code": "1",
+          "instructors": [
+            "Hossein Abbasi"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      6,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      9,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "2102"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ECON645",
+      "name": "Empirical Analysis III: Econometric Modeling and Forecasting",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Study of empirical techniques that are particularly relevant to the analysis of microeconomic models. Emphasis is on advanced panel data methods, time series regressions, instrumental variables, limited dependent variables, and sample selection corrections.",
+      "sections": [
+        {
+          "sec_code": "01",
+          "instructors": [
+            "Samuel Rowe"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      6,
+                      45,
+                      "Pm"
+                    ],
+                    [
+                      9,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ECON662",
+      "name": "Theories of Industrial Organization",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Dynamic models are important tools to understand intertemporal individual choices and industry evolution. The course discusses a number of issues estimating and solving dynamic models, complimenting and building on the methods and topics introduced in 625. The course also covers models of endogenous product choice, matching and market design. There will be two main sets of assignments, where students simulate data by solving models, estimate models based on simulated or real data and perform counterfactual analyses. The students will also be expected to submit a research proposal.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Chenyu Yang"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "1221"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ECON670",
+      "name": "Financial Economics",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "The course applies microeconomic theory and applied econometric techniques to the study of financial institutions and markets for financial assets.  Students will learn how economists model and estimate the value of financial assets.  The economic and empirical models are of interest to public policy makers and private wealth managers.  Specific topics can include financial intermediation, the regulation of financial institutions, risk management, portfolio theory, the capital asset pricing model and the efficient markets hypothesis.",
+      "sections": [
+        {
+          "sec_code": "1",
+          "instructors": [
+            "Christian Krestel"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      6,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      9,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "2109"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "01",
+          "instructors": [
+            "Joonkyu Choi"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      6,
+                      45,
+                      "Pm"
+                    ],
+                    [
+                      9,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ECON672",
+      "name": "Program Analysis and Evaluation",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Students study the tools used to evaluate the effectiveness of public policies.  All evaluations have weaknesses, and some have more weaknesses than others.  You will learn how to distinguish high from low quality evaluations.  We will discuss the basic economics and econometrics of program evaluation, focusing on the application of methods used for causal inference and cost-benefit analyses in public policy contexts.  We will examine published evaluation research with the intent of showing how the research does or does not lead to clear conclusions regarding program performance.",
+      "sections": [
+        {
+          "sec_code": "1",
+          "instructors": [
+            "Ye Zhang"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      6,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      9,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "2109"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ECON673",
+      "name": "Information, Game Theory and Market Design",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "A study of the strategic decision-making and the theory and practice of market design.  Focus is on the design of organized market and incentives created by market rules.  Topics include online auction markets, government auctions procurement auctions and matching markets. The analysis includes documenting the rules of real-world markets, game theoretic analysis, empirical analysis, and experimental work.",
+      "sections": [
+        {
+          "sec_code": "1",
+          "instructors": [
+            "David Ovadia"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      6,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      9,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "2109"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "01",
+          "instructors": [
+            "Justin Grana"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      6,
+                      45,
+                      "Pm"
+                    ],
+                    [
+                      9,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ECON676",
+      "name": "Economic Development",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Analysis of economic development.  The course will focus on the consequences of poverty and poor institutions for the behavior and welfare of individuals, households, firms and the aggregate economy in developing countries.  Theoretical models and empirical evidence will be used to understand the intended and unintended consequences of policies designed to enhance economic development.",
+      "sections": [
+        {
+          "sec_code": "01",
+          "instructors": [
+            "Amanda Kerr"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      6,
+                      45,
+                      "Pm"
+                    ],
+                    [
+                      9,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ECON677",
+      "name": "International Trade and Applications",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "A mix of theory and empirical work. Students will analyze the causes and consequences of international trade. The course will cover a set of conceptual tools that are useful for understanding \"globalization\" and the usage of these tools to address interesting and important questions about how countries, firms, and workers respond to international trade.",
+      "sections": [
+        {
+          "sec_code": "1",
+          "instructors": [
+            "Steven Payson"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      6,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      9,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "2102"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ECON683",
+      "name": "International Macroeconomics and Finance",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Economic analysis of international macroeconomic issues and policy. Topics can include the study of exchange rates, balance of payments, international financial markets, international business cycles, contagion, and the roles played by international economic institutions.",
+      "sections": [
+        {
+          "sec_code": "01",
+          "instructors": [
+            "Mahsa Agha Gholizadeh"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      6,
+                      45,
+                      "Pm"
+                    ],
+                    [
+                      9,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ECON684",
+      "name": "Applied Time Series Analysis and Forecasting",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "This course builds on the brief introduction to time series econometrics offered in ECON 645.  Students will learn the theory of stationary processes and how it applies to econometric techniques for estimation and forecasting based on time series data.  The techniques will be applied in macroeconomic, financial and business applications.",
+      "sections": [
+        {
+          "sec_code": "1",
+          "instructors": [
+            "Mark Bognanni"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      6,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      9,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "2109"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ECON687",
+      "name": "Economics Applications of R Programming",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Builds on the data analysis and econometric skills learned in the Empirical analysis sequence of ECON 643, 644, and 645. The STATA skills acquired in that sequence, such as basic data manipulation and econometric estimation, will be extended to the R programming language. The fundamentals of more advanced scientific programming--objects, data structures, loops, functions, simulation, parallel computing--will be introduced with applications to economics and the social sciences. Additional emphasis is placed on good coding practices and tools for version control and collaboration such as Git and R Markdown.",
+      "sections": [
+        {
+          "sec_code": "01",
+          "instructors": [
+            "Christian Krestel"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      6,
+                      45,
+                      "Pm"
+                    ],
+                    [
+                      9,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ECON702",
+      "name": "Advanced Macroeconomics II",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Recent advances in the fast-growing subfield of behavioral macroeconomics, with applications to business cycles and monetary economics. We will discuss surveys and controlled laboratory experiments that test the full information rational expectations (FIRE) hypothesis, and characterize deviations from FIRE in individual beliefs and actions, and we will study models that relax both the FI and the RE assumptions in general equilibrium settings, to bridge the gap between individual biases and constraints on the one hand and aggregate consequences and policy implications on the other.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "L Stevens"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      2,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "1108"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ECON704",
+      "name": "Advanced Microeconomics II",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "This is the second half of a two-semester sequence in Advanced Microeconomics, intended for second-year Ph.D. students. The course material varies from year-to-year, but currently it focuses on auction theory, matching theory, and the relationship between matching and auction theory. Other topics that are treated in some years include: sequential bargaining under incomplete information; and equilibrium refinements.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Lawrence Ausubel"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "1201"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ECON708",
+      "name": "Advanced Topics in Applied and Theoretical Microeconomics",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Sergio Urzua"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "2106"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ECON709",
+      "name": "Advanced Topics in Applied and Theoretical Macroeconomics",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "John Shea"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "4103"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ECON722",
+      "name": "Econometrics IV",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Orientated towards micro-econometric methods. Topics covered will be selected from the following: Further discussion of topics covered in ECON624, binary and multinomial response models, semiparametric and non-parametric estimation, machine learning algorithms, neural nets, and applications of ML to program evaluation and treatment effects methods. Introduces students to Python programming and Python ML toolkits Scikit and PyTorch. Structural econometrics, the identification problem, stratified and clustered samples, spatial and social network models, dynamic panel data models, weak instruments, non-parametric and semi-parametric estimation methods, boot strap and Jack Knife methods, pre-test estimators.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Guido Kuersteiner",
+            "Ingmar Prucha"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "1221"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ECON743",
+      "name": "Topics in International Finance",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Puzzles in international finance; portfolio balance, current account dynamics, exchange rate behavior; capital market imperfections; balance of payments crises.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Sebnem Kalemli-Ozcan"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "1114"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ECON747",
+      "name": "The Macreconomics of Imperfect Capital Markets",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "A field course designed for students who have completed introductory graduate course work in macroeconomics. The course is built around three main ideas. First, its objective is to understand the role of financial markets for fluctuations in the macroeconomy. More specifically, starting from a complete markets benchmark, we study canonical types of credit market frictions that give rise to macroeconomic effects. Second, the course aims to enhance the students' toolkit to carry out state-of-the-art research in macroeconomics in general. It provides plenty of practical exercise to take models (usually DSGE models with financial frictions) to the computer. Third, alongside the methodological content, we revisit empirical facts on the regularities of financial variables, the 2008-09 global financial crisis and the Covid-19 recession.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Thomas Drechsel"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      2,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "1108"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ECON752",
+      "name": "Public Economics II",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Students will study a set of issues related to the government's role in the economy, focusing on government redistribution and social insurance. Major topics covered include the optimal design of government redistribution programs; theoretical and empirical analyses of major U.S. government transfer programs; the optimal design of social insurance programs; and theoretical and empirical analyses of major U.S. social  insurance programs.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Melissa Kearney"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "1220"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ECON756",
+      "name": "Empirical Political Economics",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "An introduction to empirical political economy. Determinants of individual political behavior, the impact of political institutions on economic outcomes, and economic determinants of political institutions will all be analyzed. Modern applied econometric techniques will also be covered.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Ethan Kaplan"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "1221"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ECON772",
+      "name": "Population Economics",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Explore topics in labor and public economics. Study the empirical evidence and the applied methodology used within labor and public economics. Discuss important topics in labor and public economics including immigration, education, discrimination, crime, and the role of family background. Provide instruction on how to perform empirical labor and public economic research by familiarizing students with available data sources, current research methodology, and practice with statistical packages such as Stata.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Nolan Pope"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "1108"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ECON781",
+      "name": "Valuing Environmental Benefits",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "The theory and practice of valuing environmental benefits, including the health, recreation and aesthetic benefits associated with controlling air and water pollution, and the damages associated with climate change. Estimation of the benefits of energy efficiency improvements-including the benefits of fuel economy standards.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Maureen Cropper"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "1108"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ECON799",
+      "name": "Master's Thesis Research",
+      "credits": {
+        "Range": [
+          1,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "ECON808",
+      "name": "Workshop on Macroeconomics, International Macroeconomics and International Finance",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": null,
+      "description": "ECON graduate students only.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Boragan Aruoba"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "4103"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ECON828",
+      "name": "Workshop in Econometrics",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "John Chao"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "4103"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ECON848",
+      "name": "Workshop in International Trade, Institutional Economics and Political Economy",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": null,
+      "description": "ECON graduate students only.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Peter Murrell"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "0111"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ECON868",
+      "name": "Workshop in Industrial Organization, Microeconomic Theory and Behavioral and Experimental Economics",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": null,
+      "description": "ECON graduate students only.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Yusuf Masatlioglu"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "4103"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ECON878",
+      "name": "Workshop in Development, Labor and Public Economics",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": null,
+      "description": "ECON graduate students only.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Jessica Goldberg"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "4103"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ECON898",
+      "name": "Pre-Candidacy Research",
+      "credits": {
+        "Range": [
+          1,
+          8
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "ECON899",
+      "name": "Doctoral Dissertation Research",
+      "credits": {
+        "Amount": 6
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    }
+  ]
+}

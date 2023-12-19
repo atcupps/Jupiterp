@@ -1,0 +1,161 @@
+{
+  "name": "ENSE",
+  "courses": [
+    {
+      "code": "ENSE622",
+      "name": "System Trade-off Analysis, Modeling, and Simulation",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "This course continues the model-based approach to systems engineering by introducing students to a variety of mathematical modeling and simulation techniques used to perform system performance, optimization, and trade-off analyses. Topics include: linear and integer programming; state machine models of finite state machines; development of simple intelligent agents; modeling Markov processes; queueing theory; multi-objective trade-off analyses; decision trees; stochastic (Monte Carlo) simulation, linear regression, some predictive analytic techniques; and an introduction to control theory. Mathematical models and simulations are developed and executed using MATLAB. The course includes a class project in which students solve a problem of interest to them using one or more of techniques addressed in class.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Scott Simpkins"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      9,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMP",
+                  "2222"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "01",
+          "instructors": [
+            "Scott Simpkins"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "M": [
+                  [
+                    7,
+                    0,
+                    "Pm"
+                  ],
+                  [
+                    9,
+                    40,
+                    "Pm"
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENSE624",
+      "name": "Human Factors in Systems Engineering",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "This course covers the general principles of human factors, or ergonomics as it is sometimes called. Human Factors (HF) is an interdisciplinary approach for dealing with issues related to people in systems. It focuses on consideration of the characteristics of human beings in the design of systems and devices of all kinds. It is concerned with the assignment of appropriate functions for humans and machines, whether the people serve as operators, maintainers, or users of the system or device. The goal of HF is to achieve compatibility in the design of interactive systems of people, machines, and environments to ensure their effectiveness, safety and ease of use.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Robert Beaton"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      9,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMP",
+                  "3201"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "01",
+          "instructors": [
+            "Robert Beaton"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "Th": [
+                  [
+                    7,
+                    0,
+                    "Pm"
+                  ],
+                  [
+                    9,
+                    40,
+                    "Pm"
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENSE699",
+      "name": "Directed Study in Systems Engineering",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "ENSE799",
+      "name": "Systems Engineering Thesis; Masters Thesis Research",
+      "credits": {
+        "Range": [
+          1,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    }
+  ]
+}

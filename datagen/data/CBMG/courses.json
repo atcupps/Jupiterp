@@ -1,0 +1,529 @@
+{
+  "name": "CBMG",
+  "courses": [
+    {
+      "code": "CBMG613",
+      "name": "Microbiomes in Health, Disease, and Application",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": null,
+      "description": "Investigation of microbiomes in human and animal health, disease, and industrial applications, with an emphasis on underlying functional mechanisms. No prior programming experience required.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Brantley Hall"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "BRB",
+                  "3101"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "CBMG688B",
+      "name": "Special Topics in Cell Biology and Molecular Genetics; Responsible Conduct of Research for Advanced Scholars",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "Restriction: permission of instructor.<br><br> Responsible Conduct of Research, for individuals who have already completed at least one graduate course in RCR. Satisfies 4 year refresher requirement.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Charles Delwiche"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "BRB",
+                  "3101"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "CBMG688G",
+      "name": "Special Topics in Cell Biology and Molecular Genetics; Computational Structural Biology",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Brian Pierce"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "MCB",
+                  "2119"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "CBMG688I",
+      "name": "Special Topics in Cell Biology and Molecular Genetics; Genetic Analysis",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": null,
+      "description": "<a href=\"http://www.chemlife.umd.edu/classroom/CBMG688I/permissions.html\"> Click here for more course information.</a>",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Stephen Mount"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "MCB",
+                  "2119"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "CBMG688L",
+      "name": "Special Topics in Cell Biology and Molecular Genetics; Microbial Pathogenesis",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Kevin McIver",
+            "Volker Briken"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "MCB",
+                  "1123"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "CBMG688U",
+      "name": "Special Topics in Cell Biology and Molecular Genetics; Rigor and Reproducibility in Research",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "Experimental design, vouchering and validation, perils and pitfalls in statistical analysis, data management and archiving, and effective publication. Qualifies for BISI professional development requirement.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Charles Delwiche"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "BRB",
+                  "3101"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "CBMG699",
+      "name": "Special Problems in Cell Biology and Molecular Genetics",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "CBMG699A",
+      "name": "Special Problems in Cell Biology and Molecular Genetics; Diversity, Equity, and Inclusion in the Biological Sciences",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Charles Delwiche"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "BRB",
+                  "3101"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "CBMG699C",
+      "name": "Special Problems in Cell Biology and Molecular Genetics; Cell Biology",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Sougata Roy"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1140"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "CBMG699D",
+      "name": "Special Problems in Cell Biology and Molecular Genetics; Molecular Genetics: Bioinformatics and Computation Biology",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Stephen Mount"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "BRB",
+                  "1103"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "CBMG699W",
+      "name": "Special Problems in Cell Biology and Molecular Genetics; Immunology",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "David Mosser",
+            "Kenneth Frauwirth"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "1202"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EGR",
+                  "2154"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "CBMG699X",
+      "name": "Special Problems in Cell Biology and Molecular Genetics; Host Pathogen Interactions",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "David Mosser"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "BRB",
+                  "3101"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "CBMG799",
+      "name": "Masters Thesis Research",
+      "credits": {
+        "Range": [
+          1,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "CBMG898",
+      "name": "Pre-Candidacy Research",
+      "credits": {
+        "Range": [
+          1,
+          8
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "CBMG899",
+      "name": "Doctoral Dissertation Research",
+      "credits": {
+        "Amount": 6
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    }
+  ]
+}

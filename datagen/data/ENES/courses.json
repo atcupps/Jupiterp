@@ -1,0 +1,3586 @@
+{
+  "name": "ENES",
+  "courses": [
+    {
+      "code": "ENES100",
+      "name": "Introduction to Engineering Design",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSSP"
+      ],
+      "description": "Students work as teams to design and build a product using computer software for word-processing, spreadsheet, CAD, and communication skills.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Joshua Cocker"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMP",
+                  "1120"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Brian Danielak"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMP",
+                  "1116"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "John Cumings"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMP",
+                  "1120"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0202",
+          "instructors": [
+            "Michael Galczynski"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMP",
+                  "1116"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0301",
+          "instructors": [
+            "David Kriesberg"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMP",
+                  "1120"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0302",
+          "instructors": [
+            "Michael Galczynski"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMP",
+                  "1116"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0401",
+          "instructors": [
+            "Aris Cleanthous"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMP",
+                  "1120"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0402",
+          "instructors": [
+            "Brian Danielak"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMP",
+                  "1116"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0501",
+          "instructors": [
+            "Catherine Hamel"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMP",
+                  "1120"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0601",
+          "instructors": [
+            "Danielle Barker"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMP",
+                  "1120"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0602",
+          "instructors": [
+            "Michael Galczynski"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMP",
+                  "1116"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0701",
+          "instructors": [
+            "Joshua Cocker"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMP",
+                  "1120"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENES102",
+      "name": "Mechanics I",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "The equilibrium of stationary bodies under the influence of various kinds of forces. Forces, moments, couples, equilibrium, trusses, frames and machines, centroids, moment of inertia, beams, friction, stress/strain, material properties. Vector and scalar methods are used to solve problems.",
+      "sections": [
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Thomas Beigel"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KEB",
+                  "1200"
+                ]
+              }
+            },
+            "OnlineAsync",
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1130"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0301",
+          "instructors": [
+            "Mary Bowden"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1130"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "CSI",
+                  "1121"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0401",
+          "instructors": [
+            "Robert Bonenberger"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KEB",
+                  "1200"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KEB",
+                  "1200"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0501",
+          "instructors": [
+            "Kevin Calabro"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PHY",
+                  "4221"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "0215"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0701",
+          "instructors": [
+            "Catherine Hamel"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PHY",
+                  "4221"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KEB",
+                  "1200"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0801",
+          "instructors": [
+            "Robert Bonenberger"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PHY",
+                  "4221"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EGR",
+                  "0108"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENES108",
+      "name": "Achieving College Success: First Year Transition",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "Restricted to LSAMP Bridge students only.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Migdalia Maldonado"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      5,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EGR",
+                  "1102"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Migdalia Maldonado"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      6,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EGR",
+                  "3102"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENES114",
+      "name": "Virtus Seminar II",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "Focus on personal and professional development with engineering with a strong emphasis on career development.  Learn to employ strategies and skills for academic and professional success.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Liza Lebrun"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "1114"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Liza Lebrun"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENES116",
+      "name": "FLEXUS Living and Learning Community Seminar II",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "The seminar focuses on personal and professional development by enhancing technical ability, understanding educational options through minors and student projects in engineering, identifying and employing strategies and skills for academic and professional success, and developing career commitment through networking and mentoring. Students develop professional portfolios in preparation for a future internship or job.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Veronica Perrigan"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "CSI",
+                  "2107"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Veronica Perrigan"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENES138",
+      "name": "Equity and Inclusion in Engineering Design",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": [
+        "DVCC"
+      ],
+      "description": "Restriction: Must be a student in the A. James Clark School of Engineering or in the Global Engineering Leadership minor. Credit only granted for: ENES338K, CHSE338K, or ENES138. Formerly: ENES338K.<br><br> Through deliberate reflections on the past and current patterns of exclusion and inclusion within engineering, you will develop skills for engaging in equitable and inclusive processes and practices that can transform your collaborations and approach to engineering and the design process. This course engages students, from multiple social identity groups, in facilitated dialogue that focus on the tensions, similarities, and differences of experience that exist within, between, and/or across groups.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Brian Dillehay",
+            "Adam Klager",
+            "Aralia Ramirez"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Brian Dillehay",
+            "Adam Klager",
+            "Aralia Ramirez"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENES140",
+      "name": "Discovering New Ventures",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSSP"
+      ],
+      "description": "Students explore dynamic company startup topics by working in teams to design a new venture. This multi-disciplinary course helps students to learn the basic business, strategy, and leadership skills needed to launch new ventures. Topics include learning how to assess the feasibility of a startup venture, as well as how to apply best practices for planning, launching, and managing new companies. Students discuss a wide range of issues of importance and concern to entrepreneurs and learn to recognize opportunities, assess the skills and talents of successful entrepreneurs, and learn models that help them navigate uncertainty.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "James Green"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "James Green"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        },
+        {
+          "sec_code": "0301",
+          "instructors": [
+            "James Green"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        },
+        {
+          "sec_code": "0401",
+          "instructors": [
+            "James Green"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        },
+        {
+          "sec_code": "0501",
+          "instructors": [
+            "James Green"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        },
+        {
+          "sec_code": "0601",
+          "instructors": [
+            "James Green"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        },
+        {
+          "sec_code": "0701",
+          "instructors": [
+            "James Green"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        },
+        {
+          "sec_code": "0801",
+          "instructors": [
+            "James Green"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        },
+        {
+          "sec_code": "0901",
+          "instructors": [
+            "James Green"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        },
+        {
+          "sec_code": "1001",
+          "instructors": [
+            "James Green"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENES152",
+      "name": "Transfer LEAD Seminar II",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "This is a continuation of ENES150: Transfer LEAD Seminar I. Transfer LEAD is a program for Engineering transfer students with four main outcomes: Learn, Educate, Adapt, Direct. In this course, students will apply the concepts they learned in ENES150 in a practical setting. Students will focus on engagement, communication, and peer education.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Shannon Buenaflor"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENES190H",
+      "name": "Introduction to Design and Quality",
+      "credits": {
+        "Amount": 4
+      },
+      "gen_eds": [
+        "DSSP"
+      ],
+      "description": "QUEST students learn and apply design practices to design new products and services. Working in multidisciplinary teams, students use quality and process improvement methods to identify, analyze, and recommend solutions to real-world problems.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Benjamin Huffman",
+            "Joshua Cocker"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "2212"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      6,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "2101"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENES192",
+      "name": "Engineering For Us All",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSSP"
+      ],
+      "description": "Students are challenged to uncover hidden valuable connections among a variety of disciplines, while creatively seeking and solving problems as a team. Students learn and practice skills for how groups function and identify innovation while addressing the tensions between our inherent drives to seek and solve, to share, and to sell.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Kevin Calabro"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENES200",
+      "name": "Technology and Consequences: Engineering, Ethics and Humanity",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHU",
+        "SCIS"
+      ],
+      "description": "What makes a technology socially responsible? At UMD, the Fearless Ideas campaign asks us to aim our enthusiasm for technology at big real problems. At the same time, we are coming to appreciate the increasingly complex nature of technological systems as they become integrated into all forms of infrastructure, we realize they may be unpredictable, interdependent on social and biological systems, and have unintended consequences. In this midst of this complexity, people make decisions with far reaching impacts. How then do we follow our passion for technology and innovation but also stay skeptical in a way that allows us to consider the potential and shortcomings of technology? Designed for both engineering and non-engineering students wishing to explore and assess the impact of engineering technology on society and the role of society in generating that technology.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Christine Alexander"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "CCC",
+                  "1205"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      15,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "1106"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Christine Alexander"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "CCC",
+                  "1205"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      10,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "1106"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Christine Alexander"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "CCC",
+                  "1205"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EGR",
+                  "3102"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0104",
+          "instructors": [
+            "Christine Alexander"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "CCC",
+                  "1205"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      1,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "CHE",
+                  "2116"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0105",
+          "instructors": [
+            "Christine Alexander"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "CCC",
+                  "1205"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EGR",
+                  "3111"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENES210",
+      "name": "Entrepreneurial Opportunity Analysis and Decision-Making in 21st Century Technology Ventures",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSSP",
+        "SCIS"
+      ],
+      "description": "This multi-disciplinary course helps students learn the principles of entrepreneurial opportunity analysis and decision-making in an increasingly dynamic and technically-inclined society. Emphasis is placed on how aspiring technology entrepreneurs can develop their entrepreneurial perspectives to develop winning entrepreneurial plans for their future ventures.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Michael Pratt",
+            "James Green"
+          ],
+          "class_meetings": [
+            "OnlineAsync",
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "2204"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Michael Pratt",
+            "James Green"
+          ],
+          "class_meetings": [
+            "OnlineAsync",
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "2204"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "James Green",
+            "Michael Pratt"
+          ],
+          "class_meetings": [
+            "OnlineAsync",
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "2204"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0104",
+          "instructors": [
+            "James Green",
+            "Michael Pratt"
+          ],
+          "class_meetings": [
+            "OnlineAsync",
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "HJP",
+                  "0226"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0105",
+          "instructors": [
+            "James Green"
+          ],
+          "class_meetings": [
+            "OnlineAsync",
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "2204"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0106",
+          "instructors": [
+            "James Green"
+          ],
+          "class_meetings": [
+            "OnlineAsync",
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "2204"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0107",
+          "instructors": [
+            "James Green"
+          ],
+          "class_meetings": [
+            "OnlineAsync",
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "2204"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0108",
+          "instructors": [
+            "James Green"
+          ],
+          "class_meetings": [
+            "OnlineAsync",
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "HJP",
+                  "0226"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENES214",
+      "name": "Virtus Seminar IV",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "Students continue to develop their leadership and mentoring skills, participate in networking opportunities and explore their interest in special engineering topics.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Paige Smith",
+            "Connor Harrigan",
+            "Samantha Sabihi"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EGR",
+                  "1110"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENES216",
+      "name": "FLEXUS Living and Learning Community Seminar IV",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "The seminar focuses on gender diversity and its cross-sections with culture. Students continue to enhance their leadership and mentoring skills, participate in networking opportunities with women in leadership roles and careers in engineering, and engage in opportunities for outreach and service-learning. Students will also complete a culminating semester project.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Paige Smith",
+            "Connor Harrigan",
+            "Samantha Sabihi"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EGR",
+                  "2154"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENES220",
+      "name": "Mechanics II",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Stress and deformation of solids-rods, beams, shafts, columns, tanks, and other structural, machine and vehicle members. Topics include stress transformation using Mohr's circle; shear and moment diagrams; derivation of elastic curves; and Euler's buckling formula. Design problems related to this material are given in lab.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Bongtae Han"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "1113"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EGR",
+                  "1108"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Thomas Beigel"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PHY",
+                  "4221"
+                ]
+              }
+            },
+            "OnlineAsync",
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "HBK",
+                  "0115"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0105",
+          "instructors": [
+            "Teng Li"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KEB",
+                  "1200"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PHY",
+                  "1201"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0106",
+          "instructors": [
+            "Thomas Beigel"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EGR",
+                  "0108"
+                ]
+              }
+            },
+            "OnlineAsync",
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "CCC",
+                  "1111"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENES221",
+      "name": "Dynamics",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Systems of heavy particles and rigid bodies at rest and in motion. Force-acceleration, work-energy and impulse-momentum relationships. Motion of one body relative to another in a plane and in space.",
+      "sections": [
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Patrick McAvoy"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EGR",
+                  "0108"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EGR",
+                  "1108"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0104",
+          "instructors": [
+            "Patrick McAvoy"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PHY",
+                  "1201"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PHY",
+                  "1201"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENES232",
+      "name": "Thermodynamics",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Introduction to thermodynamics. Thermodynamic properties of matter. First and second laws of thermodynamics, cycles, reactions, and mixtures.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Catherine Hamel"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EGR",
+                  "0108"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SPH",
+                  "1303"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      8,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Jarred Young"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PHY",
+                  "1201"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "CCC",
+                  "1205"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      8,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Paul Anderson"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PHY",
+                  "1204"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "CSI",
+                  "1122"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      8,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0301",
+          "instructors": [
+            "Jarred Young"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1140"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "CCC",
+                  "1205"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      8,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0302",
+          "instructors": [
+            "Christopher Cadou"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "1117"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PHY",
+                  "4221"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      8,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0701",
+          "instructors": [
+            "Ray Sedwick"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "CHE",
+                  "2118"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "CCC",
+                  "1100"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      8,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENES240",
+      "name": "Ethical, Policy and Social Implications of Science and Technology",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSSP",
+        "SCIS"
+      ],
+      "description": "Asks students to think about how society should manage complexity, transformation, and uncertainty with an eye on developing a broader sense of ethics and social responsibility. Introduces analytical frameworks, concepts, and data collection techniques that interdisciplinary scholars use to map relationships among science, technology and society and generate important questions about the future of society.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Timothy Reedy"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "HJP",
+                  "2242"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENES305",
+      "name": "RISE Leadership Seminar",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "This is the second semester of a two semester sequence taken by RISE students in their final semester in the program. The purpose of ENES 305 is for RISE students to learn about leadership, acquire leadership skills, and understand how to integrate leadership theories and concepts in engineering practice. There will be a mix of formal lectures by course faculty and lectures by distinguished speakers who can provide their own experience of what leadership means and how it is acquired.  Students will explore their own leadership philosophy and leadership capacities in the context of group practice. Students will make meaning of general leadership theories and concepts and understand how to apply them to engineering industry.  Students will also gain understanding of leadership through the stories shared by distinguished speakers with industrial, governmental and academic experience.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "William Fourney",
+            "Ken Kiger",
+            "Darren Pierre"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMP",
+                  "1202"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENES317",
+      "name": "Introduction to Leadership in Engineering, Science, and Technology",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSSP"
+      ],
+      "description": "Develop a comprehensive overview and introduction to leadership and organizational development. Students will reflect on their own leadership experiences, develop a strong foundational knowledge of leadership theory, and advance their capacities in effectively leading teams. Students will connect leadership theory to practice by engaging in case study analysis and critique leadership practices enacted within engineering and technology settings. Students will complete self-assessments to better understand their own leadership strengths and refine their approaches to leadership by incorporating theories covered in this course.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Darren Pierre"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "IRB",
+                  "1207"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENES390H",
+      "name": "Designing Innovative Systems",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "QUEST students develop an understanding of complex systems that incorporate elements of business and technical design and analyze how these systems evolve over time and may be shaped by technology disruptions, internal decisions, and external forces. Students apply these concepts to real-world complex systems in a team environment.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "David Ashley"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "1310"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENES397",
+      "name": "Mentoring Multidisciplinary Teams",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "QUEST students practice essential skills for mentoring and coaching multidisciplinary teams. These include effective communications, facilitation, conflict resolution, and the ability to motivate. Students will practice these skills as mentors for student teams from BMGT/ENES 190H. In the process, they will strengthen their knowledge of design and quality techniques.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Emily Marks"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "2101"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENES401",
+      "name": "Entrepreneurial Design Realization",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "The vision for this course, and an aspect that makes it unique, is to expose students to the opportunities and challenges of bringing a product design to reality (entrepreneurship).  The emphasis is on environmentally and socially sustainable projects.  The end-product of this course will be full-scale implementations or complete design \"packages\" that can be taken to potential stakeholders.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "David Bigio"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Vincent Nguyen"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "WF": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EGL",
+                  "0105"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENES440",
+      "name": "Science, Technology, Ethics, and Policy: Minor Program Capstone",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Capstone research seminar for students in the Science, Technology, Ethics, and Policy Minor  program.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "M Sauter"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "B0322"
+                ]
+              }
+            },
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Timothy Reedy"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "CBD",
+                  "1140"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENES461",
+      "name": "Advanced Entrepreneurial Opportunity Analysis in Technology Ventures",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Explores the factors that influence entrepreneurial opportunity analysis in technology-based ventures. Uses a cognitive theoretical framework to examine the integration of motivation, emotions and information processing modes to make complex entrepreneurial decisions in technology venture environments.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "James Green"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "James Green"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENES466",
+      "name": "Leading and Financing the Technology Venture",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Focuses on the challenges of leading and financing new technology ventures. Leadership topics include team selection and formation, aligning rewards with relative contributions of team members, and how early decisions can enable or prevent founders from achieving results that align with their individual motivations for becoming an entrepreneur. Essential tools and methods for building a strong financial foundation for a new technology venture are examined. Includes important accounting principles as well as methods for keeping financial control of the technology venture. Insights are shared on navigating the multitude of financial barriers that may block your entrepreneurial success, as well as how to grow the technology venture from concept through launch.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Michael Pratt"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENES472",
+      "name": "Leading Global Teams and Engaging Across Cultures in Business, Engineering, and Technology",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DVCC"
+      ],
+      "description": "Develop global leadership capacities and an understanding of the cultural aspects pertaining to industry and international business. In a globalized world, the ability to work, lead and communicate in culturally diverse settings has become a core component to leadership. Through real-world examples, research, and simulations, students will increase their self-awareness and understanding of culture and how culture influences attitudes, behaviors, and practices at the individual, organizational, or societal levels. Students will develop the skills necessary to navigate, negotiate, and lead cross-cultural engagements and teams. The course content is relevant and applicable to anyone interested in developing cross-cultural leadership competencies and cultivating a global mindset.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Darren Pierre"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "IRB",
+                  "1207"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENES475",
+      "name": "Leadership in Times of Crisis: Pandemics, Disasters, and Humanitarian Crises",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Students are provided with immersive opportunities to learn from industry professionals about crisis prevention and response by examining leadership throughout the crisis cycle: from identification, prevention, and preparation, to response, recovery, and rebuilding. The course brings together the study and practice of leadership with promising practices in disaster preparedness and data informed decision-making. This course will examine how leadership has been enacted to help local, national, and global communities navigate through pandemics, disasters, and other humanitarian crises. Students will develop capacities for informed leadership in times of crisis and develop an understanding for applying these skills in a variety of settings.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Lena Crain"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "Th": [
+                  [
+                    5,
+                    0,
+                    "Pm"
+                  ],
+                  [
+                    7,
+                    30,
+                    "Pm"
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENES481",
+      "name": "Engineering Honors Seminar II",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "Introduction to engineering creativity and innovation in engineering. Application of methods of creativity to topics in communication, conducting research, and leadership.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Wesley Lawson"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "MTH",
+                  "0302"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Wesley Lawson"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EGR",
+                  "2116"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENES489A",
+      "name": "Special Topics in Engineering; Applied Quantitative Analysis",
+      "credits": {
+        "Range": [
+          3,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "Restricted to QUEST students. Cross-listed with ENES498A. Credit granted   for BMGT438A or ENES489A.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Maria Bardossy"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "1310"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENES489P",
+      "name": "Special Topics in Engineering; Hands-on Systems Engineering Projects",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "This hands-on design projects course will expose senior-level undergraduates and graduate students from all areas of engineering to to exciting career opportunities in the systems engineering field. Students will be introduced to the technical aspects of systems engineering practice through team-based project development and a systematic step-by-step procedure for product development that includes defining operations concepts, requirements gathering and organization, synthesis of models of system behavior and system structure, functional allocationto create system design alternatives, formal assessment of design alternatives through tradeoff analysis, and established approaches to testing and validation/verification. The students will be introduced to modern methods in Model-Based Systems Engineering, and industrial strength tools and environments for complex systems synthesis. Team projects may address problems from a wide variety of disciplines or cross-disciplines.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "John Baras"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EGR",
+                  "0108"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "AVW",
+                  "2446"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "John Baras"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EGR",
+                  "0108"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "AVW",
+                  "2446"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENES490H",
+      "name": "QUEST Capstone Professional Practicum",
+      "credits": {
+        "Amount": 4
+      },
+      "gen_eds": [
+        "DSSP"
+      ],
+      "description": "The capstone course for the QUEST Honors Program provides students with an opportunity to learn in multidisciplinary teams of business, engineering, and science students in a real-world setting. Companies engage teams of QUEST students with real organizational challenges and dedicate resources to help students address these problems. Student teams must enhance their skills in quality management, process improvement, and systems design and will apply these to add value to a client. In the process, students will improve their teamwork skills.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "David Ashley",
+            "Maria Bardossy"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "1310"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENES601",
+      "name": "Future Faculty Program Seminar I",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "Introduction to and development of skills necessary to obtain and succeed in a university faculty position. Emphasis on technical writing and effective presentations. Discussion of research diversification, networking, ethics and professionalism.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Johan Larsson"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "MTH",
+                  "0403"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENES603",
+      "name": "Future Faculty Program Seminar III",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "Developing a successful faculty research program. Establishing and maintaining a research group. Finding funding opportunities and writing grant proposals. Mentoring graduate students. Faculty position application process. Preparing research and teaching statements.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Thomas Murphy"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "MTH",
+                  "0401"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENES604",
+      "name": "Future Faculty Program Teaching Practicum",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "Graduate students will co-teach a course under supervision of a faculty mentor. Graudate students will be involved in all aspects of the course including development of syllabus, presenting lectures, writing and grading examiniations, and evaluating the students in the course.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Min Wu"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENES660",
+      "name": "Fundamentals of Product Management",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Provides a comprehensive survey of product management and its growing role in producing technology-driven products that customers love. Guides students through the product lifecycle and market lifecycle, diving into the competencies needed at each stage. Topics include startup and corporate strategy, product strategy, vision setting and evangelism, development lifecycle approaches based on customer involvement and product stage, the various types of innovation at each stage of the lifecycle, and how the product manager leads the team through it all. Learn the basics of customer discovery, product discovery, product delivery, and the core-context model for managing products through maturity.",
+      "sections": [
+        {
+          "sec_code": "1",
+          "instructors": [
+            "Damien Peters"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENES663",
+      "name": "Strategies for Managing Innovation",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Emphasizes how innovative leaders can use strategic management of innovation and technology to enhance firm performance. It helps students to understand the process of technological change; the ways that firms come up with innovations; the strategies that firms use to benefit from innovation; and the process of formulating technology strategy. It provides frameworks for analyzing key aspects of these industries and teaches students how to apply these frameworks.",
+      "sections": [
+        {
+          "sec_code": "1",
+          "instructors": [
+            "Sharon Flank"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENES665",
+      "name": "Innovative Thinking",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Introduces students to new and powerful tools to boost their creative problem solving skills. Participants re-discover their communication and teaming skills. Students unlock their creativity potential, and explore win-win approaches to define and solve problems of different kinds. Students are also introduced to topics related to intellectual property.",
+      "sections": [
+        {
+          "sec_code": "1",
+          "instructors": [
+            "Frankie Abralind"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENES666",
+      "name": "Creative Design, Prototyping, and Testing",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Transition from creative, innovative, design thinking methods to prototyping and concept testing of products and services. Learn how to translate ideas into marketable offerings to create real value for customers and the new venture. Emphasis is placed on an integrated and interdisciplinary approach to engineering design, concurrent engineering, design for manufacturing, industrial design, and the business of new product development. Topics include design methods, modeling and simulation, material and manufacturing process selection, platform and modular design, mass customization, planning and scheduling, and business issues, teamwork, group dynamics, creativity, and innovation.",
+      "sections": [
+        {
+          "sec_code": "1",
+          "instructors": [
+            "James Green"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENES673",
+      "name": "Financing the Product Life Cycle",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Provides the essential tools and skills to build a strong financial foundation for designing, developing, and managing new products within established companies and organizations. Examines accounting principles as well as methods for managing the financials of the product. Discusses navigating the multitude of financial barriers that may block success, as well as how to raise the right amount of capital at the right time from the right source, with an emphasis on internal company financing.",
+      "sections": [
+        {
+          "sec_code": "1",
+          "instructors": [
+            "Michael Pratt"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENES674",
+      "name": "Managing Product Development and Operations",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Explores the evolution of modern management methods for operations and product development. Evaluates production and operation methods from inception to factory-based models of productivity, through the quality and lean movements, to the explosion of productivity with modern approaches. Focuses on how to effectively run large-scale agile teams with agile engineering at its core.",
+      "sections": [
+        {
+          "sec_code": "1",
+          "instructors": [
+            "Michael O'Connor"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENES675",
+      "name": "Leadership in Times of Crisis: Pandemics, Disasters, and Humanitarian Crises",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Students are provided with immersive opportunities to learn from industry professionals about crisis prevention and response by examining leadership throughout the crisis cycle: from identification, prevention, and preparation, to response, recovery, and rebuilding. The course brings together the study and practice of leadership with promising practices in disaster preparedness and data informed decision-making. This course will examine how leadership has been enacted to help local, national, and global communities navigate through pandemics, disasters, and other humanitarian crises. Students will develop capacities for informed leadership in times of crisis and develop an understanding for applying these skills in a variety of settings.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Lena Crain"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "Th": [
+                  [
+                    5,
+                    0,
+                    "Pm"
+                  ],
+                  [
+                    7,
+                    30,
+                    "Pm"
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENES680",
+      "name": "Building and Leading Innovative Organizations",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Focuses on building a product enterprise through lean product portfolio management. Defines the conceptual groundwork that enables achieving the vision of a customer-centric value creation business model centered around lean principles. Explains the details of building a scaled product enterprise and explores alignment of organizational support functions with a product framework that lays the pathway for a sustainable value maximizing enterprise at scale.",
+      "sections": [
+        {
+          "sec_code": "1",
+          "instructors": [
+            "Tushar Rathod"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    }
+  ]
+}

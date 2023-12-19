@@ -1,0 +1,452 @@
+{
+  "name": "BMSO",
+  "courses": [
+    {
+      "code": "BMSO600",
+      "name": "Data, Models and Decisions",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "The field of data analytics is a very vibrant and broad field. The amount of data available and computing power have exploded in recent years. There is an increasing demand for business analysts who can select and apply the appropriate methods and interpret the results within the context of the problem. The goal of this course is to learn methods for exploring data and building models with the purpose of supporting data-driven decision making. The content of the course can be grouped as follows: Data Exploration, Probability, Confidence Interval Estimation, Hypothesis Testing and Regression Analysis. The focus will be on exploring realistic business scenarios, analyzing datasets using the appropriate analytical techniques, interpreting the analytic output within the context of the business scenario and translating the statistical results into actionable insights.",
+      "sections": [
+        {
+          "sec_code": "01",
+          "instructors": [
+            "Maria Bardossy"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "M": [
+                  [
+                    7,
+                    0,
+                    "Pm"
+                  ],
+                  [
+                    8,
+                    30,
+                    "Pm"
+                  ]
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "BMSO601",
+      "name": "Database Management Systems",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "The fundamentals of managing data and information within an organization, including enterprise level platforms and tools for data driven analytics.  Includes processes for acquiring and cleaning data, storing data, making it available for analytics, visualizing output, and archiving the data for long term use. Involves computational thinking, covers significant theoretical material on data models and queries, and teaches several different analytics and programming tools.",
+      "sections": [
+        {
+          "sec_code": "01",
+          "instructors": [
+            "John Bono"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "Tu": [
+                  [
+                    7,
+                    0,
+                    "Pm"
+                  ],
+                  [
+                    8,
+                    30,
+                    "Pm"
+                  ]
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "BMSO602",
+      "name": "Decision Analytics",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Difficult decisions require spending scarce resources. A 'resource' is any asset used to leverage business objectives, such as time and money. Tradeoffs are involved in allocating resources to one objective as opposed to another. This course develops a quantitative framework for studying resource allocation problems that arise in many industries and areas such as transportation, advertising, finance, and healthcare. The focus will be on translating verbal descriptions into quantitative optimization models, whereby standard tools (such as Microsoft Excel) can be applied to obtain solutions. The course also covers the role of uncertainty and risk in the decision-making process by using Monte-Carlo simulation models.",
+      "sections": [
+        {
+          "sec_code": "01",
+          "instructors": [
+            "Suresh Acharya"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "M": [
+                  [
+                    7,
+                    0,
+                    "Pm"
+                  ],
+                  [
+                    8,
+                    30,
+                    "Pm"
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "BMSO603",
+      "name": "Data Mining and Predictive Analytics",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "In the business press, on TV, and in board rooms, 'machine learning,' 'AI,' 'big data' and 'data analytics' are now hot topics. Vast quantities of data are being generated these days, including new types of data such as web traffic, social network data, and reviews and comments on websites. This data is a valuable resource that, when used correctly, can create a competitive edge for companies. Advances in computing hardware and algorithms have significantly improved the quality of predictions and effectiveness of business applications based on them. Expertise in working with data, and a sound knowledge of data mining/machine learning methods, is a much sought after skill. The course provides an introduction to the key tools and techniques of data mining/machine learning, including classification, prediction, cluster analysis, association rules, and text mining. The methods covered are Linear Regression, Logistic Regression, K-nearest neighbors, Naive Bayes, Classification and Regression Trees, Ensemble methods, Neural Networks, K-Means and Hierarchical Clustering, and Association Rules. The focus throughout will be on business applications. Examples from Marketing, Finance, Healthcare, and Operations will be used to illustrate the breadth of applications.",
+      "sections": [
+        {
+          "sec_code": "01",
+          "instructors": [
+            "Kislaya Prasad"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "Tu": [
+                  [
+                    7,
+                    0,
+                    "Pm"
+                  ],
+                  [
+                    8,
+                    30,
+                    "Pm"
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "BMSO758A",
+      "name": "Special Topics in Business; Social Media and Web Analytics",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "01",
+          "instructors": [
+            "Michael Trusov"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "Tu": [
+                  [
+                    7,
+                    0,
+                    "Pm"
+                  ],
+                  [
+                    8,
+                    30,
+                    "Pm"
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "BMSO758N",
+      "name": "Special Topics in Business; Introduction to Financial Accounting",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "01",
+          "instructors": [
+            "Progyan Basu"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "W": [
+                  [
+                    7,
+                    0,
+                    "Pm"
+                  ],
+                  [
+                    8,
+                    30,
+                    "Pm"
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "BMSO758Q",
+      "name": "Special Topics in Business; Big Data and Artificial Intelligence for Business",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "01",
+          "instructors": [
+            "Kunpeng Zhang"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "M": [
+                  [
+                    7,
+                    0,
+                    "Pm"
+                  ],
+                  [
+                    8,
+                    30,
+                    "Pm"
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "BMSO758R",
+      "name": "Special Topics in Business; Introduction to Supply Chain Analytics",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "01",
+          "instructors": [
+            "Philip Evers"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "W": [
+                  [
+                    7,
+                    0,
+                    "Pm"
+                  ],
+                  [
+                    8,
+                    30,
+                    "Pm"
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "BMSO778B",
+      "name": "Special Topics in Business; Digital Transformation in Business",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "01",
+          "instructors": [
+            "Jui Ramaprasad"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "BMSO778C",
+      "name": "Special Topics in Business; Career Coaching and Development",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "01",
+          "instructors": [
+            "Sarah Wolek"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "BMSO778E",
+      "name": "Special Topics in Business; Experiential Learning II",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "01",
+          "instructors": [
+            "Roy Thomason"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "W": [
+                  [
+                    7,
+                    0,
+                    "Pm"
+                  ],
+                  [
+                    8,
+                    30,
+                    "Pm"
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "BMSO778G",
+      "name": "Special Topics in Business; Strategic Management",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "01",
+          "instructors": [
+            "Anil Gupta"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "BMSO778J",
+      "name": "Special Topics in Business; Creative Problem Solving for Leaders",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "01",
+          "instructors": [
+            "Oliver Schlake"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "Tu": [
+                  [
+                    7,
+                    0,
+                    "Pm"
+                  ],
+                  [
+                    8,
+                    30,
+                    "Pm"
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "BMSO778P",
+      "name": "Special Topics in Business; Managerial Economics and Public Policy",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "01",
+          "instructors": [
+            "Jon Crocker"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "M": [
+                  [
+                    7,
+                    0,
+                    "Pm"
+                  ],
+                  [
+                    8,
+                    30,
+                    "Pm"
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

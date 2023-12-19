@@ -1,0 +1,375 @@
+{
+  "name": "CPSA",
+  "courses": [
+    {
+      "code": "CPSA101",
+      "name": "College Park Scholars: Arts First-Year Colloquium II",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "Introductory colloquium II: Arts workshops and Arts Festival.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Heather-Erin Bremenstuhl",
+            "Harold Burgess"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      6,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "CCC",
+                  "1100"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "CPSA149",
+      "name": "College Park Scholars: Arts Service-Learning Outreach",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Heather-Erin Bremenstuhl",
+            "Harold Burgess"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "CPSA201",
+      "name": "College Park Scholars: Arts Second-Year Colloquium II",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "Advanced colloquium II: Arts workshop and Arts Festival.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Heather-Erin Bremenstuhl",
+            "Harold Burgess"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      6,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "CCC",
+                  "1100"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "CPSA240",
+      "name": "College Park Scholars: Arts Service-Learning Practicum",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": [
+        "DSSP"
+      ],
+      "description": "Supervised Service-Learning project in an area related to the arts.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Heather-Erin Bremenstuhl",
+            "Harold Burgess"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "CPSA250",
+      "name": "College Park Scholars: Arts Research Practicum",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": [
+        "DSSP"
+      ],
+      "description": "Supervised research project in an area related to the arts.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Heather-Erin Bremenstuhl",
+            "Harold Burgess"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "CCC",
+                  "1105"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Heather-Erin Bremenstuhl",
+            "Harold Burgess"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "CCC",
+                  "1105"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0301",
+          "instructors": [
+            "Heather-Erin Bremenstuhl",
+            "Harold Burgess"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "CCC",
+                  "1105"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "CPSA260",
+      "name": "College Park Scholars: Arts Peer-Teaching Practicum",
+      "credits": {
+        "Amount": 2
+      },
+      "gen_eds": [
+        "DSSP"
+      ],
+      "description": "Supervised peer-teaching project in an area related to the arts.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Heather-Erin Bremenstuhl",
+            "Harold Burgess"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MTu": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            },
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Heather-Erin Bremenstuhl",
+            "Harold Burgess"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MTu": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            },
+            "Unspecified"
+          ]
+        },
+        {
+          "sec_code": "0301",
+          "instructors": [
+            "Heather-Erin Bremenstuhl",
+            "Harold Burgess"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MTu": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            },
+            "Unspecified"
+          ]
+        }
+      ]
+    }
+  ]
+}

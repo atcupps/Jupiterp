@@ -1,0 +1,1969 @@
+{
+  "name": "ENPM",
+  "courses": [
+    {
+      "code": "ENPM604",
+      "name": "Machine Learning Techniques Applied to Cybersecurity",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Focuses on applying machine learning techniques to cybersecurity, and includes labs to be done independently, as well as an overview of the latest machine learning algorithms and their application to cyber. A brief overview of which techniques should be applied to particular cyber problems will be provided, and the course culminates in students researching the latest applications of Machine learning to cyber, allowing the students to each develop a niche of expertise in that specific subtopic. As such, the students should be increasingly employable in their area of cyber expertise by industries searching for solutions to their cyber problem space.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Josef Schaff"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      9,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "01",
+          "instructors": [
+            "Josef Schaff"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENPM605",
+      "name": "Python Applications for Robotics",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "This hands-on course will look at the use of Python 3 with the Robot Operating System (ROS) in order to control a mobile robot in Gazebo simulated environments.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Zeid Kootbally"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "01",
+          "instructors": [
+            "Zeid Kootbally"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENPM611",
+      "name": "Software Engineering",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Software engineering concepts, methods, and practices important to both the theorist and the practitioner will be covered. The entire range of responsibilities expected of a software engineer are presented. The fundamental areas of requirements development, software design, programming languages, and testing are covered extensively. Sessions on supporting areas such as systems engineering, project management, and software estimation are also included.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Karthikeyan Chandrashekar"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "01",
+          "instructors": [
+            "Christopher Ackermann"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENPM612",
+      "name": "System and Software Requirements",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Focus will be placed on the theoretical and practical aspects of requirements development. Students will recognize the place of requirements, how to work with users, requirements methods and techniques, the various requirements types, how to set requirements development schedules, requirements evolution, how to model and prototype requirements, how to evaluate and manage risk in requirements, techniques to test requirements, how to manage the requirements process, and how to write an effective requirements document.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Mikael Lindvall",
+            "Madeline Diep"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      9,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "01",
+          "instructors": [
+            "Mikael Lindvall",
+            "Madeline Diep"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENPM614",
+      "name": "Software Testing &amp; Maintenence",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "The purpose of this course is to provide an overview of software testing and maintenance and how these activities fit into the Software Engineering Life-Cycle. Many examples used in the lectures are derived from analysis of various NASA systems. Topics include various forms of testing such as Functional Testing, Combinatorial Testing, Structural Testing, Model-Based Testing, Security-oriented testing as well as Software Architecture's role in testability &amp; maintainability, Regression Testing, Automated Testing, Testing Coverage including MC/DC coverage and testing standards.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Mikael Lindvall",
+            "Anumeet Nepaul"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      9,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "01",
+          "instructors": [
+            "Mikael Lindvall",
+            "Anumeet Nepaul"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENPM624",
+      "name": "Renewable Energy Applications",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Thermodynamics and heat transfer of renewable energy sources for heating, power generation and transportation. Wind energy, solar thermal, photovoltaic, biomass, waste burning, and hydropower. Broad overview of the growing use of renewable energy sources in the world economy with detailed analysis of specific applications.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Michael Ohadi"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "01",
+          "instructors": [
+            "Michael Ohadi"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENPM635",
+      "name": "Thermal Systems Design Analysis",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Evaluates the trade-offs associated with thermal systems. Use of software for system simulation, evaluation and optimization. Applications include power and refrigeration systems, pipe flow systems, distillation columns, dehumidifying coils, and co-generation systems.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Martin Cerza"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "01",
+          "instructors": [
+            "Martin Cerza"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENPM637",
+      "name": "Managing Software Engineering Projects",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Addresses the breadth of managing software engineering projects. It will help in transforming inspiring software engineers to software project leaders. The course will impart advanced principles, methods and tools for management of software projects in a realistic software engineering context. A hybrid project management will be taught with more focused on Agile Project Management paradigms. The course will also impart a cutting-edge scalable, modular, and integrated patterns of the Scaled Agile Framework (SAFe) 4.0 for the software engineering program and portfolios management. In addition, the course will also instill DevOps best practices to build much more responsible organizations that can move quickly in ever-changing circumstances. Methods for managing and optimizing the software development process are discussed along with techniques for performing each phase of the systems development lifecycle.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "David Thomas"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "01",
+          "instructors": [
+            "David Thomas"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENPM650",
+      "name": "Solar Thermal Energy Systems",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Covers a review of related fundamentals, including limitations imposed by thermodynamics, solar spectral characteristics, measurement, and analytical models to predict solar irradiance with respect to time, location and orientation. The  course will then examine the characteristics of various components in solar thermal systems with particular emphasis on flat plate and concentrating collectors, fixed and tracking collector systems, heat exchangers and thermal storage to understand how they work and how their performance is influenced by their design. The course will then lead to an examination of systems and system performance, including system design, predicted energy savings and related economics. The course will introduce low temperature applications such as solar hot water, space heating and water distillation, as well as concentrating solar energy for solar thermo-chemical processes to produce hydrogen and solar power generation systems. A project of importance to the development of Solar Thermal Power Systems will be assigned.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Brian Valentine"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      9,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "01",
+          "instructors": [
+            "Brian Valentine"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENPM656",
+      "name": "Energy Conversion II -- Mobile Power",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Presents the scientific and engineering basis for design, manufacture, and operation of thermal conversion technologies utilized for mobility power generation. The interface between fuel combustion chemistry and generated power are addressed. The practical aspects of design and operation of various alternatives for power are compared. The impact of choices with regard to power and fuel alternatives as well as air pollution potential are also considered.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Jim Cowart"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      9,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "01",
+          "instructors": [
+            "Jim Cowart"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENPM661",
+      "name": "Planning for Autonomous Robots",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Planning is a fundamental capability needed to realize autonomous robots. Planning in the context of autonomous robots is carried out at multiple different levels. At the top level, task planning is performed to identify and sequence the tasks needed to meet mission requirements. At the next level, planning is performed to determine a sequence of motion goals that satisfy individual task goals and constraints. Finally, at the lowest level, trajectory planning is performed to determine actuator actions to realize the motion goals. Different algorithms are used to achieve planning at different levels. This graduate course will introduce planning techniques for realizing autonomous robots. In addition to covering traditional motion planning techniques, this course will emphasize the role of physics in the planning process. This course will also discuss how the planning component is integrated with control component. Mobile robots will be used as examples to illustrate the concepts during this course. However, techniques introduced in the course will be equally applicable to robot manipulators.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Reza Monfaredi"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      9,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Reza Monfaredi"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMP",
+                  "3201"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0301",
+          "instructors": [
+            "Reza Monfaredi"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "01",
+          "instructors": [
+            "Reza Monfaredi"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENPM663",
+      "name": "Building a Manufacturing Robotic Software System",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "This hands-on course will look at the components of manufacturing robots, including architectures, planning/control, simulation, and measurement science. Students will explore the work that is being researched around the world in each of these areas, and will perform small hands-on exercises in most of the classes to gain a deeper understanding of how a selected set of these technologies can be applied to real-world challenges.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Craig Schlenoff",
+            "Zeid Kootbally"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Zeid Kootbally",
+            "Craig Schlenoff"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "01",
+          "instructors": [
+            "Craig Schlenoff",
+            "Zeid Kootbally"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENPM664",
+      "name": "Embedded System Hacking and Security",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "The purpose of this course is to reveal the tools, techniques and procedures (TTPs) employed by adversaries to exploit and subvert the security of embedded systems. This course will cover the core concepts and techniques to analyze and characterize the behavior of embedded systems and platforms. Concepts will be introduced and discussed within the context of an adversary intent on altering or subverting the behavior of such systems. The course does not expect students to have any prior embedded systems experience.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Gananand Kini",
+            "Robert Heinemann"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "01",
+          "instructors": [
+            "Gananand Kini",
+            "Robert Heinemann"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENPM665",
+      "name": "Cloud Security",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Covers the fundamentals of securing cloud-based workloads from the ground up with many hands-on examples. Through these hands-on exercises the course will demonstrate where the similarities and differences are when securing the cloud compared to securing traditional IT.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Everett Daviage"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      9,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMP",
+                  "3201"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Everett Daviage"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "1",
+          "instructors": [
+            "Everett Daviage"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENPM671",
+      "name": "Advanced Mechanics of Materials",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Formulate and quantitatively state the mechanical/physical responses of structural components and configurations subjected to loads, temperature, pre-strains etc. The two methods of anlysis employed are the mechanics of materials approach and the theory of elasticity approach. Analysis and design of components of structural/machine systems as experienced in aeronautical, civil, mechanical and nuclear engineering.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Mohammad Fazelpour"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      9,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "01",
+          "instructors": [
+            "Mohammad Fazelpour"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENPM673",
+      "name": "Perception for Autonomous Robots",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Image Processing and Computer Vision techniques for Mobile Robots is taught. Three topics are covered: Image Processing (Image Enhancement, Filtering, Advanced Edge and Texture ), 3D Vision (3D Geometry from Multiple view geometry, Motion Processing and Stereo) and an Introduction to Image Segmentation and Object Recognition. Students are introduced to a number of existing software toolboxes from Vision and Robotics, and will implement a number of smaller projects in Python.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Samer Charifa"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      9,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Tommy Chang"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      9,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0301",
+          "instructors": [
+            "Samer Charifa",
+            "Tommy Chang"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      20,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "01",
+          "instructors": [
+            "Samer Charifa"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENPM685",
+      "name": "Security Tools for Information Security",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Students will perform host- and network-based security tasks relating to security, investigation, compliance verification and auditing using a wide selection of commonly used tools on both Windows and Linux platforms, with emphasis on open source tools.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Bertrand Sobesto"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      9,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMP",
+                  "3201"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Kevin Shivers"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0301",
+          "instructors": [
+            "Kevin Shivers"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      9,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "01",
+          "instructors": [
+            "Bertrand Sobesto"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENPM686",
+      "name": "Information Assurance",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "The first half of lectures provides an overview of cybersecurity. One third of these lectures focuses on the fundamentals of cybersecurity like authentication, access control, and security models. The second third focuses on the practice of cybersecurity using Unix and Windows NT as case studies. The last third is dedicated to security in distributed systems including network security, and World Wide Web security. The second half of the lectures focuses on the information assurance process. First, information assets are enumerated and classified. Second, the main vulnerabilities and threats are identified. Third, a risk assessment is conducted by considering the probability and impact of the undesired events. Finally, a risk management plan is developed that includes countermeasures involving mitigating, eliminating, accepting, or transferring the risks, and considers prevention, detection, and response.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Edward Condon"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMP",
+                  "3201"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Ryan Kropff"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KEB",
+                  "2111"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "01",
+          "instructors": [
+            "Edward Condon"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENPM690",
+      "name": "Robot Learning",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Machine learning may be used to greatly expand the capabilities of robotic systems, and has been applied to a variety of robotic system functions including planning, control, and perception. Adaptation and learning are particularly important for development of autonomous robotic systems that must operate in dynamic or uncertain environments. Ultimately we would like for the robots to expand their knowledge and improve their own performance through learning while operating in the environment (on-line and/or lifelong learning). This graduate course will explore the application of machine learning techniques, paradigms, and control design to robotic systems, focusing primarily on key useful representations and model building techniques for application in non-stationary robotic systems.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Jerry Wu"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      9,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "01",
+          "instructors": [
+            "Jerry Wu"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENPM691",
+      "name": "Hacking of C programs and Unix Binaries",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Teaches the fundamentals of secure programming in C. An in depth discussion on various security vulnerabilities (e.g., buffer overflows) in C applications will be taught with hands-on demo of concepts during the class. Students will learn how a C program runs \"under-the-hood\". The course will teach nitty-gritty of C programs by analyzing at the assembly level. The course discusses best practices (e.g., coding standards) and design principles for secure programming so that security can be built-in during design time. In addition to assignments, students are required to present papers related to this course.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Dharmalingam Ganesan"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "01",
+          "instructors": [
+            "Dharmalingam Ganesan"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENPM692",
+      "name": "Manufacturing and Automation",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Covers automation and product realization, digital factories, and disruptive manufacturing technologies. The role of additive manufacturing, sustainability, and performance simulation in selected manufacturing scenarios will be explored alongside automation strategies for rapid product development.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Mahesh Mani"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      9,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "01",
+          "instructors": [
+            "Mahesh Mani"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENPM693",
+      "name": "Network Security",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Introduction to various approaches to design; specify and verify security protocols used in large systems and networks; familiarization with some current technologies. Security threats and countermeasures, communication security and basic encryption techniques, authentication protocols, data confidentiality and integrity, analysis of cryptographic protocols, and access control in large systems and networks.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Majid Raissi-Dehkordi"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      9,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Majid Raissi-Dehkordi"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0301",
+          "instructors": [
+            "Majid Raissi-Dehkordi"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      9,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "01",
+          "instructors": [
+            "Majid Raissi-Dehkordi"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENPM695",
+      "name": "Secure Operating Systems",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Operating systems are the basic building block on which programmers build applications and on which security-minded professionals rely, whether they are monitoring activity on a computer, testing applications for security, or determining how malicious code affected their network. This course covers advanced topics in operating systems including process management and communication, remote procedure calls, memory management (including shared memory and virtual memory), checkpointing and recovery, file system, I/O subsystem and device management, distributed file systems and security. The course consists of reading and discussing research papers and includes a course project.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Ido Dubrawsky"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMP",
+                  "3201"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "01",
+          "instructors": [
+            "Ido Dubrawsky"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENPM697",
+      "name": "Secure Software Testing and Construction",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "As software gets more complex, there is even more potential for vulnerabilities to remain in the production version. While traditional and emerging software testing methods are very good at detecting a large majority of \"bugs\" in the software, modifications to the methods are necessary to ensure vulnerabilities related to security are discovered and mitigated prior to release. In industry, there is also a cost-benefit analysis that determines the limits to pre-release testing, further enforcing the need to uniquely identify security vulnerabilities, potentially prioritizing their correction over other vulnerabilities. This course will cover methods of building security in from the beginning of development and testing the resulting software to ensure security vulnerabilities are detected. The course will use a mixture of textbook principles and research papers to cover the concepts. Students will also complete a course project.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Dharmalingam Ganesan"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      9,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMP",
+                  "3201"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "01",
+          "instructors": [
+            "Dharmalingam Ganesan"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENPM701",
+      "name": "Autonomous Robotics",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "This is a hands-on course exploring the principles of robotic autonomy. Students will explore the theoretical, algorithmic, and implementation aspects of autonomous robotic modeling and controls, perception, localization and SLAM, planning, and decision making. These techniques will be applied through completion of a semester-long hands-on project employing the course material, ground-based mobile robots, and Python.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Steven Mitchell"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Steven Mitchell"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "01",
+          "instructors": [
+            "Steven Mitchell"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENPM808",
+      "name": "Advanced Topics in Engineering",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "Independent study project on a topic relevant to their academic program, supervised by a University of Maryland, College Park faculty member. Requires application and approval.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "George Syrmos"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENPM808E",
+      "name": "Advanced Topics in Engineering; Underwater Robot Perception",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: ENPM673.<br><br> This course addresses the breadth of managing software engineering projects and will help in transforming inspiring software engineers to software project leaders. The course will impart advanced principles, methods and tools for management of software projects in a realistic software engineering context.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "shahriar Negahdaripour"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENPM808K",
+      "name": "Advanced Topics in Engineering; Advanced Systems Architecting",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "This course continues the MSSE systems engineering course progression with a comprehensive focus on system architecture that drives systems and enterprise engineering decision making at many levels. The course introduces students to models for enterprise, business, systems-level, service/component level, discipline-specific architectures. Students will use integrated architecting tools to solve problems of interest to them and that stress the capture, analysis, reconciliation, leverage, and execution of architecture at many levels and the exercise of ANSI/ISO/IEC/IEEE standards for architectural description.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Timothy Eveleigh"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      9,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "01",
+          "instructors": [
+            "Timothy Eveleigh"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENPM808V",
+      "name": "Advanced Topics in Engineering; Quality Management Systems and Lean Six Sigma",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "This course covers Quality Engineering approaches for creating optimal and robust manufacturing and engineering systems. It provides an overview of the important tools for quality analysis and quality management of engineering systems. These tools are commonly used in companies and organizations.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Tony Barber"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      9,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "01",
+          "instructors": [
+            "Tony Barber"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENPM808Z",
+      "name": "Advanced Topics in Engineering; Cognitive Robotics",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Cognitive Robotics explores the application of human cognitive intelligence to the design and development of intelligent robots. The course delves into the fundamental principles of human cognitive intelligence and its integration with robotics and machine learning. Students will learn to develop cognitive robot learning architectures and implement them using simulators like Pybullet, NVIDA Issac-Gym, and Meta Habitat 2.0. Through engaging class projects, students will apply their newly acquired knowledge to solve novel, challenging and practically useful problems, enabling them to make meaningful contributions to the field. This uniqueopportunity to bridge the gap between cognitive science and robot learning that empowers students to develop smarter and more capable robotic systems.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Yantian Zha"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "001",
+          "instructors": [
+            "Yantian Zha"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENPM809V",
+      "name": "Special Topics in Engineering; Advanced Hacking of Linux and Embedded Systems",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: ENPM691. Restriction: Permission of Maryland Applied Graduate Engineering.<br><br> This course provides an in-depth understanding of how to find flaws in Linux (both user space and kernel space) and software within embedded devices (focusing on bare-metal software/firmware and hardware-focused techniques). Students will get an inside look at how modern operating systems and embedded devices protect their programs, flaws within the protection mechanisms, and how to exploit them. Although this is an offensive-focused course, mitigations to protect the programs will also be discussed.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Michael Wittner"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "01",
+          "instructors": [
+            "Michael Wittner"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENPM809X",
+      "name": "Special Topics in Engineering; Data and Algorithms",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "The course will teach the algorithms, heuristics, and code development skills in solving numerous sorting, graph theory, string processing, and job scheduling problems.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Emre Gunduzhan"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "01",
+          "instructors": [
+            "Emre Gunduzhan"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENPM818I",
+      "name": "Variable Topics in Engineering; Embedded Software Design and Optimization",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "This course covers the design and optimization of stable, maintainable, and secure embedded software systems. The main study topics include: Software engineering design and documentation artifacts; Information assurance and cybersecurity; CPU architectures, system components, and development tools; Operating system details; Programming models and tools; IO busses and networking protocols; and Low-level optimization techniques. Students will acquire not only technical knowledge, but also soft skills such as communication, collaborations, critical thinking, leadership, negotiation, and time management.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Wiehrs Collier"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "M": [
+                  [
+                    7,
+                    0,
+                    "Pm"
+                  ],
+                  [
+                    9,
+                    40,
+                    "Pm"
+                  ]
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "01",
+          "instructors": [
+            "Wiehrs Collier"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENPM818L",
+      "name": "Variable Topics in Engineering; Low Power Design for Embedded Systems",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Fundamentals of power dissipation, low power architectures, and runtime management techniques, edge computing, approximate computing, energy harvesting and associated projects",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Hassan Salmani"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      9,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "01",
+          "instructors": [
+            "Hassan Salmani"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ENPM818O",
+      "name": "Variable Topics in Engineering; Networks and Protocols for Cloud Engineering",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "This course lays the foundation for networking principles and protocols applicable for cloud engineers. Starting with an introduction to layered architecture of data networks and introduces the concept of protocols and services of TCP/IP networks. It then progresses to provide details of operation of each layer of the protocol stack. These include detailed discussion on error detection, reliable data transfer, Local Area Networks (LANs), multiple access protocols, routing algorithms, flow control and congestion control mechanisms. Students will also learn 5G wireless data networks and protocols as it pertains to cloud access, including Internet of Things (IoT) protocols, Software Defined Networking, Network Function Virtualization concepts, IP Multicast and Mobile IP. As part of the course work, the students will learn how to capture and analyze real world network traffic.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "C Ravishankar"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      9,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "1",
+          "instructors": [
+            "C Ravishankar"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    }
+  ]
+}

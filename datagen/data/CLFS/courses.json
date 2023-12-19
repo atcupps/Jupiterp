@@ -1,0 +1,111 @@
+{
+  "name": "CLFS",
+  "courses": [
+    {
+      "code": "CLFS608",
+      "name": "Seminar in Current Topics in Chemical and Life Science; Scholarly Paper",
+      "credits": {
+        "Range": [
+          1,
+          4
+        ]
+      },
+      "gen_eds": null,
+      "description": "Contact Dr. Marcia Shofner (mclfs@umd.edu) to establish a mentor; and then contact exst@umd.edu to register. Golden ID students are not eligible for this course.",
+      "sections": null
+    },
+    {
+      "code": "CLFS608A",
+      "name": "Seminar in Current Topics in Chemical and Life Science; Independent Research",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "Contact exst@umd.edu to register. Golden ID students are not eligible for this course.",
+      "sections": null
+    },
+    {
+      "code": "CLFS609L",
+      "name": "Special Topics; Beyond Race: Human Biological Diversity",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Must be in the Master of Chemical and Life Sciences program. All other graduate students must request permission. Contact exst@umd.edu. Golden ID students are not eligible for this course.",
+      "sections": [
+        {
+          "sec_code": "1",
+          "instructors": [
+            "Joelle Presson"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "CLFS619B",
+      "name": "Special Topics in Chemistry; Environmental Chemistry",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Must be in the Master of Chemical and Life Sciences program. All other graduate students must request permission. Contact exst@umd.edu. Golden ID students are not eligible for this course.",
+      "sections": [
+        {
+          "sec_code": "1",
+          "instructors": [
+            "Marjan Alaghmand"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "CLFS665",
+      "name": "Ecology and Global Change",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Ecological concepts across scales ranging from the individual, to populations, communities, ecosystems, and landscapes will be presented. Global change issues will encompass alteration of atmospheric trace gases, biogeochemistry cycles, land use changes, and introduction of non-native species to new habitats.",
+      "sections": [
+        {
+          "sec_code": "1",
+          "instructors": [
+            "Marcia Shofner"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "CLFS690",
+      "name": "Biochemistry",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "An advanced overview of general biochemistry including a study of protein structure and their physical properties; how these properties relate to catalysis, regulation of catalysis and metabolic chemistry with respect to their relationship to physiological conditions.",
+      "sections": [
+        {
+          "sec_code": "1",
+          "instructors": [
+            "David Jollie"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    }
+  ]
+}
