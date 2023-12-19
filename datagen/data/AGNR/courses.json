@@ -1,0 +1,89 @@
+{
+  "name": "AGNR",
+  "courses": [
+    {
+      "code": "AGNR301",
+      "name": "Sustainability",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Designed for students whose academic majors would be enhanced by the complementary study of a widely shared but hard-to-operationalize aspiration: that present choices should preserve or improve future options rather than foreclose or degrade them. How should we understand sustainability? How might we achieve it? How would we know if we had achieved it? And how could sustainability activists of a rising generation lead by example?",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Matthew Regan"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TMH",
+                  "0301"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "AGNR388",
+      "name": "Honors Thesis Research",
+      "credits": {
+        "Range": [
+          3,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "AGNR606",
+      "name": "Program Planning and Evaluation in Agricultural Education",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Second semester. Analysis of community agricultural education needs, selection and organization of course content, criteria and procedures for evaluating programs.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Colby Silvert"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    }
+  ]
+}

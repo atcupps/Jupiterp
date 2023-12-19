@@ -1,0 +1,278 @@
+{
+  "name": "AGST",
+  "courses": [
+    {
+      "code": "AGST275",
+      "name": "Fundamentals of Agricultural and Environmental Chemistry",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "An in-depth discussion of chemistry targeted to students enrolled in plant and animal management curricula offered in AGNR. Covers the nomenclature and basic functional groups in organic chemistry, natural products and pesticides. Current practices of crop, agriculture and environmental management and genetic engineering also discussed.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Wendy Peer"
+          ],
+          "class_meetings": [
+            "OnlineAsync",
+            "OnlineAsync",
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1119"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "AGST400",
+      "name": "Advanced Crop Science",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Focuses on the study of the agronomic principles and practices required for the production of food, feed, fiber and fuel crops.  This is a project-based course where students will develop a farm plan from knowledge gained in previous courses and built upon in this course. Students will learn to integrate data and information from many sources in order to build and operate a successful and sustainable agronomic farm operation using current and new technology.  The use of farm management software will be an integral part of the course and farm project.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Bill Phillips"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1125"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "AGST401",
+      "name": "Tractor and Equipment Operation, Safety and Maintenance",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "Provides students with basic skills needed to safely operate and maintain farm equipment, such as tractors and implements used in agronomic production. Students will receive introductory background training in the basic safety and operation of tractors through hands-on learning. Emphasis will also be placed on the mechanical functioning of equipment and the functional similarities and differences between gasoline (two-stroke and four-stroke) and diesel engines as well as electric motors as they relate to farm equipment (mobile and stationary). This knowledge will be used to teach students to safely perform basic care and maintenance of different tractor types as well as various implements. Students will also learn basic implement connection and disconnection, including the safe use of implements that employ a power take-off unit. Included in the course will be an introduction to the equipment and use of satellite navigation systems used in agronomic production.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Bill Phillips"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Sa": [
+                    [
+                      8,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      2,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "WREC",
+                  "1000"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "AGST430",
+      "name": "Hydroponic and Controlled Environment Food Production",
+      "credits": {
+        "Amount": 4
+      },
+      "gen_eds": null,
+      "description": "Controlled environment agriculture, including hydroponic food production, has increased dramatically worldwide as demand for fresh, local, safe, nutritious food has increased and an appreciation for the negative social and environmental impacts of producing food long distances from where it is consumed has grown. Through instructor and guest lectures, growing crops in greenhouses and rooms, and visiting local  hydroponic facilities, students will learn the fundamentals of how to grow vegetable and fruit crops in hydroponic and aquaponic systems.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "John Erwin"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      8,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      15,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1142"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      8,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      15,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "RGC",
+                  "1111"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "RGC",
+                  "1111"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "AGST442",
+      "name": "Examining Leadership in Youth and Volunteers",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Explore fundamental leadership theories and practice related skills utilized in helping youth and adults build community relationships in a variety of teaching environments. Fundamentals of youth development will be the basis for examining how to foster positive learning environments for dynamic learning. The identification of empowerment processes will be explored through case-study discussions.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Melissa Welsh"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "2137"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "AGST605",
+      "name": "Extension Research Methods with Applied Data Analysis",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Examine foundational qualitative and quantitative research methods in real-world social and behavioral settings for extension and outreach educators. This course enables you to distinguish, select and apply research methods to conduct social science research in a non-formal education setting. A variety of data analysis approaches will be examined across Extension and outreach education applications.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Colby Silvert"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    }
+  ]
+}

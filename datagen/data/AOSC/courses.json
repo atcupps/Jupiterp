@@ -1,0 +1,1922 @@
+{
+  "name": "AOSC",
+  "courses": [
+    {
+      "code": "AOSC123",
+      "name": "Causes and Consequences of Global Change",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSNS",
+        "SCIS"
+      ],
+      "description": "Study of the major components of Earth's climate system and climate change history. Discussion of 21st century climate change prediction, mitigation and adaptation efforts.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Rachel Pinker"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "2324"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1162"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Rachel Pinker"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "2324"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1162"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Rachel Pinker"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "2324"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1162"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0104",
+          "instructors": [
+            "Rachel Pinker"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "2324"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1164"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0105",
+          "instructors": [
+            "Rachel Pinker"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "2324"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1164"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0106",
+          "instructors": [
+            "Rachel Pinker"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "2324"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PLS",
+                  "1164"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "AOSC200",
+      "name": "Weather and Climate",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSNL",
+        "DSNS",
+        "SCIS"
+      ],
+      "description": "What are weather and climate? Most people think they know but if you ask people to explain the differences and similarities you're bound to get a range of answers. Weather affects not just our daily activities but other important aspects of society such as transportation, commerce, security and agriculture. Most people understand what weather is to some extent. Climate and climate change are concepts that evoke strong emotional responses from people but are less well understood. In this class, students examine fundamental issues such as the greenhouse effect, severe weather, and global weather patterns and how they relate to a changing climate. Instruction in the lectures will provide the basic knowledge needed to understand these issues. In the discussion sections, students will be divided into groups to address the implications of these topics through group projects.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Alexandra Jones"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "2324"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ESJ",
+                  "B0322"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Alexandra Jones"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "2324"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "2416"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Alexandra Jones"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "2324"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "2416"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0104",
+          "instructors": [
+            "Alexandra Jones"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "2324"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "0103"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Jeffrey Henrikson"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "2324"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "2416"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0202",
+          "instructors": [
+            "Jeffrey Henrikson"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "2324"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "2416"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0203",
+          "instructors": [
+            "Jeffrey Henrikson"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "2324"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "2416"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0204",
+          "instructors": [
+            "Jeffrey Henrikson"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "2324"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "2416"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "AOSC201",
+      "name": "Weather and Climate Laboratory",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "Laboratory exercises to supplement AOSC200, including weather observations, weather map analysis, forecasting practice and climate modeling.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "3426"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "3426"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "3426"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0104",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "3426"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0105",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "3426"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0106",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "3426"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0107",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "3426"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0108",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "3426"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "AOSC247",
+      "name": "Scientific Programming: Python",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "A comprehensive introduction to scientific computation and visualization techniques with Python applied to data intensive questions in the Natural Sciences. The class emphasizes real-world applications, providing students with essential hands-on experience using Python for data analysis and visualization, developing analytical skills for observational and modeling data, and performing virtual experiments to distinguish data contributing factors. Students will gain an understanding of the scientific data issues including: signal vs noise, trend vs periodicity, mean vs extreme changes, and accuracy vs uncertainty. Students will gain extensive experience using command line linux. Skills including local and remote file transfer and synchronization, file and directory permission, utilities for diagnosing performance issues, and data compression.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Jeffrey Henrikson"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "2428"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "AOSC360",
+      "name": "How to solve the climate change problem?",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Climate change is the greatest challenge humanity faces in the 21st century. Global mean surface temperature has increased by 1.2C since the beginning of industrialization, driven by fossil fuel burning and land use change. The Intergovernmental Panel on Climate Change has proposed to limit global warming to within 1.5-2C, beyond which many tipping points in the Earth system would be reached and cause irreversible damages. This course will examine potential solutions to mitigate climate change.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Ning Zeng"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "2428"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "AOSC399",
+      "name": "Independent Study in Academic Peer Mentoring",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "AOSC401",
+      "name": "Climate Dynamics and Earth System Science",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Introduction of the earth and global climate systems and their major components: atmosphere, land, ocean, biosphere and cryosphere.  Key processes governing the function of the earth's climate: Global energy balance and water cycle, climate dynamics (general circulation of the atmosphere and ocean) and climate physics (aerosol, cloud and rain), as well as climate variability and climate changes.  Phenomena resulting from this coupled system including El Nino-Southern Oscillation, monsoons, and the hydrological cycle will be discussed, with a focus on how the Earth System responds to global warming.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "1114"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "AOSC421",
+      "name": "Oceanography of the Chesapeake and Mid-Atlantic",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "This course introduces the oceanography of the Chesapeake Bay and Mid-Atlantic bight, with a focus on physical oceanographic processes, the impact of ocean circulation on the coastal and estuarine environment, and the future of our coast in a changing climate.  This will include major topics in coastal oceanography such as the shelf circulation, waves and tides, estuarine circulation, and sea-level rise. In addition to lecture, students will read recent selections from the scientific literature, develop a report on an oceanographic issue relevant to Maryland coastal waters, and take part in a research cruise on the Chesapeake Bay.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Jacob Wenegrat"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "2416"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "AOSC424",
+      "name": "Remote Sensing of the Atmosphere and Ocean",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Many of the properties of the atmosphere, ocean, and land surface are most easily observed from satellite remote sensing. This course will provide students with a hands-on introduction to a variety of passive and active sensing techniques and sensors observing our changing environment. Topics include: orbital dynamics and electromagnetic properties of the atmosphere and surface; atmospheric emission characteristics and scattering; chemical composition and spectroscopy; temperature retrievals; detection and retrieval of aerosol, cloud and rain; ocean surface properties; sea surface temperature and color; active sensing of wind stress, sea level, and internal waves; time-dependent gravity; properties of vegetation and ice.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Zhanqing Li"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "2416"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "AOSC432",
+      "name": "Dynamics of the Atmosphere and Ocean",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Equations of motion and their approximation, scale analysis for the atmosphere and the ocean. Conservation properties. Fluid motion in the atmosphere and oceans. Geostrophic/balanced and ageostrphic/unbalanced motion. Circulation, vorticity, and potential vorticity. Introduction to the boundary layer.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Kayo Ide"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "2428"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "01",
+          "instructors": [
+            "Kayo Ide"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "2428"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "AOSC433",
+      "name": "Atmospheric Chemistry and Climate",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "The effects of human activity on atmospheric composition, focused on global warming, the carbon cycle, air pollution, and the ozone layer. Fundamentals of atmosphereic chemistry (spectroscopy, kinetics, isotopic analysis, and biogeochemical cycles) are related to the modern understanding of climate change, air quality, and ozone depletion, based on resources such as satellite missions, field campaigns, and scientific assessments published by international agencies. We also examine how society's energy needs could be met, in the future, in a manner with less impact on atmospheric composition than the present heavy reliance on combusion of fossil fuels.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Ross Salawitch"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "2428"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "AOSC434",
+      "name": "Air Pollution and Environmental Justice",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Basic concepts in physics and chemistry of the atmosphere as applied to air pollution and environmental justice. Production, transformation, spatial scales, transport, and removal of air pollutants. The problems of photochemical smog, the greenhouse effect &amp; climate change, stratospheric ozone, visibility.  Numerical simulation of air pollution. Health and environmental effects of air pollution in the developed and developing world; why some communities suffer disproportionately",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Russell Dickerson"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "2416"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "AOSC472",
+      "name": "Mesoscale Meteorology",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Survey a broad range of mesoscale meteorological features with emphasis on convection and associated phenomena. Define the mesoscale and understand its underlying principles; Introduce non-convective circulations and their importance for weather forecasting; Understand the precursors and occurrence of deep moist convection.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Jonathan Poterjoy"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "2416"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "AOSC494",
+      "name": "Atmospheric and Oceanic Science Seminar",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "Exposure to a wide range of contemporary topics in atmospheric, oceanic, and climate sciences, to foster research interests and promote critical thinking through the weekly AOSC departmental seminar series.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Alexandra Jones"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "2400"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "AOSC499",
+      "name": "Special Problems in Atmospheric Science",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "AOSC602",
+      "name": "Mesoscale Meteorology",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Survey a broad range of mesoscale meteorological features with emphasis on convection and associated phenomena.  Define the mesoscale and understand its underlying principles; Introduce non-convective circulations and their importance for weather forecasting; Understand the precursors and occurrence of deep moist convection.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Jonathan Poterjoy"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "2416"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "AOSC611",
+      "name": "Dynamics of the Atmosphere and Oceans II",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Waves and instabilities in the atmosphere and the ocean. Gravity, Rossby, coastal and equatorial waves. Flow over topography. Dynamic instabilities including barotropic, baroclinic, inertial, and instabilities of the coupled ocean-atmosphere system. Stationary waves and multiple equilibria.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "James Carton"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "2416"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "01",
+          "instructors": [
+            "James Carton"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "2416"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "AOSC617",
+      "name": "Atmospheric and Oceanic Climate",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "The general circulation of the atmosphere and oceans, historical perspective, observations, and conceptual models; wind-driven and thermohaline circulation of the oceans. Seasonal cycle and monsoon circulations; interannual to interdecadal climate variability; climate change.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Sumant Nigam"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "2416"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "01",
+          "instructors": [
+            "Sumant Nigam"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "2416"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "AOSC621",
+      "name": "Physics and Chemistry of the Atmosphere II",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Spectroscopy; basic concepts in radiative transfer and atmospheric chemistry; photolysis rates for atmospheric molecules.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "2416"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "01",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "2416"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "AOSC625",
+      "name": "Remote Inference of Atmospheric Properties by Satellite",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Fundamentals of radiative transfer concepts, theories and models pertinent to remote sensing. Satellite platforms, sensors and systems used for operation and research in atmospheric remote sensing. Concepts and technologies of passive and active remote sensing. Remote sensing methods and products of atmospheric constituents, aerosol, cloud, precipitation, temperature and water vapor profiles, precipitation in liquid and ice forms, radiation budget, and remote sensing application in data assimilation for numerical weather forecast (NWP); use of atmospheric remote sensing products for development of global climate model (GCM).",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Zhanqing Li"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "2416"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "AOSC633",
+      "name": "Atmospheric Chemistry and Climate",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "The effects of human activity on atmospheric composition, focused on global warming, the carbon cycle, air pollution, and the ozone layer. Fundamentals of atmosphereic chemistry (spectroscopy, kinetics, isotopic analysis, and biogeochemical cycles) are related to the modern understanding of climate change, air quality, and ozone depletion, based on resources such as satellite missions, field campaigns, and scientific assessments published by international agencies. We also examine how society's energy needs could be met, in the future, in a manner with less impact on atmospheric composition than the present heavy reliance on combusion of fossil fuels.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Ross Salawitch"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "2428"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "01",
+          "instructors": [
+            "Ross Salawitch"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "2428"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "AOSC650",
+      "name": "NEURAL NETWORKS FOR THE PHYSICAL SCIENCES",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "The use of machine learning in the physical sciences has grown immensely over the last several years. While machine learning has been around for decades, recent advances in deep neural networks have contributed to the rapid growth of applications across many disciplines, including the physical sciences. However, many of the traditional benchmark datasets for the development of neural networks are not from the physical sciences, making the use of off-the-shelf machine learning methods not always feasible or practical for the physical sciences. In this course, we will learn the fundamentals of neural networks, from the basics of a neuron to more advanced architectures, and how these tools can be applied to the physical sciences. Important considerations for data preprocessing specific to the physical sciences will be discussed, along with how to evaluate the skill, uncertainty, and confidence of neural networks with specific relevance to the physical sciences., ,",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Maria Molina"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "2416"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "AOSC798",
+      "name": "Directed Graduate Research",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "AOSC898",
+      "name": "Pre-Candidacy Research",
+      "credits": {
+        "Range": [
+          1,
+          8
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "AOSC899",
+      "name": "Doctoral Dissertation Research",
+      "credits": {
+        "Amount": 6
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    }
+  ]
+}

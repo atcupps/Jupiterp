@@ -1,0 +1,1679 @@
+{
+  "name": "AASP",
+  "courses": [
+    {
+      "code": "AASP100",
+      "name": "Introduction to African American Studies",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS",
+        "DVUP"
+      ],
+      "description": "Significant aspects of the history of African Americans with particular emphasis on the evolution and development of black communities from slavery to the present. Interdisciplinary introduction to social, political, legal and economic roots of contemporary problems faced by blacks in the United States with applications to the lives of other racial and ethnic minorities in the Americas and in other societies.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Shane Walsh"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "WDS",
+                  "1114"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Shane Walsh"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "WDS",
+                  "1114"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0301",
+          "instructors": [
+            "George Kintiba"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "HBK",
+                  "0105"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0401",
+          "instructors": [
+            "Robert Choflet"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "2206"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0501",
+          "instructors": [
+            "Jason Nichols"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KEY",
+                  "0125"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0601",
+          "instructors": [
+            "Jason Nichols"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0207"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "AASP100H",
+      "name": "Introduction to African American Studies",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS",
+        "DVUP"
+      ],
+      "description": "Significant aspects of the history of African Americans with particular emphasis on the evolution and development of black communities from slavery to the present. Interdisciplinary introduction to social, political, legal and economic roots of contemporary problems faced by blacks in the United States with applications to the lives of other racial and ethnic minorities in the Americas and in other societies.",
+      "sections": [
+        {
+          "sec_code": "0301",
+          "instructors": [
+            "George Kintiba"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "HBK",
+                  "0105"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0401",
+          "instructors": [
+            "Robert Choflet"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "2206"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "AASP101",
+      "name": "Public Policy and the Black Community",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS"
+      ],
+      "description": "The impact of public policies on the black community and the role of the policy process in affecting the social, economic and political well-being of minorities. Particular attention given to the post-1960 to present era.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Periloux Peay"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "2166"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Cecily Hardaway"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "0125"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "AASP187",
+      "name": "The New Jim Crow: African-Americans, Mass Incarceration and the Prison Industrial Complex",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS",
+        "DVUP",
+        "SCIS"
+      ],
+      "description": "Students will examine the birth of the racial caste system following the abolition of slavery, the parallels between the racial hierarchy of the Jim Crow system and contemporary mass incarceration, and the rise of the prison industrial complex as a multi-billon business which thrives on the oppression of low-income populations and poor communities of color.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "John Drabinski"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "1119"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "AASP200",
+      "name": "African Civilization",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHU"
+      ],
+      "description": "A survey of African civilizations from 4500 B.C. to present. Analysis of traditional social systems. Discussion of the impact of European colonization on these civilizations. Analysis of the influence of traditional African social systems on modern African institutions as well as discussion of contemporary processes of Africanization.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "George Kintiba"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KEY",
+                  "0116"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "AASP202",
+      "name": "Black Culture in the United States",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS",
+        "DVUP"
+      ],
+      "description": "The course examines important aspects of African American life and thought which are reflected in African American literature, drama, music and art. Beginning with the cultural heritage of slavery, the course surveys the changing modes of black creative expression from the 19th-century to the present.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Robert Choflet"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "BPS",
+                  "0283"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Angel Dunbar"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SKN",
+                  "1115"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        },
+        {
+          "sec_code": "0301",
+          "instructors": [
+            "Ashley Newby"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KEY",
+                  "0102"
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        },
+        {
+          "sec_code": "0401",
+          "instructors": [
+            "Robert Choflet"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0214"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "AASP202H",
+      "name": "Black Culture in the United States",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS",
+        "DVUP"
+      ],
+      "description": "The course examines important aspects of African American life and thought which are reflected in African American literature, drama, music and art. Beginning with the cultural heritage of slavery, the course surveys the changing modes of black creative expression from the 19th-century to the present.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Robert Choflet"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "BPS",
+                  "0283"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "AASP211",
+      "name": "Get Out: The Sunken Place of Race Relations in the Post-Racial Era",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS",
+        "DVUP",
+        "SCIS"
+      ],
+      "description": "Prevailing thought suggests that we live in an era that is post-racial, particularly after the election of Barack Obama. Media often serves to drive our assessment of where our nation stands on issues like race, gender and sexuality. This course uses the film Get Out to delve into the production, evolution and significance of race in present day America. The course will engage multiple forms of media to investigate life in \"Post-Racial\" America, including but not limited to the role of stereotypes, interracial relationships, police-community relations, etc.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Shane Walsh",
+            "Jason Nichols"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "MMH",
+                  "1400"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "AASP255",
+      "name": "African-American History, 1865 - Present",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS"
+      ],
+      "description": "An introductory course in the African-American experience in the United States from 1865 to the present. Topics include the aftermath of the Civil War on US race relations, the rise of segregation, northern migration, World War I and II, Civil Rights Movements, and the Black Power Movement.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Quincy Mills"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "CHM",
+                  "1228"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "AASP264",
+      "name": "Quare/Queer Contentions: Exploration of Sexualities in the Black Community",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Centering the subjectivities of queer people of color generally and more specifically, Black people (as the word \"quare\" invites us to do), Quare/Queer Contentions takes up key moments within the history of the Black community and asks us to consider the work and presence of LGBTQ people in these moments.  The course also contends with the everyday experiences of LGBTQ subjects in the Black community.  Quare/Queer Contentions, therefore, interrogates the material realities of Black queer people in the context of family, religion, cultural/creative work, among others. Interdisciplinary in orientation, the course will employ primary and secondary texts, film, art, autobiographical narratives and policy data.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Michelle Rowley"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "2120"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "AASP298L",
+      "name": "African-American Literature and Culture",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHU",
+        "DVUP"
+      ],
+      "description": "An exploration of the stories black authors tell about themselves, their communities, and the nation as informed by time and place, gender, sexuality, and class. African American perspective themes such as art, childhood, sexuality, marriage, alienation and mortality, as well as representations of slavery, Reconstruction, racial violence and the Nadir, legalized racism and segregation, black patriotism and black ex-patriots, the optimism of integration, and the prospects of a post-racial America.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Tyra Griffin"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KEY",
+                  "0121"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "AASP298Z",
+      "name": "Special Topics in African American Studies; Jazz as a Cultural Art Form",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Ronald Zeigler"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "NNC",
+                  "0130"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "AASP320",
+      "name": "Poverty and African American Children",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "The United States has high levels of child poverty compared to other industrialized nations. Poverty rates are particularly high among African American children. This course focuses on how poverty and race intersect to influence the development of children and youth. Specific topics that we will consider include definitions of poverty, theories about the causes of poverty, racial disparities in child poverty, family functioning in the context of poverty, neighborhood influences, risk and protective processes, and social policies and programs designed to mitigate the impact of poverty.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Cecily Hardaway"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KEY",
+                  "0102"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "AASP371",
+      "name": "Black Feminist Thought",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Examines the ideas, words and actions of Black women writers, speakers, artists, and activists in the United States.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Zenzele Isoke"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "2120"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "AASP386",
+      "name": "Experiential Learning",
+      "credits": {
+        "Range": [
+          3,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "<div><div><div><strong>Restriction:</strong> Permission of BSOS-African American Studies department; and junior standing or higher.</div></div></div>",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Marshal Washington"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "1102"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "AASP397",
+      "name": "Senior Thesis",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Directed research in African American Studies resulting in the completion and defense of a senior thesis.",
+      "sections": null
+    },
+    {
+      "code": "AASP398B",
+      "name": "Selected Topics in the African Diaspora; Black Immigrants: Challenges and Impacts",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Cross-listed with IMMR319D. Credit only granted for AASP398B or IMMR319D.<br><br> How does immigration affect Black communities in the United States? How are foreign Black affected by living in the United States? Students will learn about: US history of immigration policy; pull and push factors driving Black migration; comparisons in socioeconomic outcomes between foreign and native Blacks; and differences between 1st and 2nd generation Black immigrants.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Beka Guluma"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KEY",
+                  "0100"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "AASP398C",
+      "name": "Selected Topics in the African Diaspora; African American Literature",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Cross-listed with ENGL317 and AMST328U. Credit granted for AASP398C, AMST328U or ENGL317.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Julius Fleming"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "1106"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "AASP398F",
+      "name": "Selected Topics in the African Diaspora; Blackness in Israeli Popular Culture and Contemporary Art",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Cross-listed with ISRL329Z and SOCY398Z. Credit only granted for ISRL329Z, AASP398F, or SOCY398Z.<br><br> This course will review the work of artists of Ethiopian origin who are active in the Israeli art field today and analyze the subjects they deal with in their work in relation to the socio-political change in Israel and the increase in Ethiopian representation in popular culture. We will discuss concepts such as socio-political art, activism through art, and a-political art.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Efrat Yerday"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "HBK",
+                  "0105"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "AASP398I",
+      "name": "Selected Topics in the African Diaspora; Deep Time: Memory, Media, and Ecological Imagination in the  Americas",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Cross-Listed with ENGL378W.  Credit for ENGL378W or AASP398I.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Marisa Parham"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "1320"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "AASP398P",
+      "name": "Selected Topics in the African Diaspora; Introduction to Pan-Africanism",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "George Kintiba"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SKN",
+                  "1115"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "AASP399",
+      "name": "Research in African-American Studies",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "AASP400",
+      "name": "Directed Readings in African American Studies",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS",
+        "DVUP"
+      ],
+      "description": "The readings will be directed by the faculty of African American Studies. Topics to be covered will be chosen to meet the needs and interests of individual students.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Chinyere Osuji"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "TuTh": [
+                  [
+                    3,
+                    30,
+                    "Pm"
+                  ],
+                  [
+                    4,
+                    45,
+                    "Pm"
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "AASP400H",
+      "name": "Directed Readings in African American Studies",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS",
+        "DVUP"
+      ],
+      "description": "The readings will be directed by the faculty of African American Studies. Topics to be covered will be chosen to meet the needs and interests of individual students.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Chinyere Osuji"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "TuTh": [
+                  [
+                    3,
+                    30,
+                    "Pm"
+                  ],
+                  [
+                    4,
+                    45,
+                    "Pm"
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "AASP411",
+      "name": "Black Resistance Movements",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "A comparative study of the black resistance movements in Africa and America; analysis of their interrelationships as well as their impact on contemporary pan-Africanism.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Periloux Peay"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "1101"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "AASP441",
+      "name": "Science, Technology, and the Black Community",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Scientific knowledge and skills in solving technological and social problems, particularly those faced by the black community. Examines the evolution and development of African and African American contributions to science. Surveys the impact of technological changes on minority communities.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Chinyere Osuji"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "TuTh": [
+                  [
+                    12,
+                    30,
+                    "Pm"
+                  ],
+                  [
+                    1,
+                    45,
+                    "Pm"
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "AASP468A",
+      "name": "Special Topics in Africa and the Americas; The African Side of the Black Diasporic Atlantic: People, Politics, and Faiths",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Cross-listed with HIST419W. Credit only granted for HIST419W or AASP468A.<br><br> The Black Atlantic- the African diaspora, and development of Atlantic- world Black communities- but with the focus on the African side. How did new Atlantic states and networks develop in Africa alongside the traffic in enslaved? How did the slave trade change Africa? Focuses include Asante, Dahomey, Yorubaland, African Islamic jihads, and abolition.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Paul Landau"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "2108"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "AASP478G",
+      "name": "Humanities Topics in African American Studies; Chocolate Cities: Urban America and the Black Experience",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Cross-listed with HIST328Z. Credit only granted for HIST328Z or AASP478G.<br><br> As early as the colonial area, cities have included significant numbers of people of African descent within their borders. By the twentieth century, war and mass migration had transformed African Americans into a predominantly urban people. This course examines a variety of urban areas in the United States, delineating how the opportunities and obstacles ofthese spaces have shaped African American life and culture from the colonial era to the present.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Dennis Doster"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "Tu": [
+                  [
+                    5,
+                    0,
+                    "Pm"
+                  ],
+                  [
+                    6,
+                    15,
+                    "Pm"
+                  ]
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "1101"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "AASP498J",
+      "name": "Special Topics in Black Culture; Racial Socialization of Children and Adolescents: Theory, Research and Practice",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Angel Dunbar"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SKN",
+                  "1115"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "AASP498U",
+      "name": "Special Topics in Black Culture; Islam in Africa and the African Diaspora",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Cross-listed with ARAB499J and HIST429F. Credit only granted for ARAB499J, AASP498U, or HIST429F.<br><br> Taught in English.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Rachel Schine"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "HJP",
+                  "2118"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "AASP499L",
+      "name": "Advanced Topics in Public Policy and the Black Community",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Crosslisted with JOUR458J Credit only granted for: JOUR458J or AASP499L.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "DeNeen Brown"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "3202"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "AASP499M",
+      "name": "Advanced Topics in Public Policy and the Black Community",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Crosslisted with JOUR459Z Credit only granted for: JOUR459Z or AASP499M",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Christoph Mergerson"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "1208"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "AASP499N",
+      "name": "Advanced Topics in Public Policy and the Black Community; News Coverage of Racial Issues",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Cross-listed with JOUR453. Credit only granted for JOUR453 or AASP499N.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Anne Rosen"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KNI",
+                  "3202"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "AASP499R",
+      "name": "Advanced Topics in Public Policy and the Black Community; Black Politics",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Prerequisite: AASP101 and/or GVPT170. Enrollment is restricted to students in the African American Studies program; and permission of BSOS-African American Studies department. Credit only granted for GVPT479B or AASP499R.<br><br> The purpose of this course is to assist students in gaining an understanding of the relationship of people of African descent in the United States to the political system and other structures of power. We critically engage several themes/topics including Black political philosophies and ideologies, electoral politics, Black and mainstream political institutions, political behavior and psychology, gender politics, and public policy. We will also analyze and discuss the informal political spaces that serve as sites for Black politics including social media, entertainment, and pop culture.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Chryl Laird"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TYD",
+                  "1132"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

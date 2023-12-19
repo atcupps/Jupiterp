@@ -1,0 +1,3065 @@
+{
+  "name": "ANTH",
+  "courses": [
+    {
+      "code": "ANTH222",
+      "name": "Introduction to Ecological and Evolutionary Anthropology",
+      "credits": {
+        "Amount": 4
+      },
+      "gen_eds": [
+        "DSNL",
+        "DVUP"
+      ],
+      "description": "An introduction to the evolution of human physiology and human behavior, the relationship between hominid and non-hominid primates, and the study of relationships between a population of humans and their biophysical environment.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Miguel Vilar"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "MMH",
+                  "1400"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      8,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "WDS",
+                  "0124B"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Miguel Vilar"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "MMH",
+                  "1400"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "WDS",
+                  "0124C"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Miguel Vilar"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "MMH",
+                  "1400"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "WDS",
+                  "0124C"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0104",
+          "instructors": [
+            "Miguel Vilar"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "MMH",
+                  "1400"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      8,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "WDS",
+                  "0124C"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0105",
+          "instructors": [
+            "Miguel Vilar"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "MMH",
+                  "1400"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "WDS",
+                  "0124C"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0106",
+          "instructors": [
+            "Miguel Vilar"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "MMH",
+                  "1400"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "WDS",
+                  "0124C"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ANTH240",
+      "name": "Introduction to Archaeology",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS",
+        "DVUP"
+      ],
+      "description": "Exploration of the variety of past human societies and cultures through archaeology, from the emergence of anatomically modern humans to the more recent historical past.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Mark Leone"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "WDS",
+                  "1114"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Stephen Brighton"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      20,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "MCB",
+                  "1207"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "WDS",
+                  "1131"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0202",
+          "instructors": [
+            "Stephen Brighton"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      20,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "MCB",
+                  "1207"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "WDS",
+                  "1131"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0203",
+          "instructors": [
+            "Stephen Brighton"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      20,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "MCB",
+                  "1207"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "WDS",
+                  "1131"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ANTH242",
+      "name": "Fire, Farming and Climate Change: An Archaeology Take on the History of Human Impacts on our Planet",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS",
+        "SCIS"
+      ],
+      "description": "An examination of why climate changes, the methods for recording climate change, and case studies of the varied responses of past human societies to climate change in different geographic regions and time periods with varying socio-political and economic systems.",
+      "sections": [
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Charles Walker"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0223"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ANTH260",
+      "name": "Introduction to Sociocultural Anthropology and Linguistics",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS",
+        "DVUP"
+      ],
+      "description": "Culture and social relationships in a wide variety of settings from small-scale to complex societies. An overview of how anthropology analyzes human behavior. Particular attention to the relationship between language and culture.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Laura Gilchrest"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EGR",
+                  "1202"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "WDS",
+                  "1102"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Laura Gilchrest"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EGR",
+                  "1202"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "WDS",
+                  "1102"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Laura Gilchrest"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EGR",
+                  "1202"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "WDS",
+                  "1102"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0104",
+          "instructors": [
+            "Laura Gilchrest"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EGR",
+                  "1202"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "WDS",
+                  "1102"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0105",
+          "instructors": [
+            "Laura Gilchrest"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EGR",
+                  "1202"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "WDS",
+                  "1102"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0106",
+          "instructors": [
+            "Laura Gilchrest"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EGR",
+                  "1202"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "WDS",
+                  "1102"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ANTH264",
+      "name": "Immigration Policy, Immigrant Lives",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS",
+        "DVUP",
+        "SCIS"
+      ],
+      "description": "An examination of the phenomenon of international migration, or immigration. Students develop awareness of how immigration has been framed in the general public and examined by social science disciplines, most prominently anthropology. Examination of case studies of different immigrant groups in distinct geographic contexts will illuminate the varied incorporation experiences of immigrants into U.S. society.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Christina Getrich"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "MCB",
+                  "1207"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "WDS",
+                  "1131"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Christina Getrich"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "MCB",
+                  "1207"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "WDS",
+                  "1131"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Christina Getrich"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "MCB",
+                  "1207"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "WDS",
+                  "1131"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ANTH265",
+      "name": "Anthropology of Global Health",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS",
+        "DVUP",
+        "SCIS"
+      ],
+      "description": "An overview of the growing field of global health including health care systems, medical practices, ideas about illness in cross-cultural contexts, issues of health development, global health inequity, and human rights issues. The course will focus on the history of global health, the critique of major international health agencies and their development paradigms, and the political economy of social inequalities and health.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Laura Gilchrest"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EGR",
+                  "1202"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EDU",
+                  "3233"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Laura Gilchrest"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EGR",
+                  "1202"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EDU",
+                  "1315"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Laura Gilchrest"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EGR",
+                  "1202"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "1123"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0104",
+          "instructors": [
+            "Laura Gilchrest"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EGR",
+                  "1202"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "1111"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0105",
+          "instructors": [
+            "Laura Gilchrest"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EGR",
+                  "1202"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EDU",
+                  "2101"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0106",
+          "instructors": [
+            "Laura Gilchrest"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EGR",
+                  "1202"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ATL",
+                  "0201"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ANTH298B",
+      "name": "Special Topics in Anthropology; Selected Musical Cultures of the World",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Also offered as MUSC220. For Spring 2020; credit only granted for MUET220, MUSC220, or ANTH298B.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Siv Lie"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "1120"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "3160"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Siv Lie"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "1120"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "3160"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Siv Lie"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "1120"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "3160"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0104",
+          "instructors": [
+            "Siv Lie"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "1120"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "1809"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0105",
+          "instructors": [
+            "Siv Lie"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "1120"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "1809"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0106",
+          "instructors": [
+            "Siv Lie"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "1120"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PAC",
+                  "1809"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ANTH299A",
+      "name": "Student Initiated Course; Introduction to Data Analytics for Anthropology",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "Students will learn the foundations of information technology, as well as the basics of the Python programming language and Structured Query Language. They will learn to tie these concepts together to manage and interpret large genetic data sets effectively.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Miguel Vilar"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "0103"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ANTH310",
+      "name": "Method &amp; Theory in Medical Anthropology and Global Health",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSSP",
+        "DVUP"
+      ],
+      "description": "Provides a critical perspective to global health that encompasses key political, economic, and cultural factors associated with the nature and magnitude of global health issues such as HIV/AIDS, tuberculosis and malaria, paying particular attention to how poverty and inequalities within and between societies has accelerated current global health challenges. Introduces students to how medical anthropologists have contributed to the debates surrounding the globalization of health.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Matthew Thomann"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "WDS",
+                  "1114"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ANTH323",
+      "name": "Plagues, Pathogens and Public Policy",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS",
+        "SCIS"
+      ],
+      "description": "The impact of diseases on populations from prehistoric times through the present will be examined, along with public perceptions of disease, scientific breakthroughs on treatment and prevention, and the ways that politics and public health policies can enhance or impede the advancement of disease treatment. The natural history of disease, population structure, and immunity will be discussed. The class will address emerging and re-emerging diseases and the ways that first responders, researchers, and policy makers may affect the outcome of an outbreak.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Veronica Sousa"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "WDS",
+                  "0104"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ANTH341",
+      "name": "Introduction to Zooarchaeology",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSSP"
+      ],
+      "description": "Zooarchaeology is the study of animal remains, especially bones, from archaeological contexts. This course will address both methodology as well as many of the main issues in contemporary zooarchaeology. Zooarchaeology stands at the intersection of a number of social and biological sciences, such as Biology, Osteology, Ecology, History, Anthropology and Economics. We will discuss basic animal osteology and the concepts and practices behind the identification of animal remains from archaeological contexts. We will cover the nature of the data in zooarchaeology, especially issues around using proxy data.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "George Hambrecht"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "0104B"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ANTH358A",
+      "name": "Undergraduate Teaching Assistant; Undergraduate Teaching Assistant in Archaeology",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "ANTH358B",
+      "name": "Undergraduate Teaching Assistant; Undergraduate Teaching Assistant in Bio-Anthropology",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "ANTH358C",
+      "name": "Undergraduate Teaching Assistant; Undergraduate Teaching Assistant in Cultural Anthropology",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "ANTH360",
+      "name": "Method and Theory in Sociocultural Anthropology",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Theoretical approaches and research methods in sociocultural anthropology. Emphasis on current debates, new directions, and their historical antecedents.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Kathryn Lafrenz Samuels"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      11,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SKN",
+                  "1115"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ANTH386",
+      "name": "Experiential Learning",
+      "credits": {
+        "Range": [
+          1,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "<div><div><div><strong>Recommended:</strong> Completion of advanced courses in relevant subfield of anthropology recommended.  </div><div><strong>Restriction:</strong> Permission of BSOS-Anthropology department; and junior standing or higher; and must be in Anthropology program.</div></div></div>",
+      "sections": null
+    },
+    {
+      "code": "ANTH398A",
+      "name": "Independent Study; Research Problems",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "ANTH398N",
+      "name": "Independent Study; Career Development for Anthropology Majors",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Erik Hanson"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "WDS",
+                  "1127"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ANTH403",
+      "name": "Queer Anthropology",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "An introduction to anthropological perspectives on non-normative genders and sexualities in transnational context. The focus on these identities and practices will involve ethnographic and theoretical examinations of how power and control are exerted on gender and sexuality in addition to how individuals and communities respond.  The ways in which sexuality and gender intersect with class, nation, and race will be examined along with the effects of globalization, transnational mass media, as well as cross-border economies and activisms on local or \"traditional\" genders and sexualities. Ethnography will be used to illuminate important cultural and national differences between people and thus unsettle North Atlantic-centric approaches to gender, sexuality, and queer studies.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Matthew Thomann"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "WDS",
+                  "1114"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ANTH416",
+      "name": "Anthropology of Global Violence",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "An examination of anthropological approaches to the study of violence, drawing from key texts to analyze how violence operates along a continuum: from routine, sometimes invisible forms of violence embedded in everyday life, to more overt and exceptional forms. Consideration of the role of ethnography in elucidating both the subjective experiences of violence and the ways in which violence is embedded in institutions, structures, and global political-economic processes. Analysis of the specific relationships between violence, health, mental health, and trauma in local and global contexts.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Andrea Lopez"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "WDS",
+                  "1114"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ANTH436",
+      "name": "Norse Archaeology",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "The archaeology of the Norse world from the 8th century through to the end of the 11th century. We will investigate the possible causes of the Norse expansion out of Scandinavia. The various settlements and colonies of Norse Russia, the Baltic, Britain, Ireland and the North Atlantic Islands (Orkney, the Shetlands, the Faroes, Iceland, Greenland and Newfoundland) will be examined. While we will look at the Norse in detail we will also attempt to put their raiding, trading, and settlements into a larger Eurasian context through a study of the archaeology of this period.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "George Hambrecht"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "1106"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ANTH447",
+      "name": "Material Culture Studies in Archaeology",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSSP"
+      ],
+      "description": "An in-depth introduction to the world of material culture studies with a focus on the methods and theories in historical archaeology. Students will look at archaeological data as historical documents, commodities and as symbols expressing ideas.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Stephen Brighton"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "WDS",
+                  "0104"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ANTH448R",
+      "name": "Special Topics in Archaeology; Three-Dimensional Digital Documentation: Using Laser-based Measurement Systems",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Cross-listed with ARCH478O, ARCH678O, ANTH632, and HISP619O. Credit only granted for: ARCH478O, ARCH678O, ANTH448R, ANTH632 or HISP619O.<br><br> This course focuses on the fundamentals of documenting components of the built environment and the landscapes in which they are located. It focuses on the use of lasers to calculate 3-D measurements at various scales, from objects, to buildings, and landscapes. It will cover data management and archiving, field documentation processes, and post-processing of scan point clouds. This includes the production of deliverables for clients or project partners, such as plans, elevations, orthoimagery, and cleaned exported point clouds in formats that are compatible with Autodesk software and other CAD or rendering software platforms. This course is intended for students working in fields that rely on accurately documenting components of the built environment in three dimension, including architects, engineers, preservationists, archaeologists, or digital designers.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Stefan Woehlke"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ARC",
+                  "1115"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ANTH467",
+      "name": "Researching Environment and Culture",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSSP"
+      ],
+      "description": "In this applied course, students use mixed methods to research a locally-based, environmental sustainability issue.  Classroom time will be split between seminar discussions of theory, methods, and relevant case studies, and lab work focused on project development, data analysis, and report write up.  Students are expected to spend additional time outside class on data collection, analysis, and writing",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "L Jen Shaffer"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "WDS",
+                  "0104"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ANTH476",
+      "name": "Senior Research",
+      "credits": {
+        "Range": [
+          3,
+          4
+        ]
+      },
+      "gen_eds": null,
+      "description": "Capstone course in which students pursue independent research into a current problem in anthropology, selected with assistance of a committee of faculty. Research leads to the writing of a senior thesis in anthropology.",
+      "sections": null
+    },
+    {
+      "code": "ANTH477",
+      "name": "Senior Thesis",
+      "credits": {
+        "Range": [
+          3,
+          4
+        ]
+      },
+      "gen_eds": null,
+      "description": "Capstone course in which students write a senior thesis on independent research into a current problem in anthropology. The thesis is defined before a committee of faculty.",
+      "sections": null
+    },
+    {
+      "code": "ANTH481",
+      "name": "Environmental Ethnographies of Asia",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSSP"
+      ],
+      "description": "Examines social and ecological environments in Asia through the lens of classic and contemporary ethnographies from across the continent. Considers how cultural, political and economic dynamics interact with ecological systems in both recurring and unexpected ways. Ethnographies include case studies of global commodity chains, technoscientific management, borders and migration, conservation, and local knowledge as they intersect with changing environments.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Madeline Brown"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "WDS",
+                  "0104"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ANTH485",
+      "name": "Honors Research Preparation",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Honors Research Preparation is an independent study course during which the Honors candidate will work with their Honors Thesis Advisor to establish not only the structure of the thesis and timeline, but also the formation of Thesis Review Committee.",
+      "sections": null
+    },
+    {
+      "code": "ANTH486",
+      "name": "Honors Research",
+      "credits": {
+        "Range": [
+          3,
+          4
+        ]
+      },
+      "gen_eds": null,
+      "description": "Capstone course in which students pursue independent research into a current problem in anthropology, selected with assistance of a committee of faculty. Research leads to the writing of an honors thesis in anthropology.",
+      "sections": null
+    },
+    {
+      "code": "ANTH487",
+      "name": "Honors Thesis",
+      "credits": {
+        "Range": [
+          3,
+          4
+        ]
+      },
+      "gen_eds": null,
+      "description": "Capstone course in which students write a thesis on the results of independent research into a current problem in anthropology.",
+      "sections": null
+    },
+    {
+      "code": "ANTH603",
+      "name": "Queer Anthropology",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "An introduction to anthropological perspectives on non-normative genders and sexualities in transnational context. The focus on these identities and practices will involve ethnographic and theoretical examinations of how power and control are exerted on gender and sexuality in addition to how individuals and communities respond.  The ways in which sexuality and gender intersect with class, nation, and race will be examined along with the effects of globalization, transnational mass media, as well as cross-border economies and activisms on local or \"traditional\" genders and sexualities. Ethnography will be used to illuminate important cultural and national differences between people and thus unsettle North Atlantic-centric approaches to gender, sexuality, and queer studies.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Matthew Thomann"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "WDS",
+                  "1114"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ANTH616",
+      "name": "Anthropology of Global Violence",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "An examination of anthropological approaches to the study of violence, drawing from key texts to analyze how violence operates along a continuum: from routine, sometimes invisible forms of violence embedded in everyday life, to more overt and exceptional forms. Consideration of the role of ethnography in elucidating both the subjective experiences of violence and the ways in which violence is embedded in institutions, structures, and global political-economic processes. Analysis of the specific relationships between violence, health, mental health, and trauma in local and global contexts.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Andrea Lopez"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "WDS",
+                  "1114"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ANTH630",
+      "name": "Quantification and Statistics in Applied Anthropology",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "An intensive overview of key quantitative and statistical approaches used by social scientists in applied ad policy research. This includes nonparametric and parametric statistical approaches. Students utilize statistical software and analyze existing and student-created databases. Anthropological case studies are emphasized.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Madeline Brown"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "WDS",
+                  "1102"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ANTH636",
+      "name": "Norse Archaeology",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "The archaeology of the Norse world from the 8th century through to the end of the 11th century. We will investigate the possible causes of the Norse expansion out of Scandinavia. The various settlements and colonies of Norse Russia, the Baltic, Britain, Ireland and the North Atlantic Islands (Orkney, the Shetlands, the Faroes, Iceland, Greenland and Newfoundland) will be examined. While we will look at the Norse in detail we will also attempt to put their raiding, trading, and settlements into a larger Eurasian context through a study of the archaeology of this period.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "George Hambrecht"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "1106"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ANTH641",
+      "name": "Introduction to Zooarchaeology",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Zooarchaeology is the study of animal remains, especially bones, from archaeological contexts. This course will address both methodology as well as many of the main issues in contemporary zooarchaeology. Zooarchaeology stands at the intersection of a number of social and biological sciences, such as Biology, Osteology, Ecology, History, Anthropology and Economics. We will discuss basic animal osteology and the concepts and practices behind the identification of animal remains from archaeological contexts. We will cover the nature of the data in zooarchaeology, especially issues around using proxy data.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "George Hambrecht"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TLF",
+                  "0104B"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ANTH647",
+      "name": "Advanced Material Culture Studies in Archaeology",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "An in-depth introduction to the world of material culture studies with a focus on the methods and theories in historical archaeology. Students will look at archaeological data as historical documents, commodities and as symbols expressing ideas.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Stephen Brighton"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "WDS",
+                  "0104"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ANTH655",
+      "name": "Introduction to Museum Scholarship",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Provides students a basic understanding of museums as cultural and intellectual institutions. Topics include the historical development of museums, museums as resources for scholarly study, and the museum exhibition as medium for presentation of scholarship.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Lesley Langa"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "Tu": [
+                  [
+                    5,
+                    30,
+                    "Pm"
+                  ],
+                  [
+                    7,
+                    0,
+                    "Pm"
+                  ]
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ANTH665",
+      "name": "Method &amp; Theory in Medical Anthropology and Global Health",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Provides a critical perspective to global health that encompasses key political, economic, and cultural factors associated with the nature and magnitude of global health issues such as HIV/AIDS, tuberculosis and malaria, paying particular attention to how poverty and inequalities within and between societies has accelerated current global health challenges. Introduces students to how medical anthropologists have contributed to the debates surrounding the globalization of health.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Matthew Thomann"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "WDS",
+                  "1114"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ANTH681",
+      "name": "Environmental Ethnographies of Asia",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Examines social and ecological environments in Asia through the lens of classic and contemporary ethnographies from across the continent. Considers how cultural, political and economic dynamics interact with ecological systems in both recurring and unexpected ways. Ethnographies include case studies of global commodity chains, technoscientific management, borders and migration, conservation, and local knowledge as they intersect with changing environments.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Madeline Brown"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "WDS",
+                  "0104"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ANTH688A",
+      "name": "Current Developments in Anthropology",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "ANTH689A",
+      "name": "Special Problems in Anthropology",
+      "credits": {
+        "Range": [
+          1,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "ANTH701",
+      "name": "Anthropology Internship Preparation",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Preparation for internship includes practicum training in development, presentation and evaluation of position papers, proposals and work plans; literature search and use of secondary data sources in decision making the effect cultural analysis and resource management; ethics and professional development for work in non-academic settings.",
+      "sections": null
+    },
+    {
+      "code": "ANTH712",
+      "name": "Anthropology Internship Analysis",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "The preparation and presentation of internship results, and the development of skills in report writing and presentation. Includes the completion of a professional quality report or publishable paper based on the internship experience.",
+      "sections": null
+    },
+    {
+      "code": "ANTH722",
+      "name": "Ecological Anthropology",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "An overview of important approaches to ecological anthropology. Population, systems, community, political, behavioral and evolutionary ecology will be examined as they have been applied to a range of anthropological questions. Complexity theory (nonlinear dynamics) and topics in game theory will also be addressed. Students will map the field of ecological anthropology and to assess the strengths and weaknesses of contemporary approaches, methods and theories.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "L Jen Shaffer"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "KEY",
+                  "0125"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ANTH740",
+      "name": "Theories of the Past and Accomplishments of Archaeology",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "The primary purpose is to highlight some of the key achievements made by archaeologists in informing questions of interest to society from 1850 on. Key achievements include how archaeologists understand elements of the past thought to be central to the development of modern socieity. A secondary purpose is to introduce students to the theories used to understand the place of the past in society and the function of answers to questions thought central to modern social life.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Mark Leone"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TMH",
+                  "0225"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ANTH745",
+      "name": "International Heritage Management",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "An examination of international heritage management practices and global ethical and professional norms in order to contextualize domestic cultural resource management in the US. The survey will also explore the linkages and areas for growth between international and domestic heritage practice.",
+      "sections": [
+        {
+          "sec_code": "1",
+          "instructors": [
+            "Joshua Samuels"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ANTH746",
+      "name": "Applied Archaeological Theory",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Does cultural and heritage resources management (CHRM) need theory? Can archeological theory help us understand CHRM conventions and configurations, and does CHRM have its own distinctive contribution to make to archaeological theory? This course explores these questions while surveying the key areas of theory that inform the work that CHRM practitioners do, and also the place of CHRM in cultural discourse.",
+      "sections": [
+        {
+          "sec_code": "1",
+          "instructors": [
+            "Matthew Palus"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ANTH788",
+      "name": "Internship Research",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "ANTH789",
+      "name": "Internship",
+      "credits": {
+        "Range": [
+          3,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "ANTH799",
+      "name": "Master's Thesis Research; Cultural and Heritage Resource Management Thesis",
+      "credits": {
+        "Range": [
+          1,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "1",
+          "instructors": [
+            "Matthew Palus"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        },
+        {
+          "sec_code": "2",
+          "instructors": [
+            "Matthew Palus"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ANTH856",
+      "name": "Museum Research Seminar",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "A research seminar focusing on the practice and presentation of cultural and historical scholarship in museums and historical sites. Students will complete an original research project on the challenges and opportunities of public exhibition and interpretation of cultural and historical research.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Jamila Moore-Pewu"
+          ],
+          "class_meetings": [
+            {
+              "OnlineSync": {
+                "Th": [
+                  [
+                    4,
+                    0,
+                    "Pm"
+                  ],
+                  [
+                    5,
+                    45,
+                    "Pm"
+                  ]
+                ]
+              }
+            },
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ANTH857",
+      "name": "Museum Scholarship Practicum",
+      "credits": {
+        "Range": [
+          3,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "Students devise and carry out a research program using the collections at the Smithsonian Institution or some other cooperating museum, working under joint supervision of a museum professional and a university faculty member.",
+      "sections": [
+        {
+          "sec_code": "01",
+          "instructors": [
+            "Paul Jaeger"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ANTH898",
+      "name": "Pre-Candidacy Research",
+      "credits": {
+        "Range": [
+          1,
+          8
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "ANTH899",
+      "name": "Doctoral Dissertation Research",
+      "credits": {
+        "Amount": 6
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    }
+  ]
+}

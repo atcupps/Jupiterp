@@ -1,0 +1,1696 @@
+{
+  "name": "ARTH",
+  "courses": [
+    {
+      "code": "ARTH200",
+      "name": "Art and Society in Ancient and Medieval Europe and the Mediterranean",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHU",
+        "DVUP"
+      ],
+      "description": "Examines the material culture and visual expressions of Mediterranean and European societies from early times until ca. 1300 CE, emphasizing the political, social, and religious context of the works studied, the relationships of the works to the societies that created them, and the interrelationship of these societies.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Emily Egan"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "2203"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "3211"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Emily Egan"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "2203"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "3215"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Emily Egan"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "2203"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "3211"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0104",
+          "instructors": [
+            "Emily Egan"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "2203"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "3211"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ARTH260",
+      "name": "Art and Activism",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHU",
+        "DSSP",
+        "SCIS"
+      ],
+      "description": "Can art effect social change? How may we use the history of radical and avant-garde art to inform present-day movements and models of artistic and creative activism? This course explores the modern and contemporary history of political art and arts activism on local, national, and global scales.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Abigail McEwen"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      20,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0310"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "3211"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Abigail McEwen"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      20,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0310"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      20,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "3211"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Abigail McEwen"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      20,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0310"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "3211"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0104",
+          "instructors": [
+            "Abigail McEwen"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      20,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0310"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      20,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "3211"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ARTH261",
+      "name": "Monuments, Monumentality, and the Art of Memorial",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHU",
+        "DVUP",
+        "SCIS"
+      ],
+      "description": "Why do societies create monuments? And why do they preserve and destroy, change and remove them? How do monuments embody cultural values, shape historical narratives, and become sites of mourning and memory? This course investigates the political and cultural work of monuments across time and space, from the ancient world to European empires to the contemporary United States. The issues we consider include intercultural exchange and religious contexts, race and representation, and appropriation and iconoclasm.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Tess Korobkin"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "2203"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "3215"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Tess Korobkin"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "2203"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "3211"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Tess Korobkin"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "2203"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "3215"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0104",
+          "instructors": [
+            "Tess Korobkin"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "2203"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "3211"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ARTH292",
+      "name": "Discovering Japan: How the Arts Shaped a Nation",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHU",
+        "DVUP"
+      ],
+      "description": "Explores the origins and creation of Japan from ancient to contemporary times through East Asian and European exchange. Acquaints students with painting, sculpture, architecture, ceramics, gardens, and other art forms in relation to the various cultural contexts within which they were produced and used.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Alicia Volk"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "2203"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      20,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "HBK",
+                  "0302H"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Alicia Volk"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "2203"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      20,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0207"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Alicia Volk"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "2203"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "1105"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0104",
+          "instructors": [
+            "Alicia Volk"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "2203"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "1105"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ARTH301",
+      "name": "Aegean Art and Archaeology",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHU"
+      ],
+      "description": "Sites and monuments of painting, sculpture, architecture, and the minor arts of Crete, the Cycladic islands, and the Greek mainland from the earliest times to the downfall of the Mycenaean empire.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Emily Egan"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MW": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "3215"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ARTH324",
+      "name": "Leonardo's World: Art and Experience in Renaissance Italy",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHU"
+      ],
+      "description": "Painting, sculpture, architecture, and the decorative arts of the sixteenth century in Italy.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Aneta Georgievska-Shine"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "3211"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ARTH357",
+      "name": "History of Photography",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "An exploration of the historical, social, aesthetic, and technological developments of the photographic medium and its relationship to other modes of visual representation in the creation of the modern world.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Alison Singer"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "3215"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ARTH359C",
+      "name": "Film as Art; Steven Soderbergh and Hollywood: Form, Business and History",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Focus will be placed on the films of Steven Soderbergh and the reconsidering of film forms and media for storytelling within changing business and distribution models. Soderbergh is the focus because of his reworking ofgenres of film (German Expressionism, Film Noir, New Wave, Independent, Experimental, Art, Documentary, Melodrama, Dogma, Hollywood Blockbuster, the Remake), explorations of media (Television Drama, Reality Programming, Direct to Video, Film, Streaming) and professional roles (Writer, Director, Actor, Producer, Collaborator). Soderbergh's work will be considered in the context of his Independent film contemporaries.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Greg Metcalf"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "4213A"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ARTH361",
+      "name": "American Art from Civil War to Civil Rights",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHU",
+        "DVUP"
+      ],
+      "description": "Explores diverse artistic movements and makers in the United States, beginning at the end of the Civil War in 1865 and concluding with the art of Civil Rights era in the 20th century. We will ask how the visual arts construct and challenge formations of race, class, gender, and citizenship in the context of political transformations and social movements over a century of US history.  This course emphasizes the practice of close looking as we encounter works art across a range of media--photography, painting, sculpture, film, material culture, performance art and public art.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Alison Singer"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "3215"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ARTH376",
+      "name": "Living Art of Africa",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Art styles among the segmentary, centralized, and nomadic people of Africa. The iconography and function of their art and its relationship to their various societies, cults and ceremonies.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Kevin Tervala"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      8,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      15,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "3215"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ARTH386",
+      "name": "Experiential Learning",
+      "credits": {
+        "Range": [
+          3,
+          6
+        ]
+      },
+      "gen_eds": [
+        "DSSP"
+      ],
+      "description": "Supervised internship experience in diverse areas of art historical, archaeological, and museological work.",
+      "sections": null
+    },
+    {
+      "code": "ARTH389U",
+      "name": "Special Topics in Art History and Archaeology; Contemporary Art: Views from Asia",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "From biennials, to fairs, to exhibitions in white-cube galleries, the same institutional forms of contemporary art are found all over the world. But does that mean that contemporary art is truly global? This course answers that question by examining the ways that art from Asia is exhibited, both in and outside of that region. Alongside this focus on exhibit ion, the course covers some of the key artistic movements and artists from countries in the region from 1989 to the present. The course does not offer a comprehensive view of this vast area of the world, but rather a survey of the field through the work of key scholars and critics and crucial events. Students learn to navigate the art world, at least digitally, which is a crucial set of skills for research on contemporary art. Students will complete an individual guided research project on a prominent artist from the region as well as a collaborative curatorial proposal.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Karin Zitzewitz"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "3215"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ARTH391",
+      "name": "Transnational Chinese Cinema",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHU"
+      ],
+      "description": "Chinese cinema has made a big impact on contemporary world film culture. This course will introduce students to the films directed by some of the most representative filmmakers working in different geopolitical locations (mainland China, Taiwan, Hong Kong) and the Chinese diaspora. The films of these directors, in a spectrum of genres, themes, and styles, have inspired global scholarship, not only in visual culture and cinema, but also in the study of women's issues, gender and ethnic studies, as well as the fields of adaptation and intermedia studies. Students will explore these films in their socio-historical and artistic contexts, considering the influences and innovations that have shaped them and analyzing their reception by audiences and critics. After reading about the films they view, and participating in class discussions, students will be ready to complete their analytical written assignments, for which they will critically examine the films by applying key concepts such as gender, sexuality, race, gaze, style, representation, power, diaspora, etc.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Jason Kuo"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "4213A"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ARTH428C",
+      "name": "Selected Topics in Art History; Visual Histories of the Black Atlantic",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Taking Paul Gilroy's conception of the \"Black Atlantic\" as our touchstone, this course explores visual and material histories of the Atlantic World in the long nineteenth century.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Tess Korobkin"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "4304"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ARTH428E",
+      "name": "Selected Topics in Art History; Nihonga and Neo-traditionalism: What is Japanese about Japanese Art?",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "This course investigates modern dimensions of globality--globalism, modernism, colonialism, and imperialism, among others--through the lens of nihonga, the so-called native tradition within modern Japanese painting. We will consider how, in a global context based on uneven relations of power, generations of contemporary artists navigated conceptions of history and geography--as well as race and ethnicity--in their artworks, sometimes in response to Japan's unusual status as an empire on the periphery. Close attention will be paid to the materials and facture of objects as well as their reception by multiple audiences.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Alicia Volk"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      1,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "4304"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ARTH428X",
+      "name": "Selected Topics in Art History; The Nomadic Artist in the Chinese Diaspora",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Critical but contested concepts such as nation, migration, displacement, exile, homeland, mobility, transculturalization, citizenship, cosmopolitanism, and hybridity are investigated by studying nomadic, journeying, wandering artists in the Chinese diaspora in Southeast Asia,Oceania, and Euro-America. Artists to be studied include Ai Weiwei, Cai Guoqiang, Huang Yao, Kim Lim, Maya Lin, I. M. Pei, and Xu Bing.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Jason Kuo"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "4304"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ARTH488O",
+      "name": "Colloquium in Art History; Living, Lodging, Dwelling",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Students will explore the different types of living spaces in early modern England, who lived in them, and how those people utilized the spaces they inhabited. We will also collect data on surviving Tudor houses and their preservation status.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Elizabeth Honig"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "4213A"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ARTH488P",
+      "name": "Colloquium in Art History; Tender Heroes: The Plight of Children in the Arts",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "This undergraduate colloquium addresses a pervasive and perhaps disturbing theme in the history of western European art: The portrayal of narratives in which an infant or a small child is threatened with harm or death but then is miraculously saved at the height of the drama. Recovered through humanistic research into classical art and literature, and likewise encountered in Judaeo-Christian scripture, this thematic paradigm was especially common in 17th- through 19th -century Europe, and is still reflected in today's popular media including television and film. Colloquium participants will explore this theme, surveying its elaboration in the visual and literary arts, and developing theories about its origin, affective power and contextual purposes.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Anthony Colantuono"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "3217"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ARTH498",
+      "name": "Directed Studies in Art History I",
+      "credits": {
+        "Range": [
+          2,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "ARTH499",
+      "name": "Honors Thesis",
+      "credits": {
+        "Range": [
+          3,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "ARTH698",
+      "name": "Teaching Art History",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Anthony Colantuono",
+            "Jason Kuo",
+            "Jordana Saggese",
+            "Tess Korobkin",
+            "Alicia Volk",
+            "Abigail McEwen"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "4304"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ARTH758B",
+      "name": "Seminar in American Art; Visual Histories of the Black Atlantic",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Taking Paul Gilroy's conception of the \"Black Atlantic\" as our touchstone, this course explores visual and material histories of the Atlantic World in the long nineteenth century.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Tess Korobkin"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      1,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "4304"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ARTH778C",
+      "name": "Seminar in Chinese Art; The Nomadic Artist in the Chinese Diaspora",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Critical but contested concepts such as nation, migration, displacement, exile, homeland, mobility, transculturalization, citizenship, cosmopolitanism, and hybridity are investigated by studying nomadic, journeying, wandering artists in the Chinese diaspora in Southeast Asia,Oceania, and Euro-America. Artists to be studied include Ai Weiwei, Cai Guoqiang, Huang Yao, Kim Lim, Maya Lin, I. M. Pei, and Xu Bing.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Jason Kuo"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "4304"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ARTH779A",
+      "name": "Seminar in Japanese Art; Nihonga and Neo-traditionalism: What is Japanese about Japanese Art?",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "This course investigates modern dimensions of globality--globalism, modernism, colonialism, and imperialism, among others--through the lens of nihonga, the so-called native tradition within modern Japanese painting. We will consider how, in a global context based on uneven relations of power, generations of contemporary artists navigated conceptions of history and geography--as well as race and ethnicity--in their artworks, sometimes in response to Japan's unusual status as an empire on the periphery. Close attention will be paid to the materials and facture of objects as well as their reception by multiple audiences.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Alicia Volk"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      1,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "4304"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ARTH798",
+      "name": "Directed Graduate Studies in Art History",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "ARTH799",
+      "name": "Master's Thesis Research",
+      "credits": {
+        "Range": [
+          1,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "ARTH898",
+      "name": "Pre-Candidacy Research",
+      "credits": {
+        "Range": [
+          1,
+          8
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "ARTH899",
+      "name": "Doctoral Dissertation Research",
+      "credits": {
+        "Amount": 6
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    }
+  ]
+}

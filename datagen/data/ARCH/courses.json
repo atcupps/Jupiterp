@@ -1,0 +1,2172 @@
+{
+  "name": "ARCH",
+  "courses": [
+    {
+      "code": "ARCH170",
+      "name": "Design Thinking and Architecture",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHU"
+      ],
+      "description": "Examines conceptual, perceptual, behavioral, and technical aspects of the built environment, and methods of analysis, problem-solving, and design implementation.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "William Wyllie"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "2309"
+                ]
+              }
+            },
+            "Unspecified",
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EDU",
+                  "2101"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "William Wyllie"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "2309"
+                ]
+              }
+            },
+            "Unspecified",
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "1222"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "William Wyllie"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "2309"
+                ]
+              }
+            },
+            "Unspecified",
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "LEF",
+                  "1221"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0104",
+          "instructors": [
+            "William Wyllie"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "2309"
+                ]
+              }
+            },
+            "Unspecified",
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ARC",
+                  "1125"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0105",
+          "instructors": [
+            "William Wyllie"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "2309"
+                ]
+              }
+            },
+            "Unspecified",
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "EDU",
+                  "2102"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0106",
+          "instructors": [
+            "William Wyllie"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "2309"
+                ]
+              }
+            },
+            "Unspecified",
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "SQH",
+                  "2113"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ARCH200",
+      "name": "Design Media and Representation I",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Study of architectural representation in physical and digital design media. Examine visual literacy and visual communications through applied drawing, modeling and visual making to explore the role of design media and representation in design and design thinking.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Michael Abrams"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      8,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Michael Abrams"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      8,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0103",
+          "instructors": [
+            "Michael Abrams"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      8,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0104",
+          "instructors": [
+            "Michael Abrams"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      8,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0105",
+          "instructors": [
+            "Michael Abrams"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      8,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0106",
+          "instructors": [
+            "Michael Abrams"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      8,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      9,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ARCH201",
+      "name": "Elements and Principles of Architecture",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "Survey of fundamental elements and principals of architecture and architectural education.  Frames study of architecture as a profession, discipline and critical practice.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Brian Kelly"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ARCH225",
+      "name": "History of World Architecture I",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHU"
+      ],
+      "description": "Pre-1500 World Architecture survey course - History of Architecture structured to develop critical thinking and visually literacy with regard to the worldwide legacy of design thinking and cultural production through architecture",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Joseph Williams"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "2203"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ARCH271",
+      "name": "People, Planet, and Profit: Building Sustainable Places",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSSP"
+      ],
+      "description": "An introduction to the four disciplines represented in the School: architecture and urban design, community planning, historic preservation, and real estate development, that work to create a more sustainable environment for the future to create a more sustainable environment for the future using our interpretation of the quadruple bottom line: socio-cultural, economic, environmental, and design sustainability. Students will be provided with an understanding of the fundamental scholarship and processes of each of these disciplines and examine the intersections between them. Additionally, they will learn by applying the approaches of the four disciplines through a series of field studies.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Wayne Curtis"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ARC",
+                  "0204"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ARCH272",
+      "name": "Sustainability at College Park",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSNS",
+        "DSSP",
+        "SCIS"
+      ],
+      "description": "Explore the ways and the degrees to which University of Maryland, College Park campus master planning and operations incorporate principles of sustainability including smart growth, LEED and other building rating systems, higher education rating systems, sustainable agriculture and transportation planning. Among other subjects, students will learn about the Campus and the City of College Park and survey the relationship between local, national and global sustainability concerns. Students will learn about the University's Climate Action Plan and the roles, and extent to which, the UMD Office of Sustainability and other campus units are helping develop a carbon-neutral and resource-efficient campus infrastructure.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Ralph Bennett"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ARC",
+                  "0204"
+                ]
+              }
+            },
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0310"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ARCH386",
+      "name": "Experiential Learning",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSSP"
+      ],
+      "description": "Learning experience tied to internship of specified duration with targeted learning outcomes.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Kristen Stack"
+          ],
+          "class_meetings": [
+            "OnlineAsync"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ARCH400",
+      "name": "Architecture Design Studio I",
+      "credits": {
+        "Amount": 6
+      },
+      "gen_eds": null,
+      "description": "Introduction to architectural design with particular emphasis on conventions and principles of architecture, visual and verbal communication skills, formal analysis, design process, spatial composition, architectural promenade, basic program distribution, and elementary constructional and environmental responses.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Michael Abrams"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      20,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Kenneth Filler"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      20,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ARCH402",
+      "name": "Architecture Design Studio III",
+      "credits": {
+        "Amount": 6
+      },
+      "gen_eds": [
+        "DSSP"
+      ],
+      "description": "Architectural design studio with emphasis on building and facade typologies, the development of architectural promenade and sequence, public and/or civic infill buildings dependent upon the architectural promenade, and urban housing types of varying densities. The architect's obligations to urban context are explored in many dimensions including historical, typological, and physical.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Georgeanne Matthews"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      20,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ARCH405",
+      "name": "Graduate Architecture Design Studio II",
+      "credits": {
+        "Amount": 6
+      },
+      "gen_eds": null,
+      "description": "Architectural design studio with emphasis on building and facade typologies, the development of architectural promenade and sequence, public and/or civic infill buildings dependent upon the architectural promenade, and urban housing types of varying densities. The architect's obligations to urban context are explored in many dimensions including historical, typological, and physical. Offered spring only.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Julie Gabrielli"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      20,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ARCH407",
+      "name": "Graduate Architecture Design IV",
+      "credits": {
+        "Amount": 6
+      },
+      "gen_eds": null,
+      "description": "Studio problems and theories concentrating on urbanism and urban design techniques. Issues and sites range from high-density urban in-fill to suburban and greenfield development in American and other contexts. Studio theories explore such topics as Contextualism, Neo-Traditional design, Transit Oriented Development, density, sustainable development, building typology, and street design.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Jana VanderGoot"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      20,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ARCH408",
+      "name": "Special Topics Architecture Design Studio",
+      "credits": {
+        "Amount": 6
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "James Tilghman"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      20,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Ronit Eisenbach"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      20,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ARCH418D",
+      "name": "Selected Topics in Architectural Technology; The future of Sustainability:Human:centered Design, EmergingTechnologies, and Artificial Intelligence",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Hooman Koliji"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "1213"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ARCH420",
+      "name": "History of American Architecture",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": [
+        "DSHS"
+      ],
+      "description": "American architecture from the late 17th to the 21st century.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Caroline Hickman"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ARC",
+                  "1101"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ARCH423",
+      "name": "History of Roman Architecture",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Survey of Roman architecture from 500 B.C. To A.D. 325.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Joseph Williams"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ARC",
+                  "1101"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ARCH425",
+      "name": "History of Architecture I",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Pre-1500 World Architecture survey course - History of Architecture structured to develop critical thinking and visually literacy with regard to the worldwide legacy of design thinking and cultural production through architecture. Structured to nurture critical thinking and visually literacy with regard to the worldwide legacy of architecture. The work in the course will involve the evaluation of sources and arguments in reading architectural history. Architecture will be framed relative to ways of thinking, religious beliefs, cultural heritage, and cultural values.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Joseph Williams"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "2203"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ARCH427",
+      "name": "Theories of Architecture",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Survey of architectural theories - theories of architectural design, representation and urban design from antiquity to the present day.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Michael Ezban"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "F": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ARC",
+                  "1127"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ARCH428D",
+      "name": "Selected Topics in Architectural History; Learning to Understand Washington",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Cynthia Field"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "1213"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ARCH428F",
+      "name": "Selected Topics in Architectural History; History of Modern Architecture",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "WF": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      15,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ARC",
+                  "1105"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ARCH445",
+      "name": "Visual Analysis of Architecture",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Study of visual principles of architectural and urban precedents through graphic analysis. Exercises include on-site observation, documentation and analysis. Focuses on the development of an architect's sketchbook as a tool for life-long learning.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Michael Ezban"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      10,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ARC",
+                  "1105"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ARCH448M",
+      "name": "Selected Topics in Visual Studies in Architecture; Applied Model Making",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "David Atwater"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ARCH463",
+      "name": "Sustainable Systems in Architecture",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Sustainable systems in architecture examines the nature of the global problem, environmental economics, understanding the local environment, bioclimatic design, solar control and shading, solar access zoning, residential scale energy design issues, commercial scale energy design issues, and urban scale energy design issues.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Michael Binder"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      3,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ARC",
+                  "0204"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ARCH465",
+      "name": "Architectural Structures II",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "The basic principles of elastic behavior for different materials such as wood, steel, concrete, and composite materials and compares the properties and applications of materials generally will be covered. It investigates cross sectional stress and strain behavior in flexure and in shear, and torsion as well as the stability of beams and columns. The qualitative behavior of combined stresses and fracture in materials is also covered.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Michael Binder"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "0310"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ARCH468P",
+      "name": "Selected Topics in Architecture; Resume and Portfolio Design",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Hooman Koliji"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "2206"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ARCH472",
+      "name": "Building Information Modeling Communication and Collaboration",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Building Information Modeling is  explored as pertains to collaboration and communication in the design and construction of buildings and building systems. Practical and empirical learning using BIM software and case studies of real world projects and construction scenarios.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Kiley Wilfong Cullen"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      1,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ARC",
+                  "1115"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0102",
+          "instructors": [
+            "Andrew Lindberg"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      3,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ARC",
+                  "1115"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ARCH478O",
+      "name": "Selected Topics in Architecture; Three-Dimensional Digital Documentation: Using Laser-based Measurement Systems",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Cross-listed with ARCH678O, ANTH448R, ANTH632, and HISP619O. Credit only granted for: ARCH478O, ARCH678O, ANTH448R, ANTH632 or HISP619O.<br><br> This course focuses on the fundamentals of documenting components of the built environment and the landscapes in which they are located. It focuses on the use of lasers to calculate 3-D measurements at various scales, from objects, to buildings, and landscapes. It will cover data management and archiving, field documentation processes, and post-processing of scan point clouds. This includes the production of deliverables for clients or project partners, such as plans, elevations, orthoimagery, and cleaned exported point clouds in formats that are compatible with Autodesk software and other CAD or rendering software platforms. This course is intended for students working in fields that rely on accurately documenting components of the built environment in three dimension, including architects, engineers, preservationists, archaeologists, or digital designers.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Stefan Woehlke"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ARC",
+                  "1115"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ARCH478U",
+      "name": "Selected Topics in Architecture; The Black Experience and The American Built Environment",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Marques King"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      9,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ARC",
+                  "1105"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ARCH478X",
+      "name": "Selected Topics in Architecture; Concepts and Methods in Landscape History",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Anatole Tchikine"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Th": [
+                    [
+                      4,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      6,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "1100"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ARCH601",
+      "name": "Topical Design Studio VI",
+      "credits": {
+        "Amount": 6
+      },
+      "gen_eds": null,
+      "description": "Topical architectural design studio with concentration on advanced topical inquiry addressing but not limited to: architectural competitions,  sustainable design, theoretica/conceptual issues, programmatic, contextual, and/or technical issues.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Peter Noonan"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      5,
+                      20,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": null
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ARCH628D",
+      "name": "Selected Topics in Architectural History; Learning to Understand Washington",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Cynthia Field"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ASY",
+                  "1213"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ARCH628U",
+      "name": "Selected Topics in Architectural History; A survey of the history of Latin American Architecture and Urbanism in Context",
+      "credits": {
+        "Range": [
+          1,
+          4
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Juan Burke"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ARC",
+                  "1123"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ARCH635",
+      "name": "Seminar in the History of Modern Architecture",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Advanced investigation of historical problems in modern architecture.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Instructor: TBA"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "WF": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      15,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ARC",
+                  "1105"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ARCH654",
+      "name": "Urban Development and Design Theory",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Advanced investigation into the history, and practice of urban design, planning, and development.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Juan Burke"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      9,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      10,
+                      45,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "TWS",
+                  "1107"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ARCH668P",
+      "name": "Advanced Selected Topics in Architecture; Architecture:Resume and Portfolio Design",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Hooman Koliji"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      9,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "2206"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ARCH678O",
+      "name": "Advanced Selected Topics in Architecture; Three-Dimensional Digital Documentation: Using Laser-based  Measurement Systems",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Cross-listed with ARCH478O, ANTH448R, ANTH632, and HISP619O. Credit only granted for: ARCH478O, ARCH678O, ANTH448R, ANTH632 or HISP619O.<br><br> This course focuses on the fundamentals of documenting components of the built environment and the landscapes in which they are located. It focuses on the use of lasers to calculate 3-D measurements at various scales, from objects, to buildings, and landscapes. It will cover data management and archiving, field documentation processes, and post-processing of scan point clouds. This includes the production of deliverables for clients or project partners, such as plans, elevations, orthoimagery, and cleaned exported point clouds in formats that are compatible with Autodesk software and other CAD or rendering software platforms. This course is intended for students working in fields that rely on accurately documenting components of the built environment in three dimension, including architects, engineers, preservationists, archaeologists, or digital designers.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Stefan Woehlke"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      4,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ARC",
+                  "1115"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ARCH678U",
+      "name": "Advanced Selected Topics in Architecture; The Black Experience &amp; The American Built Environment",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Marques King"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "W": [
+                    [
+                      7,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      9,
+                      40,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ARC",
+                  "1105"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ARCH679",
+      "name": "Advanced Independent Studies in Architecture; Independent Study in Architecture",
+      "credits": {
+        "Range": [
+          1,
+          4
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "ARCH797",
+      "name": "Thesis Proseminar",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Directed research and preparation of thesis program.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "James Tilghman"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "M": [
+                    [
+                      8,
+                      30,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ARC",
+                  "1125"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ARCH798",
+      "name": "Thesis in Architecture",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "ARCH799",
+      "name": "Master's Thesis Research",
+      "credits": {
+        "Range": [
+          1,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "Restricted to ARCH majors only.",
+      "sections": null
+    }
+  ]
+}

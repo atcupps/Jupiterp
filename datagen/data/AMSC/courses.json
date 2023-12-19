@@ -1,0 +1,541 @@
+{
+  "name": "AMSC",
+  "courses": [
+    {
+      "code": "AMSC420",
+      "name": "Mathematical Modeling",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "The course will develop skills in data-driven mathematical modeling through individual and group projects. Emphasis will be placed on both analytical and computational methods, and on effective oral and written presentation of results.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Radu Balan"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PHY",
+                  "2214"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "AMSC460",
+      "name": "Computational Methods",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Basic computational methods for interpolation, least squares, approximation, numerical quadrature, numerical solution of polynomial and transcendental equations, systems of linear equations and initial value problems for ordinary differential equations. Emphasis on methods and their computational properties rather than their analytic aspects. Intended primarily for students in the physical and engineering sciences.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Tobias von Petersdorff"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      2,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "MTH",
+                  "0103"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0201",
+          "instructors": [
+            "Stefan Doboszczak"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      12,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      12,
+                      50,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "JMZ",
+                  "2206"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0301",
+          "instructors": [
+            "Deep Ray"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PHY",
+                  "0405"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "sec_code": "0401",
+          "instructors": [
+            "Kayo Ide"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "MTH",
+                  "0106"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "AMSC466",
+      "name": "Introduction to Numerical Analysis I",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Floating point computations, direct methods for linear systems, interpolation, solution of nonlinear equations.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Abba Gumel"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "PHY",
+                  "2213"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "AMSC498A",
+      "name": "Selected Topics in Applied Mathematics",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "AMSC661",
+      "name": "Scientific Computing II",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Numerical methods for solving ordinary and partial differential equations (elliptic, parabolic, hyperbolic, and dispersive): motivation, analysis, and implementation. Finite difference methods, finite element methods, Fourier and Chebyshev spectral methods, and meshless methods.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Maria Cameron"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      12,
+                      30,
+                      "Pm"
+                    ],
+                    [
+                      1,
+                      45,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "MTH",
+                  "0106"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "AMSC663",
+      "name": "Advanced Scientific Computing I",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "In the sequence Advanced Scientific Computing I &amp; Advanced Scientific Computing II, (CMSC663/CMSC663 and AMSC664/CMSC664, respectively) students work on a year-long individual project to develop software for a scientific task in a high performance computing environment. Lectures will be given on available computational environments, code development, implementation of parallel algorithms.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Maria Cameron"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "MWF": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      11,
+                      50,
+                      "Am"
+                    ]
+                  ]
+                },
+                "location": [
+                  "MTH",
+                  "0302"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "AMSC674",
+      "name": "Partial Differential Equations II",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Boundary value problems for elliptic partial differential equations via operator-theoretic methods. Hilbert spaces of functions. Duality, weak convergence. Sobolev spaces. Spectral theory of compact operators. Eigenfunction expansions.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Konstantina Trivisa"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "MTH",
+                  "0409"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "AMSC689",
+      "name": "Research Interactions in Applied Mathematics and Scientific Computation",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "AMSC760",
+      "name": "Applied Statistics Practicum",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "A semester long applied applied statistical project (a minimum 10 hours per week or 120 hours in total), in an internship of collaborative research-laboratory setting working on a substantive applied quantitative project with significant statistical content.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Howard Elman"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "AMSC762",
+      "name": "Data Analysis Project",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "This course cannot be used to meet any of the Applied Statistics Area's seminar requirements. Offered yearly, required of and limited to MS non-thesis and doctoral students in Applied Statistics Area, for whom the resulting projects serve as a Qualifying Exam component. After 5-6 lectures or presentations on components of successful data analyses and write-ups, 3-4 sessions will discuss previous student project submissions. The culminating project, to be completed in a two week period between semesters, is an analysis and written report of one of three project choices made available each year to represent a spectrum of realistic applied statistical problems.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Howard Elman"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "AMSC764",
+      "name": "Advanced Numerical Optimization",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "Modern numerical methods for solving unconstrained and constrained nonlinear optimization problems in finite dimensions. Design of computational algorithms and the analysis of their properties.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Thomas Goldstein"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      11,
+                      0,
+                      "Am"
+                    ],
+                    [
+                      12,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "CHE",
+                  "2110"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "AMSC799",
+      "name": "Master's Thesis Research",
+      "credits": {
+        "Range": [
+          1,
+          6
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "AMSC808A",
+      "name": "Advanced Topics in Applied Mathematics",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "AMSC808X",
+      "name": "Advanced Topics in Applied Mathematics; Machine Learning for Scientific Computing",
+      "credits": {
+        "Range": [
+          1,
+          3
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Haizhao Yang"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "TuTh": [
+                    [
+                      2,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      3,
+                      15,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "CSI",
+                  "2107"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "AMSC898",
+      "name": "Pre-Candidacy Research",
+      "credits": {
+        "Range": [
+          1,
+          8
+        ]
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
+      "code": "AMSC899",
+      "name": "Doctoral Dissertation Research",
+      "credits": {
+        "Amount": 6
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    }
+  ]
+}
