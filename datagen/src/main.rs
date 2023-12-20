@@ -32,8 +32,16 @@ use types::*;
 mod macros;
 
 fn main() -> Result<(), Box<dyn Error>> {
-    // Gets all departments/course prefixes and iterates over them to scrape
-    // course information and write to appropriate files.
+    depts_courses_datagen()?;
+
+    instructors_datagen()?;
+
+    Ok(())
+}
+
+/// Gets all departments/course prefixes and iterates over them to scrape
+/// course information and write to appropriate files.
+fn depts_courses_datagen() -> Result<(), Box<dyn Error>> {
     let depts_vec = get_depts()?;
     let mut dept_directory_file = File::create("data/departments.txt")?;
     for dept in depts_vec {
@@ -464,6 +472,52 @@ fn get_meeting(
         );
         ClassMeeting::OnlineSync(classtime)
     }
+}
+
+/// Use the PlanetTerp API to get a list of all instructors (professors or TAs)
+/// and write relevant information to a JSON file in the `data` directory.
+fn instructors_datagen() -> Result<(), Box<dyn Error>> {
+    let num_profs = 100;
+    let mut offset = 0;
+    let mut professors = Vec::new();
+    let mut page_not_full = false;
+
+    // Requests instructors from PlanetTerp until a response does not contain a
+    // maximum number of instructors.
+    while !page_not_full {
+        println!("Getting instructors from offset: {}", offset);
+
+        let request = format!(
+            "https://planetterp.com/api/v1/professors?type=professor&limit={}&offset={}",
+            num_profs, offset
+        );
+        let response = get_response(request)?;
+
+        if response.status().is_success() {
+            // Parse json into `PlanetTerpProfessor` structs, minimize each,
+            // then add the minimized `Professor` struct to `professors`.
+            let profs_json = response.text()?;
+            let professors_raw: Vec<PlanetTerpProfessor> = serde_json::from_str(&profs_json)
+                .expect("Failed to parse PlanetTerp professor JSON data.");
+            if professors_raw.len() < num_profs {
+                page_not_full = true;
+            }
+            for raw in professors_raw {
+                professors.push(raw.minimize());
+            }
+            offset += num_profs;
+        } else {
+            panic_response_fail!(response);
+        }
+    }
+
+    // Use serde_json to write data to instructors.json
+    let mut instructors_file = File::create("data/instructors.json")?;
+    let instructors_json_string = serde_json::to_string_pretty(&professors)
+        .unwrap_or_else(|_| panic!("Failed to serialize {:#?} to JSON", professors));
+    instructors_file.write_all(instructors_json_string.as_bytes())?;
+
+    Ok(())
 }
 
 /// Get the response of an HTTP `request`. This function exists to reduce

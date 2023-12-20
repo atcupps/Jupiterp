@@ -165,3 +165,47 @@ impl Time {
 /// `ClassLocation(String::from("ESJ"), String::from("1215"))`.
 #[derive(Debug, Serialize, Deserialize)]
 pub(crate) struct ClassLocation(pub(crate) String, pub(crate) String);
+
+/// The response of a request to PlanetTerp to get an instructor, parsed into
+/// a Rust struct. Such a request will return a JSON-format array of
+/// instructors in the following format:
+/// ```
+/// [
+///     {
+///         "name": "Jon Snow",
+///         "slug": "snow",
+///         "type": "professor",
+///         "courses": [ * some courses * ],
+///         "average_rating": 4.125
+///     }
+/// ]
+/// ```
+#[derive(Debug, Serialize, Deserialize)]
+pub(crate) struct PlanetTerpProfessor {
+    name: String,
+    slug: String,
+    #[serde(rename = "type")]
+    role: String,
+    courses: Vec<String>,
+    average_rating: Option<f32>,
+}
+
+impl PlanetTerpProfessor {
+    /// Reduce the data of a PlanetTerpProfessor to create a minimal version.
+    pub(crate) fn minimize(self) -> Professor {
+        Professor {
+            name: self.name,
+            slug: self.slug,
+            average_rating: self.average_rating,
+        }
+    }
+}
+
+/// Jupiterp doesn't need all the instructor data returned by PlanetTerp; this
+/// struct contains only the minimal data needed and used by Jupiterp.
+#[derive(Debug, Serialize, Deserialize)]
+pub(crate) struct Professor {
+    name: String,
+    slug: String,
+    average_rating: Option<f32>,
+}
