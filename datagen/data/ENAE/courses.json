@@ -1661,6 +1661,7 @@
         {
           "sec_code": "0401",
           "instructors": [
+            "Kevin Bowcutt",
             "James Baeder"
           ],
           "class_meetings": [
@@ -1871,6 +1872,7 @@
         {
           "sec_code": "0201",
           "instructors": [
+            "Kevin Bowcutt",
             "James Baeder"
           ],
           "class_meetings": [
@@ -2051,8 +2053,7 @@
         {
           "sec_code": "0101",
           "instructors": [
-            "Hassan Saad Ifti",
-            "Stuart Laurence"
+            "Hassan Saad Ifti"
           ],
           "class_meetings": [
             {

@@ -529,10 +529,16 @@ fn get_response(request: String) -> Result<Response, reqwest::Error> {
         .get(request)
         .header(USER_AGENT, "Jupiterp Test");
     let second_request = request.try_clone().unwrap();
+    let third_request = request.try_clone().unwrap();
 
     let response = request.send();
     if response.is_err() {
-        return second_request.send();
+        let second_response = second_request.send();
+        if second_response.is_err() {
+            return third_request.send();
+        } else {
+            return second_response;
+        }
     }
     response
 }

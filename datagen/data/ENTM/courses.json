@@ -208,6 +208,26 @@
       ]
     },
     {
+      "code": "ENTM798D",
+      "name": "Topic Seminar; Arthropod Pests of Agricultural Crops",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "This seminar presents a survey of the biology, economic impact, and control tactics used to manage the major pests of crops grown in the US.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Galen Dively"
+          ],
+          "class_meetings": [
+            "Unspecified"
+          ]
+        }
+      ]
+    },
+    {
       "code": "ENTM799",
       "name": "Master's Thesis Research",
       "credits": {

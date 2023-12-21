@@ -583,7 +583,8 @@
         "Amount": 3
       },
       "gen_eds": [
-        "DSHS"
+        "DSHS",
+        "DVUP"
       ],
       "description": "America's schools are dynamic microcosms of society at large. They simultaneously reflect, reproduce, and shape what happens outside of the classroom, including the many ways that racism affects us all. The educational mechanisms that operate for the benefit of some and to the detriment of others are often hard to see, often because they are hidden in plain sight. For example, national tests are standardized. When racialized differences in test scores appear, they are called \"achievement gaps\" and the disparity is attributed to essential differences or cultural deficiency rather than inequitable access and opportunity. In this course students will learn methods to critically examine such commonplace notions as the achievement gap and to document their effects on society. They will also develop strategies for self-reflection that enable them to confront inequity in their own educational experience and work to create change.",
       "sections": [

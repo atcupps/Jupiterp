@@ -787,7 +787,7 @@
         {
           "sec_code": "0201",
           "instructors": [
-            "Instructor: TBA"
+            "Madeline Georgevich"
           ],
           "class_meetings": [
             {
@@ -839,7 +839,7 @@
         {
           "sec_code": "0202",
           "instructors": [
-            "Instructor: TBA"
+            "Madeline Georgevich"
           ],
           "class_meetings": [
             {
@@ -891,7 +891,7 @@
         {
           "sec_code": "0203",
           "instructors": [
-            "Instructor: TBA"
+            "Madeline Georgevich"
           ],
           "class_meetings": [
             {
@@ -4629,28 +4629,10 @@
         {
           "sec_code": "1",
           "instructors": [
-            "Instructor: TBA"
+            "Vikas Sahasrabudhe"
           ],
           "class_meetings": [
-            {
-              "InPerson": {
-                "classtime": {
-                  "W": [
-                    [
-                      9,
-                      30,
-                      "Am"
-                    ],
-                    [
-                      12,
-                      15,
-                      "Pm"
-                    ]
-                  ]
-                },
-                "location": null
-              }
-            }
+            "OnlineAsync"
           ]
         }
       ]

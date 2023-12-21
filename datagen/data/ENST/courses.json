@@ -2091,6 +2091,47 @@
       ]
     },
     {
+      "code": "ENST689L",
+      "name": "Special Topics; Applied Hierarchical Modeling in Environmental Science",
+      "credits": {
+        "Amount": 3
+      },
+      "gen_eds": null,
+      "description": "This course uses modern Bayesian statistical modeling approaches to analyze ecological and environmental data, with an emphasis on applied hierarchical models. This course will focus on models that are used to examine population and community dynamics, spatial patterns, species abundance and diversity, community organization, metapopulations, and landscape processes. To be successful in the course students should have taken a course in statistics and have working knowledge of the R programming language.",
+      "sections": [
+        {
+          "sec_code": "0101",
+          "instructors": [
+            "Henry Gallo"
+          ],
+          "class_meetings": [
+            {
+              "InPerson": {
+                "classtime": {
+                  "Tu": [
+                    [
+                      5,
+                      0,
+                      "Pm"
+                    ],
+                    [
+                      7,
+                      30,
+                      "Pm"
+                    ]
+                  ]
+                },
+                "location": [
+                  "ANS",
+                  "0509"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
       "code": "ENST689T",
       "name": "Special Topics; Data Management and Analyses for Environmental Sciences",
       "credits": {
@@ -2180,17 +2221,7 @@
       },
       "gen_eds": null,
       "description": "",
-      "sections": [
-        {
-          "sec_code": "0101",
-          "instructors": [
-            "Jose-Luis Izursa"
-          ],
-          "class_meetings": [
-            "Unspecified"
-          ]
-        }
-      ]
+      "sections": null
     },
     {
       "code": "ENST702",

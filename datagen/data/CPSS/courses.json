@@ -207,7 +207,10 @@
                     ]
                   ]
                 },
-                "location": null
+                "location": [
+                  "CBD",
+                  "1140"
+                ]
               }
             }
           ]

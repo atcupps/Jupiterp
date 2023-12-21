@@ -1504,6 +1504,16 @@
       ]
     },
     {
+      "code": "DANC679",
+      "name": "Graduate Dance Performance",
+      "credits": {
+        "Amount": 1
+      },
+      "gen_eds": null,
+      "description": "",
+      "sections": null
+    },
+    {
       "code": "DANC689G",
       "name": "Special Topics in Dance; Advanced Hip Hop",
       "credits": {
