@@ -1,18 +1,18 @@
 export function formatClasstime(time: Classtime): string {
-    let days: string = time.days;
-    let startTimeArray: TimeComponent[] = time.start_time;
-    let startTime: string = startTimeArray[0] + ':' 
+    const days: string = time.days;
+    const startTimeArray: TimeComponent[] = time.start_time;
+    const startTime: string = startTimeArray[0] + ':' 
         + formatMinutes(startTimeArray[1]) + ' '
         + formatAmPm(startTimeArray[2]);
-    let endTimeArray: TimeComponent[] = time.end_time;
-    let endTime: string = endTimeArray[0] + ':'
+    const endTimeArray: TimeComponent[] = time.end_time;
+    const endTime: string = endTimeArray[0] + ':'
         + formatMinutes(endTimeArray[1]) + ' '
         + formatAmPm(endTimeArray[2]);
     return days + ' ' + startTime + ' - ' + endTime;
 }
 
 function formatMinutes(minutesAsTC: TimeComponent): string {
-    let minutes: number = typeof minutesAsTC === 'number' ? minutesAsTC : 0;
+    const minutes: number = typeof minutesAsTC === 'number' ? minutesAsTC : 0;
     if (minutes < 10) {
         return '0' + minutes;
     } else {
@@ -20,8 +20,8 @@ function formatMinutes(minutesAsTC: TimeComponent): string {
     }
 }
 
-function formatAmPm(AmPmAsTC: TimeComponent): String {
-    let AmPm: string = typeof AmPmAsTC === 'string' ? AmPmAsTC : 'Am';
+function formatAmPm(AmPmAsTC: TimeComponent): string {
+    const AmPm: string = typeof AmPmAsTC === 'string' ? AmPmAsTC : 'Am';
     switch (AmPm) {
         case 'Am':
             return 'am';

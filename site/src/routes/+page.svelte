@@ -1,7 +1,7 @@
-<script lang="ts">
+<script>
     export let data;
-    let professors: Professor[] = data.professors;
-    let depts: Department[] = data.departments;
+    let professors = data.professors;
+    let depts = data.departments;
 
     import { ptLinkFromSlug } from './professors';
     import { formatClasstime } from './formatting';
