@@ -19,11 +19,7 @@ use reqwest::{
     header::USER_AGENT,
 };
 use scraper::{Html, Selector};
-use std::{
-    error::Error,
-    fs::{self, File},
-    io::Write,
-};
+use std::{error::Error, fs::File, io::Write};
 
 mod types;
 use types::*;
@@ -43,7 +39,8 @@ fn main() -> Result<(), Box<dyn Error>> {
 /// course information and write to appropriate files.
 fn depts_courses_datagen() -> Result<(), Box<dyn Error>> {
     let depts_vec = get_depts()?;
-    let mut dept_directory_file = File::create("data/departments.txt")?;
+    let mut full_depts_data = Vec::new();
+    let mut dept_directory_file = File::create("data/departments_list.txt")?;
     for dept in depts_vec {
         dept_directory_file.write_all(dept.as_bytes())?;
         dept_directory_file.write_all("\n".as_bytes())?;
@@ -58,21 +55,14 @@ fn depts_courses_datagen() -> Result<(), Box<dyn Error>> {
             name: dept.clone(),
             courses,
         };
-
-        // If a folder doesn't yet exist, this short block creates the folder.
-        // This allows for Jupiterp to generate data for new departments or
-        // course prefixes.
-        let dir_path = format!("data/{}", dept);
-        if fs::metadata(&dir_path).is_err() {
-            fs::create_dir_all(&dir_path)?;
-        }
-
-        // Use serde_json to write data to appropriate dept. files
-        let mut dept_courses_file = File::create(format!("{}/courses.json", dir_path).as_str())?;
-        let dept_course_json_string = serde_json::to_string_pretty(&department_courses)
-            .unwrap_or_else(|_| panic!("Failed to serialize {:#?} to JSON", department_courses));
-        dept_courses_file.write_all(dept_course_json_string.as_bytes())?;
+        full_depts_data.push(department_courses);
     }
+
+    // Use serde_json to write data to appropriate dept. files
+    let mut dept_courses_file = File::create("data/departments.json")?;
+    let dept_course_json_string = serde_json::to_string_pretty(&full_depts_data)
+        .unwrap_or_else(|_| panic!("Failed to serialize {:#?} to JSON", full_depts_data));
+    dept_courses_file.write_all(dept_course_json_string.as_bytes())?;
 
     Ok(())
 }

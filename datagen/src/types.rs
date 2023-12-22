@@ -81,53 +81,65 @@ pub(crate) struct InPersonClass {
     pub(crate) location: Option<ClassLocation>,
 }
 
-/// The day(s) of the week a class meets, containing, as a tuple, the start
-/// and end times of a class meeting on those days.
+/// The days and times of a certain class meeting
+#[derive(Debug, Serialize, Deserialize)]
+pub struct Classtime {
+    days: ClassDays,
+    start_time: Time,
+    end_time: Time,
+}
+
+/// The days of a class meeting
 #[allow(clippy::upper_case_acronyms)]
 #[derive(Debug, Serialize, Deserialize)]
-pub(crate) enum Classtime {
-    M(Time, Time),
-    Tu(Time, Time),
-    W(Time, Time),
-    Th(Time, Time),
-    F(Time, Time),
-    MWF(Time, Time),
-    MW(Time, Time),
-    WF(Time, Time),
-    TuTh(Time, Time),
-    MTuWThF(Time, Time),
-    MF(Time, Time),
-    Sa(Time, Time),
-    Su(Time, Time),
-    SaSu(Time, Time),
-    MTu(Time, Time),
-    MTuThF(Time, Time),
-    MTuWTh(Time, Time),
+pub(crate) enum ClassDays {
+    M,
+    Tu,
+    W,
+    Th,
+    F,
+    MWF,
+    MW,
+    WF,
+    TuTh,
+    MTuWThF,
+    MF,
+    Sa,
+    Su,
+    SaSu,
+    MTu,
+    MTuThF,
+    MTuWTh,
 }
 
 impl Classtime {
     /// Create a new `Classtime` from `days` (a `String` of the days a class
     /// meets, such as "MWF"), and the `start` and `end` times.
-    pub(crate) fn new(days: String, start: Time, end: Time) -> Self {
-        match days.as_str() {
-            "M" => Self::M(start, end),
-            "Tu" => Self::Tu(start, end),
-            "W" => Self::W(start, end),
-            "Th" => Self::Th(start, end),
-            "F" => Self::F(start, end),
-            "MWF" => Self::MWF(start, end),
-            "MW" => Self::MW(start, end),
-            "WF" => Self::WF(start, end),
-            "TuTh" => Self::TuTh(start, end),
-            "MTuWThF" => Self::MTuWThF(start, end),
-            "MF" => Self::MF(start, end),
-            "Sa" => Self::Sa(start, end),
-            "Su" => Self::Su(start, end),
-            "SaSu" => Self::SaSu(start, end),
-            "MTu" => Self::MTu(start, end),
-            "MTuThF" => Self::MTuThF(start, end),
-            "MTuWTh" => Self::MTuWTh(start, end),
-            &_ => panic!("Unknown class meeting day pattern: {}", days.as_str()),
+    pub(crate) fn new(days: String, start_time: Time, end_time: Time) -> Self {
+        let days = match days.as_str() {
+            "M" => ClassDays::M,
+            "Tu" => ClassDays::Tu,
+            "W" => ClassDays::W,
+            "Th" => ClassDays::Th,
+            "F" => ClassDays::F,
+            "MWF" => ClassDays::MWF,
+            "MW" => ClassDays::MW,
+            "WF" => ClassDays::WF,
+            "TuTh" => ClassDays::TuTh,
+            "MTuWThF" => ClassDays::MTuWThF,
+            "MF" => ClassDays::MF,
+            "Sa" => ClassDays::Sa,
+            "Su" => ClassDays::Su,
+            "SaSu" => ClassDays::SaSu,
+            "MTu" => ClassDays::MTu,
+            "MTuThF" => ClassDays::MTuThF,
+            "MTuWTh" => ClassDays::MTuWTh,
+            &_ => panic!("Did not recognize days pattern {}", days),
+        };
+        Classtime {
+            days,
+            start_time,
+            end_time,
         }
     }
 }
