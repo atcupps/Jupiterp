@@ -181,7 +181,7 @@ fn get_course_info(course: &String, term: &String) -> Result<Course, Box<dyn Err
 
         // Identify sections for the given course
         let sections_selector = create_selector!(format!("#{} .section-id", course));
-        let re = Regex::new(r"[A-Z]?[0-9]+").unwrap();
+        let re = Regex::new(r"[A-Z]*[0-9]+").unwrap();
         let section_numbers = Vec::from_iter(document.select(&sections_selector).map(|x| {
             String::from(
                 re.find(x.inner_html().as_str())
