@@ -4,8 +4,8 @@ import deptsAndCourses from '../../../datagen/data/departments.json'
 export function load(): JupiterpData {
     return {
         professors: instructors,
-        // TODO(5): Figure out why TS marks this as an error, despite not
-        // causing any issues, or figure out if there are hidden issues.
+        // See #5: This shows up as an error on VSCode because VSCode cannot
+        // tokenize `departments.json` due to its large file size.
         departments: deptsAndCourses
     };
 }
