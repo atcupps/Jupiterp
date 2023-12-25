@@ -1,10 +1,13 @@
 <script>
+    import { ptLinkFromSlug } from './professors';
+    import { formatClasstime } from './formatting';
+    // import { getCourseLookup, searchCourses } from './courseSearch';
+
     export let data;
     let professors = data.professors;
     let depts = data.departments;
 
-    import { ptLinkFromSlug } from './professors';
-    import { formatClasstime } from './formatting';
+    // const courseLookup = getCourseLookup(depts);
 </script>
 
 <h1>Jupiterp</h1>
