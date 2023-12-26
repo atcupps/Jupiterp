@@ -2,6 +2,7 @@ name: ESLint on Site Directory
 
 on: 
   pull_request:
+    branches: '*'
     paths:
       - 'site/**'  # This ensures the action runs only for changes in the 'site' directory
   push:
