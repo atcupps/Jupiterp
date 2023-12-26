@@ -1,12 +1,14 @@
 <script lang="ts">
-    import { ptLinkFromSlug } from './professors';
-    import { formatClasstime } from './formatting';
     import { getCourseLookup, searchCourses } from './courseSearch';
     import CourseListing from './CourseListing.svelte';
 
+    // These imports currently not used but may be in future
+    // import { ptLinkFromSlug } from './professors';
+    // import { formatClasstime } from './formatting';
+
     // Load profs and depts data from `+page.ts`
     export let data;
-    let professors: Professor[] = data.professors;
+    // let professors: Professor[] = data.professors; (not currently used)
     let depts: Department[] = data.departments;
 
     // Create course lookup table
