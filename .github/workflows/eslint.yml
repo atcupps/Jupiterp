@@ -1,27 +1,31 @@
-name: ESLint
+name: ESLint on Site Directory
 
 on: 
     pull_request:
-        branches:
-            - '*'
+        paths:
+        - 'site/**'  # Trigger only when changes are made in the 'site' directory
+        branches: '*'
     push:
-        branches:
-            - main
+        paths:
+        - 'site/**'
+        branches: main
 
 jobs:
-  eslint:
+  lint:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2  # Checks out your repository
+    - uses: actions/checkout@v2
 
     - name: Set up Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: '14'  # Specify your Node.js version
+        node-version: '14'
 
     - name: Install Dependencies
       run: npm install
+      working-directory: ./site  # Specify the working directory
 
     - name: Run ESLint
-      run: npx eslint site
+      run: npx eslint .  # ESLint will run in the 'site' directory
+      working-directory: ./site  # Specify the working directory
