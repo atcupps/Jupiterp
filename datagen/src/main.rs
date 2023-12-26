@@ -118,6 +118,7 @@ fn get_course_info(course: &String, term: &String) -> Result<Course, Box<dyn Err
         );
     let response = get_response(request)?;
     let x = 3;
+    let x = 4;
 
     if response.status().is_success() {
         let document = scraper::Html::parse_document(&response.text()?);
