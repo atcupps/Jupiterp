@@ -1,0 +1,27 @@
+name: ESLint
+
+on: 
+    pull_request:
+        branches:
+            - '*'
+    push:
+        branches:
+            - main
+
+jobs:
+  eslint:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2  # Checks out your repository
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'  # Specify your Node.js version
+
+    - name: Install Dependencies
+      run: npm install
+
+    - name: Run ESLint
+      run: npx eslint site
