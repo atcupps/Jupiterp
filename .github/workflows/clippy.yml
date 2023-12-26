@@ -25,4 +25,4 @@ jobs:
     - name: Check linting with clippy
       run: |
         cd datagen
-        cargo clippy
+        cargo clippy -- -D warnings
