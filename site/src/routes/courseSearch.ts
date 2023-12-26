@@ -16,7 +16,7 @@ export function getCourseLookup(departments: Department[]): Record<string, Recor
         }
         result[deptName] = deptRecord;
     });
-    
+    let x = 3;
     return result;
 }
 
