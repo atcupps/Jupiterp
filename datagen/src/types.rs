@@ -1,6 +1,5 @@
 // This file is part of Jupiterp: https://github.com/atcupps/Jupiterp
 
-
 //! Types for the Jupiterp Datagen component. Types used should derive or
 //! otherwise implement the serde `Serialize` and `Deserialize` traits to be
 //! used in JSON-form data generation.
