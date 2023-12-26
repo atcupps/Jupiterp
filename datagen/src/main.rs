@@ -117,7 +117,6 @@ fn get_course_info(course: &String, term: &String) -> Result<Course, Box<dyn Err
             "https://app.testudo.umd.edu/soc/search?courseId={course}&sectionId=&termId={term}&_openSectionsOnly=on&creditCompare=&credits=&courseLevelFilter=ALL&instructor=&_facetoface=on&_blended=on&_online=on&courseStartCompare=&courseStartHour=&courseStartMin=&courseStartAM=&courseEndHour=&courseEndMin=&courseEndAM=&teachingCenter=ALL&_classDay1=on&_classDay2=on&_classDay3=on&_classDay4=on&_classDay5=on"
         );
     let response = get_response(request)?;
-    let x = 3;
 
     if response.status().is_success() {
         let document = scraper::Html::parse_document(&response.text()?);
@@ -532,4 +531,12 @@ fn get_response(request: String) -> Result<Response, reqwest::Error> {
         }
     }
     response
+}
+
+#[cfg(test)]
+mod test {
+    #[test]
+    fn test() {
+        assert_eq!(false, true);
+    }
 }
