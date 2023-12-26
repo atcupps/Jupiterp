@@ -532,11 +532,3 @@ fn get_response(request: String) -> Result<Response, reqwest::Error> {
     }
     response
 }
-
-#[cfg(test)]
-mod test {
-    #[test]
-    fn test() {
-        assert_eq!(true, false);
-    }
-}
