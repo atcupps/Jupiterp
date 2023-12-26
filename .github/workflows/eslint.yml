@@ -1,14 +1,11 @@
 name: ESLint on Site Directory
 
 on: 
-    pull_request:
-        paths:
-        - 'site/**'  # Trigger only when changes are made in the 'site' directory
-        branches: '*'
-    push:
-        paths:
-        - 'site/**'
-        branches: main
+  pull_request:
+    paths:
+      - 'site/**'  # This ensures the action runs only for changes in the 'site' directory
+  push:
+    branches: main
 
 jobs:
   lint:
@@ -17,15 +14,15 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '18.13'
+    - name: Set up Bun
+      run: |
+        curl -fsSL https://bun.sh/install | bash
+        echo "$HOME/.bun/bin" >> $GITHUB_PATH
 
     - name: Install Dependencies
-      run: npm install
-      working-directory: ./site  # Specify the working directory
+      run: bun install
+      working-directory: ./site  # Change to the site directory
 
     - name: Run ESLint
-      run: npx eslint .  # ESLint will run in the 'site' directory
-      working-directory: ./site  # Specify the working directory
+      run: bun run eslint .  # Run ESLint using bun
+      working-directory: ./site  # Ensure this is executed in the site directory
