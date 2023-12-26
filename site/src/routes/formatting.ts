@@ -1,3 +1,5 @@
+// This file is part of Jupiterp: https://github.com/atcupps/Jupiterp
+
 export function formatClasstime(time: Classtime): string {
     const days: string = time.days;
     const startTimeArray: TimeComponent[] = time.start_time;

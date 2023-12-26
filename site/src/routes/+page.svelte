@@ -1,3 +1,5 @@
+<!-- This file is part of Jupiterp: https://github.com/atcupps/Jupiterp -->
+
 <script>
     import { ptLinkFromSlug } from './professors';
     import { formatClasstime } from './formatting';

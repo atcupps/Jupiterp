@@ -1,3 +1,5 @@
+// This file is part of Jupiterp: https://github.com/atcupps/Jupiterp
+
 import instructors from '../../../datagen/data/instructors.json'
 import deptsAndCourses from '../../../datagen/data/departments.json'
 
