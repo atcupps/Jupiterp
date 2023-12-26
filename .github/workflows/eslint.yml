@@ -1,4 +1,4 @@
-name: ESLint on Site Directory
+name: `site` ESLint Check
 
 on: 
   pull_request:

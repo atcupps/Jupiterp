@@ -1,9 +1,13 @@
-name: clippy
+name: Rust Clippy Check
 on:
     pull_request:
+        paths:
+            - 'datagen/**'
         branches:
             - '*'
     push:
+        paths:
+            - 'datagen/**'
         branches:
             - main
 jobs:

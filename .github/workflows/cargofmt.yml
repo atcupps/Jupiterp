@@ -1,0 +1,32 @@
+name: Rust Format Check
+
+on:
+    pull_request:
+        paths:
+            - 'datagen/**'
+        branches:
+            - '*'
+    push:
+        paths:
+            - 'datagen/**'
+        branches:
+            - main
+
+jobs:
+  check-format:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Install Rust
+      uses: actions-rs/toolchain@v1
+      with:
+        toolchain: stable
+        profile: minimal
+        override: true
+
+    - name: Check Formatting
+      run: |
+        cd datagen
+        cargo fmt -- --check
