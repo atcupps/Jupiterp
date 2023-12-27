@@ -1,3 +1,5 @@
+// This file is part of Jupiterp: https://github.com/atcupps/Jupiterp
+
 //! Helpful macros for HTTP requests and parsing in Jupiterp Datagen.
 
 /// Given a `response` to a failed HTTP request, panic with the response's

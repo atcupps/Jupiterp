@@ -1,24 +1,30 @@
-name: clippy
+name: Rust Format Check
+
 on:
     pull_request:
+        paths:
+            - 'datagen/**'
         branches:
             - '*'
     push:
+        paths:
+            - 'datagen/**'
         branches:
             - main
+
 jobs:
-  clippy:
+  check-format:
     runs-on: ubuntu-latest
+
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
+    - uses: actions/checkout@v4
 
     - name: Set up Rust toolchain
       uses: dtolnay/rust-toolchain@stable
       with:
         components: clippy
 
-    - name: Run clippy
-      uses: giraffate/clippy-action@v1
-      with:
-        reporter: 'github-pr-review'
+    - name: Check Formatting
+      run: |
+        cd datagen
+        cargo fmt -- --check
