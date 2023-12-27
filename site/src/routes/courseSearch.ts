@@ -32,17 +32,19 @@ export function searchCourses(input: string, courseLookup: Record<string, Record
     const result: Course[] = [];
     // For an `input` to be worth searching, it should be at least the four letter
     // department code, and the department code must be in `courseLookup`.
-    if (input.length >= 4) {
-        const dept: string = input.substring(0, 4);
+    // Jupiterp also doesn't care about whitespace, so it is removed.
+    const simpleInput: string = input.replace(/\s/g, '');
+    if (simpleInput.length >= 4) {
+        const dept: string = simpleInput.substring(0, 4);
         const deptCourses: Record<string, Course> = courseLookup[dept];
         if (deptCourses != undefined) {
             for (const courseCode in deptCourses) {
                 let shouldBeInResult = true;
-                const inputCode = input.substring(4);
+                const inputCode = simpleInput.substring(4);
                 if (inputCode.length > courseCode.length) {
                     shouldBeInResult = false;
                 } else {
-                    for (let i = 0; i < inputCode.length; i++) {
+                    for (let i = 0; i < inputCode.length; i++) { 
                         if (inputCode[i] != courseCode[i]) {
                             shouldBeInResult = false;
                         }
@@ -54,6 +56,6 @@ export function searchCourses(input: string, courseLookup: Record<string, Record
             }
         }
     }
-
+    
     return result;
 }
