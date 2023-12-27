@@ -1,0 +1,29 @@
+name: ESLint Check
+
+on: 
+  pull_request:
+    branches: '*'
+    paths:
+      - 'site/**'  # This ensures the action runs only for changes in the 'site' directory
+  push:
+    branches: main
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Bun
+      run: |
+        curl -fsSL https://bun.sh/install | bash
+        echo "$HOME/.bun/bin" >> $GITHUB_PATH
+
+    - name: Install Dependencies
+      run: bun install
+      working-directory: ./site  # Change to the site directory
+
+    - name: Run ESLint
+      run: bun run eslint .  # Run ESLint using bun
+      working-directory: ./site  # Ensure this is executed in the site directory

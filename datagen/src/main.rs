@@ -1,3 +1,5 @@
+// This file is part of Jupiterp: https://github.com/atcupps/Jupiterp
+
 //! This file contains the main function for the Jupiterp Datagen component.
 //! Datagen involves scraping Testudo for course information, including
 //! course codes, course names (titles), sections, section instructors,

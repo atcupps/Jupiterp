@@ -1,3 +1,5 @@
+// This file is part of Jupiterp: https://github.com/atcupps/Jupiterp
+
 /**
  * Get a course-lookup object which can be used to find courses given a department and course number.
  * @param departments An array of `Department`s with courses to be available for lookup

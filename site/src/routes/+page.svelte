@@ -1,3 +1,5 @@
+<!-- This file is part of Jupiterp: https://github.com/atcupps/Jupiterp -->
+
 <script lang="ts">
     import { getCourseLookup, searchCourses } from './courseSearch';
     import CourseListing from './CourseListing.svelte';
