@@ -2,13 +2,9 @@ name: Rust Run Tests
 
 on:
     pull_request:
-        paths:
-            - 'datagen/**'
         branches:
             - '*'
     push:
-        paths:
-            - 'datagen/**'
         branches:
             - main
 
