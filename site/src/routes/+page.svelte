@@ -22,6 +22,9 @@
     function handleInput() {
         searchResults = searchCourses(searchInput, courseLookup);
     }
+
+    // Keep track of chosen sections
+    let selectedSections: Section[] = [];
 </script>
 
 <h1>Jupiterp</h1>
@@ -31,5 +34,5 @@
 <input type="text" bind:value={searchInput} on:input={handleInput}>
 
 {#each searchResults as courseMatch}
-    <CourseListing course={courseMatch}/>
+    <CourseListing course={courseMatch} bind:sections={selectedSections}/>
 {/each}
