@@ -1,54 +1,58 @@
-// This file is part of Jupiterp: https://github.com/atcupps/Jupiterp
+/**
+ * This file is part of Jupiterp: https://github.com/atcupps/Jupiterp
+ * 
+ * @fileoverview Types and interfaces used in Jupiterp
+ */
 
-type Professor = {
+interface Professor {
     name: string,
     slug: string,
     average_rating: number | null
-};
+}
 
-type Department = {
+interface Department {
     name: string,
     courses: Course[]
-};
+}
 
-type Course = {
+interface Course {
     code: string,
     name: string,
     credits: CreditAmount,
     gen_eds: string[] | null,
     description: string,
     sections: Section[] | null
-};
+}
 
-type CreditCount = 
-    { Amount: number } | { Range: number[] };
+type CreditCount =
+    { Amount: number } | { Range: number[] }
 
-type Section = {
+interface Section {
     sec_code: string,
     instructors: string[],
     class_meetings: ClassMeeting[]
-};
+}
 
 type ClassMeeting =
     | string
     | { OnlineSync: Classtime }
-    | { InPerson: InPersonClass };
+    | { InPerson: InPersonClass }
 
-type InPersonClass = {
+interface InPersonClass {
     classtime: Classtime | null,
     location: string[] | null
-};
+}
 
-type Classtime = {
+interface Classtime {
     days: string,
     start_time: TimeComponent[],
     end_time: TimeComponent[]
-};
+}
 
 type TimeComponent =
     number | string;
 
-type JupiterpData = {
+interface JupiterpData {
     professors: Professor[],
     departments: Department[]
-};
+}
