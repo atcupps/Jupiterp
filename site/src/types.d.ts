@@ -56,3 +56,8 @@ interface JupiterpData {
     professors: Professor[],
     departments: Department[]
 }
+
+interface ScheduleSelection {
+    courseCode: string,
+    section: Section
+}

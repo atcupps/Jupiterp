@@ -24,7 +24,7 @@
     }
 
     // Keep track of chosen sections
-    let selectedSections: Section[] = [];
+    let selectedSections: ScheduleSelection[] = [];
 </script>
 
 <h1>Jupiterp</h1>
@@ -34,5 +34,5 @@
 <input type="text" bind:value={searchInput} on:input={handleInput}>
 
 {#each searchResults as courseMatch}
-    <CourseListing course={courseMatch} bind:sections={selectedSections}/>
+    <CourseListing course={courseMatch} bind:selections={selectedSections}/>
 {/each}

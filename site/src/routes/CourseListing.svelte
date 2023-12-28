@@ -1,16 +1,13 @@
 <script lang="ts">
+    import SectionListing from "./SectionListing.svelte";
+
     export let course: Course;
-    export let sections: Section[];
+    export let selections: ScheduleSelection[];
 
     let displaySections = false;
 
     function toggleSections() {
         displaySections = !displaySections;
-    }
-
-    function addSectionToSchedule(newSection: Section) {
-        sections.push(newSection);
-        console.log(sections);
     }
 </script>
 
@@ -24,17 +21,8 @@
         <ul>
             {#if course.sections != null}
                 {#each course.sections as section}
-                    <li>
-                        {section.sec_code}
-                        <button on:click={addSectionToSchedule(section.class_meetings)}>
-                            Add section
-                        </button>
-                        <ul>
-                            {#each section.instructors as instructor}
-                                <li>{instructor}</li>
-                            {/each}
-                        </ul>
-                    </li>
+                    <SectionListing courseCode={course.code} 
+                        section={section} bind:selectionsList={selections} />
                 {/each}
             {:else}
                 <li>No sections</li>
