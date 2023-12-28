@@ -1,12 +1,12 @@
 name: ESLint Check
 
-on: 
+on:
   pull_request:
-    branches: '*'
-    paths:
-      - 'site/**'  # This ensures the action runs only for changes in the 'site' directory
+      branches:
+          - '*'
   push:
-    branches: main
+      branches:
+          - main
 
 jobs:
   lint:
