@@ -3,24 +3,35 @@
     export let section: Section;
     export let selectionsList: ScheduleSelection[] = [];
 
-    let sectionAdded: boolean = false;
+    let newSelection: ScheduleSelection = {
+        courseCode,
+        section
+    };
+    let sectionAdded: boolean = 
+        selectionsList.some(obj => selectionEquals(obj));
 
+    // In order for Svelte's reactivity to work properly, `selectionsList`
+    // needs to be reassigned instead of using `.push` or `.splice`.
     function addSectionToSchedule() {
         if (!sectionAdded) {
-            let newSelection: ScheduleSelection = {
-                courseCode,
-                section
-            };
-            selectionsList.push(newSelection);
+            selectionsList = [...selectionsList, newSelection];
         } else {
-            selectionsList
-                .splice(
-                    selectionsList.findIndex(obj => 
-                        obj.section.sec_code === section.sec_code), 
-                1);
+            const index = selectionsList.findIndex(obj => 
+                        selectionEquals(obj));
+            if (index !== -1) {
+                selectionsList = [
+                    ...selectionsList.slice(0, index),
+                    ...selectionsList.slice(index + 1)
+                ];
+            }
         }
         sectionAdded = !sectionAdded;
         console.log(selectionsList);
+    }
+
+    function selectionEquals(s: ScheduleSelection): boolean {
+        return s.courseCode === courseCode && 
+            s.section.sec_code === section.sec_code;
     }
 </script>
 

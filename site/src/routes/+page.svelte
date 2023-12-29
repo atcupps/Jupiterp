@@ -3,6 +3,7 @@
 <script lang="ts">
     import { getCourseLookup, searchCourses } from './courseSearch';
     import CourseListing from './CourseListing.svelte';
+    import Schedule from './Schedule.svelte';
 
     // These imports currently not used but may be in future
     // import { ptLinkFromSlug } from './professors';
@@ -32,6 +33,8 @@
 <p>The ultimate course schedule planning tool for UMD students.</p>
 
 <input type="text" bind:value={searchInput} on:input={handleInput}>
+
+<Schedule bind:selections={selectedSections}/>
 
 {#each searchResults as courseMatch}
     <CourseListing course={courseMatch} bind:selections={selectedSections}/>
