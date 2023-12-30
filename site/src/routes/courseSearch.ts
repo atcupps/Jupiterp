@@ -47,7 +47,7 @@ export function searchCourses(input: string, courseLookup:
     // letter department code, and the department code must be in 
     // `courseLookup`. Jupiterp also doesn't care about whitespace, so it is 
     // removed.
-    const simpleInput: string = input.replace(/\s/g, '');
+    const simpleInput: string = input.toUpperCase().replace(/\s/g, '');
     if (simpleInput.length >= 4) {
         const dept: string = simpleInput.substring(0, 4);
         const deptCourses: Record<string, Course> = courseLookup[dept];

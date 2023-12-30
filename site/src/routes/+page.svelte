@@ -3,6 +3,7 @@
 <script lang="ts">
     import { getCourseLookup, searchCourses } from './courseSearch';
     import CourseListing from './CourseListing.svelte';
+    import Schedule from './Schedule.svelte';
 
     // These imports currently not used but may be in future
     // import { ptLinkFromSlug } from './professors';
@@ -22,6 +23,9 @@
     function handleInput() {
         searchResults = searchCourses(searchInput, courseLookup);
     }
+
+    // Keep track of chosen sections
+    let selectedSections: ScheduleSelection[] = [];
 </script>
 
 <h1>Jupiterp</h1>
@@ -30,6 +34,8 @@
 
 <input type="text" bind:value={searchInput} on:input={handleInput}>
 
-{#each searchResults as courseMatch}
-    <CourseListing course={courseMatch}/>
+<Schedule bind:selections={selectedSections}/>
+
+{#each searchResults as courseMatch (courseMatch.code)}
+    <CourseListing course={courseMatch} bind:selections={selectedSections}/>
 {/each}
