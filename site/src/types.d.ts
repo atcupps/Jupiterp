@@ -61,3 +61,18 @@ interface ScheduleSelection {
     courseCode: string,
     section: Section
 }
+
+interface ClassMeetingExtended {
+    course: string,
+    instructors: string[],
+    meeting: ClassMeeting
+}
+
+interface Schedule {
+    monday: ClassMeetingExtended[],
+    tuesday: ClassMeetingExtended[],
+    wednesday:  ClassMeetingExtended[],
+    thursday: ClassMeetingExtended[],
+    friday: ClassMeetingExtended[],
+    other: ClassMeetingExtended[]
+}

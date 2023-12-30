@@ -5,6 +5,7 @@
     export let selections: ScheduleSelection[];
 
     let displaySections = false;
+    displaySections = false;
 
     function toggleSections() {
         displaySections = !displaySections;

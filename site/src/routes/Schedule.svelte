@@ -1,11 +1,13 @@
 <script lang="ts">
+    import { schedulify } from './schedule';
+
     export let selections: ScheduleSelection[] = [];
+
+    let schedule: Schedule = schedulify(selections);
+
+    $: if (selections === selections) {
+        schedule = schedulify(selections);
+        console.log(schedule);
+    }
 </script>
 
-<div>
-    <ul>
-        {#each selections as selection}
-            <li>{selection.courseCode} - {selection.section.sec_code}</li>
-        {/each}
-    </ul>
-</div>

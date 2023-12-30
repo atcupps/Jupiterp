@@ -36,6 +36,6 @@
 
 <Schedule bind:selections={selectedSections}/>
 
-{#each searchResults as courseMatch}
+{#each searchResults as courseMatch (courseMatch.code)}
     <CourseListing course={courseMatch} bind:selections={selectedSections}/>
 {/each}

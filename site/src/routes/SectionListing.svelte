@@ -26,7 +26,6 @@
             }
         }
         sectionAdded = !sectionAdded;
-        console.log(selectionsList);
     }
 
     function selectionEquals(s: ScheduleSelection): boolean {
