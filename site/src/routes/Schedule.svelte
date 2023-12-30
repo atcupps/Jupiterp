@@ -1,3 +1,5 @@
+<!-- This file is part of Jupiterp: https://github.com/atcupps/Jupiterp -->
+
 <script lang="ts">
     import { schedulify } from './schedule';
     import ClassMeeting from './ClassMeeting.svelte';
@@ -6,7 +8,10 @@
 
     let schedule: Schedule = schedulify(selections);
 
-    $: if (selections === selections) {
+    // In order for Svelte to recreate `schedule` reactively as the user
+    // selects new classes, this if block is needed to run `schedulify`
+    // if `selections` changes.
+    $: if (selections) {
         schedule = schedulify(selections);
         console.log(schedule);
     }

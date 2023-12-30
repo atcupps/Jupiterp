@@ -1,3 +1,11 @@
+/**
+ * This file is part of Jupiterp: https://github.com/atcupps/Jupiterp
+ * 
+ * @fileoverview This file contains functions used for processing a list of
+ * course sections chosen by a user and creating a schedule in the form of a
+ * list of class meetings for every day of the week.
+ */
+
 enum Day {
     Monday = 'monday',
     Tuesday = 'tuesday',
@@ -7,8 +15,14 @@ enum Day {
     Other = 'other'
 }
 
+/**
+ * Create a `Schedule` from a list of selected course sections.
+ * @param selections A list of course sections chosen by the user in the form
+ *                      of a `ScheduleSelection[]`.
+ * @returns A `Schedule` built from `selections`
+ */
 export function schedulify(selections: ScheduleSelection[]): Schedule {
-    let schedule: Schedule = {
+    const schedule: Schedule = {
         monday: [],
         tuesday: [],
         wednesday: [],
@@ -27,12 +41,13 @@ export function schedulify(selections: ScheduleSelection[]): Schedule {
                 schedule.other = [...schedule.other, newMeeting];
             }
             else if ('OnlineSync' in meeting) {
-                addMeeting(schedule, newMeeting, meeting.OnlineSync);
+                addMeetings(schedule, newMeeting, meeting.OnlineSync);
             } else {
                 if (meeting.InPerson.classtime == null) {
                     schedule.other = [...schedule.other, newMeeting];
                 } else {
-                    addMeeting(schedule, newMeeting, meeting.InPerson.classtime);
+                    addMeetings(schedule, newMeeting, 
+                                        meeting.InPerson.classtime);
                 }
             }
         })
@@ -40,7 +55,15 @@ export function schedulify(selections: ScheduleSelection[]): Schedule {
     return schedule;
 }
 
-function addMeeting(schedule: Schedule, meeting: ClassMeetingExtended, 
+/**
+ * Add class meetings to days of the week of `schedule` appropriately.
+ * @param schedule A `Schedule` object to be modified.
+ * @param meeting A `ClassMeetingExtended` object to be added to the matching
+ *                  days of `schedule`.
+ * @param classtime A `Classtime` used to determine which days to add `meeting`
+ *                  to.
+ */
+function addMeetings(schedule: Schedule, meeting: ClassMeetingExtended, 
                                                         classtime: Classtime) {
     const days: Day[] = parseDays(classtime.days);
     days.forEach((day) => {
@@ -67,6 +90,13 @@ function addMeeting(schedule: Schedule, meeting: ClassMeetingExtended,
     })
 }
 
+/**
+ * Parse `days` as a code and return an array of matching `Day`s. As an
+ * example, `'TuTh'` would match to Tuesday and Thursday, so this function
+ * would return `[Day.Tuesday, Day.Thursday]`.
+ * @param days A `string` with a day code; ex. `'TuTh'`.
+ * @returns An array of `Day`s matching `days`.
+ */
 function parseDays(days: string): Day[] {
     switch (days) {
         case 'M':
