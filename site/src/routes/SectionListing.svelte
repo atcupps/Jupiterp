@@ -37,14 +37,14 @@
 </script>
 
 <li class='py-1'>
-    {section.sec_code}
+    <span class='text-secCodesLight font-semibold'>{section.sec_code}</span>
     <button on:click={addSectionToSchedule}
-        class='bg-slate-200 rounded px-1'>
+        class='bg-orange rounded px-1'>
         {sectionAdded ? 'Remove section' : 'Add section'}
     </button>
     <ul class='list-disc list-inside pl-4'>
         {#each section.instructors as instructor}
-            <li>{instructor}</li>
+            <li><span class='font-semibold'>{instructor}</span></li>
         {/each}
     </ul>
 </li>

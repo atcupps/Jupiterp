@@ -18,45 +18,45 @@
 </script>
 
 <div class='p-2 flex justify-center h-full w-full'>
-    <table style="border: 1px solid black;" class='w-full'>
-        <tr style="border: 1px solid black;" class='h-4'>
-            <th style="border: 1px solid black;">Monday</th>
-            <th style="border: 1px solid black;">Tuesday</th>
-            <th style="border: 1px solid black;">Wednesday</th>
-            <th style="border: 1px solid black;">Thursday</th>
-            <th style="border: 1px solid black;">Friday</th>
+    <table class='w-full'>
+        <tr class='h-4'>
+            <th class='border-2 border-solid border-outlineLight'>Monday</th>
+            <th class='border-2 border-solid border-outlineLight'>Tuesday</th>
+            <th class='border-2 border-solid border-outlineLight'>Wednesday</th>
+            <th class='border-2 border-solid border-outlineLight'>Thursday</th>
+            <th class='border-2 border-solid border-outlineLight'>Friday</th>
             {#if schedule.other.length > 0}
-                <th style="border: 1px solid black;">Other</th>
+                <th class='border-2 border-solid border-outlineLight'>Other</th>
             {/if}
         </tr>
-        <tr style="border: 1px solid black;">
-            <td style="border: 1px solid black;">
+        <tr >
+            <td class='border-2 border-solid border-outlineLight'>
                 {#each schedule.monday as classMeeting}
                     <ClassMeeting meeting={classMeeting} />
                 {/each}
             </td>
-            <td style="border: 1px solid black;">
+            <td class='border-2 border-solid border-outlineLight'>
                 {#each schedule.tuesday as classMeeting}
                     <ClassMeeting meeting={classMeeting} />
                 {/each}
             </td>
-            <td style="border: 1px solid black;">
+            <td class='border-2 border-solid border-outlineLight'>
                 {#each schedule.wednesday as classMeeting}
                     <ClassMeeting meeting={classMeeting} />
                 {/each}
             </td>
-            <td style="border: 1px solid black;">
+            <td class='border-2 border-solid border-outlineLight'>
                 {#each schedule.thursday as classMeeting}
                     <ClassMeeting meeting={classMeeting} />
                 {/each}
             </td>
-            <td style="border: 1px solid black;">
+            <td class='border-2 border-solid border-outlineLight'>
                 {#each schedule.friday as classMeeting}
                     <ClassMeeting meeting={classMeeting} />
                 {/each}
             </td>
             {#if schedule.other.length > 0}
-                <td style="border: 1px solid black;">
+                <td class='border-2 border-solid border-outlineLight'>
                     {#each schedule.other as classMeeting}
                         <ClassMeeting meeting={classMeeting} />
                     {/each}

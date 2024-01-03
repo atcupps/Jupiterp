@@ -4,6 +4,14 @@
 
 body {
     background-color: white;
+
     padding: 0px 32px;
     height: 100vh;
+    font-family: 'Cabin', Arial, sans-serif;
 }
+
+/* @media (prefers-color-scheme: dark) {
+    body {
+        background-color: #151922;
+    }
+} */

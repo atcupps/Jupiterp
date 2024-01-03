@@ -14,9 +14,9 @@
     }
 </script>
 
-<div class='py-1'>
+<div class='p-1 pl-2 my-2 bg-bgSecondaryLight rounded-lg border-2 border-outlineLight border-solid'>
     <b>{course.code}</b>
-    <button on:click={toggleSections} class='bg-slate-200 rounded px-1'>
+    <button on:click={toggleSections} class='bg-orange rounded px-1'>
         {displaySections ? 'Hide sections' : 'Show sections'}
     </button>
 

@@ -25,9 +25,9 @@
     }
 </script>
 
-<div class='flex flex-col w-64 h-full border-r border-slate-200 border-solid p-2'>
+<div class='flex flex-col w-[360px] h-full border-r-2 border-divBorderLight border-solid py-2 pr-2'>
     <input type="text" bind:value={searchInput} on:input={handleInput}
-        class="border-solid border rounded bg-transparent">
+        class="border-solid border-2 border-outlineLight rounded-lg bg-transparent px-2">
     <div class='grow overflow-scroll'>
         {#each searchResults as courseMatch (courseMatch.code)}
             <CourseListing course={courseMatch} bind:selections={selections}/>
