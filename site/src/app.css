@@ -10,8 +10,8 @@ body {
     font-family: 'Cabin', Arial, sans-serif;
 }
 
-/* @media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
     body {
         background-color: #151922;
     }
-} */
+}

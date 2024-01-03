@@ -37,9 +37,9 @@
 </script>
 
 <li class='py-1'>
-    <span class='text-secCodesLight font-semibold'>{section.sec_code}</span>
+    <span class='text-secCodesLight dark:text-secCodesDark font-semibold'>{section.sec_code}</span>
     <button on:click={addSectionToSchedule}
-        class='bg-orange rounded px-1'>
+        class='bg-orange dark:text-black rounded px-1'>
         {sectionAdded ? 'Remove section' : 'Add section'}
     </button>
     <ul class='list-disc list-inside pl-4'>
