@@ -17,9 +17,9 @@
     }
 </script>
 
-<div>
-    <table style="border: 1px solid black;">
-        <tr style="border: 1px solid black;">
+<div class='p-2 flex justify-center h-full w-full'>
+    <table style="border: 1px solid black;" class='w-full'>
+        <tr style="border: 1px solid black;" class='h-4'>
             <th style="border: 1px solid black;">Monday</th>
             <th style="border: 1px solid black;">Tuesday</th>
             <th style="border: 1px solid black;">Wednesday</th>

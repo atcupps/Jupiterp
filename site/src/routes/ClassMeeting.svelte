@@ -6,42 +6,38 @@
     export let meeting: ClassMeetingExtended;
 </script>
 
-<ul>
+<b>{meeting.course}</b>
+<ul class='list-disc list-inside pl-4'>
     <li>
-        <b>{meeting.course}</b>
-        <ul>
-            <li>
-                {meeting.instructors}
-            </li>
-            {#if typeof meeting.meeting === 'string'}
-                <li>
-                    {meeting.meeting}
-                </li>
-            {:else if 'OnlineSync' in meeting.meeting}
-                <li>
-                    {formatClasstime(meeting.meeting.OnlineSync)}
-                </li>
-            {:else}
-                {#if meeting.meeting.InPerson.classtime == null}
-                    <li>
-                        Time TBA
-                    </li>
-                {:else}
-                    <li>
-                        {formatClasstime(meeting.meeting.InPerson.classtime)}
-                    </li>
-                {/if}
-                {#if meeting.meeting.InPerson.location == null}
-                    <li>
-                        Location TBA
-                    </li>
-                {:else}
-                    <li>
-                        {meeting.meeting.InPerson.location[0]}
-                        {meeting.meeting.InPerson.location[1]}
-                    </li>
-                {/if}
-            {/if}
-        </ul>
+        {meeting.instructors}
     </li>
+    {#if typeof meeting.meeting === 'string'}
+        <li>
+            {meeting.meeting}
+        </li>
+    {:else if 'OnlineSync' in meeting.meeting}
+        <li>
+            {formatClasstime(meeting.meeting.OnlineSync)}
+        </li>
+    {:else}
+        {#if meeting.meeting.InPerson.classtime == null}
+            <li>
+                Time TBA
+            </li>
+        {:else}
+            <li>
+                {formatClasstime(meeting.meeting.InPerson.classtime)}
+            </li>
+        {/if}
+        {#if meeting.meeting.InPerson.location == null}
+            <li>
+                Location TBA
+            </li>
+        {:else}
+            <li>
+                {meeting.meeting.InPerson.location[0]}
+                {meeting.meeting.InPerson.location[1]}
+            </li>
+        {/if}
+    {/if}
 </ul>

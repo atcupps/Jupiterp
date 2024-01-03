@@ -36,12 +36,13 @@
     }
 </script>
 
-<li>
+<li class='py-1'>
     {section.sec_code}
-    <button on:click={addSectionToSchedule}>
+    <button on:click={addSectionToSchedule}
+        class='bg-slate-200 rounded px-1'>
         {sectionAdded ? 'Remove section' : 'Add section'}
     </button>
-    <ul>
+    <ul class='list-disc list-inside pl-4'>
         {#each section.instructors as instructor}
             <li>{instructor}</li>
         {/each}
