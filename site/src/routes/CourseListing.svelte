@@ -14,14 +14,14 @@
     }
 </script>
 
-<div>
-    {course.code}
-    <button on:click={toggleSections}>
+<div class='p-1 pl-2 my-2 bg-bgSecondaryLight dark:bg-bgSecondaryDark rounded-lg border-2 border-outlineLight dark:border-outlineDark border-solid'>
+    <b>{course.code}</b>
+    <button on:click={toggleSections} class='bg-orange rounded px-1 dark:text-black'>
         {displaySections ? 'Hide sections' : 'Show sections'}
     </button>
 
     {#if displaySections}
-        <ul>
+        <ul class='list-disc list-inside pl-4'>
             {#if course.sections != null}
                 {#each course.sections as section}
                     <SectionListing courseCode={course.code} 
