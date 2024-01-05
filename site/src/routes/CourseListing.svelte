@@ -6,13 +6,6 @@
 
     export let course: Course;
     export let selections: ScheduleSelection[];
-
-    let displaySections = false;
-    displaySections = false;
-
-    function toggleSections() {
-        displaySections = !displaySections;
-    }
 </script>
 
 <div class='p-1 px-2 my-2 bg-bgSecondaryLight dark:bg-bgSecondaryDark 
