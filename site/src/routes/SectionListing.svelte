@@ -1,6 +1,9 @@
 <!-- This file is part of Jupiterp: https://github.com/atcupps/Jupiterp -->
 
 <script lang="ts">
+    import InstructorListing from "./InstructorListing.svelte";
+    import MeetingListing from "./MeetingListing.svelte";
+
     export let courseCode: string;
     export let section: Section;
     export let selectionsList: ScheduleSelection[] = [];
@@ -36,15 +39,26 @@
     }
 </script>
 
-<li class='py-1'>
-    <span class='text-secCodesLight dark:text-secCodesDark font-semibold'>{section.sec_code}</span>
-    <button on:click={addSectionToSchedule}
-        class='bg-orange dark:text-black rounded px-1'>
-        {sectionAdded ? 'Remove section' : 'Add section'}
-    </button>
-    <ul class='list-disc list-inside pl-4'>
+<button on:click={addSectionToSchedule}
+        class='flex flex-row w-full text-left
+                border-t-2 border-outlineLight dark:border-outlineDark
+                hover:bg-hoverLight hover:dark:bg-hoverDark transition
+                {sectionAdded ? 'bg-hoverLight dark:bg-hoverDark' : ''}'>
+    <!-- Section code -->
+    <div class='text-secCodesLight dark:text-secCodesDark font-semibold w-14'>
+        {section.sec_code}
+    </div>
+
+    <!-- Section info -->
+    <div class='w-full'>
+        <!-- Instructors -->
         {#each section.instructors as instructor}
-            <li><span class='font-semibold'>{instructor}</span></li>
+            <InstructorListing instructor={instructor} />
         {/each}
-    </ul>
-</li>
+        
+        <!-- Class meetings -->
+        {#each section.class_meetings as meeting}
+            <MeetingListing meeting={meeting} />
+        {/each}
+    </div>
+</button>

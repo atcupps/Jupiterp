@@ -15,11 +15,11 @@ export function formatClasstime(time: Classtime): string {
     const days: string = time.days;
     const startTimeArray: TimeComponent[] = time.start_time;
     const startTime: string = startTimeArray[0] + ':' 
-        + formatMinutes(startTimeArray[1]) + ' '
+        + formatMinutes(startTimeArray[1])
         + formatAmPm(startTimeArray[2]);
     const endTimeArray: TimeComponent[] = time.end_time;
     const endTime: string = endTimeArray[0] + ':'
-        + formatMinutes(endTimeArray[1]) + ' '
+        + formatMinutes(endTimeArray[1])
         + formatAmPm(endTimeArray[2]);
     return days + ' ' + startTime + ' - ' + endTime;
 }
@@ -60,4 +60,27 @@ function formatAmPm(AmPmAsTC: TimeComponent): string {
             break;
     }
     throw new Error('Unknown Am/Pm code');
+}
+
+/**
+ * Formats a `CreditCount` as a `string`
+ * @param credits A `CreditCount` to be formatted
+ * @returns `credits` formatted as a string
+ */
+export function formatCredits(credits: CreditCount): string {
+    if ('Amount' in credits) {
+        return credits.Amount.toString();
+    } else {
+        return credits.Range[0] + ' - ' + credits.Range[1];
+    }
+}
+
+/**
+ * Formats `location` as a `string`
+ * @param location A `string[]` where `string[0]` is a building code and
+ *                  `string[1]` is a room code; ex: `['IRB', '2107']`
+ * @returns `location` formatted as a `string`
+ */
+export function formatLocation(location: string[]): string {
+    return location[0] + ' ' + location[1]
 }
