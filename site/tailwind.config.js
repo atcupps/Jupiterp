@@ -17,6 +17,7 @@ export default {
       'divBorderLight': '#F1F1F1',
       'outlineLight': '#A2AABD',
       'secCodesLight': '#667085',
+      'hoverLight': '#e3e3e3',
 
       /* dark mode themes */
       'bgDark': '#151922',
@@ -24,7 +25,8 @@ export default {
       'textDark': '#D9DFEA',
       'divBorderDark': '#252E3E',
       'outlineDark': '#47526A',
-      'secCodesDark': '#667085'
+      'secCodesDark': '#667085',
+      'hoverDark': '#222736'
     }
   },
   plugins: []
