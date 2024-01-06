@@ -13,7 +13,6 @@
     // if `selections` changes.
     $: if (selections) {
         schedule = schedulify(selections);
-        console.log(schedule);
     }
 </script>
 

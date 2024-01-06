@@ -26,7 +26,7 @@ export default {
       'divBorderDark': '#252E3E',
       'outlineDark': '#47526A',
       'secCodesDark': '#667085',
-      'hoverDark': '222736'
+      'hoverDark': '#222736'
     }
   },
   plugins: []
