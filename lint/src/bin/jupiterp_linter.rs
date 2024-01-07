@@ -48,10 +48,11 @@ fn main() {
             }
         }
 
-        if !ownership_check {
-            print!("Must verify inclusion of Jupiterp Ownership\n");
-            exit(1)
-        }
+        //TODO(28): Create Ownership Check
+        // if !ownership_check {
+        //     print!("Must verify inclusion of Jupiterp Ownership\n");
+        //     exit(1)
+        // }
     }
 
 }
