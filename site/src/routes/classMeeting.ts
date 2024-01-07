@@ -6,7 +6,7 @@ export function timeToNumber(time: TimeComponent[]): number {
     if (typeof time[1] == 'number') {
         result += time[1] / 60;
     }
-    if (time[2] === 'Pm') {
+    if (time[2] === 'Pm' && time[0] != 12) {
         result += 12;
     }
     return result;

@@ -34,8 +34,11 @@
             }
         }
     }
+
 </script>
 
-<div class='absolute w-full'>
+<div class='absolute w-full bg-orange text-center text-black'
+        style=' top: {(decStartTime - 8) / 11 * 100}%;
+                height: {(decEndTime - decStartTime) / 11 * 100}%;'>
     {meeting.course}
 </div>
