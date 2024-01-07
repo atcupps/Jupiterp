@@ -5,10 +5,11 @@
     import { formatCredits } from "./formatting";
 
     export let course: Course;
+    export let profs: Record<string, Professor>;
     export let selections: ScheduleSelection[];
 </script>
 
-<div class='p-1 px-2 my-2 bg-bgSecondaryLight dark:bg-bgSecondaryDark 
+<div class='px-2 my-2 bg-bgSecondaryLight dark:bg-bgSecondaryDark 
             rounded-lg border-2 border-outlineLight dark:border-outlineDark 
             border-solid flex flex-col'>
     
@@ -30,7 +31,7 @@
     <!-- Sections -->
     {#if course.sections != null}
         {#each course.sections as section}
-            <SectionListing courseCode={course.code}
+            <SectionListing courseCode={course.code} profs={profs}
                 section={section} bind:selectionsList={selections} />
         {/each}
     {:else}

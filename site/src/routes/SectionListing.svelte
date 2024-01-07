@@ -6,6 +6,7 @@
 
     export let courseCode: string;
     export let section: Section;
+    export let profs: Record<string, Professor>;
     export let selectionsList: ScheduleSelection[] = [];
 
     let newSelection: ScheduleSelection = {
@@ -40,7 +41,7 @@
 </script>
 
 <button on:click={addSectionToSchedule}
-        class='flex flex-row w-full text-left
+            class='flex flex-row w-full text-left
                 border-t-2 border-outlineLight dark:border-outlineDark
                 hover:bg-hoverLight hover:dark:bg-hoverDark transition
                 {sectionAdded ? 'bg-hoverLight dark:bg-hoverDark' : ''}'>
@@ -53,7 +54,7 @@
     <div class='w-full'>
         <!-- Instructors -->
         {#each section.instructors as instructor}
-            <InstructorListing instructor={instructor} />
+            <InstructorListing instructor={instructor} profs={profs} />
         {/each}
         
         <!-- Class meetings -->

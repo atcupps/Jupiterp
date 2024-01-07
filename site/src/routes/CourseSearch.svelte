@@ -1,13 +1,13 @@
 <script lang='ts'>
     import CourseListing from "./CourseListing.svelte";
-    import { getCourseLookup, searchCourses } from "./courseSearch";
+    import { getCourseLookup, getProfsLookup, searchCourses } from "./courseSearch";
 
     export let selections: ScheduleSelection[];
 
     // Load profs and depts data
     export let data;
-    // let professors: Professor[] = data.professors; (not currently used)
     let depts: Department[] = data.departments;
+    let professors: Professor[] = data.professors;
 
     // Create course lookup table
     const courseLookup = getCourseLookup(depts);
@@ -23,9 +23,13 @@
                                 return a.code.localeCompare(b.code);
                             });
     }
+
+    // Create a professor lookup table
+    const profsLookup = getProfsLookup(professors);
 </script>
 
-<div class='flex flex-col min-w-[300px] h-full border-r-2 border-divBorderLight dark:border-divBorderDark border-solid py-2 pr-2'>
+<div class='flex flex-col min-w-[320px]
+        h-full border-r-2 border-divBorderLight dark:border-divBorderDark border-solid py-2 pr-2'>
     <div class='w-full border-solid border-b-2 border-divBorderLight dark:border-divBorderDark'>
         <input type="text" bind:value={searchInput} on:input={handleInput}
             class="border-solid border-2 border-outlineLight dark:border-outlineDark 
@@ -33,7 +37,7 @@
     </div>
     <div class='grow overflow-scroll'>
         {#each searchResults as courseMatch (courseMatch.code)}
-            <CourseListing course={courseMatch} bind:selections={selections}/>
+            <CourseListing course={courseMatch} profs={profsLookup} bind:selections={selections}/>
         {/each}
     </div>
 </div>
