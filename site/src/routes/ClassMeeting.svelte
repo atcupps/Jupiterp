@@ -1,11 +1,12 @@
 <!-- This file is part of Jupiterp: https://github.com/atcupps/Jupiterp -->
 
 <script lang='ts'>
-    import { formatClasstime, formatLocation } from './formatting';
-    import { timeToNumber } from './classMeeting';
+    import { formatClasstime, formatInstructors, formatLocation } from './formatting';
+    import { getColorFromNumber, timeToNumber } from './classMeeting';
 
     export let meeting: ClassMeetingExtended;
 
+    let formattedInstructors: string = formatInstructors(meeting.instructors);
     let formattedTime: string;
     let decStartTime: number;
     let decEndTime: number;
@@ -35,16 +36,44 @@
         }
     }
 
+    let elt: HTMLDivElement;
+    let innerHeight: number;
+    let h: number;
+    $: if (elt || innerHeight) {
+        h = elt.offsetHeight;
+        console.log(h);
+    }
 </script>
 
-<div class='absolute w-full bg-orange text-center text-black flex flex-col rounded-lg'
+<svelte:window bind:innerHeight />
+
+<div class='absolute w-full text-center text-black flex flex-col rounded-lg pb-1'
+        bind:this={elt} 
         style=' top: {(decStartTime - 8) / 11 * 100}%;
-                height: {(decEndTime - decStartTime) / 11 * 100}%;'>
-    <div class='w-full text-base font-bold rounded-t-lg courseCode'>
-        {meeting.course}
-    </div>
-    <div class='w-full font-thin text-xs'>
-        {location}
+                height: {(decEndTime - decStartTime) / 11 * 100}%;
+                background-color: {getColorFromNumber(meeting.colorNumber)}'>
+    {#if h > 24}
+        <div class='w-full text-base font-bold rounded-t-lg courseCode'
+                class:rounded-b-lg={h < 28}>
+            {meeting.course}
+        </div>
+    {/if}
+    <div class='grow w-full font-thin text-xs font-sans'>
+        {#if h - 24 > 48}
+            <div class='truncate'>
+                {formattedInstructors}
+            </div>
+        {/if}
+        {#if h - 24 > 32}
+            <div>
+                {formattedTime}
+            </div>
+        {/if}
+        {#if h - 24 > 16}
+            <div>
+                {location}
+            </div>
+        {/if}
     </div>
 </div>
 

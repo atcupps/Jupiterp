@@ -11,3 +11,20 @@ export function timeToNumber(time: TimeComponent[]): number {
     }
     return result;
 }
+
+/* Colors for courses on the Schedule */
+const colorMapping = [
+    '#FFD1DC',
+    '#FDFD96',
+    '#77DD77',
+    '#AEC6CF',
+    '#C3B1E1',
+    '#FFB347',
+    '#FF6961',
+    '#CBF7D4',
+    '#E6CDE3',
+    '#FEDFCC',
+];
+export function getColorFromNumber(num: number): string {
+    return colorMapping[num];
+}

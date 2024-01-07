@@ -4,6 +4,8 @@
     import { schedulify } from './schedule';
     import ScheduleDay from './ScheduleDay.svelte';
     import TimeLine from './TimeLine.svelte';
+    import { getColorFromNumber } from "./classMeeting";
+    import { formatInstructors } from './formatting';
 
     export let selections: ScheduleSelection[] = [];
 
@@ -17,7 +19,7 @@
     }
 </script>
 
-<div class='h-full w-full flex flex-row px-2 font-medium 
+<div class='h-full w-full flex flex-row px-2 font-medium
             text-lg text-center text-black dark:text-white overflow-y-scroll'>
     <div class='h-full grid grow relative pl-8'
             class:grid-cols-5={schedule.other.length == 0}
@@ -59,17 +61,18 @@
         {#if schedule.other.length > 0}
             <div class='h-full grow z-10 border-solid border-l-2 
                             border-divBorderLight dark:border-divBorderDark
-                            flex flex-col px-2'>
+                            flex flex-col pl-2'>
                 Other
                 {#each schedule.other as meeting}
-                    <div class='w-full bg-orange text-center text-black rounded-lg my-1 pb-1'>
+                    <div class='w-full text-center text-black rounded-lg my-1 pb-1'
+                            style='background-color: {getColorFromNumber(meeting.colorNumber)}'>
                         <div class='text-base font-bold rounded-t-lg courseCode'>
                             {meeting.course}
                         </div>
-                        <div class='font-thin text-xs'>
-                            {meeting.instructors}
+                        <div class='font-thin text-xs font-sans'>
+                            {formatInstructors(meeting.instructors)}
                         </div>
-                        <div class='font-thin text-xs'>
+                        <div class='font-thin text-xs font-sans'>
                             {#if meeting.meeting === 'OnlineAsync'}
                                 ONLINE ASYNC
                             {:else if meeting.meeting === 'Unspecified'}

@@ -29,13 +29,16 @@ export function schedulify(selections: ScheduleSelection[]): Schedule {
         thursday: [],
         friday: [],
         other: []
-    }
+    };
+    let colorCounter = 0;
     selections.forEach((selection) => {
+        const colorNumber: number = colorCounter++;
         selection.section.class_meetings.forEach((meeting) => {
             const newMeeting: ClassMeetingExtended = {
                 course: selection.courseCode,
                 instructors: selection.section.instructors,
-                meeting
+                meeting,
+                colorNumber
             }
             if (typeof meeting === 'string') {
                 schedule.other = [...schedule.other, newMeeting];

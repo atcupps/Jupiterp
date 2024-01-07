@@ -5,7 +5,7 @@
     export let classes: ClassMeetingExtended[];
 </script>
 
-<div class='w-full h-full z-10 flex flex-col px-2'>
+<div class='w-full h-full z-10 flex flex-col px-2 scheduleDay'>
     <div>
         {name}
     </div>
