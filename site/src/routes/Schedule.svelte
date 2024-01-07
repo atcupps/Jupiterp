@@ -17,55 +17,44 @@
     }
 </script>
 
-<div class='h-full w-full flex flex-row px-2 font-bold 
-            text-2xl text-center text-black dark:text-white'>
-    <div class='h-full flex flex-col pt-[32px]'>
-        <span class='grow'>8</span>
-        <span class='grow'>9</span>
-        <span class='grow'>10</span>
-        <span class='grow'>11</span>
-        <span class='grow'>12</span>
-        <span class='grow'>1</span>
-        <span class='grow'>2</span>
-        <span class='grow'>3</span>
-        <span class='grow'>4</span>
-        <span class='grow'>5</span>
-        <span class='grow'>6</span>
-        <span class='grow'>7</span>
-    </div>
-    <div class='h-full grid grow relative'
+<div class='h-full w-full flex flex-row px-2 font-medium 
+            text-lg text-center text-black dark:text-white overflow-y-scroll'>
+    <div class='h-full grid grow relative pl-8'
             class:grid-cols-5={schedule.other.length == 0}
             class:grid-cols-6={schedule.other.length > 0}>
         <div class='absolute timelines z-0' 
-                style='width: {schedule.other.length == 0 ? '100%' : '83.3%'}'>
-            <TimeLine position={0} />
-            <TimeLine position={1 / 22} />
-            <TimeLine position={2 / 22} />
-            <TimeLine position={3 / 22} />
-            <TimeLine position={4 / 22} />
-            <TimeLine position={5 / 22} />
-            <TimeLine position={6 / 22} />
-            <TimeLine position={7 / 22} />
-            <TimeLine position={8 / 22} />
-            <TimeLine position={9 / 22} />
-            <TimeLine position={10 / 22} />
-            <TimeLine position={11 / 22} />
-            <TimeLine position={12 / 22} />
-            <TimeLine position={13 / 22} />
-            <TimeLine position={14 / 22} />
-            <TimeLine position={15 / 22} />
-            <TimeLine position={16 / 22} />
-            <TimeLine position={17 / 22} />
-            <TimeLine position={18 / 22} />
-            <TimeLine position={19 / 22} />
-            <TimeLine position={20 / 22} />
+                style='width: {schedule.other.length == 0 ? '100%' : '83.3%'};
+                        top: 28px;'>
+            <TimeLine number={'8 AM'} position={0 / 23} />
+            <TimeLine position={1 / 23} />
+            <TimeLine number={'9 AM'} position={2 / 23} />
+            <TimeLine position={3 / 23} />
+            <TimeLine number={'10 AM'} position={4 / 23} />
+            <TimeLine position={5 / 23} />
+            <TimeLine number={'11 AM'} position={6 / 23} />
+            <TimeLine position={7 / 23} />
+            <TimeLine number={'12 PM'} position={8 / 23} />
+            <TimeLine position={9 / 23} />
+            <TimeLine number={'1 PM'} position={10 / 23} />
+            <TimeLine position={11 / 23} />
+            <TimeLine number={'2 PM'} position={12 / 23} />
+            <TimeLine position={13 / 23} />
+            <TimeLine number={'3 PM'} position={14 / 23} />
+            <TimeLine position={15 / 23} />
+            <TimeLine number={'4 PM'} position={16 / 23} />
+            <TimeLine position={17 / 23} />
+            <TimeLine number={'5 PM'} position={18 / 23} />
+            <TimeLine position={19 / 23} />
+            <TimeLine number={'6 PM'} position={20 / 23} />
+            <TimeLine position={21 / 23} />
+            <TimeLine number={'7 PM'} position={22 / 23} />
         </div>
 
-        <ScheduleDay name='M' classes={schedule.monday} />
-        <ScheduleDay name='Tu' classes={schedule.tuesday} />
-        <ScheduleDay name='W' classes={schedule.wednesday} />
-        <ScheduleDay name='Th' classes={schedule.thursday} />
-        <ScheduleDay name='Fr' classes={schedule.friday} />
+        <ScheduleDay name='Mon' classes={schedule.monday} />
+        <ScheduleDay name='Tue' classes={schedule.tuesday} />
+        <ScheduleDay name='Wed' classes={schedule.wednesday} />
+        <ScheduleDay name='Thu' classes={schedule.thursday} />
+        <ScheduleDay name='Fri' classes={schedule.friday} />
 
         {#if schedule.other.length > 0}
             <div class='h-full grow z-10 border-solid border-l-2 
