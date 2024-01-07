@@ -58,8 +58,28 @@
 
         {#if schedule.other.length > 0}
             <div class='h-full grow z-10 border-solid border-l-2 
-                            border-divBorderLight dark:border-divBorderDark'>
+                            border-divBorderLight dark:border-divBorderDark
+                            flex flex-col px-2'>
                 Other
+                {#each schedule.other as meeting}
+                    <div class='w-full bg-orange text-center text-black rounded-lg my-1 pb-1'>
+                        <div class='text-base font-bold rounded-t-lg courseCode'>
+                            {meeting.course}
+                        </div>
+                        <div class='font-thin text-xs'>
+                            {meeting.instructors}
+                        </div>
+                        <div class='font-thin text-xs'>
+                            {#if meeting.meeting === 'OnlineAsync'}
+                                ONLINE ASYNC
+                            {:else if meeting.meeting === 'Unspecified'}
+                                Unspecified
+                            {:else}
+                                {meeting.meeting}
+                            {/if}
+                        </div>
+                    </div>
+                {/each}
             </div>
         {/if}
     </div>
@@ -71,5 +91,9 @@
         top: calc(32px + 16px);
         padding-left: 2px;
         padding-right: 2px;
+    }
+
+    .courseCode {
+        background-color: rgba(0, 0, 0, 0.1)
     }
 </style>
