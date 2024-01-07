@@ -17,7 +17,7 @@
             formattedTime = formatClasstime(meeting.meeting.OnlineSync);
             decStartTime = timeToNumber(meeting.meeting.OnlineSync.start_time);
             decEndTime = timeToNumber(meeting.meeting.OnlineSync.end_time);
-            location = 'Online';
+            location = 'ONLINE';
         } else {
             const inPerson = meeting.meeting.InPerson;
             if (inPerson.classtime != null) {
@@ -79,6 +79,6 @@
 
 <style>
     .courseCode {
-        background-color: rgba(0, 0, 0, 0.1)
+        background-color: rgba(0, 0, 0, 0.07)
     }
 </style>

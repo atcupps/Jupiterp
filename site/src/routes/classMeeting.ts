@@ -14,14 +14,14 @@ export function timeToNumber(time: TimeComponent[]): number {
 
 /* Colors for courses on the Schedule */
 const colorMapping = [
-    '#FFD1DC',
-    '#FDFD96',
-    '#77DD77',
-    '#AEC6CF',
-    '#C3B1E1',
-    '#FFB347',
-    '#FF6961',
-    '#CBF7D4',
+    '#B3C8F2',
+    '#F2B3B3',
+    '#F2EFB3',
+    '#B3F2E6',
+    '#DEB3F2',
+    '#B8F2B3',
+    '#f2c996',
+    '#dfa8e6',
     '#E6CDE3',
     '#FEDFCC',
 ];

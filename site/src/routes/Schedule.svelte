@@ -97,6 +97,6 @@
     }
 
     .courseCode {
-        background-color: rgba(0, 0, 0, 0.1)
+        background-color: rgba(0, 0, 0, 0.07)
     }
 </style>
