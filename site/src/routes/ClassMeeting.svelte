@@ -37,8 +37,19 @@
 
 </script>
 
-<div class='absolute w-full bg-orange text-center text-black'
+<div class='absolute w-full bg-orange text-center text-black flex flex-col rounded-lg'
         style=' top: {(decStartTime - 8) / 11 * 100}%;
                 height: {(decEndTime - decStartTime) / 11 * 100}%;'>
-    {meeting.course}
+    <div class='w-full text-base font-bold rounded-t-lg courseCode'>
+        {meeting.course}
+    </div>
+    <div class='w-full font-thin text-xs'>
+        {location}
+    </div>
 </div>
+
+<style>
+    .courseCode {
+        background-color: rgba(0, 0, 0, 0.1)
+    }
+</style>
