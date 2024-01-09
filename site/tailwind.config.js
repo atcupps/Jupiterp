@@ -9,7 +9,7 @@ export default {
       'white': '#ffffff',
       'black': '#000000',
       'orange': '#F6743C',
-
+      
       /* light mode themes */
       'bgLight': 'white',
       'bgSecondaryLight': '#EBEBEB',
@@ -17,7 +17,7 @@ export default {
       'divBorderLight': '#F1F1F1',
       'outlineLight': '#A2AABD',
       'secCodesLight': '#667085',
-      'hoverLight': '#e3e3e3',
+      'hoverLight': '#d8d8d8',
 
       /* dark mode themes */
       'bgDark': '#151922',
@@ -26,7 +26,7 @@ export default {
       'divBorderDark': '#252E3E',
       'outlineDark': '#47526A',
       'secCodesDark': '#667085',
-      'hoverDark': '#222736'
+      'hoverDark': '#222736',
     }
   },
   plugins: []

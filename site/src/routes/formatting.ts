@@ -5,6 +5,15 @@
  */
 
 /**
+ * Format a `Classtime` as a `string`, including the days
+ * @param time A `Classtime` to be formatted
+ * @returns A `string` representation of `time`, including days
+ */
+export function formatClassDayTime(time: Classtime): string {
+    return time.days + formatClasstime(time);
+}
+
+/**
  * Format a `Classtime` as a `string`
  * 
  * @param time A `Classtime` to be formatted
@@ -12,7 +21,6 @@
  * @returns A `string` representation of `time`
  */
 export function formatClasstime(time: Classtime): string {
-    const days: string = time.days;
     const startTimeArray: TimeComponent[] = time.start_time;
     const startTime: string = startTimeArray[0] + ':' 
         + formatMinutes(startTimeArray[1])
@@ -21,7 +29,7 @@ export function formatClasstime(time: Classtime): string {
     const endTime: string = endTimeArray[0] + ':'
         + formatMinutes(endTimeArray[1])
         + formatAmPm(endTimeArray[2]);
-    return days + ' ' + startTime + ' - ' + endTime;
+    return ' ' + startTime + ' - ' + endTime;
 }
 
 /**
@@ -83,4 +91,8 @@ export function formatCredits(credits: CreditCount): string {
  */
 export function formatLocation(location: string[]): string {
     return location[0] + ' ' + location[1]
+}
+
+export function formatInstructors(instructors: string[]): string {
+    return instructors.join(', ');
 }
