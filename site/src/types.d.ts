@@ -64,6 +64,7 @@ interface ScheduleSelection {
 
 interface ClassMeetingExtended {
     course: string,
+    secCode: string,
     instructors: string[],
     meeting: ClassMeeting,
     colorNumber: number

@@ -66,11 +66,14 @@
                 {#each schedule.other as meeting}
                     <div class='w-full text-center text-black rounded-lg my-1 pb-1'
                             style='background-color: {getColorFromNumber(meeting.colorNumber)}'>
-                        <div class='text-base font-bold rounded-t-lg courseCode'>
+                        <div class='text-base font-semibold rounded-t-lg courseCode font-sans'>
                             {meeting.course}
                         </div>
                         <div class='font-thin text-xs font-sans'>
                             {formatInstructors(meeting.instructors)}
+                        </div>
+                        <div class='font-thin text-xs font-sans'>
+                            Section {meeting.secCode}
                         </div>
                         <div class='font-thin text-xs font-sans'>
                             {#if meeting.meeting === 'OnlineAsync'}

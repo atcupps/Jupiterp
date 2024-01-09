@@ -36,6 +36,7 @@ export function schedulify(selections: ScheduleSelection[]): Schedule {
         selection.section.class_meetings.forEach((meeting) => {
             const newMeeting: ClassMeetingExtended = {
                 course: selection.courseCode,
+                secCode: selection.section.sec_code,
                 instructors: selection.section.instructors,
                 meeting,
                 colorNumber

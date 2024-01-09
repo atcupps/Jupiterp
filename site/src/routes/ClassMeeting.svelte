@@ -8,6 +8,7 @@
 
     let formattedInstructors: string = formatInstructors(meeting.instructors);
     let formattedTime: string;
+    let secCode: string;
     let decStartTime: number;
     let decEndTime: number;
     let location: string;
@@ -15,6 +16,7 @@
     $: if (meeting.meeting != null && typeof meeting.meeting != 'string') {
         if ('OnlineSync' in meeting.meeting) {
             formattedTime = formatClasstime(meeting.meeting.OnlineSync);
+            secCode = meeting.secCode;
             decStartTime = timeToNumber(meeting.meeting.OnlineSync.start_time);
             decEndTime = timeToNumber(meeting.meeting.OnlineSync.end_time);
             location = 'ONLINE';
@@ -22,6 +24,7 @@
             const inPerson = meeting.meeting.InPerson;
             if (inPerson.classtime != null) {
                 formattedTime = formatClasstime(inPerson.classtime);
+                secCode = meeting.secCode;
                 decStartTime = timeToNumber(inPerson.classtime.start_time);
                 decEndTime = timeToNumber(inPerson.classtime.end_time);
             } else {
@@ -53,20 +56,25 @@
                 height: {(decEndTime - decStartTime) / 11 * 100}%;
                 background-color: {getColorFromNumber(meeting.colorNumber)}'>
     {#if h > 24}
-        <div class='w-full text-base font-bold rounded-t-lg courseCode'
+        <div class='w-full text-base font-semibold font-sans rounded-t-lg courseCode'
                 class:rounded-b-lg={h < 28}>
             {meeting.course}
         </div>
     {/if}
     <div class='grow w-full font-thin text-xs font-sans'>
+        {#if h - 24 > 64}
+            <div>
+                {formattedInstructors}
+            </div>
+        {/if}
         {#if h - 24 > 48}
             <div class='truncate'>
-                {formattedInstructors}
+                {formattedTime}
             </div>
         {/if}
         {#if h - 24 > 32}
             <div>
-                {formattedTime}
+                Section {secCode}
             </div>
         {/if}
         {#if h - 24 > 16}
