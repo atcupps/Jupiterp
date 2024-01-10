@@ -2,7 +2,10 @@
 
 <script lang="ts">
     import { schedulify } from './schedule';
-    import ClassMeeting from './ClassMeeting.svelte';
+    import ScheduleDay from './ScheduleDay.svelte';
+    import TimeLine from './TimeLine.svelte';
+    import { getColorFromNumber } from "./classMeeting";
+    import { formatInstructors } from './formatting';
 
     export let selections: ScheduleSelection[] = [];
 
@@ -16,51 +19,87 @@
     }
 </script>
 
-<div class='p-2 flex justify-center h-full w-full'>
-    <table class='w-full'>
-        <tr class='h-4'>
-            <th class='border-2 border-solid border-outlineLight dark:border-outlineDark'>Monday</th>
-            <th class='border-2 border-solid border-outlineLight dark:border-outlineDark'>Tuesday</th>
-            <th class='border-2 border-solid border-outlineLight dark:border-outlineDark'>Wednesday</th>
-            <th class='border-2 border-solid border-outlineLight dark:border-outlineDark'>Thursday</th>
-            <th class='border-2 border-solid border-outlineLight dark:border-outlineDark'>Friday</th>
-            {#if schedule.other.length > 0}
-                <th class='border-2 border-solid border-outlineLight dark:border-outlineDark'>Other</th>
-            {/if}
-        </tr>
-        <tr >
-            <td class='border-2 border-solid border-outlineLight dark:border-outlineDark'>
-                {#each schedule.monday as classMeeting}
-                    <ClassMeeting meeting={classMeeting} />
+<div class='h-full w-full flex flex-row px-2 font-medium
+            text-lg text-center text-black dark:text-white overflow-y-scroll'>
+    <div class='h-full grid grow relative pl-8'
+            class:grid-cols-5={schedule.other.length == 0}
+            class:grid-cols-6={schedule.other.length > 0}>
+        <div class='absolute timelines z-0' 
+                style='width: {schedule.other.length == 0 ? '100%' : '83.3%'};
+                        top: 28px;'>
+            <TimeLine number={'8 AM'} position={0 / 23} />
+            <TimeLine position={1 / 23} />
+            <TimeLine number={'9 AM'} position={2 / 23} />
+            <TimeLine position={3 / 23} />
+            <TimeLine number={'10 AM'} position={4 / 23} />
+            <TimeLine position={5 / 23} />
+            <TimeLine number={'11 AM'} position={6 / 23} />
+            <TimeLine position={7 / 23} />
+            <TimeLine number={'12 PM'} position={8 / 23} />
+            <TimeLine position={9 / 23} />
+            <TimeLine number={'1 PM'} position={10 / 23} />
+            <TimeLine position={11 / 23} />
+            <TimeLine number={'2 PM'} position={12 / 23} />
+            <TimeLine position={13 / 23} />
+            <TimeLine number={'3 PM'} position={14 / 23} />
+            <TimeLine position={15 / 23} />
+            <TimeLine number={'4 PM'} position={16 / 23} />
+            <TimeLine position={17 / 23} />
+            <TimeLine number={'5 PM'} position={18 / 23} />
+            <TimeLine position={19 / 23} />
+            <TimeLine number={'6 PM'} position={20 / 23} />
+            <TimeLine position={21 / 23} />
+            <TimeLine number={'7 PM'} position={22 / 23} />
+        </div>
+
+        <ScheduleDay name='Mon' classes={schedule.monday} />
+        <ScheduleDay name='Tue' classes={schedule.tuesday} />
+        <ScheduleDay name='Wed' classes={schedule.wednesday} />
+        <ScheduleDay name='Thu' classes={schedule.thursday} />
+        <ScheduleDay name='Fri' classes={schedule.friday} />
+
+        {#if schedule.other.length > 0}
+            <div class='h-full grow z-10 border-solid border-l-2 
+                            border-divBorderLight dark:border-divBorderDark
+                            flex flex-col pl-2'>
+                Other
+                {#each schedule.other as meeting}
+                    <div class='w-full text-center text-black rounded-lg my-1 pb-1'
+                            style='background-color: {getColorFromNumber(meeting.colorNumber)}'>
+                        <div class='text-base font-semibold rounded-t-lg courseCode font-sans'>
+                            {meeting.course}
+                        </div>
+                        <div class='font-thin text-xs font-sans'>
+                            {formatInstructors(meeting.instructors)}
+                        </div>
+                        <div class='font-thin text-xs font-sans'>
+                            Section {meeting.secCode}
+                        </div>
+                        <div class='font-thin text-xs font-sans'>
+                            {#if meeting.meeting === 'OnlineAsync'}
+                                ONLINE ASYNC
+                            {:else if meeting.meeting === 'Unspecified'}
+                                Unspecified
+                            {:else}
+                                {meeting.meeting}
+                            {/if}
+                        </div>
+                    </div>
                 {/each}
-            </td>
-            <td class='border-2 border-solid border-outlineLight dark:border-outlineDark'>
-                {#each schedule.tuesday as classMeeting}
-                    <ClassMeeting meeting={classMeeting} />
-                {/each}
-            </td>
-            <td class='border-2 border-solid border-outlineLight dark:border-outlineDark'>
-                {#each schedule.wednesday as classMeeting}
-                    <ClassMeeting meeting={classMeeting} />
-                {/each}
-            </td>
-            <td class='border-2 border-solid border-outlineLight dark:border-outlineDark'>
-                {#each schedule.thursday as classMeeting}
-                    <ClassMeeting meeting={classMeeting} />
-                {/each}
-            </td>
-            <td class='border-2 border-solid border-outlineLight dark:border-outlineDark'>
-                {#each schedule.friday as classMeeting}
-                    <ClassMeeting meeting={classMeeting} />
-                {/each}
-            </td>
-            {#if schedule.other.length > 0}
-                <td class='border-2 border-solid border-outlineLight dark:border-outlineDark'>
-                    {#each schedule.other as classMeeting}
-                        <ClassMeeting meeting={classMeeting} />
-                    {/each}
-                </td>
-            {/if}
-        </tr>
-    </table>
+            </div>
+        {/if}
+    </div>
 </div>
+
+<style>
+    .timelines {
+        height: calc(100% - 32px - 16px);
+        top: calc(32px + 16px);
+        padding-left: 2px;
+        padding-right: 2px;
+    }
+
+    .courseCode {
+        background-color: rgba(0, 0, 0, 0.07)
+    }
+</style>
