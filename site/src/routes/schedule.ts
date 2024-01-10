@@ -155,8 +155,7 @@ export function getClasstimeBounds(schedule: Schedule): ClasstimeBound {
         schedule.tuesday, 
         schedule.wednesday, 
         schedule.thursday, 
-        schedule.friday, 
-        schedule.other
+        schedule.friday,
     ];
     days.forEach(day => {
         day.forEach(classMeeting => {

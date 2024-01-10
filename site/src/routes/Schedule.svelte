@@ -4,7 +4,7 @@
     import { getClasstimeBounds, schedulify } from './schedule';
     import ScheduleDay from './ScheduleDay.svelte';
     import { getColorFromNumber } from "./classMeeting";
-    import { formatInstructors } from './formatting';
+    import { formatClassDayTime, formatInstructors, formatLocation } from './formatting';
     import ScheduleBackground from './ScheduleBackground.svelte';
 
     export let selections: ScheduleSelection[] = [];
@@ -86,22 +86,46 @@
                 {#each schedule.other as meeting}
                     <div class='w-full text-center text-black rounded-lg my-1 pb-1'
                             style='background-color: {getColorFromNumber(meeting.colorNumber)}'>
-                        <div class='text-base font-semibold rounded-t-lg courseCode font-sans'>
+                        <div class='text-base font-semibold rounded-t-lg courseCode font-sans truncate'>
                             {meeting.course}
                         </div>
-                        <div class='font-thin text-xs font-sans'>
+                        <div class='font-thin text-xs font-sans truncate'>
                             {formatInstructors(meeting.instructors)}
                         </div>
-                        <div class='font-thin text-xs font-sans'>
+                        <div class='font-thin text-xs font-sans truncate'>
                             Section {meeting.secCode}
                         </div>
-                        <div class='font-thin text-xs font-sans'>
+                        <div class='font-thin text-xs font-sans truncate'>
                             {#if meeting.meeting === 'OnlineAsync'}
                                 ONLINE ASYNC
                             {:else if meeting.meeting === 'Unspecified'}
-                                Unspecified
+                                Unspecified Classtime
                             {:else}
-                                {meeting.meeting}
+                                {#if typeof meeting.meeting === 'string'}
+                                    {meeting.meeting}
+                                {:else if 'OnlineSync' in meeting.meeting}
+                                    <div class='truncate'>
+                                        {formatClassDayTime(meeting.meeting.OnlineSync)}
+                                    </div>
+                                    <div class='truncate'>
+                                        ONLINE
+                                    </div>
+                                {:else if 'InPerson' in meeting.meeting}
+                                    <div class='truncate'>
+                                        {#if meeting.meeting.InPerson.classtime != null}
+                                            {formatClassDayTime(meeting.meeting.InPerson.classtime)}
+                                        {:else}
+                                            Classtime TBA
+                                        {/if}
+                                    </div>
+                                    <div class='truncate'>
+                                        {#if meeting.meeting.InPerson.location != null}
+                                            {formatLocation(meeting.meeting.InPerson.location)}
+                                        {:else}
+                                            Location TBA
+                                        {/if}
+                                    </div>
+                                {/if}
                             {/if}
                         </div>
                     </div>
