@@ -78,3 +78,8 @@ interface Schedule {
     friday: ClassMeetingExtended[],
     other: ClassMeetingExtended[]
 }
+
+interface ClasstimeBound {
+    earliestStart: number,
+    latestEnd: number
+}

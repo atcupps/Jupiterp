@@ -3,15 +3,21 @@
 
     export let name: string;
     export let classes: ClassMeetingExtended[];
+    export let earliestClassStart: number;
+    export let latestClassEnd: number;
+    export let bgHeight: number;
+    $: bgHeight;
 </script>
 
 <div class='w-full h-full z-10 flex flex-col px-2 scheduleDay'>
     <div>
         {name}
     </div>
-    <div class='relative' style='height: calc({20 / 21 * 100}% - 28px - 14px); top: 14px'>
+    <div class='relative' 
+        style='height: {bgHeight}px; top: 14px'>
         {#each classes as classMeeting}
-            <ClassMeeting meeting={classMeeting} />
+            <ClassMeeting meeting={classMeeting}
+                bind:earliestClassStart bind:latestClassEnd />
         {/each}
     </div>
 </div>

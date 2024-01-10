@@ -1,11 +1,11 @@
 <!-- This file is part of Jupiterp: https://github.com/atcupps/Jupiterp -->
 
 <script lang="ts">
-    import { schedulify } from './schedule';
+    import { getClasstimeBounds, schedulify } from './schedule';
     import ScheduleDay from './ScheduleDay.svelte';
-    import TimeLine from './TimeLine.svelte';
     import { getColorFromNumber } from "./classMeeting";
     import { formatInstructors } from './formatting';
+    import ScheduleBackground from './ScheduleBackground.svelte';
 
     export let selections: ScheduleSelection[] = [];
 
@@ -17,6 +17,27 @@
     $: if (selections) {
         schedule = schedulify(selections);
     }
+
+    let bgHeight: number;
+
+    // Keep track of the range of times to display on the Schedule
+    let earliestClassStart: number = 8;
+    let latestClassEnd: number = 16;
+    $: if (selections) {
+        if (selections.length === 0) {
+            earliestClassStart = 8;
+            latestClassEnd = 16;
+        } else {
+            const bounds = getClasstimeBounds(schedule);
+            earliestClassStart = bounds.earliestStart;
+            latestClassEnd = bounds.latestEnd;
+            const boundDiff = latestClassEnd - earliestClassStart;
+            if (boundDiff < 8) {
+                earliestClassStart -= Math.floor((8 - boundDiff) / 2);
+                latestClassEnd += Math.floor((8 - boundDiff) / 2);
+            }
+        }
+    }
 </script>
 
 <div class='h-full w-full flex flex-row px-2 font-medium
@@ -24,40 +45,39 @@
     <div class='h-full grid grow relative pl-8'
             class:grid-cols-5={schedule.other.length == 0}
             class:grid-cols-6={schedule.other.length > 0}>
-        <div class='absolute timelines z-0' 
+        
+        <!-- Background lines for the schedule -->
+        <div class='absolute timelines z-0 h-full' 
                 style='width: {schedule.other.length == 0 ? '100%' : '83.3%'};
                         top: 28px;'>
-            <TimeLine number={'8 AM'} position={0 / 23} />
-            <TimeLine position={1 / 23} />
-            <TimeLine number={'9 AM'} position={2 / 23} />
-            <TimeLine position={3 / 23} />
-            <TimeLine number={'10 AM'} position={4 / 23} />
-            <TimeLine position={5 / 23} />
-            <TimeLine number={'11 AM'} position={6 / 23} />
-            <TimeLine position={7 / 23} />
-            <TimeLine number={'12 PM'} position={8 / 23} />
-            <TimeLine position={9 / 23} />
-            <TimeLine number={'1 PM'} position={10 / 23} />
-            <TimeLine position={11 / 23} />
-            <TimeLine number={'2 PM'} position={12 / 23} />
-            <TimeLine position={13 / 23} />
-            <TimeLine number={'3 PM'} position={14 / 23} />
-            <TimeLine position={15 / 23} />
-            <TimeLine number={'4 PM'} position={16 / 23} />
-            <TimeLine position={17 / 23} />
-            <TimeLine number={'5 PM'} position={18 / 23} />
-            <TimeLine position={19 / 23} />
-            <TimeLine number={'6 PM'} position={20 / 23} />
-            <TimeLine position={21 / 23} />
-            <TimeLine number={'7 PM'} position={22 / 23} />
+            <ScheduleBackground bind:earliest={earliestClassStart}
+                                bind:latest={latestClassEnd} 
+                                bind:h={bgHeight}/>
         </div>
 
-        <ScheduleDay name='Mon' classes={schedule.monday} />
-        <ScheduleDay name='Tue' classes={schedule.tuesday} />
-        <ScheduleDay name='Wed' classes={schedule.wednesday} />
-        <ScheduleDay name='Thu' classes={schedule.thursday} />
-        <ScheduleDay name='Fri' classes={schedule.friday} />
+        <!-- ClassTimes by day -->
+        <ScheduleDay name='Mon' classes={schedule.monday} 
+            bind:earliestClassStart
+            bind:latestClassEnd 
+            bind:bgHeight/>
+        <ScheduleDay name='Tue' classes={schedule.tuesday} 
+            bind:earliestClassStart
+            bind:latestClassEnd  
+            bind:bgHeight/>
+        <ScheduleDay name='Wed' classes={schedule.wednesday} 
+            bind:earliestClassStart
+            bind:latestClassEnd  
+            bind:bgHeight/>
+        <ScheduleDay name='Thu' classes={schedule.thursday} 
+            bind:earliestClassStart
+            bind:latestClassEnd  
+            bind:bgHeight/>
+        <ScheduleDay name='Fri' classes={schedule.friday} 
+            bind:earliestClassStart
+            bind:latestClassEnd  
+            bind:bgHeight/>
 
+        <!-- 'Other' classes (OnlineAsync, Unspecified) -->
         {#if schedule.other.length > 0}
             <div class='h-full grow z-10 border-solid border-l-2 
                             border-divBorderLight dark:border-divBorderDark
@@ -92,12 +112,6 @@
 </div>
 
 <style>
-    .timelines {
-        height: calc(100% - 32px - 16px);
-        top: calc(32px + 16px);
-        padding-left: 2px;
-        padding-right: 2px;
-    }
 
     .courseCode {
         background-color: rgba(0, 0, 0, 0.07)
