@@ -10,7 +10,7 @@
  * @returns A `string` representation of `time`, including days
  */
 export function formatClassDayTime(time: Classtime): string {
-    return time.days + formatClasstime(time);
+    return time.days + ' ' + formatClasstime(time);
 }
 
 /**
