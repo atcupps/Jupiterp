@@ -10,7 +10,7 @@
  * @returns A `string` representation of `time`, including days
  */
 export function formatClassDayTime(time: Classtime): string {
-    return time.days + formatClasstime(time);
+    return time.days + ' ' + formatClasstime(time);
 }
 
 /**
@@ -29,7 +29,7 @@ export function formatClasstime(time: Classtime): string {
     const endTime: string = endTimeArray[0] + ':'
         + formatMinutes(endTimeArray[1])
         + formatAmPm(endTimeArray[2]);
-    return ' ' + startTime + ' - ' + endTime;
+    return startTime + ' - ' + endTime;
 }
 
 /**
@@ -62,10 +62,8 @@ function formatAmPm(AmPmAsTC: TimeComponent): string {
     switch (AmPm) {
         case 'Am':
             return 'am';
-            break;
         case 'Pm':
             return 'pm';
-            break;
     }
     throw new Error('Unknown Am/Pm code');
 }

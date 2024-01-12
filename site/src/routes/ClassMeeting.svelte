@@ -3,8 +3,13 @@
 <script lang='ts'>
     import { formatClasstime, formatInstructors, formatLocation } from './formatting';
     import { getColorFromNumber, timeToNumber } from './classMeeting';
+    import { afterUpdate } from 'svelte';
 
     export let meeting: ClassMeetingExtended;
+    export let earliestClassStart: number;
+    export let latestClassEnd: number;
+    let boundDiff: number;
+    $: boundDiff = latestClassEnd - earliestClassStart;
 
     let formattedInstructors: string = formatInstructors(meeting.instructors);
     let formattedTime: string;
@@ -43,8 +48,9 @@
     let innerHeight: number;
     let h: number;
     $: if (elt || innerHeight) {
-        h = elt.offsetHeight;
-        console.log(h);
+        afterUpdate(() => {
+            h = elt.offsetHeight;  
+        });
     }
 </script>
 
@@ -52,18 +58,18 @@
 
 <div class='absolute w-full text-center text-black flex flex-col rounded-lg pb-1'
         bind:this={elt} 
-        style=' top: {(decStartTime - 8) / 11 * 100}%;
-                height: {(decEndTime - decStartTime) / 11 * 100}%;
+        style=' top: {(decStartTime - earliestClassStart) / boundDiff * 100}%;
+                height: {(decEndTime - decStartTime) / boundDiff * 100}%;
                 background-color: {getColorFromNumber(meeting.colorNumber)}'>
     {#if h > 24}
-        <div class='w-full text-base font-semibold font-sans rounded-t-lg courseCode'
+        <div class='w-full text-base font-semibold font-sans rounded-t-lg courseCode truncate min-h-[24px]'
                 class:rounded-b-lg={h < 28}>
             {meeting.course}
         </div>
     {/if}
-    <div class='grow w-full font-thin text-xs font-sans'>
+    <div class='grow font-thin text-xs font-sans px-2'>
         {#if h - 24 > 64}
-            <div>
+            <div class='truncate'>
                 {formattedInstructors}
             </div>
         {/if}
@@ -73,12 +79,12 @@
             </div>
         {/if}
         {#if h - 24 > 32}
-            <div>
+            <div class='truncate'>
                 Section {secCode}
             </div>
         {/if}
         {#if h - 24 > 16}
-            <div>
+            <div class='truncate'>
                 {location}
             </div>
         {/if}

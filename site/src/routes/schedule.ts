@@ -6,6 +6,8 @@
  * list of class meetings for every day of the week.
  */
 
+import { timeToNumber } from "./classMeeting";
+
 enum Day {
     Monday = 'monday',
     Tuesday = 'tuesday',
@@ -141,4 +143,67 @@ function parseDays(days: string): Day[] {
         default:
             throw Error('Unknown Day code: ' + days);
     }
+}
+
+export function getClasstimeBounds(schedule: Schedule): ClasstimeBound {
+    let result: ClasstimeBound = {
+        earliestStart: Number.MAX_SAFE_INTEGER,
+        latestEnd: Number.MIN_SAFE_INTEGER,
+    };
+    const days = [
+        schedule.monday, 
+        schedule.tuesday, 
+        schedule.wednesday, 
+        schedule.thursday, 
+        schedule.friday,
+    ];
+    days.forEach(day => {
+        day.forEach(classMeeting => {
+            const meeting = classMeeting.meeting;
+            if (typeof meeting != 'string') {
+                if ('OnlineSync' in meeting) {
+                    result = {
+                        earliestStart: Math.min(
+                            result.earliestStart,
+                            Math.floor(
+                                timeToNumber(
+                                    meeting.OnlineSync.start_time
+                                )
+                            )
+                        ),
+                        latestEnd: Math.max(
+                            result.latestEnd,
+                            Math.ceil(
+                                timeToNumber(
+                                    meeting.OnlineSync.end_time
+                                )
+                            )
+                        )
+                    }
+                } else {
+                    if (meeting.InPerson.classtime != null) {
+                        result = {
+                            earliestStart: Math.min(
+                                result.earliestStart,
+                                Math.floor(
+                                    timeToNumber(
+                                        meeting.InPerson.classtime.start_time
+                                    )
+                                )
+                            ),
+                            latestEnd: Math.max(
+                                result.latestEnd,
+                                Math.ceil(
+                                    timeToNumber(
+                                        meeting.InPerson.classtime.end_time
+                                    )
+                                )
+                            )
+                        }
+                    }
+                }
+            }
+        })
+    })
+    return result;
 }
