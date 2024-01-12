@@ -35,7 +35,7 @@
             class="border-solid border-2 border-outlineLight dark:border-outlineDark 
                     rounded-lg bg-transparent px-2 mb-2 w-full">
     </div>
-    <div class='grow overflow-scroll'>
+    <div class='grow overflow-scroll pr-1'>
         {#each searchResults as courseMatch (courseMatch.code)}
             <CourseListing course={courseMatch} profs={profsLookup} bind:selections={selections}/>
         {/each}
