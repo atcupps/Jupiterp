@@ -8,6 +8,27 @@ body {
     padding: 0px 32px;
     height: 100vh;
     font-family: 'Cabin', Arial, sans-serif;
+
+    /* ===== Scrollbar CSS ===== */
+    /* Firefox */
+    * {
+        scrollbar-width: auto;
+        scrollbar-color: #cccccc #ffffff;
+    }
+
+    /* Chrome, Edge, and Safari */
+    *::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    *::-webkit-scrollbar-track {
+        background: #ffffff;
+    }
+
+    *::-webkit-scrollbar-thumb {
+        background-color: #cccccc;
+        border-radius: 8px;
+    }
 }
 
 @media (prefers-color-scheme: dark) {
