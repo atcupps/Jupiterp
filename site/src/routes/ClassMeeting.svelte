@@ -62,7 +62,7 @@
                 height: {(decEndTime - decStartTime) / boundDiff * 100}%;
                 background-color: {getColorFromNumber(meeting.colorNumber)}'>
     {#if h > 24}
-        <div class='w-full text-base font-semibold font-sans rounded-t-lg courseCode truncate min-h-[24px]'
+        <div class='w-full text-base font-bold font-sans rounded-t-lg courseCode truncate min-h-[24px]'
                 class:rounded-b-lg={h < 28}>
             {meeting.course}
         </div>
