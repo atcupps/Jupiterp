@@ -31,7 +31,7 @@
             {instructor}
         </a>
         <span style='--rating: {convertRating(profs[instructor].average_rating) + '%'}'
-                class='text-[10px] align-[2px] text-orange font-bold stars'>
+                class='text-[10px] 2xl:text-base align-[2px] text-orange font-bold stars'>
             ★★★★★
         </span>
     {:else}

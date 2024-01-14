@@ -6,7 +6,7 @@
     export let meeting: ClassMeeting;
 </script>
 
-<div class='flex flex-row text-xs font-medium w-full'>
+<div class='flex flex-row text-xs 2xl:text-base font-medium w-full'>
     {#if typeof meeting === 'string'}
         {meeting}
     {:else if 'OnlineSync' in meeting}
