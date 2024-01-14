@@ -40,6 +40,8 @@ export function schedulify(selections: ScheduleSelection[]): Schedule {
                 course: selection.courseCode,
                 secCode: selection.section.sec_code,
                 instructors: selection.section.instructors,
+                conflictIndex: 1,
+                conflictTotal: 1,
                 meeting,
                 colorNumber
             }
@@ -57,7 +59,8 @@ export function schedulify(selections: ScheduleSelection[]): Schedule {
                 }
             }
         })
-    })
+    });
+    labelConflictingClasstimes(schedule);
     return schedule;
 }
 
@@ -76,18 +79,33 @@ function addMeetings(schedule: Schedule, meeting: ClassMeetingExtended,
         switch (day) {
             case Day.Monday:
                 schedule.monday = [...schedule.monday, meeting];
+                schedule.monday.sort((a, b) => {
+                    return getClassStartTime(a) - getClassStartTime(b)
+                });
                 break;
             case Day.Tuesday:
                 schedule.tuesday = [...schedule.tuesday, meeting];
+                schedule.tuesday.sort((a, b) => {
+                    return getClassStartTime(a) - getClassStartTime(b)
+                });
                 break;
             case Day.Wednesday:
                 schedule.wednesday = [...schedule.wednesday, meeting];
+                schedule.wednesday.sort((a, b) => {
+                    return getClassStartTime(a) - getClassStartTime(b)
+                });
                 break;
             case Day.Thursday:
                 schedule.thursday = [...schedule.thursday, meeting];
+                schedule.thursday.sort((a, b) => {
+                    return getClassStartTime(a) - getClassStartTime(b)
+                });
                 break;
             case Day.Friday:
                 schedule.friday = [...schedule.friday, meeting];
+                schedule.friday.sort((a, b) => {
+                    return getClassStartTime(a) - getClassStartTime(b)
+                });
                 break;
             case Day.Other:
                 schedule.other = [...schedule.other, meeting];
@@ -206,4 +224,71 @@ export function getClasstimeBounds(schedule: Schedule): ClasstimeBound {
         })
     })
     return result;
+}
+
+function labelConflictingClasstimes(schedule: Schedule) {
+    for (const day of 
+                    [
+                        schedule.monday, 
+                        schedule.tuesday, 
+                        schedule.wednesday, 
+                        schedule.thursday, 
+                        schedule.friday
+                    ]) {
+        const startTimes: number[] = day.map(getClassStartTime);
+        const endTimes: number[] = day.map(getClassEndTime);
+        for (let i = 0; i < day.length - 1; i++) {
+            if (endTimes[i] > startTimes[i + 1]) {
+                console.log(i);
+                let j = i + 1;
+                let curEnd: number = endTimes[i];
+                let conflictTotal: number = 1;
+                while (curEnd > startTimes[j] && j < day.length) {
+                    curEnd = endTimes[j];
+                    conflictTotal++;
+                    j++;
+                }
+                let conflictIndex: number = 1;
+                while (i < j) {
+                    day[i].conflictIndex = conflictIndex;
+                    day[i].conflictTotal = conflictTotal;
+                    conflictIndex++;
+                    i++;
+                }
+                i--;
+            }
+        }
+    }
+}
+
+function getClassStartTime(meeting: ClassMeetingExtended): number {
+    if (typeof meeting.meeting === 'string') {
+        throw Error('`getClassStartTime` called on a string');
+    }
+    else if ('OnlineSync' in meeting.meeting) {
+        return timeToNumber(meeting.meeting.OnlineSync.start_time)
+    }
+    else {
+        if (meeting.meeting.InPerson.classtime !== null) {
+            return timeToNumber(meeting.meeting.InPerson.classtime.start_time);
+        } else {
+            throw Error('Null In Person meeting class time in `getClassStartTime`');
+        }
+    }
+}
+
+function getClassEndTime(meeting: ClassMeetingExtended): number {
+    if (typeof meeting.meeting === 'string') {
+        throw Error('`getClassEndTime` called on a string');
+    }
+    else if ('OnlineSync' in meeting.meeting) {
+        return timeToNumber(meeting.meeting.OnlineSync.end_time)
+    }
+    else {
+        if (meeting.meeting.InPerson.classtime !== null) {
+            return timeToNumber(meeting.meeting.InPerson.classtime.end_time);
+        } else {
+            throw Error('Null In Person meeting class time in `getClassEndTime`');
+        }
+    }
 }

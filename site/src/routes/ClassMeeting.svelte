@@ -60,7 +60,9 @@
         bind:this={elt} 
         style=' top: {(decStartTime - earliestClassStart) / boundDiff * 100}%;
                 height: {(decEndTime - decStartTime) / boundDiff * 100}%;
-                background-color: {getColorFromNumber(meeting.colorNumber)}'>
+                background-color: {getColorFromNumber(meeting.colorNumber)};
+                width: {(1 / meeting.conflictTotal) * 100}%;
+                left: {((meeting.conflictIndex - 1) / meeting.conflictTotal) * 100}%'>
     {#if h > 24}
         <div class='w-full text-base font-semibold font-sans rounded-t-lg courseCode truncate min-h-[24px]'
                 class:rounded-b-lg={h < 28}>
