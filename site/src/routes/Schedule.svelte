@@ -89,13 +89,13 @@
                         <div class='text-base font-semibold rounded-t-lg courseCode font-sans truncate'>
                             {meeting.course}
                         </div>
-                        <div class='font-thin text-xs font-sans truncate'>
+                        <div class='font-thin text-xs 2xl:text-sm font-sans truncate'>
                             {formatInstructors(meeting.instructors)}
                         </div>
-                        <div class='font-thin text-xs font-sans truncate'>
+                        <div class='font-thin text-xs 2xl:text-sm font-sans truncate'>
                             Section {meeting.secCode}
                         </div>
-                        <div class='font-thin text-xs font-sans truncate'>
+                        <div class='font-thin text-xs 2xl:text-sm font-sans truncate'>
                             {#if meeting.meeting === 'OnlineAsync'}
                                 ONLINE ASYNC
                             {:else if meeting.meeting === 'Unspecified'}
