@@ -24,7 +24,7 @@
     </div>
 
     <!-- Course title -->
-    <div class='max-w-[314px] 2xl:max-w-[434px] text-sm 2xl:text-base truncate'>
+    <div class='max-w-[314px] 2xl:max-w-[394px] text-sm 2xl:text-base truncate'>
         {course.name}
     </div>
 
