@@ -18,13 +18,13 @@
         <div class='grow text-left align-middle'>
             <b>{course.code}</b>
         </div>
-        <div class='grow text-right text-sm align-middle'>
+        <div class='grow text-right text-sm 2xl:text-base align-middle'>
             Credits: {formatCredits(course.credits)}
         </div>
     </div>
 
     <!-- Course title -->
-    <div class='max-w-[314px] text-sm truncate'>
+    <div class='max-w-[314px] 2xl:max-w-[394px] text-sm 2xl:text-base truncate'>
         {course.name}
     </div>
 

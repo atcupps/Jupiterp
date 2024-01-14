@@ -67,7 +67,7 @@
             {meeting.course}
         </div>
     {/if}
-    <div class='grow font-thin text-xs font-sans px-2'>
+    <div class='grow font-thin 2xl:font-normal text-xs font-sans px-2'>
         {#if h - 24 > 64}
             <div class='truncate'>
                 {formattedInstructors}
