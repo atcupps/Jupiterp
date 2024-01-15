@@ -163,6 +163,14 @@ function parseDays(days: string): Day[] {
     }
 }
 
+/**
+ * Gets the bounds of a `schedule` identifying the earliest start time for a
+ * class meeting in the schedule and the latest end time. Because this is meant
+ * to be used for the user interface, the earliest start time is floored, and
+ * the latest end time is ceiled. 
+ * @param schedule A `Schedule`
+ * @returns A `ClasstimeBound` for the `Schedule`
+ */
 export function getClasstimeBounds(schedule: Schedule): ClasstimeBound {
     let result: ClasstimeBound = {
         earliestStart: Number.MAX_SAFE_INTEGER,
@@ -226,6 +234,14 @@ export function getClasstimeBounds(schedule: Schedule): ClasstimeBound {
     return result;
 }
 
+/**
+ * Labels conflicting classtimes with an appropriate `conflictIndex` and
+ * `conflictTotal`. This allows the `schedule` to have multiple classes with
+ * conflicting class meeting times and display them side-by-side in the UI.
+ * This function has side effects and modifies an existing schedule rather than
+ * returning a schedule to be assigned to another variable.
+ * @param schedule A `Schedule`
+ */
 function labelConflictingClasstimes(schedule: Schedule) {
     for (const day of 
                     [
@@ -261,6 +277,10 @@ function labelConflictingClasstimes(schedule: Schedule) {
     }
 }
 
+/**
+ * @param meeting A `ClassMeetingExtended`
+ * @returns The number form start time of `meeting`
+ */
 function getClassStartTime(meeting: ClassMeetingExtended): number {
     if (typeof meeting.meeting === 'string') {
         throw Error('`getClassStartTime` called on a string');
@@ -272,11 +292,17 @@ function getClassStartTime(meeting: ClassMeetingExtended): number {
         if (meeting.meeting.InPerson.classtime !== null) {
             return timeToNumber(meeting.meeting.InPerson.classtime.start_time);
         } else {
-            throw Error('Null In Person meeting class time in `getClassStartTime`');
+            throw Error(
+                'Null In Person meeting class time in `getClassStartTime`'
+            );
         }
     }
 }
 
+/**
+ * @param meeting A `ClassMeetingExtended`
+ * @returns The number form end time of `meeting`
+ */
 function getClassEndTime(meeting: ClassMeetingExtended): number {
     if (typeof meeting.meeting === 'string') {
         throw Error('`getClassEndTime` called on a string');
@@ -288,7 +314,9 @@ function getClassEndTime(meeting: ClassMeetingExtended): number {
         if (meeting.meeting.InPerson.classtime !== null) {
             return timeToNumber(meeting.meeting.InPerson.classtime.end_time);
         } else {
-            throw Error('Null In Person meeting class time in `getClassEndTime`');
+            throw Error(
+                'Null In Person meeting class time in `getClassEndTime`'
+            );
         }
     }
 }

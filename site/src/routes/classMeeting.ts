@@ -1,3 +1,18 @@
+/**
+ * This file is part of Jupiterp: https://github.com/atcupps/Jupiterp
+ * 
+ * @fileoverview Functions relating to searching for courses in Jupiterp.
+ */
+
+/**
+ * Takes an array of three `TimeComponent`s representing a time as an hour,
+ * minute, and am/pm, and returns a number in 24 hour time. For example,
+ * inputting the equivalent of 10:00am would return 10; 1:30pm would return
+ * 13.5. This function assumes `time` does not represent a time from midnight
+ * to 1 am.
+ * @param time A `TimeComponent[]` representing hours, minutes, and am/pm.
+ * @returns A numerical equivalent of `time`
+ */
 export function timeToNumber(time: TimeComponent[]): number {
     let result: number = 0;
     if (typeof time[0] == 'number') {
@@ -25,6 +40,13 @@ const colorMapping = [
     '#E6CDE3',
     '#FEDFCC',
 ];
+
+/**
+ * Gets the color hex code from a `num` index; used to assign colors to
+ * courses to differentiate them on the Schedule.
+ * @params num A key to get a color
+ * @returns A hex code color string
+ */
 export function getColorFromNumber(num: number): string {
     return colorMapping[num];
 }
