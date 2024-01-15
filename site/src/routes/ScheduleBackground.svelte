@@ -1,3 +1,5 @@
+<!-- This file is part of Jupiterp: https://github.com/atcupps/Jupiterp -->
+
 <script lang='ts'>
     import TimeLine from "./TimeLine.svelte";
 
@@ -41,6 +43,7 @@
     <TimeLine number={formatDecTime(earliest)} position={0} />
     {#each displayTimes.slice(1, displayTimes.length) as time}
         <TimeLine position={((time - earliest) * 2 - 1) / numBars} />
-        <TimeLine number={formatDecTime(time)} position={(time - earliest) * 2 / numBars} />
+        <TimeLine number={formatDecTime(time)} 
+                        position={(time - earliest) * 2 / numBars} />
     {/each}
 </div>

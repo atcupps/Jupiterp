@@ -1,4 +1,5 @@
 <!-- This file is part of Jupiterp: https://github.com/atcupps/Jupiterp -->
+
 <script lang="ts">
     import Schedule from './Schedule.svelte';
     import CourseSearch from './CourseSearch.svelte';

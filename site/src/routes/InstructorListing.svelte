@@ -30,8 +30,12 @@
                     on:click={handleLinkClick}>
             {instructor}
         </a>
-        <span style='--rating: {convertRating(profs[instructor].average_rating) + '%'}'
-                class='text-[10px] 2xl:text-base align-[2px] text-orange font-bold stars'>
+        <span 
+            style='--rating: {
+                        convertRating(profs[instructor].average_rating) + '%'
+                    }'
+                class='text-[10px] 2xl:text-base align-[2px] 
+                            text-orange font-bold stars'>
             ★★★★★
         </span>
     {:else}
@@ -53,7 +57,7 @@
         background-repeat: repeat;
 
         /* Use the text as a mask for the background. */
-        /* This will show the gradient as a text color rather than element bg. */
+        /* This will show the gradient as a text color. */
         background-clip: text;
         -webkit-text-fill-color: transparent; 
         -moz-background-clip: text;

@@ -10,7 +10,7 @@
 </script>
 
 <div class='px-2 my-2 bg-bgSecondaryLight dark:bg-bgSecondaryDark 
-            rounded-lg border-2 border-outlineLight dark:border-outlineDark 
+            rounded-lg border-2 border-outlineLight dark:border-outlineDark
             border-solid flex flex-col'>
     
     <!-- Course code and credit count -->
@@ -24,7 +24,8 @@
     </div>
 
     <!-- Course title -->
-    <div class='max-w-[314px] 2xl:max-w-[394px] text-sm 2xl:text-base truncate'>
+    <div class='max-w-[314px] 2xl:max-w-[394px] 
+                    text-sm 2xl:text-base truncate'>
         {course.name}
     </div>
 

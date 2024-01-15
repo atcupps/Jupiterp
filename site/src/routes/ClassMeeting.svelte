@@ -1,7 +1,11 @@
 <!-- This file is part of Jupiterp: https://github.com/atcupps/Jupiterp -->
 
 <script lang='ts'>
-    import { formatClasstime, formatInstructors, formatLocation } from './formatting';
+    import { 
+        formatClasstime, 
+        formatInstructors, 
+        formatLocation 
+    } from './formatting';
     import { getColorFromNumber, timeToNumber } from './classMeeting';
     import { afterUpdate } from 'svelte';
 
@@ -62,9 +66,13 @@
                 height: {(decEndTime - decStartTime) / boundDiff * 100}%;
                 background-color: {getColorFromNumber(meeting.colorNumber)};
                 width: {(1 / meeting.conflictTotal) * 100}%;
-                left: {((meeting.conflictIndex - 1) / meeting.conflictTotal) * 100}%'>
+                left: {((meeting.conflictIndex - 1) / meeting.conflictTotal) * 100}%;'>
+
+    <!-- Meeting course codes, instructors, etc. will only show up
+         if the height of the classtime is great enough to fit them -->
     {#if h > 24}
-        <div class='w-full text-base font-semibold font-sans rounded-t-lg courseCode truncate min-h-[24px]'
+        <div class='w-full text-base font-semibold font-sans rounded-t-lg 
+                            courseCode truncate min-h-[24px]'
                 class:rounded-b-lg={h < 28}>
             {meeting.course}
         </div>
