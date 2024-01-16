@@ -255,7 +255,6 @@ function labelConflictingClasstimes(schedule: Schedule) {
         const endTimes: number[] = day.map(getClassEndTime);
         for (let i = 0; i < day.length - 1; i++) {
             if (endTimes[i] > startTimes[i + 1]) {
-                console.log(i);
                 let j = i + 1;
                 let curEnd: number = endTimes[i];
                 let conflictTotal: number = 1;
