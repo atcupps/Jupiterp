@@ -3,12 +3,32 @@
 <script lang="ts">
     import Schedule from './Schedule.svelte';
     import CourseSearch from './CourseSearch.svelte';
+    import { onMount } from 'svelte';
 
     // Load data from `+page.ts`
     export let data;
 
     // Keep track of chosen sections
-    let selectedSections: ScheduleSelection[] = [];
+    let selectedSections: ScheduleSelection[];
+
+    // Retreive `selectedSections` from client local storage
+    onMount(() => {
+        if (typeof window !== 'undefined') {
+            const storedData = localStorage.getItem('selectedSections');
+            if (storedData) {
+                selectedSections = JSON.parse(storedData);
+            } else {
+                selectedSections = [];
+            }
+        }
+    });
+
+    // Reactive statement to save to local storage whenever selectedSections changes
+    $: if (selectedSections) {
+        if (typeof window !== 'undefined') {
+            localStorage.setItem('selectedSections', JSON.stringify(selectedSections));
+        }
+    }
 </script>
 
 <div class='flex flex-row w-full' style='height: calc(100% - 80px)'>
