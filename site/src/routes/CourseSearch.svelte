@@ -39,7 +39,8 @@
                             dark:border-divBorderDark  border-solid py-2 pr-2'>
     <div class='w-full border-solid border-b-2 
                             border-divBorderLight dark:border-divBorderDark'>
-        <input type="text" bind:value={searchInput} on:input={handleInput}
+        <input type='text' bind:value={searchInput} on:input={handleInput}
+            placeholder='Search course codes, ex: "THET285"'
             class="border-solid border-2 border-outlineLight 
                             dark:border-outlineDark  rounded-lg 
                             bg-transparent px-2 mb-2 w-full">
