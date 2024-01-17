@@ -5,7 +5,8 @@
 </script>
 
 <a href={link} target={target}
-        class='mx-4 text-orange font-normal navbarelt'>
+        class='mx-4 font-normal navbarelt
+                text-textLight dark:text-white'>
     {text}
 </a>
 
@@ -13,6 +14,11 @@
     .navbarelt {
         display: inline-block;
         position: relative;
+    }
+
+    .navbarelt:hover {
+        color: #F6743C;
+        transition: transform 0.15s ease-out;
     }
 
     .navbarelt::after {

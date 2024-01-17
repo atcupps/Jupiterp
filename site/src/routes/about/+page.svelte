@@ -55,7 +55,7 @@
     </p>
     <ul class={pClasses + ' list-disc ml-8'}>
         <li>Andrew Cupps 
-            <i class='text-sm'> - Lead Developer, Project Manager</i>
+            <i class='text-sm'> - Lead Developer, Project Maintainer</i>
         </li>
         <li>Alan Liu
             <i class='text-sm'> - Developer</i>
