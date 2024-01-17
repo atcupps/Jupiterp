@@ -4,6 +4,7 @@
     import Schedule from './Schedule.svelte';
     import CourseSearch from './CourseSearch.svelte';
     import { onMount } from 'svelte';
+    import { retrieveCourses } from './courseLoad';
 
     // Load data from `+page.ts`
     export let data;
@@ -16,7 +17,7 @@
         if (typeof window !== 'undefined') {
             const storedData = localStorage.getItem('selectedSections');
             if (storedData) {
-                selectedSections = JSON.parse(storedData);
+                selectedSections = retrieveCourses(JSON.parse(storedData), data.departments);
             } else {
                 selectedSections = [];
             }

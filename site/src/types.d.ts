@@ -59,7 +59,8 @@ interface JupiterpData {
 
 interface ScheduleSelection {
     courseCode: string,
-    section: Section
+    section: Section,
+    differences: string[]
 }
 
 interface ClassMeetingExtended {
