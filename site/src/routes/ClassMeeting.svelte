@@ -15,6 +15,15 @@
     let boundDiff: number;
     $: boundDiff = latestClassEnd - earliestClassStart;
 
+    const differences: string[] = meeting.differences;
+    const instructorsChange: boolean = differences.includes('Instructors');
+    const numClassMeetingsChange: boolean = differences.includes('Number of class meetings');
+    const meetingsTypeChange: boolean = differences.includes('Type of meeting');
+    const meetingTimeChange: boolean = numClassMeetingsChange ||
+                                differences.includes('Meeting time');
+    const meetingLocChange: boolean = meetingsTypeChange ||
+        differences.includes('Meeting location');
+
     let formattedInstructors: string = formatInstructors(meeting.instructors);
     let formattedTime: string;
     let secCode: string;
@@ -79,12 +88,19 @@
     {/if}
     <div class='grow font-thin 2xl:font-normal text-xs font-sans px-2'>
         {#if h - 24 > 64}
-            <div class='truncate'>
+            <div class='truncate'  
+                            class:underline={instructorsChange}
+                            class:decoration-dotted={instructorsChange}>
+                {#if instructorsChange}
+                    ⚠
+                {/if}
                 {formattedInstructors}
             </div>
         {/if}
         {#if h - 24 > 48}
-            <div class='truncate'>
+            <div class='truncate'
+                            class:underline={meetingTimeChange}
+                            class:decoration-dotted={meetingTimeChange}>
                 {formattedTime}
             </div>
         {/if}
@@ -94,7 +110,12 @@
             </div>
         {/if}
         {#if h - 24 > 16}
-            <div class='truncate'>
+            <div class='truncate'
+                            class:underline={meetingLocChange}
+                            class:decoration-dotted={meetingLocChange}>
+                {#if meetingLocChange}
+                    ⚠
+                {/if}
                 {location}
             </div>
         {/if}

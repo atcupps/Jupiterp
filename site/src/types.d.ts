@@ -70,7 +70,8 @@ interface ClassMeetingExtended {
     conflictTotal: number,
     instructors: string[],
     meeting: ClassMeeting,
-    colorNumber: number
+    colorNumber: number,
+    differences: string[]
 }
 
 interface Schedule {

@@ -99,13 +99,39 @@
                             {meeting.course}
                         </div>
                         <div class='font-thin 2xl:font-normal text-xs font-sans'>
-                            <div class='truncate'>
+                            <div class='truncate'
+                                        class:underline={meeting.differences.includes('Instructors')}
+                                        class:decoration-dotted={meeting.differences.includes('Instructors')}>
+                                {#if meeting.differences.includes('Instructors')}
+                                    ⚠
+                                {/if}
                                 {formatInstructors(meeting.instructors)}
                             </div>
                             <div class='truncate'>
                                 Section {meeting.secCode}
                             </div>
-                            <div class='truncate'>
+                            <!-- Exception to formatting rules; this
+                                 in current form would be less readable
+                                 if the 80 character per line limit
+                                 were enforced. -->
+                            <div class='truncate'
+                                        class:underline={
+                                            meeting.differences.includes('Number of classes') ||
+                                            meeting.differences.includes('Type of meeting') ||
+                                            meeting.differences.includes('Meeting location')
+                                        }
+                                        class:decoration-dotted={
+                                            meeting.differences.includes('Number of classes') ||
+                                            meeting.differences.includes('Type of meeting') ||
+                                            meeting.differences.includes('Meeting location')
+                                        }>
+                                {#if
+                                    meeting.differences.includes('Number of classes') ||
+                                    meeting.differences.includes('Type of meeting') ||
+                                    meeting.differences.includes('Meeting location')
+                                }
+                                    ⚠
+                                {/if}
                                 {#if meeting.meeting === 'OnlineAsync'}
                                     ONLINE ASYNC
                                 {:else if meeting.meeting === 'Unspecified'}

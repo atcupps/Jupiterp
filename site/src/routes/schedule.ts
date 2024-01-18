@@ -43,7 +43,8 @@ export function schedulify(selections: ScheduleSelection[]): Schedule {
                 conflictIndex: 1,
                 conflictTotal: 1,
                 meeting,
-                colorNumber
+                colorNumber,
+                differences: selection.differences
             }
             if (typeof meeting === 'string') {
                 schedule.other = [...schedule.other, newMeeting];
