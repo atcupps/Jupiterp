@@ -1,6 +1,6 @@
 export function retrieveCourses(selections: ScheduleSelection[], 
                                     depts: Department[]): ScheduleSelection[] {
-    let result: ScheduleSelection[] = [];
+    const result: ScheduleSelection[] = [];
     selections.forEach((selection) => {
         const deptName = selection.courseCode.slice(0, 4);
         const dept = depts.find(department => department.name === deptName);

@@ -55,8 +55,8 @@
     </p>
     <ul class={pClasses + ' list-disc ml-8'}>
         <li>
-            <a href='https://atcupps.github.io' target='_blank'
-                                            class='text-orange underline'>
+            <a href='https://atcupps.github.io' 
+                            target='_blank' class='text-orange underline'>
                 AT Cupps 
             </a>
             <i class='text-sm'> - Lead Developer, Project Maintainer</i>
