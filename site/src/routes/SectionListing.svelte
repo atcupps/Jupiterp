@@ -11,7 +11,8 @@
 
     let newSelection: ScheduleSelection = {
         courseCode,
-        section
+        section,
+        differences: []
     };
     let sectionAdded: boolean = 
         selectionsList.some(obj => selectionEquals(obj));

@@ -5,13 +5,14 @@
 
     export let name: string;
     export let classes: ClassMeetingExtended[];
-    export let earliestClassStart: number;
-    export let latestClassEnd: number;
+    export let earliestClassStart: number = 0;
+    export let latestClassEnd: number = 0;
     export let bgHeight: number;
+    export let type: string = 'Day';
     $: bgHeight;
 </script>
 
-<div class='w-full h-full z-10 flex flex-col px-2 scheduleDay'>
+<div class='w-full h-full z-10 flex flex-col px-2'>
     <div>
         {name}
     </div>
@@ -19,7 +20,7 @@
         style='height: {bgHeight}px; top: 14px'>
         {#each classes as classMeeting, 
                             index (`${index}-${classMeeting.instructors}`)}
-            <ClassMeeting meeting={classMeeting}
+            <ClassMeeting meeting={classMeeting} isInOther={type==='Other'}
                 bind:earliestClassStart bind:latestClassEnd />
         {/each}
     </div>

@@ -3,12 +3,6 @@
 <script lang="ts">
     import { getClasstimeBounds, schedulify } from './schedule';
     import ScheduleDay from './ScheduleDay.svelte';
-    import { getColorFromNumber } from "./classMeeting";
-    import { 
-        formatClassDayTime, 
-        formatInstructors, 
-        formatLocation 
-    } from './formatting';
     import ScheduleBackground from './ScheduleBackground.svelte';
 
     export let selections: ScheduleSelection[] = [];
@@ -83,78 +77,8 @@
 
         <!-- 'Other' classes (OnlineAsync, Unspecified) -->
         {#if schedule.other.length > 0}
-            <!-- TODO(#61): Generalize this from `ClassMeeting.svelte` -->
-            <div class='h-full grow z-10 border-solid border-l-2 
-                            border-divBorderLight dark:border-divBorderDark
-                            flex flex-col pl-2'>
-                Other
-                {#each schedule.other as meeting}
-                    <div class='w-full text-center text-black 
-                                    rounded-lg my-1 pb-1'
-                            style='background-color: {
-                                        getColorFromNumber(meeting.colorNumber)
-                                    }'>
-                        <div class='text-base font-semibold rounded-t-lg 
-                                            courseCode font-sans truncate'>
-                            {meeting.course}
-                        </div>
-                        <div class='font-thin 2xl:font-normal text-xs font-sans'>
-                            <div class='truncate'>
-                                {formatInstructors(meeting.instructors)}
-                            </div>
-                            <div class='truncate'>
-                                Section {meeting.secCode}
-                            </div>
-                            <div class='truncate'>
-                                {#if meeting.meeting === 'OnlineAsync'}
-                                    ONLINE ASYNC
-                                {:else if meeting.meeting === 'Unspecified'}
-                                    Unspecified Classtime
-                                {:else}
-                                    {#if typeof meeting.meeting === 'string'}
-                                        {meeting.meeting}
-                                    {:else if 'OnlineSync' in meeting.meeting}
-                                        <div class='truncate'>
-                                            {formatClassDayTime(
-                                                meeting.meeting.OnlineSync
-                                            )}
-                                        </div>
-                                        <div class='truncate'>
-                                            ONLINE
-                                        </div>
-                                    {:else if 'InPerson' in meeting.meeting}
-                                        <!-- Exception to formatting rules; this
-                                             in current form would be less readable
-                                             if the 80 character per line limit
-                                             were enforced. -->
-                                        <div class='truncate'>
-                                            {#if meeting.meeting.InPerson.classtime != null}
-                                                {formatClassDayTime(meeting.meeting.InPerson.classtime)}
-                                            {:else}
-                                                Classtime TBA
-                                            {/if}
-                                        </div>
-                                        <div class='truncate'>
-                                            {#if meeting.meeting.InPerson.location != null}
-                                                {formatLocation(meeting.meeting.InPerson.location)}
-                                            {:else}
-                                                Location TBA
-                                            {/if}
-                                        </div>
-                                    {/if}
-                                {/if}
-                            </div>
-                        </div>
-                    </div>
-                {/each}
-            </div>
+            <ScheduleDay name='Other' classes={schedule.other} type='Other'
+                {bgHeight} />
         {/if}
     </div>
 </div>
-
-<style>
-    /* TODO(#61): This can be shared with `ClassMeeting.svelte` */
-    .courseCode {
-        background-color: rgba(0, 0, 0, 0.07)
-    }
-</style>

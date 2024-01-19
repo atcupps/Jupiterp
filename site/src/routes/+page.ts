@@ -1,7 +1,7 @@
 /**
  * This file is part of Jupiterp: https://github.com/atcupps/Jupiterp
  * 
- * @fileoverview The `+page.ts` file is run by Svelte when `+page.svlete` is
+ * @fileoverview The `+page.ts` file is run by Svelte when `+page.svelte` is
  * loaded; its purpose is to load JSON data for instructors, departments, and
  * courses, which it returns as an object in the `load` function. Svelte will
  * automatically take the return value of `load` and assign that to `data` in

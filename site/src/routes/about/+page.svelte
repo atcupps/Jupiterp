@@ -54,10 +54,18 @@
         Jupiterp is managed by our Core Team:
     </p>
     <ul class={pClasses + ' list-disc ml-8'}>
-        <li>Andrew Cupps 
+        <li>
+            <a href='https://atcupps.github.io' 
+                            target='_blank' class='text-orange underline'>
+                AT Cupps 
+            </a>
             <i class='text-sm'> - Lead Developer, Project Maintainer</i>
         </li>
-        <li>Alan Liu
+        <li>
+            <a href='https://planetterp.com/professor/liu_alan'
+                            target='_blank' class='text-orange underline'>
+                Alan Liu
+            </a>
             <i class='text-sm'> - Developer</i>
         </li>
     </ul>
