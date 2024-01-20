@@ -16,8 +16,8 @@
     <div>
         {name}
     </div>
-    <div class='relative' 
-        style='height: {bgHeight}px; top: 14px'>
+    <div class='relative top-[14px]' 
+        style='height: {bgHeight}px;'>
         {#each classes as classMeeting, 
                             index (`${index}-${classMeeting.instructors}`)}
             <ClassMeeting meeting={classMeeting} isInOther={type==='Other'}

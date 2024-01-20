@@ -45,9 +45,8 @@
             class:grid-cols-6={schedule.other.length > 0}>
         
         <!-- Background lines for the schedule -->
-        <div class='absolute timelines z-0 h-full' 
-                style='width: {schedule.other.length == 0 ? '100%' : '83.3%'};
-                        top: 28px;'>
+        <div class='absolute timelines z-0 h-full top-[1.75rem]' 
+                style='width: {schedule.other.length == 0 ? '100%' : '83.3%'};;'>
             <ScheduleBackground bind:earliest={earliestClassStart}
                                 bind:latest={latestClassEnd} 
                                 bind:h={bgHeight}/>

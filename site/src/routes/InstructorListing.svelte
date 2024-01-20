@@ -26,7 +26,7 @@
     {#if (instructor in profs && profs[instructor].average_rating != null)}
         <a href={ptLinkFromSlug(profs[instructor].slug)}
                     target='_blank'
-                    class='text-orange underline'
+                    class='text-orange underline text-sm xl:text-base'
                     on:click={handleLinkClick}>
             {instructor}
         </a>
@@ -34,7 +34,7 @@
             style='--rating: {
                         convertRating(profs[instructor].average_rating) + '%'
                     }'
-                class='text-[10px] 2xl:text-base align-[2px] 
+                class='text-[8px] xl:text-[10px] 2xl:text-base align-[2px] 
                             text-orange font-bold stars'>
             ★★★★★
         </span>

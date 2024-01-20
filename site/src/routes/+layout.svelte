@@ -7,7 +7,7 @@
 
 <div class='flex flex-col h-full w-full text-textLight dark:text-textDark'>
     <div class='flex'>
-        <div class='flex flex-row h-16 px-2 w-full border-b-2
+        <div class='flex flex-row h-12 lg:h-14 xl:h-16 px-2 w-full border-b-2
                         border-divBorderLight dark:border-divBorderDark'>
             <img src='logo.svg' alt='Jupiterp Beta logo' class='flex'/>
             <div class='flex grow justify-end self-center'>
