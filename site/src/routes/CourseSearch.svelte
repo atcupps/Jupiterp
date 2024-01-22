@@ -57,7 +57,7 @@
 <!-- Layer to exit course search if user taps on the Schedule -->
 <!-- Using this method to avoid having to listen to a variable on Schedule -->
 {#if courseSearchSelected}
-    <button class='absolute w-full bg-black bg-opacity-20 z-40
+    <button class='fixed w-full bg-black bg-opacity-20 z-40
                     lg:hidden'
             style='height: calc(100% - 3rem);'
         in:fade={{ duration: 150 }}
@@ -67,7 +67,7 @@
 
 <!-- Course Search -->
 <div class='lg:flex flex-col xl:min-w-[320px] 2xl:min-w-[400px] 2xl:text-lg
-                            lg:min-w-[260px] w-[300px] z-50 absolute lg:static
+                            lg:min-w-[260px] w-[300px] z-50 fixed lg:static
                             lg:h-full course-search visible
                             border-r-2 border-divBorderLight
                             dark:border-divBorderDark border-solid py-2 pr-2
