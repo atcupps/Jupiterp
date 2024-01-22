@@ -27,6 +27,10 @@ body {
         background-color: #cccccc;
         border-radius: 8px;
     }
+    
+    ::-webkit-scrollbar-corner {
+        background: rgba(0,0,0,0);
+    }
 }
 
 @media (prefers-color-scheme: dark) {
