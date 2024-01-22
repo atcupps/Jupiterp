@@ -22,11 +22,11 @@
     }
 </script>
 
-<div>
+<div class='text-sm xl:text-base'>
     {#if (instructor in profs && profs[instructor].average_rating != null)}
         <a href={ptLinkFromSlug(profs[instructor].slug)}
                     target='_blank'
-                    class='text-orange underline text-sm xl:text-base'
+                    class='text-orange underline'
                     on:click={handleLinkClick}>
             {instructor}
         </a>
