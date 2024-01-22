@@ -2,11 +2,13 @@
     export let link: string;
     export let text: string;
     export let target: string = '_self';
+    export let fullWidth: boolean = false;
 </script>
 
 <a href={link} target={target}
         class='mx-4 font-normal navbarelt
-                text-textLight dark:text-white'>
+                text-textLight dark:text-white'
+        class:w-[90%]={fullWidth}>
     {text}
 </a>
 

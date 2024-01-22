@@ -39,7 +39,8 @@
 </script>
 
 <!-- Button to toggle course search on mobile -->
-<button class='fixed h-4 w-4 top-5 left-4 visible lg:hidden'
+<button class='fixed h-4 w-4 top-7 left-4 visible lg:hidden'
+        style='transform: translateY(-50%);'
         on:click={() => {courseSearchSelected = !courseSearchSelected}}>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
             class='visible h-4 w-4 transition 
@@ -56,8 +57,9 @@
 <!-- Layer to exit course search if user taps on the Schedule -->
 <!-- Using this method to avoid having to listen to a variable on Schedule -->
 {#if courseSearchSelected}
-    <button class='fixed w-full h-full bg-black bg-opacity-20 z-40
+    <button class='absolute w-full bg-black bg-opacity-20 z-40
                     lg:hidden'
+            style='height: calc(100% - 3rem);'
         in:fade={{ duration: 150 }}
         out:fade={{ duration: 150 }} 
         on:click={() => courseSearchSelected = false}/>
@@ -66,9 +68,9 @@
 <!-- Course Search -->
 <div class='lg:flex flex-col xl:min-w-[320px] 2xl:min-w-[400px] 2xl:text-lg
                             lg:min-w-[260px] w-[300px] z-50 absolute lg:static
-                            lg:h-full course-search
+                            lg:h-full course-search visible
                             border-r-2 border-divBorderLight
-                            dark:border-divBorderDark  border-solid py-2 pr-2
+                            dark:border-divBorderDark border-solid py-2 pr-2
                             lg:mx-0 lg:shadow-none
                             bg-bgLight dark:bg-bgDark lg:bg-transparent left-0
                             transition-transform duration-300'
@@ -93,7 +95,7 @@
 </div>
 
 <style>
-    @media screen and (max-width: 1024px) {
+    @media screen and (max-width: 1023px) {
         .course-search {
             height: calc(100vh - 3rem);
         }
