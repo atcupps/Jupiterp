@@ -70,7 +70,7 @@
                             lg:mx-0 lg:shadow-none
                             bg-bgLight dark:bg-bgDark lg:bg-transparent left-0
                             transition-transform duration-300'
-        class:-translate-x-full={!courseSearchSelected}
+        class:course-search-transition={!courseSearchSelected}
         class:shadow-lg={courseSearchSelected}>
     <div class='w-full border-solid border-b-2 px-1 lg:px-0
                             border-divBorderLight dark:border-divBorderDark'>
@@ -98,6 +98,13 @@
 
         .courses-list {
             height: calc(100vh - 3rem - 2.54166667rem - 2px);
+        }
+
+        .course-search-transition {
+            transition-property: transform;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms;
+            transform: translateX(-100%);
         }
     }
 </style>
