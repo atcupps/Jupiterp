@@ -1,7 +1,7 @@
 <!-- This file is part of Jupiterp: https://github.com/atcupps/Jupiterp -->
 
 <script lang='ts'>
-    import { fade, scale } from "svelte/transition";
+    import { fade } from "svelte/transition";
     import CourseListing from "./CourseListing.svelte";
     import { 
         getCourseLookup, 
@@ -38,7 +38,7 @@
     let courseSearchSelected: boolean = false;
 </script>
 
-<!-- Magnifying glass -->
+<!-- Button to toggle course search on mobile -->
 <button class='fixed h-4 w-4 top-5 left-4 visible lg:hidden'
         on:click={() => {courseSearchSelected = !courseSearchSelected}}>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
@@ -51,9 +51,17 @@
                 <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206 56.6 43.5C45.3 29.9 25.1 28.1 11.5 39.4S-3.9 70.9 7.4 84.5L150.3 256 7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306 327.4 468.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256 376.6 84.5z"/></svg>
 </button>
 
-<!-- X to get rid of course search -->
+<!-- Layer to exit course search if user taps on the Schedule -->
+<!-- Using this method to avoid having to listen to a variable on Schedule -->
+{#if courseSearchSelected}
+    <button class='fixed w-full h-full bg-black bg-opacity-20 z-40
+                    lg:hidden'
+        in:fade={{ duration: 150 }}
+        out:fade={{ duration: 150 }} 
+        on:click={() => courseSearchSelected = false}/>
+{/if}
 
-
+<!-- Course Search -->
 <div class='lg:flex flex-col xl:min-w-[320px] 2xl:min-w-[400px] 2xl:text-lg
                             lg:min-w-[260px] w-[300px] z-50 absolute lg:static
                             lg:h-full course-search

@@ -39,9 +39,9 @@
 </script>
 
 <div class='h-full w-full flex flex-row px-2 font-medium
-            items-center
+            items-center overflow-x-scroll
             text-lg text-center text-black dark:text-white overflow-y-scroll'>
-    <div class='h-full grid grow relative pl-8 min-w-[768px] overflow-x-scroll'
+    <div class='h-full grid grow relative pl-8 min-w-[768px]'
             class:grid-cols-5={schedule.other.length == 0}
             class:grid-cols-6={schedule.other.length > 0}>
         
