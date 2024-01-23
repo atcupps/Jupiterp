@@ -39,7 +39,7 @@
 </script>
 
 <!-- Button to toggle course search on mobile -->
-<button class='fixed h-4 w-4 top-7 left-4 visible lg:hidden'
+<button class='fixed h-4 w-4 top-7 left-4 visible lg:hidden z-[51]'
         style='transform: translateY(-50%);'
         on:click={() => {courseSearchSelected = !courseSearchSelected}}>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
@@ -57,7 +57,7 @@
 <!-- Layer to exit course search if user taps on the Schedule -->
 <!-- Using this method to avoid having to listen to a variable on Schedule -->
 {#if courseSearchSelected}
-    <button class='fixed w-full bg-black bg-opacity-20 z-40
+    <button class='fixed w-full bg-black bg-opacity-20 z-[51]
                     lg:hidden'
             style='height: calc(100% - 3rem);'
         in:fade={{ duration: 150 }}
