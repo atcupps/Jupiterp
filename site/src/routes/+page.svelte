@@ -32,7 +32,8 @@
     }
 </script>
 
-<div class='flex flex-row w-full' style='height: calc(100% - 80px)'>
+<div class='flex flex-row w-full overflow-y-scroll' 
+        style='height: calc(100% - 3rem)'>
     <CourseSearch bind:selections={selectedSections} data={data}/>
     <Schedule bind:selections={selectedSections}/>
 </div>

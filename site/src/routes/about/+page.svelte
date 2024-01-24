@@ -7,7 +7,7 @@
         'my-2 text-normal leading-5 text-textLight dark:text-textDark';
 </script>
 
-<div class='text-textLight dark:text-white py-2 px-8'>
+<div class='text-textLight dark:text-white py-2 px-8 overflow-y-scroll'>
     <h1 class={h1Classes}>
         About Jupiterp
     </h1>

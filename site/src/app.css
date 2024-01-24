@@ -4,8 +4,6 @@
 
 body {
     background-color: white;
-
-    padding: 0px 32px;
     height: 100vh;
     font-family: 'Cabin', Arial, sans-serif;
 
@@ -28,6 +26,10 @@ body {
     *::-webkit-scrollbar-thumb {
         background-color: #cccccc;
         border-radius: 8px;
+    }
+    
+    ::-webkit-scrollbar-corner {
+        background: rgba(0,0,0,0);
     }
 }
 

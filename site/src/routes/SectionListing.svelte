@@ -47,7 +47,8 @@
                 hover:bg-hoverLight hover:dark:bg-hoverDark transition
                 {sectionAdded ? 'bg-hoverLight dark:bg-hoverDark' : ''}'>
     <!-- Section code -->
-    <div class='text-secCodesLight dark:text-secCodesDark font-semibold w-14'>
+    <div class='text-secCodesLight dark:text-secCodesDark font-semibold 
+                text-sm xl:text-base w-12 xl:w-14'>
         {section.sec_code}
     </div>
 

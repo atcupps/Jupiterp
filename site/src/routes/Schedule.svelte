@@ -39,15 +39,15 @@
 </script>
 
 <div class='h-full w-full flex flex-row px-2 font-medium
+            items-center overflow-x-scroll
             text-lg text-center text-black dark:text-white overflow-y-scroll'>
-    <div class='h-full grid grow relative pl-8'
+    <div class='h-full grid grow relative pl-8 min-w-[768px]'
             class:grid-cols-5={schedule.other.length == 0}
             class:grid-cols-6={schedule.other.length > 0}>
         
         <!-- Background lines for the schedule -->
-        <div class='absolute timelines z-0 h-full' 
-                style='width: {schedule.other.length == 0 ? '100%' : '83.3%'};
-                        top: 28px;'>
+        <div class='absolute timelines z-0 h-full top-[1.75rem]' 
+                style='width: {schedule.other.length == 0 ? '100%' : '83.3%'};;'>
             <ScheduleBackground bind:earliest={earliestClassStart}
                                 bind:latest={latestClassEnd} 
                                 bind:h={bgHeight}/>

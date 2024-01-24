@@ -78,6 +78,15 @@
             h = elt.offsetHeight;  
         });
     }
+
+    let fontSize: number;
+    $: if (document.documentElement) {
+        fontSize = 
+            parseInt(
+                getComputedStyle(document.documentElement).fontSize.substring(0, 2)
+            ) / 16;
+    }
+    
 </script>
 
 <svelte:window bind:innerHeight />
@@ -93,15 +102,15 @@
 
     <!-- Meeting course codes, instructors, etc. will only show up
          if the height of the classtime is great enough to fit them -->
-    {#if h > 24 || isInOther}
+    {#if h > 1.5 * fontSize || isInOther}
         <div class='w-full text-base font-semibold font-sans rounded-t-lg 
-                            courseCode truncate min-h-[24px]'
-                class:rounded-b-lg={h < 28}>
+                            courseCode truncate min-h-[1.5rem]'
+                class:rounded-b-lg={h < 1.75 * fontSize}>
             {meeting.course}
         </div>
     {/if}
     <div class='grow font-thin 2xl:font-normal text-xs font-sans px-2'>
-        {#if h - 24 > 64 || isInOther}
+        {#if h - (24 * fontSize) > (64 * fontSize) || isInOther}
             <div class='truncate static'  
                             class:underline={instructorsChange}
                             class:decoration-dotted={instructorsChange}>
@@ -114,7 +123,7 @@
                 {/if}
             </div>
         {/if}
-        {#if h - 24 > 48 || isInOther}
+        {#if h - (24 * fontSize) > (48 * fontSize) || isInOther}
             <div class='truncate static'
                             class:underline={meetingTimeChange 
                                                     || meetingsTypeChange}
@@ -133,12 +142,12 @@
                 {/if}
             </div>
         {/if}
-        {#if h - 24 > 32 || isInOther}
+        {#if h - (24 * fontSize) > (32 * fontSize) || isInOther}
             <div class='truncate static'>
                 Section {secCode}
             </div>
         {/if}
-        {#if h - 24 > 16 && hasLocation}
+        {#if h - (24 * fontSize) > (16 * fontSize) && hasLocation}
             <div class='truncate static'
                             class:underline={meetingLocChange}
                             class:decoration-dotted={meetingLocChange}>
