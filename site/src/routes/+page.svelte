@@ -14,13 +14,17 @@
 
     // Retreive `selectedSections` from client local storage
     onMount(() => {
-        if (typeof window !== 'undefined') {
-            const storedData = localStorage.getItem('selectedSections');
-            if (storedData) {
-                selectedSections = retrieveCourses(JSON.parse(storedData), data.departments);
-            } else {
-                selectedSections = [];
+        try {
+            if (typeof window !== 'undefined') {
+                const storedData = localStorage.getItem('selectedSections');
+                if (storedData) {
+                    selectedSections = retrieveCourses(JSON.parse(storedData), data.departments);
+                } else {
+                    selectedSections = [];
+                }
             }
+        } catch {
+            selectedSections = [];
         }
     });
 

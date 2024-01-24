@@ -8,21 +8,28 @@
     export let section: Section;
     export let profs: Record<string, Professor>;
     export let selectionsList: ScheduleSelection[] = [];
-    export let hover: boolean = false;
 
     let newSelection: ScheduleSelection = {
         courseCode,
         section,
-        hover,
+        hover: false,
         differences: []
     };
     let sectionAdded: boolean = 
         selectionsList.some(obj => selectionEquals(obj));
+    
+        let hoverSection: ScheduleSelection = {
+        courseCode,
+        section,
+        hover: true,
+        differences: []
+    }
 
     // In order for Svelte's reactivity to work properly, `selectionsList`
     // needs to be reassigned instead of using `.push` or `.splice`.
     function addSectionToSchedule() {
         if (!sectionAdded) {
+            removeHoverSection();
             selectionsList = [...selectionsList, newSelection];
         } else {
             const index = selectionsList.findIndex(obj => 
@@ -35,15 +42,42 @@
             }
         }
         sectionAdded = !sectionAdded;
+        addHoverSection();
+    }
+
+    function addHoverSection() {
+        if (!sectionAdded) {
+            selectionsList = [...selectionsList, hoverSection];
+        }
+    }
+
+    function removeHoverSection() {
+        const index = selectionsList.findIndex(obj =>
+                        hoverSectionEquals(obj));
+        if (index !== -1) {
+            selectionsList = [
+                ...selectionsList.slice(0, index),
+                ...selectionsList.slice(index + 1)
+            ]
+        }
     }
 
     function selectionEquals(s: ScheduleSelection): boolean {
         return s.courseCode === courseCode && 
             s.section.sec_code === section.sec_code;
     }
+
+    function hoverSectionEquals(s: ScheduleSelection): boolean {
+        return s.courseCode === courseCode &&
+            s.section.sec_code === section.sec_code && s.hover;
+    }
 </script>
 
+<!-- Ignoring a11y for mouseover because it's a non-essential feature -->
+<!-- svelte-ignore a11y-mouse-events-have-key-events -->
 <button on:click={addSectionToSchedule}
+        on:mouseover={addHoverSection}
+        on:mouseout={removeHoverSection}
             class='flex flex-row w-full text-left
                 border-t-2 border-outlineLight dark:border-outlineDark
                 hover:bg-hoverLight hover:dark:bg-hoverDark transition
