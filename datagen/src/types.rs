@@ -1,4 +1,7 @@
-// This file is part of Jupiterp: https://github.com/atcupps/Jupiterp
+// This file is part of Jupiterp. For terms of use, please see the file
+// called LICENSE at the top level of the Jupiterp source tree (online at
+// https://github.com/atcupps/Jupiterp/LICENSE).
+// Copyright (C) 2024 Andrew Cupps
 
 //! Types for the Jupiterp Datagen component. Types used should derive or
 //! otherwise implement the serde `Serialize` and `Deserialize` traits to be

@@ -31,13 +31,28 @@ In general, code should be as easy to read as possible by utilizing self-documen
 
 Lastly, add a comment to all code files specifying that the file is part of Jupiterp. In Rust, that would look like:
 ```rust
-//! This file is part of Jupiterp: https://github.io/atcupps/Jupiterp
+// This file is part of Jupiterp. For terms of use, please see the file
+// called LICENSE at the top level of the Jupiterp source tree (online at
+// https://github.com/atcupps/Jupiterp/LICENSE).
+// Copyright (C) 2024 Andrew Cupps
 ```
 And in JS/TS:
 ```js
 /**
- * This file is part of Jupiterp: https://github.io/atcupps/Jupiterp
+ * This file is part of Jupiterp. For terms of use, please see the file
+ * called LICENSE at the top level of the Jupiterp source tree (online at
+ * https://github.com/atcupps/Jupiterp/LICENSE).
+ * Copyright (C) 2024 Andrew Cupps
  */
+```
+And in all HTML or Svelte files:
+```html
+<!-- 
+This file is part of Jupiterp. For terms of use, please see the file
+called LICENSE at the top level of the Jupiterp source tree (online at
+https://github.com/atcupps/Jupiterp/LICENSE).
+Copyright (C) 2024 Andrew Cupps
+-->
 ```
 
 ## Rust style
