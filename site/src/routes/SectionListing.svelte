@@ -8,11 +8,12 @@
     export let section: Section;
     export let profs: Record<string, Professor>;
     export let selectionsList: ScheduleSelection[] = [];
+    export let hover: boolean = false;
 
     let newSelection: ScheduleSelection = {
         courseCode,
         section,
-        hover: true,
+        hover,
         differences: []
     };
     let sectionAdded: boolean = 

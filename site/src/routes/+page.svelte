@@ -27,8 +27,18 @@
     // Reactive statement to save to local storage whenever selectedSections changes
     $: if (selectedSections) {
         if (typeof window !== 'undefined') {
-            localStorage.setItem('selectedSections', JSON.stringify(selectedSections));
+            localStorage.setItem('selectedSections', jsonifySections(selectedSections));
         }
+    }
+
+    function jsonifySections(sections: ScheduleSelection[]): string {
+        let finalSelections: ScheduleSelection[] = [];
+        for (let section of sections) {
+            if (!section.hover) {
+                finalSelections.push(section);
+            }
+        }
+        return JSON.stringify(finalSelections);
     }
 </script>
 
