@@ -15,10 +15,12 @@
         hover: false,
         differences: []
     };
-    let sectionAdded: boolean = 
-        selectionsList.some(obj => selectionEquals(obj));
+    let sectionAdded: boolean;
+    $: if (selectionsList) {
+        sectionAdded = selectionsList.some(obj => selectionEquals(obj));
+    } 
     
-        let hoverSection: ScheduleSelection = {
+    let hoverSection: ScheduleSelection = {
         courseCode,
         section,
         hover: true,
@@ -64,7 +66,7 @@
 
     function selectionEquals(s: ScheduleSelection): boolean {
         return s.courseCode === courseCode && 
-            s.section.sec_code === section.sec_code;
+            s.section.sec_code === section.sec_code && !s.hover;
     }
 
     function hoverSectionEquals(s: ScheduleSelection): boolean {

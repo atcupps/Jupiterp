@@ -122,7 +122,7 @@
     
     <!-- x button to remove course -->
     {#if !meeting.hover}
-        <button class='absolute h-4 w-4 top-1 right-1 justify-center'
+        <button class='absolute h-4 w-4 top-0 right-0 justify-center'
                 on:click={removeCourseByClassMeeting}>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"
                 class='absolute h-2 w-2 top-[50%] left-[50%]'
