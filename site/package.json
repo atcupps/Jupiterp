@@ -30,6 +30,7 @@
   },
   "type": "module",
   "dependencies": {
+    "@vercel/analytics": "^1.1.2",
     "node-fetch": "2.6.1"
   }
 }
