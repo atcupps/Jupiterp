@@ -12,6 +12,7 @@
     let newSelection: ScheduleSelection = {
         courseCode,
         section,
+        hover: true,
         differences: []
     };
     let sectionAdded: boolean = 

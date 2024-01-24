@@ -60,6 +60,7 @@ interface JupiterpData {
 interface ScheduleSelection {
     courseCode: string,
     section: Section,
+    hover: boolean,
     differences: string[]
 }
 
@@ -70,6 +71,7 @@ interface ClassMeetingExtended {
     conflictTotal: number,
     instructors: string[],
     meeting: ClassMeeting,
+    hover: boolean,
     colorNumber: number,
     differences: string[]
 }
