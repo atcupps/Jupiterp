@@ -4,6 +4,7 @@
     import ClassMeeting from "./ClassMeeting.svelte";
 
     export let name: string;
+    export let selections: ScheduleSelection[];
     export let classes: ClassMeetingExtended[];
     export let earliestClassStart: number = 0;
     export let latestClassEnd: number = 0;
@@ -21,7 +22,8 @@
         {#each classes as classMeeting, 
                             index (`${index}-${classMeeting.instructors}`)}
             <ClassMeeting meeting={classMeeting} isInOther={type==='Other'}
-                bind:earliestClassStart bind:latestClassEnd />
+                bind:selections={selections} bind:earliestClassStart 
+                bind:latestClassEnd />
         {/each}
     </div>
 </div>
