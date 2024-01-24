@@ -85,7 +85,7 @@
                             placeholder:text-sm">
     </div>
     <div class='grow courses-list overflow-y-scroll overflow-x-none
-                px-1 lg:pr-1 lg:pl-0 pb-16'>
+                px-1 lg:pr-1 lg:pl-0'>
         {#each searchResults as courseMatch (courseMatch.code)}
             <CourseListing course={courseMatch} profs={profsLookup}
                     bind:selections={selections}/>
