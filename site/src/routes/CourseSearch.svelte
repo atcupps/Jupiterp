@@ -100,11 +100,11 @@ Copyright (C) 2024 Andrew Cupps
 <style>
     @media screen and (max-width: 1023px) {
         .course-search {
-            height: calc(100vh - 3rem);
+            height: calc(100svh - 3rem);
         }
 
         .courses-list {
-            height: calc(100vh - 3rem - 2.54166667rem - 2px);
+            height: calc(100svh - 3rem - 2.54166667rem - 2px);
         }
 
         .course-search-transition {

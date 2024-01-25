@@ -70,7 +70,7 @@ Copyright (C) 2024 Andrew Cupps
 <style>
     @media screen and (max-width: 1023px) {
         .site-links {
-            height: calc(100vh - 3rem);
+            height: calc(100svh - 3rem);
         }
 
         .site-links-transition {
