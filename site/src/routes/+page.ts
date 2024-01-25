@@ -1,5 +1,8 @@
 /**
- * This file is part of Jupiterp: https://github.com/atcupps/Jupiterp
+ * This file is part of Jupiterp. For terms of use, please see the file
+ * called LICENSE at the top level of the Jupiterp source tree (online at
+ * https://github.com/atcupps/Jupiterp/LICENSE).
+ * Copyright (C) 2024 Andrew Cupps
  * 
  * @fileoverview The `+page.ts` file is run by Svelte when `+page.svelte` is
  * loaded; its purpose is to load JSON data for instructors, departments, and

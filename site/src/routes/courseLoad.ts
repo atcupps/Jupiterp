@@ -1,3 +1,22 @@
+/**
+ * This file is part of Jupiterp. For terms of use, please see the file
+ * called LICENSE at the top level of the Jupiterp source tree (online at
+ * https://github.com/atcupps/Jupiterp/LICENSE).
+ * Copyright (C) 2024 Andrew Cupps
+ * 
+ * @fileoverview This file contains a function `retrieveCourses` which is
+ * used as part of loading courses from local storage.
+ */
+
+/**
+ * Given courses from local storage, identify any differences in stored
+ * courses compared with those in the most recently available data, and
+ * return an updated array of `ScheduleSelection`s with stored courses.
+ * 
+ * @param selections A `ScheduleSelection[]` of locally stored courses
+ * @param depts `Department[]` with all courses
+ * @returns An updated `ScheduleSelection[]` with identified differences
+ */
 export function retrieveCourses(selections: ScheduleSelection[], 
                                     depts: Department[]): ScheduleSelection[] {
     const result: ScheduleSelection[] = [];
