@@ -70,7 +70,7 @@
                             lg:h-full course-search visible
                             border-r-2 border-divBorderLight
                             dark:border-divBorderDark border-solid py-2 pr-2
-                            ml-1 lg:shadow-none
+                            ml-1 lg:ml-1.5 lg:shadow-none
                             bg-bgLight dark:bg-bgDark lg:bg-transparent left-0
                             transition-transform duration-300'
         class:course-search-transition={!courseSearchSelected}
