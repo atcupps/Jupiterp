@@ -46,6 +46,7 @@ export function schedulify(selections: ScheduleSelection[]): Schedule {
                 conflictIndex: 1,
                 conflictTotal: 1,
                 meeting,
+                hover: selection.hover,
                 colorNumber,
                 differences: selection.differences
             }

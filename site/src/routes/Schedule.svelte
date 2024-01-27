@@ -59,22 +59,27 @@ Copyright (C) 2024 Andrew Cupps
 
         <!-- ClassTimes by day -->
         <ScheduleDay name='Mon' classes={schedule.monday} 
+            bind:selections={selections}
             bind:earliestClassStart
             bind:latestClassEnd 
             bind:bgHeight/>
-        <ScheduleDay name='Tue' classes={schedule.tuesday} 
+        <ScheduleDay name='Tue' classes={schedule.tuesday}
+        bind:selections={selections}
             bind:earliestClassStart
             bind:latestClassEnd  
             bind:bgHeight/>
-        <ScheduleDay name='Wed' classes={schedule.wednesday} 
+        <ScheduleDay name='Wed' classes={schedule.wednesday}
+            bind:selections={selections}
             bind:earliestClassStart
             bind:latestClassEnd  
             bind:bgHeight/>
-        <ScheduleDay name='Thu' classes={schedule.thursday} 
+        <ScheduleDay name='Thu' classes={schedule.thursday}
+            bind:selections={selections}
             bind:earliestClassStart
             bind:latestClassEnd  
             bind:bgHeight/>
-        <ScheduleDay name='Fri' classes={schedule.friday} 
+        <ScheduleDay name='Fri' classes={schedule.friday}
+            bind:selections={selections}
             bind:earliestClassStart
             bind:latestClassEnd  
             bind:bgHeight/>
@@ -82,7 +87,8 @@ Copyright (C) 2024 Andrew Cupps
         <!-- 'Other' classes (OnlineAsync, Unspecified) -->
         {#if schedule.other.length > 0}
             <ScheduleDay name='Other' classes={schedule.other} type='Other'
-                {bgHeight} />
+                {bgHeight}
+            bind:selections={selections}/>
         {/if}
     </div>
 </div>
