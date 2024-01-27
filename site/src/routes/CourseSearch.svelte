@@ -70,7 +70,7 @@
                             lg:h-full course-search visible
                             border-r-2 border-divBorderLight
                             dark:border-divBorderDark border-solid py-2 pr-2
-                            lg:mx-0 lg:shadow-none pl-1
+                            ml-1 lg:shadow-none
                             bg-bgLight dark:bg-bgDark lg:bg-transparent left-0
                             transition-transform duration-300'
         class:course-search-transition={!courseSearchSelected}
@@ -80,8 +80,8 @@
         <input type='text' bind:value={searchInput} on:input={handleInput}
             placeholder='Search course codes, ex: "THET285"'
             class="border-solid border-2 border-outlineLight 
-                            dark:border-outlineDark  rounded-lg 
-                            bg-transparent px-2 mb-2 w-full 
+                            dark:border-outlineDark  rounded-lg
+                            bg-transparent px-2 mb-2 w-full
                             placeholder:text-sm">
     </div>
     <div class='grow courses-list overflow-y-scroll overflow-x-none
@@ -107,7 +107,7 @@
             transition-property: transform;
             transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
             transition-duration: 150ms;
-            transform: translateX(-100%);
+            transform: translateX(calc(-100% - 2px));
         }
     }
 </style>
