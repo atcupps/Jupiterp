@@ -1,0 +1,13 @@
+name: Test Cron-Triggered Action
+
+on:
+    schedule:
+        - cron: '0 0 * * *'
+
+jobs:
+    say-hello:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Display message
+              run: echo "Successful action"
