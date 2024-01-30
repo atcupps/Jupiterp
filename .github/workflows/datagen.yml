@@ -9,5 +9,37 @@ jobs:
         runs-on: ubuntu-latest
 
         steps:
-            - name: Display message
-              run: echo "Successful action"
+            - uses: actions/checkout@v4
+
+            - name: Set up Git with new branch
+              run: |
+                git config --global user.name 'GitHub Action'
+                git config --global user.email 'action@github.com'
+                git checkout -b data-update-%Y%m%d
+            
+            - name: Create new file and commit
+              run: |
+                touch %Y%m%d
+                git add .
+                git commit -m "Test daily run with commit" || exit 0
+
+            - name: Push changes
+              uses: ad-m/github-push-action@master
+              with:
+                github_token: ${{ secrets.GITHUB_TOKEN }}
+                branch: ${{ github.head_ref }}
+            
+            - name: Open pull request
+              uses: peter-evans/create-pull-request@v3
+              with:
+                token: ${{ secrets.GITHUB_TOKEN }}
+                commit_message: Test daily run with commit
+                title: 'Test Automated Update $(date +%Y%m%d)'
+                branch: ${{ github.head_ref }}
+                delete_branch_after_merge: true
+                labels: |
+                    AUTOMATED
+
+
+            - name: Set up Rust toolchain
+              uses: dtolnay/rust-toolchain@stable
