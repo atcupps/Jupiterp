@@ -37,6 +37,8 @@ jobs:
                 title: 'Test Automated Update $(date +%Y%m%d)'
                 branch: ${{ github.head_ref }}
                 delete_branch_after_merge: true
+                labels: |
+                    AUTOMATED
 
 
             - name: Set up Rust toolchain
