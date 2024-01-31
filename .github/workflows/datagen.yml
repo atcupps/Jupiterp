@@ -16,7 +16,8 @@ jobs:
               run: |
                 git config --global user.name 'GitHub Action'
                 git config --global user.email 'action@github.com'
-                git checkout -b data-generation-$(+ %Y%m%d)
+                git checkout -b data-update
+                git pull
             
             - name: Create new file, commit, and PR
               run: |
