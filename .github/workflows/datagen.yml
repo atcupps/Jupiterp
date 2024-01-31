@@ -33,20 +33,11 @@ jobs:
                 branch: data-update
 
             - name: Open pull request
-              run: gh pr create -B main -H data-update --title 'Test Automated Update' --body 'Test daily run with commit\nCreated by GitHub Action'
+              run: |
+                gh pr create -B main -H data-update --title 'Test Automated Update' --body 'Test daily run with commit; Created by GitHub Action'
+                gh pr edit data-update --add-label AUTOMATED
               env:
                 GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-            
-            # - name: Open pull request
-            #   uses: peter-evans/create-pull-request@v5
-            #   with:
-            #     token: ${{ secrets.GITHUB_TOKEN }}
-            #     commit-message: Test daily run with commit
-            #     title: 'Test Automated Update $(date +$(date +%Y%m%d))'
-            #     branch: data-update
-            #     base: main
-            #     labels: |
-            #         AUTOMATED
 
 
             - name: Set up Rust toolchain
