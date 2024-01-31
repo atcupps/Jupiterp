@@ -17,7 +17,7 @@ jobs:
                 git config --global user.name 'GitHub Action'
                 git config --global user.email 'action@github.com'
                 git checkout -b data-update
-                git config pull.ff only
+                git config rebase
                 git pull origin data-update
             
             - name: Create new file, commit, and PR
