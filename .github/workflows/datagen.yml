@@ -1,11 +1,12 @@
 name: Test Cron-Triggered Action
 
 on:
+    workflow_dispatch:
     schedule:
         - cron: '0 0 * * *'
 
 jobs:
-    say-hello:
+    test-commit-and-pr:
         runs-on: ubuntu-latest
 
         steps:
@@ -15,27 +16,28 @@ jobs:
               run: |
                 git config --global user.name 'GitHub Action'
                 git config --global user.email 'action@github.com'
-                git checkout -b data-update-%Y%m%d
+                git checkout -b data-update-$(date +%Y%m%d)
             
-            - name: Create new file and commit
+            - name: Create new file, commit, and PR
               run: |
-                touch %Y%m%d
+                touch $(date +%Y%m%d)
                 git add .
                 git commit -m "Test daily run with commit" || exit 0
+                git push --upstream origin data-update-$(date +%Y%m%d)
 
-            - name: Push changes
-              uses: ad-m/github-push-action@master
-              with:
-                github_token: ${{ secrets.GITHUB_TOKEN }}
-                branch: ${{ github.head_ref }}
+            # - name: Push changes
+            #   uses: ad-m/github-push-action@master
+            #   with:
+            #     github_token: ${{ secrets.GITHUB_TOKEN }}
+            #     branch: ${{ github.head_ref }}
             
             - name: Open pull request
               uses: peter-evans/create-pull-request@v3
               with:
                 token: ${{ secrets.GITHUB_TOKEN }}
                 commit_message: Test daily run with commit
-                title: 'Test Automated Update $(date +%Y%m%d)'
-                branch: ${{ github.head_ref }}
+                title: 'Test Automated Update $(date +$(date +%Y%m%d))'
+                branch: data-update-$(date +%Y%m%d)
                 delete_branch_after_merge: true
                 labels: |
                     AUTOMATED
