@@ -24,7 +24,6 @@ jobs:
             
             - name: Edit datagen-runs.txt
               run: |
-                touch $(date +%Y%m%d)
                 echo "$(date +%Y%m%d)" >> datagen-runs.txt
 
             - name: Run datagen
