@@ -36,7 +36,7 @@ jobs:
               uses: peter-evans/create-pull-request@v3
               with:
                 token: ${{ secrets.GITHUB_TOKEN }}
-                commit_message: Test daily run with commit
+                commit-message: Test daily run with commit
                 title: 'Test Automated Update $(date +$(date +%Y%m%d))'
                 branch: data-update
                 labels: |
