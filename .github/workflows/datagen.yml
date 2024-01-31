@@ -31,17 +31,20 @@ jobs:
               with:
                 github_token: ${{ secrets.GITHUB_TOKEN }}
                 branch: data-update
-            
+
             - name: Open pull request
-              uses: peter-evans/create-pull-request@v5
-              with:
-                token: ${{ secrets.GITHUB_TOKEN }}
-                commit-message: Test daily run with commit
-                title: 'Test Automated Update $(date +$(date +%Y%m%d))'
-                branch: data-update
-                base: main
-                labels: |
-                    AUTOMATED
+              run: gh pr create -B main -H data-update --title 'Test Automated Update' --body 'Test daily run with commit\nCreated by GitHub Action'
+            
+            # - name: Open pull request
+            #   uses: peter-evans/create-pull-request@v5
+            #   with:
+            #     token: ${{ secrets.GITHUB_TOKEN }}
+            #     commit-message: Test daily run with commit
+            #     title: 'Test Automated Update $(date +$(date +%Y%m%d))'
+            #     branch: data-update
+            #     base: main
+            #     labels: |
+            #         AUTOMATED
 
 
             - name: Set up Rust toolchain
