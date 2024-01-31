@@ -12,6 +12,9 @@ jobs:
         steps:
             - uses: actions/checkout@v4
 
+            - name: Set up Rust toolchain
+              uses: dtolnay/rust-toolchain@stable
+
             - name: Set up Git with new branch
               run: |
                 git config --global user.name 'GitHub Action'
@@ -19,18 +22,28 @@ jobs:
                 git fetch
                 git checkout data-update
             
-            - name: Create new file, commit, and PR
+            - name: Edit datagen-runs.txt
               run: |
                 touch $(date +%Y%m%d)
+                echo "$(date +%Y%m%d)" >> datagen-runs.txt
+
+            - name: Run datagen
+              run: |
+                cd datagen
+                cargo run
+                cd ..
+
+            - name: Commit and push to origin
+              run: |
                 git add --all
                 git commit -m "Test daily run with commit" || exit 0
                 git push origin HEAD
 
-            - name: Push changes
-              uses: ad-m/github-push-action@master
-              with:
-                github_token: ${{ secrets.GITHUB_TOKEN }}
-                branch: data-update
+            # - name: Push changes
+            #   uses: ad-m/github-push-action@master
+            #   with:
+            #     github_token: ${{ secrets.GITHUB_TOKEN }}
+            #     branch: data-update
 
             - name: Open pull request
               run: |
@@ -38,7 +51,3 @@ jobs:
                 gh pr edit data-update --add-label AUTOMATED
               env:
                 GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-
-            - name: Set up Rust toolchain
-              uses: dtolnay/rust-toolchain@stable
