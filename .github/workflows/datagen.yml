@@ -14,16 +14,14 @@ jobs:
 
             - name: Set up Git with new branch
               run: |
-                BRANCH_NAME = "data-update-$(date +%Y%m%d)"
-                echo "Branch name: $BRANCH_NAME"
                 git config --global user.name 'GitHub Action'
                 git config --global user.email 'action@github.com'
-                git checkout -b $BRANCH_NAME
+                git checkout -b data-generation-$(+ %Y%m%d)
             
             - name: Create new file, commit, and PR
               run: |
                 touch $(date +%Y%m%d)
-                git add .
+                git add --all
                 git commit -m "Test daily run with commit" || exit 0
                 git push origin HEAD
 
@@ -31,7 +29,7 @@ jobs:
               uses: ad-m/github-push-action@master
               with:
                 github_token: ${{ secrets.GITHUB_TOKEN }}
-                branch: ${{ env.BRANCH_NAME }}
+                branch: data-update
             
             - name: Open pull request
               uses: peter-evans/create-pull-request@v3
@@ -39,7 +37,7 @@ jobs:
                 token: ${{ secrets.GITHUB_TOKEN }}
                 commit_message: Test daily run with commit
                 title: 'Test Automated Update $(date +$(date +%Y%m%d))'
-                branch: ${{ env.BRANCH_NAME }}
+                branch: data-update
                 delete_branch_after_merge: true
                 labels: |
                     AUTOMATED
