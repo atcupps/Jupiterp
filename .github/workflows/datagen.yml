@@ -23,6 +23,7 @@ jobs:
                 touch $(date +%Y%m%d)
                 git add .
                 git commit -m "Test daily run with commit" || exit 0
+                git push origin data-update-$(date +%Y%m%d)
 
             - name: Push changes
               uses: ad-m/github-push-action@master
