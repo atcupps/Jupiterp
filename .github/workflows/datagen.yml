@@ -38,7 +38,8 @@ jobs:
                 token: ${{ secrets.GITHUB_TOKEN }}
                 commit-message: Test daily run with commit
                 title: 'Test Automated Update $(date +$(date +%Y%m%d))'
-                branch: main
+                branch: data-update
+                base: main
                 labels: |
                     AUTOMATED
 
