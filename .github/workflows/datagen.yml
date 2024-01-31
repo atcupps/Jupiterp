@@ -1,4 +1,4 @@
-name: Test Cron-Triggered Action
+name: Automatic Datagen
 
 on:
     workflow_dispatch:
@@ -35,18 +35,15 @@ jobs:
             - name: Commit and push to origin
               run: |
                 git add --all
-                git commit -m "Test daily run with commit" || exit 0
+                git commit -m "Daily automated datagen" || exit 0
                 git push origin HEAD
-
-            # - name: Push changes
-            #   uses: ad-m/github-push-action@master
-            #   with:
-            #     github_token: ${{ secrets.GITHUB_TOKEN }}
-            #     branch: data-update
 
             - name: Open pull request
               run: |
-                gh pr create -B main -H data-update --title 'Test Automated Update' --body 'Test daily run with commit; Created by GitHub Action'
+                gh pr create -B main -H data-update --title '[AUTOMATED] Automatic Datagen $(date +%Y%m%d)' --body 'Run datagen; automated, created by GitHub Action.'
                 gh pr edit data-update --add-label AUTOMATED
               env:
                 GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+            - name: Merge pull request
+              run: gh pr merge data-update --admin
