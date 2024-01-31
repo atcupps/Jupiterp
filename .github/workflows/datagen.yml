@@ -34,6 +34,8 @@ jobs:
 
             - name: Open pull request
               run: gh pr create -B main -H data-update --title 'Test Automated Update' --body 'Test daily run with commit\nCreated by GitHub Action'
+              env:
+                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
             
             # - name: Open pull request
             #   uses: peter-evans/create-pull-request@v5
