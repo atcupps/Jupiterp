@@ -23,13 +23,12 @@ jobs:
                 touch $(date +%Y%m%d)
                 git add .
                 git commit -m "Test daily run with commit" || exit 0
-                git push --upstream origin data-update-$(date +%Y%m%d)
 
-            # - name: Push changes
-            #   uses: ad-m/github-push-action@master
-            #   with:
-            #     github_token: ${{ secrets.GITHUB_TOKEN }}
-            #     branch: ${{ github.head_ref }}
+            - name: Push changes
+              uses: ad-m/github-push-action@master
+              with:
+                github_token: ${{ secrets.GITHUB_TOKEN }}
+                branch: data-update-$(date +%Y%m%d)
             
             - name: Open pull request
               uses: peter-evans/create-pull-request@v3
