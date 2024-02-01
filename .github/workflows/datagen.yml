@@ -26,11 +26,11 @@ jobs:
               run: |
                 echo "$(date +%Y-%m-%d)" >> datagen-runs.txt
 
-            - name: Run datagen
-              run: |
-                cd datagen
-                cargo run
-                cd ..
+            # - name: Run datagen
+            #   run: |
+            #     cd datagen
+            #     cargo run
+            #     cd ..
 
             - name: Commit and push to origin
               run: |
@@ -40,7 +40,7 @@ jobs:
 
             - name: Open pull request
               run: |
-                gh pr create -B main -H data-update --title '[AUTOMATED] Automatic Datagen $(date +%Y-%m-%d)' --body 'Run datagen; automated, created by GitHub Action.'
+                gh pr create -B main -H data-update --title "[AUTOMATED] Automatic Datagen $(date +%Y-%m-%d)"" --body 'Run datagen; automated, created by GitHub Action.'
                 gh pr edit data-update --add-label AUTOMATED
               env:
                 GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
