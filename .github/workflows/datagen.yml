@@ -28,11 +28,11 @@ jobs:
               run: |
                 echo "$(date +%Y-%m-%d)" >> datagen-runs.txt
 
-            # - name: Run datagen
-            #   run: |
-            #     cd datagen
-            #     cargo run
-            #     cd ..
+            - name: Run datagen
+              run: |
+                cd datagen
+                cargo run
+                cd ..
 
             - name: Commit and push to origin
               run: |
