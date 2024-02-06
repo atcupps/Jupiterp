@@ -657,7 +657,7 @@
   {
     "name": "Ana Acedo Garcia",
     "slug": "garcia_ana_acedo",
-    "average_rating": 4.5238
+    "average_rating": 4.4091
   },
   {
     "name": "Ana Palla-Kane",
@@ -4587,7 +4587,7 @@
   {
     "name": "George Hurtt",
     "slug": "hurtt_george",
-    "average_rating": 3.0
+    "average_rating": 2.3333
   },
   {
     "name": "George Lanum",
@@ -4887,7 +4887,7 @@
   {
     "name": "Hailu Gebremariam",
     "slug": "gebremariam",
-    "average_rating": 3.1429
+    "average_rating": 3.1406
   },
   {
     "name": "Hal Daume",
@@ -5547,7 +5547,7 @@
   {
     "name": "James Green",
     "slug": "green_james",
-    "average_rating": 3.1736
+    "average_rating": 3.1885
   },
   {
     "name": "James Hagberg",
@@ -7052,7 +7052,7 @@
   {
     "name": "Justin Wyss-Gallifent",
     "slug": "wyss-gallifent",
-    "average_rating": 4.751
+    "average_rating": 4.752
   },
   {
     "name": "Justin Yackoski",
@@ -9517,7 +9517,7 @@
   {
     "name": "Maxine Grossman",
     "slug": "grossman",
-    "average_rating": 4.4286
+    "average_rating": 4.5
   },
   {
     "name": "Maya Aduba",
@@ -9837,7 +9837,7 @@
   {
     "name": "Michael Galczynski",
     "slug": "galczynski",
-    "average_rating": 4.93
+    "average_rating": 4.9307
   },
   {
     "name": "Michael Gollner",
@@ -10012,7 +10012,7 @@
   {
     "name": "Michel Cukier",
     "slug": "cukier",
-    "average_rating": 1.1667
+    "average_rating": 1.1613
   },
   {
     "name": "Michel Wedel",
@@ -11162,7 +11162,7 @@
   {
     "name": "Pedram Sadeghian",
     "slug": "sadeghian",
-    "average_rating": 3.6709
+    "average_rating": 3.6875
   },
   {
     "name": "Peggy Wilson",
@@ -15332,7 +15332,7 @@
   {
     "name": "Daniel Greene",
     "slug": "greene_daniel",
-    "average_rating": 4.1429
+    "average_rating": 4.25
   },
   {
     "name": "Daniel Richter",
@@ -21997,7 +21997,7 @@
   {
     "name": "Neslihan Uler",
     "slug": "uler_neslihan",
-    "average_rating": 5.0
+    "average_rating": 4.25
   },
   {
     "name": "Nicholas Schlosser",
@@ -22287,7 +22287,7 @@
   {
     "name": "Sarah Tahamont",
     "slug": "tahamont",
-    "average_rating": 2.4444
+    "average_rating": 2.7
   },
   {
     "name": "Sarah Yeakel",
@@ -24472,7 +24472,7 @@
   {
     "name": "Amanda Schech",
     "slug": "schech",
-    "average_rating": 4.125
+    "average_rating": 4.1077
   },
   {
     "name": "Angela O'Brien",
@@ -48522,7 +48522,7 @@
   {
     "name": "Jun Han",
     "slug": "han_jun",
-    "average_rating": null
+    "average_rating": 1.0
   },
   {
     "name": "Joshua Shannon-Chastain",
@@ -52877,7 +52877,7 @@
   {
     "name": "Faith Otchere",
     "slug": "otchere",
-    "average_rating": 4.75
+    "average_rating": 4.8
   },
   {
     "name": "Viktoriia Savchuk",
@@ -54537,7 +54537,7 @@
   {
     "name": "Jesse Klein",
     "slug": "klein_jesse",
-    "average_rating": 4.6
+    "average_rating": 4.6667
   },
   {
     "name": "Md Haque",
@@ -55002,7 +55002,7 @@
   {
     "name": "Avik Dutt",
     "slug": "dutt_avik",
-    "average_rating": 3.5417
+    "average_rating": 3.56
   },
   {
     "name": "Robert Williams",
@@ -55627,7 +55627,7 @@
   {
     "name": "Kyung Koh",
     "slug": "koh_kyung",
-    "average_rating": 2.0
+    "average_rating": 2.0476
   },
   {
     "name": "Austin Tapp",
@@ -56777,7 +56777,7 @@
   {
     "name": "Rachel Schine",
     "slug": "schine_rachel",
-    "average_rating": 4.1429
+    "average_rating": 4.25
   },
   {
     "name": "Kaitlynn Robinson-ector",
@@ -57412,7 +57412,7 @@
   {
     "name": "Jeffrey Parsells-johnson",
     "slug": "parsells-johnson_jeffrey",
-    "average_rating": 2.8571
+    "average_rating": 2.931
   },
   {
     "name": "Jennifer Ashlock",
@@ -58732,7 +58732,7 @@
   {
     "name": "Fushuai Jiang",
     "slug": "jiang",
-    "average_rating": 2.8824
+    "average_rating": 3.0
   },
   {
     "name": "Charlotte Vaughn",
@@ -60032,7 +60032,7 @@
   {
     "name": "Jaime Paradela",
     "slug": "paradela",
-    "average_rating": 4.0
+    "average_rating": 3.8333
   },
   {
     "name": "Sonia Hirschauer",
@@ -61950,6 +61950,21 @@
     "average_rating": null
   },
   {
+    "name": "Elizabeth Foster",
+    "slug": "foster_elizabeth",
+    "average_rating": null
+  },
+  {
+    "name": "Melinda George",
+    "slug": "george",
+    "average_rating": null
+  },
+  {
+    "name": "Paul Fleming",
+    "slug": "fleming_paul",
+    "average_rating": null
+  },
+  {
     "name": "Segun Eubanks",
     "slug": "eubanks_segun",
     "average_rating": null
@@ -62030,6 +62045,11 @@
     "average_rating": null
   },
   {
+    "name": "Julie Banner",
+    "slug": "banner",
+    "average_rating": null
+  },
+  {
     "name": "Julie Simmons",
     "slug": "simmons",
     "average_rating": null
@@ -62082,6 +62102,11 @@
   {
     "name": "Emily Shetty",
     "slug": "shetty",
+    "average_rating": null
+  },
+  {
+    "name": "Andrew Andrew",
+    "slug": "andrew",
     "average_rating": null
   },
   {
@@ -62485,6 +62510,11 @@
     "average_rating": null
   },
   {
+    "name": "Rebecca Sheinhorn",
+    "slug": "sheinhorn",
+    "average_rating": null
+  },
+  {
     "name": "Keisha Allen",
     "slug": "allen_keisha",
     "average_rating": null
@@ -62492,6 +62522,11 @@
   {
     "name": "Olivia Williams",
     "slug": "williams_olivia",
+    "average_rating": null
+  },
+  {
+    "name": "Ariana Santana",
+    "slug": "santana_ariana",
     "average_rating": null
   },
   {
@@ -62857,6 +62892,11 @@
   {
     "name": "Steven Simon",
     "slug": "simon",
+    "average_rating": null
+  },
+  {
+    "name": "Madeleine Parker",
+    "slug": "parker_madeleine",
     "average_rating": null
   },
   {
