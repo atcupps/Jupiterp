@@ -81,39 +81,40 @@ function addMeetings(schedule: Schedule, meeting: ClassMeetingExtended,
                                                         classtime: Classtime) {
     const days: Day[] = parseDays(classtime.days);
     days.forEach((day) => {
+        const meetingCopy = JSON.parse(JSON.stringify(meeting))
         switch (day) {
             case Day.Monday:
-                schedule.monday = [...schedule.monday, meeting];
+                schedule.monday = [...schedule.monday, meetingCopy];
                 schedule.monday.sort((a, b) => {
                     return getClassStartTime(a) - getClassStartTime(b)
                 });
                 break;
             case Day.Tuesday:
-                schedule.tuesday = [...schedule.tuesday, meeting];
+                schedule.tuesday = [...schedule.tuesday, meetingCopy];
                 schedule.tuesday.sort((a, b) => {
                     return getClassStartTime(a) - getClassStartTime(b)
                 });
                 break;
             case Day.Wednesday:
-                schedule.wednesday = [...schedule.wednesday, meeting];
+                schedule.wednesday = [...schedule.wednesday, meetingCopy];
                 schedule.wednesday.sort((a, b) => {
                     return getClassStartTime(a) - getClassStartTime(b)
                 });
                 break;
             case Day.Thursday:
-                schedule.thursday = [...schedule.thursday, meeting];
+                schedule.thursday = [...schedule.thursday, meetingCopy];
                 schedule.thursday.sort((a, b) => {
                     return getClassStartTime(a) - getClassStartTime(b)
                 });
                 break;
             case Day.Friday:
-                schedule.friday = [...schedule.friday, meeting];
+                schedule.friday = [...schedule.friday, meetingCopy];
                 schedule.friday.sort((a, b) => {
                     return getClassStartTime(a) - getClassStartTime(b)
                 });
                 break;
             case Day.Other:
-                schedule.other = [...schedule.other, meeting];
+                schedule.other = [...schedule.other, meetingCopy];
                 break;
         }
     })
