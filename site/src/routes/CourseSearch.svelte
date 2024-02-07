@@ -79,6 +79,8 @@ Copyright (C) 2024 Andrew Cupps
                             transition-transform duration-300'
         class:course-search-transition={!courseSearchSelected}
         class:shadow-lg={courseSearchSelected}>
+    
+    <!-- Search box -->
     <div class='w-full border-solid border-b-2 px-1 lg:px-0
                             border-divBorderLight dark:border-divBorderDark'>
         <input type='text' bind:value={searchInput} on:input={handleInput}
@@ -86,8 +88,11 @@ Copyright (C) 2024 Andrew Cupps
             class="border-solid border-2 border-outlineLight 
                             dark:border-outlineDark  rounded-lg
                             bg-transparent px-2 mb-2 w-full
+                            text-lg lg:text-base
                             placeholder:text-sm">
     </div>
+
+    <!-- Search results -->
     <div class='grow courses-list overflow-y-scroll overflow-x-none
                 px-1 lg:pr-1 lg:pl-0'>
         {#each searchResults as courseMatch (courseMatch.code)}
