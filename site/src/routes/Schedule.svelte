@@ -42,10 +42,10 @@ Copyright (C) 2024 Andrew Cupps
     }
 </script>
 
-<div class='h-full w-full flex flex-row px-2 font-medium
-            items-center overflow-x-scroll
+<div class='h-full w-full flex flex-row px-2 font-medium overflow-x-scroll
             text-lg text-center text-black dark:text-white overflow-y-scroll'>
-    <div class='h-full grid grow relative pl-8 min-w-[768px]'
+    <div class='grid grow relative pl-8 min-w-[768px]'
+         style='height: calc(100% - 1.75rem);'
             class:grid-cols-5={schedule.other.length == 0}
             class:grid-cols-6={schedule.other.length > 0}>
         
