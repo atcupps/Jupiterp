@@ -50,8 +50,9 @@ Copyright (C) 2024 Andrew Cupps
     }
 </script>
 
-<div class='flex flex-row w-full overflow-y-scroll' 
-        style='height: calc(100% - 3rem)'>
+<div class='fixed flex flex-row w-full px-8
+            text-textLight dark:text-textDark lg:px-8
+            top-[3rem] lg:top-[3.5rem] xl:top-[4rem] bottom-0'>
     <CourseSearch bind:selections={selectedSections} data={data}/>
     <Schedule bind:selections={selectedSections}/>
 </div>
