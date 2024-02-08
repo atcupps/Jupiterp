@@ -18,12 +18,4 @@ Copyright (C) 2024 Andrew Cupps
     </div>
 </div>
 
-<div class='flex flex-col h-full w-full text-textLight
-            dark:text-textDark lg:px-8'>
-    <div class='flex'>
-        <div class='flex flex-row h-12 lg:h-14 xl:h-16 px-2 w-full border-b-2
-                        border-divBorderLight dark:border-divBorderDark
-                        justify-center lg:justify-start'/>
-    </div>
-    <slot/>
-</div>
+<slot/>

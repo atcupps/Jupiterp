@@ -13,7 +13,8 @@ Copyright (C) 2024 Andrew Cupps
         'my-2 text-normal leading-5 text-textLight dark:text-textDark';
 </script>
 
-<div class='text-textLight dark:text-white py-2 px-8 overflow-y-scroll'>
+<div class='text-textLight dark:text-white py-2 px-8 overflow-y-scroll
+            top-[3rem] lg:top-[3.5rem] xl:top-[4rem] bottom-0 fixed'>
     <h1 class={h1Classes}>
         About Jupiterp
     </h1>
