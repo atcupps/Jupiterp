@@ -24,6 +24,8 @@ use reqwest::{
     header::USER_AGENT,
 };
 use scraper::{Html, Selector};
+use std::thread;
+use std::time::Duration;
 use std::{error::Error, fs::File, io::Write};
 
 mod types;
@@ -486,6 +488,8 @@ fn instructors_datagen() -> Result<(), Box<dyn Error>> {
             "https://planetterp.com/api/v1/professors?type=professor&limit={}&offset={}",
             num_profs, offset
         );
+
+        thread::sleep(Duration::from_millis(500));
         let response = get_response(request)?;
 
         if response.status().is_success() {
