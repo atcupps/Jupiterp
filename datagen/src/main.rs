@@ -24,9 +24,9 @@ use reqwest::{
     header::USER_AGENT,
 };
 use scraper::{Html, Selector};
-use std::{error::Error, fs::File, io::Write};
 use std::thread;
 use std::time::Duration;
+use std::{error::Error, fs::File, io::Write};
 
 mod types;
 use types::*;
