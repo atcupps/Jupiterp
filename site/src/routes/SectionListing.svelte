@@ -77,6 +77,8 @@ Copyright (C) 2024 Andrew Cupps
         return s.courseCode === courseCode &&
             s.section.sec_code === section.sec_code && s.hover;
     }
+
+    let profsHover: boolean = false;
 </script>
 
 <!-- Ignoring a11y for mouseover because it's a non-essential feature -->
@@ -84,10 +86,12 @@ Copyright (C) 2024 Andrew Cupps
 <button on:click={addSectionToSchedule}
         on:mouseover={addHoverSection}
         on:mouseout={removeHoverSection}
-            class='flex flex-row w-full text-left
-                border-t-2 border-outlineLight dark:border-outlineDark
-                hover:bg-hoverLight hover:dark:bg-hoverDark transition
-                {sectionAdded ? 'bg-hoverLight dark:bg-hoverDark' : ''}'>
+            class='flex flex-row w-full text-left border-t-2 
+                    border-outlineLight dark:border-outlineDark transition
+                {sectionAdded ? 'bg-hoverLight dark:bg-hoverDark' : ''}'
+            class:hover:bg-hoverLight={!profsHover}
+            class:hover:dark:bg-hoverDark={!profsHover}
+                >
     <!-- Section code -->
     <div class='text-secCodesLight dark:text-secCodesDark font-semibold 
                 text-sm xl:text-base w-12 xl:w-14'>
@@ -98,7 +102,8 @@ Copyright (C) 2024 Andrew Cupps
     <div class='w-full'>
         <!-- Instructors -->
         {#each section.instructors as instructor}
-            <InstructorListing instructor={instructor} profs={profs} />
+            <InstructorListing {instructor} {profs} 
+                                bind:profsHover {removeHoverSection}/>
         {/each}
         
         <!-- Class meetings -->

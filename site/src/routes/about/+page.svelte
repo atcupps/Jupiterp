@@ -82,6 +82,6 @@ Copyright (C) 2024 Andrew Cupps
     <p class={pClasses}>
         To contact the Jupiterp team, email 
         <code class='text-sm bg-bgSecondaryLight dark:bg-bgSecondaryDark rounded-md'>
-            (@ (dot at cupps) (dot gmail com))</code>.
+            admin@jupiterp.com</code>.
     </p>
 </div>
