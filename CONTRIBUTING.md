@@ -91,4 +91,4 @@ When you open a pull request, your code will be subject to continuous integratio
 
 ## Communication
 
-Currently, the Jupiterp community is small and has no official communications channels. If you are interested in contributing and want to join the community, please contact @atcupps by emailing `(@ (dot at cupps) (dot gmail com))`.
+Currently, the Jupiterp community is small and has no official communications channels. If you have any inquiries, contact admin@jupiterp.com.
