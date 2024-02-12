@@ -43,6 +43,7 @@ jobs:
             - name: Open pull request
               run: |
                 gh pr create -B main -H datagen-$(date +%Y-%m-%d) --title "[AUTOMATED] Automatic Datagen $(date +%Y-%m-%d)" --body 'Run datagen; automated, created by GitHub Action.' --reviewer atcupps
+                gh pr edit datagen-$(date +%Y-%m-%d) --add-label AUTOMATED
                 gh pr edit data-update --add-label AUTOMATED
               env:
                 GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
