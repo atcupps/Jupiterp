@@ -9,41 +9,36 @@ Copyright (C) 2024 Andrew Cupps
     export let text: string;
     export let target: string = '_self';
     export let fullWidth: boolean = false;
+    export let isOnPage: boolean = false;
 </script>
 
 <a href={link} target={target}
-        class='mx-4 font-normal navbarelt
-                text-textLight dark:text-white'
-        class:w-[90%]={fullWidth}>
+        class='mx-4 px-1 font-normal transition'
+        class:w-[90%]={fullWidth}
+        class:siteLinkUnderline={isOnPage}
+        class:text-orange={isOnPage}
+        class:hover:text-orange={!isOnPage}
+        class:dark:hover:text-lightOrange={!isOnPage}
+        class:text-textLight={!isOnPage}
+        class:dark:text-white={!isOnPage}>
     {text}
 </a>
 
 <style>
-    .navbarelt {
+    .siteLinkUnderline {
         display: inline-block;
         position: relative;
     }
 
-    .navbarelt:hover {
-        color: #F6743C;
-        transition: transform 0.15s ease-out;
-    }
-
-    .navbarelt::after {
+    .siteLinkUnderline::after {
         content: '';
         position: absolute;
         width: 100%;
-        transform: scaleX(0);
         height: 2px;
         bottom: 0;
         left: 0;
+        transform: scaleX(95%);
+        transform-origin: center;
         background-color: #F6743C;
-        transform-origin: bottom center;
-        transition: transform 0.15s ease-out;
-    }
-
-    .navbarelt:hover::after {
-        transform: scaleX(1);
-        transform-origin: bottom center;
     }
 </style>

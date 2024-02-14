@@ -9,6 +9,8 @@ export default {
       'white': '#ffffff',
       'black': '#000000',
       'orange': '#F6743C',
+      'lightOrange': '#ffc4ab',
+      'midGray': '#888888',
       
       /* light mode themes */
       'bgLight': 'white',

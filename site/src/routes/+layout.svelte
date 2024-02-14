@@ -4,7 +4,7 @@ called LICENSE at the top level of the Jupiterp source tree (online at
 https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2024 Andrew Cupps
  -->
-<script>
+<script lang='ts'>
     import '../app.css';
     import SiteLinks from './SiteLinks.svelte';
 </script>
@@ -18,4 +18,4 @@ Copyright (C) 2024 Andrew Cupps
     </div>
 </div>
 
-<slot/>
+<slot />
