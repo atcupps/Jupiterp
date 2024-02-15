@@ -6,18 +6,26 @@ Copyright (C) 2024 Andrew Cupps
 -->
 <script lang='ts'>
     import { fade } from 'svelte/transition';
+    import { page } from '$app/stores';
     import NavBarElement from './NavBarElement.svelte';
 
     let siteLinksSelected: boolean = false;
+
+    $: currentPage = $page.url.pathname;
+    $: if (currentPage) {
+        console.log(currentPage == '/');
+    }
 </script>
 
 <!-- For larger screens -->
 <div class='grow justify-end self-center hidden lg:flex'>
-    <NavBarElement link='./' text='Course Planner' />
-    <NavBarElement link='./about' text='About' />
+    <NavBarElement link='./' text='Course Planner'
+                                        isOnPage={currentPage == '/'}/>
+    <NavBarElement link='./about' text='About' 
+                                        isOnPage={currentPage == '/about'}/>
     <NavBarElement link='https://github.com/atcupps/Jupiterp'
-                                                text='GitHub'
-                                                target='_blank' />
+                                        text='GitHub'
+                                        target='_blank' />
 </div>
 
 <!-- Button to toggle course search on mobile -->
