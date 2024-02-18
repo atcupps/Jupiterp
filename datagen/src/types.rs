@@ -194,8 +194,7 @@ pub struct ClassLocation(pub String, pub String);
 /// The response of a request to PlanetTerp to get an instructor, parsed into
 /// a Rust struct. Such a request will return a JSON-format array of
 /// instructors in the following format:
-/// ```
-/// [
+/// `[
 ///     {
 ///         "name": "Jon Snow",
 ///         "slug": "snow",
@@ -203,8 +202,7 @@ pub struct ClassLocation(pub String, pub String);
 ///         "courses": [ * some courses * ],
 ///         "average_rating": 4.125
 ///     }
-/// ]
-/// ```
+/// ]`
 #[derive(Debug, Serialize, Deserialize)]
 pub struct PlanetTerpProfessor {
     name: String,
