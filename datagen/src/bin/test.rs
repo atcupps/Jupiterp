@@ -42,7 +42,7 @@ fn main() -> Result<(), Box<dyn Error>> {
             args.course, None,
             "Cannot specify both a department and a course"
         );
-        let dept_courses = get_courses(&dept, term)?;
+        let dept_courses = get_courses(dept, term)?;
         if args.show_output {
             println!("{:#?}", dept_courses);
         }
@@ -54,7 +54,7 @@ fn main() -> Result<(), Box<dyn Error>> {
             args.dept, None,
             "Cannot specify both a department and a course"
         );
-        let course_info = get_course_info(&course, term);
+        let course_info = get_course_info(course, term);
         if args.show_output {
             println!("{:#?}", course_info);
         }

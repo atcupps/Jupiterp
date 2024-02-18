@@ -53,31 +53,24 @@ fn get_term() -> String {
 
         // Ensure year is ok
         if let Ok(year_num) = year.parse::<u16>() {
-            if !(year_num >= 2000 && year_num <= 2100) {
+            if !((2000..=2100).contains(&year_num)) {
                 eprintln!(
                     "{}: Invalid year: {} in term: {}",
                     "ERROR".red().bold(),
                     year_num,
                     term
                 );
-                eprintln!(
-                    "Jupiterp datagen only supports terms from 2000 to 2100."
-                );
+                eprintln!("Jupiterp datagen only supports terms from 2000 to 2100.");
                 std::process::exit(1);
             }
         } else {
-            eprintln!(
-                "{}: Invalid term format: {}", "ERROR".red().bold(), term
-            );
+            eprintln!("{}: Invalid term format: {}", "ERROR".red().bold(), term);
             std::process::exit(1);
         }
 
         // Ensure month is ok
         if let Ok(month_num) = month.parse::<u8>() {
-            if !(month_num == 1 
-                || month_num == 5 
-                || month_num == 8 
-                || month_num == 12) {
+            if !(month_num == 1 || month_num == 5 || month_num == 8 || month_num == 12) {
                 eprintln!(
                     "{}: Invalid month: {} in term: {}",
                     "ERROR".red().bold(),
@@ -90,9 +83,7 @@ fn get_term() -> String {
                 std::process::exit(1);
             }
         } else {
-            eprintln!(
-                "{}: Invalid term format: {}", "ERROR".red().bold(), term
-            );
+            eprintln!("{}: Invalid term format: {}", "ERROR".red().bold(), term);
             std::process::exit(1);
         }
     } else {
