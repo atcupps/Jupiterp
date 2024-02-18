@@ -19,9 +19,9 @@
 //! course schedules requires more assurance that course data be updated
 //! regularly, something which does not seem to be guaranteed by existing APIs.
 
+use colored::*;
 use jupiterp_datagen::{depts_courses_datagen, instructors_datagen};
 use std::{env, error::Error};
-use colored::*;
 
 fn main() -> Result<(), Box<dyn Error>> {
     let term: String = get_term();
@@ -34,10 +34,13 @@ fn main() -> Result<(), Box<dyn Error>> {
 
 fn get_term() -> String {
     let args: Vec<String> = env::args().collect();
-    
+
     // Check if an argument was provided
     if args.len() < 2 {
-        eprintln!("{}: Usage: cargo run --bin jupiterp_datagen <term>", "ERROR".red().bold());
+        eprintln!(
+            "{}: Usage: cargo run --bin jupiterp_datagen <term>",
+            "ERROR".red().bold()
+        );
         std::process::exit(1);
     }
 
@@ -51,24 +54,45 @@ fn get_term() -> String {
         // Ensure year is ok
         if let Ok(year_num) = year.parse::<u16>() {
             if !(year_num >= 2000 && year_num <= 2100) {
-                eprintln!("{}: Invalid year: {} in term: {}", "ERROR".red().bold(), year_num, term);
-                eprintln!("Jupiterp datagen only supports terms from 2000 to 2100.");
+                eprintln!(
+                    "{}: Invalid year: {} in term: {}",
+                    "ERROR".red().bold(),
+                    year_num,
+                    term
+                );
+                eprintln!(
+                    "Jupiterp datagen only supports terms from 2000 to 2100."
+                );
                 std::process::exit(1);
             }
         } else {
-            eprintln!("{}: Invalid term format: {}", "ERROR".red().bold(), term);
+            eprintln!(
+                "{}: Invalid term format: {}", "ERROR".red().bold(), term
+            );
             std::process::exit(1);
         }
 
         // Ensure month is ok
         if let Ok(month_num) = month.parse::<u8>() {
-            if !(month_num == 1 || month_num == 5 || month_num == 8 || month_num == 12) {
-                eprintln!("{}: Invalid month: {} in term: {}", "ERROR".red().bold(), month_num, term);
-                eprintln!("Testudo only supports terms for spring (01), summer (05), fall (08), and winter (12) courses.");
+            if !(month_num == 1 
+                || month_num == 5 
+                || month_num == 8 
+                || month_num == 12) {
+                eprintln!(
+                    "{}: Invalid month: {} in term: {}",
+                    "ERROR".red().bold(),
+                    month_num,
+                    term
+                );
+                eprintln!(
+                    "Testudo only supports terms for spring (01), summer (05), fall (08), and winter (12) courses."
+                );
                 std::process::exit(1);
             }
         } else {
-            eprintln!("{}: Invalid term format: {}", "ERROR".red().bold(), term);
+            eprintln!(
+                "{}: Invalid term format: {}", "ERROR".red().bold(), term
+            );
             std::process::exit(1);
         }
     } else {

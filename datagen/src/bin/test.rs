@@ -8,9 +8,9 @@
 //! by manually inputting courses or departments to test data generation for.
 //! This can be run with `cargo run --bin test -- <args>`.
 
-use std::error::Error;
 use clap::Parser;
 use jupiterp_datagen::{get_course_info, get_courses};
+use std::error::Error;
 
 #[derive(Parser, Debug)]
 #[command(version, about, long_about = None)]
@@ -38,7 +38,10 @@ fn main() -> Result<(), Box<dyn Error>> {
 
     // Test data generation for a department
     if let Some(dept) = &args.dept {
-        assert_eq!(args.course, None, "Cannot specify both a department and a course");
+        assert_eq!(
+            args.course, None,
+            "Cannot specify both a department and a course"
+        );
         let dept_courses = get_courses(&dept, term)?;
         if args.show_output {
             println!("{:#?}", dept_courses);
@@ -47,7 +50,10 @@ fn main() -> Result<(), Box<dyn Error>> {
 
     // Test data generation for a course
     if let Some(course) = &args.course {
-        assert_eq!(args.dept, None, "Cannot specify both a department and a course");
+        assert_eq!(
+            args.dept, None,
+            "Cannot specify both a department and a course"
+        );
         let course_info = get_course_info(&course, term);
         if args.show_output {
             println!("{:#?}", course_info);
