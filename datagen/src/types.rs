@@ -14,9 +14,9 @@ use serde::Serialize;
 /// A Department, meaning one of the four letter course prefixes used by the
 /// Testudo schedule of classes and all associated `Course`s.
 #[derive(Debug, Serialize, Deserialize)]
-pub(crate) struct Department {
-    pub(crate) name: String,
-    pub(crate) courses: Vec<Course>,
+pub struct Department {
+    pub name: String,
+    pub courses: Vec<Course>,
 }
 
 /// A `Course` and associated data:
@@ -31,18 +31,18 @@ pub(crate) struct Department {
 /// - `sections`: All `Section`s offered in a course, or `None`; some courses
 ///     have no sections (ex. AASP399)
 #[derive(Debug, Serialize, Deserialize)]
-pub(crate) struct Course {
-    pub(crate) code: String,
-    pub(crate) name: String,
-    pub(crate) credits: CreditCount,
-    pub(crate) gen_eds: Option<Vec<String>>,
-    pub(crate) description: String,
-    pub(crate) sections: Option<Vec<Section>>,
+pub struct Course {
+    pub code: String,
+    pub name: String,
+    pub credits: CreditCount,
+    pub gen_eds: Option<Vec<String>>,
+    pub description: String,
+    pub sections: Option<Vec<Section>>,
 }
 
 /// How many credits a course is worth; can be a single number or a range
 #[derive(Debug, Serialize, Deserialize)]
-pub(crate) enum CreditCount {
+pub enum CreditCount {
     Amount(u8),
     Range(u8, u8),
 }
@@ -53,10 +53,10 @@ pub(crate) enum CreditCount {
 /// - `class_meetings`: All occurrences of class meetings for a section;
 ///     this includes lectures, discussions, etc.
 #[derive(Debug, Serialize, Deserialize)]
-pub(crate) struct Section {
-    pub(crate) sec_code: String,
-    pub(crate) instructors: Vec<String>,
-    pub(crate) class_meetings: Vec<ClassMeeting>,
+pub struct Section {
+    pub sec_code: String,
+    pub instructors: Vec<String>,
+    pub class_meetings: Vec<ClassMeeting>,
 }
 
 /// An instance of a class meeting for a given course and section. An example
@@ -71,7 +71,7 @@ pub(crate) struct Section {
 ///         location,
 ///     })`
 #[derive(Debug, Serialize, Deserialize)]
-pub(crate) enum ClassMeeting {
+pub enum ClassMeeting {
     Unspecified,
     OnlineAsync,
     OnlineSync(Option<Classtime>),
@@ -81,9 +81,9 @@ pub(crate) enum ClassMeeting {
 /// Represents part or all of a class meeting in person at a given
 /// `classtime` and `location`.
 #[derive(Debug, Serialize, Deserialize)]
-pub(crate) struct InPersonClass {
-    pub(crate) classtime: Option<Classtime>,
-    pub(crate) location: Option<ClassLocation>,
+pub struct InPersonClass {
+    pub classtime: Option<Classtime>,
+    pub location: Option<ClassLocation>,
 }
 
 /// The days and times of a certain class meeting
@@ -97,7 +97,7 @@ pub struct Classtime {
 /// The days of a class meeting
 #[allow(clippy::upper_case_acronyms)]
 #[derive(Debug, Serialize, Deserialize)]
-pub(crate) enum ClassDays {
+pub enum ClassDays {
     M,
     Tu,
     W,
@@ -115,12 +115,16 @@ pub(crate) enum ClassDays {
     MTu,
     MTuThF,
     MTuWTh,
+    TuF,
+    TuWTh,
+    WTh,
+    MWTh,
 }
 
 impl Classtime {
     /// Create a new `Classtime` from `days` (a `String` of the days a class
     /// meets, such as "MWF"), and the `start` and `end` times.
-    pub(crate) fn new(days: String, start_time: Time, end_time: Time) -> Self {
+    pub fn new(days: String, start_time: Time, end_time: Time) -> Self {
         let days = match days.as_str() {
             "M" => ClassDays::M,
             "Tu" => ClassDays::Tu,
@@ -139,6 +143,10 @@ impl Classtime {
             "MTu" => ClassDays::MTu,
             "MTuThF" => ClassDays::MTuThF,
             "MTuWTh" => ClassDays::MTuWTh,
+            "TuF" => ClassDays::TuF,
+            "TuWTh" => ClassDays::TuWTh,
+            "WTh" => ClassDays::WTh,
+            "MWTh" => ClassDays::MWTh,
             &_ => panic!("Did not recognize days pattern {}", days),
         };
         Classtime {
@@ -151,19 +159,19 @@ impl Classtime {
 
 /// Denotes a time as being `Am` or `Pm`
 #[derive(Debug, Serialize, Deserialize)]
-pub(crate) enum AmPm {
+pub enum AmPm {
     Am,
     Pm,
 }
 
 /// An hour, minute, and marker for Am or Pm in 12 hour time.
 #[derive(Debug, Serialize, Deserialize)]
-pub(crate) struct Time(u8, u8, AmPm);
+pub struct Time(u8, u8, AmPm);
 
 impl Time {
     /// Given a `string` of time with hours, minutes, and am or pm,
     /// (ex. "12:30pm", "8:00am", etc.), parse and create a new `Time`.
-    pub(crate) fn from_string(string: &str) -> Self {
+    pub fn from_string(string: &str) -> Self {
         let re = Regex::new(r"([0-9]+):([0-9]+)(am|pm)").unwrap();
         let matches = re.captures(string).unwrap();
         let hour: u8 = matches.get(1).unwrap().as_str().parse().unwrap();
@@ -181,13 +189,12 @@ impl Time {
 /// code and room number. For example, ESJ 1215 would be
 /// `ClassLocation(String::from("ESJ"), String::from("1215"))`.
 #[derive(Debug, Serialize, Deserialize)]
-pub(crate) struct ClassLocation(pub(crate) String, pub(crate) String);
+pub struct ClassLocation(pub String, pub String);
 
 /// The response of a request to PlanetTerp to get an instructor, parsed into
 /// a Rust struct. Such a request will return a JSON-format array of
 /// instructors in the following format:
-/// ```
-/// [
+/// `[
 ///     {
 ///         "name": "Jon Snow",
 ///         "slug": "snow",
@@ -195,10 +202,9 @@ pub(crate) struct ClassLocation(pub(crate) String, pub(crate) String);
 ///         "courses": [ * some courses * ],
 ///         "average_rating": 4.125
 ///     }
-/// ]
-/// ```
+/// ]`
 #[derive(Debug, Serialize, Deserialize)]
-pub(crate) struct PlanetTerpProfessor {
+pub struct PlanetTerpProfessor {
     name: String,
     slug: String,
     #[serde(rename = "type")]
@@ -209,7 +215,7 @@ pub(crate) struct PlanetTerpProfessor {
 
 impl PlanetTerpProfessor {
     /// Reduce the data of a PlanetTerpProfessor to create a minimal version.
-    pub(crate) fn minimize(self) -> Professor {
+    pub fn minimize(self) -> Professor {
         Professor {
             name: self.name,
             slug: self.slug,
@@ -221,7 +227,7 @@ impl PlanetTerpProfessor {
 /// Jupiterp doesn't need all the instructor data returned by PlanetTerp; this
 /// struct contains only the minimal data needed and used by Jupiterp.
 #[derive(Debug, Serialize, Deserialize)]
-pub(crate) struct Professor {
+pub struct Professor {
     name: String,
     slug: String,
     average_rating: Option<f32>,

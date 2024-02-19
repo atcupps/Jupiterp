@@ -128,45 +128,34 @@ function addMeetings(schedule: Schedule, meeting: ClassMeetingExtended,
  * @returns An array of `Day`s matching `days`.
  */
 function parseDays(days: string): Day[] {
-    switch (days) {
-        case 'M':
-            return [Day.Monday];
-        case 'Tu':
-            return [Day.Tuesday];
-        case 'W':
-            return [Day.Wednesday];
-        case 'Th':
-            return [Day.Thursday];
-        case 'F':
-            return [Day.Friday];
-        case 'MWF':
-            return [Day.Monday, Day.Wednesday, Day.Friday];
-        case 'MW':
-            return [Day.Monday, Day.Wednesday];
-        case 'WF':
-            return [Day.Wednesday, Day.Friday];
-        case 'TuTh':
-            return [Day.Tuesday, Day.Thursday];
-        case 'MTuWThF':
-            return [Day.Monday, Day.Tuesday, Day.Wednesday, 
-                                        Day.Thursday, Day.Friday];
-        case 'MF':
-            return [Day.Monday, Day.Friday];
-        case 'Sa':
-            return [Day.Other];
-        case 'Su':
-            return [Day.Other];
-        case 'SaSu':
-            return [Day.Other];
-        case 'MTu':
-            return [Day.Monday, Day.Tuesday];
-        case 'MTuThF':
-            return [Day.Monday, Day.Tuesday, Day.Thursday, Day.Friday];
-        case 'MTuWTh':
-            return [Day.Monday, Day.Tuesday, Day.Wednesday, Day.Thursday];
-        default:
-            throw Error('Unknown Day code: ' + days);
+    const result: Day[] = [];
+    for (let i = 0; i < days.length; i++) {
+        switch (days[i]) {
+            case 'M':
+                result.push(Day.Monday);
+                break;
+            case 'T':
+                if (days[i + 1] === 'u') {
+                    result.push(Day.Tuesday);
+                    i++;
+                } else if (days[i + 1] === 'h') {
+                    result.push(Day.Thursday);
+                    i++;
+                } else {
+                    throw Error('Invalid day code: ' + days);
+                }
+                break;
+            case 'W':
+                result.push(Day.Wednesday);
+                break;
+            case 'F':
+                result.push(Day.Friday);
+                break;
+            default:
+                throw Error('Invalid day code: ' + days);
+        }
     }
+    return result;
 }
 
 /**
