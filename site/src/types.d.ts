@@ -66,6 +66,7 @@ interface ScheduleSelection {
     hover: boolean,
     differences: string[],
     credits: number,
+    course: Course,
 }
 
 interface ClassMeetingExtended {

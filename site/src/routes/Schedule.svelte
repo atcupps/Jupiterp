@@ -10,6 +10,7 @@ Copyright (C) 2024 Andrew Cupps
     } from './schedule';
     import ScheduleDay from './ScheduleDay.svelte';
     import ScheduleBackground from './ScheduleBackground.svelte';
+    import { getCourseLookup } from './courseSearch';
 
     export let hoveredSection: ScheduleSelection | null;
     export let selections: ScheduleSelection[] = [];
@@ -44,6 +45,20 @@ Copyright (C) 2024 Andrew Cupps
             }
         }
     }
+
+    let showCourseInfo: string | null = null;
+    let courseInfoCourse: Course | null = null;
+    $: if (showCourseInfo !== null) {
+        let index = selections.findIndex(selection => {
+            return selection.courseCode === showCourseInfo;
+        });
+        if (index === -1) {
+            throw Error('Clicked course not found in selections');
+        } else {
+            courseInfoCourse = selections[index].course;
+            console.log(courseInfoCourse);
+        }
+    }
 </script>
 
 <div class='h-full w-full flex flex-row px-2 font-medium overflow-x-scroll
@@ -66,33 +81,45 @@ Copyright (C) 2024 Andrew Cupps
             bind:selections={selections}
             bind:earliestClassStart
             bind:latestClassEnd 
-            bind:bgHeight/>
+            bind:bgHeight
+            bind:showCourseInfo />
         <ScheduleDay name='Tue' classes={schedule.tuesday}
         bind:selections={selections}
             bind:earliestClassStart
             bind:latestClassEnd  
-            bind:bgHeight/>
+            bind:bgHeight
+            bind:showCourseInfo />
         <ScheduleDay name='Wed' classes={schedule.wednesday}
             bind:selections={selections}
             bind:earliestClassStart
             bind:latestClassEnd  
-            bind:bgHeight/>
+            bind:bgHeight
+            bind:showCourseInfo />
         <ScheduleDay name='Thu' classes={schedule.thursday}
             bind:selections={selections}
             bind:earliestClassStart
             bind:latestClassEnd  
-            bind:bgHeight/>
+            bind:bgHeight
+            bind:showCourseInfo />
         <ScheduleDay name='Fri' classes={schedule.friday}
             bind:selections={selections}
             bind:earliestClassStart
             bind:latestClassEnd  
-            bind:bgHeight/>
+            bind:bgHeight
+            bind:showCourseInfo />
 
         <!-- 'Other' classes (OnlineAsync, Unspecified) -->
         {#if schedule.other.length > 0}
             <ScheduleDay name='Other' classes={schedule.other} type='Other'
                 {bgHeight}
-            bind:selections={selections}/>
+            bind:selections={selections}
+            bind:showCourseInfo />
         {/if}
     </div>
+
+    {#if showCourseInfo !== null && courseInfoCourse !== null}
+        <div class='absolute w-full h-[4rem] bottom-0 z-10'>
+            {courseInfoCourse.code}
+        </div>
+    {/if}
 </div>

@@ -47,7 +47,8 @@ Copyright (C) 2024 Andrew Cupps
         {#each course.sections as section}
             <SectionListing courseCode={course.code} profs={profs} 
                 section={section} bind:selectionsList={selections} 
-                        bind:hoveredSection minCredits={getMinCredits(course.credits)} />
+                        bind:hoveredSection course={course}
+                        minCredits={getMinCredits(course.credits)} />
         {/each}
     {:else}
         No sections
