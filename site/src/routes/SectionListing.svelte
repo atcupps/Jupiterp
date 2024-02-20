@@ -13,12 +13,14 @@ Copyright (C) 2024 Andrew Cupps
     export let profs: Record<string, Professor>;
     export let hoveredSection: ScheduleSelection | null;
     export let selectionsList: ScheduleSelection[] = [];
+    export let minCredits: number;
 
     let newSelection: ScheduleSelection = {
         courseCode,
         section,
         hover: false,
-        differences: []
+        differences: [],
+        credits: minCredits
     };
     let sectionAdded: boolean;
     $: if (selectionsList && hoveredSection) {
@@ -29,7 +31,8 @@ Copyright (C) 2024 Andrew Cupps
         courseCode,
         section,
         hover: true,
-        differences: []
+        differences: [],
+        credits: minCredits
     }
 
     // In order for Svelte's reactivity to work properly, `selectionsList`

@@ -12,6 +12,14 @@ Copyright (C) 2024 Andrew Cupps
     export let profs: Record<string, Professor>;
     export let hoveredSection: ScheduleSelection | null;
     export let selections: ScheduleSelection[];
+
+    function getMinCredits(credits: CreditCount): number {
+        if ('Amount' in credits) {
+            return credits.Amount
+        } else {
+            return credits.Range[0];
+        }
+    }
 </script>
 
 <div class='px-2 my-2 bg-bgSecondaryLight dark:bg-bgSecondaryDark 
@@ -39,7 +47,7 @@ Copyright (C) 2024 Andrew Cupps
         {#each course.sections as section}
             <SectionListing courseCode={course.code} profs={profs} 
                 section={section} bind:selectionsList={selections} 
-                                                bind:hoveredSection />
+                        bind:hoveredSection minCredits={getMinCredits(course.credits)} />
         {/each}
     {:else}
         No sections

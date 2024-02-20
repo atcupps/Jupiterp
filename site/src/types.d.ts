@@ -21,7 +21,7 @@ interface Department {
 interface Course {
     code: string,
     name: string,
-    credits: CreditAmount,
+    credits: CreditCount,
     gen_eds: string[] | null,
     description: string,
     sections: Section[] | null
@@ -64,7 +64,8 @@ interface ScheduleSelection {
     courseCode: string,
     section: Section,
     hover: boolean,
-    differences: string[]
+    differences: string[],
+    credits: number,
 }
 
 interface ClassMeetingExtended {

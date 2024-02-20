@@ -5,7 +5,9 @@ https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2024 Andrew Cupps
 -->
 <script lang="ts">
-    import { getClasstimeBounds, schedulify } from './schedule';
+    import { 
+        getClasstimeBounds, schedulify, appendHoveredSection 
+    } from './schedule';
     import ScheduleDay from './ScheduleDay.svelte';
     import ScheduleBackground from './ScheduleBackground.svelte';
 
@@ -15,15 +17,6 @@ Copyright (C) 2024 Andrew Cupps
     let schedule: Schedule = schedulify(
         appendHoveredSection(selections, hoveredSection)
     );
-
-    function appendHoveredSection(selections: ScheduleSelection[], 
-            hoveredSection: ScheduleSelection | null): ScheduleSelection[] {
-        if (hoveredSection) {
-            return [...selections, hoveredSection];
-        } else {
-            return selections;
-        }
-    }
 
     let bgHeight: number;
 
