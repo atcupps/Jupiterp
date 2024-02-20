@@ -13,6 +13,7 @@ Copyright (C) 2024 Andrew Cupps
         searchCourses 
     } from "./courseSearch";
 
+    export let hoveredSection: ScheduleSelection | null;
     export let selections: ScheduleSelection[];
 
     // Load profs and depts data
@@ -40,6 +41,18 @@ Copyright (C) 2024 Andrew Cupps
 
     // Boolean for toggling search menu on smaller screens
     export let courseSearchSelected: boolean = false;
+
+    $: {
+        if (hoveredSection) {
+            let index = searchResults.findIndex(course => {
+                return hoveredSection && 
+                            course.code === hoveredSection.courseCode;
+            });
+            if (index === -1) {
+                hoveredSection = null;
+            }
+        }
+    }
 </script>
 
 <!-- Layer to exit course search if user taps on the Schedule -->
@@ -77,7 +90,7 @@ Copyright (C) 2024 Andrew Cupps
                 px-1 lg:pr-1 lg:pl-0'>
         {#each searchResults as courseMatch (courseMatch.code)}
             <CourseListing course={courseMatch} profs={profsLookup}
-                    bind:selections={selections}/>
+                    bind:selections={selections} bind:hoveredSection />
         {/each}
     </div>
 </div>

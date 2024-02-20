@@ -10,6 +10,7 @@ Copyright (C) 2024 Andrew Cupps
 
     export let course: Course;
     export let profs: Record<string, Professor>;
+    export let hoveredSection: ScheduleSelection | null;
     export let selections: ScheduleSelection[];
 </script>
 
@@ -36,8 +37,9 @@ Copyright (C) 2024 Andrew Cupps
     <!-- Sections -->
     {#if course.sections != null}
         {#each course.sections as section}
-            <SectionListing courseCode={course.code} profs={profs}
-                section={section} bind:selectionsList={selections} />
+            <SectionListing courseCode={course.code} profs={profs} 
+                section={section} bind:selectionsList={selections} 
+                                                bind:hoveredSection />
         {/each}
     {:else}
         No sections

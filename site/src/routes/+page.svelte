@@ -14,6 +14,7 @@ Copyright (C) 2024 Andrew Cupps
     export let data;
 
     // Keep track of chosen sections
+    let hoveredSection: ScheduleSelection | null = null;
     let selectedSections: ScheduleSelection[];
 
     // Retreive `selectedSections` from client local storage
@@ -71,6 +72,6 @@ Copyright (C) 2024 Andrew Cupps
             text-textLight dark:text-textDark lg:px-8
             top-[3rem] lg:top-[3.5rem] xl:top-[4rem] bottom-0'>
     <CourseSearch bind:selections={selectedSections} data={data}
-                    bind:courseSearchSelected />
-    <Schedule bind:selections={selectedSections}/>
+                    bind:courseSearchSelected bind:hoveredSection />
+    <Schedule bind:selections={selectedSections} bind:hoveredSection />
 </div>

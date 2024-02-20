@@ -9,15 +9,20 @@ Copyright (C) 2024 Andrew Cupps
     import ScheduleDay from './ScheduleDay.svelte';
     import ScheduleBackground from './ScheduleBackground.svelte';
 
+    export let hoveredSection: ScheduleSelection | null;
     export let selections: ScheduleSelection[] = [];
 
-    let schedule: Schedule = schedulify(selections);
+    let schedule: Schedule = schedulify(
+        appendHoveredSection(selections, hoveredSection)
+    );
 
-    // In order for Svelte to recreate `schedule` reactively as the user
-    // selects new classes, this if block is needed to run `schedulify`
-    // if `selections` changes.
-    $: if (selections) {
-        schedule = schedulify(selections);
+    function appendHoveredSection(selections: ScheduleSelection[], 
+            hoveredSection: ScheduleSelection | null): ScheduleSelection[] {
+        if (hoveredSection) {
+            return [...selections, hoveredSection];
+        } else {
+            return selections;
+        }
     }
 
     let bgHeight: number;
@@ -25,8 +30,14 @@ Copyright (C) 2024 Andrew Cupps
     // Keep track of the range of times to display on the Schedule
     let earliestClassStart: number = 8;
     let latestClassEnd: number = 16;
-    $: if (selections) {
-        if (selections.length === 0) {
+
+    // In order for Svelte to recreate `schedule` reactively as the user
+    // selects new classes, this if block is needed to run `schedulify`
+    // if `selections` changes.
+    $: if (selections || hoveredSection) {
+        const selectionsWithHovered = appendHoveredSection(selections, hoveredSection);
+        schedule = schedulify(selectionsWithHovered);
+        if (selectionsWithHovered.length === 0) {
             earliestClassStart = 8;
             latestClassEnd = 16;
         } else {
