@@ -76,7 +76,7 @@ Copyright (C) 2024 Andrew Cupps
         }
     }
 
-    let elt: HTMLDivElement;
+    let elt: HTMLButtonElement;
     let innerHeight: number;
     let h: number;
     $: if (elt || innerHeight) {
@@ -109,13 +109,28 @@ Copyright (C) 2024 Andrew Cupps
         return s.courseCode === meeting.course &&
             s.section.sec_code === secCode;
     }
+
+    export let showCourseInfo: string | null;
+    export let showSectionInfo: string | null;
+
+    function toggleCourseInfo() {
+        if (showCourseInfo !== null 
+                    && showCourseInfo === meeting.course
+                    && showSectionInfo === meeting.secCode) {
+            showCourseInfo = null;
+        } else {
+            showCourseInfo = meeting.course;
+            showSectionInfo = meeting.secCode;
+        }
+    }
     
 </script>
 
 <svelte:window bind:innerHeight />
 
-<div class='absolute w-full text-center text-black flex flex-col rounded-lg pb-1'
-        bind:this={elt} 
+<button class='absolute w-full justify-center text-black 
+                flex flex-col rounded-lg pb-1 justify-items-center'
+        bind:this={elt} on:click={toggleCourseInfo}
         style=' top: {(decStartTime - earliestClassStart) / boundDiff * 100}%;
                 height: {(decEndTime - decStartTime) / boundDiff * 100}%;
                 background-color: {getColorFromNumber(meeting.colorNumber)};
@@ -145,7 +160,7 @@ Copyright (C) 2024 Andrew Cupps
             {meeting.course}
         </div>
     {/if}
-    <div class='grow font-thin 2xl:font-normal text-xs font-sans px-2'>
+    <div class='w-full grow font-thin 2xl:font-normal text-xs font-sans px-2'>
         {#if h - (24 * fontSize) > (64 * fontSize) || isInOther}
             <div class='truncate static'  
                             class:underline={instructorsChange}
@@ -197,7 +212,7 @@ Copyright (C) 2024 Andrew Cupps
             </div>
         {/if}
     </div>
-</div>
+</button>
 
 <style>
     .courseCode {

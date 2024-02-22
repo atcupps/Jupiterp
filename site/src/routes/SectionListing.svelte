@@ -11,16 +11,21 @@ Copyright (C) 2024 Andrew Cupps
     export let courseCode: string;
     export let section: Section;
     export let profs: Record<string, Professor>;
+    export let hoveredSection: ScheduleSelection | null;
     export let selectionsList: ScheduleSelection[] = [];
+    export let minCredits: number;
+    export let course: Course;
 
     let newSelection: ScheduleSelection = {
         courseCode,
         section,
         hover: false,
-        differences: []
+        differences: [],
+        credits: minCredits,
+        course,
     };
     let sectionAdded: boolean;
-    $: if (selectionsList) {
+    $: if (selectionsList && hoveredSection) {
         sectionAdded = selectionsList.some(obj => selectionEquals(obj));
     } 
     
@@ -28,7 +33,9 @@ Copyright (C) 2024 Andrew Cupps
         courseCode,
         section,
         hover: true,
-        differences: []
+        differences: [],
+        credits: minCredits,
+        course,
     }
 
     // In order for Svelte's reactivity to work properly, `selectionsList`
@@ -53,29 +60,17 @@ Copyright (C) 2024 Andrew Cupps
 
     function addHoverSection() {
         if (!sectionAdded) {
-            selectionsList = [...selectionsList, hoverSection];
+            hoveredSection = hoverSection;
         }
     }
 
     function removeHoverSection() {
-        const index = selectionsList.findIndex(obj =>
-                        hoverSectionEquals(obj));
-        if (index !== -1) {
-            selectionsList = [
-                ...selectionsList.slice(0, index),
-                ...selectionsList.slice(index + 1)
-            ]
-        }
+        hoveredSection = null;
     }
 
     function selectionEquals(s: ScheduleSelection): boolean {
         return s.courseCode === courseCode && 
             s.section.sec_code === section.sec_code && !s.hover;
-    }
-
-    function hoverSectionEquals(s: ScheduleSelection): boolean {
-        return s.courseCode === courseCode &&
-            s.section.sec_code === section.sec_code && s.hover;
     }
 
     let profsHover: boolean = false;
@@ -91,6 +86,7 @@ Copyright (C) 2024 Andrew Cupps
                 {sectionAdded ? 'bg-hoverLight dark:bg-hoverDark' : ''}'
             class:hover:bg-hoverLight={!profsHover}
             class:hover:dark:bg-hoverDark={!profsHover}
+        title='Add course to schedule'
                 >
     <!-- Section code -->
     <div class='text-secCodesLight dark:text-secCodesDark font-semibold 

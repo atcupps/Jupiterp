@@ -10,7 +10,16 @@ Copyright (C) 2024 Andrew Cupps
 
     export let course: Course;
     export let profs: Record<string, Professor>;
+    export let hoveredSection: ScheduleSelection | null;
     export let selections: ScheduleSelection[];
+
+    function getMinCredits(credits: CreditCount): number {
+        if ('Amount' in credits) {
+            return credits.Amount
+        } else {
+            return credits.Range[0];
+        }
+    }
 </script>
 
 <div class='px-2 my-2 bg-bgSecondaryLight dark:bg-bgSecondaryDark 
@@ -36,8 +45,10 @@ Copyright (C) 2024 Andrew Cupps
     <!-- Sections -->
     {#if course.sections != null}
         {#each course.sections as section}
-            <SectionListing courseCode={course.code} profs={profs}
-                section={section} bind:selectionsList={selections} />
+            <SectionListing courseCode={course.code} profs={profs} 
+                section={section} bind:selectionsList={selections} 
+                        bind:hoveredSection course={course}
+                        minCredits={getMinCredits(course.credits)} />
         {/each}
     {:else}
         No sections

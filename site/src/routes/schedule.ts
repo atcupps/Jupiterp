@@ -314,3 +314,18 @@ function getClassEndTime(meeting: ClassMeetingExtended): number {
         }
     }
 }
+
+/**
+ * Append a `hoveredSection` to `selections` if it is not `null`.
+ * @param selections An array of `ScheduleSelection`s
+ * @param hoveredSection A `ScheduleSelection` or `null`
+ * @returns `selections`, with `hoveredSection` appended if it is not `null`.
+ */
+export function appendHoveredSection(selections: ScheduleSelection[], 
+    hoveredSection: ScheduleSelection | null): ScheduleSelection[] {
+if (hoveredSection) {
+    return [...selections, hoveredSection];
+} else {
+    return selections;
+}
+}

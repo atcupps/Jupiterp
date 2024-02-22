@@ -12,7 +12,9 @@ Copyright (C) 2024 Andrew Cupps
         getProfsLookup, 
         searchCourses 
     } from "./courseSearch";
+    import { appendHoveredSection } from "./schedule";
 
+    export let hoveredSection: ScheduleSelection | null;
     export let selections: ScheduleSelection[];
 
     // Load profs and depts data
@@ -40,6 +42,28 @@ Copyright (C) 2024 Andrew Cupps
 
     // Boolean for toggling search menu on smaller screens
     export let courseSearchSelected: boolean = false;
+
+    $: {
+        if (hoveredSection) {
+            let index = searchResults.findIndex(course => {
+                return hoveredSection && 
+                            course.code === hoveredSection.courseCode;
+            });
+            if (index === -1) {
+                hoveredSection = null;
+            }
+        }
+    }
+
+    let totalCredits: number = 0;
+    $: if (selections || hoveredSection) {
+        totalCredits = 0;
+        let selectionsWithHovered = 
+                appendHoveredSection(selections, hoveredSection);
+        selectionsWithHovered.forEach((selection) => {
+            totalCredits += selection.credits;
+        })
+    }
 </script>
 
 <!-- Layer to exit course search if user taps on the Schedule -->
@@ -64,20 +88,28 @@ Copyright (C) 2024 Andrew Cupps
                             transition-transform duration-300'
         class:course-search-transition={!courseSearchSelected}
         class:shadow-lg={courseSearchSelected}>
-    <div class='w-full border-solid border-b-2 px-1 lg:px-0
+    <div class='flex flex-col w-full border-solid border-b-2 px-1 lg:px-0
                             border-divBorderLight dark:border-divBorderDark'>
         <input type='text' bind:value={searchInput} on:input={handleInput}
             placeholder='Search course codes, ex: "THET285"'
             class="border-solid border-2 border-outlineLight 
-                            dark:border-outlineDark  rounded-lg
-                            bg-transparent px-2 mb-2 w-full
+                            dark:border-outlineDark rounded-lg
+                            bg-transparent px-2 w-full
                             placeholder:text-sm">
+        <div class='flex flex-row text-xs 2xl:text-sm p-1'>
+            <div>
+                Fall 2024
+            </div>
+            <div class='grow text-right'>
+                Credits: {totalCredits}
+            </div>
+        </div>
     </div>
     <div class='grow courses-list overflow-y-scroll overflow-x-none
                 px-1 lg:pr-1 lg:pl-0'>
         {#each searchResults as courseMatch (courseMatch.code)}
             <CourseListing course={courseMatch} profs={profsLookup}
-                    bind:selections={selections}/>
+                    bind:selections={selections} bind:hoveredSection />
         {/each}
     </div>
 </div>
