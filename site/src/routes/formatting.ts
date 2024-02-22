@@ -94,6 +94,19 @@ export function formatLocation(location: string[]): string {
     return location[0] + ' ' + location[1]
 }
 
+/**
+ * Formats `instructors` as a single `string`
+ * @param instructors An array of `string`s, each representing an instructor
+ * @returns Instructors formatted as a single `string`
+ */
 export function formatInstructors(instructors: string[]): string {
     return instructors.join(', ');
+}
+
+/**
+ * Generates a link to the UMD Testudo page for a given course code
+ * @param courseCode The course code for which to generate a link
+ */
+export function testudoLink(courseCode: string): string {
+    return 'https://app.testudo.umd.edu/soc/search?courseId=' + courseCode + '&sectionId=&termId=202408&_openSectionsOnly=on&creditCompare=%3E%3D&credits=0.0&courseLevelFilter=ALL&instructor=&_facetoface=on&_blended=on&_online=on&courseStartCompare=&courseStartHour=&courseStartMin=&courseStartAM=&courseEndHour=&courseEndMin=&courseEndAM=&teachingCenter=ALL&_classDay1=on&_classDay2=on&_classDay3=on&_classDay4=on&_classDay5=on'
 }

@@ -111,12 +111,16 @@ Copyright (C) 2024 Andrew Cupps
     }
 
     export let showCourseInfo: string | null;
+    export let showSectionInfo: string | null;
 
     function toggleCourseInfo() {
-        if (showCourseInfo !== null || showCourseInfo === meeting.course) {
+        if (showCourseInfo !== null 
+                    && showCourseInfo === meeting.course
+                    && showSectionInfo === meeting.secCode) {
             showCourseInfo = null;
         } else {
             showCourseInfo = meeting.course;
+            showSectionInfo = meeting.secCode;
         }
     }
     

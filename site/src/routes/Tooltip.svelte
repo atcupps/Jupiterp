@@ -10,7 +10,6 @@ Copyright (C) 2024 Andrew Cupps
     let tooltipVisible = false;
 </script>
 
-
 <!-- Ignoring a11y features in Tooltips for now because they are not
     used in any meaningfully important functional way. This might be
     improved in the future with TODO(#29): Ensure accessibility features -->
