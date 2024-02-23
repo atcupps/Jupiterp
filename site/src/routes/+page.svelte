@@ -28,7 +28,8 @@ Copyright (C) 2024 Andrew Cupps
                     selectedSections = [];
                 }
             }
-        } catch {
+        } catch (e) {
+            console.log('Unable to retrieve courses: ' + e);
             selectedSections = [];
         }
     });

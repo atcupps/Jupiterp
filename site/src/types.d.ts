@@ -60,6 +60,7 @@ interface JupiterpData {
     departments: Department[]
 }
 
+// Any changes to `ScheduleSelection` need to be typechecked in `courseLoad.ts`
 interface ScheduleSelection {
     courseCode: string,
     section: Section,
