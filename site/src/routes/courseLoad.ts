@@ -21,6 +21,7 @@ export function retrieveCourses(selections: ScheduleSelection[],
                                     depts: Department[]): ScheduleSelection[] {
     const result: ScheduleSelection[] = [];
     selections.forEach((selection) => {
+        typeCheckScheduleSelection(selection);
         const deptName = selection.courseCode.slice(0, 4);
         const dept = depts.find(department => department.name === deptName);
         if (dept) {
@@ -115,4 +116,31 @@ export function retrieveCourses(selections: ScheduleSelection[],
         }
     });
     return result;
+}
+
+/**
+ * This function is used to check the type of a `ScheduleSelection` to
+ * ensure that it is correct. This is used to ensure that the `retrieveCourses`
+ * function is working correctly. Otherwise, it will throw an error.
+ * @param selection The `ScheduleSelection` to check
+ */
+function typeCheckScheduleSelection(selection: ScheduleSelection) {
+    if (selection.courseCode === undefined) {
+        throw new Error('Course code is undefined');
+    }
+    if (selection.section === undefined) {
+        throw new Error('Section is undefined');
+    }
+    if (selection.hover === undefined) {
+        throw new Error('Hover is undefined');
+    }
+    if (selection.differences === undefined) {
+        throw new Error('Differences is undefined');
+    }
+    if (selection.credits === undefined) {
+        throw new Error('Credits is undefined');
+    }
+    if (selection.course === undefined) {
+        throw new Error('Course is undefined');
+    }
 }
