@@ -12,15 +12,14 @@ Copyright (C) 2024 Andrew Cupps
     let siteLinksSelected: boolean = false;
 
     $: currentPage = $page.url.pathname;
-    $: if (currentPage) {
-        console.log(currentPage == '/');
-    }
 </script>
 
 <!-- For larger screens -->
 <div class='grow justify-end self-center hidden lg:flex'>
     <NavBarElement link='./' text='Course Planner'
                                         isOnPage={currentPage == '/'}/>
+    <NavBarElement link='./bugs' text='Report an Issue' 
+                                        isOnPage={currentPage == '/bugs'}/>
     <NavBarElement link='./about' text='About' 
                                         isOnPage={currentPage == '/about'}/>
     <NavBarElement link='https://github.com/atcupps/Jupiterp'
@@ -63,6 +62,9 @@ Copyright (C) 2024 Andrew Cupps
         class:shadow-lg={siteLinksSelected}>
     <div class='w-full my-2 text-lg'>
         <NavBarElement link='./' text='Course Planner' fullWidth={true}/>
+    </div>
+    <div class='w-full my-2 text-lg'>
+        <NavBarElement link='./bugs' text='Report an Issue' fullWidth={true}/>
     </div>
     <div class='w-full my-2 text-lg'>
         <NavBarElement link='./about' text='About'  fullWidth={true}/>

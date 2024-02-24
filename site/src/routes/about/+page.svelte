@@ -19,16 +19,18 @@ Copyright (C) 2024 Andrew Cupps
         About Jupiterp
     </h1>
     <p class={pClasses}>
-        Jupiterp is a website built to help students plan their schedules and
-        make informed decisions about their course and section selections.
-        Jupiterp provides a course planner that allows students to search for
-        courses, see sections complete with instructor reviews from
+        Jupiterp is a website built to help students at the University of
+        Maryland plan their schedules and make informed decisions about their 
+        course and section selections. Jupiterp provides a course planner that 
+        allows students to search for courses, see sections complete with 
+        instructor reviews from
         <a href='https://planetterp.com' target='_blank'
             class='text-orange underline'>PlanetTerp</a>, and
-        visualize their course schedule. Jupiterp aims to do this with several
-        small user-interface and quality changes that improve the student
-        experience relative to existing alternatives. Additionally, Jupiterp is
-        completely open-source, allowing students to improve a tool they use.
+        visualize their course schedule. Unlike other course planners, Jupiterp
+        is built specifically by and for students at UMD, because we know that
+        students here know best what they need; that's why Jupiterp is also
+        completely open-source, so that students can contribute to the project
+        and make it better for both themselves and everyone else.
     </p>
     <p class={pClasses}>
         Jupiterp is currently in beta phase - there may be issues. We are
@@ -36,6 +38,18 @@ Copyright (C) 2024 Andrew Cupps
         something wrong on our site, please report it as an issue
         <a href='https://github.com/atcupps/Jupiterp/issues' target='_blank'
             class='text-orange underline'>here</a>.
+    </p>
+    <h2 class={h2Classes}>
+        Professor Ratings
+    </h2>
+    <p class={pClasses}>
+        Stars next to a professor's name indicate their average rating as shown
+        on PlanetTerp. These ratings are based on anonymous student reviews and
+        can vary in accuracy and reliability. Reviews are subjective and may
+        not be representative of the professor's ability to teach or the
+        average student experience in their class. We encourage students to
+        visit PlanetTerp and read reviews to get a better understanding of a
+        professor's teaching style and the student experience in their classes.
     </p>
     <h2 class={h2Classes}>
         Open-Source
@@ -73,7 +87,7 @@ Copyright (C) 2024 Andrew Cupps
                             target='_blank' class='text-orange underline'>
                 Alan Liu
             </a>
-            <i class='text-sm'> - Developer</i>
+            <i class='text-sm'> - Member</i>
         </li>
     </ul>
     <h2 class={h2Classes}>
