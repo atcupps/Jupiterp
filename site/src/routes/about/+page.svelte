@@ -87,7 +87,7 @@ Copyright (C) 2024 Andrew Cupps
                             target='_blank' class='text-orange underline'>
                 Alan Liu
             </a>
-            <i class='text-sm'> - Developer</i>
+            <i class='text-sm'> - Member</i>
         </li>
     </ul>
     <h2 class={h2Classes}>
