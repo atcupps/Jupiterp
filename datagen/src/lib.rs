@@ -52,7 +52,7 @@ pub fn depts_courses_datagen(term: &String) -> Result<(), Box<dyn Error>> {
 
     // Use serde_json to write data to appropriate dept. files
     let mut dept_courses_file = File::create("data/departments.json")?;
-    let dept_course_json_string = serde_json::to_string_pretty(&full_depts_data)
+    let dept_course_json_string = serde_json::to_string(&full_depts_data)
         .unwrap_or_else(|_| panic!("Failed to serialize {:#?} to JSON", full_depts_data));
     dept_courses_file.write_all(dept_course_json_string.as_bytes())?;
 
@@ -498,7 +498,7 @@ pub fn instructors_datagen() -> Result<(), Box<dyn Error>> {
 
     // Use serde_json to write data to instructors.json
     let mut instructors_file = File::create("data/instructors.json")?;
-    let instructors_json_string = serde_json::to_string_pretty(&professors)
+    let instructors_json_string = serde_json::to_string(&professors)
         .unwrap_or_else(|_| panic!("Failed to serialize {:#?} to JSON", professors));
     instructors_file.write_all(instructors_json_string.as_bytes())?;
 
