@@ -5,7 +5,7 @@ https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2024 Andrew Cupps
 -->
 <script lang='ts'>
-    import { ptLinkFromSlug } from "../../../lib/Professors";
+    import { ptLinkFromSlug } from "../../../lib/course-planner/Professors";
 
     export let instructor: string = 'No instructor';
     export let profs: Record<string, Professor>;

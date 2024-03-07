@@ -8,7 +8,7 @@ Copyright (C) 2024 Andrew Cupps
     import Schedule from '../components/course-planner/schedule/Schedule.svelte';
     import CourseSearch from '../components/course-planner/course-search/CourseSearch.svelte';
     import { onMount } from 'svelte';
-    import { retrieveCourses } from '../lib/CourseLoad';
+    import { retrieveCourses } from '../lib/course-planner/CourseLoad';
 
     // Load data from `+page.ts`
     export let data;
