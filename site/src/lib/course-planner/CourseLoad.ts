@@ -20,6 +20,7 @@
 export function retrieveCourses(selections: ScheduleSelection[], 
                                     depts: Department[]): ScheduleSelection[] {
     const result: ScheduleSelection[] = [];
+    let colorNumber: number = 0;
     selections.forEach((selection) => {
         typeCheckScheduleSelection(selection);
         const deptName = selection.courseCode.slice(0, 4);
@@ -114,6 +115,8 @@ export function retrieveCourses(selections: ScheduleSelection[],
                 }
             }
         }
+        selection.colorNumber = colorNumber;
+        colorNumber++;
     });
     return result;
 }
