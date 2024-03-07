@@ -25,9 +25,9 @@ Copyright (C) 2024 Andrew Cupps
         course,
     };
     let sectionAdded: boolean;
-    $: if (selectionsList && hoveredSection) {
+    $: if (selectionsList || hoveredSection) {
         sectionAdded = selectionsList.some(obj => selectionEquals(obj));
-    } 
+    }
     
     let hoverSection: ScheduleSelection = {
         courseCode,
