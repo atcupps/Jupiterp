@@ -68,6 +68,7 @@ interface ScheduleSelection {
     differences: string[],
     credits: number,
     course: Course,
+    colorNumber: number,
 }
 
 interface ClassMeetingExtended {

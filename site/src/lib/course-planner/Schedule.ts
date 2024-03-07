@@ -35,9 +35,7 @@ export function schedulify(selections: ScheduleSelection[]): Schedule {
         friday: [],
         other: []
     };
-    let colorCounter = 0;
     selections.forEach((selection) => {
-        const colorNumber: number = colorCounter++;
         selection.section.class_meetings.forEach((meeting) => {
             const newMeeting: ClassMeetingExtended = {
                 course: selection.courseCode,
@@ -47,7 +45,7 @@ export function schedulify(selections: ScheduleSelection[]): Schedule {
                 conflictTotal: 1,
                 meeting,
                 hover: selection.hover,
-                colorNumber,
+                colorNumber: selection.colorNumber,
                 differences: selection.differences
             }
             if (typeof meeting === 'string') {

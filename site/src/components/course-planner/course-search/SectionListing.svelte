@@ -23,6 +23,7 @@ Copyright (C) 2024 Andrew Cupps
         differences: [],
         credits: minCredits,
         course,
+        colorNumber: -1,
     };
     let sectionAdded: boolean;
     $: if (selectionsList || hoveredSection) {
@@ -36,6 +37,7 @@ Copyright (C) 2024 Andrew Cupps
         differences: [],
         credits: minCredits,
         course,
+        colorNumber: -1,
     }
 
     // In order for Svelte's reactivity to work properly, `selectionsList`
@@ -43,6 +45,7 @@ Copyright (C) 2024 Andrew Cupps
     function addSectionToSchedule() {
         if (!sectionAdded) {
             removeHoverSection();
+            newSelection.colorNumber = firstAvailableColor(selectionsList);
             selectionsList = [...selectionsList, newSelection];
         } else {
             const index = selectionsList.findIndex(obj => 
@@ -60,6 +63,7 @@ Copyright (C) 2024 Andrew Cupps
 
     function addHoverSection() {
         if (!sectionAdded) {
+            hoverSection.colorNumber = firstAvailableColor(selectionsList);
             hoveredSection = hoverSection;
         }
     }
@@ -71,6 +75,19 @@ Copyright (C) 2024 Andrew Cupps
     function selectionEquals(s: ScheduleSelection): boolean {
         return s.courseCode === courseCode && 
             s.section.sec_code === section.sec_code && !s.hover;
+    }
+
+    function firstAvailableColor(selections: ScheduleSelection[]): number {
+        let unavailableColors: number[] = [];
+        selections.forEach((selection) => {
+            unavailableColors.push(selection.colorNumber);
+        });
+        unavailableColors.sort((a, b) => a - b);
+        let result: number = 0;
+        while (result < unavailableColors.length && unavailableColors[result] === result) {
+            result += 1;
+        }
+        return result;
     }
 
     let profsHover: boolean = false;
