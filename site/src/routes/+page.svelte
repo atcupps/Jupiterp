@@ -5,10 +5,10 @@ https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2024 Andrew Cupps
  -->
 <script lang="ts">
-    import Schedule from './Schedule.svelte';
-    import CourseSearch from './CourseSearch.svelte';
+    import Schedule from '../components/course-planner/schedule/Schedule.svelte';
+    import CourseSearch from '../components/course-planner/course-search/CourseSearch.svelte';
     import { onMount } from 'svelte';
-    import { retrieveCourses } from './courseLoad';
+    import { retrieveCourses } from '../lib/CourseLoad';
 
     // Load data from `+page.ts`
     export let data;

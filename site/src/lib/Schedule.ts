@@ -9,7 +9,7 @@
  * list of class meetings for every day of the week.
  */
 
-import { timeToNumber } from "./classMeeting";
+import { timeToNumber } from "./ClassMeetingUtils";
 
 enum Day {
     Monday = 'monday',

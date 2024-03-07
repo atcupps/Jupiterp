@@ -11,8 +11,8 @@ Copyright (C) 2024 Andrew Cupps
         getCourseLookup, 
         getProfsLookup, 
         searchCourses 
-    } from "./courseSearch";
-    import { appendHoveredSection } from "./schedule";
+    } from "../../../lib/CourseSearch";
+    import { appendHoveredSection } from "../../../lib/Schedule";
 
     export let hoveredSection: ScheduleSelection | null;
     export let selections: ScheduleSelection[];
