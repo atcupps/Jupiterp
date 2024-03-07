@@ -9,8 +9,8 @@ Copyright (C) 2024 Andrew Cupps
         formatClasstime, 
         formatInstructors, 
         formatLocation 
-    } from './formatting';
-    import { getColorFromNumber, timeToNumber } from './classMeeting';
+    } from '../../../lib/course-planner/Formatting';
+    import { getColorFromNumber, timeToNumber } from '../../../lib/course-planner/ClassMeetingUtils';
     import { afterUpdate } from 'svelte';
     import Tooltip from './Tooltip.svelte';
 

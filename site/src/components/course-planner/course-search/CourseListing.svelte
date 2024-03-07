@@ -6,7 +6,7 @@ Copyright (C) 2024 Andrew Cupps
 -->
 <script lang="ts">
     import SectionListing from "./SectionListing.svelte";
-    import { formatCredits } from "./formatting";
+    import { formatCredits } from "../../../lib/course-planner/Formatting";
 
     export let course: Course;
     export let profs: Record<string, Professor>;

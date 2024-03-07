@@ -7,10 +7,10 @@ Copyright (C) 2024 Andrew Cupps
 <script lang="ts">
     import { 
         getClasstimeBounds, schedulify, appendHoveredSection 
-    } from './schedule';
+    } from '../../../lib/course-planner/Schedule';
     import ScheduleDay from './ScheduleDay.svelte';
     import ScheduleBackground from './ScheduleBackground.svelte';
-    import { formatCredits, testudoLink } from './formatting';
+    import { formatCredits, testudoLink } from '../../../lib/course-planner/Formatting';
     import { afterUpdate } from 'svelte';
 
     export let hoveredSection: ScheduleSelection | null;

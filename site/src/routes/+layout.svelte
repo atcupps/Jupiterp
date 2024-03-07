@@ -6,7 +6,7 @@ Copyright (C) 2024 Andrew Cupps
  -->
 <script lang='ts'>
     import '../app.css';
-    import SiteLinks from './SiteLinks.svelte';
+    import SiteLinks from '../components/layout/SiteLinks.svelte';
 </script>
 
 <div class='px-8 w-full fixed z-[50] bg-bgLight dark:bg-bgDark'>
