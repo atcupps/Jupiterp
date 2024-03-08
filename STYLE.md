@@ -61,7 +61,7 @@ When programming in rust, adhere to the practices of default `rustfmt`. This is 
 
 ## JavaScript/TypeScript
 
-For lints, Jupiterp uses ESLint. You can use this by navigating to the `site` folder and running `bun lint`. Similar to `clippy`, GitHub jobs check that your code conforms to the style prescribed by ESLint.
+For lints, Jupiterp uses ESLint. You can use this by navigating to the `site` folder and running `npm run lint`. Similar to `clippy`, GitHub jobs check that your code conforms to the style prescribed by ESLint.
 
 Unlike with Rust, Jupiterp does not use an automatic formatter like `cargo fmt` for JS/TS code. So, the rules for formatting are not too controlling, but generally:
 - Group relevant imports
