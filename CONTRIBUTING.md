@@ -47,15 +47,7 @@ Jupiterp is separated into two components:
 - The `datagen` component, which is built in Rust. This component uses web-scraping and APIs to gather professor, course, and section data and write it to easily-parsable JSON files used by the `site` component.
 - The `site` component, which is built using Svelte with TypeScript. This is both the front and back ends of the actual site users will be able to use and interact with.
 
-Contributors are recommended to learn Git before working on Jupiterp.
-
-### Local Project Setup
-
-In order to work on Jupiterp, you will need to install the following dependencies locally:
-- Rust (with Cargo)
-- Bun
-
-Next, you will need to fork this repository and clone it locally; you can find instructions on that [here](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo).
+To get started, see `README.md`.
 
 ### Finding Issues to Work On
 
