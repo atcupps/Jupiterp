@@ -19,10 +19,6 @@ Before working on Jupiterp, make sure your computer has the following installed 
 
 Jupiterp also supports using Bun in addition to npm, but Bun on Windows OS is supported only experimentally. Instructions to install Bun are can be found [here](https://bun.sh/docs/installation).
 
-### Cloning the repo
-
-In order to work with the latest changes to Jupiterp, you should clone and ensure you are on the `main` branch; the `prod` branch is deployed to jupiterp.com, but the `main` branch contains all changes that will be pushed to the site in the next version release.
-
 #### Datagen
 
 To run `datagen`, navigate to the `datagen` folder. Using `cargo`, you can run two different binaries:
