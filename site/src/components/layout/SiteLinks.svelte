@@ -22,6 +22,8 @@ Copyright (C) 2024 Andrew Cupps
                                         isOnPage={currentPage == '/bugs'}/>
     <NavBarElement link='./about' text='About' 
                                         isOnPage={currentPage == '/about'}/>
+    <NavBarElement link='./terms-of-use' text='Terms of Use'
+                                isOnPage={currentPage == '/terms-of-use'}/>
     <NavBarElement link='https://github.com/atcupps/Jupiterp'
                                         text='GitHub'
                                         target='_blank' />
