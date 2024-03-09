@@ -25,7 +25,7 @@ Last Updated: March 9th, 2024
 <h2 class={h2Classes}>
     Introduction
 </h2>
-<p>
+<p class={pClasses}>
     Welcome to Jupiterp. These Terms of Use ("Terms") govern your use of the 
     Jupiterp website, a course planner for students at the University of 
     Maryland. Jupiterp is not affiliated with the University of Maryland. By 
@@ -36,7 +36,7 @@ Last Updated: March 9th, 2024
     Use of Jupiterp
 </h2>
 
-<p>
+<p class={pClasses}>
     Jupiterp provides a platform for planning university courses by 
     aggregating data from the University of Maryland's website and professor 
     ratings and reviews from PlanetTerp's public API. Jupiterp aims to assist 
@@ -48,7 +48,7 @@ Last Updated: March 9th, 2024
     Intellectual Property
 </h2>
 
-<p>
+<p class={pClasses}>
     All content displayed on Jupiterp, including but not limited to text, 
     graphics, logos, and the compilation thereof, is owned by Andrew Tae Cupps 
     or used with permission. The course data and professor ratings are sourced 
@@ -60,7 +60,7 @@ Last Updated: March 9th, 2024
     Disclaimer of Liability
 </h2>
 
-<p>
+<p class={pClasses}>
     Jupiterp does not guarantee the accuracy, timeliness, or completeness of 
     any information on this site. The information is provided "as is" without 
     warranty of any kind. Jupiterp shall not be liable for any inaccuracies or 
@@ -71,7 +71,7 @@ Last Updated: March 9th, 2024
     Changes to Terms of Use
 </h2>
 
-<p>
+<p class={pClasses}>
     Jupiterp reserves the right to modify these Terms at any time without 
     direct notification to users. By continuing to access or use our website 
     after those revisions become effective, you agree to be bound by the 
@@ -82,7 +82,7 @@ Last Updated: March 9th, 2024
     Governing Law
 </h2>
 
-<p>
+<p class={pClasses}>
     These Terms shall be governed and construed in accordance with the laws 
     of Maryland, United States, without regard to its conflict of law 
     provisions.
@@ -92,13 +92,13 @@ Last Updated: March 9th, 2024
     Contact Us
 </h2>
 
-<p>
+<p class={pClasses}>
     For any questions or concerns regarding these Terms, please contact us at 
     <code class='text-sm bg-bgSecondaryLight dark:bg-bgSecondaryDark rounded-md'>
         admin@jupiterp.com</code>.
 </p>
 
-<p>
+<p class={pClasses}>
     By using Jupiterp, you acknowledge that you have read, understood, and 
     agree to be bound by these Terms.
 </p>
