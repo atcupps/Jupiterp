@@ -22,6 +22,8 @@ Copyright (C) 2024 Andrew Cupps
                                         isOnPage={currentPage == '/bugs'}/>
     <NavBarElement link='./about' text='About' 
                                         isOnPage={currentPage == '/about'}/>
+    <NavBarElement link='./terms-of-use' text='Terms of Use'
+                                isOnPage={currentPage == '/terms-of-use'}/>
     <NavBarElement link='https://github.com/atcupps/Jupiterp'
                                         text='GitHub'
                                         target='_blank' />
@@ -68,6 +70,10 @@ Copyright (C) 2024 Andrew Cupps
     </div>
     <div class='w-full my-2 text-lg'>
         <NavBarElement link='./about' text='About'  fullWidth={true}/>
+    </div>
+    <div class='w-full my-2 text-lg'>
+        <NavBarElement link='./terms-of-use' text='Terms of Use'
+                                                        fullWidth={true} />
     </div>
     <div class='w-full my-2 text-lg'>
         <NavBarElement link='https://github.com/atcupps/Jupiterp'
