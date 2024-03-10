@@ -12,9 +12,11 @@ Copyright (C) 2024 Andrew Cupps
     import ScheduleBackground from './ScheduleBackground.svelte';
     import { formatCredits, testudoLink } from '../../../lib/course-planner/Formatting';
     import { afterUpdate } from 'svelte';
+    import InstructorListing from '../course-search/InstructorListing.svelte';
 
     export let hoveredSection: ScheduleSelection | null;
     export let selections: ScheduleSelection[] = [];
+    export let profsLookup: Record<string, Professor>;
 
     let schedule: Schedule = schedulify(
         appendHoveredSection(selections, hoveredSection)
@@ -68,15 +70,18 @@ Copyright (C) 2024 Andrew Cupps
     }
 
     let elt: HTMLDivElement;
+    let innerWidth: number;
     let infoPanelLeft: number;
     let infoPanelWidth: number;
-    $: if (elt) {
+    $: if (elt || innerWidth) {
         afterUpdate(() => {
             infoPanelLeft = elt.getBoundingClientRect().left;
             infoPanelWidth = elt.getBoundingClientRect().right - infoPanelLeft;
-        })
+        });
     }
 </script>
+
+<svelte:window bind:innerWidth />
 
 <div class='h-full w-full flex flex-row px-2 font-medium overflow-x-scroll
             text-lg text-center text-black dark:text-white overflow-y-scroll'>
@@ -195,9 +200,12 @@ Copyright (C) 2024 Andrew Cupps
         {formatCredits(courseInfoCourse.credits)} credits |
         Section {courseInfoSection.sec_code}
     </div>
-    <div class='text-sm 2xl:text-base'>
-        {courseInfoSection.instructors.join(', ')}
-    </div>
+    {#each courseInfoSection.instructors as instructor}
+        <InstructorListing instructor={instructor}
+                            profs={profsLookup}
+                            profsHover={false}
+                            removeHoverSection={() => {}} />
+    {/each}
     <div class='text-base 2xl:text-lg leading-5'>
         {courseInfoCourse.description}
     </div>
