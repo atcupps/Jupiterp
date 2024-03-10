@@ -72,6 +72,10 @@ Copyright (C) 2024 Andrew Cupps
         <NavBarElement link='./about' text='About'  fullWidth={true}/>
     </div>
     <div class='w-full my-2 text-lg'>
+        <NavBarElement link='./terms-of-use' text='Terms of Use'
+                                                        fullWidth={true} />
+    </div>
+    <div class='w-full my-2 text-lg'>
         <NavBarElement link='https://github.com/atcupps/Jupiterp'
                                                     text='GitHub'
                                                     target='_blank' 
