@@ -92,6 +92,7 @@ Copyright (C) 2024 Andrew Cupps
             class="border-solid border-2 border-outlineLight 
                             dark:border-outlineDark rounded-lg
                             bg-transparent px-2 w-full text-xl
+                            lg:text-base lg:placeholder:text-sm
                             placeholder:text-base">
         <div class='flex flex-row text-xs 2xl:text-sm p-1'>
             <div>
