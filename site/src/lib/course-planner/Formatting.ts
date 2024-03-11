@@ -110,3 +110,14 @@ export function formatInstructors(instructors: string[]): string {
 export function testudoLink(courseCode: string): string {
     return 'https://app.testudo.umd.edu/soc/search?courseId=' + courseCode + '&sectionId=&termId=202408&_openSectionsOnly=on&creditCompare=%3E%3D&credits=0.0&courseLevelFilter=ALL&instructor=&_facetoface=on&_blended=on&_online=on&courseStartCompare=&courseStartHour=&courseStartMin=&courseStartAM=&courseEndHour=&courseEndMin=&courseEndAM=&teachingCenter=ALL&_classDay1=on&_classDay2=on&_classDay3=on&_classDay4=on&_classDay5=on'
 }
+
+/**
+ * Splits a `code` into its four letter department code and three numbers
+ * as a single string, space delimited.
+ * Example: `splitCourseCode('CMSC424') --> 'CMSC 424'
+ * @param code A `string` code to split apart
+ * @returns `code` split into 
+ */
+export function splitCourseCode(code: string): string {
+    return code.slice(0, 4) + ' ' + code.slice(4);
+}

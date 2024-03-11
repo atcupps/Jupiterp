@@ -58,7 +58,9 @@ Copyright (C) 2024 Andrew Cupps
             }
         }
         sectionAdded = !sectionAdded;
-        addHoverSection();
+        if (isDesktop) {
+            addHoverSection();
+        }
     }
 
     function addHoverSection() {
@@ -91,18 +93,26 @@ Copyright (C) 2024 Andrew Cupps
     }
 
     let profsHover: boolean = false;
+
+    let isDesktop: boolean = true;
+    let innerWidth: number;
+    $: if (innerWidth) {
+        isDesktop = innerWidth >= 1024;
+    }
 </script>
+
+<svelte:window bind:innerWidth />
 
 <!-- Ignoring a11y for mouseover because it's a non-essential feature -->
 <!-- svelte-ignore a11y-mouse-events-have-key-events -->
 <button on:click={addSectionToSchedule}
-        on:mouseover={addHoverSection}
-        on:mouseout={removeHoverSection}
-            class='flex flex-row w-full text-left border-t-2 
+        on:mouseover={isDesktop ? addHoverSection : null}
+        on:mouseout={isDesktop ? removeHoverSection : null}
+            class='flex flex-row w-full text-left border-t-2
                     border-outlineLight dark:border-outlineDark transition
                 {sectionAdded ? 'bg-hoverLight dark:bg-hoverDark' : ''}'
-            class:hover:bg-hoverLight={!profsHover}
-            class:hover:dark:bg-hoverDark={!profsHover}
+            class:lg:hover:bg-hoverLight={!profsHover}
+            class:lg:hover:dark:bg-hoverDark={!profsHover}
         title='Add course to schedule'
                 >
     <!-- Section code -->

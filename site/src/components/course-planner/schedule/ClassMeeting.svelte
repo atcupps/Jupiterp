@@ -8,7 +8,9 @@ Copyright (C) 2024 Andrew Cupps
     import { 
         formatClasstime, 
         formatInstructors, 
-        formatLocation 
+        formatLocation, 
+        splitCourseCode
+
     } from '../../../lib/course-planner/Formatting';
     import { getColorFromNumber, timeToNumber } from '../../../lib/course-planner/ClassMeetingUtils';
     import { afterUpdate } from 'svelte';
@@ -26,11 +28,14 @@ Copyright (C) 2024 Andrew Cupps
 
     const differences: string[] = meeting.differences;
     const instructorsChange: boolean = differences.includes('Instructors');
-    const numClassMeetingsChange: boolean = differences.includes('Number of class meetings');
-    const meetingsTypeChange: boolean = differences.includes('Type of meeting');
+    const numClassMeetingsChange: boolean = 
+                            differences.includes('Number of class meetings');
+    const meetingsTypeChange: boolean = 
+                                    differences.includes('Type of meeting');
     const meetingTimeChange: boolean = numClassMeetingsChange ||
-                                differences.includes('Meeting time');
-    const meetingLocChange: boolean = differences.includes('Meeting location');
+                                         differences.includes('Meeting time');
+    const meetingLocChange: boolean = 
+                                    differences.includes('Meeting location');
 
     let formattedInstructors: string = formatInstructors(meeting.instructors);
     let formattedTime: string;
@@ -78,9 +83,12 @@ Copyright (C) 2024 Andrew Cupps
 
     let elt: HTMLButtonElement;
     let innerHeight: number;
+    let innerWidth: number;
     let h: number;
-    $: if (elt || innerHeight) {
+    let w: number;
+    $: if (elt || innerHeight || innerWidth) {
         afterUpdate(() => {
+            w = elt.offsetWidth;
             h = elt.offsetHeight;  
         });
     }
@@ -123,10 +131,10 @@ Copyright (C) 2024 Andrew Cupps
             showSectionInfo = meeting.secCode;
         }
     }
-    
+
 </script>
 
-<svelte:window bind:innerHeight />
+<svelte:window bind:innerHeight bind:innerWidth />
 
 <button class='absolute w-full justify-center text-black 
                 flex flex-col rounded-lg pb-1 justify-items-center'
@@ -138,7 +146,7 @@ Copyright (C) 2024 Andrew Cupps
                 width: {(1 / meeting.conflictTotal) * 100}%;
                 left: {((meeting.conflictIndex - 1) / meeting.conflictTotal) * 100}%;'
         class:otherCategoryClassMeeting={isInOther}>
-    
+
     <!-- x button to remove course -->
     {#if !meeting.hover}
         <button class='absolute h-4 w-4 top-0 right-0
@@ -151,67 +159,77 @@ Copyright (C) 2024 Andrew Cupps
         </button>
     {/if}
 
-    <!-- Meeting course codes, instructors, etc. will only show up
-         if the height of the classtime is great enough to fit them -->
-    {#if h > 1.5 * fontSize || isInOther}
-        <div class='w-full text-base font-semibold font-sans rounded-t-lg 
-                            courseCode truncate min-h-[1.5rem]'
-                class:rounded-b-lg={h < 1.75 * fontSize}>
-            {meeting.course}
+    {#if w >= 64}
+        <!-- Meeting course codes, instructors, etc. will only show up
+            if the height of the classtime is great enough to fit them -->
+        {#if h > 1.5 * fontSize || isInOther}
+            <div class='w-full text-base font-semibold font-sans rounded-t-lg
+                                courseCode truncate min-h-[1.5rem]'
+                    class:rounded-b-lg={h < 1.75 * fontSize}>
+                {meeting.course}
+            </div>
+        {/if}
+        <div class='w-full grow font-thin 2xl:font-normal 
+                                                    text-xs font-sans px-2'>
+            {#if h - (24 * fontSize) > (64 * fontSize) || isInOther}
+                <div class='truncate static'  
+                                class:underline={instructorsChange}
+                                class:decoration-dotted={instructorsChange}>
+                    {#if instructorsChange}
+                        <Tooltip text={'⚠ ' + formattedInstructors}
+                        tooltipText='Instructors have changed since 
+                                            you last visited Jupiterp.' />
+                    {:else}
+                        {formattedInstructors}
+                    {/if}
+                </div>
+            {/if}
+            {#if h - (24 * fontSize) > (48 * fontSize) || isInOther}
+                <div class='truncate static'
+                                class:underline={meetingTimeChange 
+                                                        || meetingsTypeChange}
+                                class:decoration-dotted={meetingTimeChange 
+                                                        || meetingsTypeChange}>
+                    {#if meetingTimeChange}
+                        <Tooltip text={'⚠ ' + formattedTime}
+                            tooltipText='Class meeting time has changed since 
+                                                you last visited Jupiterp.' />
+                    {:else if meetingsTypeChange}
+                        <Tooltip text={'⚠ ' + formattedTime}
+                            tooltipText='Meeting type has changed since you
+                                            last visited Jupiterp.' />
+                    {:else}
+                        {formattedTime}
+                    {/if}
+                </div>
+            {/if}
+            {#if h - (24 * fontSize) > (32 * fontSize) || isInOther}
+                <div class='truncate static'>
+                    Section {secCode}
+                </div>
+            {/if}
+            {#if h - (24 * fontSize) > (16 * fontSize) && hasLocation}
+                <div class='truncate static'
+                                class:underline={meetingLocChange}
+                                class:decoration-dotted={meetingLocChange}>
+                    {#if meetingLocChange}
+                        <Tooltip text={'⚠ ' + location} 
+                            tooltipText='Class location has changed since 
+                                                you last visited Jupiterp.' />
+                    {:else}
+                        {location}
+                    {/if}
+                </div>
+            {/if}
         </div>
-    {/if}
-    <div class='w-full grow font-thin 2xl:font-normal text-xs font-sans px-2'>
-        {#if h - (24 * fontSize) > (64 * fontSize) || isInOther}
-            <div class='truncate static'  
-                            class:underline={instructorsChange}
-                            class:decoration-dotted={instructorsChange}>
-                {#if instructorsChange}
-                    <Tooltip text={'⚠ ' + formattedInstructors}
-                    tooltipText='Instructors have changed since 
-                                        you last visited Jupiterp.' />
-                {:else}
-                    {formattedInstructors}
-                {/if}
-            </div>
-        {/if}
-        {#if h - (24 * fontSize) > (48 * fontSize) || isInOther}
-            <div class='truncate static'
-                            class:underline={meetingTimeChange 
-                                                    || meetingsTypeChange}
-                            class:decoration-dotted={meetingTimeChange 
-                                                    || meetingsTypeChange}>
-                {#if meetingTimeChange}
-                    <Tooltip text={'⚠ ' + formattedTime}
-                        tooltipText='Class meeting time has changed since 
-                                            you last visited Jupiterp.' />
-                {:else if meetingsTypeChange}
-                    <Tooltip text={'⚠ ' + formattedTime}
-                        tooltipText='Meeting type has changed since you
-                                        last visited Jupiterp.' />
-                {:else}
-                    {formattedTime}
-                {/if}
-            </div>
-        {/if}
-        {#if h - (24 * fontSize) > (32 * fontSize) || isInOther}
-            <div class='truncate static'>
-                Section {secCode}
-            </div>
-        {/if}
-        {#if h - (24 * fontSize) > (16 * fontSize) && hasLocation}
-            <div class='truncate static'
-                            class:underline={meetingLocChange}
-                            class:decoration-dotted={meetingLocChange}>
-                {#if meetingLocChange}
-                    <Tooltip text={'⚠ ' + location} 
-                        tooltipText='Class location has changed since 
-                                            you last visited Jupiterp.' />
-                {:else}
-                    {location}
-                {/if}
-            </div>
-        {/if}
+    {:else}
+        
+    <div class='w-full text-base font-semibold font-sans
+                    ont-sans rounded-t-lg text-wrap break-words'
+        class:rounded-b-lg={h < 1.75 * fontSize}>
+        {splitCourseCode(meeting.course)}
     </div>
+    {/if}
 </button>
 
 <style>

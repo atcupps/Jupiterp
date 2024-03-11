@@ -9,9 +9,13 @@ Copyright (C) 2024 Andrew Cupps
     import CourseSearch from '../components/course-planner/course-search/CourseSearch.svelte';
     import { onMount } from 'svelte';
     import { retrieveCourses } from '../lib/course-planner/CourseLoad';
+    import { getProfsLookup } from '$lib/course-planner/CourseSearch';
 
     // Load data from `+page.ts`
     export let data;
+
+    // Create a professor lookup table
+    const profsLookup = getProfsLookup(data.professors);
 
     // Keep track of chosen sections
     let hoveredSection: ScheduleSelection | null = null;
@@ -73,6 +77,8 @@ Copyright (C) 2024 Andrew Cupps
             text-textLight dark:text-textDark lg:px-8
             top-[3rem] lg:top-[3.5rem] xl:top-[4rem] bottom-0'>
     <CourseSearch bind:selections={selectedSections} data={data}
-                    bind:courseSearchSelected bind:hoveredSection />
-    <Schedule bind:selections={selectedSections} bind:hoveredSection />
+                    bind:courseSearchSelected bind:hoveredSection 
+                    profsLookup={profsLookup} />
+    <Schedule bind:selections={selectedSections} bind:hoveredSection 
+                    profsLookup={profsLookup}/>
 </div>

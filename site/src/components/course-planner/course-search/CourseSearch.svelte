@@ -9,7 +9,6 @@ Copyright (C) 2024 Andrew Cupps
     import CourseListing from "./CourseListing.svelte";
     import { 
         getCourseLookup, 
-        getProfsLookup, 
         searchCourses 
     } from "../../../lib/course-planner/CourseSearch";
     import { appendHoveredSection } from "../../../lib/course-planner/Schedule";
@@ -20,7 +19,6 @@ Copyright (C) 2024 Andrew Cupps
     // Load profs and depts data
     export let data;
     let depts: Department[] = data.departments;
-    let professors: Professor[] = data.professors;
 
     // Create course lookup table
     const courseLookup = getCourseLookup(depts);
@@ -37,8 +35,7 @@ Copyright (C) 2024 Andrew Cupps
                             });
     }
 
-    // Create a professor lookup table
-    const profsLookup = getProfsLookup(professors);
+    export let profsLookup: Record<string, Professor>;
 
     // Boolean for toggling search menu on smaller screens
     export let courseSearchSelected: boolean = false;
