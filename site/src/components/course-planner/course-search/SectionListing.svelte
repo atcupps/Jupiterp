@@ -5,6 +5,7 @@ https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2024 Andrew Cupps
 -->
 <script lang="ts">
+    import { onMount } from "svelte";
     import InstructorListing from "./InstructorListing.svelte";
     import MeetingListing from "./MeetingListing.svelte";
 
@@ -91,13 +92,22 @@ Copyright (C) 2024 Andrew Cupps
     }
 
     let profsHover: boolean = false;
+
+    let isDesktop: boolean = true;
+    let innerWidth: number;
+    $: if (innerWidth) {
+        isDesktop = innerWidth >= 1024;
+        console.log(isDesktop);
+    }
 </script>
+
+<svelte:window bind:innerWidth />
 
 <!-- Ignoring a11y for mouseover because it's a non-essential feature -->
 <!-- svelte-ignore a11y-mouse-events-have-key-events -->
 <button on:click={addSectionToSchedule}
-        on:mouseover={addHoverSection}
-        on:mouseout={removeHoverSection}
+        on:mouseover={isDesktop ? addHoverSection : null}
+        on:mouseout={isDesktop ? removeHoverSection : null}
             class='flex flex-row w-full text-left border-t-2 
                     border-outlineLight dark:border-outlineDark transition
                 {sectionAdded ? 'bg-hoverLight dark:bg-hoverDark' : ''}'
