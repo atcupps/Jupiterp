@@ -5,7 +5,6 @@ https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2024 Andrew Cupps
 -->
 <script lang="ts">
-    import { onMount } from "svelte";
     import InstructorListing from "./InstructorListing.svelte";
     import MeetingListing from "./MeetingListing.svelte";
 
@@ -59,7 +58,9 @@ Copyright (C) 2024 Andrew Cupps
             }
         }
         sectionAdded = !sectionAdded;
-        addHoverSection();
+        if (isDesktop) {
+            addHoverSection();
+        }
     }
 
     function addHoverSection() {
