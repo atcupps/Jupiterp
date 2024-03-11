@@ -98,7 +98,6 @@ Copyright (C) 2024 Andrew Cupps
     let innerWidth: number;
     $: if (innerWidth) {
         isDesktop = innerWidth >= 1024;
-        console.log(isDesktop);
     }
 </script>
 
@@ -109,7 +108,7 @@ Copyright (C) 2024 Andrew Cupps
 <button on:click={addSectionToSchedule}
         on:mouseover={isDesktop ? addHoverSection : null}
         on:mouseout={isDesktop ? removeHoverSection : null}
-            class='flex flex-row w-full text-left border-t-2 
+            class='flex flex-row w-full text-left border-t-2
                     border-outlineLight dark:border-outlineDark transition
                 {sectionAdded ? 'bg-hoverLight dark:bg-hoverDark' : ''}'
             class:lg:hover:bg-hoverLight={!profsHover}

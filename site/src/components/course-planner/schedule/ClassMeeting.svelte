@@ -28,11 +28,14 @@ Copyright (C) 2024 Andrew Cupps
 
     const differences: string[] = meeting.differences;
     const instructorsChange: boolean = differences.includes('Instructors');
-    const numClassMeetingsChange: boolean = differences.includes('Number of class meetings');
-    const meetingsTypeChange: boolean = differences.includes('Type of meeting');
+    const numClassMeetingsChange: boolean = 
+                            differences.includes('Number of class meetings');
+    const meetingsTypeChange: boolean = 
+                                    differences.includes('Type of meeting');
     const meetingTimeChange: boolean = numClassMeetingsChange ||
-                                differences.includes('Meeting time');
-    const meetingLocChange: boolean = differences.includes('Meeting location');
+                                         differences.includes('Meeting time');
+    const meetingLocChange: boolean = 
+                                    differences.includes('Meeting location');
 
     let formattedInstructors: string = formatInstructors(meeting.instructors);
     let formattedTime: string;
@@ -128,7 +131,7 @@ Copyright (C) 2024 Andrew Cupps
             showSectionInfo = meeting.secCode;
         }
     }
-    
+
 </script>
 
 <svelte:window bind:innerHeight bind:innerWidth />
@@ -143,7 +146,7 @@ Copyright (C) 2024 Andrew Cupps
                 width: {(1 / meeting.conflictTotal) * 100}%;
                 left: {((meeting.conflictIndex - 1) / meeting.conflictTotal) * 100}%;'
         class:otherCategoryClassMeeting={isInOther}>
-    
+
     <!-- x button to remove course -->
     {#if !meeting.hover}
         <button class='absolute h-4 w-4 top-0 right-0
@@ -221,7 +224,7 @@ Copyright (C) 2024 Andrew Cupps
         </div>
     {:else}
         
-    <div class='w-full text-base font-semibold f
+    <div class='w-full text-base font-semibold font-sans
                     ont-sans rounded-t-lg text-wrap break-words'
         class:rounded-b-lg={h < 1.75 * fontSize}>
         {splitCourseCode(meeting.course)}
