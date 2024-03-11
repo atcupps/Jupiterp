@@ -3,7 +3,7 @@ name: Automatic Datagen
 on:
     workflow_dispatch:
     schedule:
-        - cron: '30 15 * * *'
+        - cron: '30 14 * * *'
 
 jobs:
     test-commit-and-pr:
