@@ -101,8 +101,8 @@ Copyright (C) 2024 Andrew Cupps
             class='flex flex-row w-full text-left border-t-2 
                     border-outlineLight dark:border-outlineDark transition
                 {sectionAdded ? 'bg-hoverLight dark:bg-hoverDark' : ''}'
-            class:hover:bg-hoverLight={!profsHover}
-            class:hover:dark:bg-hoverDark={!profsHover}
+            class:lg:hover:bg-hoverLight={!profsHover}
+            class:lg:hover:dark:bg-hoverDark={!profsHover}
         title='Add course to schedule'
                 >
     <!-- Section code -->
