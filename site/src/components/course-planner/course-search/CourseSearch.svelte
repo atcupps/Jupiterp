@@ -88,11 +88,11 @@ Copyright (C) 2024 Andrew Cupps
     <div class='flex flex-col w-full border-solid border-b-2 px-1 lg:px-0
                             border-divBorderLight dark:border-divBorderDark'>
         <input type='text' bind:value={searchInput} on:input={handleInput}
-            placeholder='Search course codes, ex: "THET285"'
+            placeholder='Search course codes, ex: "HIST111"'
             class="border-solid border-2 border-outlineLight 
                             dark:border-outlineDark rounded-lg
-                            bg-transparent px-2 w-full
-                            placeholder:text-sm">
+                            bg-transparent px-2 w-full text-xl
+                            placeholder:text-base">
         <div class='flex flex-row text-xs 2xl:text-sm p-1'>
             <div>
                 Fall 2024
