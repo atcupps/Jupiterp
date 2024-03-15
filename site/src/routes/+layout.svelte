@@ -6,8 +6,11 @@ Copyright (C) 2024 Andrew Cupps
  -->
 <script lang='ts'>
     import '../app.css';
+    import Analytics from '../components/layout/Analytics.svelte';
     import SiteLinks from '../components/layout/SiteLinks.svelte';
 </script>
+
+<Analytics />
 
 <div class='px-8 w-full fixed z-[50] bg-bgLight dark:bg-bgDark'>
     <div class='flex flex-row h-12 lg:h-14 xl:h-16 w-full border-b-2
