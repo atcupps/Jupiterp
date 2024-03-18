@@ -512,7 +512,7 @@ pub fn instructors_datagen() -> Result<(), Box<dyn Error>> {
 pub fn get_response(request: String) -> Result<Response, reqwest::Error> {
     let request = Client::new()
         .get(request)
-        .header(USER_AGENT, "Jupiterp Test");
+        .header(USER_AGENT, "Jupiterp/0.1.0");
     let second_request = request.try_clone().unwrap();
     let third_request = request.try_clone().unwrap();
 

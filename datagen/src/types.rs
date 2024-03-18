@@ -119,6 +119,7 @@ pub enum ClassDays {
     TuWTh,
     WTh,
     MWTh,
+    MTh,
 }
 
 impl Classtime {
@@ -147,6 +148,7 @@ impl Classtime {
             "TuWTh" => ClassDays::TuWTh,
             "WTh" => ClassDays::WTh,
             "MWTh" => ClassDays::MWTh,
+            "MTh" => ClassDays::MTh,
             &_ => panic!("Did not recognize days pattern {}", days),
         };
         Classtime {
