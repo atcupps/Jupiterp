@@ -38,7 +38,7 @@ Copyright (C) 2024 Andrew Cupps
 
     <!-- Course title -->
     <div class='xl:max-w-[314px] 2xl:max-w-[394px] max-w-[254px]
-                    text-sm 2xl:text-base truncate'>
+                    text-sm 2xl:text-base wrap'>
         {course.name}
     </div>
 
