@@ -60,7 +60,7 @@ Copyright (C) 2024 Andrew Cupps
                     decStartTime = timeToNumber(inPerson.classtime.start_time);
                     decEndTime = timeToNumber(inPerson.classtime.end_time);
                 } else {
-                    throw Error('Null classtime for ClassMeeting');
+                    formattedTime = 'Classtime TBA';
                 }
 
                 if (inPerson.location != null) {

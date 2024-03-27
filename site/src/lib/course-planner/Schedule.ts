@@ -54,7 +54,7 @@ export function schedulify(selections: ScheduleSelection[]): Schedule {
             else if ('OnlineSync' in meeting) {
                 addMeetings(schedule, newMeeting, meeting.OnlineSync);
             } else {
-                if (meeting.InPerson.classtime == null) {
+                if (meeting.InPerson.classtime === null) {
                     schedule.other = [...schedule.other, newMeeting];
                 } else {
                     addMeetings(schedule, newMeeting, 
