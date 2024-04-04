@@ -10,7 +10,7 @@ Copyright (C) 2024 Andrew Cupps
     import { onMount } from 'svelte';
     import { retrieveCourses } from '../lib/course-planner/CourseLoad';
     import { getProfsLookup } from '$lib/course-planner/CourseSearch';
-
+    
     // Load data from `+page.ts`
     export let data;
 
@@ -75,10 +75,12 @@ Copyright (C) 2024 Andrew Cupps
 
 <div class='fixed flex flex-row w-full px-8
             text-textLight dark:text-textDark lg:px-8
-            top-[3rem] lg:top-[3.5rem] xl:top-[4rem] bottom-0'>
+            top-[3rem] lg:top-[3rem] xl:top-[3rem] bottom-0'>
     <CourseSearch bind:selections={selectedSections} data={data}
                     bind:courseSearchSelected bind:hoveredSection 
                     profsLookup={profsLookup} />
-    <Schedule bind:selections={selectedSections} bind:hoveredSection 
-                    profsLookup={profsLookup}/>
+    <div class='w-full h-full'>
+        <Schedule bind:selections={selectedSections} bind:hoveredSection 
+                        profsLookup={profsLookup}/>
+    </div>
 </div>

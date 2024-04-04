@@ -12,6 +12,8 @@ Copyright (C) 2024 Andrew Cupps
         searchCourses 
     } from "../../../lib/course-planner/CourseSearch";
     import { appendHoveredSection } from "../../../lib/course-planner/Schedule";
+    import ScheduleButtons from "../schedule/ScheduleManager.svelte";
+    import ScheduleManager from "../schedule/ScheduleManager.svelte";
 
     export let hoveredSection: ScheduleSelection | null;
     export let selections: ScheduleSelection[];
@@ -79,22 +81,15 @@ Copyright (C) 2024 Andrew Cupps
                             lg:min-w-[260px] w-[300px] z-[52] fixed lg:static
                             lg:h-full course-search visible
                             border-r-2 border-divBorderLight
-                            dark:border-divBorderDark border-solid py-2 pr-2
+                            dark:border-divBorderDark border-solid pr-2
                             pl-1 lg:pl-0 lg:ml-1.5 lg:shadow-none
                             bg-bgLight dark:bg-bgDark lg:bg-transparent left-0
                             transition-transform duration-300'
         class:course-search-transition={!courseSearchSelected}
         class:shadow-lg={courseSearchSelected}>
-    <div class='flex flex-col w-full border-solid border-b-2 px-1 lg:px-0
-                            border-divBorderLight dark:border-divBorderDark'>
-        <input type='text' bind:value={searchInput} on:input={handleInput}
-            placeholder='Search course codes, ex: "HIST111"'
-            class="border-solid border-2 border-outlineLight 
-                            dark:border-outlineDark rounded-lg
-                            bg-transparent px-2 w-full text-xl
-                            lg:text-base lg:placeholder:text-sm
-                            placeholder:text-base">
-        <div class='flex flex-row text-xs 2xl:text-sm p-1'>
+
+    <div class='border-solid border-b-2 border-divBorderLight dark:border-divBorderDark'>
+        <div class='flex flex-row text-xs 2xl:text-sm px-2 lg:px-1'>
             <div>
                 Fall 2024
             </div>
@@ -102,7 +97,21 @@ Copyright (C) 2024 Andrew Cupps
                 Credits: {totalCredits}
             </div>
         </div>
+
+        <ScheduleManager bind:selections />
     </div>
+    
+    <div class='flex flex-col w-full border-solid border-b-2 p-1 lg:px-0
+                            border-divBorderLight dark:border-divBorderDark'>
+        <input type='text' bind:value={searchInput} on:input={handleInput}
+            placeholder='Search course codes, ex: "MATH246"'
+            class="border-solid border-2 border-outlineLight 
+                            dark:border-outlineDark rounded-lg
+                            bg-transparent px-2 w-full text-xl
+                            lg:text-base lg:placeholder:text-sm
+                            placeholder:text-base">
+    </div>
+
     <div class='grow courses-list overflow-y-scroll overflow-x-none
                 px-1 lg:pr-1 lg:pl-0'>
         {#each searchResults as courseMatch (courseMatch.code)}

@@ -13,10 +13,10 @@ Copyright (C) 2024 Andrew Cupps
 <Analytics />
 
 <div class='px-8 w-full fixed z-[50] bg-bgLight dark:bg-bgDark'>
-    <div class='flex flex-row h-12 lg:h-14 xl:h-16 w-full border-b-2
+    <div class='flex flex-row h-11 lg:h-12 xl:h-12 w-full border-b-2
                             border-divBorderLight dark:border-divBorderDark
                             justify-center lg:justify-start'>
-        <a href='/' class='flex w-64'>
+        <a href='/' class='flex w-64 justify-center lg:justify-start'>
             <img src='logo.svg' alt='Jupiterp Beta logo'/>
         </a>
         <SiteLinks />
