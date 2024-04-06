@@ -12,6 +12,16 @@ Copyright (C) 2024 Andrew Cupps
 
     let dropdownOpen: boolean = false;
 
+    let scheduleNameInput: string = '';
+    let scheduleName: string = 'My Schedule'
+    $: if (scheduleNameInput.length > 0) {
+        scheduleName = scheduleNameInput;
+        console.log(scheduleName);
+    } else {
+        scheduleName = 'My Schedule';
+        console.log(scheduleName);
+    }
+
     export let selections: ScheduleSelection[];
 </script>
 
@@ -26,18 +36,9 @@ Copyright (C) 2024 Andrew Cupps
                 <AngleDownOutline class="w-5 h-5" />
             {/if}
         </button>
-        <!-- Ignoring a11y warnings since this on-click 
-            only exists to stop event propagation -->
-        <!-- svelte-ignore a11y-click-events-have-key-events -->
-        <!-- svelte-ignore a11y-no-static-element-interactions -->
         <input class="text-inherit grow text-left bg-bgLight dark:bg-bgDark
-                    px-0.5 rounded-sm cursor-text" contenteditable
-                    on:click={(event) => {event.stopPropagation()}}
-                    on:keydown={(event) => {
-                        if (event.key === ' ') {
-                            event.stopImmediatePropagation();
-                        }
-                    }} placeholder="My Schedule">
+                    px-0.5 rounded-sm cursor-text" placeholder="My Schedule"
+                    bind:value={scheduleNameInput}>
         <ScheduleOptionsDropdown />
     </div>
     <button class="rounded-md hover:bg-hoverLight dark:hover:bg-hoverDark h-7">
