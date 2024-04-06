@@ -6,8 +6,9 @@ Copyright (C) 2024 Andrew Cupps
  -->
 <script lang='ts'>
     import {
-        AngleRightOutline, AngleDownOutline, DotsVerticalOutline, PlusOutline
+        AngleRightOutline, AngleDownOutline, PlusOutline
     } from "flowbite-svelte-icons";
+    import ScheduleOptionsDropdown from "./ScheduleOptionsDropdown.svelte";
 
     let dropdownOpen: boolean = false;
 
@@ -37,7 +38,7 @@ Copyright (C) 2024 Andrew Cupps
                             event.stopImmediatePropagation();
                         }
                     }} placeholder="My Schedule">
-        <DotsVerticalOutline class="w-5 h-5 px-0.5" />
+        <ScheduleOptionsDropdown />
     </div>
     <button class="rounded-md hover:bg-hoverLight dark:hover:bg-hoverDark h-7">
         <PlusOutline class="w-5 h-5 px-0.5" />
