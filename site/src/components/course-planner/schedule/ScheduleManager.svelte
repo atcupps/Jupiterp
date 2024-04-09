@@ -49,11 +49,10 @@ Copyright (C) 2024 Andrew Cupps
     </div>
 
     {#if dropdownOpen}
-        <button class='text-sm mr-5 ml-4 pl-1 flex hover:bg-hoverLight
-                        dark:hover:bg-hoverDark text-left flex-row rounded-md
+        <button class='text-sm mr-5 ml-4 pl-1.5 hover:bg-hoverLight
+                        dark:hover:bg-hoverDark text-left rounded-md
                         h-6 items-center' transition:slide>
-            <div class='grow'>Alan's schedule</div>
-            <ScheduleOptionsDropdown />
+            <div>Alan's schedule</div>
         </button>
     {/if}
 </div>

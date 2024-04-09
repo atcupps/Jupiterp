@@ -79,7 +79,7 @@ Copyright (C) 2024 Andrew Cupps
 <!-- Course Search -->
 <div class='lg:flex flex-col xl:min-w-[320px] 2xl:min-w-[400px] 2xl:text-lg
                             lg:min-w-[260px] w-[300px] z-[52] fixed lg:static
-                            lg:h-full course-search visible
+                            lg:h-full course-search visible pt-0.5
                             border-r-2 border-divBorderLight
                             dark:border-divBorderDark border-solid pr-2
                             pl-1 lg:pl-0 lg:ml-1.5 lg:shadow-none
