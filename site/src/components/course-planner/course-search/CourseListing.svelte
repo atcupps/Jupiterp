@@ -21,7 +21,7 @@ Copyright (C) 2024 Andrew Cupps
         }
     }
 
-    function pseudoSection(course: Course): Section {
+    function pseudoSection(): Section {
         return {
             sec_code: 'N/A',
             instructors: ['Testudo Terrapin 🐢'],
@@ -60,7 +60,7 @@ Copyright (C) 2024 Andrew Cupps
         {/each}
     {:else}
         <SectionListing courseCode={course.code} profs={profs}
-            section={pseudoSection(course)} bind:selectionsList={selections}
+            section={pseudoSection()} bind:selectionsList={selections}
                         bind:hoveredSection course={course}
                         minCredits={getMinCredits(course.credits)} />
     {/if}
