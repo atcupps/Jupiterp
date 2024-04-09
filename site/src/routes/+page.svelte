@@ -27,7 +27,9 @@ Copyright (C) 2024 Andrew Cupps
             if (typeof window !== 'undefined') {
                 const storedData = localStorage.getItem('selectedSections');
                 if (storedData) {
-                    selectedSections = retrieveCourses(JSON.parse(storedData), data.departments);
+                    selectedSections = 
+                        retrieveCourses(JSON.parse(storedData), 
+                                                            data.departments);
                 } else {
                     selectedSections = [];
                 }
@@ -38,10 +40,12 @@ Copyright (C) 2024 Andrew Cupps
         }
     });
 
-    // Reactive statement to save to local storage whenever selectedSections changes
+    // Reactive statement to save to local storage
+    // whenever selectedSections changes
     $: if (selectedSections) {
         if (typeof window !== 'undefined') {
-            localStorage.setItem('selectedSections', jsonifySections(selectedSections));
+            localStorage.setItem('selectedSections', 
+                                    jsonifySections(selectedSections));
         }
     }
 

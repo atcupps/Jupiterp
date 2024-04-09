@@ -113,7 +113,8 @@ export function retrieveCourses(selections: ScheduleSelection[],
                     selection.section = section;
                     result.push(selection);
                 }
-            } else if (course && course.sections === null && selection.section.sec_code === 'N/A') {
+            } else if (course && course.sections === null && 
+                            selection.section.sec_code === 'N/A') {
                 result.push(selection);
             }
         }

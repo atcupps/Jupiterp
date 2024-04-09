@@ -50,7 +50,8 @@ Copyright (C) 2024 Andrew Cupps
         if (typeof meeting.meeting !== 'string') {
             if ('OnlineSync' in meeting.meeting) {
                 formattedTime = formatClasstime(meeting.meeting.OnlineSync);
-                decStartTime = timeToNumber(meeting.meeting.OnlineSync.start_time);
+                decStartTime = 
+                           timeToNumber(meeting.meeting.OnlineSync.start_time);
                 decEndTime = timeToNumber(meeting.meeting.OnlineSync.end_time);
                 location = 'ONLINE';
             } else {
@@ -97,7 +98,9 @@ Copyright (C) 2024 Andrew Cupps
     $: if (document.documentElement) {
         fontSize = 
             parseInt(
-                getComputedStyle(document.documentElement).fontSize.substring(0, 2)
+                getComputedStyle(document.documentElement)
+                .fontSize
+                .substring(0, 2)
             ) / 16;
     }
 
@@ -144,7 +147,9 @@ Copyright (C) 2024 Andrew Cupps
                 background-color: {getColorFromNumber(meeting.colorNumber)};
                 opacity: {meeting.hover ? 0.4 : 1.0};
                 width: {(1 / meeting.conflictTotal) * 100}%;
-                left: {((meeting.conflictIndex - 1) / meeting.conflictTotal) * 100}%;'
+                left: {
+                    ((meeting.conflictIndex - 1) / meeting.conflictTotal) * 100
+                }%;'
         class:otherCategoryClassMeeting={isInOther}>
 
     <!-- x button to remove course -->
