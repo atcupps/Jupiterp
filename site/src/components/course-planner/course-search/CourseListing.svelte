@@ -20,6 +20,14 @@ Copyright (C) 2024 Andrew Cupps
             return credits.Range[0];
         }
     }
+
+    function pseudoSection(): Section {
+        return {
+            sec_code: 'N/A',
+            instructors: ['Testudo Terrapin 🐢'],
+            class_meetings: ['No Class Meetings']
+        }
+    }
 </script>
 
 <div class='px-2 my-2 bg-bgSecondaryLight dark:bg-bgSecondaryDark 
@@ -51,6 +59,9 @@ Copyright (C) 2024 Andrew Cupps
                         minCredits={getMinCredits(course.credits)} />
         {/each}
     {:else}
-        No sections
+        <SectionListing courseCode={course.code} profs={profs}
+            section={pseudoSection()} bind:selectionsList={selections}
+                        bind:hoveredSection course={course}
+                        minCredits={getMinCredits(course.credits)} />
     {/if}
 </div>
