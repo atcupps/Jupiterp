@@ -8,7 +8,7 @@ Copyright (C) 2024 Andrew Cupps
     import Schedule from '../components/course-planner/schedule/Schedule.svelte';
     import CourseSearch from '../components/course-planner/course-search/CourseSearch.svelte';
     import { onMount } from 'svelte';
-    import { retrieveCourses } from '../lib/course-planner/CourseLoad';
+    import { retrieveCourses, retrieveUserSchedules } from '../lib/course-planner/CourseLoad';
     import { getProfsLookup } from '$lib/course-planner/CourseSearch';
     
     // Load data from `+page.ts`
@@ -20,6 +20,9 @@ Copyright (C) 2024 Andrew Cupps
     // Keep track of chosen sections
     let hoveredSection: ScheduleSelection | null = null;
     let selectedSections: ScheduleSelection[];
+    
+    // Keep track of user's schedules
+    let userSchedules: UserSchedule[];
 
     // Retreive `selectedSections` from client local storage
     onMount(() => {
@@ -27,14 +30,31 @@ Copyright (C) 2024 Andrew Cupps
             if (typeof window !== 'undefined') {
                 const storedData = localStorage.getItem('selectedSections');
                 if (storedData) {
-                    selectedSections = retrieveCourses(JSON.parse(storedData), data.departments);
+                    const parsedData = JSON.parse(storedData);
+                    if (parsedData.length > 0) {
+                        // cannot directly check type
+                        if ('courseCode' in parsedData[0]) { // if type is `ScheduleSelection[]` 
+                            selectedSections = retrieveCourses(parsedData, data.departments);
+                            userSchedules = [{name: null, selections: selectedSections}];
+                        } else if ('name' in parsedData[0]) { // if type is `UserSchedule[]`
+                            userSchedules = retrieveUserSchedules(parsedData, data.departments);
+                            selectedSections = userSchedules[0].selections;
+                        } else {
+                            throw new Error('Local storage data type unknown.');
+                        }
+                    } else {
+                        selectedSections = [];
+                        userSchedules = [{name: null, selections: []}];
+                    }
                 } else {
                     selectedSections = [];
+                    userSchedules = [{name: null, selections: []}];
                 }
             }
         } catch (e) {
             console.log('Unable to retrieve courses: ' + e);
             selectedSections = [];
+            userSchedules = [{name: null, selections: []}];
         }
     });
 
@@ -78,7 +98,7 @@ Copyright (C) 2024 Andrew Cupps
             top-[3rem] lg:top-[3rem] xl:top-[3rem] bottom-0'>
     <CourseSearch bind:selections={selectedSections} data={data}
                     bind:courseSearchSelected bind:hoveredSection 
-                    profsLookup={profsLookup} />
+                    profsLookup={profsLookup} bind:userSchedules />
     <div class='w-full h-full'>
         <Schedule bind:selections={selectedSections} bind:hoveredSection 
                         profsLookup={profsLookup}/>

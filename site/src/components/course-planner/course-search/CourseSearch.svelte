@@ -12,8 +12,7 @@ Copyright (C) 2024 Andrew Cupps
         searchCourses 
     } from "../../../lib/course-planner/CourseSearch";
     import { appendHoveredSection } from "../../../lib/course-planner/Schedule";
-    import ScheduleButtons from "../schedule/ScheduleManager.svelte";
-    import ScheduleManager from "../schedule/ScheduleManager.svelte";
+    import ScheduleManager from "../course-search/ScheduleManager.svelte";
 
     export let hoveredSection: ScheduleSelection | null;
     export let selections: ScheduleSelection[];
@@ -63,6 +62,8 @@ Copyright (C) 2024 Andrew Cupps
             totalCredits += selection.credits;
         })
     }
+
+    export let userSchedules: UserSchedule[];
 </script>
 
 <!-- Layer to exit course search if user taps on the Schedule -->
@@ -98,7 +99,7 @@ Copyright (C) 2024 Andrew Cupps
             </div>
         </div>
 
-        <ScheduleManager bind:selections />
+        <ScheduleManager bind:selections bind:schedules={userSchedules} />
     </div>
     
     <div class='flex flex-col w-full border-solid border-b-2 p-1 lg:px-0

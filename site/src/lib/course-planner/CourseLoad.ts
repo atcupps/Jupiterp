@@ -8,6 +8,18 @@
  * used as part of loading courses from local storage.
  */
 
+export function retrieveUserSchedules(schedules: UserSchedule[],
+                                    depts: Department[]): UserSchedule[] {
+    let result: UserSchedule[] = [];
+    schedules.forEach(schedule => {
+        result.push({
+            name: schedule.name,
+            selections: retrieveCourses(schedule.selections, depts)
+        });
+    });
+    return result;
+}
+
 /**
  * Given courses from local storage, identify any differences in stored
  * courses compared with those in the most recently available data, and
@@ -17,7 +29,7 @@
  * @param depts `Department[]` with all courses
  * @returns An updated `ScheduleSelection[]` with identified differences
  */
-export function retrieveCourses(selections: ScheduleSelection[], 
+export function retrieveCourses(selections: ScheduleSelection[],
                                     depts: Department[]): ScheduleSelection[] {
     const result: ScheduleSelection[] = [];
     let colorNumber: number = 0;

@@ -80,7 +80,7 @@ interface ClassMeetingExtended {
     meeting: ClassMeeting,
     hover: boolean,
     colorNumber: number,
-    differences: string[]
+    differences: string[],
 }
 
 interface Schedule {
@@ -89,10 +89,15 @@ interface Schedule {
     wednesday:  ClassMeetingExtended[],
     thursday: ClassMeetingExtended[],
     friday: ClassMeetingExtended[],
-    other: ClassMeetingExtended[]
+    other: ClassMeetingExtended[],
 }
 
 interface ClasstimeBound {
     earliestStart: number,
     latestEnd: number
+}
+
+interface UserSchedule {
+    name: string | null,
+    selections: ScheduleSelection[],
 }
