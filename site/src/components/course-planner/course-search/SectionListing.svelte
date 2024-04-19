@@ -126,7 +126,7 @@ Copyright (C) 2024 Andrew Cupps
     }
 
     const alertClasses: string = `  fixed left-[50%] translate-x-[-50%] z-5
-                                    bg-black w-[40%] bottom-[10%] min-w-72
+                                    bg-black w-[40%] top-[10%] min-w-72
                                     h-8 text-center text-white lg:hidden
                                     rounded-lg`;
 </script>
