@@ -7,7 +7,6 @@ Copyright (C) 2024 Andrew Cupps
 <script lang="ts">
     import InstructorListing from "./InstructorListing.svelte";
     import MeetingListing from "./MeetingListing.svelte";
-    import { Alert } from "flowbite-svelte";
 
     export let courseCode: string;
     export let section: Section;
@@ -128,7 +127,8 @@ Copyright (C) 2024 Andrew Cupps
 
     const alertClasses: string = `  fixed left-[50%] translate-x-[-50%] z-5
                                     bg-black w-[40%] bottom-[10%] min-w-72
-                                    h-8 text-center text-white lg:hidden`;
+                                    h-8 text-center text-white lg:hidden
+                                    rounded-lg`;
 </script>
 
 <svelte:window bind:innerWidth />
@@ -167,14 +167,14 @@ Copyright (C) 2024 Andrew Cupps
 </button>
 
 {#if addAlertVisible}
-    <Alert class={(addAlertShouldFade ? 'animate-fadeOut' : '') + alertClasses}>
+    <div class={(addAlertShouldFade ? 'animate-fadeOut' : '') + alertClasses}>
         <span class="font-medium h-full align-middle">Class Added</span>
-    </Alert>
+    </div>
 {/if}
 
 {#if removeAlertVisible}
-    <Alert class={(removeAlertShouldFade ? 'animate-fadeOut' : '') + alertClasses}>
+    <div class={(removeAlertShouldFade ? 'animate-fadeOut' : '') + alertClasses}>
         <span class="font-medium h-full align-middle">Class Removed</span>
-    </Alert>
+    </div>
 {/if}
 
