@@ -27,8 +27,12 @@ Copyright (C) 2024 Andrew Cupps
                 {version}
             </span>
         </div>
-        <span class='italic align-top text-sm'>{date}</span>
+        <span class='italic align-top text-sm pl-1.5'>
+            {date}
+        </span>
     
-        <slot />
+        <div class='pl-1.5'>
+            <slot  />
+        </div>
     </div>
 </div>
