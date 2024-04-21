@@ -39,6 +39,7 @@ Copyright (C) 2024 Andrew Cupps
         <a href='https://github.com/atcupps/Jupiterp/issues' target='_blank'
             class='text-orange underline'>here</a>.
     </p>
+    <a href='/changelog' class='text-orange underline'>View changelog</a>
     <h2 class={h2Classes}>
         Professor Ratings
     </h2>
