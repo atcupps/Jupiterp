@@ -127,7 +127,8 @@ Copyright (C) 2024 Andrew Cupps
 
     const alertClasses: string = `  fixed left-[50%] translate-x-[-50%] z-5
                                     w-[40%] top-[10%] min-w-72 h-8 rounded-lg
-                                    text-center text-white lg:hidden `;
+                                    text-center text-white lg:hidden 
+                                    bg-orange shadow-lg content-center`;
 </script>
 
 <svelte:window bind:innerWidth />
@@ -167,20 +168,14 @@ Copyright (C) 2024 Andrew Cupps
 
 {#if addAlertVisible}
     <div class={(addAlertShouldFade ? 'animate-fadeOut' : '') + 
-                    alertClasses + ' alert'}>
+                    alertClasses}>
         <span class="font-medium h-full align-middle">Class Added</span>
     </div>
 {/if}
 
 {#if removeAlertVisible}
     <div class={(removeAlertShouldFade ? 'animate-fadeOut' : '') + 
-                    alertClasses + ' alert'}>
+                    alertClasses}>
         <span class="font-medium h-full align-middle">Class Removed</span>
     </div>
 {/if}
-
-<style>
-    .alert {
-        background-color: rgba(255, 125, 0, 0.5);
-    }
-</style>
