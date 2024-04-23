@@ -69,7 +69,7 @@ When you make changes, please abide by the style guide found in `STYLE.md`.
 
 If you are not finished with development on a task, but want to share your code or receive feedback or review, you can open up a draft pull request from your local or forked branch to a branch of Jupiterp. This can then be viewed by other contributors; when ready, the draft PR can be converted to a normal PR and merged, or closed.
 
-If you are ready to merge changes on a local or forked branch to `main` of Jupiterp, you can open a pull request on GitHub. Provide a brief description of what your PR does and link any relevant issues rather than closing them.
+If you are ready to merge changes on a local or forked branch to this repository, you can open a pull request (PR) on GitHub. Pull requests should not attempt to merge code directly into the `main` branch, but instead into an appropriate development branch. Development branches are named by version; for example: `dev-1.0.2`. This allows code to be tested thoroughly before pushing changes to production. If you are unsure of which development branch to target, choose one and you may be directed to change your target branch. In your pull request, provide a brief description of what your PR does and link any relevant issues rather than closing them.
 
 ### Code Review
 
