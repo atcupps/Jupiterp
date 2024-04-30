@@ -40,38 +40,14 @@ Copyright (C) 2024 Andrew Cupps
         colorNumber: -1,
     }
 
-    let addAlertVisible: boolean = false;
-    let addAlertShouldFade: boolean = false;
-    let removeAlertVisible: boolean = false;
-    let removeAlertShouldFade: boolean = false;
-
-    // Function to show or fade 
-    function showAddAlert() {
-        addAlertVisible = true;    // Make the div visible
-        addAlertShouldFade = false; // Reset fading in case it's a subsequent click
-        setTimeout(() => {
-            addAlertShouldFade = true; // Start fading after 10 seconds
-        }, 300);  // Delay before fade starts
-    }
-
-    function showRemoveAlert() {
-        removeAlertVisible = true;
-        removeAlertShouldFade = false;
-        setTimeout(() => {
-            removeAlertShouldFade = true;
-        }, 300);
-    }
-
     // In order for Svelte's reactivity to work properly, `selectionsList`
     // needs to be reassigned instead of using `.push` or `.splice`.
     function addSectionToSchedule() {
         if (!sectionAdded) {
-            showAddAlert();
             removeHoverSection();
             newSelection.colorNumber = firstAvailableColor(selectionsList);
             selectionsList = [...selectionsList, newSelection];
         } else {
-            showRemoveAlert();
             const index = selectionsList.findIndex(obj => 
                         selectionEquals(obj));
             if (index !== -1) {
@@ -110,26 +86,19 @@ Copyright (C) 2024 Andrew Cupps
         });
         unavailableColors.sort((a, b) => a - b);
         let result: number = 0;
-        while (result < unavailableColors.length && 
-                    unavailableColors[result] === result) {
+        while (result < unavailableColors.length && unavailableColors[result] === result) {
             result += 1;
         }
         return result;
     }
 
     let profsHover: boolean = false;
-    let locationHover: boolean = false;
 
     let isDesktop: boolean = true;
     let innerWidth: number;
     $: if (innerWidth) {
         isDesktop = innerWidth >= 1024;
     }
-
-    const alertClasses: string = `  fixed left-[50%] translate-x-[-50%] z-5
-                                    w-[40%] top-[10%] min-w-72 h-8 rounded-lg
-                                    text-center text-white lg:hidden 
-                                    bg-orange shadow-lg content-center`;
 </script>
 
 <svelte:window bind:innerWidth />
@@ -142,8 +111,8 @@ Copyright (C) 2024 Andrew Cupps
             class='flex flex-row w-full text-left border-t-2
                     border-outlineLight dark:border-outlineDark transition
                 {sectionAdded ? 'bg-hoverLight dark:bg-hoverDark' : ''}'
-            class:lg:hover:bg-hoverLight={!profsHover && !locationHover}
-            class:lg:hover:dark:bg-hoverDark={!profsHover && !locationHover}
+            class:lg:hover:bg-hoverLight={!profsHover}
+            class:lg:hover:dark:bg-hoverDark={!profsHover}
         title='Add course to schedule'
                 >
     <!-- Section code -->
@@ -162,22 +131,7 @@ Copyright (C) 2024 Andrew Cupps
         
         <!-- Class meetings -->
         {#each section.class_meetings as meeting}
-            <MeetingListing meeting={meeting} 
-                bind:locationHover {removeHoverSection} />
+            <MeetingListing meeting={meeting} />
         {/each}
     </div>
 </button>
-
-{#if addAlertVisible}
-    <div class={(addAlertShouldFade ? 'animate-fadeOut' : '') + 
-                    alertClasses}>
-        <span class="font-medium h-full align-middle">Class Added</span>
-    </div>
-{/if}
-
-{#if removeAlertVisible}
-    <div class={(removeAlertShouldFade ? 'animate-fadeOut' : '') + 
-                    alertClasses}>
-        <span class="font-medium h-full align-middle">Class Removed</span>
-    </div>
-{/if}
