@@ -144,7 +144,7 @@ Copyright (C) 2024 Andrew Cupps
         bind:this={elt} on:click={toggleCourseInfo}
         style=' top: {(decStartTime - earliestClassStart) / boundDiff * 100}%;
                 height: {(decEndTime - decStartTime) / boundDiff * 100}%;
-                background-color: {getColorFromNumber(meeting.colorNumber)};
+                background-color: {getColorFromNumber(meeting.colorNumber)};  
                 opacity: {meeting.hover ? 0.4 : 1.0};
                 width: {(1 / meeting.conflictTotal) * 100}%;
                 left: {
