@@ -30,17 +30,6 @@ export default {
       'secCodesDark': '#667085',
       'hoverDark': '#30374a',
       // 'hoverDark': '#222736',
-    },
-    extend: {
-      keyframes: {
-        fadeOut: {
-          from: { opacity: '1', display: 'visible' },
-          to: { opacity: '0', display: 'hidden' }
-        }
-      },
-      animation: {
-        fadeOut: 'fadeOut 0.75s forwards'
-      }
     }
   },
   plugins: []

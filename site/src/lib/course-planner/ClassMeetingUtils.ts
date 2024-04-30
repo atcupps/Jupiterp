@@ -39,15 +39,9 @@ const colorMapping = [
     '#DEB3F2',
     '#B8F2B3',
     '#f2c996',
-    '#EDAFD6',
+    '#dfa8e6',
     '#E6CDE3',
     '#FEDFCC',
-    '#ADE0F6',
-    '#FDD4F3',
-    '#C4BBF1',
-    '#D3F4BA',
-    '#AAEFF4',
-    '#FFC6B0',
 ];
 
 /**
@@ -57,5 +51,5 @@ const colorMapping = [
  * @returns A hex code color string
  */
 export function getColorFromNumber(num: number): string {
-    return colorMapping[num % colorMapping.length];
+    return colorMapping[num];
 }
