@@ -13,11 +13,19 @@ Copyright (C) 2024 Andrew Cupps
             top-[3rem] lg:top-[3.5rem] xl:top-[4rem] bottom-0'>
 
     <ChangelogItem title='Feedback' version='v1.0.1: Io' date='April 4, 2024'>
-        Minor changes to improve Jupiterp based on feedback after launch (these were pushed separately but are merged to one version for organizational purposes. Fix major 'Classtime TBA' bug, wrap course titles in course search, and enable adding courses with no sections to your schedule.
+        Minor changes to improve Jupiterp based on feedback after launch 
+        (these were pushed separately but are merged to one version for 
+        organizational purposes. Fix major 'Classtime TBA' bug, wrap course 
+        titles in course search, and enable adding courses with no sections 
+        to your schedule. Add more colors for classes on the Schedule. Link to
+        buildings on the UMD Map in course search.
     </ChangelogItem>
     
-    <ChangelogItem title='Initial Release' version='v1.0.0: Jupiter' date='March 12, 2024'>
-        The original version of Jupiterp when officially published. Complete with the ability to add courses to a schedule, save schedules locally, and easily see PlanetTerp reviews for professors.
+    <ChangelogItem title='Initial Release' 
+                version='v1.0.0: Jupiter' date='March 12, 2024'>
+        The original version of Jupiterp when officially published. 
+        Complete with the ability to add courses to a schedule, save schedules 
+        locally, and easily see PlanetTerp reviews for professors.
     </ChangelogItem>
 
 </div>

@@ -52,7 +52,8 @@ Copyright (C) 2024 Andrew Cupps
                             removeHoverSection();
                         }}
                         on:click={handleLinkClick}
-                        target='_blank'>
+                        target='_blank'
+                        title='View on UMD Map'>
                     {formatLocation(meeting.InPerson.location)}
                 </a>
             {/if}
