@@ -9,6 +9,8 @@ Copyright (C) 2024 Andrew Cupps
         'text-2xl border-b-2 border-divBorderLight dark:border-divBorderDark';
     const h2Classes =
         'text-xl border-b-2 border-divBorderLight dark:border-divBorderDark';
+    const h3Classes =
+        'text-l border-b-2 border-divBorderLight dark:border-divBorderDark';
     const pClasses = 
         'my-2 text-normal leading-5 text-textLight dark:text-textDark';
 </script>
@@ -39,6 +41,7 @@ Copyright (C) 2024 Andrew Cupps
         <a href='https://github.com/atcupps/Jupiterp/issues' target='_blank'
             class='text-orange underline'>here</a>.
     </p>
+    <a href='/changelog' class='text-orange underline'>View changelog</a>
     <h2 class={h2Classes}>
         Professor Ratings
     </h2>
@@ -68,9 +71,9 @@ Copyright (C) 2024 Andrew Cupps
         Classes. Instructor information and reviews are gathered from
         the PlanetTerp API.
     </p>
-    <h2 class={h2Classes}>
+    <h3 class={h3Classes}>
         Core Team
-    </h2>
+    </h3>
     <p class={pClasses}>
         Jupiterp is managed by our Core Team:
     </p>
@@ -88,6 +91,35 @@ Copyright (C) 2024 Andrew Cupps
                 Alan Liu
             </a>
             <i class='text-sm'> - Member</i>
+        </li>
+    </ul>
+    <h3 class={h3Classes}>
+        Non-Technical Credits
+    </h3>
+    <p class={pClasses}>
+        Jupiterp also received help from the following people:
+    </p>
+    <ul class={pClasses + ' list-disc ml-8'}>
+        <li>
+            <a href='https://linkedin.com/in/meilinyuan' target='_blank'
+                            class='text-orange underline'>
+                Meilin Yuan
+            </a>
+            <i class='text-sm'> - Marquetour</i>
+        </li>
+        <li>
+            <a href='https://www.linkedin.com/in/emily-wang-5769341b1/'
+                        target='_blank' class='text-orange underline'>
+                Emily Wang        
+            </a>
+            <i class='text-sm'> - Marquetour</i>
+        </li>
+        <li>
+            <a href='https://get-agrippa-on-architecture.artinterp.org/'
+                        target='_blank' class='text-orange underline'>
+                Hana Lerdbdoon        
+            </a>
+            <i class='text-sm'> - Aesthetics Director</i>
         </li>
     </ul>
     <h2 class={h2Classes}>
