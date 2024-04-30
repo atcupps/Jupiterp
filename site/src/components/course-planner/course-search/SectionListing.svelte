@@ -118,6 +118,7 @@ Copyright (C) 2024 Andrew Cupps
     }
 
     let profsHover: boolean = false;
+    let locationHover: boolean = false;
 
     let isDesktop: boolean = true;
     let innerWidth: number;
@@ -141,8 +142,8 @@ Copyright (C) 2024 Andrew Cupps
             class='flex flex-row w-full text-left border-t-2
                     border-outlineLight dark:border-outlineDark transition
                 {sectionAdded ? 'bg-hoverLight dark:bg-hoverDark' : ''}'
-            class:lg:hover:bg-hoverLight={!profsHover}
-            class:lg:hover:dark:bg-hoverDark={!profsHover}
+            class:lg:hover:bg-hoverLight={!profsHover && !locationHover}
+            class:lg:hover:dark:bg-hoverDark={!profsHover && !locationHover}
         title='Add course to schedule'
                 >
     <!-- Section code -->
@@ -161,7 +162,8 @@ Copyright (C) 2024 Andrew Cupps
         
         <!-- Class meetings -->
         {#each section.class_meetings as meeting}
-            <MeetingListing meeting={meeting} />
+            <MeetingListing meeting={meeting} 
+                bind:locationHover {removeHoverSection} />
         {/each}
     </div>
 </button>
