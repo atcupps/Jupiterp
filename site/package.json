@@ -33,6 +33,8 @@
   "dependencies": {
     "@vercel/analytics": "^1.1.2",
     "@vercel/speed-insights": "^1.0.9",
+    "flowbite-svelte": "^0.45.0",
+    "flowbite-svelte-icons": "^1.5.0",
     "node-fetch": "^2.7.0"
   }
 }
