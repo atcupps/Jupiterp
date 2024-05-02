@@ -1,0 +1,32 @@
+name: PR Branch Check
+
+on:
+  pull_request:
+    types: [opened]
+    branches:
+      - main
+
+jobs:
+  check-pr-branch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check if PR branch does not start with 'dev'
+        id: check_branch
+        run: |
+          if [[ ! "${{ github.head_ref }}" == dev* ]]; then
+            echo "branch_check_failed=true" >> $GITHUB_ENV
+          fi
+
+      - name: Comment on PR
+        if: env.branch_check_failed == 'true'
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const issue_number = context.payload.pull_request.number;
+            const message = "🚨 Hi @${{ github.actor }}, are you sure you want to merge directly into the `main` branch and not a development branch?";
+            github.rest.issues.createComment({
+              issue_number: issue_number,
+              owner: context.repo.owner,
+              repo: context.repo.name,
+              body: message
+            });
