@@ -12,13 +12,17 @@ Copyright (C) 2024 Andrew Cupps
             text-textLight dark:text-textDark lg:px-8
             top-[3rem] lg:top-[3.5rem] xl:top-[4rem] bottom-0'>
 
+    <ChangelogItem title='Minor Quality Changes' version='v1.0.2: Europa' 
+                                                        date='April 30, 2024'>
+        Add banner to show when classes are added or removed on mobile; add 
+        changelog page. Add more colors for classes on the Schedule. Link to 
+        buildings on the UMD Map in course search.
+    </ChangelogItem>
+
     <ChangelogItem title='Feedback' version='v1.0.1: Io' date='April 4, 2024'>
         Minor changes to improve Jupiterp based on feedback after launch 
         (these were pushed separately but are merged to one version for 
-        organizational purposes. Fix major 'Classtime TBA' bug, wrap course 
-        titles in course search, and enable adding courses with no sections 
-        to your schedule. Add more colors for classes on the Schedule. Link to
-        buildings on the UMD Map in course search.
+        organizational purposes.
     </ChangelogItem>
     
     <ChangelogItem title='Initial Release' 
