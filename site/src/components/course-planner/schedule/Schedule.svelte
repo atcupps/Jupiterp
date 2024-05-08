@@ -13,6 +13,7 @@ Copyright (C) 2024 Andrew Cupps
     import { formatCredits, testudoLink } from '../../../lib/course-planner/Formatting';
     import { afterUpdate } from 'svelte';
     import InstructorListing from '../course-search/InstructorListing.svelte';
+    import MeetingListing from '../course-search/MeetingListing.svelte';
 
     export let hoveredSection: ScheduleSelection | null;
     export let selections: ScheduleSelection[] = [];
@@ -206,6 +207,12 @@ Copyright (C) 2024 Andrew Cupps
                             profsHover={false}
                             removeHoverSection={() => {}} />
     {/each}
+    <div class='text-sm 2xl:text-base w-64'>
+        {#each courseInfoSection.class_meetings as meeting}
+            <MeetingListing meeting={meeting} condensed={true}
+                locationHover={false} removeHoverSection={() => {}} />
+        {/each}
+    </div>
     <div class='text-base 2xl:text-lg leading-5'>
         {courseInfoCourse.description}
     </div>
