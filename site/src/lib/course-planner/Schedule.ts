@@ -149,6 +149,15 @@ function parseDays(days: string): Day[] {
             case 'F':
                 result.push(Day.Friday);
                 break;
+            case 'S':
+                if (days === 'SaSu') {
+                    result.push(Day.Other);
+                    i += 3;
+                } else {
+                    result.push(Day.Other);
+                    i++;
+                }
+                break;
             default:
                 throw Error('Invalid day code: ' + days);
         }
