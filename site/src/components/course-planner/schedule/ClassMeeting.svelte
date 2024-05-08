@@ -57,7 +57,8 @@ Copyright (C) 2024 Andrew Cupps
             } else {
                 const inPerson = meeting.meeting.InPerson;
                 if (inPerson.classtime != null) {
-                    formattedTime = formatClasstime(inPerson.classtime);
+                    const days = isInOther ? inPerson.classtime.days + ' ' : '';
+                    formattedTime = days + formatClasstime(inPerson.classtime);
                     decStartTime = timeToNumber(inPerson.classtime.start_time);
                     decEndTime = timeToNumber(inPerson.classtime.end_time);
                 } else {
