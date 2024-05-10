@@ -8,6 +8,7 @@ Copyright (C) 2024 Andrew Cupps
     import { fade } from 'svelte/transition';
     import { page } from '$app/stores';
     import NavBarElement from './NavBarElement.svelte';
+    import DarkModeToggle from './DarkModeToggle.svelte';
 
     let siteLinksSelected: boolean = false;
 
@@ -27,6 +28,7 @@ Copyright (C) 2024 Andrew Cupps
     <NavBarElement link='https://github.com/atcupps/Jupiterp'
                                         text='GitHub'
                                         target='_blank' />
+    <DarkModeToggle />
 </div>
 
 <!-- Button to toggle course search on mobile -->
