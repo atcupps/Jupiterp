@@ -47,6 +47,10 @@ Copyright (C) 2024 Andrew Cupps
                 latestClassEnd += Math.floor((8 - boundDiff) / 2);
             }
         }
+        if (earliestClassStart === -5 && latestClassEnd === 5) {
+            earliestClassStart = 8;
+            latestClassEnd = 16;
+        }
     }
 
     let showCourseInfo: string | null = null;
