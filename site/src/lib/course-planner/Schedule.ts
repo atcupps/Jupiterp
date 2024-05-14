@@ -378,10 +378,10 @@ function classesConflict(
         a: ClassMeetingExtended, b: ClassMeetingExtended, 
         aStart: number, aEnd: number, bStart: number, bEnd: number): boolean {
     let result: boolean = false;
-    if (aStart <= bStart && aEnd >= bStart) {
+    if (aStart <= bStart && aEnd > bStart) {
         result = true;
     }
-    else if (bStart <= aStart && bEnd >= aStart) {
+    else if (bStart <= aStart && bEnd > aStart) {
         result = true;
     }
     return result;
