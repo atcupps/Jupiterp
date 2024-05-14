@@ -259,12 +259,10 @@ function labelConflictingClasstimes(schedule: Schedule) {
             if (endTimes[i] > startTimes[i + 1]) {
                 let j = i + 1;
                 let curEnd: number = endTimes[i];
-                let conflictGroupSize: number = 1;
-
+                
                 // Identifying a group of conflicting classtimes
                 while (curEnd > startTimes[j] && j < day.length) {
                     curEnd = Math.max(curEnd, endTimes[j]);
-                    conflictGroupSize++;
                     j++;
                 }
 
@@ -340,7 +338,7 @@ function getConflictIndices(
         endTimes: number[]
     ): number[] {
 
-    let result: number[] = [1];
+    const result: number[] = [1];
     let curMax: number = 1;
 
     // If a class conflicts with another class,
