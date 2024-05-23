@@ -12,9 +12,16 @@ Copyright (C) 2024 Andrew Cupps
         searchCourses 
     } from "../../../lib/course-planner/CourseSearch";
     import { appendHoveredSection } from "../../../lib/course-planner/Schedule";
+    import { 
+        HoveredSectionStore, 
+        SelectedSectionsStore 
+    } from "../../../stores/CoursePlannerStores";
 
-    export let hoveredSection: ScheduleSelection | null;
-    export let selections: ScheduleSelection[];
+    let hoveredSection: ScheduleSelection | null;
+    HoveredSectionStore.subscribe((hovered) => { hoveredSection = hovered });
+
+    let selections: ScheduleSelection[];
+    SelectedSectionsStore.subscribe((stored) => { selections = stored });
 
     // Load profs and depts data
     export let data;
@@ -35,8 +42,6 @@ Copyright (C) 2024 Andrew Cupps
                             });
     }
 
-    export let profsLookup: Record<string, Professor>;
-
     // Boolean for toggling search menu on smaller screens
     export let courseSearchSelected: boolean = false;
 
@@ -47,7 +52,7 @@ Copyright (C) 2024 Andrew Cupps
                             course.code === hoveredSection.courseCode;
             });
             if (index === -1) {
-                hoveredSection = null;
+                HoveredSectionStore.set(null);
             }
         }
     }
@@ -106,8 +111,7 @@ Copyright (C) 2024 Andrew Cupps
     <div class='grow courses-list overflow-y-scroll overflow-x-none
                 px-1 lg:pr-1 lg:pl-0'>
         {#each searchResults as courseMatch (courseMatch.code)}
-            <CourseListing course={courseMatch} profs={profsLookup}
-                    bind:selections={selections} bind:hoveredSection />
+            <CourseListing course={courseMatch} />
         {/each}
     </div>
 </div>

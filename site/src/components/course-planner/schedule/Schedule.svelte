@@ -13,14 +13,31 @@ Copyright (C) 2024 Andrew Cupps
     import { formatCredits, testudoLink } from '../../../lib/course-planner/Formatting';
     import { afterUpdate } from 'svelte';
     import InstructorListing from '../course-search/InstructorListing.svelte';
+    import {
+        HoveredSectionStore, SelectedSectionsStore
+    } from '../../../stores/CoursePlannerStores';
 
-    export let hoveredSection: ScheduleSelection | null;
-    export let selections: ScheduleSelection[] = [];
-    export let profsLookup: Record<string, Professor>;
+    let hoveredSection: ScheduleSelection | null = null;
+    let selections: ScheduleSelection[] = [];
+
 
     let schedule: Schedule = schedulify(
         appendHoveredSection(selections, hoveredSection)
     );
+
+    HoveredSectionStore.subscribe((stored) => { 
+        hoveredSection = stored;
+        schedule = schedulify(
+            appendHoveredSection(selections, hoveredSection)
+        );
+    });
+
+    SelectedSectionsStore.subscribe((stored) => {
+        selections = stored;
+        schedule = schedulify(
+            appendHoveredSection(selections, hoveredSection)
+        );
+    })
 
     let bgHeight: number;
 
@@ -206,7 +223,6 @@ Copyright (C) 2024 Andrew Cupps
     </div>
     {#each courseInfoSection.instructors as instructor}
         <InstructorListing instructor={instructor}
-                            profs={profsLookup}
                             profsHover={false}
                             removeHoverSection={() => {}} />
     {/each}

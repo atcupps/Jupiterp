@@ -9,9 +9,6 @@ Copyright (C) 2024 Andrew Cupps
     import { formatCredits } from "../../../lib/course-planner/Formatting";
 
     export let course: Course;
-    export let profs: Record<string, Professor>;
-    export let hoveredSection: ScheduleSelection | null;
-    export let selections: ScheduleSelection[];
 
     function getMinCredits(credits: CreditCount): number {
         if ('Amount' in credits) {
@@ -53,15 +50,15 @@ Copyright (C) 2024 Andrew Cupps
     <!-- Sections -->
     {#if course.sections != null}
         {#each course.sections as section}
-            <SectionListing courseCode={course.code} profs={profs} 
-                section={section} bind:selectionsList={selections} 
-                        bind:hoveredSection course={course}
+            <SectionListing courseCode={course.code}
+                section={section}
+                        course={course}
                         minCredits={getMinCredits(course.credits)} />
         {/each}
     {:else}
-        <SectionListing courseCode={course.code} profs={profs}
-            section={pseudoSection()} bind:selectionsList={selections}
-                        bind:hoveredSection course={course}
+        <SectionListing courseCode={course.code}
+            section={pseudoSection()}
+                        course={course}
                         minCredits={getMinCredits(course.credits)} />
     {/if}
 </div>

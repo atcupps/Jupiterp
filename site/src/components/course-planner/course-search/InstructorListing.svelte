@@ -6,9 +6,12 @@ Copyright (C) 2024 Andrew Cupps
 -->
 <script lang='ts'>
     import { ptLinkFromSlug } from "../../../lib/course-planner/Professors";
+    import { ProfsLookupStore } from "../../../stores/CoursePlannerStores";
 
     export let instructor: string = 'No instructor';
-    export let profs: Record<string, Professor>;
+
+    let profs: Record<string, Professor>;
+    ProfsLookupStore.subscribe((lookup) => { profs = lookup });
 
     // Convert rating to a percentage for CSS
     function convertRating(rating: number | null): number {
