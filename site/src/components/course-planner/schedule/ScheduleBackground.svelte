@@ -35,13 +35,14 @@ Copyright (C) 2024 Andrew Cupps
 
     let elt: HTMLDivElement;
     let innerHeight: number;
+    let innerWidth: number;
     export let h: number;
-    $: if (elt || innerHeight) {
+    $: if (elt || (innerHeight && innerWidth)) {
         h = elt.offsetHeight * (latest - earliest) * 2 / numBars;
     }
 </script>
 
-<svelte:window bind:innerHeight />
+<svelte:window bind:innerHeight bind:innerWidth />
 
 <div class='h-full' bind:this={elt}>
     <TimeLine number={formatDecTime(earliest)} position={0} />

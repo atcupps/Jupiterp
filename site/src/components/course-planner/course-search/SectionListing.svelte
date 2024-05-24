@@ -51,6 +51,9 @@ Copyright (C) 2024 Andrew Cupps
         addAlertShouldFade = false; // Reset fading in case it's a subsequent click
         setTimeout(() => {
             addAlertShouldFade = true; // Start fading after 10 seconds
+            setTimeout(() => {
+                addAlertVisible = false;
+            }, 750); // Delay to make `addAlertVisible` false after fading
         }, 300);  // Delay before fade starts
     }
 
@@ -59,6 +62,9 @@ Copyright (C) 2024 Andrew Cupps
         removeAlertShouldFade = false;
         setTimeout(() => {
             removeAlertShouldFade = true;
+            setTimeout(() => {
+                removeAlertVisible = false;
+            }, 750); // Delay to make `removeAlertVisible` false after fading
         }, 300);
     }
 
