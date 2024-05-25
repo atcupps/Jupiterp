@@ -1,4 +1,4 @@
-name: PR Merge Branch Check
+name: Comment on PRs to `main`
 
 on:
   pull_request:
@@ -11,11 +11,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check if PR branch does not start with 'dev'
-        id: check_branch
         run: |
           if [[ ! "${{ github.head_ref }}" == dev* ]]; then
             echo "branch_check_failed=true" >> $GITHUB_ENV
           fi
+      
+      - name: Check if PR branch does start with 'dev'
+        run: |
           if [[ ! "${{ github.head_ref }}" == dev* ]]; then
             echo "branch_check_failed=false" >> $GITHUB_ENV
           fi
