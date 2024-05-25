@@ -16,6 +16,9 @@ jobs:
           if [[ ! "${{ github.head_ref }}" == dev* ]]; then
             echo "branch_check_failed=true" >> $GITHUB_ENV
           fi
+          if [[ ! "${{ github.head_ref }}" == dev* ]]; then
+            echo "branch_check_failed=false" >> $GITHUB_ENV
+          fi
 
       - name: Comment on PR if branch does not start with 'dev'
         if: env.branch_check_failed == 'true'
