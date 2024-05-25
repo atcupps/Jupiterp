@@ -259,17 +259,27 @@ function labelConflictingClasstimes(schedule: Schedule) {
             if (endTimes[i] > startTimes[i + 1]) {
                 let j = i + 1;
                 let curEnd: number = endTimes[i];
-                let conflictTotal: number = 1;
+                
+                // Identifying a group of conflicting classtimes
                 while (curEnd > startTimes[j] && j < day.length) {
-                    curEnd = endTimes[j];
-                    conflictTotal++;
+                    curEnd = Math.max(curEnd, endTimes[j]);
                     j++;
                 }
-                let conflictIndex: number = 1;
+
+                // Creating an array of conflict indices
+                const conflictIndices: number[] = 
+                        getConflictIndices(
+                            day.slice(i, j),
+                            startTimes.slice(i, j),
+                            endTimes.slice(i, j)
+                        );
+                console.log(day.slice(i, j));
+                
+                // Assigning conflict indices
+                const startingPos = i;
                 while (i < j) {
-                    day[i].conflictIndex = conflictIndex;
-                    day[i].conflictTotal = conflictTotal;
-                    conflictIndex++;
+                    day[i].conflictIndex = conflictIndices[i - startingPos];
+                    day[i].conflictTotal = Math.max(...conflictIndices);
                     i++;
                 }
                 i--;
@@ -322,6 +332,61 @@ function getClassEndTime(meeting: ClassMeetingExtended): number {
     }
 }
 
+function getConflictIndices(
+        classes: ClassMeetingExtended[], 
+        startTimes: number[], 
+        endTimes: number[]
+    ): number[] {
+
+    const result: number[] = [1];
+    let curMax: number = 1;
+
+    // If a class conflicts with another class,
+    // it cannot use the same index number.
+    for (let i = 1; i < classes.length; i++) {
+        let freeIndexFound: boolean = false;
+        let freeIndexIndex: number = -1;
+        let curResult: number = -1;
+        for (let j = 0; j < result.length; j++) {
+            if (i !== j && !classesConflict(
+                                            classes[i], classes[j],
+                                            startTimes[i], endTimes[i],
+                                            startTimes[j], endTimes[j])) {
+                if (!freeIndexFound) {
+                    curResult = result[j];
+                    freeIndexIndex = j;
+                }
+                freeIndexFound = true;
+            }
+            else if (freeIndexFound && curResult === result[j]) {
+                j = freeIndexIndex;
+                freeIndexFound = false;
+            }
+        }
+        console.log(freeIndexFound);
+        if (freeIndexFound) {
+            result.push(curResult);
+        }
+        else {
+            result.push(++curMax);
+        }
+    }
+    return result;
+}
+
+function classesConflict(
+        a: ClassMeetingExtended, b: ClassMeetingExtended, 
+        aStart: number, aEnd: number, bStart: number, bEnd: number): boolean {
+    let result: boolean = false;
+    if (aStart <= bStart && aEnd > bStart) {
+        result = true;
+    }
+    else if (bStart <= aStart && bEnd > aStart) {
+        result = true;
+    }
+    return result;
+}
+
 /**
  * Append a `hoveredSection` to `selections` if it is not `null`.
  * @param selections An array of `ScheduleSelection`s
@@ -329,10 +394,10 @@ function getClassEndTime(meeting: ClassMeetingExtended): number {
  * @returns `selections`, with `hoveredSection` appended if it is not `null`.
  */
 export function appendHoveredSection(selections: ScheduleSelection[], 
-    hoveredSection: ScheduleSelection | null): ScheduleSelection[] {
-if (hoveredSection) {
-    return [...selections, hoveredSection];
-} else {
-    return selections;
-}
+        hoveredSection: ScheduleSelection | null): ScheduleSelection[] {
+    if (hoveredSection) {
+        return [...selections, hoveredSection];
+    } else {
+        return selections;
+    }
 }

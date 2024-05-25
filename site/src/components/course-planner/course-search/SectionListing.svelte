@@ -7,14 +7,21 @@ Copyright (C) 2024 Andrew Cupps
 <script lang="ts">
     import InstructorListing from "./InstructorListing.svelte";
     import MeetingListing from "./MeetingListing.svelte";
+    import { 
+        HoveredSectionStore,
+        SelectedSectionsStore
+    } from "../../../stores/CoursePlannerStores";
 
     export let courseCode: string;
     export let section: Section;
-    export let profs: Record<string, Professor>;
-    export let hoveredSection: ScheduleSelection | null;
-    export let selectionsList: ScheduleSelection[] = [];
     export let minCredits: number;
     export let course: Course;
+
+    let hoveredSection: ScheduleSelection | null;
+    HoveredSectionStore.subscribe((store) => { hoveredSection = store });
+
+    let selectionsList: ScheduleSelection[];
+    SelectedSectionsStore.subscribe((stored) => { selectionsList = stored });
 
     let newSelection: ScheduleSelection = {
         courseCode,
@@ -75,16 +82,17 @@ Copyright (C) 2024 Andrew Cupps
             showAddAlert();
             removeHoverSection();
             newSelection.colorNumber = firstAvailableColor(selectionsList);
-            selectionsList = [...selectionsList, newSelection];
+            SelectedSectionsStore.set([...selectionsList, newSelection]);
         } else {
             showRemoveAlert();
             const index = selectionsList.findIndex(obj => 
                         selectionEquals(obj));
             if (index !== -1) {
-                selectionsList = [
-                    ...selectionsList.slice(0, index),
-                    ...selectionsList.slice(index + 1)
-                ];
+                SelectedSectionsStore.set([
+                        ...selectionsList.slice(0, index),
+                        ...selectionsList.slice(index + 1)
+                    ]
+                );
             }
         }
         sectionAdded = !sectionAdded;
@@ -96,12 +104,12 @@ Copyright (C) 2024 Andrew Cupps
     function addHoverSection() {
         if (!sectionAdded) {
             hoverSection.colorNumber = firstAvailableColor(selectionsList);
-            hoveredSection = hoverSection;
+            HoveredSectionStore.set(hoverSection);
         }
     }
 
     function removeHoverSection() {
-        hoveredSection = null;
+        HoveredSectionStore.set(null);
     }
 
     function selectionEquals(s: ScheduleSelection): boolean {
@@ -162,7 +170,7 @@ Copyright (C) 2024 Andrew Cupps
     <div class='w-full'>
         <!-- Instructors -->
         {#each section.instructors as instructor}
-            <InstructorListing {instructor} {profs} 
+            <InstructorListing {instructor} 
                                 bind:profsHover {removeHoverSection}/>
         {/each}
         
