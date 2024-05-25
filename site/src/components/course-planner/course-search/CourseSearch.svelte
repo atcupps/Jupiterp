@@ -20,7 +20,7 @@ Copyright (C) 2024 Andrew Cupps
     let hoveredSection: ScheduleSelection | null;
     HoveredSectionStore.subscribe((hovered) => { hoveredSection = hovered });
 
-    let selections: ScheduleSelection[];
+    let selections: ScheduleSelection[] = [];
     SelectedSectionsStore.subscribe((stored) => { selections = stored });
 
     // Load profs and depts data

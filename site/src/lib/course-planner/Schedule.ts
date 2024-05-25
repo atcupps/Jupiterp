@@ -273,7 +273,6 @@ function labelConflictingClasstimes(schedule: Schedule) {
                             startTimes.slice(i, j),
                             endTimes.slice(i, j)
                         );
-                console.log(day.slice(i, j));
                 
                 // Assigning conflict indices
                 const startingPos = i;
@@ -363,7 +362,6 @@ function getConflictIndices(
                 freeIndexFound = false;
             }
         }
-        console.log(freeIndexFound);
         if (freeIndexFound) {
             result.push(curResult);
         }
