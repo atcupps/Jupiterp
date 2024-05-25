@@ -28,7 +28,7 @@ Copyright (C) 2024 Andrew Cupps
         {#each classes as classMeeting, 
                             index (`${index}-${classMeeting.instructors}`)}
             <ClassMeeting meeting={classMeeting} isInOther={type==='Other'}
-                bind:selections={selections} bind:earliestClassStart 
+                bind:earliestClassStart 
                 bind:latestClassEnd bind:showCourseInfo 
                 bind:showSectionInfo />
         {/each}
