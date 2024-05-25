@@ -18,7 +18,7 @@ jobs:
       
       - name: Check if PR branch does start with 'dev'
         run: |
-          if [[ ! "${{ github.head_ref }}" == dev* ]]; then
+          if [[ "${{ github.head_ref }}" == dev* ]]; then
             echo "branch_check_failed=false" >> $GITHUB_ENV
           fi
 
