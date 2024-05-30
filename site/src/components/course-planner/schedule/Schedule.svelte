@@ -222,7 +222,7 @@ Copyright (C) 2024 Andrew Cupps
                             profsHover={false}
                             removeHoverSection={() => {}} />
     {/each}
-    <div class='text-sm 2xl:text-base w-64'>
+    <div class='text-sm 2xl:text-base'>
         {#each courseInfoSection.class_meetings as meeting}
             <MeetingListing meeting={meeting} condensed={true}
                 locationHover={false} removeHoverSection={() => {}} />
