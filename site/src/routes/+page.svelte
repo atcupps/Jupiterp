@@ -10,44 +10,52 @@ Copyright (C) 2024 Andrew Cupps
     import { onMount } from 'svelte';
     import { retrieveCourses } from '../lib/course-planner/CourseLoad';
     import { getProfsLookup } from '$lib/course-planner/CourseSearch';
+    import { ProfsLookupStore } from '../stores/CoursePlannerStores';
+    import { SelectedSectionsStore } from '../stores/CoursePlannerStores';
 
     // Load data from `+page.ts`
     export let data;
 
     // Create a professor lookup table
-    const profsLookup = getProfsLookup(data.professors);
+    ProfsLookupStore.set(getProfsLookup(data.professors));
 
     // Keep track of chosen sections
-    let hoveredSection: ScheduleSelection | null = null;
     let selectedSections: ScheduleSelection[];
+    let hasReadLocalStorage: boolean = false;
+    SelectedSectionsStore.subscribe((stored) => {
+        if (hasReadLocalStorage) {
+            selectedSections = stored;
+
+            // Save to local storage
+            if (selectedSections) {
+                if (typeof window !== 'undefined') {
+                    localStorage.setItem('selectedSections', 
+                                            jsonifySections(selectedSections));
+                }
+            }
+        }
+    });
 
     // Retreive `selectedSections` from client local storage
     onMount(() => {
         try {
             if (typeof window !== 'undefined') {
                 const storedData = localStorage.getItem('selectedSections');
+                hasReadLocalStorage = true;
                 if (storedData) {
-                    selectedSections = 
+                    SelectedSectionsStore.set(
                         retrieveCourses(JSON.parse(storedData), 
-                                                            data.departments);
+                                                            data.departments)
+                    );
                 } else {
-                    selectedSections = [];
+                    SelectedSectionsStore.set([]);
                 }
             }
         } catch (e) {
             console.log('Unable to retrieve courses: ' + e);
-            selectedSections = [];
+            SelectedSectionsStore.set([]);
         }
     });
-
-    // Reactive statement to save to local storage
-    // whenever selectedSections changes
-    $: if (selectedSections) {
-        if (typeof window !== 'undefined') {
-            localStorage.setItem('selectedSections', 
-                                    jsonifySections(selectedSections));
-        }
-    }
 
     function jsonifySections(sections: ScheduleSelection[]): string {
         let finalSelections: ScheduleSelection[] = [];
@@ -80,9 +88,6 @@ Copyright (C) 2024 Andrew Cupps
 <div class='fixed flex flex-row w-full px-8
             text-textLight dark:text-textDark lg:px-8
             top-[3rem] lg:top-[3.5rem] xl:top-[4rem] bottom-0'>
-    <CourseSearch bind:selections={selectedSections} data={data}
-                    bind:courseSearchSelected bind:hoveredSection 
-                    profsLookup={profsLookup} />
-    <Schedule bind:selections={selectedSections} bind:hoveredSection 
-                    profsLookup={profsLookup}/>
+    <CourseSearch data={data} bind:courseSearchSelected />
+    <Schedule />
 </div>

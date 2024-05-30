@@ -21,27 +21,29 @@ Copyright (C) 2024 Andrew Cupps
     }
 
     function formatDecTime(decTime: number): string {
-        if (decTime < 12) {
-            return decTime + ' AM';
+        let decTimeInDay = decTime % 24;
+        if (decTimeInDay < 12) {
+            return (decTimeInDay !== 0 ? decTimeInDay : '12') + ' AM';
         }
-        if (decTime === 12) {
-            return decTime + ' PM';
+        if (decTimeInDay === 12) {
+            return decTimeInDay + ' PM';
         }
-        if (decTime > 12) {
-            return (decTime - 12) + ' PM';
+        if (decTimeInDay > 12) {
+            return (decTimeInDay - 12) + ' PM';
         }
         throw Error('Impossible `decTime` was not less than, equal to, or greater than 12');
     }
 
     let elt: HTMLDivElement;
     let innerHeight: number;
+    let innerWidth: number;
     export let h: number;
-    $: if (elt || innerHeight) {
+    $: if (elt || (innerHeight && innerWidth)) {
         h = elt.offsetHeight * (latest - earliest) * 2 / numBars;
     }
 </script>
 
-<svelte:window bind:innerHeight />
+<svelte:window bind:innerHeight bind:innerWidth />
 
 <div class='h-full' bind:this={elt}>
     <TimeLine number={formatDecTime(earliest)} position={0} />

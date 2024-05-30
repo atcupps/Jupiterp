@@ -15,6 +15,7 @@ Copyright (C) 2024 Andrew Cupps
     import { getColorFromNumber, timeToNumber } from '../../../lib/course-planner/ClassMeetingUtils';
     import { afterUpdate } from 'svelte';
     import Tooltip from './Tooltip.svelte';
+    import { SelectedSectionsStore } from '../../../stores/CoursePlannerStores';
 
     export let meeting: ClassMeetingExtended;
     export let earliestClassStart: number = 0;
@@ -24,7 +25,8 @@ Copyright (C) 2024 Andrew Cupps
 
     export let isInOther: boolean;
 
-    export let selections: ScheduleSelection[];
+    let selections: ScheduleSelection[];
+    SelectedSectionsStore.subscribe((stored) => { selections = stored });
 
     const differences: string[] = meeting.differences;
     const instructorsChange: boolean = differences.includes('Instructors');
@@ -110,10 +112,10 @@ Copyright (C) 2024 Andrew Cupps
             selectionEqualsByCode(obj)
         );
         if (index !== -1) {
-            selections = [
+            SelectedSectionsStore.set([
                 ...selections.slice(0, index),
                 ...selections.slice(index + 1)
-            ];
+            ]);
         }
     }
 

@@ -13,15 +13,32 @@ Copyright (C) 2024 Andrew Cupps
     import { formatCredits, testudoLink } from '../../../lib/course-planner/Formatting';
     import { afterUpdate } from 'svelte';
     import InstructorListing from '../course-search/InstructorListing.svelte';
+    import {
+        HoveredSectionStore, SelectedSectionsStore
+    } from '../../../stores/CoursePlannerStores';
     import MeetingListing from '../course-search/MeetingListing.svelte';
 
-    export let hoveredSection: ScheduleSelection | null;
-    export let selections: ScheduleSelection[] = [];
-    export let profsLookup: Record<string, Professor>;
+    let hoveredSection: ScheduleSelection | null = null;
+    let selections: ScheduleSelection[] = [];
+
 
     let schedule: Schedule = schedulify(
         appendHoveredSection(selections, hoveredSection)
     );
+
+    HoveredSectionStore.subscribe((stored) => { 
+        hoveredSection = stored;
+        schedule = schedulify(
+            appendHoveredSection(selections, hoveredSection)
+        );
+    });
+
+    SelectedSectionsStore.subscribe((stored) => {
+        selections = stored;
+        schedule = schedulify(
+            appendHoveredSection(selections, hoveredSection)
+        );
+    })
 
     let bgHeight: number;
 
@@ -47,6 +64,10 @@ Copyright (C) 2024 Andrew Cupps
                 earliestClassStart -= Math.floor((8 - boundDiff) / 2);
                 latestClassEnd += Math.floor((8 - boundDiff) / 2);
             }
+        }
+        if (earliestClassStart === -5 && latestClassEnd === 5) {
+            earliestClassStart = 8;
+            latestClassEnd = 16;
         }
     }
 
@@ -103,7 +124,6 @@ Copyright (C) 2024 Andrew Cupps
 
         <!-- ClassTimes by day -->
         <ScheduleDay name='Mon' classes={schedule.monday} 
-            bind:selections={selections}
             bind:earliestClassStart
             bind:latestClassEnd 
             bind:bgHeight
@@ -111,7 +131,6 @@ Copyright (C) 2024 Andrew Cupps
             bind:showSectionInfo
             />
         <ScheduleDay name='Tue' classes={schedule.tuesday}
-        bind:selections={selections}
             bind:earliestClassStart
             bind:latestClassEnd  
             bind:bgHeight
@@ -119,7 +138,6 @@ Copyright (C) 2024 Andrew Cupps
             bind:showSectionInfo
             />
         <ScheduleDay name='Wed' classes={schedule.wednesday}
-            bind:selections={selections}
             bind:earliestClassStart
             bind:latestClassEnd  
             bind:bgHeight
@@ -127,7 +145,6 @@ Copyright (C) 2024 Andrew Cupps
             bind:showSectionInfo
             />
         <ScheduleDay name='Thu' classes={schedule.thursday}
-            bind:selections={selections}
             bind:earliestClassStart
             bind:latestClassEnd  
             bind:bgHeight
@@ -135,7 +152,6 @@ Copyright (C) 2024 Andrew Cupps
             bind:showSectionInfo
             />
         <ScheduleDay name='Fri' classes={schedule.friday}
-            bind:selections={selections}
             bind:earliestClassStart
             bind:latestClassEnd  
             bind:bgHeight
@@ -147,7 +163,7 @@ Copyright (C) 2024 Andrew Cupps
         {#if schedule.other.length > 0}
             <ScheduleDay name='Other' classes={schedule.other} type='Other'
                 {bgHeight}
-            bind:selections={selections}
+
             bind:showCourseInfo 
             bind:showSectionInfo
             />
@@ -203,7 +219,6 @@ Copyright (C) 2024 Andrew Cupps
     </div>
     {#each courseInfoSection.instructors as instructor}
         <InstructorListing instructor={instructor}
-                            profs={profsLookup}
                             profsHover={false}
                             removeHoverSection={() => {}} />
     {/each}
