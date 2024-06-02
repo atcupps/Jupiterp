@@ -16,6 +16,7 @@ Copyright (C) 2024 Andrew Cupps
     import {
         HoveredSectionStore, SelectedSectionsStore
     } from '../../../stores/CoursePlannerStores';
+    import MeetingListing from '../course-search/MeetingListing.svelte';
 
     let hoveredSection: ScheduleSelection | null = null;
     let selections: ScheduleSelection[] = [];
@@ -123,7 +124,6 @@ Copyright (C) 2024 Andrew Cupps
 
         <!-- ClassTimes by day -->
         <ScheduleDay name='Mon' classes={schedule.monday} 
-            bind:selections={selections}
             bind:earliestClassStart
             bind:latestClassEnd 
             bind:bgHeight
@@ -131,7 +131,6 @@ Copyright (C) 2024 Andrew Cupps
             bind:showSectionInfo
             />
         <ScheduleDay name='Tue' classes={schedule.tuesday}
-        bind:selections={selections}
             bind:earliestClassStart
             bind:latestClassEnd  
             bind:bgHeight
@@ -139,7 +138,6 @@ Copyright (C) 2024 Andrew Cupps
             bind:showSectionInfo
             />
         <ScheduleDay name='Wed' classes={schedule.wednesday}
-            bind:selections={selections}
             bind:earliestClassStart
             bind:latestClassEnd  
             bind:bgHeight
@@ -147,7 +145,6 @@ Copyright (C) 2024 Andrew Cupps
             bind:showSectionInfo
             />
         <ScheduleDay name='Thu' classes={schedule.thursday}
-            bind:selections={selections}
             bind:earliestClassStart
             bind:latestClassEnd  
             bind:bgHeight
@@ -155,7 +152,6 @@ Copyright (C) 2024 Andrew Cupps
             bind:showSectionInfo
             />
         <ScheduleDay name='Fri' classes={schedule.friday}
-            bind:selections={selections}
             bind:earliestClassStart
             bind:latestClassEnd  
             bind:bgHeight
@@ -167,7 +163,7 @@ Copyright (C) 2024 Andrew Cupps
         {#if schedule.other.length > 0}
             <ScheduleDay name='Other' classes={schedule.other} type='Other'
                 {bgHeight}
-            bind:selections={selections}
+
             bind:showCourseInfo 
             bind:showSectionInfo
             />
@@ -226,6 +222,12 @@ Copyright (C) 2024 Andrew Cupps
                             profsHover={false}
                             removeHoverSection={() => {}} />
     {/each}
+    <div class='text-sm 2xl:text-base'>
+        {#each courseInfoSection.class_meetings as meeting}
+            <MeetingListing meeting={meeting} condensed={true}
+                locationHover={false} removeHoverSection={() => {}} />
+        {/each}
+    </div>
     <div class='text-base 2xl:text-lg leading-5'>
         {courseInfoCourse.description}
     </div>
