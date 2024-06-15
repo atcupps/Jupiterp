@@ -174,8 +174,8 @@ Copyright (C) 2024 Andrew Cupps
             <div class='w-full text-base font-semibold font-sans rounded-t-lg
                         translucentGray truncate min-h-[1.5rem] items-middle
                         flex justify-center items-center'
-                    class:text-sm={w < 96}
-                    class:text-xs={w < 86}
+                    class:text-sm={w < 120}
+                    class:text-xs={w < 104}
                     class:rounded-b-lg={h < 1.75 * fontSize}>
                 <span>{meeting.course}</span>
             </div>
