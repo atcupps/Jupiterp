@@ -9,6 +9,7 @@ Copyright (C) 2024 Andrew Cupps
     import { page } from '$app/stores';
     import NavBarElement from './NavBarElement.svelte';
     import DarkModeToggle from './DarkModeToggle.svelte';
+    import ExpandableNavBarElement from './ExpandableNavBarElement.svelte';
 
     let siteLinksSelected: boolean = false;
 
@@ -21,10 +22,17 @@ Copyright (C) 2024 Andrew Cupps
                                         isOnPage={currentPage == '/'}/>
     <NavBarElement link='./bugs' text='Report an Issue' 
                                         isOnPage={currentPage == '/bugs'}/>
-    <NavBarElement link='./about' text='About' 
-                                        isOnPage={currentPage == '/about'}/>
-    <NavBarElement link='./terms-of-use' text='Terms of Use'
-                                isOnPage={currentPage == '/terms-of-use'}/>
+    <ExpandableNavBarElement link='./about' text='About' 
+                                        isOnPage={currentPage == '/about'}>   
+        <div class='w-full my-1'>
+            <NavBarElement link='./terms-of-use' text='Terms of Use'
+                                reduceXMargin={true} fullWidth={true} />
+        </div>
+        <div class='w-full my-1'>
+            <NavBarElement link='./changelog' text='Changelog'
+                                reduceXMargin={true} fullWidth={true} />
+        </div>
+    </ExpandableNavBarElement>
     <NavBarElement link='https://github.com/atcupps/Jupiterp'
                                         text='GitHub'
                                         target='_blank' />
