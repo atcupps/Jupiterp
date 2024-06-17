@@ -167,14 +167,17 @@ Copyright (C) 2024 Andrew Cupps
         </button>
     {/if}
 
-    {#if w >= 64}
+    {#if w >= 72}
         <!-- Meeting course codes, instructors, etc. will only show up
             if the height of the classtime is great enough to fit them -->
         {#if h > 1.5 * fontSize || isInOther}
             <div class='w-full text-base font-semibold font-sans rounded-t-lg
-                                courseCode truncate min-h-[1.5rem]'
+                        translucentGray truncate min-h-[1.5rem] items-middle
+                        flex justify-center items-center'
+                    class:text-sm={w < 120}
+                    class:text-xs={w < 104}
                     class:rounded-b-lg={h < 1.75 * fontSize}>
-                {meeting.course}
+                <span>{meeting.course}</span>
             </div>
         {/if}
         <div class='w-full grow font-thin 2xl:font-normal 
@@ -241,7 +244,7 @@ Copyright (C) 2024 Andrew Cupps
 </button>
 
 <style>
-    .courseCode {
+    .translucentGray {
         background-color: rgba(0, 0, 0, 0.07)
     }
 
