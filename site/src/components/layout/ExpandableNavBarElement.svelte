@@ -33,6 +33,7 @@ Copyright (C) 2024 Andrew Cupps
         </span>
     </a>
     <button on:click={() => showExpandedLinks = !showExpandedLinks}
+            title='Show more links'
             class='transition'
             class:rotate-180={showExpandedLinks}>
         <AngleDownOutline class='w-3.5 h-3.5 ml
