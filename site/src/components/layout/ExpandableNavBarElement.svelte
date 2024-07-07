@@ -6,6 +6,7 @@ Copyright (C) 2024 Andrew Cupps
 -->
 <script lang='ts'>
     import { AngleDownOutline } from "flowbite-svelte-icons";
+    import { clickoutside } from '@svelte-put/clickoutside';
 
     export let link: string;
     export let text: string;
@@ -16,13 +17,8 @@ Copyright (C) 2024 Andrew Cupps
     let showExpandedLinks: boolean = false;
 </script>
 
-<!-- Ignoring a11y because `focus` supplements `mouse` -->
-<!-- svelte-ignore a11y-no-static-element-interactions -->
 <div class='mx-4 px-1 font-normal relative'
-        on:mouseenter={() => {showExpandedLinks = true;}}
-        on:mouseleave={() => {showExpandedLinks = false;}}
-        on:focusin={() => {showExpandedLinks = true}}
-        on:focusout={() => {showExpandedLinks = false}}>
+    use:clickoutside on:clickoutside={() => showExpandedLinks = false}>
     <a href={link} target={target}
         class='transition inline-flex items-center'>
         <span
@@ -35,9 +31,14 @@ Copyright (C) 2024 Andrew Cupps
             class:dark:text-white={!isOnPage}>
                 {text}
         </span>
-        <AngleDownOutline class='w-3 h-3 ml-1 
-                                text-textLight dark:text-textDark' />
     </a>
+    <button on:click={() => showExpandedLinks = !showExpandedLinks}
+            class='transition'
+            class:rotate-180={showExpandedLinks}>
+        <AngleDownOutline class='w-3.5 h-3.5 ml
+                                hover:text-orange dark:hover:text-lightOrange
+                                text-textLight dark:text-textDark'/>
+    </button>
     <div class='absolute top-full min-w-12 flex flex-col bg-bgLight
                 dark:bg-bgDark p-2 translate-x-[-12%] rounded-lg visible
                 border-2 border-divBorderLight dark:border-divBorderDark'
