@@ -47,7 +47,7 @@ Copyright (C) 2024 Andrew Cupps
                         removeHoverSection();
                     }}
                     on:click={handleLinkClick}
-            title='View on PlanetTerp'>
+            title='View Instructor on PlanetTerp'>
             {instructor} 
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-3 h-3 mt-[0.25rem]">
                 <path d="M6.22 8.72a.75.75 0 0 0 1.06 1.06l5.22-5.22v1.69a.75.75 0 0 0 1.5 0v-3.5a.75.75 0 0 0-.75-.75h-3.5a.75.75 0 0 0 0 1.5h1.69L6.22 8.72Z" />

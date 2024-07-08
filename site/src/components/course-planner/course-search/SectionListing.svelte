@@ -153,6 +153,8 @@ Copyright (C) 2024 Andrew Cupps
 <button on:click={addSectionToSchedule}
         on:mouseover={isDesktop ? addHoverSection : null}
         on:mouseout={isDesktop ? removeHoverSection : null}
+        on:focusin={isDesktop ? addHoverSection : null}
+        on:focusout={isDesktop ? removeHoverSection : null}
             class='flex flex-row w-full text-left border-t-2
                     border-outlineLight dark:border-outlineDark transition
                 {sectionAdded ? 'bg-hoverLight dark:bg-hoverDark' : ''}'

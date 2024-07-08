@@ -153,13 +153,15 @@ Copyright (C) 2024 Andrew Cupps
                 left: {
                     ((meeting.conflictIndex - 1) / meeting.conflictTotal) * 100
                 }%;'
-        class:otherCategoryClassMeeting={isInOther}>
+        class:otherCategoryClassMeeting={isInOther}
+        title='Click to show more course info'>
 
     <!-- x button to remove course -->
     {#if !meeting.hover}
         <button class='absolute h-4 w-4 top-0 right-0
                         2xl:top-1 2xl:right-1 justify-center'
-                on:click={removeCourseByClassMeeting}>
+                on:click={removeCourseByClassMeeting}
+                title='Remove course from schedule'>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"
                 class='absolute h-2 w-2 2xl:h-3 2xl:w-3 top-[50%] left-[50%]'
                 style='transform: translateX(-50%) translateY(-50%);'>
