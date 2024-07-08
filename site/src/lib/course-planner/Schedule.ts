@@ -394,6 +394,7 @@ function classesConflict(
 export function appendHoveredSection(selections: ScheduleSelection[], 
         hoveredSection: ScheduleSelection | null): ScheduleSelection[] {
     if (hoveredSection) {
+        throw new Error('beans');
         return [...selections, hoveredSection];
     } else {
         return selections;
