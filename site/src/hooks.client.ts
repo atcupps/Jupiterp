@@ -1,4 +1,4 @@
-import { handleErrorWithSentry, replayIntegration } from "@sentry/sveltekit";
+import { handleErrorWithSentry } from "@sentry/sveltekit";
 import * as Sentry from '@sentry/sveltekit';
 
 Sentry.init({
