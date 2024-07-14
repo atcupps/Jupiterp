@@ -160,7 +160,7 @@ Copyright (C) 2024 Andrew Cupps
                 {sectionAdded ? 'bg-hoverLight dark:bg-hoverDark' : ''}'
             class:lg:hover:bg-hoverLight={!profsHover && !locationHover}
             class:lg:hover:dark:bg-hoverDark={!profsHover && !locationHover}
-        title='Add course to schedule'
+        title='{ sectionAdded ? 'Remove course from' : 'Add course to'} schedule'
                 >
     <!-- Section code -->
     <div class='text-secCodesLight dark:text-secCodesDark font-semibold 
