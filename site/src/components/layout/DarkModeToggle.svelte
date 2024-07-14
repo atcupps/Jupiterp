@@ -3,7 +3,6 @@
     import { MoonOutline } from "flowbite-svelte-icons";
 
     function toggleDarkMode() {
-        const isDark: boolean = (localStorage.theme === 'dark');
         if (isDark) {
             localStorage.setItem('theme', 'light');
         } else {
