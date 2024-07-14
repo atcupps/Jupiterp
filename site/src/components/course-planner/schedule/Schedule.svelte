@@ -186,7 +186,8 @@ Copyright (C) 2024 Andrew Cupps
     <!-- X Button to get rid of course info -->
     <button class='absolute h-7 w-7 top-0 right-0
             2xl:top-1 2xl:right-1 justify-center'
-            on:click={() => {showCourseInfo = null}}>
+            on:click={() => {showCourseInfo = null}}
+            title='Hide course info panel'>
         <svg xmlns="http://www.w3.org/2000/svg" 
             viewBox="0 0 384 512"
             class='absolute h-5 w-5 2xl:h-6 2xl:w-6 
