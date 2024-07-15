@@ -153,12 +153,14 @@ Copyright (C) 2024 Andrew Cupps
 <button on:click={addSectionToSchedule}
         on:mouseover={isDesktop ? addHoverSection : null}
         on:mouseout={isDesktop ? removeHoverSection : null}
+        on:focusin={isDesktop ? addHoverSection : null}
+        on:focusout={isDesktop ? removeHoverSection : null}
             class='flex flex-row w-full text-left border-t-2
                     border-outlineLight dark:border-outlineDark transition
                 {sectionAdded ? 'bg-hoverLight dark:bg-hoverDark' : ''}'
             class:lg:hover:bg-hoverLight={!profsHover && !locationHover}
             class:lg:hover:dark:bg-hoverDark={!profsHover && !locationHover}
-        title='Add course to schedule'
+        title='{ sectionAdded ? 'Remove course from' : 'Add course to'} schedule'
                 >
     <!-- Section code -->
     <div class='text-secCodesLight dark:text-secCodesDark font-semibold 

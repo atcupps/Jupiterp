@@ -31,6 +31,8 @@
   },
   "type": "module",
   "dependencies": {
+    "@sentry/sveltekit": "^8.15.0",
+    "@svelte-put/clickoutside": "^3.0.2",
     "@vercel/analytics": "^1.1.2",
     "@vercel/speed-insights": "^1.0.9",
     "flowbite-svelte": "^0.45.0",

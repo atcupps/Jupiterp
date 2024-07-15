@@ -12,6 +12,14 @@ Copyright (C) 2024 Andrew Cupps
             text-textLight dark:text-textDark lg:px-8
             top-[3rem] lg:top-[3.5rem] xl:top-[4rem] bottom-0'>
 
+    <ChangelogItem title='Galileo Time' version='v1.0.4: Callisto'
+    date='May 24, 2024'>
+        Show class times and meetings on course info panel. Add dropdown 
+        menus to site links. Make 'X' button to remove course on Schedule UI
+        adapt to screen size. Improve tooltip descriptions for accessibility.
+        Add Sentry error reporting.
+    </ChangelogItem>
+
     <ChangelogItem title='The P = NP Update' version='v1.0.3: Ganymede'
                                                         date='May 24, 2024'>
         Fix bug preventing Sunday and Saturday classes from being added to 

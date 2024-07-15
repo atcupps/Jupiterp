@@ -18,6 +18,7 @@
                 border-outlineLight dark:border-outlineDark static
                 hover:border-black dark:hover:border-white 
                 hover:transition-colors translate-y-[0%] xl:translate-y-[10%]'
+        title='Toggle Dark Mode'
         on:click={toggleDarkMode} >
     <div class='absolute rounded-[8px] h-4 w-4 top-[50%] translate-y-[-50%]
                 left-0 dark:translate-x-[1.12rem]

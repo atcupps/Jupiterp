@@ -153,13 +153,15 @@ Copyright (C) 2024 Andrew Cupps
                 left: {
                     ((meeting.conflictIndex - 1) / meeting.conflictTotal) * 100
                 }%;'
-        class:otherCategoryClassMeeting={isInOther}>
+        class:otherCategoryClassMeeting={isInOther}
+        title='Click to show more course info'>
 
     <!-- x button to remove course -->
     {#if !meeting.hover}
         <button class='absolute h-4 w-4 top-0 right-0
                         2xl:top-1 2xl:right-1 justify-center'
-                on:click={removeCourseByClassMeeting}>
+                on:click={removeCourseByClassMeeting}
+                title='Remove course from schedule'>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"
                 class='absolute h-2 w-2 2xl:h-3 2xl:w-3 top-[50%] left-[50%]'
                 style='transform: translateX(-50%) translateY(-50%);'>
@@ -167,14 +169,17 @@ Copyright (C) 2024 Andrew Cupps
         </button>
     {/if}
 
-    {#if w >= 64}
+    {#if w >= 72}
         <!-- Meeting course codes, instructors, etc. will only show up
             if the height of the classtime is great enough to fit them -->
         {#if h > 1.5 * fontSize || isInOther}
             <div class='w-full text-base font-semibold font-sans rounded-t-lg
-                                courseCode truncate min-h-[1.5rem]'
+                        translucentGray truncate min-h-[1.5rem] items-middle
+                        flex justify-center items-center'
+                    class:text-sm={w < 120}
+                    class:text-xs={w < 104}
                     class:rounded-b-lg={h < 1.75 * fontSize}>
-                {meeting.course}
+                <span>{meeting.course}</span>
             </div>
         {/if}
         <div class='w-full grow font-thin 2xl:font-normal 
@@ -241,7 +246,7 @@ Copyright (C) 2024 Andrew Cupps
 </button>
 
 <style>
-    .courseCode {
+    .translucentGray {
         background-color: rgba(0, 0, 0, 0.07)
     }
 

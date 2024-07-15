@@ -10,6 +10,7 @@ Copyright (C) 2024 Andrew Cupps
     export let meeting: ClassMeeting;
     export let locationHover: boolean;
     export let removeHoverSection: () => void;
+    export let condensed: boolean = false;
 
     function handleLinkClick(event: MouseEvent) {
         // Prevent the event from propagating to the button
@@ -27,20 +28,22 @@ Copyright (C) 2024 Andrew Cupps
     {:else if 'OnlineSync' in meeting}
         {formatClassDayTime(meeting.OnlineSync)}
     {:else}
-        <div class='grow'>
+        <span class:grow={!condensed}>
             {#if meeting.InPerson.classtime === null}
                 Classtime TBA
             {:else}
-                {formatClassDayTime(meeting.InPerson.classtime)}
+                {formatClassDayTime(
+                    meeting.InPerson.classtime
+                    )}{#if condensed}&nbspin&nbsp{/if}
             {/if}
-        </div>
-        <div class='grow text-right'>
+        </span>
+        <span class:grow={!condensed} class:text-right={!condensed}>
             {#if meeting.InPerson.location === null}
                 Location TBA
             {:else}
                 <a href={generateMapURL(meeting.InPerson.location[0])}
                         class=
-                        'text-orange underline inline-flex flex-wrap rounded-md
+                        'text-orange underline rounded-md
                         hover:bg-hoverLight hover:dark:bg-hoverDark transition
                         p-0.5'
                         on:mouseenter={() => {
@@ -57,6 +60,6 @@ Copyright (C) 2024 Andrew Cupps
                     {formatLocation(meeting.InPerson.location)}
                 </a>
             {/if}
-        </div>
+        </span>
     {/if}
 </div>
