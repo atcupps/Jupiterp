@@ -5,7 +5,8 @@
 
 //! Types for the Jupiterp Datagen component. Types used should derive or
 //! otherwise implement the serde `Serialize` and `Deserialize` traits to be
-//! used in JSON-form data generation.
+//! used in JSON-form data generation. When these are serialized into JSON,
+//! they are converted into less-readable formats to save space.
 
 use regex::Regex;
 use serde::Deserialize;
