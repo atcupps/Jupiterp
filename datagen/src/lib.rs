@@ -14,6 +14,7 @@ use reqwest::{
     blocking::{Client, Response},
     header::USER_AGENT,
 };
+use rmp_serde::encode::write;
 use scraper::{Html, Selector};
 use std::thread;
 use std::time::Duration;
@@ -50,11 +51,19 @@ pub fn depts_courses_datagen(term: &String) -> Result<(), Box<dyn Error>> {
         full_depts_data.push(department_courses);
     }
 
-    // Use serde_json to write data to appropriate dept. files
-    let mut dept_courses_file = File::create("data/departments.json")?;
+    // Use serde_json to write to human-readable JSON. This is not actually
+    // used by Jupiterp, but exists for developers to more easily find
+    // certain classes or classes with certain attributes.
+    let mut departments_json = File::create("data/departments.json")?;
     let dept_course_json_string = serde_json::to_string(&full_depts_data)
         .unwrap_or_else(|_| panic!("Failed to serialize {:#?} to JSON", full_depts_data));
-    dept_courses_file.write_all(dept_course_json_string.as_bytes())?;
+    departments_json.write_all(dept_course_json_string.as_bytes())?;
+
+    // Use rmp-serde to write department-course data to messagepack file. This
+    // is not human-readable, but has a more compact file size and is used by
+    // the Jupiterp web-application.
+    let mut departments_msgpack = File::create("data/departments.msgpack")?;
+    write(&mut departments_msgpack, &full_depts_data)?;
 
     Ok(())
 }
