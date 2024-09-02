@@ -6,7 +6,8 @@
 //! Types for the Jupiterp Datagen component. Types used should derive or
 //! otherwise implement the serde `Serialize` and `Deserialize` traits to be
 //! used in JSON-form data generation. When these are serialized into JSON,
-//! they are converted into less-readable formats to save space.
+//! they are converted into less-readable formats to save space (this only
+//! applies to info written to `departments.json`, not `instructors.json`).
 
 use regex::Regex;
 use serde::Deserialize;
@@ -16,7 +17,10 @@ use serde::Serialize;
 /// Testudo schedule of classes and all associated `Course`s.
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Department {
+    #[serde(rename(serialize = "a"))]
     pub name: String,
+
+    #[serde(rename(serialize = "b"))]
     pub courses: Vec<Course>,
 }
 
@@ -33,18 +37,32 @@ pub struct Department {
 ///     have no sections (ex. AASP399)
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Course {
+    #[serde(rename(serialize = "c"))]
     pub code: String,
+
+    #[serde(rename(serialize = "d"))]
     pub name: String,
+
+    #[serde(rename(serialize = "e"))]
     pub credits: CreditCount,
+
+    #[serde(rename(serialize = "f"))]
     pub gen_eds: Option<Vec<String>>,
+
+    #[serde(rename(serialize = "g"))]
     pub description: String,
+
+    #[serde(rename(serialize = "h"))]
     pub sections: Option<Vec<Section>>,
 }
 
 /// How many credits a course is worth; can be a single number or a range
 #[derive(Debug, Serialize, Deserialize)]
 pub enum CreditCount {
+    #[serde(rename(serialize = "i"))]
     Amount(u8),
+
+    #[serde(rename(serialize = "j"))]
     Range(u8, u8),
 }
 
@@ -55,8 +73,13 @@ pub enum CreditCount {
 ///     this includes lectures, discussions, etc.
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Section {
+    #[serde(rename(serialize = "k"))]
     pub sec_code: String,
+
+    #[serde(rename(serialize = "l"))]
     pub instructors: Vec<String>,
+
+    #[serde(rename(serialize = "m"))]
     pub class_meetings: Vec<ClassMeeting>,
 }
 
@@ -83,15 +106,23 @@ pub enum ClassMeeting {
 /// `classtime` and `location`.
 #[derive(Debug, Serialize, Deserialize)]
 pub struct InPersonClass {
+    #[serde(rename(serialize = "n"))]
     pub classtime: Option<Classtime>,
+
+    #[serde(rename(serialize = "o"))]
     pub location: Option<ClassLocation>,
 }
 
 /// The days and times of a certain class meeting
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Classtime {
+    #[serde(rename(serialize = "p"))]
     days: ClassDays,
+
+    #[serde(rename(serialize = "q"))]
     start_time: Time,
+
+    #[serde(rename(serialize = "r"))]
     end_time: Time,
 }
 
@@ -169,6 +200,7 @@ pub enum AmPm {
 
 /// An hour, minute, and marker for Am or Pm in 12 hour time.
 #[derive(Debug, Serialize, Deserialize)]
+#[serde(rename(serialize = "s"))]
 pub struct Time(u8, u8, AmPm);
 
 impl Time {
@@ -192,6 +224,7 @@ impl Time {
 /// code and room number. For example, ESJ 1215 would be
 /// `ClassLocation(String::from("ESJ"), String::from("1215"))`.
 #[derive(Debug, Serialize, Deserialize)]
+#[serde(rename(serialize = "t"))]
 pub struct ClassLocation(pub String, pub String);
 
 /// The response of a request to PlanetTerp to get an instructor, parsed into
