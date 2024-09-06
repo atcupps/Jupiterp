@@ -29,7 +29,7 @@ mod macros;
 /// course information and write to appropriate files.
 /// Takes in `term: &String` as a parameter to specify which term to get
 /// courses for.
-pub fn depts_courses_datagen(term: &String) -> Result<(), Box<dyn Error>> {
+pub fn depts_courses_datagen(term: &String, pretty: bool) -> Result<(), Box<dyn Error>> {
     let depts_vec = get_depts()?;
     let mut full_depts_data = Vec::new();
     let mut dept_directory_file = File::create("data/departments_list.txt")?;
@@ -52,8 +52,12 @@ pub fn depts_courses_datagen(term: &String) -> Result<(), Box<dyn Error>> {
 
     // Use serde_json to write data to appropriate dept. files
     let mut dept_courses_file = File::create("data/departments.json")?;
-    let dept_course_json_string = serde_json::to_string(&full_depts_data)
-        .unwrap_or_else(|_| panic!("Failed to serialize {:#?} to JSON", full_depts_data));
+    let dept_course_json_string = (if pretty {
+        serde_json::to_string_pretty(&full_depts_data)
+    } else {
+        serde_json::to_string(&full_depts_data)
+    })
+    .unwrap_or_else(|_| panic!("Failed to serialize {:#?} to JSON", full_depts_data));
     dept_courses_file.write_all(dept_course_json_string.as_bytes())?;
 
     Ok(())
@@ -459,7 +463,7 @@ pub fn get_meeting(
 
 /// Use the PlanetTerp API to get a list of all instructors (professors or TAs)
 /// and write relevant information to a JSON file in the `data` directory.
-pub fn instructors_datagen() -> Result<(), Box<dyn Error>> {
+pub fn instructors_datagen(pretty: bool) -> Result<(), Box<dyn Error>> {
     let num_profs = 100;
     let mut offset = 0;
     let mut professors = Vec::new();
@@ -498,8 +502,12 @@ pub fn instructors_datagen() -> Result<(), Box<dyn Error>> {
 
     // Use serde_json to write data to instructors.json
     let mut instructors_file = File::create("data/instructors.json")?;
-    let instructors_json_string = serde_json::to_string(&professors)
-        .unwrap_or_else(|_| panic!("Failed to serialize {:#?} to JSON", professors));
+    let instructors_json_string = (if pretty {
+        serde_json::to_string_pretty(&professors)
+    } else {
+        serde_json::to_string(&professors)
+    })
+    .unwrap_or_else(|_| panic!("Failed to serialize {:#?} to JSON", professors));
     instructors_file.write_all(instructors_json_string.as_bytes())?;
 
     Ok(())

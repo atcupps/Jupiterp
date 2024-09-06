@@ -26,6 +26,4 @@ impl fmt::Display for TermError {
     }
 }
 
-impl Error for TermError {
-    
-}
+impl Error for TermError {}
