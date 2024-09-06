@@ -32,15 +32,20 @@ struct Args {
     /// Term to generate data for (ex. 202408)
     #[arg(short, long)]
     term: String,
+
+    /// Format JSON output as pretty
+    #[arg(short, long)]
+    pretty: bool,
 }
 
 fn main() -> Result<(), Box<dyn Error>> {
     let args = Args::parse();
     let term = &args.term;
     validate_term(term)?;
+    let pretty = args.pretty;
 
-    depts_courses_datagen(term)?;
-    instructors_datagen()?;
+    depts_courses_datagen(term, pretty)?;
+    instructors_datagen(pretty)?;
 
     Ok(())
 }
