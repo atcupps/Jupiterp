@@ -60,6 +60,16 @@ pub fn depts_courses_datagen(term: &String, pretty: bool) -> Result<(), Box<dyn 
     .unwrap_or_else(|_| panic!("Failed to serialize {:#?} to JSON", full_depts_data));
     dept_courses_file.write_all(dept_course_json_string.as_bytes())?;
 
+    // Write all course codes to relevant file
+    println!("Writing course codes to file");
+    let mut course_codes_file = File::create("data/courses_list.txt")?;
+    for dept in full_depts_data {
+        for course in dept.courses {
+            course_codes_file.write_all(course.code.as_bytes())?;
+            course_codes_file.write_all("\n".as_bytes())?;
+        }
+    }
+
     Ok(())
 }
 
@@ -261,8 +271,7 @@ pub fn sections_info(
             }
         }));
 
-        let class_meetings =
-            get_class_meetings(sections_doc, course_code, section_code, nth_child);
+        let class_meetings = get_class_meetings(sections_doc, course_code, section_code, nth_child);
 
         let section = Section {
             sec_code: section_code.clone(),
