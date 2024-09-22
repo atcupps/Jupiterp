@@ -5,9 +5,11 @@
     export let section: string;
 
     let seats: number[] | null;
-    SeatDataStore.subscribe((value) => {
-        seats = value[course + '-' + section];
-    })
+    $: if (course && section) {
+        SeatDataStore.subscribe((value) => {
+            seats = value[course + '-' + section];
+        });
+    }
 </script>
 
 {#if seats}

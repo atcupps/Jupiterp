@@ -17,6 +17,7 @@ Copyright (C) 2024 Andrew Cupps
         HoveredSectionStore, SelectedSectionsStore
     } from '../../../stores/CoursePlannerStores';
     import MeetingListing from '../course-search/MeetingListing.svelte';
+    import SeatData from '../course-search/SeatData.svelte';
 
     let hoveredSection: ScheduleSelection | null = null;
     let selections: ScheduleSelection[] = [];
@@ -229,6 +230,7 @@ Copyright (C) 2024 Andrew Cupps
                 locationHover={false} removeHoverSection={() => {}} />
         {/each}
     </div>
+    <SeatData course={courseInfoCourse.code} section={courseInfoSection.sec_code} />
     <div class='text-base 2xl:text-lg leading-5'>
         {courseInfoCourse.description}
     </div>
