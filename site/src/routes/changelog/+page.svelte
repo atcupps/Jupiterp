@@ -12,8 +12,15 @@ Copyright (C) 2024 Andrew Cupps
             text-textLight dark:text-textDark lg:px-8
             top-[3rem] lg:top-[3.5rem] xl:top-[4rem] bottom-0'>
 
+    <ChangelogItem title='Have a Seat' version='v1.0.5: Amalthea'
+                                                        date='Sep 23, 2024'>
+        Display number of seats left in sections in both course search and in
+        the course info panel. Reduce number of requests necessary to
+        retreive course information from the Testudo SOC.
+    </ChangelogItem>
+    
     <ChangelogItem title='Galileo Time' version='v1.0.4: Callisto'
-    date='May 24, 2024'>
+                                                        date='July 14, 2024'>
         Show class times and meetings on course info panel. Add dropdown 
         menus to site links. Make 'X' button to remove course on Schedule UI
         adapt to screen size. Improve tooltip descriptions for accessibility.
