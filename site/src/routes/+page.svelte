@@ -10,11 +10,32 @@ Copyright (C) 2024 Andrew Cupps
     import { onMount } from 'svelte';
     import { retrieveCourses } from '../lib/course-planner/CourseLoad';
     import { getProfsLookup } from '$lib/course-planner/CourseSearch';
-    import { ProfsLookupStore } from '../stores/CoursePlannerStores';
-    import { SelectedSectionsStore } from '../stores/CoursePlannerStores';
+    import {
+        SeatDataStore,
+        ProfsLookupStore,
+        SelectedSectionsStore
+    } from '../stores/CoursePlannerStores';
 
-    // Load data from `+page.ts`
+    // Load profs and course data from `+page.ts`
     export let data;
+
+    // Function to retreive seats data; seats data is returned as a record
+    // where the key is a string concatenation of "courseID-sectionID",
+    // and the record value is [currentSeats, totalSeats]. Called in `onMount`.
+    async function fetchSeatData() {
+        try {
+            const response = await fetch('/seats');
+            if (!response.ok) {
+                throw new Error(`Failed to fetch data: ${response.statusText}`);
+            }
+            const seatsDataMap = await response.json();
+            
+            // Update the SeatDataStore with the fetched data
+            SeatDataStore.set(seatsDataMap);
+        } catch (error) {
+            console.error('Error fetching seat data:', error);
+        }
+    }
 
     // Create a professor lookup table
     ProfsLookupStore.set(getProfsLookup(data.professors));
@@ -36,9 +57,9 @@ Copyright (C) 2024 Andrew Cupps
         }
     });
 
-    // Retreive `selectedSections` from client local storage
     onMount(() => {
         try {
+            // Retreive `selectedSections` from client local storage
             if (typeof window !== 'undefined') {
                 const storedData = localStorage.getItem('selectedSections');
                 hasReadLocalStorage = true;
@@ -51,6 +72,9 @@ Copyright (C) 2024 Andrew Cupps
                     SelectedSectionsStore.set([]);
                 }
             }
+
+            // Fetch seat data from API
+            fetchSeatData();
         } catch (e) {
             console.log('Unable to retrieve courses: ' + e);
             SelectedSectionsStore.set([]);

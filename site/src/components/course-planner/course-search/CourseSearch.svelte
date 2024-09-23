@@ -101,7 +101,7 @@ Copyright (C) 2024 Andrew Cupps
                             placeholder:text-base">
         <div class='flex flex-row text-xs 2xl:text-sm p-1'>
             <div>
-                Fall 2024
+                Spring 2025
             </div>
             <div class='grow text-right'>
                 Credits: {totalCredits}

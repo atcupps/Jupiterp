@@ -11,6 +11,7 @@ Copyright (C) 2024 Andrew Cupps
         HoveredSectionStore,
         SelectedSectionsStore
     } from "../../../stores/CoursePlannerStores";
+    import SeatData from "./SeatData.svelte";
 
     export let courseCode: string;
     export let section: Section;
@@ -181,6 +182,9 @@ Copyright (C) 2024 Andrew Cupps
             <MeetingListing meeting={meeting} 
                 bind:locationHover {removeHoverSection} />
         {/each}
+
+        <!-- Seats info -->
+        <SeatData course={courseCode} section={section.sec_code} />
     </div>
 </button>
 

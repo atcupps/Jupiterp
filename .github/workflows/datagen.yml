@@ -31,7 +31,7 @@ jobs:
             - name: Run datagen
               run: |
                 cd datagen
-                cargo run --bin jupiterp_datagen 202408
+                cargo run --bin jupiterp_datagen 202501
                 cd ..
 
             - name: Commit and push to origin

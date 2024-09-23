@@ -14,3 +14,7 @@ export const HoveredSectionStore: Writable<ScheduleSelection | null> =
 // Track selected sections
 export const SelectedSectionsStore: Writable<ScheduleSelection[]> = 
                                                                 writable([]);
+
+// Number of seats in each course-section combination
+export const SeatDataStore: Writable<Record<string, number[]>> = 
+                                                            writable({});
