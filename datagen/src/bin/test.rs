@@ -9,7 +9,7 @@
 //! This can be run with `cargo run --bin test -- <args>`.
 
 use clap::Parser;
-use jupiterp_datagen::{get_course_info, get_courses};
+use jupiterp_datagen::{course_info, get_courses, get_response};
 use std::error::Error;
 
 #[derive(Parser, Debug)]
@@ -54,9 +54,31 @@ fn main() -> Result<(), Box<dyn Error>> {
             args.dept, None,
             "Cannot specify both a department and a course"
         );
-        let course_info = get_course_info(course, term);
-        if args.show_output {
-            println!("{:#?}", course_info);
+
+        let course_request =
+            format!(
+                "https://app.testudo.umd.edu/soc/search?courseId={course}&sectionId=&termId={term}&_openSectionsOnly=on&creditCompare=&credits=&courseLevelFilter=ALL&instructor=&_facetoface=on&_blended=on&_online=on&courseStartCompare=&courseStartHour=&courseStartMin=&courseStartAM=&courseEndHour=&courseEndMin=&courseEndAM=&teachingCenter=ALL&_classDay1=on&_classDay2=on&_classDay3=on&_classDay4=on&_classDay5=on"
+            );
+        let course_response = get_response(course_request)?;
+
+        let sections_request =
+            format!("https://app.testudo.umd.edu/soc/{term}/sections?courseIds={course}");
+        let sections_response = get_response(sections_request)?;
+
+        if course_response.status().is_success() {
+            let course_doc = scraper::Html::parse_document(&course_response.text()?);
+            if sections_response.status().is_success() {
+                let sections_doc = scraper::Html::parse_document(&sections_response.text()?);
+
+                let course_info = course_info(course.to_owned(), &course_doc, &sections_doc);
+                if args.show_output {
+                    println!("{:#?}", course_info);
+                }
+            } else {
+                panic!("Sections page request failed.");
+            }
+        } else {
+            panic!("Course page request failed.")
         }
     }
 
