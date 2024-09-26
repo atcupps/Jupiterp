@@ -21,7 +21,8 @@ Copyright (C) 2024 Andrew Cupps
 
     // Function to retreive seats data; seats data is returned as a record
     // where the key is a string concatenation of "courseID-sectionID",
-    // and the record value is [currentSeats, totalSeats]. Called in `onMount`.
+    // and the record value is [currentSeats, totalSeats, waitlist].
+    // Called in `onMount`.
     async function fetchSeatData() {
         try {
             const response = await fetch('/seats');
