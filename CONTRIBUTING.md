@@ -1,7 +1,7 @@
 # Contributing to Jupiterp
 
 ## Introduction
-Jupiterp is a WIP open-source schedule planning and building tool for students at the University of Maryland. Jupiterp expands on the capabilities of existing tools like Venus and the Testudo schedule visualizer by integrating reviews and a more intuitive interface to provide a user experience aimed at improving students' lives and the course selection process.
+Jupiterp is a WIP open-source schedule planning and building tool for students at the University of Maryland. Jupiterp expands on the capabilities of existing tools like Venus and the Testudo schedule visualizer by integrating reviews and a more intuitive interface to provide a user experience aimed at improving students' workflow and their course selection process.
 
 ## Code of Conduct
 
