@@ -68,6 +68,6 @@ Unlike with Rust, Jupiterp does not use an automatic formatter like `cargo fmt` 
 - Use single quotes `'` rather than double quotes `"` for strings
 - Mark variable types, especially for custom types, classes, or interfaces
 - Provide ample vertical whitespace; avoid long chains of function calls on the same line
-- Keep lines to 80 characters maximum
+- Keep lines to 80 characters maximum, unless doing so would make code more unreadable
 
 Otherwise, use best judgement in what is readable, maintainable formatting, and be open to discussion with other contributors on formatting your code.
