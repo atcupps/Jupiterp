@@ -92,7 +92,7 @@ Copyright (C) 2024 Andrew Cupps
         class:course-search-transition={!courseSearchSelected}
         class:shadow-lg={courseSearchSelected}>
     
-    <div class='flex flex-row text-xs pb-1 2xl:text-sm'>
+    <div class='flex flex-row text-xs ml-1 pb-1 2xl:text-sm'>
         <div>
             Spring 2025
         </div>
