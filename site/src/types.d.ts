@@ -71,6 +71,11 @@ interface ScheduleSelection {
     colorNumber: number,
 }
 
+interface StoredSchedule {
+    scheduleName: string,
+    selections: ScheduleSelection[]
+}
+
 interface ClassMeetingExtended {
     course: string,
     secCode: string,

@@ -9,7 +9,7 @@ Copyright (C) 2024 Andrew Cupps
     import MeetingListing from "./MeetingListing.svelte";
     import { 
         HoveredSectionStore,
-        SelectedSectionsStore
+        CurrentScheduleStore
     } from "../../../stores/CoursePlannerStores";
     import SeatData from "./SeatData.svelte";
 
@@ -22,7 +22,11 @@ Copyright (C) 2024 Andrew Cupps
     HoveredSectionStore.subscribe((store) => { hoveredSection = store });
 
     let selectionsList: ScheduleSelection[];
-    SelectedSectionsStore.subscribe((stored) => { selectionsList = stored });
+    let scheduleName: string;
+    CurrentScheduleStore.subscribe((stored) => {
+        selectionsList = stored.selections;
+        scheduleName = stored.scheduleName;
+    });
 
     let newSelection: ScheduleSelection = {
         courseCode,
@@ -83,17 +87,22 @@ Copyright (C) 2024 Andrew Cupps
             showAddAlert();
             removeHoverSection();
             newSelection.colorNumber = firstAvailableColor(selectionsList);
-            SelectedSectionsStore.set([...selectionsList, newSelection]);
+            CurrentScheduleStore.set({
+                scheduleName,
+                selections: [...selectionsList, newSelection]
+            });
         } else {
             showRemoveAlert();
             const index = selectionsList.findIndex(obj => 
                         selectionEquals(obj));
             if (index !== -1) {
-                SelectedSectionsStore.set([
+                CurrentScheduleStore.set({
+                    scheduleName,
+                    selections: [
                         ...selectionsList.slice(0, index),
                         ...selectionsList.slice(index + 1)
                     ]
-                );
+                });
             }
         }
         sectionAdded = !sectionAdded;

@@ -8,12 +8,13 @@ Copyright (C) 2024 Andrew Cupps
     import Schedule from '../components/course-planner/schedule/Schedule.svelte';
     import CourseSearch from '../components/course-planner/course-search/CourseSearch.svelte';
     import { onMount } from 'svelte';
-    import { retrieveCourses } from '../lib/course-planner/CourseLoad';
+    import { retrieveCourses, updateStoredSchedules } from '../lib/course-planner/CourseLoad';
     import { getProfsLookup } from '$lib/course-planner/CourseSearch';
     import {
         SeatDataStore,
         ProfsLookupStore,
-        SelectedSectionsStore
+        CurrentScheduleStore,
+        NonselectedScheduleStore
     } from '../stores/CoursePlannerStores';
 
     // Load profs and course data from `+page.ts`
@@ -42,17 +43,20 @@ Copyright (C) 2024 Andrew Cupps
     ProfsLookupStore.set(getProfsLookup(data.professors));
 
     // Keep track of chosen sections
-    let selectedSections: ScheduleSelection[];
+    let currentSchedule: StoredSchedule;
     let hasReadLocalStorage: boolean = false;
-    SelectedSectionsStore.subscribe((stored) => {
+    CurrentScheduleStore.subscribe((stored) => {
         if (hasReadLocalStorage) {
-            selectedSections = stored;
+            currentSchedule = stored;
 
             // Save to local storage
-            if (selectedSections) {
+            if (currentSchedule) {
                 if (typeof window !== 'undefined') {
                     localStorage.setItem('selectedSections', 
-                                            jsonifySections(selectedSections));
+                                jsonifySections(currentSchedule.selections));
+                    localStorage.setItem(
+                        'scheduleName', currentSchedule.scheduleName
+                    );
                 }
             }
         }
@@ -62,23 +66,57 @@ Copyright (C) 2024 Andrew Cupps
         try {
             // Retreive `selectedSections` from client local storage
             if (typeof window !== 'undefined') {
-                const storedData = localStorage.getItem('selectedSections');
-                hasReadLocalStorage = true;
-                if (storedData) {
-                    SelectedSectionsStore.set(
-                        retrieveCourses(JSON.parse(storedData), 
-                                                            data.departments)
+                const storedSelectionsOption = 
+                                localStorage.getItem('selectedSections');
+                let storedSelections: ScheduleSelection[];
+                if (storedSelectionsOption) {
+                    storedSelections = retrieveCourses(
+                        JSON.parse(storedSelectionsOption), data.departments
                     );
                 } else {
-                    SelectedSectionsStore.set([]);
+                    storedSelections = [];
                 }
+
+                const storedScheduleNameOption = 
+                                localStorage.getItem('scheduleName');
+                let storedScheduleName: string;
+                if (storedScheduleNameOption) {
+                    storedScheduleName = storedScheduleNameOption;
+                } else {
+                    storedScheduleName = "Schedule 1";
+                }
+
+                const storedNonselectedSchedulesOption = 
+                                localStorage.getItem('nonselectedSchedules');
+                let storedNonselectedSchedules: StoredSchedule[];
+                if (storedNonselectedSchedulesOption) {
+                    storedNonselectedSchedules = updateStoredSchedules(
+                        JSON.parse(storedNonselectedSchedulesOption),
+                        data.departments
+                    );
+                } else {
+                    storedNonselectedSchedules = [];
+                }
+
+                CurrentScheduleStore.set({
+                    scheduleName: storedScheduleName,
+                    selections: storedSelections
+                });
+
+                NonselectedScheduleStore.set(storedNonselectedSchedules);
+
+                hasReadLocalStorage = true;
             }
 
             // Fetch seat data from API
             fetchSeatData();
         } catch (e) {
             console.log('Unable to retrieve courses: ' + e);
-            SelectedSectionsStore.set([]);
+            CurrentScheduleStore.set({
+                scheduleName: "Schedule 1",
+                selections: []
+            });
+            NonselectedScheduleStore.set([]);
         }
     });
 

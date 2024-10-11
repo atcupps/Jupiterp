@@ -14,7 +14,7 @@ Copyright (C) 2024 Andrew Cupps
     import { afterUpdate } from 'svelte';
     import InstructorListing from '../course-search/InstructorListing.svelte';
     import {
-        HoveredSectionStore, SelectedSectionsStore
+        HoveredSectionStore, CurrentScheduleStore
     } from '../../../stores/CoursePlannerStores';
     import MeetingListing from '../course-search/MeetingListing.svelte';
     import SeatData from '../course-search/SeatData.svelte';
@@ -34,8 +34,8 @@ Copyright (C) 2024 Andrew Cupps
         );
     });
 
-    SelectedSectionsStore.subscribe((stored) => {
-        selections = stored;
+    CurrentScheduleStore.subscribe((stored) => {
+        selections = stored.selections;
         schedule = schedulify(
             appendHoveredSection(selections, hoveredSection)
         );

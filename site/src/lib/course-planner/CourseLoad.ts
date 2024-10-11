@@ -124,6 +124,18 @@ export function retrieveCourses(selections: ScheduleSelection[],
     return result;
 }
 
+export function updateStoredSchedules(schedules: StoredSchedule[], 
+                                    depts: Department[]): StoredSchedule[] {
+    let result: StoredSchedule[] = [];
+    schedules.forEach((schedule) => {
+        result.push({
+            scheduleName: schedule.scheduleName,
+            selections: retrieveCourses(schedule.selections, depts)
+        });
+    });
+    return result;
+}
+
 /**
  * This function is used to check the type of a `ScheduleSelection` to
  * ensure that it is correct. This is used to ensure that the `retrieveCourses`

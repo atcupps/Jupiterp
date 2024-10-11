@@ -14,14 +14,14 @@ Copyright (C) 2024 Andrew Cupps
     import { appendHoveredSection } from "../../../lib/course-planner/Schedule";
     import { 
         HoveredSectionStore, 
-        SelectedSectionsStore 
+        CurrentScheduleStore 
     } from "../../../stores/CoursePlannerStores";
 
     let hoveredSection: ScheduleSelection | null;
     HoveredSectionStore.subscribe((hovered) => { hoveredSection = hovered });
 
     let selections: ScheduleSelection[] = [];
-    SelectedSectionsStore.subscribe((stored) => { selections = stored });
+    CurrentScheduleStore.subscribe((stored) => { selections = stored.selections });
 
     // Load profs and depts data
     export let data;
