@@ -62,9 +62,27 @@ Copyright (C) 2024 Andrew Cupps
         }
     });
 
+    let nonselectedSchedules: StoredSchedule[];
+    // Save non-selected schedules to local storage
+    NonselectedScheduleStore.subscribe((stored) => {
+        if (hasReadLocalStorage) {
+            nonselectedSchedules = stored;
+
+            // Save to local storage
+            if (nonselectedSchedules) {
+                if (typeof window !== 'undefined') {
+                    localStorage.setItem(
+                        'nonselectedSchedules', 
+                        JSON.stringify(nonselectedSchedules)
+                    );
+                }
+            }
+        }
+    })
+
     onMount(() => {
         try {
-            // Retreive `selectedSections` from client local storage
+            // Retreive data from client local storage
             if (typeof window !== 'undefined') {
                 const storedSelectionsOption = 
                                 localStorage.getItem('selectedSections');
