@@ -54,10 +54,29 @@
     });
 
     function changeSchedule(newSchedule: StoredSchedule) {
-        const currentSchedule: StoredSchedule = {
-            scheduleName: currentScheduleName,
-            selections: currentScheduleSelections
+        const index = nonselectedSchedules.indexOf(newSchedule);
+        if (index === -1) {
+            // This should not be possible
+            console.log('Could not find schedule: '+ newSchedule.scheduleName);
         }
+        else {
+            const scheduleToReplace: StoredSchedule = {
+                scheduleName: currentScheduleName,
+                selections: currentScheduleSelections
+            }
+            nonselectedSchedules.splice(index, 1);
+            nonselectedSchedules = [scheduleToReplace,...nonselectedSchedules];
+            currentScheduleName = newSchedule.scheduleName;
+            currentScheduleSelections = newSchedule.selections;
+            
+            CurrentScheduleStore.set({
+                scheduleName: currentScheduleName,
+                selections: currentScheduleSelections
+            });
+
+            NonselectedScheduleStore.set(nonselectedSchedules);
+        }
+        dropdownOpen = false;
     }
 </script>
 
