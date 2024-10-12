@@ -9,7 +9,6 @@
 
     let dropdownOpen: boolean = false;
 
-    let inputScheduleName: string;
     let currentScheduleName: string;
     let currentScheduleSelections: ScheduleSelection[];
     CurrentScheduleStore.subscribe((stored) => {
@@ -17,15 +16,17 @@
         currentScheduleSelections = stored.selections;
     });
 
-    $: if (inputScheduleName) {
+    function changeScheduleName() {
+        const inputScheduleName = scheduleNameElement.value;
         if (inputScheduleName.trim().length > 0) {
-            currentScheduleName = inputScheduleName;
+            currentScheduleName = enumeratedScheduleName(inputScheduleName, nonselectedSchedules);
             CurrentScheduleStore.set({
                 scheduleName: currentScheduleName,
                 selections: currentScheduleSelections
             });
-        } else {
-            currentScheduleName = defaultScheduleName(nonselectedSchedules);
+        }
+        else {
+            currentScheduleName = enumeratedScheduleName('My schedule', nonselectedSchedules);
             CurrentScheduleStore.set({
                 scheduleName: currentScheduleName,
                 selections: currentScheduleSelections
@@ -33,14 +34,19 @@
         }
     }
 
-    function defaultScheduleName(schedules: StoredSchedule[]): string {
+    function enumeratedScheduleName(
+                    defaultName: string, schedules: StoredSchedule[]): string {
         let scheduleNames: Set<string> = new Set<string>();
         schedules.forEach((elt) => { scheduleNames.add(elt.scheduleName) });
-        let i = 1;
-        while (scheduleNames.has('Schedule ' + i)) {
-            i++;
+        if (scheduleNames.has(defaultName)) {
+            let i = 1;
+            while (scheduleNames.has(defaultName + ' (' + i + ')')) {
+                i++;
+            }
+            return defaultName + ' (' + i + ')';
+        } else {
+            return defaultName;
         }
-        return 'Schedule ' + i;
     }
 
     let scheduleNameElement: HTMLInputElement;
@@ -92,7 +98,7 @@
 
             <input contenteditable="true"
                     bind:this={scheduleNameElement}
-                    bind:value={inputScheduleName}
+                    on:blur={changeScheduleName}
                     class='bg-bgLight dark:bg-bgDark
                             px-0.5 mr-1 rounded cursor-text grow'>
         </div>
