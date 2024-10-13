@@ -1,5 +1,7 @@
 <script lang='ts'>
-    import { AngleRightOutline, PlusOutline } from "flowbite-svelte-icons";
+    import {
+        AngleRightOutline, PlusOutline, TrashBinOutline
+    } from "flowbite-svelte-icons";
     import {
         CurrentScheduleStore, NonselectedScheduleStore
     } from "../../../stores/CoursePlannerStores";
@@ -102,6 +104,18 @@
             selections: currentScheduleSelections
         });
     }
+
+    function deleteNonselectedSchedule(schedule: StoredSchedule) {
+        const index = nonselectedSchedules.indexOf(schedule);
+        if (index === -1) {
+            // This should not be possible
+            console.log('Could not find schedule: ' + schedule.scheduleName);
+        }
+        else {
+            nonselectedSchedules.splice(index, 1);
+            NonselectedScheduleStore.set(nonselectedSchedules);
+        }
+    }
 </script>
 
 <div class='flex w-full flex-col'>
@@ -131,14 +145,23 @@
     </div>
 
     {#if dropdownOpen}
-        <div class='w-full pr-5 pl-4' transition:slide>
+        <div class='w-full pr-5 pl-4 pb-0.5' transition:slide>
             {#each nonselectedSchedules as schedule}
-                <button class='text-sm hover:bg-hoverLight pl-1.5
-                                dark:hover:bg-hoverDark text-left rounded-md
-                                h-6 items-center w-full'
-                        on:click={() => changeSchedule(schedule)}>
-                    <div>{schedule.scheduleName}</div>
-                </button>
+                <div class='h-6 w-full flex flex-row'>
+                    <button class='text-sm hover:bg-hoverLight text-sm
+                                    dark:hover:bg-hoverDark text-left rounded-md
+                                    h-6 items-center grow pl-1.5'
+                            on:click={() => changeSchedule(schedule)}>
+                        <div>{schedule.scheduleName}</div>
+                    </button>
+
+                    <button class='rounded-md hover:bg-hoverLight
+                                    dark:hover:bg-hoverDark h-6 w-6
+                                    flex justify-center items-center'
+                            on:click={()=>deleteNonselectedSchedule(schedule)}>
+                        <TrashBinOutline class='w-4 h-4' />
+                    </button>
+                </div>
             {/each}
         </div>
     {/if}
