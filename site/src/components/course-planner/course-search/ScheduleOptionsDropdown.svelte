@@ -53,6 +53,24 @@ Copyright (C) 2024 Andrew Cupps
             });
         }
     }
+
+    function duplicateSchedule() {
+        dropdownOpen = false;
+
+        nonselectedSchedules = [{
+            scheduleName: currentScheduleName,
+            selections: currentScheduleSelections
+        }, ...nonselectedSchedules];
+        currentScheduleName = enumeratedScheduleName(
+            currentScheduleName, nonselectedSchedules
+        );
+
+        NonselectedScheduleStore.set(nonselectedSchedules);
+        CurrentScheduleStore.set({
+            scheduleName: currentScheduleName,
+            selections: currentScheduleSelections
+        });
+    }
 </script>
 
 <button class='hover:bg-hoverLight dark:hover:bg-hoverDark rounded-md'>
@@ -70,7 +88,7 @@ Copyright (C) 2024 Andrew Cupps
 
     <DropdownItem class="hover:bg-hoverLight dark:hover:bg-hoverDark px-2
                             flex justify-start items-center"
-                    on:click={() => (dropdownOpen = false)}>
+                    on:click={duplicateSchedule}>
         <FileCopyOutline class="w-3 h-3 mr-1" /> Duplicate
     </DropdownItem>
 
