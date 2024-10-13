@@ -1,3 +1,9 @@
+<!-- 
+This file is part of Jupiterp. For terms of use, please see the file
+called LICENSE at the top level of the Jupiterp source tree (online at
+https://github.com/atcupps/Jupiterp/LICENSE).
+Copyright (C) 2024 Andrew Cupps
+-->
 <script lang='ts'>
     import {
         AngleRightOutline, PlusOutline, TrashBinOutline
@@ -7,7 +13,10 @@
     } from "../../../stores/CoursePlannerStores";
     import ScheduleOptionsDropdown from "./ScheduleOptionsDropdown.svelte";
     import { slide } from "svelte/transition";
-    import { onMount } from "svelte";
+    import {
+        deleteNonselectedSchedule,
+        enumeratedScheduleName
+    } from "$lib/course-planner/ScheduleSelector";
 
     let dropdownOpen: boolean = false;
 
@@ -33,21 +42,6 @@
                 scheduleName: currentScheduleName,
                 selections: currentScheduleSelections
             });
-        }
-    }
-
-    function enumeratedScheduleName(
-                    defaultName: string, schedules: StoredSchedule[]): string {
-        let scheduleNames: Set<string> = new Set<string>();
-        schedules.forEach((elt) => { scheduleNames.add(elt.scheduleName) });
-        if (scheduleNames.has(defaultName)) {
-            let i = 1;
-            while (scheduleNames.has(defaultName + ' (' + i + ')')) {
-                i++;
-            }
-            return defaultName + ' (' + i + ')';
-        } else {
-            return defaultName;
         }
     }
 
@@ -104,18 +98,6 @@
             selections: currentScheduleSelections
         });
     }
-
-    function deleteNonselectedSchedule(schedule: StoredSchedule) {
-        const index = nonselectedSchedules.indexOf(schedule);
-        if (index === -1) {
-            // This should not be possible
-            console.log('Could not find schedule: ' + schedule.scheduleName);
-        }
-        else {
-            nonselectedSchedules.splice(index, 1);
-            NonselectedScheduleStore.set(nonselectedSchedules);
-        }
-    }
 </script>
 
 <div class='flex w-full flex-col'>
@@ -158,7 +140,11 @@
                     <button class='rounded-md hover:bg-hoverLight
                                     dark:hover:bg-hoverDark h-6 w-6
                                     flex justify-center items-center'
-                            on:click={()=>deleteNonselectedSchedule(schedule)}>
+                            on:click={
+                                ()=> deleteNonselectedSchedule(
+                                        schedule, nonselectedSchedules
+                                    )
+                            }>
                         <TrashBinOutline class='w-4 h-4' />
                     </button>
                 </div>
