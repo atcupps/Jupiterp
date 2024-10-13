@@ -84,9 +84,27 @@
         }
         dropdownOpen = false;
     }
+
+    function createNewSchedule() {
+        const oldSchedule: StoredSchedule = {
+            scheduleName: currentScheduleName,
+            selections: currentScheduleSelections
+        };
+        nonselectedSchedules = [oldSchedule, ...nonselectedSchedules];
+        NonselectedScheduleStore.set(nonselectedSchedules);
+        currentScheduleName = enumeratedScheduleName(
+            'My schedule',
+            nonselectedSchedules
+        );
+        currentScheduleSelections = [];
+        CurrentScheduleStore.set({
+            scheduleName: currentScheduleName,
+            selections: currentScheduleSelections
+        });
+    }
 </script>
 
-<div class='flex w-full flex-col mb-1'>
+<div class='flex w-full flex-col'>
     <div class='flex flex-row text-sm 2xl:text-md pb-1 w-full'>
         <div class='grow text-left justify-start py-1 px-0.5 flex flex-row
                         hover:bg-hoverLight hover:dark:bg-hoverDark rounded-md'>
@@ -105,7 +123,9 @@
 
         <ScheduleOptionsDropdown />
 
-        <button class="rounded-md hover:bg-hoverLight dark:hover:bg-hoverDark h-7">
+        <button class="rounded-md hover:bg-hoverLight
+                        dark:hover:bg-hoverDark h-7"
+                on:click={createNewSchedule}>
             <PlusOutline class="w-5 h-5 px-0.5" />
         </button>
     </div>
