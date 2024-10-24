@@ -461,16 +461,12 @@ pub fn get_meeting(
                     .unwrap()
                     .as_str(),
             );
-            let room = String::from(
-                room_re
-                    .captures(class_building)
-                    .unwrap_or_else(|| {
-                        panic!("Room didn't match for class-building: {}", class_building)
-                    })
-                    .get(1)
-                    .unwrap()
-                    .as_str(),
-            );
+            let room_capture = room_re.captures(class_building);
+            let room = String::from(if let Some(room_match) = room_capture {
+                room_match.get(1).unwrap().as_str()
+            } else {
+                "????"
+            });
             Some(ClassLocation(building, room))
         } else {
             debug_assert!(
