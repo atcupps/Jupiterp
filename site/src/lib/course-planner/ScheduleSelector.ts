@@ -21,7 +21,7 @@ import { NonselectedScheduleStore } from "../../stores/CoursePlannerStores";
  */
 export function enumeratedScheduleName(
                     defaultName: string, schedules: StoredSchedule[]): string {
-    let scheduleNames: Set<string> = new Set<string>();
+    const scheduleNames: Set<string> = new Set<string>();
     schedules.forEach((elt) => { scheduleNames.add(elt.scheduleName) });
     if (scheduleNames.has(defaultName)) {
         let i = 1;

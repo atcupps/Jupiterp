@@ -126,7 +126,7 @@ export function retrieveCourses(selections: ScheduleSelection[],
 
 export function updateStoredSchedules(schedules: StoredSchedule[], 
                                     depts: Department[]): StoredSchedule[] {
-    let result: StoredSchedule[] = [];
+    const result: StoredSchedule[] = [];
     schedules.forEach((schedule) => {
         result.push({
             scheduleName: schedule.scheduleName,
