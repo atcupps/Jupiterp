@@ -15,6 +15,7 @@ Copyright (C) 2024 Andrew Cupps
     import { getColorFromNumber, timeToNumber } from '../../../lib/course-planner/ClassMeetingUtils';
     import { afterUpdate } from 'svelte';
     import Tooltip from './Tooltip.svelte';
+    import { CurrentScheduleStore } from '../../../stores/CoursePlannerStores';
 
     export let meeting: ClassMeetingExtended;
     export let earliestClassStart: number = 0;
@@ -24,7 +25,12 @@ Copyright (C) 2024 Andrew Cupps
 
     export let isInOther: boolean;
 
-    export let selections: ScheduleSelection[];
+    let selections: ScheduleSelection[];
+    let scheduleName: string;
+    CurrentScheduleStore.subscribe((stored) => {
+        selections = stored.selections;
+        scheduleName = stored.scheduleName;
+    });
 
     const differences: string[] = meeting.differences;
     const instructorsChange: boolean = differences.includes('Instructors');
@@ -57,7 +63,8 @@ Copyright (C) 2024 Andrew Cupps
             } else {
                 const inPerson = meeting.meeting.InPerson;
                 if (inPerson.classtime != null) {
-                    formattedTime = formatClasstime(inPerson.classtime);
+                    const days = isInOther ? inPerson.classtime.days + ' ' : '';
+                    formattedTime = days + formatClasstime(inPerson.classtime);
                     decStartTime = timeToNumber(inPerson.classtime.start_time);
                     decEndTime = timeToNumber(inPerson.classtime.end_time);
                 } else {
@@ -109,10 +116,13 @@ Copyright (C) 2024 Andrew Cupps
             selectionEqualsByCode(obj)
         );
         if (index !== -1) {
-            selections = [
-                ...selections.slice(0, index),
-                ...selections.slice(index + 1)
-            ];
+            CurrentScheduleStore.set({
+                scheduleName,
+                selections: [
+                    ...selections.slice(0, index),
+                    ...selections.slice(index + 1)
+                ]
+            });
         }
     }
 
@@ -144,19 +154,21 @@ Copyright (C) 2024 Andrew Cupps
         bind:this={elt} on:click={toggleCourseInfo}
         style=' top: {(decStartTime - earliestClassStart) / boundDiff * 100}%;
                 height: {(decEndTime - decStartTime) / boundDiff * 100}%;
-                background-color: {getColorFromNumber(meeting.colorNumber)};
+                background-color: {getColorFromNumber(meeting.colorNumber)};  
                 opacity: {meeting.hover ? 0.4 : 1.0};
                 width: {(1 / meeting.conflictTotal) * 100}%;
                 left: {
                     ((meeting.conflictIndex - 1) / meeting.conflictTotal) * 100
                 }%;'
-        class:otherCategoryClassMeeting={isInOther}>
+        class:otherCategoryClassMeeting={isInOther}
+        title='Click to show more course info'>
 
     <!-- x button to remove course -->
     {#if !meeting.hover}
         <button class='absolute h-4 w-4 top-0 right-0
                         2xl:top-1 2xl:right-1 justify-center'
-                on:click={removeCourseByClassMeeting}>
+                on:click={removeCourseByClassMeeting}
+                title='Remove course from schedule'>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"
                 class='absolute h-2 w-2 2xl:h-3 2xl:w-3 top-[50%] left-[50%]'
                 style='transform: translateX(-50%) translateY(-50%);'>
@@ -164,14 +176,17 @@ Copyright (C) 2024 Andrew Cupps
         </button>
     {/if}
 
-    {#if w >= 64}
+    {#if w >= 72}
         <!-- Meeting course codes, instructors, etc. will only show up
             if the height of the classtime is great enough to fit them -->
         {#if h > 1.5 * fontSize || isInOther}
             <div class='w-full text-base font-semibold font-sans rounded-t-lg
-                                courseCode truncate min-h-[1.5rem]'
+                        translucentGray truncate min-h-[1.5rem] items-middle
+                        flex justify-center items-center'
+                    class:text-sm={w < 120}
+                    class:text-xs={w < 104}
                     class:rounded-b-lg={h < 1.75 * fontSize}>
-                {meeting.course}
+                <span>{meeting.course}</span>
             </div>
         {/if}
         <div class='w-full grow font-thin 2xl:font-normal 
@@ -238,7 +253,7 @@ Copyright (C) 2024 Andrew Cupps
 </button>
 
 <style>
-    .courseCode {
+    .translucentGray {
         background-color: rgba(0, 0, 0, 0.07)
     }
 

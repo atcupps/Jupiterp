@@ -17,17 +17,17 @@ Before working on Jupiterp, make sure your computer has the following installed 
 - [Cargo](https://doc.rust-lang.org/cargo/getting-started/installation.html)
 - [Node.js](https://nodejs.org/en/download)
 
-Jupiterp also supports using Bun in addition to npm, but Bun on Windows OS is supported only experimentally. Instructions to install Bun are can be found [here](https://bun.sh/docs/installation).
-
 #### Datagen
 
 To run `datagen`, navigate to the `datagen` folder. Using `cargo`, you can run two different binaries:
-- Use `cargo run --bin jupiterp_datagen <TERM>` to run the `datagen` component. The `<TERM>` argument specifies which term (`202401` for Spring 2024, `202408` for Fall 2024) to generate data for.
-- Use `cargo run --bin test -- <ARGS>` to run tests using the testing CLI. Note the `--` between `test` and the `<ARGS>`. Run `cargo run --bin test -- --help` to see available arguments, and see `datagen/src/bin/tests.rs` for more information.
+- Use `cargo run --bin jupiterp_datagen -- <ARGS>` to run the `datagen` component. This generates data for all classes given a `term` (`202401` for Spring 2024, `202408` for Fall 2024, `202501` for Spring 2025 etc.)
+- Use `cargo run --bin test -- <ARGS>` to run only parts of `datagen`; this is meant to help in the development process so developers do not have to run `datagen` for all departments and courses if they only want to test for a specific department or course.
+
+For either of these, you can use `cargo run --bin <BIN> -- -h` to see possible arguments for each binary.
 
 #### Site
 
-To test the site, navigate to the `site` folder. Use `npm run dev` (or `bun run dev`) to run the site locally, then use a browser to navigate to http://localhost:5173/.
+To test the site, navigate to the `site` folder. Use `npm run dev` to run the site locally, then use a browser to navigate to http://localhost:5173/.
 
 ## Contributing
 

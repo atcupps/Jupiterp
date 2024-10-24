@@ -11,8 +11,8 @@
  * `+page.svelte`.
  */
 
-import instructors from '../../../datagen/data/instructors.json'
-import deptsAndCourses from '../../../datagen/data/departments.json'
+import instructors from '../../../datagen/data/instructors.json';
+import deptsAndCourses from '../../../datagen/data/departments.json';
 
 /**
  * @returns An object containing parsed instructors and departments data.

@@ -29,7 +29,7 @@ mod macros;
 /// course information and write to appropriate files.
 /// Takes in `term: &String` as a parameter to specify which term to get
 /// courses for.
-pub fn depts_courses_datagen(term: &String) -> Result<(), Box<dyn Error>> {
+pub fn depts_courses_datagen(term: &String, pretty: bool) -> Result<(), Box<dyn Error>> {
     let depts_vec = get_depts()?;
     let mut full_depts_data = Vec::new();
     let mut dept_directory_file = File::create("data/departments_list.txt")?;
@@ -52,9 +52,23 @@ pub fn depts_courses_datagen(term: &String) -> Result<(), Box<dyn Error>> {
 
     // Use serde_json to write data to appropriate dept. files
     let mut dept_courses_file = File::create("data/departments.json")?;
-    let dept_course_json_string = serde_json::to_string(&full_depts_data)
-        .unwrap_or_else(|_| panic!("Failed to serialize {:#?} to JSON", full_depts_data));
+    let dept_course_json_string = (if pretty {
+        serde_json::to_string_pretty(&full_depts_data)
+    } else {
+        serde_json::to_string(&full_depts_data)
+    })
+    .unwrap_or_else(|_| panic!("Failed to serialize {:#?} to JSON", full_depts_data));
     dept_courses_file.write_all(dept_course_json_string.as_bytes())?;
+
+    // Write all course codes to relevant file
+    println!("Writing course codes to file");
+    let mut course_codes_file = File::create("data/courses_list.txt")?;
+    for dept in full_depts_data {
+        for course in dept.courses {
+            course_codes_file.write_all(course.code.as_bytes())?;
+            course_codes_file.write_all("\n".as_bytes())?;
+        }
+    }
 
     Ok(())
 }
@@ -83,147 +97,170 @@ pub fn get_depts() -> Result<Vec<String>, Box<dyn Error>> {
 /// courses corresponding to the course prefix `dept` in the given `term`.
 /// Will return an `Error` in case of failed HTTP requests.
 pub fn get_courses(dept: &String, term: &String) -> Result<Vec<Course>, Box<dyn Error>> {
-    let response = get_response(format!("https://app.testudo.umd.edu/soc/{}/{}", term, dept))?;
+    // Get courses page
+    let course_response =
+        get_response(format!("https://app.testudo.umd.edu/soc/{}/{}", term, dept))?;
 
-    if response.status().is_success() {
-        let document = scraper::Html::parse_document(&response.text()?);
+    if course_response.status().is_success() {
+        let course_document = scraper::Html::parse_document(&course_response.text()?);
+
+        // Get all course IDs for a department
         let selector = Selector::parse(".course-id").unwrap();
-        let course_names = select_inners!(document, selector);
-        let mut result = Vec::new();
-        for name in course_names {
-            result.push(get_course_info(&name, term)?);
+        let course_codes = select_inners!(course_document, selector);
+
+        // Get sections page
+        let mut sections_url = format!(
+            "https://app.testudo.umd.edu/soc/{}/sections?courseIds=",
+            term
+        );
+        for code in course_codes {
+            sections_url.push_str(&code);
+            sections_url.push(',');
         }
-        Ok(result)
+        sections_url.pop();
+
+        let sections_response = get_response(sections_url)?;
+
+        if sections_response.status().is_success() {
+            let sections_document = scraper::Html::parse_document(&sections_response.text()?);
+
+            // Remaking course IDs iterator since `course_codes` was already used
+            let course_codes = select_inners!(course_document, selector);
+
+            // Get all course and section info for each course
+            let mut result: Vec<Course> = Vec::new();
+            for code in course_codes {
+                result.push(course_info(code, &course_document, &sections_document)?);
+            }
+            Ok(result)
+        } else {
+            panic_response_fail!(sections_response)
+        }
     } else {
-        panic_response_fail!(response)
+        panic_response_fail!(course_response)
     }
 }
 
-/// Scrapes the Testudo schedule of classes to get a `Course` containing
-/// relevant information for the `course` specified during the given `term`.
-/// Will return an `Error` in case of failed HTTP requests.
-pub fn get_course_info(course: &String, term: &String) -> Result<Course, Box<dyn Error>> {
-    // TODO(2): Investigate sharing HTTP requests between calls to this fn.
-    let request =
-        format!(
-            "https://app.testudo.umd.edu/soc/search?courseId={course}&sectionId=&termId={term}&_openSectionsOnly=on&creditCompare=&credits=&courseLevelFilter=ALL&instructor=&_facetoface=on&_blended=on&_online=on&courseStartCompare=&courseStartHour=&courseStartMin=&courseStartAM=&courseEndHour=&courseEndMin=&courseEndAM=&teachingCenter=ALL&_classDay1=on&_classDay2=on&_classDay3=on&_classDay4=on&_classDay5=on"
-        );
-    let response = get_response(request)?;
+/// Get the info for a specified course, given the course page as an HTML
+/// document as well as the sections page as an HTML document.
+pub fn course_info(
+    course_code: String,
+    course_doc: &Html,
+    sections_doc: &Html,
+) -> Result<Course, Box<dyn Error>> {
+    // This short block gets the name/title of the course, which is
+    // different than the course code. As an example, "CMSC351" is a code,
+    // while "Algorithms" is a course name/title.
+    let name_selector = create_selector!(format!("#{} .course-title", course_code));
+    let name = select_inners!(course_doc, name_selector)
+        .nth(0)
+        .unwrap_or_else(|| panic!("Course name matching failed for {}", course_code));
 
-    if response.status().is_success() {
-        let document = scraper::Html::parse_document(&response.text()?);
+    // Getting the min number of credits for a course. This is used in courses
+    // where there is a range of possible credits, as well as the default for
+    // courses with a set number of credits.
+    let min_credits_selector = create_selector!(format!("#{} .course-min-credits", course_code));
+    let min_credits: u8 = select_inners!(course_doc, min_credits_selector)
+        .nth(0)
+        .unwrap_or_else(|| panic!("Min credits matching failed for {course_code}"))
+        .parse()
+        .unwrap();
 
-        // This short block gets the name/title of the course, which is
-        // different than the course code. As an example, "CMSC351" is a code,
-        // while "Algorithms" is a course name/title.
-        let name_selector = create_selector!(format!("#{} .course-title", course));
-        let name = select_inners!(document, name_selector)
-            .nth(0)
-            .unwrap_or_else(|| panic!("Course name matching failed for {}", course));
+    // Getting the max number of credits for a course. This is only present if
+    // the number of credits for the course is a range.
+    let max_credits_selector = create_selector!(format!("#{} .course-max-credits", course_code));
+    let max_credits: Option<u8> = select_inners!(course_doc, max_credits_selector)
+        .nth(0)
+        .map(|val| val.parse().unwrap());
 
-        let min_credits_selector = create_selector!(format!("#{} .course-min-credits", course));
-        let min_credits: u8 = select_inners!(document, min_credits_selector)
-            .nth(0)
-            .unwrap_or_else(|| panic!("Min credits matching failed for {course}"))
-            .parse()
-            .unwrap();
+    // If there are a maximum number of credits, the number of credits for
+    // this course is a range. This formats credits into a `CreditCount` struct.
+    let credits = match max_credits {
+        None => CreditCount::Amount(min_credits),
+        Some(val) => CreditCount::Range(min_credits, val),
+    };
 
-        let max_credits_selector = create_selector!(format!("#{} .course-max-credits", course));
-        let max_credits: Option<u8> = select_inners!(document, max_credits_selector)
-            .nth(0)
-            .map(|val| val.parse().unwrap());
+    // Get any GenEds that this course fulfills.
+    // TODO(3): Consider data generation for GenEds
+    let gen_eds_selector = create_selector!(format!("#{} .course-subcategory a", course_code));
+    let gen_eds_raw = Vec::from_iter(select_inners!(course_doc, gen_eds_selector));
+    let gen_eds = if gen_eds_raw.is_empty() {
+        None
+    } else {
+        Some(gen_eds_raw)
+    };
 
-        let credits = match max_credits {
-            None => CreditCount::Amount(min_credits),
-            Some(val) => CreditCount::Range(min_credits, val),
-        };
-
-        // TODO(3): Consider data generation for GenEds
-        let gen_eds_selector = create_selector!(format!("#{} .course-subcategory a", course));
-        let gen_eds_raw = Vec::from_iter(select_inners!(document, gen_eds_selector));
-        let gen_eds = if gen_eds_raw.is_empty() {
-            None
-        } else {
-            Some(gen_eds_raw)
-        };
-
-        let try_description_selector = create_selector!(format!(
-            "#{} .approved-course-texts-container :nth-child(2) .approved-course-text",
-            course
-        ));
-        let try_description = select_inners!(document, try_description_selector).nth(0);
-        let description = match try_description {
-            Some(desc) => desc,
-            None => {
-                let second_description_selector =
-                    create_selector!(format!("#{} .approved-course-text", course));
-                let second_desc = select_inners!(document, second_description_selector).nth(0);
-                match second_desc {
-                    Some(desc) => desc,
-                    None => {
-                        let final_description_selector =
-                            create_selector!(format!("#{} .course-text", course));
-                        select_inners!(document, final_description_selector)
-                            .nth(0)
-                            .unwrap_or(String::new())
-                    }
+    // Get the description of the course.
+    let try_description_selector = create_selector!(format!(
+        "#{} .approved-course-texts-container :nth-child(2) .approved-course-text",
+        course_code
+    ));
+    let try_description = select_inners!(course_doc, try_description_selector).nth(0);
+    let description = match try_description {
+        Some(desc) => desc,
+        None => {
+            let second_description_selector =
+                create_selector!(format!("#{} .approved-course-text", course_code));
+            let second_desc = select_inners!(course_doc, second_description_selector).nth(0);
+            match second_desc {
+                Some(desc) => desc,
+                None => {
+                    let final_description_selector =
+                        create_selector!(format!("#{} .course-text", course_code));
+                    select_inners!(course_doc, final_description_selector)
+                        .nth(0)
+                        .unwrap_or(String::new())
                 }
             }
-        };
-
-        // Identify sections for the given course
-        let sections_selector = create_selector!(format!("#{} .section-id", course));
-        let re = Regex::new(r"[A-Z]*[0-9]+").unwrap();
-        let section_numbers = Vec::from_iter(document.select(&sections_selector).map(|x| {
-            String::from(
-                re.find(x.inner_html().as_str())
-                    .unwrap_or_else(|| panic!("Section numbers matching failed for {course}."))
-                    .as_str(),
-            )
-        }));
-        if !section_numbers.is_empty() {
-            let sections = get_sections(document, course, section_numbers);
-
-            Ok(Course {
-                code: course.clone(),
-                name,
-                credits,
-                gen_eds,
-                description,
-                sections: Some(sections),
-            })
-        } else {
-            // Some courses have no sections; ex. AASP399.
-            Ok(Course {
-                code: course.clone(),
-                name,
-                credits,
-                gen_eds,
-                description,
-                sections: None,
-            })
         }
-    } else {
-        panic_response_fail!(response)
-    }
+    };
+
+    let sections = sections_info(&course_code, sections_doc)?;
+
+    // Return a `Course` struct with all info
+    Ok(Course {
+        code: course_code,
+        name,
+        credits,
+        gen_eds,
+        description,
+        sections,
+    })
 }
 
-/// Search through a `document` for the sections of a given `course`. Accepts
-/// a `Vec` of `section_numbers` as a parameter, and returns a corresponding
-/// `Vec` of `Section`s.
-pub fn get_sections(document: Html, course: &String, section_numbers: Vec<String>) -> Vec<Section> {
+/// Get info for all `Section`s in a course, given the HTML document for the
+/// sections page.
+pub fn sections_info(
+    course_code: &String,
+    sections_doc: &Html,
+) -> Result<Option<Vec<Section>>, Box<dyn Error>> {
+    // Identify sections for the given course
+    let sections_selector = create_selector!(format!("#{} .section-id", course_code));
+    let re = Regex::new(r"[A-Z]*[0-9]+").unwrap();
+    let section_numbers = Vec::from_iter(sections_doc.select(&sections_selector).map(|x| {
+        String::from(
+            re.find(x.inner_html().as_str())
+                .unwrap_or_else(|| panic!("Section numbers matching failed for {course_code}."))
+                .as_str(),
+        )
+    }));
+    if section_numbers.is_empty() {
+        // Some courses have no sections
+        return Ok(None);
+    }
+
     let mut result = Vec::new();
 
     // Iterate through `section_numbers` and append corresponding `Section`
-    // data to `result.`
+    // data to `result`.
     for (i, section_code) in section_numbers.iter().enumerate() {
         let nth_child = i + 1;
 
         let instructor_selector = create_selector!(format!(
             "#{} .section:nth-child({}) .section-instructor",
-            course, nth_child
+            course_code, nth_child
         ));
-        let instructors = Vec::from_iter(document.select(&instructor_selector).map(|x| {
+        let instructors = Vec::from_iter(sections_doc.select(&instructor_selector).map(|x| {
             let inner = x.inner_html();
             // Some instructors have their names associated with an anchor
             if inner.contains("<a") {
@@ -234,7 +271,7 @@ pub fn get_sections(document: Html, course: &String, section_numbers: Vec<String
             }
         }));
 
-        let class_meetings = get_class_meetings(&document, course, section_code, nth_child);
+        let class_meetings = get_class_meetings(sections_doc, course_code, section_code, nth_child);
 
         let section = Section {
             sec_code: section_code.clone(),
@@ -245,7 +282,7 @@ pub fn get_sections(document: Html, course: &String, section_numbers: Vec<String
         result.push(section);
     }
 
-    result
+    Ok(Some(result))
 }
 
 /// Searches through a `document` to get a `Vec` of `ClassMeeting`s for a
@@ -459,7 +496,7 @@ pub fn get_meeting(
 
 /// Use the PlanetTerp API to get a list of all instructors (professors or TAs)
 /// and write relevant information to a JSON file in the `data` directory.
-pub fn instructors_datagen() -> Result<(), Box<dyn Error>> {
+pub fn instructors_datagen(pretty: bool) -> Result<(), Box<dyn Error>> {
     let num_profs = 100;
     let mut offset = 0;
     let mut professors = Vec::new();
@@ -498,8 +535,12 @@ pub fn instructors_datagen() -> Result<(), Box<dyn Error>> {
 
     // Use serde_json to write data to instructors.json
     let mut instructors_file = File::create("data/instructors.json")?;
-    let instructors_json_string = serde_json::to_string(&professors)
-        .unwrap_or_else(|_| panic!("Failed to serialize {:#?} to JSON", professors));
+    let instructors_json_string = (if pretty {
+        serde_json::to_string_pretty(&professors)
+    } else {
+        serde_json::to_string(&professors)
+    })
+    .unwrap_or_else(|_| panic!("Failed to serialize {:#?} to JSON", professors));
     instructors_file.write_all(instructors_json_string.as_bytes())?;
 
     Ok(())

@@ -8,9 +8,10 @@ Copyright (C) 2024 Andrew Cupps
             flex justify-center w-full
             top-[3rem] lg:top-[3.5rem] xl:top-[4rem] bottom-0 fixed'>
     <iframe 
+        title="Jupiterp Issue/Bug Report Form"
+        src="https://docs.google.com/forms/d/e/1FAIpQLScGcTt4f8tQKgCDmgnLr5red9dFRW8QvUox-kn_lNWjxoBTzA/viewform?embedded=true"
         class="w-full h-full"
-        title="Jupiterp Issue/Bug Report Form" 
-        src="https://docs.google.com/forms/d/e/1FAIpQLSfCNBmYwIRS2eaqw9PPRJQLahm2H-UnMs8LkMYDHyfCdPnr2w/viewform?embedded=true">
-            Loading…
+    >
+        Loading…
     </iframe>
 </div>

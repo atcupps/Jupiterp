@@ -33,29 +33,27 @@ body {
     }
 }
 
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color: #151922;
+.dark body {
+    background-color: #151922;
 
-        /* ===== Scrollbar CSS ===== */
-        /* Firefox */
-        * {
-            scrollbar-width: auto;
-            scrollbar-color: #3F475A #151922;
-        }
+    /* ===== Scrollbar CSS ===== */
+    /* Firefox */
+    * {
+        scrollbar-width: auto;
+        scrollbar-color: #3F475A #151922;
+    }
 
-        /* Chrome, Edge, and Safari */
-        *::-webkit-scrollbar {
-            width: 8px;
-        }
+    /* Chrome, Edge, and Safari */
+    *::-webkit-scrollbar {
+        width: 8px;
+    }
 
-        *::-webkit-scrollbar-track {
-            background: #151922;
-        }
+    *::-webkit-scrollbar-track {
+        background: #151922;
+    }
 
-        *::-webkit-scrollbar-thumb {
-            background-color: #3F475A;
-            border-radius: 8px;
-        }
+    *::-webkit-scrollbar-thumb {
+        background-color: #3F475A;
+        border-radius: 8px;
     }
 }
