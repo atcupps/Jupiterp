@@ -72,6 +72,21 @@ function formatAmPm(AmPmAsTC: TimeComponent): string {
 }
 
 /**
+ * Get the minimum number of credits a given course can take. This is either
+ * the exact value listed on Testudo or the lower end of a range listed
+ * on Testudo.
+ * @param credits A `CreditCount` with the number of credits
+ * @returns `credits.Amount` or `credits.Range[0]`
+ */
+export function getMinCredits(credits: CreditCount): number {
+    if ('Amount' in credits) {
+        return credits.Amount
+    } else {
+        return credits.Range[0];
+    }
+}
+
+/**
  * Formats a `CreditCount` as a `string`
  * @param credits A `CreditCount` to be formatted
  * @returns `credits` formatted as a string
