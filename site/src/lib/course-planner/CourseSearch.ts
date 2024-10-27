@@ -77,7 +77,7 @@ export function searchCourses(input: string, courseLookup:
     } 
     
     // If the search input is just numbers, match courses with that number
-    if (simpleInput.length >= 1 && /^[0-9]+$/i.test(simpleInput)) {
+    if (simpleInput.length >= 2 && /^[0-9]+$/i.test(simpleInput)) {
 
         // get all the courses from every department 
         const allDeptCourses: Record<string, Course> = {};
