@@ -55,7 +55,6 @@ export function searchCourses(input: string, courseLookup:
     if (simpleInput.length >= 4) {
         const dept: string = simpleInput.substring(0, 4);
         const deptCourses: Record<string, Course> = courseLookup[dept];
-      
         if (deptCourses != undefined) {
             for (const courseCode in deptCourses) {
                 let shouldBeInResult = true;
