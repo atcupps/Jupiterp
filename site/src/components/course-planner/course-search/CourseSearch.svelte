@@ -26,6 +26,7 @@ Copyright (C) 2024 Andrew Cupps
     // Load profs and depts data
     export let data;
     let depts: Department[] = data.departments;
+    let deptList = depts.map((d) => d.name);
 
     // Create course lookup table
     const courseLookup = getCourseLookup(depts);
@@ -36,7 +37,7 @@ Copyright (C) 2024 Andrew Cupps
     function handleInput() {
         // Sorting is done to ensure courses are displayed in
         // alphabetical order
-        searchResults = searchCourses(searchInput, courseLookup)
+        searchResults = searchCourses(searchInput, courseLookup, deptList)
                             .sort((a, b) => {
                                 return a.code.localeCompare(b.code);
                             });
