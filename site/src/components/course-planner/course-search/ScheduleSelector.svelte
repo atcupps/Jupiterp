@@ -101,7 +101,8 @@ Copyright (C) 2024 Andrew Cupps
 </script>
 
 <div class='flex w-full flex-col'>
-    <div class='flex flex-row text-sm 2xl:text-md pb-1 w-full'>
+    <div class='flex flex-row text-sm 2xl:text-md pb-1 w-full'
+            title='Toggle schedule dropdown'>
         <div class='grow text-left justify-start py-1 px-0.5 flex flex-row
                     hover:bg-hoverLight hover:dark:bg-hoverDark rounded-md'>
             <button class:rotate-90={dropdownOpen}
@@ -113,6 +114,7 @@ Copyright (C) 2024 Andrew Cupps
             <input contenteditable="true"
                     bind:this={scheduleNameElement}
                     on:blur={changeScheduleName}
+                    title='Schedule name'
                     class='bg-bgLight dark:bg-bgDark
                             px-0.5 mr-1 rounded cursor-text grow'>
         </div>
@@ -121,6 +123,7 @@ Copyright (C) 2024 Andrew Cupps
 
         <button class="rounded-md hover:bg-hoverLight
                         dark:hover:bg-hoverDark h-7"
+                title='Create new schedule'
                 on:click={createNewSchedule}>
             <PlusOutline class="w-5 h-5 px-0.5" />
         </button>
@@ -133,6 +136,7 @@ Copyright (C) 2024 Andrew Cupps
                     <button class='text-sm hover:bg-hoverLight text-sm
                                     dark:hover:bg-hoverDark text-left rounded-md
                                     h-6 items-center grow pl-1.5'
+                            title={'Switch to ' + schedule.scheduleName}
                             on:click={() => changeSchedule(schedule)}>
                         <div>{schedule.scheduleName}</div>
                     </button>
@@ -140,6 +144,7 @@ Copyright (C) 2024 Andrew Cupps
                     <button class='rounded-md hover:bg-hoverLight
                                     dark:hover:bg-hoverDark h-6 w-6
                                     flex justify-center items-center'
+                            title={'Delete ' + schedule.scheduleName}
                             on:click={
                                 ()=> deleteNonselectedSchedule(
                                         schedule, nonselectedSchedules

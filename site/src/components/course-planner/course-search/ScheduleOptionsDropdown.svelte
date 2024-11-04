@@ -72,7 +72,8 @@ Copyright (C) 2024 Andrew Cupps
     }
 </script>
 
-<button class='hover:bg-hoverLight dark:hover:bg-hoverDark rounded-md'>
+<button class='hover:bg-hoverLight dark:hover:bg-hoverDark rounded-md'
+        title='Schedule options'>
     <DotsVerticalOutline class="w-5 h-5" />
 </button>
 
@@ -81,12 +82,14 @@ Copyright (C) 2024 Andrew Cupps
 
     <DropdownItem class="hover:bg-hoverLight dark:hover:bg-hoverDark px-2
                             flex justify-start items-center"
+                    title='Delete current schedule'
                     on:click={deleteCurrentSchedule}>
         <TrashBinOutline class="w-3 h-3 mr-1" /> Delete
     </DropdownItem>
 
     <DropdownItem class="hover:bg-hoverLight dark:hover:bg-hoverDark px-2
                             flex justify-start items-center"
+                    title='Duplicate current schedule'
                     on:click={duplicateSchedule}>
         <FileCopyOutline class="w-3 h-3 mr-1" /> Duplicate
     </DropdownItem>
