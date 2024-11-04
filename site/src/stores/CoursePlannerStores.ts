@@ -11,8 +11,14 @@ export const ProfsLookupStore: Writable<Record<string, Professor>> =
 export const HoveredSectionStore: Writable<ScheduleSelection | null> = 
                                                                 writable(null);
 
-// Track selected sections
-export const SelectedSectionsStore: Writable<ScheduleSelection[]> = 
+// Track selected sections in current schedule
+export const CurrentScheduleStore: Writable<StoredSchedule> = writable({
+    scheduleName: "Schedule 1",
+    selections: []
+});
+
+// Track stored schedules that are not the active current schedule
+export const NonselectedScheduleStore: Writable<StoredSchedule[]> = 
                                                                 writable([]);
 
 // Number of seats in each course-section combination

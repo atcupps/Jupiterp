@@ -14,14 +14,15 @@ Copyright (C) 2024 Andrew Cupps
     import { appendHoveredSection } from "../../../lib/course-planner/Schedule";
     import { 
         HoveredSectionStore, 
-        SelectedSectionsStore 
+        CurrentScheduleStore 
     } from "../../../stores/CoursePlannerStores";
+    import ScheduleSelector from "./ScheduleSelector.svelte";
 
     let hoveredSection: ScheduleSelection | null;
     HoveredSectionStore.subscribe((hovered) => { hoveredSection = hovered });
 
     let selections: ScheduleSelection[] = [];
-    SelectedSectionsStore.subscribe((stored) => { selections = stored });
+    CurrentScheduleStore.subscribe((stored) => { selections = stored.selections });
 
     // Load profs and depts data
     export let data;
@@ -85,13 +86,26 @@ Copyright (C) 2024 Andrew Cupps
                             lg:min-w-[260px] w-[300px] z-[52] fixed lg:static
                             lg:h-full course-search visible
                             border-r-2 border-divBorderLight
-                            dark:border-divBorderDark border-solid py-2 pr-2
+                            dark:border-divBorderDark border-solid py-1 pr-2
                             pl-1 lg:pl-0 lg:ml-1.5 lg:shadow-none
                             bg-bgLight dark:bg-bgDark lg:bg-transparent left-0
                             transition-transform duration-300'
         class:course-search-transition={!courseSearchSelected}
         class:shadow-lg={courseSearchSelected}>
-    <div class='flex flex-col w-full border-solid border-b-2 px-1 lg:px-0
+    
+    <div class='flex flex-row text-xs ml-1 pb-1 2xl:text-sm'>
+        <div>
+            Spring 2025
+        </div>
+        <div class='grow text-right'>
+            Credits: {totalCredits}
+        </div>
+    </div>
+
+    <ScheduleSelector />
+
+    <div class='flex flex-col w-full border-solid 
+                            border-b-2 border-t-2 p-1 lg:px-0
                             border-divBorderLight dark:border-divBorderDark'>
         <input type='text' bind:value={searchInput} on:input={handleInput}
             placeholder='Search course codes, ex: "HIST111"'
@@ -100,14 +114,6 @@ Copyright (C) 2024 Andrew Cupps
                             bg-transparent px-2 w-full text-xl
                             lg:text-base lg:placeholder:text-sm
                             placeholder:text-base">
-        <div class='flex flex-row text-xs 2xl:text-sm p-1'>
-            <div>
-                Spring 2025
-            </div>
-            <div class='grow text-right'>
-                Credits: {totalCredits}
-            </div>
-        </div>
     </div>
     <div class='grow courses-list overflow-y-scroll overflow-x-none
                 px-1 lg:pr-1 lg:pl-0'>
