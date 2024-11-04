@@ -10,7 +10,6 @@ Copyright (C) 2024 Andrew Cupps
         DotsVerticalOutline, 
         TrashBinOutline,
         FileCopyOutline,
-        ForwardOutline
     } from 'flowbite-svelte-icons';
     import { CurrentScheduleStore, NonselectedScheduleStore } from '../../../stores/CoursePlannerStores';
     import { enumeratedScheduleName } from '$lib/course-planner/ScheduleSelector';
@@ -92,10 +91,11 @@ Copyright (C) 2024 Andrew Cupps
         <FileCopyOutline class="w-3 h-3 mr-1" /> Duplicate
     </DropdownItem>
 
-    <DropdownItem class="hover:bg-hoverLight dark:hover:bg-hoverDark px-2
+    <!-- TODO(@atcupps): Add share schedule feature -->
+    <!-- <DropdownItem class="hover:bg-hoverLight dark:hover:bg-hoverDark px-2
                         flex justify-start items-center"
                     on:click={() => (dropdownOpen = false)}>
         <ForwardOutline class="w-3 h-3 mr-1" /> Share
-    </DropdownItem>
+    </DropdownItem> -->
 
 </Dropdown>

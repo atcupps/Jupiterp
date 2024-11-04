@@ -24,7 +24,3 @@ export const NonselectedScheduleStore: Writable<StoredSchedule[]> =
 // Number of seats in each course-section combination
 export const SeatDataStore: Writable<Record<string, number[]>> = 
                                                             writable({});
-
-// Selections shared with the user via URL query params
-export const SharedSelectionsStore: Writable<StoredSchedule| null> = 
-                                                                writable(null);
