@@ -12,6 +12,12 @@ Copyright (C) 2024 Andrew Cupps
             text-textLight dark:text-textDark lg:px-8
             top-[3rem] lg:top-[3.5rem] xl:top-[4rem] bottom-0'>
 
+    <ChangelogItem title='Saturp' version='v1.1.0: Saturn'
+                                                        date='Nov 4, 2024'>
+        Allow searching just by number; enable users having and switching
+        between multiple schedules.
+    </ChangelogItem>
+
     <ChangelogItem title='Have a Seat' version='v1.0.5: Amalthea'
                                                         date='Sep 23, 2024'>
         Display number of seats left in sections in both course search and in

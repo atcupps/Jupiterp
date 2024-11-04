@@ -103,7 +103,7 @@ Copyright (C) 2024 Andrew Cupps
 <div class='flex w-full flex-col'>
     <div class='flex flex-row text-sm 2xl:text-md pb-1 w-full'>
         <div class='grow text-left justify-start py-1 px-0.5 flex flex-row
-                        hover:bg-hoverLight hover:dark:bg-hoverDark rounded-md'>
+                    hover:bg-hoverLight hover:dark:bg-hoverDark rounded-md'>
             <button class:rotate-90={dropdownOpen}
                     class='transition origin-center'
                     on:click={() => dropdownOpen = !dropdownOpen }>
