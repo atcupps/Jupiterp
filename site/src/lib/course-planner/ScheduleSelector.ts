@@ -24,11 +24,11 @@ export function enumeratedScheduleName(
     const scheduleNames: Set<string> = new Set<string>();
     schedules.forEach((elt) => { scheduleNames.add(elt.scheduleName) });
     if (scheduleNames.has(defaultName)) {
-        let i = 1;
-        while (scheduleNames.has(defaultName + ' (' + i + ')')) {
-            i++;
+        let curName = defaultName;
+        while (scheduleNames.has(curName)) {
+            curName = 'Copy of ' + curName;
         }
-        return defaultName + ' (' + i + ')';
+        return curName;
     } else {
         return defaultName;
     }
