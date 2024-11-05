@@ -12,21 +12,23 @@
 import { NonselectedScheduleStore } from "../../stores/CoursePlannerStores";
 
 /**
- * Ensure that a schedule name is unique by appending a number if necessary.
- * For example, if a schedule already exists with the name "My schedule",
- * calling this function with "My schedule" will return "My schedule (1)".
- * @param defaultName The schedule name to use
+ * Ensure that a schedule name is unique by appending another string if
+ * necessary.
+ * 
  * @param schedules The schedules to compare `defaultName` with
+ * @param uniquifier The string to append to the beginning
  * @returns A unique schedule name based on `defaultname`
  */
-export function enumeratedScheduleName(
-                    defaultName: string, schedules: StoredSchedule[]): string {
+export function uniqueScheduleName(
+                    defaultName: string, 
+                    uniquifier: string,
+                    schedules: StoredSchedule[]): string {
     const scheduleNames: Set<string> = new Set<string>();
     schedules.forEach((elt) => { scheduleNames.add(elt.scheduleName) });
     if (scheduleNames.has(defaultName)) {
         let curName = defaultName;
         while (scheduleNames.has(curName)) {
-            curName = 'Copy of ' + curName;
+            curName = uniquifier + curName;
         }
         return curName;
     } else {

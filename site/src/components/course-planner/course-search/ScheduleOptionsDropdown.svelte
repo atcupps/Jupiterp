@@ -12,7 +12,7 @@ Copyright (C) 2024 Andrew Cupps
         FileCopyOutline,
     } from 'flowbite-svelte-icons';
     import { CurrentScheduleStore, NonselectedScheduleStore } from '../../../stores/CoursePlannerStores';
-    import { enumeratedScheduleName } from '$lib/course-planner/ScheduleSelector';
+    import { uniqueScheduleName } from '$lib/course-planner/ScheduleSelector';
 
     let dropdownOpen = false;
 
@@ -60,8 +60,10 @@ Copyright (C) 2024 Andrew Cupps
             scheduleName: currentScheduleName,
             selections: currentScheduleSelections
         }, ...nonselectedSchedules];
-        currentScheduleName = enumeratedScheduleName(
-            currentScheduleName, nonselectedSchedules
+        currentScheduleName = uniqueScheduleName(
+            currentScheduleName,
+            'Copy of ',
+            nonselectedSchedules
         );
 
         NonselectedScheduleStore.set(nonselectedSchedules);

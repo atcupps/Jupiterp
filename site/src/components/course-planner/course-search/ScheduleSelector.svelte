@@ -15,7 +15,7 @@ Copyright (C) 2024 Andrew Cupps
     import { slide } from "svelte/transition";
     import {
         deleteNonselectedSchedule,
-        enumeratedScheduleName
+        uniqueScheduleName
     } from "$lib/course-planner/ScheduleSelector";
 
     let dropdownOpen: boolean = false;
@@ -30,14 +30,22 @@ Copyright (C) 2024 Andrew Cupps
     function changeScheduleName() {
         const inputScheduleName = scheduleNameElement.value;
         if (inputScheduleName.trim().length > 0) {
-            currentScheduleName = enumeratedScheduleName(inputScheduleName, nonselectedSchedules);
+            currentScheduleName = uniqueScheduleName(
+                inputScheduleName,
+                'New ',
+                nonselectedSchedules
+            );
             CurrentScheduleStore.set({
                 scheduleName: currentScheduleName,
                 selections: currentScheduleSelections
             });
         }
         else {
-            currentScheduleName = enumeratedScheduleName('My schedule', nonselectedSchedules);
+            currentScheduleName = uniqueScheduleName(
+                'New schedule',
+                'New ',
+                nonselectedSchedules
+            );
             CurrentScheduleStore.set({
                 scheduleName: currentScheduleName,
                 selections: currentScheduleSelections
@@ -88,8 +96,9 @@ Copyright (C) 2024 Andrew Cupps
         };
         nonselectedSchedules = [oldSchedule, ...nonselectedSchedules];
         NonselectedScheduleStore.set(nonselectedSchedules);
-        currentScheduleName = enumeratedScheduleName(
-            'My schedule',
+        currentScheduleName = uniqueScheduleName(
+            'New schedule',
+            'New ',
             nonselectedSchedules
         );
         currentScheduleSelections = [];
