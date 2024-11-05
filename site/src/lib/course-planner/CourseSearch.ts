@@ -40,11 +40,12 @@ export function getCourseLookup(departments: Department[]):
  * @param input A string of input used to search for `Course`s
  * @param courseLookup A `Record` used to match departments and course numbers
  *                      to `Course`s; can be generated using `getCourseLookup`
+ * @param deptList A list of departments used to search for courses by number
  * 
  * @returns An array of possible courses given the `input`.
  */
 export function searchCourses(input: string, courseLookup: 
-                            Record<string, Record<string, Course>>): Course[] {
+                            Record<string, Record<string, Course>>, deptList: string[]): Course[] {
     const result: Course[] = [];
     // For an `input` to be worth searching, it should be at least the four
     // letter department code, and the department code must be in 
@@ -70,6 +71,39 @@ export function searchCourses(input: string, courseLookup:
                 if (shouldBeInResult) {
                     result.push(deptCourses[courseCode]);
                 }
+            }
+        }
+    } 
+    
+    // If the search input is just numbers, match courses with that number
+    if (simpleInput.length >= 2 && /^[0-9]+$/i.test(simpleInput)) {
+
+        // get all the courses from every department 
+        const allDeptCourses: Record<string, Course> = {};
+        for (const dept of deptList) {
+            const deptCourses = courseLookup[dept];
+            if (deptCourses !== undefined) {
+                for (const courseCode in deptCourses) {
+                    const uniqueCourseCode = `${dept}-${courseCode}`;
+                    allDeptCourses[uniqueCourseCode] = deptCourses[courseCode];
+                }
+            }
+        }
+
+        for (const courseCode in allDeptCourses) {
+            let shouldBeInResult = true;
+            if (simpleInput.length > courseCode.length) {
+                shouldBeInResult = false;
+            } else {
+                const courseNumber = courseCode.substring(5);
+                for (let i = 0; i < simpleInput.length; i++) { 
+                    if (simpleInput[i] != courseNumber[i]) {
+                        shouldBeInResult = false;
+                    }
+                }
+            }
+            if (shouldBeInResult) {
+                result.push(allDeptCourses[courseCode]);
             }
         }
     }

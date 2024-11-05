@@ -6,17 +6,9 @@ Copyright (C) 2024 Andrew Cupps
 -->
 <script lang="ts">
     import SectionListing from "./SectionListing.svelte";
-    import { formatCredits } from "../../../lib/course-planner/Formatting";
+    import { formatCredits, getMinCredits } from "../../../lib/course-planner/Formatting";
 
     export let course: Course;
-
-    function getMinCredits(credits: CreditCount): number {
-        if ('Amount' in credits) {
-            return credits.Amount
-        } else {
-            return credits.Range[0];
-        }
-    }
 
     function pseudoSection(): Section {
         return {
