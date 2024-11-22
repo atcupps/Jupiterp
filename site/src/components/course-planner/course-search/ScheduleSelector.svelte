@@ -86,7 +86,6 @@ Copyright (C) 2024 Andrew Cupps
 
             NonselectedScheduleStore.set(nonselectedSchedules);
         }
-        dropdownOpen = false;
     }
 
     function createNewSchedule() {
