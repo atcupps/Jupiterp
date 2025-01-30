@@ -253,6 +253,7 @@ pub fn sections_info(
 
     // Iterate through `section_numbers` and append corresponding `Section`
     // data to `result`.
+    let re = Regex::new(r"<a.+>(.+)</a>").unwrap();
     for (i, section_code) in section_numbers.iter().enumerate() {
         let nth_child = i + 1;
 
@@ -264,7 +265,6 @@ pub fn sections_info(
             let inner = x.inner_html();
             // Some instructors have their names associated with an anchor
             if inner.contains("<a") {
-                let re = Regex::new(r"<a.+>(.+)</a>").unwrap();
                 String::from(re.captures(&inner).unwrap().get(1).unwrap().as_str())
             } else {
                 inner
