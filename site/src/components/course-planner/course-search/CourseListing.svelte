@@ -8,6 +8,7 @@ Copyright (C) 2024 Andrew Cupps
     import SectionListing from "./SectionListing.svelte";
     import { formatCredits, getMinCredits, testudoLink } from "../../../lib/course-planner/Formatting";
     import { slide } from "svelte/transition";
+    import CourseCondition from "./CourseCondition.svelte";
 
     export let course: Course;
 
@@ -49,14 +50,20 @@ Copyright (C) 2024 Andrew Cupps
     </button>
 
     {#if showMoreInfo}
-        <div class='text-xs 2xl:text-sm py-1'
+        <div class='text-xs 2xl:text-sm py-1 font-base flex flex-col'
                 transition:slide>
-            <a href={testudoLink(course.code)} 
-                class='text-orange underline'
-                target='_blank'>
-                View on Testudo
-            </a>
-            <br>
+            <div class='pb-1'>
+                <a href={testudoLink(course.code)} 
+                    class='text-orange underline'
+                    target='_blank'>
+                    View on Testudo
+                </a>
+            </div>
+            {#if course.conditions != null && course.conditions.length > 0}
+                {#each course.conditions as condition}
+                    <CourseCondition {condition} />
+                {/each}
+            {/if}
             {course.description}
         </div>
     {/if}

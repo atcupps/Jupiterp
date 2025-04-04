@@ -165,7 +165,7 @@ Copyright (C) 2024 Andrew Cupps
         on:mouseout={isDesktop ? removeHoverSection : null}
         on:focusin={isDesktop ? addHoverSection : null}
         on:focusout={isDesktop ? removeHoverSection : null}
-            class='flex flex-row w-full text-left border-t-2
+            class='flex flex-row w-full text-left border-t-2 pb-1
                     border-outlineLight dark:border-outlineDark transition
                 {sectionAdded ? 'bg-hoverLight dark:bg-hoverDark' : ''}'
             class:lg:hover:bg-hoverLight={!profsHover && !locationHover}

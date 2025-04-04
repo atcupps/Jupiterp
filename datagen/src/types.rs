@@ -37,6 +37,7 @@ pub struct Course {
     pub name: String,
     pub credits: CreditCount,
     pub gen_eds: Option<Vec<String>>,
+    pub conditions: Option<Vec<String>>,
     pub description: String,
     pub sections: Option<Vec<Section>>,
 }

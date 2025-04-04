@@ -232,6 +232,15 @@ Copyright (C) 2024 Andrew Cupps
     </div>
     <SeatData course={courseInfoCourse.code} section={courseInfoSection.sec_code} />
     <div class='text-base 2xl:text-lg leading-5'>
+        {#if courseInfoCourse.conditions != null && courseInfoCourse.conditions.length > 0}
+            <div class='text-sm 2xl:text-base pb-2'>
+                {#each courseInfoCourse.conditions as condition}
+                    <span class='pb-1'>
+                        {condition}<br>
+                    </span>
+                {/each}
+            </div>
+        {/if}
         {courseInfoCourse.description}
     </div>
 </div>
