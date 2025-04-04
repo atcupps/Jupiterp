@@ -45,7 +45,7 @@ Copyright (C) 2024 Andrew Cupps
     <button class='text-xs 2xl:text-sm text-left hover:text-outlineDark
                 text-secCodesLight dark:text-secCodesDark'
             on:click={() => {showMoreInfo = !showMoreInfo}}>
-        {showMoreInfo ? "Show less" : "Show more"}
+        {showMoreInfo ? "Hide course details" : "Course details"}
     </button>
 
     {#if showMoreInfo}
