@@ -185,15 +185,15 @@ Copyright (C) 2024 Andrew Cupps
             <InstructorListing {instructor} 
                                 bind:profsHover {removeHoverSection}/>
         {/each}
+
+        <!-- Seats info -->
+        <SeatData course={courseCode} section={section.sec_code} />
         
         <!-- Class meetings -->
         {#each section.class_meetings as meeting}
             <MeetingListing meeting={meeting} 
                 bind:locationHover {removeHoverSection} />
         {/each}
-
-        <!-- Seats info -->
-        <SeatData course={courseCode} section={section.sec_code} />
     </div>
 </button>
 
