@@ -59,11 +59,23 @@ Copyright (C) 2024 Andrew Cupps
                     View on Testudo
                 </a>
             </div>
+
+            {#if course.gen_eds != null && course.gen_eds.length > 0}
+                <div class='pb-1'>
+                    <span class='font-black underline'>
+                        GenEds:
+                    </span>
+                    <br>
+                    {course.gen_eds.join(', ')}
+                </div>
+            {/if}
+
             {#if course.conditions != null && course.conditions.length > 0}
                 {#each course.conditions as condition}
                     <CourseCondition {condition} />
                 {/each}
             {/if}
+
             {course.description}
         </div>
     {/if}

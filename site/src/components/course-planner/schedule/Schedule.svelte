@@ -18,6 +18,7 @@ Copyright (C) 2024 Andrew Cupps
     } from '../../../stores/CoursePlannerStores';
     import MeetingListing from '../course-search/MeetingListing.svelte';
     import SeatData from '../course-search/SeatData.svelte';
+    import CourseCondition from '../course-search/CourseCondition.svelte';
 
     let hoveredSection: ScheduleSelection | null = null;
     let selections: ScheduleSelection[] = [];
@@ -235,9 +236,7 @@ Copyright (C) 2024 Andrew Cupps
         {#if courseInfoCourse.conditions != null && courseInfoCourse.conditions.length > 0}
             <div class='text-sm 2xl:text-base pb-2'>
                 {#each courseInfoCourse.conditions as condition}
-                    <span class='pb-1'>
-                        {condition}<br>
-                    </span>
+                    <CourseCondition {condition} />
                 {/each}
             </div>
         {/if}
