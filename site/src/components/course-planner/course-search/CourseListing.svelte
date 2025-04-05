@@ -9,6 +9,7 @@ Copyright (C) 2024 Andrew Cupps
     import { formatCredits, getMinCredits, testudoLink } from "../../../lib/course-planner/Formatting";
     import { slide } from "svelte/transition";
     import CourseCondition from "./CourseCondition.svelte";
+    import { AngleRightOutline } from "flowbite-svelte-icons";
 
     export let course: Course;
 
@@ -43,10 +44,18 @@ Copyright (C) 2024 Andrew Cupps
         {course.name}
     </div>
 
-    <button class='text-sm 2xl:text-base text-left hover:text-outlineDark
-                text-secCodesLight dark:text-secCodesDark'
+    <button class='text-sm 2xl:text-base text-left
+                text-secCodesLight hover:text-[#4a5366]
+                dark:text-[#8892a8] hover:text-secCodesDark
+                w-full flex flex-row content-center'
             on:click={() => {showMoreInfo = !showMoreInfo}}>
-        {showMoreInfo ? "Hide details" : "Show details"}
+        <div class='h-full self-center transition-transform -ml-1' 
+             class:rotate-90={showMoreInfo}>
+            <AngleRightOutline class='h-4 w-4' />
+        </div>
+        <span>
+            {showMoreInfo ? "Hide details" : "Show details"}
+        </span>
     </button>
 
     {#if showMoreInfo}
