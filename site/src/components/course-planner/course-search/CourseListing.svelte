@@ -43,14 +43,14 @@ Copyright (C) 2024 Andrew Cupps
         {course.name}
     </div>
 
-    <button class='text-xs 2xl:text-sm text-left hover:text-outlineDark
+    <button class='text-sm 2xl:text-base text-left hover:text-outlineDark
                 text-secCodesLight dark:text-secCodesDark'
             on:click={() => {showMoreInfo = !showMoreInfo}}>
         {showMoreInfo ? "Hide details" : "Show details"}
     </button>
 
     {#if showMoreInfo}
-        <div class='text-xs 2xl:text-sm py-1 font-base flex flex-col'
+        <div class='text-sm 2xl:text-base py-1 font-base flex flex-col'
                 transition:slide>
             <div class='pb-1'>
                 <a href={testudoLink(course.code)} 
