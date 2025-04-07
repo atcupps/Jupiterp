@@ -81,7 +81,7 @@ Copyright (C) 2024 Andrew Cupps
     {#if course.gen_eds != null && course.gen_eds.length > 0}
         <div class='w-full flex flex-row justify-start align-center my-1'>
             {#each course.gen_eds as genEd}
-                <a class='text-[0.625rem] 2xl:text-xs text-orange
+                <a class='text-[0.625rem] 2xl:text-xs text-orange leading-tight
                             font-bold rounded-xl border border-orange px-1 mr-1
                             hover:bg-orange hover:text-bgSecondaryLight 
                             hover:dark:text-bgSecondaryDark transition'
@@ -110,7 +110,7 @@ Copyright (C) 2024 Andrew Cupps
     </button>
 
     {#if showMoreInfo}
-        <div class='text-sm 2xl:text-base py-1 font-base flex flex-col'
+        <div class='text-sm 2xl:text-base py-1 font-base flex flex-col leading-tight'
                 transition:slide>
             <div class='pb-1'>
                 <a href={testudoLink(course.code)} 
