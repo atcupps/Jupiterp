@@ -23,6 +23,7 @@ interface Course {
     name: string,
     credits: CreditCount,
     gen_eds: string[] | null,
+    conditions: string[] | null,
     description: string,
     sections: Section[] | null
 }

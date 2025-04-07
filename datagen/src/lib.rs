@@ -192,13 +192,30 @@ pub fn course_info(
         Some(gen_eds_raw)
     };
 
+    // Get course conditions.
+    let conditions_selector = create_selector!(format!(
+        "#{} .approved-course-texts-container :nth-child(1) .approved-course-text > div > div > div",
+        course_code
+    ));
+    let conditions_raw = Vec::from_iter(select_inners!(course_doc, conditions_selector));
+    let stripped_conditions: Vec<String> = conditions_raw
+        .iter()
+        .map(|html| strip_html_tags(html))
+        .collect();
+
+    let conditions = if stripped_conditions.is_empty() {
+        None
+    } else {
+        Some(stripped_conditions)
+    };
+
     // Get the description of the course.
     let try_description_selector = create_selector!(format!(
         "#{} .approved-course-texts-container :nth-child(2) .approved-course-text",
         course_code
     ));
     let try_description = select_inners!(course_doc, try_description_selector).nth(0);
-    let description = match try_description {
+    let description_raw = match try_description {
         Some(desc) => desc,
         None => {
             let second_description_selector =
@@ -216,6 +233,7 @@ pub fn course_info(
             }
         }
     };
+    let description = strip_html_tags(&description_raw);
 
     let sections = sections_info(&course_code, sections_doc)?;
 
@@ -225,6 +243,7 @@ pub fn course_info(
         name,
         credits,
         gen_eds,
+        conditions,
         description,
         sections,
     })
@@ -490,6 +509,12 @@ pub fn get_meeting(
         );
         ClassMeeting::OnlineSync(classtime)
     }
+}
+
+/// Strip HTML tags from string
+fn strip_html_tags(html_snippet: &str) -> String {
+    let fragment = Html::parse_fragment(html_snippet);
+    fragment.root_element().text().collect::<String>()
 }
 
 /// Use the PlanetTerp API to get a list of all instructors (professors or TAs)
