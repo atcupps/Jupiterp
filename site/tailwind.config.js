@@ -30,7 +30,6 @@ export default {
       'outlineDark': '#47526A',
       'secCodesDark': '#667085',
       'hoverDark': '#30374a',
-      // 'hoverDark': '#222736',
     },
     extend: {
       keyframes: {
@@ -41,7 +40,7 @@ export default {
       },
       animation: {
         fadeOut: 'fadeOut 0.75s forwards'
-      }
+      },
     }
   },
   plugins: []

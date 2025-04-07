@@ -18,6 +18,7 @@ Copyright (C) 2024 Andrew Cupps
     } from '../../../stores/CoursePlannerStores';
     import MeetingListing from '../course-search/MeetingListing.svelte';
     import SeatData from '../course-search/SeatData.svelte';
+    import CourseCondition from '../course-search/CourseCondition.svelte';
 
     let hoveredSection: ScheduleSelection | null = null;
     let selections: ScheduleSelection[] = [];
@@ -215,23 +216,44 @@ Copyright (C) 2024 Andrew Cupps
             </a>
         </span>
     </div>
+
     <div class='text-sm 2xl:text-base'>
         {formatCredits(courseInfoCourse.credits)} credits |
         Section {courseInfoSection.sec_code}
     </div>
+
+    {#if courseInfoCourse.gen_eds != null && courseInfoCourse.gen_eds.length > 0}
+        <div class='text-sm 2xl:text-base'>
+            <span class='font-black underline'>
+                GenEds:
+            </span>
+            {courseInfoCourse.gen_eds.join(', ')}
+        </div>
+    {/if}
+
     {#each courseInfoSection.instructors as instructor}
         <InstructorListing instructor={instructor}
                             profsHover={false}
                             removeHoverSection={() => {}} />
     {/each}
+
     <div class='text-sm 2xl:text-base'>
         {#each courseInfoSection.class_meetings as meeting}
             <MeetingListing meeting={meeting} condensed={true}
                 locationHover={false} removeHoverSection={() => {}} />
         {/each}
     </div>
+
     <SeatData course={courseInfoCourse.code} section={courseInfoSection.sec_code} />
+
     <div class='text-base 2xl:text-lg leading-5'>
+        {#if courseInfoCourse.conditions != null && courseInfoCourse.conditions.length > 0}
+            <div class='text-sm 2xl:text-base pb-2'>
+                {#each courseInfoCourse.conditions as condition}
+                    <CourseCondition {condition} />
+                {/each}
+            </div>
+        {/if}
         {courseInfoCourse.description}
     </div>
 </div>

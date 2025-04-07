@@ -13,12 +13,11 @@
 </script>
 
 {#if seats}
-    <div class='flex flex-row text-xs 2xl:text-base font-medium w-full'>
+    <div class='flex flex-row text-xs 2xl:text-base font-medium w-full pb-1'>
         {seats[0]} / {seats[1]} seats available
-    </div>
-    {#if seats[0] == 0}
-        <div class='flex flex-row text-xs 2xl:text-base font-medium w-full'>
+        <br>
+        {#if seats[0] == 0}
             Waitlist: {seats[2]}
-        </div>
-    {/if}
+        {/if}
+    </div>
 {/if}
