@@ -197,9 +197,7 @@ pub fn course_info(
         "#{} .approved-course-texts-container :nth-child(1) .approved-course-text > div > div > div",
         course_code
     ));
-    let conditions_raw = Vec::from_iter(
-        select_inners!(course_doc, conditions_selector)
-    );
+    let conditions_raw = Vec::from_iter(select_inners!(course_doc, conditions_selector));
     let stripped_conditions: Vec<String> = conditions_raw
         .iter()
         .map(|html| strip_html_tags(html))

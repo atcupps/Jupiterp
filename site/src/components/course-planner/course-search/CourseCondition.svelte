@@ -8,6 +8,7 @@ Copyright (C) 2024 Andrew Cupps
     export let condition: string;
 
     function extractPrefix(input: string): string | null {
+        // eslint-disable-next-line
         const match = input.match(/^([A-Za-z0-9 ,/&\-\(\)\[\]]+?:)/);
         return match ? match[1] : null;
     }
