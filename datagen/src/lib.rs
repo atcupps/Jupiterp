@@ -9,6 +9,8 @@
 //! as well as by the tests in `tests.rs` to ensure the data generation
 //! functions are working as expected.
 
+#![allow(clippy::doc_overindented_list_items)]
+
 use regex::Regex;
 use reqwest::{
     blocking::{Client, Response},
