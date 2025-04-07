@@ -10,6 +10,7 @@ Copyright (C) 2024 Andrew Cupps
     import { slide } from "svelte/transition";
     import CourseCondition from "./CourseCondition.svelte";
     import { AngleRightOutline } from "flowbite-svelte-icons";
+    import Tooltip from "../schedule/Tooltip.svelte";
 
     export let course: Course;
 
@@ -18,6 +19,40 @@ Copyright (C) 2024 Andrew Cupps
             sec_code: 'N/A',
             instructors: ['Testudo Terrapin 🐢'],
             class_meetings: ['No Class Meetings']
+        }
+    }
+    
+    // TODO(#672): Make this not hard-coded
+    function genEdFullName(acronym: string): string {
+        switch(acronym) {
+            case "FSAW":
+                return "Academic Writing";
+            case "FSAR":
+                return "Analytic Reasoning";
+            case "FSMA":
+                return "Math";
+            case "FSOC":
+                return "Oral Communications";
+            case "FSPW":
+                return "Professional Writing";
+            case "DSHS":
+                return "History and Social Sciences";
+            case "DSHU":
+                return "Humanities";
+            case "DSNS":
+                return "Natural Sciences";
+            case "DSNL":
+                return "Natural Science Lab";
+            case "DSSP":
+                return "Scholarship in Practice";
+            case "DVCC":
+                return "Cultural Competency";
+            case "DVUP":
+                return "Understanding Plural Societies";
+            case "SCIS":
+                return "Signature Courses - Big Question (I-Series)";
+            default:
+                return "Unknown Code";
         }
     }
 
@@ -44,10 +79,27 @@ Copyright (C) 2024 Andrew Cupps
         {course.name}
     </div>
 
+    {#if course.gen_eds != null && course.gen_eds.length > 0}
+        <div class='w-full flex flex-row justify-start align-center my-1'>
+            {#each course.gen_eds as genEd}
+                <a class='text-[0.625rem] 2xl:text-xs text-orange
+                            font-bold rounded-xl border border-orange px-1 mr-1
+                            hover:bg-orange hover:text-bgSecondaryLight 
+                            hover:dark:text-bgSecondaryDark transition'
+                    href={"https://app.testudo.umd.edu/soc/gen-ed/202508/" + genEd}
+                    target="_blank"
+                    title={"GenEd: " + genEdFullName(genEd)}>
+                    {genEd}
+                </a>
+            {/each}
+        </div>
+    {/if}
+
     <button class='text-sm 2xl:text-base text-left
                 text-secCodesLight hover:text-[#4a5366]
                 dark:text-[#8892a8] hover:text-secCodesDark
                 w-full flex flex-row content-center'
+            title={!showMoreInfo ? "Show more course details" : "Hide course details"}
             on:click={() => {showMoreInfo = !showMoreInfo}}>
         <div class='h-full self-center transition-transform -ml-1' 
              class:rotate-90={showMoreInfo}>
@@ -68,16 +120,6 @@ Copyright (C) 2024 Andrew Cupps
                     View on Testudo
                 </a>
             </div>
-
-            {#if course.gen_eds != null && course.gen_eds.length > 0}
-                <div class='pb-1'>
-                    <span class='font-black underline'>
-                        GenEds:
-                    </span>
-                    <br>
-                    {course.gen_eds.join(', ')}
-                </div>
-            {/if}
 
             {#if course.conditions != null && course.conditions.length > 0}
                 {#each course.conditions as condition}

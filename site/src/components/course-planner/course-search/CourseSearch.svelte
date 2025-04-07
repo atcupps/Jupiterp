@@ -108,7 +108,7 @@ Copyright (C) 2024 Andrew Cupps
                             border-b-2 border-t-2 p-1 lg:px-0
                             border-divBorderLight dark:border-divBorderDark'>
         <input type='text' bind:value={searchInput} on:input={handleInput}
-            placeholder='Search course codes, ex: "HIST111"'
+            placeholder='Search course codes, ex: "MATH140"'
             class="border-solid border-2 border-outlineLight 
                             dark:border-outlineDark rounded-lg
                             bg-transparent px-2 w-full text-xl
