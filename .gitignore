@@ -27,3 +27,5 @@ rust-project.json
 *.DS_store
 
 *.vscode
+
+datagen/data/*
