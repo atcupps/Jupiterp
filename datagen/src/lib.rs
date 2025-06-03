@@ -257,7 +257,7 @@ pub fn sections_info(
 ) -> Result<Option<Vec<Section>>, Box<dyn Error>> {
     // Identify sections for the given course
     let sections_selector = create_selector!(format!("#{} .section-id", course_code));
-    let re = Regex::new(r"[A-Z]*[0-9]+").unwrap();
+    let re = Regex::new(r"[A-Z]*[0-9]*").unwrap();
     let section_numbers = Vec::from_iter(sections_doc.select(&sections_selector).map(|x| {
         String::from(
             re.find(x.inner_html().as_str())
