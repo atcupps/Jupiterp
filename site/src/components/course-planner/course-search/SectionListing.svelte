@@ -9,7 +9,9 @@ Copyright (C) 2024 Andrew Cupps
     import MeetingListing from "./MeetingListing.svelte";
     import { 
         HoveredSectionStore,
-        CurrentScheduleStore
+        CurrentScheduleStore,
+        ShowCourseInfoStore,
+        ShowSectionInfoStore
     } from "../../../stores/CoursePlannerStores";
     import SeatData from "./SeatData.svelte";
 
@@ -91,6 +93,12 @@ Copyright (C) 2024 Andrew Cupps
                 scheduleName,
                 selections: [...selectionsList, newSelection]
             });
+            ShowCourseInfoStore.update(value => {
+                return value === null ? null : courseCode;
+            })
+            ShowSectionInfoStore.update(value => {
+                return value === null ? null : section.sec_code;
+            })
         } else {
             showRemoveAlert();
             const index = selectionsList.findIndex(obj => 

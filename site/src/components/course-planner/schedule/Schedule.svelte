@@ -14,7 +14,7 @@ Copyright (C) 2024 Andrew Cupps
     import { afterUpdate } from 'svelte';
     import InstructorListing from '../course-search/InstructorListing.svelte';
     import {
-        HoveredSectionStore, CurrentScheduleStore
+        HoveredSectionStore, CurrentScheduleStore, ShowCourseInfoStore, ShowSectionInfoStore
     } from '../../../stores/CoursePlannerStores';
     import MeetingListing from '../course-search/MeetingListing.svelte';
     import SeatData from '../course-search/SeatData.svelte';
@@ -77,6 +77,10 @@ Copyright (C) 2024 Andrew Cupps
     let showSectionInfo: string | null = null;
     let courseInfoCourse: Course | null = null;
     let courseInfoSection: Section | null = null;
+
+    ShowCourseInfoStore.subscribe(value => showCourseInfo = value);
+    ShowSectionInfoStore.subscribe(value => showSectionInfo = value);
+
     $: if (showCourseInfo !== null) {
         let index = selections.findIndex(selection => {
             return selection.courseCode === showCourseInfo
@@ -188,7 +192,7 @@ Copyright (C) 2024 Andrew Cupps
     <!-- X Button to get rid of course info -->
     <button class='absolute h-7 w-7 top-0 right-0
             2xl:top-1 2xl:right-1 justify-center'
-            on:click={() => {showCourseInfo = null}}
+            on:click={() => {ShowCourseInfoStore.set(null); ShowSectionInfoStore.set(null)}}
             title='Hide course info panel'>
         <svg xmlns="http://www.w3.org/2000/svg" 
             viewBox="0 0 384 512"
