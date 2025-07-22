@@ -59,7 +59,7 @@ pub fn depts_courses_datagen(term: &String, pretty: bool) -> Result<(), Box<dyn 
     } else {
         serde_json::to_string(&full_depts_data)
     })
-    .unwrap_or_else(|_| panic!("Failed to serialize {:#?} to JSON", full_depts_data));
+    .unwrap_or_else(|_| panic!("Failed to serialize {full_depts_data:#?} to JSON"));
     dept_courses_file.write_all(dept_course_json_string.as_bytes())?;
 
     // Write all course codes to relevant file
@@ -528,7 +528,7 @@ pub fn instructors_datagen(pretty: bool) -> Result<(), Box<dyn Error>> {
     } else {
         serde_json::to_string(&professors)
     })
-    .unwrap_or_else(|_| panic!("Failed to serialize {:#?} to JSON", professors));
+    .unwrap_or_else(|_| panic!("Failed to serialize {professors:#?} to JSON"));
     instructors_file.write_all(instructors_json_string.as_bytes())?;
 
     Ok(())
