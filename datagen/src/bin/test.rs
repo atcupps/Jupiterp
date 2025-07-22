@@ -44,7 +44,7 @@ fn main() -> Result<(), Box<dyn Error>> {
         );
         let dept_courses = get_courses(dept, term)?;
         if args.show_output {
-            println!("{:#?}", dept_courses);
+            println!("{dept_courses:#?}");
         }
     }
 
@@ -72,7 +72,7 @@ fn main() -> Result<(), Box<dyn Error>> {
 
                 let course_info = course_info(course.to_owned(), &course_doc, &sections_doc);
                 if args.show_output {
-                    println!("{:#?}", course_info);
+                    println!("{course_info:#?}");
                 }
             } else {
                 panic!("Sections page request failed.");
