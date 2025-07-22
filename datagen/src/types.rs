@@ -151,7 +151,7 @@ impl Classtime {
             "WTh" => ClassDays::WTh,
             "MWTh" => ClassDays::MWTh,
             "MTh" => ClassDays::MTh,
-            &_ => panic!("Did not recognize days pattern {}", days),
+            &_ => panic!("Did not recognize days pattern {days}"),
         };
         Classtime {
             days,

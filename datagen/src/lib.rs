@@ -39,7 +39,7 @@ pub fn depts_courses_datagen(term: &String, pretty: bool) -> Result<(), Box<dyn 
         dept_directory_file.write_all(dept.as_bytes())?;
         dept_directory_file.write_all("\n".as_bytes())?;
 
-        println!("Now getting courses for {}", dept);
+        println!("Now getting courses for {dept}");
 
         // TODO(1): Create a more generalized approach to terms, allowing for
         // terms (eg 202401) to be loaded dynamically based on the current
@@ -101,7 +101,7 @@ pub fn get_depts() -> Result<Vec<String>, Box<dyn Error>> {
 pub fn get_courses(dept: &String, term: &String) -> Result<Vec<Course>, Box<dyn Error>> {
     // Get courses page
     let course_response =
-        get_response(format!("https://app.testudo.umd.edu/soc/{}/{}", term, dept))?;
+        get_response(format!("https://app.testudo.umd.edu/soc/{term}/{dept}"))?;
 
     if course_response.status().is_success() {
         let course_document = scraper::Html::parse_document(&course_response.text()?);
@@ -112,8 +112,7 @@ pub fn get_courses(dept: &String, term: &String) -> Result<Vec<Course>, Box<dyn 
 
         // Get sections page
         let mut sections_url = format!(
-            "https://app.testudo.umd.edu/soc/{}/sections?courseIds=",
-            term
+            "https://app.testudo.umd.edu/soc/{term}/sections?courseIds="
         );
         for code in course_codes {
             sections_url.push_str(&code);
@@ -153,15 +152,15 @@ pub fn course_info(
     // This short block gets the name/title of the course, which is
     // different than the course code. As an example, "CMSC351" is a code,
     // while "Algorithms" is a course name/title.
-    let name_selector = create_selector!(format!("#{} .course-title", course_code));
+    let name_selector = create_selector!(format!("#{course_code} .course-title"));
     let name = select_inners!(course_doc, name_selector)
         .nth(0)
-        .unwrap_or_else(|| panic!("Course name matching failed for {}", course_code));
+        .unwrap_or_else(|| panic!("Course name matching failed for {course_code}"));
 
     // Getting the min number of credits for a course. This is used in courses
     // where there is a range of possible credits, as well as the default for
     // courses with a set number of credits.
-    let min_credits_selector = create_selector!(format!("#{} .course-min-credits", course_code));
+    let min_credits_selector = create_selector!(format!("#{course_code} .course-min-credits"));
     let min_credits: u8 = select_inners!(course_doc, min_credits_selector)
         .nth(0)
         .unwrap_or_else(|| panic!("Min credits matching failed for {course_code}"))
@@ -170,7 +169,7 @@ pub fn course_info(
 
     // Getting the max number of credits for a course. This is only present if
     // the number of credits for the course is a range.
-    let max_credits_selector = create_selector!(format!("#{} .course-max-credits", course_code));
+    let max_credits_selector = create_selector!(format!("#{course_code} .course-max-credits"));
     let max_credits: Option<u8> = select_inners!(course_doc, max_credits_selector)
         .nth(0)
         .map(|val| val.parse().unwrap());
@@ -184,7 +183,7 @@ pub fn course_info(
 
     // Get any GenEds that this course fulfills.
     // TODO(3): Consider data generation for GenEds
-    let gen_eds_selector = create_selector!(format!("#{} .course-subcategory a", course_code));
+    let gen_eds_selector = create_selector!(format!("#{course_code} .course-subcategory a"));
     let gen_eds_raw = Vec::from_iter(select_inners!(course_doc, gen_eds_selector));
     let gen_eds = if gen_eds_raw.is_empty() {
         None
@@ -194,8 +193,7 @@ pub fn course_info(
 
     // Get course conditions.
     let conditions_selector = create_selector!(format!(
-        "#{} .approved-course-texts-container :nth-child(1) .approved-course-text > div > div > div",
-        course_code
+        "#{course_code} .approved-course-texts-container :nth-child(1) .approved-course-text > div > div > div"
     ));
     let conditions_raw = Vec::from_iter(select_inners!(course_doc, conditions_selector));
     let stripped_conditions: Vec<String> = conditions_raw
@@ -211,21 +209,20 @@ pub fn course_info(
 
     // Get the description of the course.
     let try_description_selector = create_selector!(format!(
-        "#{} .approved-course-texts-container :nth-child(2) .approved-course-text",
-        course_code
+        "#{course_code} .approved-course-texts-container :nth-child(2) .approved-course-text"
     ));
     let try_description = select_inners!(course_doc, try_description_selector).nth(0);
     let description_raw = match try_description {
         Some(desc) => desc,
         None => {
             let second_description_selector =
-                create_selector!(format!("#{} .approved-course-text", course_code));
+                create_selector!(format!("#{course_code} .approved-course-text"));
             let second_desc = select_inners!(course_doc, second_description_selector).nth(0);
             match second_desc {
                 Some(desc) => desc,
                 None => {
                     let final_description_selector =
-                        create_selector!(format!("#{} .course-text", course_code));
+                        create_selector!(format!("#{course_code} .course-text"));
                     select_inners!(course_doc, final_description_selector)
                         .nth(0)
                         .unwrap_or(String::new())
@@ -256,7 +253,7 @@ pub fn sections_info(
     sections_doc: &Html,
 ) -> Result<Option<Vec<Section>>, Box<dyn Error>> {
     // Identify sections for the given course
-    let sections_selector = create_selector!(format!("#{} .section-id", course_code));
+    let sections_selector = create_selector!(format!("#{course_code} .section-id"));
     let re = Regex::new(r"([A-Z]*[0-9]+)|([A-Z]+)").unwrap();
     let section_numbers = Vec::from_iter(sections_doc.select(&sections_selector).map(|x| {
         String::from(
@@ -279,8 +276,7 @@ pub fn sections_info(
         let nth_child = i + 1;
 
         let instructor_selector = create_selector!(format!(
-            "#{} .section:nth-child({}) .section-instructor",
-            course_code, nth_child
+            "#{course_code} .section:nth-child({nth_child}) .section-instructor"
         ));
         let instructors = Vec::from_iter(sections_doc.select(&instructor_selector).map(|x| {
             let inner = x.inner_html();
@@ -319,16 +315,14 @@ pub fn get_class_meetings(
 ) -> Vec<ClassMeeting> {
     let mut result = Vec::new();
     let row_selector = create_selector!(format!(
-        "#{} .section:nth-child({}) .class-days-container .row",
-        course, nth_child
+        "#{course} .section:nth-child({nth_child}) .class-days-container .row"
     ));
     let rows = Vec::from_iter(select_inners!(document, row_selector));
     for j in 0..rows.len() {
         let dth_child = j + 1;
 
         let meeting_days_selector = create_selector!(format!(
-            "#{} .section:nth-child({}) .class-days-container .row:nth-child({}) .section-days",
-            course, nth_child, dth_child
+            "#{course} .section:nth-child({nth_child}) .class-days-container .row:nth-child({dth_child}) .section-days"
         ));
         let try_meeting_days = select_inners!(document, meeting_days_selector).nth(0);
         if let Some(meeting_days) = try_meeting_days {
@@ -337,31 +331,27 @@ pub fn get_class_meetings(
             // or online.
             let classtime = if meeting_days != "TBA" {
                 let starting_time_selector = create_selector!(
-                    format!("#{} .section:nth-child({}) .class-days-container .row:nth-child({}) .class-start-time",
-                                course, nth_child, dth_child)
+                    format!("#{course} .section:nth-child({nth_child}) .class-days-container .row:nth-child({dth_child}) .class-start-time")
                 );
                 let starting_time = Time::from_string(
                     &select_inners!(document, starting_time_selector)
                         .nth(0)
                         .unwrap_or_else(|| {
                             panic!(
-                                "Start-time matching failed for {} section {}",
-                                course, section
+                                "Start-time matching failed for {course} section {section}"
                             )
                         }),
                 );
 
                 let ending_time_selector = create_selector!(
-                    format!("#{} .section:nth-child({}) .class-days-container .row:nth-child({}) .class-end-time",
-                                course, nth_child, dth_child)
+                    format!("#{course} .section:nth-child({nth_child}) .class-days-container .row:nth-child({dth_child}) .class-end-time")
                 );
                 let ending_time = Time::from_string(
                     &select_inners!(document, ending_time_selector)
                         .nth(0)
                         .unwrap_or_else(|| {
                             panic!(
-                                "End-time matching failed for {} section {}",
-                                course, section
+                                "End-time matching failed for {course} section {section}"
                             )
                         }),
                 );
@@ -378,15 +368,13 @@ pub fn get_class_meetings(
             // classroom and building marked on Testudo. This needs to be
             // determined using the `get_meeting` function below.
             let class_building_selector = create_selector!(
-                format!("#{} .section:nth-child({}) .class-days-container .row:nth-child({}) .class-building",
-                            course, nth_child, dth_child)
+                format!("#{course} .section:nth-child({nth_child}) .class-days-container .row:nth-child({dth_child}) .class-building")
             );
             let class_building = select_inners!(document, class_building_selector)
                 .nth(0)
                 .unwrap_or_else(|| {
                     panic!(
-                        "Class-building matching failed for {} sec. {}",
-                        course, section
+                        "Class-building matching failed for {course} sec. {section}"
                     )
                 });
 
@@ -396,8 +384,7 @@ pub fn get_class_meetings(
             // If a class meeting does not have set days or times, it may
             // be a class which meets online and asynchronously.
             let online_selector = create_selector!(format!(
-                "#{} .section:nth-child({}) .class-days-container .row:nth-child({}) .class-room",
-                course, nth_child, dth_child
+                "#{course} .section:nth-child({nth_child}) .class-days-container .row:nth-child({dth_child}) .class-room"
             ));
             let try_online_classroom = select_inners!(document, online_selector).nth(0);
             if let Some(online_classroom) = try_online_classroom {
@@ -406,10 +393,7 @@ pub fn get_class_meetings(
                 debug_assert_eq!(
                     online_classroom.as_str(),
                     "ONLINE",
-                    "Unrecognized classroom: {} for class {} section {}.",
-                    online_classroom,
-                    course,
-                    section
+                    "Unrecognized classroom: {online_classroom} for class {course} section {section}."
                 );
 
                 result.push(ClassMeeting::OnlineAsync);
@@ -418,16 +402,13 @@ pub fn get_class_meetings(
                 // not have set meeting days or times, it is marked as
                 // having unspecified class meeting.
                 let message_selector = create_selector!(
-                    format!("#{} .section:nth-child({}) .class-days-container .row:nth-child({}) .class-message, #{} .section:nth-child({}) .class-days-container .row:nth-child({}) .no-scheduled-classes-message",
-                            course, nth_child, dth_child,
-                            course, nth_child, dth_child)
+                    format!("#{course} .section:nth-child({nth_child}) .class-days-container .row:nth-child({dth_child}) .class-message, #{course} .section:nth-child({nth_child}) .class-days-container .row:nth-child({dth_child}) .no-scheduled-classes-message")
                 );
                 let _ = select_inners!(document, message_selector)
                     .nth(0)
                     .unwrap_or_else(|| {
                         panic!(
-                            "Class message matching failed for class {} section {}.",
-                            course, section
+                            "Class message matching failed for class {course} section {section}."
                         )
                     });
 
@@ -460,9 +441,7 @@ pub fn get_meeting(
     let has_class_room = class_building.contains("class-room");
     debug_assert!(
         has_building_code || has_class_room,
-        "Course {} sec. {} has no building code or class room data.",
-        course,
-        section
+        "Course {course} sec. {section} has no building code or class room data."
     );
 
     if has_building_code {
@@ -474,8 +453,7 @@ pub fn get_meeting(
                     .captures(class_building)
                     .unwrap_or_else(|| {
                         panic!(
-                            "Building didn't match for class-building: {}",
-                            class_building
+                            "Building didn't match for class-building: {class_building}"
                         )
                     })
                     .get(1)
@@ -492,8 +470,7 @@ pub fn get_meeting(
         } else {
             debug_assert!(
                 class_building.contains("TBA"),
-                "Class building {} unexpected.",
-                class_building
+                "Class building {class_building} unexpected."
             );
             None
         };
@@ -504,8 +481,7 @@ pub fn get_meeting(
     } else {
         debug_assert!(
             class_building.contains("ONLINE"),
-            "Class building {} unexpected.",
-            class_building
+            "Class building {class_building} unexpected."
         );
         ClassMeeting::OnlineSync(classtime)
     }
@@ -528,11 +504,10 @@ pub fn instructors_datagen(pretty: bool) -> Result<(), Box<dyn Error>> {
     // Requests instructors from PlanetTerp until a response does not contain a
     // maximum number of instructors.
     while !page_not_full {
-        println!("Getting instructors from offset: {}", offset);
+        println!("Getting instructors from offset: {offset}");
 
         let request = format!(
-            "https://planetterp.com/api/v1/professors?type=professor&limit={}&offset={}",
-            num_profs, offset
+            "https://planetterp.com/api/v1/professors?type=professor&limit={num_profs}&offset={offset}"
         );
 
         thread::sleep(Duration::from_millis(500));
