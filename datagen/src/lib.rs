@@ -100,8 +100,7 @@ pub fn get_depts() -> Result<Vec<String>, Box<dyn Error>> {
 /// Will return an `Error` in case of failed HTTP requests.
 pub fn get_courses(dept: &String, term: &String) -> Result<Vec<Course>, Box<dyn Error>> {
     // Get courses page
-    let course_response =
-        get_response(format!("https://app.testudo.umd.edu/soc/{term}/{dept}"))?;
+    let course_response = get_response(format!("https://app.testudo.umd.edu/soc/{term}/{dept}"))?;
 
     if course_response.status().is_success() {
         let course_document = scraper::Html::parse_document(&course_response.text()?);
@@ -111,9 +110,8 @@ pub fn get_courses(dept: &String, term: &String) -> Result<Vec<Course>, Box<dyn 
         let course_codes = select_inners!(course_document, selector);
 
         // Get sections page
-        let mut sections_url = format!(
-            "https://app.testudo.umd.edu/soc/{term}/sections?courseIds="
-        );
+        let mut sections_url =
+            format!("https://app.testudo.umd.edu/soc/{term}/sections?courseIds=");
         for code in course_codes {
             sections_url.push_str(&code);
             sections_url.push(',');
@@ -337,9 +335,7 @@ pub fn get_class_meetings(
                     &select_inners!(document, starting_time_selector)
                         .nth(0)
                         .unwrap_or_else(|| {
-                            panic!(
-                                "Start-time matching failed for {course} section {section}"
-                            )
+                            panic!("Start-time matching failed for {course} section {section}")
                         }),
                 );
 
@@ -350,9 +346,7 @@ pub fn get_class_meetings(
                     &select_inners!(document, ending_time_selector)
                         .nth(0)
                         .unwrap_or_else(|| {
-                            panic!(
-                                "End-time matching failed for {course} section {section}"
-                            )
+                            panic!("End-time matching failed for {course} section {section}")
                         }),
                 );
 
@@ -373,9 +367,7 @@ pub fn get_class_meetings(
             let class_building = select_inners!(document, class_building_selector)
                 .nth(0)
                 .unwrap_or_else(|| {
-                    panic!(
-                        "Class-building matching failed for {course} sec. {section}"
-                    )
+                    panic!("Class-building matching failed for {course} sec. {section}")
                 });
 
             let meeting = get_meeting(&class_building, course, section, classtime);
@@ -452,9 +444,7 @@ pub fn get_meeting(
                 building_re
                     .captures(class_building)
                     .unwrap_or_else(|| {
-                        panic!(
-                            "Building didn't match for class-building: {class_building}"
-                        )
+                        panic!("Building didn't match for class-building: {class_building}")
                     })
                     .get(1)
                     .unwrap()
