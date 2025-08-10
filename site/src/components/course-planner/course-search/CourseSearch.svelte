@@ -9,7 +9,8 @@ Copyright (C) 2024 Andrew Cupps
     import CourseListing from "./CourseListing.svelte";
     import { 
         getCourseLookup, 
-        searchCourses 
+        searchCourses,
+        getMatchingDepts,
     } from "../../../lib/course-planner/CourseSearch";
     import { appendHoveredSection } from "../../../lib/course-planner/Schedule";
     import { 
@@ -35,6 +36,7 @@ Copyright (C) 2024 Andrew Cupps
     // Variable and function for handling course search input
     let searchInput = '';
     let searchResults: Course[] = [];
+    let prefixMatchedDeptList: String[] = [];
     function handleInput() {
         // Sorting is done to ensure courses are displayed in
         // alphabetical order
@@ -42,6 +44,7 @@ Copyright (C) 2024 Andrew Cupps
                             .sort((a, b) => {
                                 return a.code.localeCompare(b.code);
                             });
+        prefixMatchedDeptList = getMatchingDepts(searchInput, deptList);
     }
 
     // Boolean for toggling search menu on smaller screens
@@ -113,7 +116,13 @@ Copyright (C) 2024 Andrew Cupps
                             dark:border-outlineDark rounded-lg
                             bg-transparent px-2 w-full text-xl
                             lg:text-base lg:placeholder:text-sm
-                            placeholder:text-base">
+                            placeholder:text-base"
+                             list="matchingDeptList">
+    <datalist id="matchingDeptList">
+    {#each prefixMatchedDeptList as dept}
+        <option value="{dept}">
+    {/each}
+  </datalist>
     </div>
     <div class='grow courses-list overflow-y-scroll overflow-x-none
                 px-1 lg:pr-1 lg:pl-0'>
