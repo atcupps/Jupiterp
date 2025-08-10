@@ -36,7 +36,7 @@ Copyright (C) 2024 Andrew Cupps
     // Variable and function for handling course search input
     let searchInput = '';
     let searchResults: Course[] = [];
-    let prefixMatchedDeptList: String[] = [];
+    let prefixMatchedDeptList: string[] = [];
 
     let dropdownX = 0;
     let dropdownY = 0;
@@ -132,12 +132,15 @@ Copyright (C) 2024 Andrew Cupps
             {#each prefixMatchedDeptList as dept}
             <div class="autocomplete-item bg-bgLight dark:bg-bgDark
          hover:bg-hoverLight dark:hover:bg-hoverDark
-         cursor-pointer px-2 py-1"
+         cursor-pointer px-2 py-1" 
+          aria-label="Select department {dept}"
+          role="button"
+          tabindex="0"
           on:mousedown|preventDefault={() => { 
               searchInput = dept; 
               prefixMatchedDeptList = [];
               searchResults = searchCourses(dept, courseLookup, deptList)
-                    .sort((a, b) => a.code.localeCompare(b.code));
+                .sort((a, b) => a.code.localeCompare(b.code));
           }}>
             {dept}
             </div>
