@@ -107,7 +107,27 @@ export function searchCourses(input: string, courseLookup:
             }
         }
     }
-    
+    return result;
+}
+
+/**
+ * Given an `input`, search for departments with a matchng prefix.
+ * 
+ * @param input A string of input used to search for `Course`s
+ * @param deptList A list of departments used to search for courses by number
+ * @returns An array of departments with a matching prefix to the input
+ */
+export function getMatchingDepts(input:string, deptList: string[]): string[]{
+    const result: string[] = [];
+
+    const simpleInput: string = input.toUpperCase().replace(/\s/g, '');
+    if (simpleInput.length < 4 && /^[A-Za-z]+$/.test(input)) {
+        for (const dept of deptList) {
+            if (dept.toUpperCase().startsWith(simpleInput.toUpperCase())) {
+                result.push(dept);
+            }
+        }
+    }
     return result;
 }
 

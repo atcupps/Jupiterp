@@ -9,7 +9,8 @@ Copyright (C) 2024 Andrew Cupps
     import CourseListing from "./CourseListing.svelte";
     import { 
         getCourseLookup, 
-        searchCourses 
+        searchCourses,
+        getMatchingDepts,
     } from "../../../lib/course-planner/CourseSearch";
     import { appendHoveredSection } from "../../../lib/course-planner/Schedule";
     import { 
@@ -35,13 +36,23 @@ Copyright (C) 2024 Andrew Cupps
     // Variable and function for handling course search input
     let searchInput = '';
     let searchResults: Course[] = [];
-    function handleInput() {
+    let prefixMatchedDeptList: string[] = [];
+
+    let dropdownX = 0;
+    let dropdownY = 0;
+
+    function handleInput(e: InputEvent) {
         // Sorting is done to ensure courses are displayed in
         // alphabetical order
         searchResults = searchCourses(searchInput, courseLookup, deptList)
                             .sort((a, b) => {
                                 return a.code.localeCompare(b.code);
                             });
+        prefixMatchedDeptList = getMatchingDepts(searchInput, deptList);
+
+           const rect = (e.target as HTMLInputElement).getBoundingClientRect();
+        dropdownX = rect.left;
+        dropdownY = rect.bottom;
     }
 
     // Boolean for toggling search menu on smaller screens
@@ -113,7 +124,28 @@ Copyright (C) 2024 Andrew Cupps
                             dark:border-outlineDark rounded-lg
                             bg-transparent px-2 w-full text-xl
                             lg:text-base lg:placeholder:text-sm
-                            placeholder:text-base">
+                            placeholder:text-base"
+                             list="matchingDeptList">
+        <div class="autocomplete-dropdown bg-bgLight dark:bg-bgDark border-solid border-2 border-divBorderLight dark:border-divBorderDark rounded-lg"
+            style="top: {dropdownY}px; left: {dropdownX}px;"
+            class:visible={prefixMatchedDeptList.length > 0}>
+            {#each prefixMatchedDeptList as dept}
+            <div class="autocomplete-item bg-bgLight dark:bg-bgDark
+         hover:bg-hoverLight dark:hover:bg-hoverDark
+         cursor-pointer px-2 py-1" 
+          aria-label="Select department {dept}"
+          role="button"
+          tabindex="0"
+          on:mousedown|preventDefault={() => { 
+              searchInput = dept; 
+              prefixMatchedDeptList = [];
+              searchResults = searchCourses(dept, courseLookup, deptList)
+                .sort((a, b) => a.code.localeCompare(b.code));
+          }}>
+            {dept}
+            </div>
+            {/each}
+        </div>
     </div>
     <div class='grow courses-list overflow-y-scroll overflow-x-none
                 px-1 lg:pr-1 lg:pl-0'>
@@ -140,4 +172,11 @@ Copyright (C) 2024 Andrew Cupps
             transform: translateX(calc(-100% - 2px));
         }
     }
+    .autocomplete-dropdown {
+        position: fixed;
+        max-height: 200px; 
+        overflow-y: auto;
+        z-index: 9999;
+    }
+
 </style>
