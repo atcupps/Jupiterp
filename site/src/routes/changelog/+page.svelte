@@ -12,7 +12,7 @@ Copyright (C) 2024 Andrew Cupps
             text-textLight dark:text-textDark lg:px-8
             top-[3rem] lg:top-[3.5rem] xl:top-[4rem] bottom-0'>
 
-    <ChangelogItem title='Saturp' version='v1.1.1: Titan'
+    <ChangelogItem title='GenEd Maxxing' version='v1.1.1: Titan'
                                                         date='Apr 7, 2025'>
         Add additional information for courses available in course search. 
         Add GenEd information for courses.
