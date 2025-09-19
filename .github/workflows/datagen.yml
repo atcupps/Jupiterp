@@ -1,0 +1,49 @@
+name: Automatic Datagen
+
+on:
+    workflow_dispatch:
+    schedule:
+        - cron: '30 14 * * *'
+
+jobs:
+    test-commit-and-pr:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+              with:
+                ref: main
+
+            - name: Set up Rust toolchain
+              uses: dtolnay/rust-toolchain@stable
+
+            - name: Set up Git with new branch
+              run: |
+                git config --global user.name 'GitHub Action'
+                git config --global user.email 'action@github.com'
+                git checkout -b datagen-$(date +%Y-%m-%d)
+            
+            - name: Edit datagen-runs.txt
+              run: |
+                echo "$(date +%Y-%m-%d)" >> datagen-runs.txt
+
+            - name: Run datagen
+              run: |
+                cd datagen
+                cargo run --bin jupiterp_datagen -- -t 202508
+                cd ..
+
+            - name: Commit and push to origin
+              run: |
+                git add --all
+                git commit -m "Daily automated datagen" || exit 0
+                git push origin datagen-$(date +%Y-%m-%d)
+
+            - name: Open pull request
+              run: |
+                gh pr create -B main -H datagen-$(date +%Y-%m-%d) --title "[AUTOMATED] Automatic Datagen $(date +%Y-%m-%d)" --body 'Run datagen; automated, created by GitHub Action.' --reviewer atcupps
+                gh pr edit datagen-$(date +%Y-%m-%d) --add-label AUTOMATED
+                gh pr edit data-update --add-label AUTOMATED
+              env:
+                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
