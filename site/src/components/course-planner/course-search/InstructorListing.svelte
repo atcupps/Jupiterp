@@ -5,22 +5,23 @@ https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2024 Andrew Cupps
 -->
 <script lang='ts'>
+    import type { Instructor } from "@jupiterp/jupiterp";
     import { ptLinkFromSlug } from "../../../lib/course-planner/Professors";
     import { ProfsLookupStore } from "../../../stores/CoursePlannerStores";
 
     export let instructor: string = 'No instructor';
 
-    let profs: Record<string, Professor>;
+    let profs: Record<string, Instructor>;
     ProfsLookupStore.subscribe((lookup) => { profs = lookup });
 
     // Convert rating to a percentage for CSS
-    function convertRating(rating: number | null): number {
+    function convertRating(rating: string | null): number {
         if (rating == null) {
             throw Error(
                 'Rating was null in `convertRating`; this should never happen!'
             );
         }
-        return rating * 20;
+        return parseFloat(rating) * 20;
     }
 
     function handleLinkClick(event: MouseEvent) {

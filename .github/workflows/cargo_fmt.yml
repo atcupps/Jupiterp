@@ -19,6 +19,9 @@ jobs:
       uses: dtolnay/rust-toolchain@stable
       with:
         components: clippy
+    
+    - name: Install cargo-fmt
+      run: rustup component add rustfmt
 
     - name: Check Formatting
       run: |

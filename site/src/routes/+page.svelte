@@ -16,6 +16,8 @@ Copyright (C) 2024 Andrew Cupps
         CurrentScheduleStore,
         NonselectedScheduleStore
     } from '../stores/CoursePlannerStores';
+    import { client } from '$lib/client';
+    import type { Instructor, InstructorsConfig, InstructorsResponse } from '@jupiterp/jupiterp';
 
     // Load profs and course data from `+page.ts`
     export let data;
@@ -39,8 +41,42 @@ Copyright (C) 2024 Andrew Cupps
         }
     }
 
-    // Create a professor lookup table
-    ProfsLookupStore.set(getProfsLookup(data.professors));
+    async function fetchProfessorData() {
+        try {
+            let limit = 500;
+            let offset = 0;
+            let allInstructors: Instructor[] = [];
+            let config: InstructorsConfig = {
+                instructorNames: null,
+                instructorSlugs: null,
+                ratings: null,
+                limit: limit,
+                offset: offset,
+                sortBy: null,
+            };
+            let complete = false;
+            while (!complete) {
+                const response: InstructorsResponse = await client.activeInstructors(config);
+                if (response.ok() && response.data != null) {
+                    allInstructors = [...allInstructors, ...response.data];
+                    if (response.data.length < limit) {
+                        complete = true;
+                        break;
+                    }
+                    offset += limit;
+                    config.offset = offset;
+                } else {
+                    throw new Error(`Failed to fetch data: ${response.statusCode} ${response.statusMessage} ${response.errorBody}`);
+                }
+            }
+
+            // Update the ProfsLookupStore with the fetched data
+            ProfsLookupStore.set(getProfsLookup(allInstructors));
+        }
+        catch (error) {
+            console.error('Error fetching professor data:', error);
+        }
+    }
 
     // Keep track of chosen sections
     let currentSchedule: StoredSchedule;
@@ -125,6 +161,9 @@ Copyright (C) 2024 Andrew Cupps
 
                 hasReadLocalStorage = true;
             }
+
+            // Fetch instructor data from API
+            fetchProfessorData();
 
             // Fetch seat data from API
             fetchSeatData();

@@ -11,17 +11,13 @@
  * `+page.svelte`.
  */
 
-import instructors from '../../../datagen/data/instructors.json';
 import deptsAndCourses from '../../../datagen/data/departments.json';
 
 /**
  * @returns An object containing parsed instructors and departments data.
  */
-export function load(): JupiterpData {
+export function load(): { departments: Department[] } {
     return {
-        professors: instructors,
-        // See #5: This shows up as an error on VSCode because VSCode cannot
-        // tokenize `departments.json` due to its large file size.
-        departments: deptsAndCourses
+        departments: deptsAndCourses as Department[]
     };
 }

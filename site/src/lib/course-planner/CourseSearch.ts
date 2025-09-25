@@ -7,6 +7,8 @@
  * @fileoverview Functions relating to searching for courses in Jupiterp.
  */
 
+import type { Instructor } from "@jupiterp/jupiterp";
+
 /**
  * Get a course-lookup object which can be used to find courses given a 
  * department and course number.
@@ -121,8 +123,8 @@ export function searchCourses(input: string, courseLookup:
  * @returns A `Record<string, Professor>` where professor names as `string`s
  *              are mapped to `Professor` objects.
  */
-export function getProfsLookup(profs: Professor[]): Record<string, Professor> {
-    const result: Record<string, Professor> = {};
+export function getProfsLookup(profs: Instructor[]): Record<string, Instructor> {
+    const result: Record<string, Instructor> = {};
     const names: Set<string> = new Set<string>();
     for (const prof of profs) {
         const name = prof.name;

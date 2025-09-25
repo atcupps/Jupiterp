@@ -7,12 +7,6 @@
  * @fileoverview Types and interfaces used in Jupiterp
  */
 
-interface Professor {
-    name: string,
-    slug: string,
-    average_rating: number | null
-}
-
 interface Department {
     name: string,
     courses: Course[]
@@ -56,10 +50,6 @@ interface Classtime {
 type TimeComponent =
     number | string;
 
-interface JupiterpData {
-    professors: Professor[],
-    departments: Department[]
-}
 
 // Any changes to `ScheduleSelection` need to be typechecked in `courseLoad.ts`
 interface ScheduleSelection {
