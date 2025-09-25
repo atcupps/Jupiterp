@@ -54,11 +54,13 @@ Copyright (C) 2024 Andrew Cupps
                 offset: offset,
                 sortBy: null,
             };
-            while (true) {
+            let complete = false;
+            while (!complete) {
                 const response: InstructorsResponse = await client.activeInstructors(config);
                 if (response.ok() && response.data != null) {
                     allInstructors = [...allInstructors, ...response.data];
                     if (response.data.length < limit) {
+                        complete = true;
                         break;
                     }
                     offset += limit;
