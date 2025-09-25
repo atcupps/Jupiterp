@@ -114,14 +114,14 @@ export function searchCourses(input: string, courseLookup:
 }
 
 /**
- * Creates and returns an object mapping professor names to `Professor`s.
- * If there are multiple `Professor`s in `profs` with the same `name`,
- * neither will be in the result because in `CourseSearch`, professors'
+ * Creates and returns an object mapping instructor names to `Instructor`s.
+ * If there are multiple `Instructor`s in `profs` with the same `name`,
+ * neither will be in the result because in `CourseSearch`, instructors'
  * ratings and slugs will only be looked for on the basis of their name, absent
  * of any additional information like what course they are teaching.
- * @param profs An array `Professor[]` to be included in a lookup
- * @returns A `Record<string, Professor>` where professor names as `string`s
- *              are mapped to `Professor` objects.
+ * @param profs An array `Instructor[]` to be included in a lookup
+ * @returns A `Record<string, Instructor>` where instructor names as `string`s
+ *              are mapped to `Instructor` objects.
  */
 export function getProfsLookup(profs: Instructor[]): Record<string, Instructor> {
     const result: Record<string, Instructor> = {};
