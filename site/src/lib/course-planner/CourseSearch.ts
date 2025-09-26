@@ -36,6 +36,43 @@ export function getCourseLookup(departments: Department[]):
 }
 
 /**
+ * Given an `input` (which should already be simplified to remove whitespace
+ * and convert to uppercase) and a `courseLookup`, return a course name map
+ * for the department matching the input, or an empty list if no department
+ * matches the input. This will match input as soon as the input resolves to
+ * a single department code (ex. if the input is "CMS", the only department
+ * that starts with "CMS" is "CMSC", so it will return all courses in CMSC;
+ * if the input is "C", it matches multiple departments, so it returns an
+ * empty list).
+ * @param input The input string, simplified to uppercase and without
+ *                  whitespace.
+ * @param courseLookup A `Record` used to match departments and course numbers
+ *                      to `Course`s; can be generated using `getCourseLookup`
+ * @param deptList A list of 4-letter department codes used to search courses.
+ * @returns A `Record<string, Course>` mapping course numbers to `Course`s
+ *          for the department matching the input, or an empty list if no
+ *          department matches the input.
+ */
+function getDeptCoursesForInput(input: string, courseLookup: 
+                            Record<string, Record<string, Course>>,
+                            deptList: string[]): Record<string, Course> {
+    // Requests to the API for a course search should be made as soon as there
+    // is only a single resolvable department code for their search.
+    if (input.length >= 1) {
+        let deptInput = input.length > 4 ? 
+                            input.substring(0, 4) : input;
+        const possibleDepts: string[] = 
+            deptList.filter((dept) => dept.startsWith(deptInput));
+        if (possibleDepts.length == 1) {
+            console.log(`Resolved department input "${input}" to "${possibleDepts[0]}"`);
+            return courseLookup[possibleDepts[0]];
+        }
+    }
+
+    return {};
+}
+
+/**
  * Given an `input`, search for courses in a `courseLookup` and return a list
  * of possible `Course`s.
  * 
@@ -49,30 +86,29 @@ export function getCourseLookup(departments: Department[]):
 export function searchCourses(input: string, courseLookup: 
                             Record<string, Record<string, Course>>, deptList: string[]): Course[] {
     const result: Course[] = [];
+
+    // Don't care about case or whitespace in searches
+    const simpleInput: string = input.toUpperCase().replace(/\s/g, '');
+
     // For an `input` to be worth searching, it should be at least the four
     // letter department code, and the department code must be in 
-    // `courseLookup`. Jupiterp also doesn't care about whitespace, so it is 
-    // removed.
-    const simpleInput: string = input.toUpperCase().replace(/\s/g, '');
-    if (simpleInput.length >= 4) {
-        const dept: string = simpleInput.substring(0, 4);
-        const deptCourses: Record<string, Course> = courseLookup[dept];
-        if (deptCourses != undefined) {
-            for (const courseCode in deptCourses) {
-                let shouldBeInResult = true;
-                const inputCode = simpleInput.substring(4);
-                if (inputCode.length > courseCode.length) {
-                    shouldBeInResult = false;
-                } else {
-                    for (let i = 0; i < inputCode.length; i++) { 
-                        if (inputCode[i] != courseCode[i]) {
-                            shouldBeInResult = false;
-                        }
+    // `courseLookup`.
+    const deptCourses = getDeptCoursesForInput(simpleInput, courseLookup, deptList);
+    if (Object.keys(deptCourses).length > 0) {
+        for (const courseCode in deptCourses) {
+            let shouldBeInResult = true;
+            const inputCode = simpleInput.substring(4);
+            if (inputCode.length > courseCode.length) {
+                shouldBeInResult = false;
+            } else {
+                for (let i = 0; i < inputCode.length; i++) { 
+                    if (inputCode[i] != courseCode[i]) {
+                        shouldBeInResult = false;
                     }
                 }
-                if (shouldBeInResult) {
-                    result.push(deptCourses[courseCode]);
-                }
+            }
+            if (shouldBeInResult) {
+                result.push(deptCourses[courseCode]);
             }
         }
     } 
