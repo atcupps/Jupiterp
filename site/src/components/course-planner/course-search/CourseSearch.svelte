@@ -14,7 +14,9 @@ Copyright (C) 2024 Andrew Cupps
     import { appendHoveredSection } from "../../../lib/course-planner/Schedule";
     import { 
         HoveredSectionStore, 
-        CurrentScheduleStore 
+        CurrentScheduleStore, 
+        DeptCodesStore
+
     } from "../../../stores/CoursePlannerStores";
     import ScheduleSelector from "./ScheduleSelector.svelte";
 
@@ -27,7 +29,8 @@ Copyright (C) 2024 Andrew Cupps
     // Load profs and depts data
     export let data;
     let depts: Department[] = data.departments;
-    let deptList = depts.map((d) => d.name);
+    let deptList: string[];
+    DeptCodesStore.subscribe((codes) => { deptList = codes });
 
     // Create course lookup table
     const courseLookup = getCourseLookup(depts);

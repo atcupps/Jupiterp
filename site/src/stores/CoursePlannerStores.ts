@@ -25,3 +25,6 @@ export const NonselectedScheduleStore: Writable<StoredSchedule[]> =
 // Number of seats in each course-section combination
 export const SeatDataStore: Writable<Record<string, number[]>> = 
                                                             writable({});
+
+// List of department codes
+export const DeptCodesStore: Writable<string[]> = writable([]);

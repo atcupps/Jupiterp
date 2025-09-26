@@ -14,10 +14,17 @@ Copyright (C) 2024 Andrew Cupps
         SeatDataStore,
         ProfsLookupStore,
         CurrentScheduleStore,
-        NonselectedScheduleStore
+        NonselectedScheduleStore,
+
+        DeptCodesStore
+
     } from '../stores/CoursePlannerStores';
     import { client } from '$lib/client';
-    import type { Instructor, InstructorsConfig, InstructorsResponse } from '@jupiterp/jupiterp';
+    import {
+        type Instructor,
+        type InstructorsConfig, 
+        type InstructorsResponse
+    } from '@jupiterp/jupiterp';
 
     // Load profs and course data from `+page.ts`
     export let data;
@@ -41,18 +48,15 @@ Copyright (C) 2024 Andrew Cupps
         }
     }
 
+    // Function to retreive professor data; called in `onMount`.
     async function fetchProfessorData() {
         try {
             let limit = 500;
             let offset = 0;
             let allInstructors: Instructor[] = [];
             let config: InstructorsConfig = {
-                instructorNames: null,
-                instructorSlugs: null,
-                ratings: null,
                 limit: limit,
                 offset: offset,
-                sortBy: null,
             };
             let complete = false;
             while (!complete) {
@@ -75,6 +79,18 @@ Copyright (C) 2024 Andrew Cupps
         }
         catch (error) {
             console.error('Error fetching professor data:', error);
+        }
+    }
+
+    // Function to get list of department codes as an array of strings
+    // and set the DeptCodesStore.
+    async function fetchDeptCodes() {
+        const res = await client.deptList();
+        if (res.ok() && res.data != null) {
+            const deptCodes = res.data;
+            DeptCodesStore.set(deptCodes);
+        } else {
+            console.error('Error fetching department codes:', res.errorBody);
         }
     }
 
@@ -164,6 +180,9 @@ Copyright (C) 2024 Andrew Cupps
 
             // Fetch instructor data from API
             fetchProfessorData();
+
+            // Fetch department codes from API
+            fetchDeptCodes();
 
             // Fetch seat data from API
             fetchSeatData();
