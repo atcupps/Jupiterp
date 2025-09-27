@@ -36,7 +36,6 @@ function resolveInputToDepartment(input: string): string | null {
         const possibleDepts: string[] = 
             deptList.filter((dept) => dept.startsWith(deptInput));
         if (possibleDepts.length == 1) {
-            console.log(`Resolved department input "${input}" to "${possibleDepts[0]}"`);
             return possibleDepts[0];
         }
     }
@@ -51,8 +50,6 @@ function resolveInputToDepartment(input: string): string | null {
  * @param input A search input string
  */
 export async function setSearchResults(input: string) {
-    console.log(`Searching for courses matching "${input}"...`);
-
     // Don't care about case or whitespace in searches
     const simpleInput: string = input.toUpperCase().replace(/\s/g, '');
 

@@ -47,12 +47,11 @@ export class CourseDataCache {
     private mostRecentAccess: string | null = null;
 
     /**
-     * 
      * @param maxSize The maximum number of entries to store in the cache.
-     * Defaults to 10. When the cache exceeds this size, the least-recently
+     * Defaults to 20. When the cache exceeds this size, the least-recently
      * used entry will be removed.
      */
-    constructor(maxSize: number = 10) {
+    constructor(maxSize: number = 20) {
         this.cache = {};
         this.pendingRequests = {};
         this.maxSize = maxSize;
@@ -132,6 +131,7 @@ export class CourseDataCache {
             this.lruCounter += 1;
             this.cache[deptCode] = { status: "data", data: courses, lastUsed: this.lruCounter };
             this.evictLeastRecentlyUsed(deptCode);
+            console.log(`Cache of size ${this.size} after adding ${deptCode} contains: `, Object.keys(this.cache));
             return courses;
         } catch (error) {
             if (deptCode in this.cache) {
