@@ -7,18 +7,15 @@ Copyright (C) 2024 Andrew Cupps
 <script lang='ts'>
     import { fade } from "svelte/transition";
     import CourseListing from "./CourseListing.svelte";
-    import { 
-        getCourseLookup, 
-        searchCourses 
-    } from "../../../lib/course-planner/CourseSearch";
+    import { setSearchResults } from "../../../lib/course-planner/CourseSearch";
     import { appendHoveredSection } from "../../../lib/course-planner/Schedule";
-    import { 
+    import {
         HoveredSectionStore, 
-        CurrentScheduleStore, 
-        DeptCodesStore
-
+        CurrentScheduleStore,
+        SearchResultsStore
     } from "../../../stores/CoursePlannerStores";
     import ScheduleSelector from "./ScheduleSelector.svelte";
+    import type { Course } from "@jupiterp/jupiterp";
 
     let hoveredSection: ScheduleSelection | null;
     HoveredSectionStore.subscribe((hovered) => { hoveredSection = hovered });
@@ -26,26 +23,10 @@ Copyright (C) 2024 Andrew Cupps
     let selections: ScheduleSelection[] = [];
     CurrentScheduleStore.subscribe((stored) => { selections = stored.selections });
 
-    // Load profs and depts data
-    export let data;
-    let depts: Department[] = data.departments;
-    let deptList: string[];
-    DeptCodesStore.subscribe((codes) => { deptList = codes });
-
-    // Create course lookup table
-    const courseLookup = getCourseLookup(depts);
-
     // Variable and function for handling course search input
     let searchInput = '';
     let searchResults: Course[] = [];
-    function handleInput() {
-        // Sorting is done to ensure courses are displayed in
-        // alphabetical order
-        searchResults = searchCourses(searchInput, courseLookup, deptList)
-                            .sort((a, b) => {
-                                return a.code.localeCompare(b.code);
-                            });
-    }
+    SearchResultsStore.subscribe((results) => { searchResults = results });
 
     // Boolean for toggling search menu on smaller screens
     export let courseSearchSelected: boolean = false;
@@ -54,7 +35,7 @@ Copyright (C) 2024 Andrew Cupps
         if (hoveredSection) {
             let index = searchResults.findIndex(course => {
                 return hoveredSection && 
-                            course.code === hoveredSection.courseCode;
+                            course.courseCode === hoveredSection.courseCode;
             });
             if (index === -1) {
                 HoveredSectionStore.set(null);
@@ -110,7 +91,9 @@ Copyright (C) 2024 Andrew Cupps
     <div class='flex flex-col w-full border-solid 
                             border-b-2 border-t-2 p-1 lg:px-0
                             border-divBorderLight dark:border-divBorderDark'>
-        <input type='text' bind:value={searchInput} on:input={handleInput}
+        <input type='text' 
+            bind:value={searchInput}
+            on:input={() => {setSearchResults(searchInput)}}
             placeholder='Search course codes, ex: "MATH140"'
             class="border-solid border-2 border-outlineLight 
                             dark:border-outlineDark rounded-lg
@@ -120,7 +103,7 @@ Copyright (C) 2024 Andrew Cupps
     </div>
     <div class='grow courses-list overflow-y-scroll overflow-x-none
                 px-1 lg:pr-1 lg:pl-0'>
-        {#each searchResults as courseMatch (courseMatch.code)}
+        {#each searchResults as courseMatch (courseMatch.courseCode)}
             <CourseListing course={courseMatch} />
         {/each}
     </div>

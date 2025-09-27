@@ -7,6 +7,8 @@
  * @fileoverview Functions for formatting various Jupiterp objects as strings.
  */
 
+import type { Classtime, Location } from "@jupiterp/jupiterp";
+
 /**
  * Format a `Classtime` as a `string`, including the days
  * @param time A `Classtime` to be formatted
@@ -17,96 +19,46 @@ export function formatClassDayTime(time: Classtime): string {
 }
 
 /**
- * Format a `Classtime` as a `string`
- * 
- * @param time A `Classtime` to be formatted
- * 
- * @returns A `string` representation of `time`
+ * Format just the time portion of a `Classtime` as a `string`
+ * @returns A `string` representation of the time portion of a `Classtime`
  */
 export function formatClasstime(time: Classtime): string {
-    const startTimeArray: TimeComponent[] = time.start_time;
-    const startTime: string = startTimeArray[0] + ':' 
-        + formatMinutes(startTimeArray[1])
-        + formatAmPm(startTimeArray[2]);
-    const endTimeArray: TimeComponent[] = time.end_time;
-    const endTime: string = endTimeArray[0] + ':'
-        + formatMinutes(endTimeArray[1])
-        + formatAmPm(endTimeArray[2]);
-    return startTime + ' - ' + endTime;
+    const startTimeNumber = time.start;
+    const endTimeNumber = time.end;
+
+    const startHours = Math.floor(startTimeNumber) % 12;
+    const startMinutes = Math.round((startTimeNumber - Math.floor(startTimeNumber)) * 60);
+    const endHours = Math.floor(endTimeNumber) % 12;
+    const endMinutes = Math.round((endTimeNumber - Math.floor(endTimeNumber)) * 60);
+
+    const startAmPm = startTimeNumber >= 12 ? 'pm' : 'am';
+    const endAmPm = endTimeNumber >= 12 ? 'pm' : 'am';
+
+    return `${startHours}:${startMinutes}${startAmPm} - ${endHours}:${endMinutes}${endAmPm}`;
 }
 
 /**
- * Format a `TimeComponent` as a `string` assuming it to be some number of
- * minutes in an hour.
- * 
- * @param minutesAsTC A `TimeComponent` representing the number of minutes in
- *                      an hour of a `Classtime`.
- * 
- * @returns A string representing `minutesAsTC` as some number of minutes.
+ * Format a range of credits as a string
+ * @param minCredits A minimum number of credits
+ * @param maxCredits A maximum number of credits
+ * @returns A string representation of the credit range
  */
-function formatMinutes(minutesAsTC: TimeComponent): string {
-    const minutes: number = typeof minutesAsTC === 'number' ? minutesAsTC : 0;
-    if (minutes < 10) {
-        return '0' + minutes;
+export function formatCredits(minCredits: number, maxCredits: number | null): string {
+    if (maxCredits !== null) {
+        return minCredits + ' - ' + maxCredits;
     } else {
-        return minutes.toString();
+        return minCredits.toString();
     }
 }
 
 /**
- * Format an `AmPm` `TimeComponent` as a `string`
- * 
- * @param AmPmAsTC A `TimeComponent` which is assumed to be either 'Am` or `Pm`
- * 
- * @returns A `TimeComponent` formatted as either `'am'` or `'pm'`
+ * Format a `Location` as a `string`
+ * @param location A `Location` to format
+ * @returns A `string` representation of the `Location`
  */
-function formatAmPm(AmPmAsTC: TimeComponent): string {
-    const AmPm: string = typeof AmPmAsTC === 'string' ? AmPmAsTC : 'Am';
-    switch (AmPm) {
-        case 'Am':
-            return 'am';
-        case 'Pm':
-            return 'pm';
-    }
-    throw new Error('Unknown Am/Pm code');
-}
-
-/**
- * Get the minimum number of credits a given course can take. This is either
- * the exact value listed on Testudo or the lower end of a range listed
- * on Testudo.
- * @param credits A `CreditCount` with the number of credits
- * @returns `credits.Amount` or `credits.Range[0]`
- */
-export function getMinCredits(credits: CreditCount): number {
-    if ('Amount' in credits) {
-        return credits.Amount
-    } else {
-        return credits.Range[0];
-    }
-}
-
-/**
- * Formats a `CreditCount` as a `string`
- * @param credits A `CreditCount` to be formatted
- * @returns `credits` formatted as a string
- */
-export function formatCredits(credits: CreditCount): string {
-    if ('Amount' in credits) {
-        return credits.Amount.toString();
-    } else {
-        return credits.Range[0] + ' - ' + credits.Range[1];
-    }
-}
-
-/**
- * Formats `location` as a `string`
- * @param location A `string[]` where `string[0]` is a building code and
- *                  `string[1]` is a room code; ex: `['IRB', '2107']`
- * @returns `location` formatted as a `string`
- */
-export function formatLocation(location: string[]): string {
-    return location[0] + ' ' + location[1]
+export function formatLocation(location: Location): string {
+    return location.room ? 
+        location.building + ' ' + location.room : location.building;
 }
 
 /**

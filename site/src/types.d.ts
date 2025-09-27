@@ -7,50 +7,6 @@
  * @fileoverview Types and interfaces used in Jupiterp
  */
 
-interface Department {
-    name: string,
-    courses: Course[]
-}
-
-interface Course {
-    code: string,
-    name: string,
-    credits: CreditCount,
-    gen_eds: string[] | null,
-    conditions: string[] | null,
-    description: string,
-    sections: Section[] | null
-}
-
-type CreditCount =
-    { Amount: number } | { Range: number[] }
-
-interface Section {
-    sec_code: string,
-    instructors: string[],
-    class_meetings: ClassMeeting[]
-}
-
-type ClassMeeting =
-    | string
-    | { OnlineSync: Classtime }
-    | { InPerson: InPersonClass }
-
-interface InPersonClass {
-    classtime: Classtime | null,
-    location: string[] | null
-}
-
-interface Classtime {
-    days: string,
-    start_time: TimeComponent[],
-    end_time: TimeComponent[]
-}
-
-type TimeComponent =
-    number | string;
-
-
 // Any changes to `ScheduleSelection` need to be typechecked in `courseLoad.ts`
 interface ScheduleSelection {
     courseCode: string,

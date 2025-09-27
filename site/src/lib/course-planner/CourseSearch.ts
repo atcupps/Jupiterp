@@ -7,57 +7,29 @@
  * @fileoverview Functions relating to searching for courses in Jupiterp.
  */
 
-import type { Instructor } from "@jupiterp/jupiterp";
+import type { Course, Instructor } from "@jupiterp/jupiterp";
+import { CourseDataCache } from "./CourseDataCache";
+import { DeptCodesStore, SearchResultsStore } from "../../stores/CoursePlannerStores";
 
-/**
- * Get a course-lookup object which can be used to find courses given a 
- * department and course number.
- * 
- * @param departments An array of `Department`s with courses to be available
- *                      for lookup
- * 
- * @returns A `Record` which can match department-name inputs to another 
- *          `Record` matching course numbers to `Course` objects.
- */
-export function getCourseLookup(departments: Department[]):
-                                    Record<string, Record<string, Course>> {
-    const result: Record<string, Record<string, Course>> = {};
-    departments.forEach((dept) => {
-        const deptName: string = dept.name;
-        const deptCourses: Course[] = dept.courses;
-        const deptRecord: Record<string, Course> = {};
-        for (const course of deptCourses) {
-            const courseNum = course.code.substring(4);
-            deptRecord[courseNum] = course;
-        }
-        result[deptName] = deptRecord;
-    });
-    return result;
-}
+const cache = new CourseDataCache();
+
+// Load department list data
+let deptList: string[];
+DeptCodesStore.subscribe((codes) => { deptList = codes });
 
 /**
  * Given an `input` (which should already be simplified to remove whitespace
- * and convert to uppercase) and a `courseLookup`, return a course name map
- * for the department matching the input, or an empty list if no department
- * matches the input. This will match input as soon as the input resolves to
- * a single department code (ex. if the input is "CMS", the only department
- * that starts with "CMS" is "CMSC", so it will return all courses in CMSC;
- * if the input is "C", it matches multiple departments, so it returns an
- * empty list).
- * @param input The input string, simplified to uppercase and without
- *                  whitespace.
- * @param courseLookup A `Record` used to match departments and course numbers
- *                      to `Course`s; can be generated using `getCourseLookup`
- * @param deptList A list of 4-letter department codes used to search courses.
- * @returns A `Record<string, Course>` mapping course numbers to `Course`s
- *          for the department matching the input, or an empty list if no
- *          department matches the input.
+ * and convert to uppercase), return a single department code that matches the
+ * input if only one department matches the input, or `null` if either there
+ * are no matching departments or multiple matching departments.
+ * @param input 
  */
-function getDeptCoursesForInput(input: string, courseLookup: 
-                            Record<string, Record<string, Course>>,
-                            deptList: string[]): Record<string, Course> {
-    // Requests to the API for a course search should be made as soon as there
-    // is only a single resolvable department code for their search.
+function resolveInputToDepartment(input: string): string | null {
+    // You may think that if the input length is 4 or longer, we should just
+    // use that as the input to get from the cache. But consider that we need
+    // to check that the input is a valid department code, which is an O(n)
+    // operation anyway. So there's no point in adding additional logic for the
+    // case where the input length is a full department code.
     if (input.length >= 1) {
         let deptInput = input.length > 4 ? 
                             input.substring(0, 4) : input;
@@ -65,88 +37,87 @@ function getDeptCoursesForInput(input: string, courseLookup:
             deptList.filter((dept) => dept.startsWith(deptInput));
         if (possibleDepts.length == 1) {
             console.log(`Resolved department input "${input}" to "${possibleDepts[0]}"`);
-            return courseLookup[possibleDepts[0]];
+            return possibleDepts[0];
         }
     }
 
-    return {};
+    return null;
 }
 
 /**
- * Given an `input`, search for courses in a `courseLookup` and return a list
- * of possible `Course`s.
- * 
- * @param input A string of input used to search for `Course`s
- * @param courseLookup A `Record` used to match departments and course numbers
- *                      to `Course`s; can be generated using `getCourseLookup`
- * @param deptList A list of departments used to search for courses by number
- * 
- * @returns An array of possible courses given the `input`.
+ * Given an `input`, search for any matching courses in the course data cache
+ * (which retrieves from the API if necessary) and sets the `SearchResultsStore`
+ * to the list of matching courses.
+ * @param input A search input string
  */
-export function searchCourses(input: string, courseLookup: 
-                            Record<string, Record<string, Course>>, deptList: string[]): Course[] {
-    const result: Course[] = [];
+export async function setSearchResults(input: string) {
+    console.log(`Searching for courses matching "${input}"...`);
 
     // Don't care about case or whitespace in searches
     const simpleInput: string = input.toUpperCase().replace(/\s/g, '');
 
-    // For an `input` to be worth searching, it should be at least the four
-    // letter department code, and the department code must be in 
-    // `courseLookup`.
-    const deptCourses = getDeptCoursesForInput(simpleInput, courseLookup, deptList);
-    if (Object.keys(deptCourses).length > 0) {
-        for (const courseCode in deptCourses) {
-            let shouldBeInResult = true;
-            const inputCode = simpleInput.substring(4);
-            if (inputCode.length > courseCode.length) {
-                shouldBeInResult = false;
-            } else {
-                for (let i = 0; i < inputCode.length; i++) { 
-                    if (inputCode[i] != courseCode[i]) {
-                        shouldBeInResult = false;
-                    }
-                }
-            }
-            if (shouldBeInResult) {
-                result.push(deptCourses[courseCode]);
-            }
+    // If the search input matches a department code, get the courses for that
+    // department and then filter by course number.
+    const dept = resolveInputToDepartment(simpleInput);
+    if (dept !== null) {
+        // Get from cache/API
+        const deptCourses: Course[] = await cache.getCoursesForDept(dept);
+
+        // Ensure that the department for this search is still the most recent
+        // search. If not, abort to avoid displaying outdated results.
+        if (cache.getMostRecentAccess() !== dept) {
+            return;
         }
+
+        // If the input contains no numbers, all dept courses are matching.
+        if (simpleInput.length <= 4) {
+            SearchResultsStore.set(deptCourses);
+            return;
+        }
+
+        // Otherwise, filter by course number
+        const inputCode = simpleInput.substring(4);
+        const matchingCourses = deptCourses.filter((course) => {
+            course.courseCode.substring(4).startsWith(inputCode);
+        });
+        SearchResultsStore.set(matchingCourses);
+        return;
     } 
     
     // If the search input is just numbers, match courses with that number
-    if (simpleInput.length >= 2 && /^[0-9]+$/i.test(simpleInput)) {
+    // if (simpleInput.length >= 2 && /^[0-9]+$/i.test(simpleInput)) {
 
-        // get all the courses from every department 
-        const allDeptCourses: Record<string, Course> = {};
-        for (const dept of deptList) {
-            const deptCourses = courseLookup[dept];
-            if (deptCourses !== undefined) {
-                for (const courseCode in deptCourses) {
-                    const uniqueCourseCode = `${dept}-${courseCode}`;
-                    allDeptCourses[uniqueCourseCode] = deptCourses[courseCode];
-                }
-            }
-        }
+    //     // get all the courses from every department 
+    //     const allDeptCourses: Record<string, Course> = {};
+    //     for (const dept of deptList) {
+    //         const deptCourses = courseLookup[dept];
+    //         if (deptCourses !== undefined) {
+    //             for (const courseCode in deptCourses) {
+    //                 const uniqueCourseCode = `${dept}-${courseCode}`;
+    //                 allDeptCourses[uniqueCourseCode] = deptCourses[courseCode];
+    //             }
+    //         }
+    //     }
 
-        for (const courseCode in allDeptCourses) {
-            let shouldBeInResult = true;
-            if (simpleInput.length > courseCode.length) {
-                shouldBeInResult = false;
-            } else {
-                const courseNumber = courseCode.substring(5);
-                for (let i = 0; i < simpleInput.length; i++) { 
-                    if (simpleInput[i] != courseNumber[i]) {
-                        shouldBeInResult = false;
-                    }
-                }
-            }
-            if (shouldBeInResult) {
-                result.push(allDeptCourses[courseCode]);
-            }
-        }
-    }
+    //     for (const courseCode in allDeptCourses) {
+    //         let shouldBeInResult = true;
+    //         if (simpleInput.length > courseCode.length) {
+    //             shouldBeInResult = false;
+    //         } else {
+    //             const courseNumber = courseCode.substring(5);
+    //             for (let i = 0; i < simpleInput.length; i++) { 
+    //                 if (simpleInput[i] != courseNumber[i]) {
+    //                     shouldBeInResult = false;
+    //                 }
+    //             }
+    //         }
+    //         if (shouldBeInResult) {
+    //             result.push(allDeptCourses[courseCode]);
+    //         }
+    //     }
+    // }
     
-    return result;
+    // return result;
 }
 
 /**

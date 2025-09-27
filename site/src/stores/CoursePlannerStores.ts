@@ -1,12 +1,11 @@
-import { getProfsLookup } from "$lib/course-planner/CourseSearch";
-import type { Instructor } from "@jupiterp/jupiterp";
+import type { Course, Instructor } from "@jupiterp/jupiterp";
 import { writable, type Writable } from "svelte/store";
 
 // `Record<string, Instructor>` for getting instructor data from names
 // Initially set to an empty record since the data used here is
 // loaded in `+page.svelte`.
 export const ProfsLookupStore: Writable<Record<string, Instructor>> = 
-                                                writable(getProfsLookup([]));
+                                                writable({});
 
 // Track which section is being hovered by the user in Course Search
 export const HoveredSectionStore: Writable<ScheduleSelection | null> = 
@@ -28,3 +27,6 @@ export const SeatDataStore: Writable<Record<string, number[]>> =
 
 // List of department codes
 export const DeptCodesStore: Writable<string[]> = writable([]);
+
+// Search results
+export const SearchResultsStore: Writable<Course[]> = writable([]);
