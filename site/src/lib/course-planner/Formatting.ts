@@ -26,9 +26,11 @@ export function formatClasstime(time: Classtime): string {
     const startTimeNumber = time.start;
     const endTimeNumber = time.end;
 
-    const startHours = Math.floor(startTimeNumber) % 12;
+    let startHours = Math.floor(startTimeNumber) % 12;
+    if (startHours === 0) startHours = 12; // handle midnight and noon
     const startMinutes = Math.round((startTimeNumber - Math.floor(startTimeNumber)) * 60);
-    const endHours = Math.floor(endTimeNumber) % 12;
+    let endHours = Math.floor(endTimeNumber) % 12;
+    if (endHours === 0) endHours = 12; // handle midnight and noon
     const endMinutes = Math.round((endTimeNumber - Math.floor(endTimeNumber)) * 60);
 
     const startAmPm = startTimeNumber >= 12 ? 'pm' : 'am';
