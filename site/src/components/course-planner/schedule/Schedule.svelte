@@ -244,7 +244,7 @@ Copyright (C) 2024 Andrew Cupps
         {/each}
     </div>
 
-    <SeatData course={courseInfoCourse.code} section={courseInfoSection.sec_code} />
+    <SeatData section={courseInfoSection.section} />
 
     <div class='text-base 2xl:text-lg leading-5'>
         {#if courseInfoCourse.conditions != null && courseInfoCourse.conditions.length > 0}

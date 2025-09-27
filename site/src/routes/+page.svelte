@@ -11,7 +11,6 @@ Copyright (C) 2024 Andrew Cupps
     import { retrieveCourses, updateStoredSchedules } from '../lib/course-planner/CourseLoad';
     import { getProfsLookup } from '$lib/course-planner/CourseSearch';
     import {
-        SeatDataStore,
         ProfsLookupStore,
         CurrentScheduleStore,
         NonselectedScheduleStore,
@@ -28,25 +27,6 @@ Copyright (C) 2024 Andrew Cupps
 
     // Load profs and course data from `+page.ts`
     export let data;
-
-    // Function to retreive seats data; seats data is returned as a record
-    // where the key is a string concatenation of "courseID-sectionID",
-    // and the record value is [currentSeats, totalSeats, waitlist].
-    // Called in `onMount`.
-    async function fetchSeatData() {
-        try {
-            const response = await fetch('/seats');
-            if (!response.ok) {
-                throw new Error(`Failed to fetch data: ${response.statusText}`);
-            }
-            const seatsDataMap = await response.json();
-            
-            // Update the SeatDataStore with the fetched data
-            SeatDataStore.set(seatsDataMap);
-        } catch (error) {
-            console.error('Error fetching seat data:', error);
-        }
-    }
 
     // Function to retreive professor data; called in `onMount`.
     async function fetchProfessorData() {
@@ -183,9 +163,6 @@ Copyright (C) 2024 Andrew Cupps
 
             // Fetch department codes from API
             fetchDeptCodes();
-
-            // Fetch seat data from API
-            fetchSeatData();
         } catch (e) {
             console.log('Unable to retrieve courses: ' + e);
             CurrentScheduleStore.set({
@@ -227,6 +204,6 @@ Copyright (C) 2024 Andrew Cupps
 <div class='fixed flex flex-row w-full px-8
             text-textLight dark:text-textDark lg:px-8
             top-[3rem] lg:top-[3.5rem] xl:top-[4rem] bottom-0'>
-    <CourseSearch data={data} bind:courseSearchSelected />
+    <CourseSearch bind:courseSearchSelected />
     <Schedule />
 </div>

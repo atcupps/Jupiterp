@@ -188,7 +188,7 @@ Copyright (C) 2024 Andrew Cupps
         {/each}
 
         <!-- Seats info -->
-        <SeatData course={courseCode} section={section.sectionCode} />
+        <SeatData section={section} />
         
         <!-- Class meetings -->
         {#each section.meetings as meeting}
