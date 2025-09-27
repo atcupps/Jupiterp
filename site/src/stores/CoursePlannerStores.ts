@@ -1,28 +1,29 @@
 import type { Course, Instructor } from "@jupiterp/jupiterp";
 import { writable, type Writable } from "svelte/store";
 
-// `Record<string, Instructor>` for getting instructor data from names
-// Initially set to an empty record since the data used here is
-// loaded in `+page.svelte`.
+/** `Record<string, Instructor>` for getting instructor data from names
+/* Initially set to an empty record since the data used here is
+/* loaded in `+page.svelte`.
+ */
 export const ProfsLookupStore: Writable<Record<string, Instructor>> = 
                                                 writable({});
 
-// Track which section is being hovered by the user in Course Search
+/** Track which section is being hovered by the user in Course Search */
 export const HoveredSectionStore: Writable<ScheduleSelection | null> = 
                                                                 writable(null);
 
-// Track selected sections in current schedule
+/** Track selected sections in current schedule */
 export const CurrentScheduleStore: Writable<StoredSchedule> = writable({
     scheduleName: "Schedule 1",
     selections: []
 });
 
-// Track stored schedules that are not the active current schedule
+/** Track stored schedules that are not the active current schedule */
 export const NonselectedScheduleStore: Writable<StoredSchedule[]> = 
                                                                 writable([]);
 
-// List of department codes
+/** List of department codes */
 export const DeptCodesStore: Writable<string[]> = writable([]);
 
-// Search results
+/** Search results */
 export const SearchResultsStore: Writable<Course[]> = writable([]);
