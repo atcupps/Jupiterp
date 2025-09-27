@@ -113,8 +113,14 @@ Copyright (C) 2024 Andrew Cupps
     })
 
     onMount(() => {
+        // Fetch instructor data from API
+        fetchProfessorData();
+
+        // Fetch department codes from API
+        fetchDeptCodes();
+
+        // Retrieve data from client local storage
         try {
-            // Retreive data from client local storage
             if (typeof window !== 'undefined') {
                 const storedSelectionsOption = 
                                 localStorage.getItem('selectedSections');
@@ -157,12 +163,6 @@ Copyright (C) 2024 Andrew Cupps
 
                 hasReadLocalStorage = true;
             }
-
-            // Fetch instructor data from API
-            fetchProfessorData();
-
-            // Fetch department codes from API
-            fetchDeptCodes();
         } catch (e) {
             console.log('Unable to retrieve courses: ' + e);
             CurrentScheduleStore.set({
