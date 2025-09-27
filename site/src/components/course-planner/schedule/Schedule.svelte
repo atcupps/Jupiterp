@@ -19,10 +19,11 @@ Copyright (C) 2024 Andrew Cupps
     import MeetingListing from '../course-search/MeetingListing.svelte';
     import SeatData from '../course-search/SeatData.svelte';
     import CourseCondition from '../course-search/CourseCondition.svelte';
+    import type { Schedule, ScheduleSelection } from '../../../types';
+    import type { Course, Section } from '@jupiterp/jupiterp';
 
     let hoveredSection: ScheduleSelection | null = null;
     let selections: ScheduleSelection[] = [];
-
 
     let schedule: Schedule = schedulify(
         appendHoveredSection(selections, hoveredSection)
@@ -79,8 +80,8 @@ Copyright (C) 2024 Andrew Cupps
     let courseInfoSection: Section | null = null;
     $: if (showCourseInfo !== null) {
         let index = selections.findIndex(selection => {
-            return selection.courseCode === showCourseInfo
-                && selection.section.sec_code === showSectionInfo;
+            return selection.course.courseCode === showCourseInfo
+                && selection.section.sectionCode === showSectionInfo;
         });
         if (index === -1) {
             showCourseInfo = null;
@@ -203,14 +204,14 @@ Copyright (C) 2024 Andrew Cupps
     <div class='text-lg 2xl:text-xl'
             style='width: calc(100% - 1.75rem);'>
         <span class='font-bold'>
-            {courseInfoCourse.code}
+            {courseInfoCourse.courseCode}
         </span>
         <span class='font-normal'>
             - {courseInfoCourse.name}
         </span>
         <span class='text-base 2xl:text-lg font-normal mx-1
                                     text-orange underline'>
-            <a href={testudoLink(courseInfoCourse.code)} 
+            <a href={testudoLink(courseInfoCourse.courseCode)} 
                                             target='_blank'>
                 (view on Testudo)
             </a>
@@ -218,16 +219,18 @@ Copyright (C) 2024 Andrew Cupps
     </div>
 
     <div class='text-sm 2xl:text-base'>
-        {formatCredits(courseInfoCourse.credits)} credits |
-        Section {courseInfoSection.sec_code}
+        {formatCredits(
+            courseInfoCourse.minCredits, courseInfoCourse.maxCredits
+        )} credits |
+        Section {courseInfoSection.sectionCode}
     </div>
 
-    {#if courseInfoCourse.gen_eds != null && courseInfoCourse.gen_eds.length > 0}
+    {#if courseInfoCourse.genEds != null && courseInfoCourse.genEds.length > 0}
         <div class='text-sm 2xl:text-base'>
             <span class='font-black underline'>
                 GenEds:
             </span>
-            {courseInfoCourse.gen_eds.join(', ')}
+            {courseInfoCourse.genEds.join(', ')}
         </div>
     {/if}
 
@@ -238,13 +241,13 @@ Copyright (C) 2024 Andrew Cupps
     {/each}
 
     <div class='text-sm 2xl:text-base'>
-        {#each courseInfoSection.class_meetings as meeting}
+        {#each courseInfoSection.meetings as meeting}
             <MeetingListing meeting={meeting} condensed={true}
                 locationHover={false} removeHoverSection={() => {}} />
         {/each}
     </div>
 
-    <SeatData section={courseInfoSection.section} />
+    <SeatData section={courseInfoSection} />
 
     <div class='text-base 2xl:text-lg leading-5'>
         {#if courseInfoCourse.conditions != null && courseInfoCourse.conditions.length > 0}

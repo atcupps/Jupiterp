@@ -9,6 +9,8 @@
  * list of class meetings for every day of the week.
  */
 
+import type { ClassMeeting, Classtime } from "@jupiterp/jupiterp";
+import type { ClassMeetingExtended, ClasstimeBound, Schedule, ScheduleSelection } from "../../types";
 import { timeToNumber } from "./ClassMeetingUtils";
 
 enum Day {
@@ -36,30 +38,26 @@ export function schedulify(selections: ScheduleSelection[]): Schedule {
         other: []
     };
     selections.forEach((selection) => {
-        selection.section.class_meetings.forEach((meeting) => {
+        selection.section.meetings.forEach((meeting) => {
             const newMeeting: ClassMeetingExtended = {
-                course: selection.courseCode,
-                secCode: selection.section.sec_code,
-                instructors: selection.section.instructors,
+                courseCode: selection.course.courseCode,
+                sectionCode: selection.section.sectionCode,
+                meeting: meeting,
                 conflictIndex: 1,
                 conflictTotal: 1,
-                meeting,
+                instructors: selection.section.instructors,
                 hover: selection.hover,
                 colorNumber: selection.colorNumber,
                 differences: selection.differences
             }
+
             if (typeof meeting === 'string') {
+                // Put in the "other" column if there is no real meeting time
+                // (e.g. TBA, OnlineAsync, etc.)
                 schedule.other = [...schedule.other, newMeeting];
             }
-            else if ('OnlineSync' in meeting) {
-                addMeetings(schedule, newMeeting, meeting.OnlineSync);
-            } else {
-                if (meeting.InPerson.classtime === null) {
-                    schedule.other = [...schedule.other, newMeeting];
-                } else {
-                    addMeetings(schedule, newMeeting, 
-                                        meeting.InPerson.classtime);
-                }
+            else {
+                addMeetings(schedule, newMeeting, meeting.classtime);
             }
         })
     });
@@ -75,8 +73,8 @@ export function schedulify(selections: ScheduleSelection[]): Schedule {
  * @param classtime A `Classtime` used to determine which days to add `meeting`
  *                  to.
  */
-function addMeetings(schedule: Schedule, meeting: ClassMeetingExtended, 
-                                                        classtime: Classtime) {
+function addMeetings(schedule: Schedule,
+            meeting: ClassMeetingExtended, classtime: Classtime) {
     const days: Day[] = parseDays(classtime.days);
     days.forEach((day) => {
         const meetingCopy = JSON.parse(JSON.stringify(meeting))
@@ -84,31 +82,36 @@ function addMeetings(schedule: Schedule, meeting: ClassMeetingExtended,
             case Day.Monday:
                 schedule.monday = [...schedule.monday, meetingCopy];
                 schedule.monday.sort((a, b) => {
-                    return getClassStartTime(a) - getClassStartTime(b)
+                    return getClassStartTime(a.meeting) 
+                            - getClassStartTime(b.meeting)
                 });
                 break;
             case Day.Tuesday:
                 schedule.tuesday = [...schedule.tuesday, meetingCopy];
                 schedule.tuesday.sort((a, b) => {
-                    return getClassStartTime(a) - getClassStartTime(b)
+                    return getClassStartTime(a.meeting) 
+                            - getClassStartTime(b.meeting)
                 });
                 break;
             case Day.Wednesday:
                 schedule.wednesday = [...schedule.wednesday, meetingCopy];
                 schedule.wednesday.sort((a, b) => {
-                    return getClassStartTime(a) - getClassStartTime(b)
+                    return getClassStartTime(a.meeting) 
+                            - getClassStartTime(b.meeting)
                 });
                 break;
             case Day.Thursday:
                 schedule.thursday = [...schedule.thursday, meetingCopy];
                 schedule.thursday.sort((a, b) => {
-                    return getClassStartTime(a) - getClassStartTime(b)
+                    return getClassStartTime(a.meeting) 
+                            - getClassStartTime(b.meeting)
                 });
                 break;
             case Day.Friday:
                 schedule.friday = [...schedule.friday, meetingCopy];
                 schedule.friday.sort((a, b) => {
-                    return getClassStartTime(a) - getClassStartTime(b)
+                    return getClassStartTime(a.meeting) 
+                            - getClassStartTime(b.meeting)
                 });
                 break;
             case Day.Other:
@@ -189,50 +192,19 @@ export function getClasstimeBounds(schedule: Schedule): ClasstimeBound {
         day.forEach(classMeeting => {
             const meeting = classMeeting.meeting;
             if (typeof meeting != 'string') {
-                if ('OnlineSync' in meeting) {
-                    result = {
-                        earliestStart: Math.min(
-                            result.earliestStart,
-                            Math.floor(
-                                timeToNumber(
-                                    meeting.OnlineSync.start_time
-                                )
-                            )
-                        ),
-                        latestEnd: Math.max(
-                            result.latestEnd,
-                            Math.ceil(
-                                timeToNumber(
-                                    meeting.OnlineSync.end_time
-                                )
-                            )
-                        )
-                    }
-                } else {
-                    if (meeting.InPerson.classtime != null) {
-                        result = {
-                            earliestStart: Math.min(
-                                result.earliestStart,
-                                Math.floor(
-                                    timeToNumber(
-                                        meeting.InPerson.classtime.start_time
-                                    )
-                                )
-                            ),
-                            latestEnd: Math.max(
-                                result.latestEnd,
-                                Math.ceil(
-                                    timeToNumber(
-                                        meeting.InPerson.classtime.end_time
-                                    )
-                                )
-                            )
-                        }
-                    }
+                result = {
+                    earliestStart: Math.min(
+                        result.earliestStart,
+                        meeting.classtime.start
+                    ),
+                    latestEnd: Math.max(
+                        result.latestEnd,
+                        meeting.classtime.end
+                    )
                 }
             }
-        })
-    })
+        });
+    });
     return result;
 }
 
@@ -245,16 +217,18 @@ export function getClasstimeBounds(schedule: Schedule): ClasstimeBound {
  * @param schedule A `Schedule`
  */
 function labelConflictingClasstimes(schedule: Schedule) {
-    for (const day of 
-                    [
-                        schedule.monday, 
-                        schedule.tuesday, 
-                        schedule.wednesday, 
-                        schedule.thursday, 
-                        schedule.friday
-                    ]) {
-        const startTimes: number[] = day.map(getClassStartTime);
-        const endTimes: number[] = day.map(getClassEndTime);
+    const days = [
+        schedule.monday, 
+        schedule.tuesday, 
+        schedule.wednesday, 
+        schedule.thursday, 
+        schedule.friday
+    ];
+    for (const day of days) {
+        const startTimes: number[] = 
+            day.map((elt) => getClassStartTime(elt.meeting));
+        const endTimes: number[] = 
+            day.map((elt) => getClassEndTime(elt.meeting));
         for (let i = 0; i < day.length - 1; i++) {
             if (endTimes[i] > startTimes[i + 1]) {
                 let j = i + 1;
@@ -291,21 +265,12 @@ function labelConflictingClasstimes(schedule: Schedule) {
  * @param meeting A `ClassMeetingExtended`
  * @returns The number form start time of `meeting`
  */
-function getClassStartTime(meeting: ClassMeetingExtended): number {
-    if (typeof meeting.meeting === 'string') {
+function getClassStartTime(meeting: ClassMeeting): number {
+    if (typeof meeting === 'string') {
         throw Error('`getClassStartTime` called on a string');
     }
-    else if ('OnlineSync' in meeting.meeting) {
-        return timeToNumber(meeting.meeting.OnlineSync.start_time)
-    }
     else {
-        if (meeting.meeting.InPerson.classtime !== null) {
-            return timeToNumber(meeting.meeting.InPerson.classtime.start_time);
-        } else {
-            throw Error(
-                'Null In Person meeting class time in `getClassStartTime`'
-            );
-        }
+        return meeting.classtime.start;
     }
 }
 
@@ -313,21 +278,12 @@ function getClassStartTime(meeting: ClassMeetingExtended): number {
  * @param meeting A `ClassMeetingExtended`
  * @returns The number form end time of `meeting`
  */
-function getClassEndTime(meeting: ClassMeetingExtended): number {
-    if (typeof meeting.meeting === 'string') {
+function getClassEndTime(meeting: ClassMeeting): number {
+    if (typeof meeting === 'string') {
         throw Error('`getClassEndTime` called on a string');
     }
-    else if ('OnlineSync' in meeting.meeting) {
-        return timeToNumber(meeting.meeting.OnlineSync.end_time)
-    }
     else {
-        if (meeting.meeting.InPerson.classtime !== null) {
-            return timeToNumber(meeting.meeting.InPerson.classtime.end_time);
-        } else {
-            throw Error(
-                'Null In Person meeting class time in `getClassEndTime`'
-            );
-        }
+        return meeting.classtime.end;
     }
 }
 
@@ -347,9 +303,7 @@ function getConflictIndices(
         let freeIndexIndex: number = -1;
         let curResult: number = -1;
         for (let j = 0; j < result.length; j++) {
-            if (i !== j && !classesConflict(
-                                            classes[i], classes[j],
-                                            startTimes[i], endTimes[i],
+            if (i !== j && !classesConflict(startTimes[i], endTimes[i],
                                             startTimes[j], endTimes[j])) {
                 if (!freeIndexFound) {
                     curResult = result[j];
@@ -373,7 +327,6 @@ function getConflictIndices(
 }
 
 function classesConflict(
-        a: ClassMeetingExtended, b: ClassMeetingExtended, 
         aStart: number, aEnd: number, bStart: number, bEnd: number): boolean {
     let result: boolean = false;
     if (aStart <= bStart && aEnd > bStart) {

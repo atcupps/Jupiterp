@@ -131,7 +131,6 @@ export class CourseDataCache {
             this.lruCounter += 1;
             this.cache[deptCode] = { status: "data", data: courses, lastUsed: this.lruCounter };
             this.evictLeastRecentlyUsed(deptCode);
-            console.log(`Cache of size ${this.size} after adding ${deptCode} contains: `, Object.keys(this.cache));
             return courses;
         } catch (error) {
             if (deptCode in this.cache) {

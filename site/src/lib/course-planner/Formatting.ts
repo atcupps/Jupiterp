@@ -36,7 +36,7 @@ export function formatClasstime(time: Classtime): string {
     const startAmPm = startTimeNumber >= 12 ? 'pm' : 'am';
     const endAmPm = endTimeNumber >= 12 ? 'pm' : 'am';
 
-    return `${startHours}:${startMinutes}${startAmPm} - ${endHours}:${endMinutes}${endAmPm}`;
+    return `${startHours}:${("0" + startMinutes).slice(-2)}${startAmPm} - ${endHours}:${("0" + endMinutes).slice(-2)}${endAmPm}`;
 }
 
 /**
