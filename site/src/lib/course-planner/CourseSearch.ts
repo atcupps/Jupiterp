@@ -75,11 +75,18 @@ export async function setSearchResults(input: string) {
         // Otherwise, filter by course number
         const inputCode = simpleInput.substring(4);
         const matchingCourses = deptCourses.filter((course) => {
-            course.courseCode.substring(4).startsWith(inputCode);
+            return course.courseCode.startsWith(inputCode, 4);
         });
         SearchResultsStore.set(matchingCourses);
         return;
-    } 
+    }
+
+    // If we reach here, the input does not match a single department code.
+    // This could be because the input is just numbers, or because it is
+    // not a valid department code.
+
+    // Clear search results for now.
+    SearchResultsStore.set([]);
     
     // If the search input is just numbers, match courses with that number
     // if (simpleInput.length >= 2 && /^[0-9]+$/i.test(simpleInput)) {

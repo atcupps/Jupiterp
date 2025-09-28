@@ -24,6 +24,7 @@ Copyright (C) 2024 Andrew Cupps
         type InstructorsConfig, 
         type InstructorsResponse
     } from '@jupiterp/jupiterp';
+    import type { ScheduleSelection, StoredSchedule } from '../types';
 
     // Load profs and course data from `+page.ts`
     export let data;

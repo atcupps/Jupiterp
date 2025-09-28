@@ -16,6 +16,7 @@ Copyright (C) 2024 Andrew Cupps
     } from "../../../stores/CoursePlannerStores";
     import ScheduleSelector from "./ScheduleSelector.svelte";
     import type { Course } from "@jupiterp/jupiterp";
+    import type { ScheduleSelection } from "../../../types";
 
     let hoveredSection: ScheduleSelection | null;
     HoveredSectionStore.subscribe((hovered) => { hoveredSection = hovered });
@@ -35,7 +36,7 @@ Copyright (C) 2024 Andrew Cupps
         if (hoveredSection) {
             let index = searchResults.findIndex(course => {
                 return hoveredSection && 
-                            course.courseCode === hoveredSection.courseCode;
+                            course.courseCode === hoveredSection.course.courseCode;
             });
             if (index === -1) {
                 HoveredSectionStore.set(null);
@@ -49,7 +50,7 @@ Copyright (C) 2024 Andrew Cupps
         let selectionsWithHovered = 
                 appendHoveredSection(selections, hoveredSection);
         selectionsWithHovered.forEach((selection) => {
-            totalCredits += selection.credits;
+            totalCredits += selection.course.minCredits;
         })
     }
 </script>
