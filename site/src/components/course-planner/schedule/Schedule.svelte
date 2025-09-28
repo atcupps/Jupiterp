@@ -257,7 +257,9 @@ Copyright (C) 2024 Andrew Cupps
                 {/each}
             </div>
         {/if}
-        {courseInfoCourse.description}
+        {#if courseInfoCourse.description != null}
+            {courseInfoCourse.description}
+        {/if}
     </div>
 </div>
 {/if}

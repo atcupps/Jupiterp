@@ -98,7 +98,9 @@ Copyright (C) 2024 Andrew Cupps
                 {/each}
             {/if}
 
-            {course.description}
+            {#if course.description != null}
+                {course.description}
+            {/if}
         </div>
     {/if}
 
