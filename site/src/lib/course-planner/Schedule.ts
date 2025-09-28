@@ -11,7 +11,6 @@
 
 import type { ClassMeeting, Classtime } from "@jupiterp/jupiterp";
 import type { ClassMeetingExtended, ClasstimeBound, Schedule, ScheduleSelection } from "../../types";
-import { timeToNumber } from "./ClassMeetingUtils";
 
 enum Day {
     Monday = 'monday',
@@ -194,11 +193,11 @@ export function getClasstimeBounds(schedule: Schedule): ClasstimeBound {
             if (typeof meeting != 'string') {
                 result = {
                     earliestStart: Math.min(
-                        result.earliestStart,
+                        Math.floor(result.earliestStart),
                         meeting.classtime.start
                     ),
                     latestEnd: Math.max(
-                        result.latestEnd,
+                        Math.ceil(result.latestEnd),
                         meeting.classtime.end
                     )
                 }

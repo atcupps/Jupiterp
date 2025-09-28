@@ -13,10 +13,10 @@ Copyright (C) 2024 Andrew Cupps
     } from "../../../stores/CoursePlannerStores";
     import SeatData from "./SeatData.svelte";
     import type { Section, Course } from "@jupiterp/jupiterp";
+    import type { ScheduleSelection } from "../../../types";
 
     export let courseCode: string;
     export let section: Section;
-    export let minCredits: number;
     export let course: Course;
 
     let hoveredSection: ScheduleSelection | null;
@@ -30,26 +30,22 @@ Copyright (C) 2024 Andrew Cupps
     });
 
     let newSelection: ScheduleSelection = {
-        courseCode,
+        course,
         section,
         hover: false,
         differences: [],
-        credits: minCredits,
-        course,
         colorNumber: -1,
-    };
+    }
     let sectionAdded: boolean;
     $: if (selectionsList || hoveredSection) {
         sectionAdded = selectionsList.some(obj => selectionEquals(obj));
     }
     
     let hoverSection: ScheduleSelection = {
-        courseCode,
+        course,
         section,
         hover: true,
         differences: [],
-        credits: minCredits,
-        course,
         colorNumber: -1,
     }
 
@@ -124,8 +120,8 @@ Copyright (C) 2024 Andrew Cupps
     }
 
     function selectionEquals(s: ScheduleSelection): boolean {
-        return s.courseCode === courseCode && 
-            s.section.sec_code === section.sectionCode && !s.hover;
+        return s.course.courseCode === courseCode && 
+            s.section.sectionCode === section.sectionCode && !s.hover;
     }
 
     function firstAvailableColor(selections: ScheduleSelection[]): number {

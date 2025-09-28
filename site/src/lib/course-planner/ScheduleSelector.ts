@@ -10,6 +10,7 @@
  */
 
 import { NonselectedScheduleStore } from "../../stores/CoursePlannerStores";
+import type { StoredSchedule } from "../../types";
 
 /**
  * Ensure that a schedule name is unique by appending another string if

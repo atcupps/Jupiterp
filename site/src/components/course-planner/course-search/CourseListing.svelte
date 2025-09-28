@@ -107,13 +107,11 @@ Copyright (C) 2024 Andrew Cupps
         {#each course.sections as section}
             <SectionListing courseCode={course.courseCode}
                 section={section}
-                        course={course}
-                        minCredits={course.minCredits} />
+                        course={course} />
         {/each}
     {:else}
         <SectionListing courseCode={course.courseCode}
             section={pseudoSection()}
-            course={course}
-            minCredits={course.minCredits} />
+            course={course} />
     {/if}
 </div>
