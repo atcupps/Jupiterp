@@ -12,7 +12,8 @@ Copyright (C) 2024 Andrew Cupps
     import {
         HoveredSectionStore, 
         CurrentScheduleStore,
-        SearchResultsStore
+        SearchResultsStore,
+        DeptSuggestionsStore
     } from "../../../stores/CoursePlannerStores";
     import ScheduleSelector from "./ScheduleSelector.svelte";
     import type { Course } from "@jupiterp/jupiterp";
@@ -28,6 +29,51 @@ Copyright (C) 2024 Andrew Cupps
     let searchInput = '';
     let searchResults: Course[] = [];
     SearchResultsStore.subscribe((results) => { searchResults = results });
+    let deptSuggestions: string[] = [];
+    let highlightedSuggestionIndex = -1;
+    DeptSuggestionsStore.subscribe((suggestions) => {
+        deptSuggestions = suggestions;
+        if (suggestions.length === 0) {
+            highlightedSuggestionIndex = -1;
+        } else if (highlightedSuggestionIndex >= suggestions.length) {
+            highlightedSuggestionIndex = suggestions.length - 1;
+        }
+    });
+
+    function selectDepartment(dept: string) {
+        searchInput = dept;
+        highlightedSuggestionIndex = -1;
+        setSearchResults(dept);
+    }
+
+    function handleSearchKeydown(event: KeyboardEvent) {
+        if (deptSuggestions.length <= 1 || searchInput.length <= 1) {
+            return;
+        }
+
+        if (event.key === 'ArrowDown') {
+            event.preventDefault();
+            highlightedSuggestionIndex =
+                highlightedSuggestionIndex + 1 < deptSuggestions.length
+                    ? highlightedSuggestionIndex + 1
+                    : 0;
+        } else if (event.key === 'ArrowUp') {
+            event.preventDefault();
+            highlightedSuggestionIndex =
+                highlightedSuggestionIndex > 0
+                    ? highlightedSuggestionIndex - 1
+                    : deptSuggestions.length - 1;
+        } else if (event.key === 'Enter') {
+            if (highlightedSuggestionIndex >= 0 && highlightedSuggestionIndex < deptSuggestions.length) {
+                event.preventDefault();
+                selectDepartment(deptSuggestions[highlightedSuggestionIndex]);
+            }
+        }
+    }
+
+    $: if (searchInput.length <= 1 || deptSuggestions.length <= 1) {
+        highlightedSuggestionIndex = -1;
+    }
 
     // Boolean for toggling search menu on smaller screens
     export let courseSearchSelected: boolean = false;
@@ -89,18 +135,39 @@ Copyright (C) 2024 Andrew Cupps
 
     <ScheduleSelector />
 
-    <div class='flex flex-col w-full border-solid 
+    <div class='flex flex-col w-full border-solid relative
                             border-b-2 border-t-2 p-1 lg:px-0
                             border-divBorderLight dark:border-divBorderDark'>
         <input type='text' 
             bind:value={searchInput}
             on:input={() => {setSearchResults(searchInput)}}
+            on:keydown={handleSearchKeydown}
             placeholder='Search course codes, ex: "MATH140"'
             class="border-solid border-2 border-outlineLight 
                             dark:border-outlineDark rounded-lg
                             bg-transparent px-2 w-full text-xl
                             lg:text-base lg:placeholder:text-sm
                             placeholder:text-base">
+        {#if searchInput.length > 0 && deptSuggestions.length > 1}
+            <div class='absolute left-1 right-1 top-full mt-2 rounded-lg border
+                        border-outlineLight dark:border-outlineDark
+                        bg-bgLight dark:bg-bgDark shadow-lg z-[60] overflow-hidden'>
+                {#each deptSuggestions as deptOption, index}
+                    <button type='button'
+                        class={`w-full text-left px-3 py-1 text-base lg:text-sm transition-colors
+                                hover:bg-outlineLight hover:bg-opacity-20
+                                dark:hover:bg-outlineDark dark:hover:bg-opacity-30 
+                                ${highlightedSuggestionIndex === index ? 
+                                    `bg-outlineLight bg-opacity-20
+                                    dark:bg-outlineDark dark:bg-opacity-30` 
+                                    : ''}`}
+                        on:mouseenter={() => { highlightedSuggestionIndex = index; }}
+                        on:click={() => selectDepartment(deptOption)}>
+                        {deptOption}
+                    </button>
+                {/each}
+            </div>
+        {/if}
     </div>
     <div class='grow courses-list overflow-y-scroll overflow-x-none
                 px-1 lg:pr-1 lg:pl-0'>

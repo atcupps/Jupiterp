@@ -9,7 +9,7 @@
 
 import type { Course, Instructor } from "@jupiterp/jupiterp";
 import { CourseDataCache } from "./CourseDataCache";
-import { DeptCodesStore, SearchResultsStore } from "../../stores/CoursePlannerStores";
+import { DeptCodesStore, DeptSuggestionsStore, SearchResultsStore } from "../../stores/CoursePlannerStores";
 
 const cache = new CourseDataCache();
 
@@ -19,28 +19,25 @@ DeptCodesStore.subscribe((codes) => { deptList = codes });
 
 /**
  * Given an `input` (which should already be simplified to remove whitespace
- * and convert to uppercase), return a single department code that matches the
- * input if only one department matches the input, or `null` if either there
- * are no matching departments or multiple matching departments.
+ * and convert to uppercase), returns a list of department codes that match the
+ * input.
  * @param input 
  */
-function resolveInputToDepartment(input: string): string | null {
+function resolveInputToDepartment(input: string): string[] {
+    if (!deptList || input.length < 1) {
+        return [];
+    }
+
     // You may think that if the input length is 4 or longer, we should just
     // use that as the input to get from the cache. But consider that we need
     // to check that the input is a valid department code, which is an O(n)
     // operation anyway. So there's no point in adding additional logic for the
     // case where the input length is a full department code.
-    if (input.length >= 1) {
-        let deptInput = input.length > 4 ? 
-                            input.substring(0, 4) : input;
-        const possibleDepts: string[] = 
-            deptList.filter((dept) => dept.startsWith(deptInput));
-        if (possibleDepts.length == 1) {
-            return possibleDepts[0];
-        }
-    }
+    const deptInput = input.length > 4 ? input.substring(0, 4) : input;
+    const possibleDepts: string[] =
+        deptList.filter((dept) => dept.startsWith(deptInput));
 
-    return null;
+    return possibleDepts;
 }
 
 /**
@@ -55,14 +52,20 @@ export async function setSearchResults(input: string) {
 
     // If the search input matches a department code, get the courses for that
     // department and then filter by course number.
-    const dept = resolveInputToDepartment(simpleInput);
-    if (dept !== null) {
+    const matchingDepts = resolveInputToDepartment(simpleInput);
+    const shouldShowSuggestions =
+        simpleInput.length > 0 && matchingDepts.length > 1;
+    DeptSuggestionsStore.set(shouldShowSuggestions ? matchingDepts : []);
+
+    if (matchingDepts.length === 1) {
+        DeptSuggestionsStore.set([]);
         // Get from cache/API
-        const deptCourses: Course[] = await cache.getCoursesForDept(dept);
+        const deptCourses: Course[] = 
+            await cache.getCoursesForDept(matchingDepts[0]);
 
         // Ensure that the department for this search is still the most recent
         // search. If not, abort to avoid displaying outdated results.
-        if (cache.getMostRecentAccess() !== dept) {
+        if (cache.getMostRecentAccess() !== matchingDepts[0]) {
             return;
         }
 
@@ -87,6 +90,9 @@ export async function setSearchResults(input: string) {
 
     // Clear search results for now.
     SearchResultsStore.set([]);
+    if (!shouldShowSuggestions) {
+        DeptSuggestionsStore.set([]);
+    }
     
     // If the search input is just numbers, match courses with that number
     // if (simpleInput.length >= 2 && /^[0-9]+$/i.test(simpleInput)) {

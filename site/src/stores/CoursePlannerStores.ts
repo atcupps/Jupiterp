@@ -1,5 +1,6 @@
 import type { Course, Instructor } from "@jupiterp/jupiterp";
 import { writable, type Writable } from "svelte/store";
+import type { ScheduleSelection, StoredSchedule } from "../types";
 
 /** `Record<string, Instructor>` for getting instructor data from names
 /* Initially set to an empty record since the data used here is
@@ -27,3 +28,6 @@ export const DeptCodesStore: Writable<string[]> = writable([]);
 
 /** Search results */
 export const SearchResultsStore: Writable<Course[]> = writable([]);
+
+/** Potential department suggestions for partial searches */
+export const DeptSuggestionsStore: Writable<string[]> = writable([]);
