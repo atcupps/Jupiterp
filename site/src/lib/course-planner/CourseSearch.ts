@@ -68,7 +68,10 @@ export async function setSearchResults(input: string) {
         DeptSuggestionsStore.set([]);
         // Get from cache/API
         const deptCourses: Course[] = 
-            await cache.getCoursesForDept(matchingDepts[0]);
+            (await cache.getCoursesForDept(matchingDepts[0]))
+            .sort((a, b) => {
+                return a.courseCode.localeCompare(b.courseCode);
+            });
 
         // Ensure that the department for this search is still the most recent
         // search. If not, abort to avoid displaying outdated results.
