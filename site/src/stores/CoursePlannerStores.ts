@@ -1,4 +1,4 @@
-import type { Course, Instructor } from "@jupiterp/jupiterp";
+import type { Course, Department, Instructor } from "@jupiterp/jupiterp";
 import { writable, type Writable } from "svelte/store";
 import type { ScheduleSelection, StoredSchedule } from "../types";
 
@@ -23,8 +23,8 @@ export const CurrentScheduleStore: Writable<StoredSchedule> = writable({
 export const NonselectedScheduleStore: Writable<StoredSchedule[]> = 
                                                                 writable([]);
 
-/** List of department codes */
-export const DeptCodesStore: Writable<string[]> = writable([]);
+/** List of departments */
+export const DepartmentsStore: Writable<Department[]> = writable([]);
 
 /** Search results */
 export const SearchResultsStore: Writable<Course[]> = writable([]);

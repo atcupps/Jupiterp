@@ -7,7 +7,7 @@ Copyright (C) 2024 Andrew Cupps
 <script lang='ts'>
     import { fade } from "svelte/transition";
     import CourseListing from "./CourseListing.svelte";
-    import { setSearchResults } from "../../../lib/course-planner/CourseSearch";
+    import { deptCodeToName, pendingResults, setSearchResults } from "../../../lib/course-planner/CourseSearch";
     import { appendHoveredSection } from "../../../lib/course-planner/Schedule";
     import {
         HoveredSectionStore, 
@@ -39,6 +39,13 @@ Copyright (C) 2024 Andrew Cupps
             highlightedSuggestionIndex = suggestions.length - 1;
         }
     });
+
+    let isPendingResults = false;
+    $: if (searchInput.length > 0 && searchResults.length === 0) {
+        isPendingResults = pendingResults();
+    } else {
+        isPendingResults = false;
+    }
 
     function selectDepartment(dept: string) {
         searchInput = dept;
@@ -151,11 +158,11 @@ Copyright (C) 2024 Andrew Cupps
         {#if searchInput.length > 0 && deptSuggestions.length > 1}
             <div class='absolute left-1 right-1 top-full mt-2 rounded-lg border
                         border-outlineLight dark:border-outlineDark
-                        bg-bgLight dark:bg-bgDark shadow-lg z-[60] overflow-hidden'>
+                        bg-bgLight dark:bg-bgDark shadow-lg z-[60]'>
                 {#each deptSuggestions as deptOption, index}
                     <button type='button'
-                        class={`w-full text-left px-3 py-1 text-base lg:text-sm transition-colors
-                                hover:bg-outlineLight hover:bg-opacity-20
+                        class={`flex w-full text-left px-3 py-1 text-base lg:text-sm transition-colors
+                                hover:bg-outlineLight hover:bg-opacity-20 items-end
                                 dark:hover:bg-outlineDark dark:hover:bg-opacity-30 
                                 ${highlightedSuggestionIndex === index ? 
                                     `bg-outlineLight bg-opacity-20
@@ -163,10 +170,19 @@ Copyright (C) 2024 Andrew Cupps
                                     : ''}`}
                         on:mouseenter={() => { highlightedSuggestionIndex = index; }}
                         on:click={() => selectDepartment(deptOption)}>
-                        {deptOption}
+                        <span class='font-black min-w-[17%] shrink-0'>
+                            {deptOption}
+                        </span>
+                        <span class='text-xs inline-block italic grow truncate'>
+                            {deptCodeToName[deptOption]}
+                        </span>
                     </button>
                 {/each}
             </div>
+        {/if}
+
+        {#if isPendingResults}
+            Loading...
         {/if}
     </div>
     <div class='grow courses-list overflow-y-scroll overflow-x-none

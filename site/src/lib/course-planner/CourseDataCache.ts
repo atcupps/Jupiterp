@@ -174,6 +174,11 @@ export class CourseDataCache {
             delete this.pendingRequests[candidateKey];
         }
     }
+
+    public isPending(): boolean {
+        return this.mostRecentAccess !== null 
+                && this.mostRecentAccess in this.pendingRequests;
+    }
 }
 
 type CourseDataCacheEntry =

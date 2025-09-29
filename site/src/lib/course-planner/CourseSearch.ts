@@ -7,15 +7,22 @@
  * @fileoverview Functions relating to searching for courses in Jupiterp.
  */
 
-import type { Course, Instructor } from "@jupiterp/jupiterp";
+import type { Course, Department, Instructor } from "@jupiterp/jupiterp";
 import { CourseDataCache } from "./CourseDataCache";
-import { DeptCodesStore, DeptSuggestionsStore, SearchResultsStore } from "../../stores/CoursePlannerStores";
+import { DepartmentsStore, DeptSuggestionsStore, SearchResultsStore } from "../../stores/CoursePlannerStores";
 
 const cache = new CourseDataCache();
 
 // Load department list data
-let deptList: string[];
-DeptCodesStore.subscribe((codes) => { deptList = codes });
+let deptCodes: string[];
+export let deptCodeToName: Record<string, string> = {};
+DepartmentsStore.subscribe((depts) => {
+    deptCodes = depts.map(dept => dept.deptCode);
+    deptCodeToName = {};
+    depts.forEach(dept => {
+        deptCodeToName[dept.deptCode] = dept.name;
+    });
+});
 
 /**
  * Given an `input` (which should already be simplified to remove whitespace
@@ -24,7 +31,7 @@ DeptCodesStore.subscribe((codes) => { deptList = codes });
  * @param input 
  */
 function resolveInputToDepartment(input: string): string[] {
-    if (!deptList || input.length < 1) {
+    if (!deptCodes || input.length < 1) {
         return [];
     }
 
@@ -35,7 +42,7 @@ function resolveInputToDepartment(input: string): string[] {
     // case where the input length is a full department code.
     const deptInput = input.length > 4 ? input.substring(0, 4) : input;
     const possibleDepts: string[] =
-        deptList.filter((dept) => dept.startsWith(deptInput));
+        deptCodes.filter((dept) => dept.startsWith(deptInput));
 
     return possibleDepts;
 }
@@ -152,5 +159,14 @@ export function getProfsLookup(profs: Instructor[]): Record<string, Instructor> 
             names.add(name);
         }
     }
+    return result;
+}
+
+/**
+ * Returns true if the most recent request is still awaiting results.
+ */
+export function pendingResults(): boolean {
+    const result = cache.isPending();
+    console.log('Pending results: ' + result);
     return result;
 }

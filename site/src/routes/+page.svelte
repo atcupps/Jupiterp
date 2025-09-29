@@ -14,9 +14,7 @@ Copyright (C) 2024 Andrew Cupps
         ProfsLookupStore,
         CurrentScheduleStore,
         NonselectedScheduleStore,
-
-        DeptCodesStore
-
+        DepartmentsStore
     } from '../stores/CoursePlannerStores';
     import { client } from '$lib/client';
     import {
@@ -64,12 +62,12 @@ Copyright (C) 2024 Andrew Cupps
     }
 
     // Function to get list of department codes as an array of strings
-    // and set the DeptCodesStore.
+    // and set the DepartmentsStore.
     async function fetchDeptCodes() {
         const res = await client.deptList();
         if (res.ok() && res.data != null) {
-            const deptCodes = res.data;
-            DeptCodesStore.set(deptCodes);
+            const depts = res.data;
+            DepartmentsStore.set(depts);
         } else {
             console.error('Error fetching department codes:', res.errorBody);
         }
