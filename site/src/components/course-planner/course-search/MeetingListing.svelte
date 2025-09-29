@@ -34,14 +34,14 @@ Copyright (C) 2024 Andrew Cupps
 
         <!-- Location -->
          <span class:grow={!condensed} class:text-right={!condensed}>
-            {#if meeting.location.building.length !== 3}
+            {#if condensed}&nbsp;in {/if}
+            {#if meeting.location.building.length !== 3 || meeting.location.room == null}
                 {formatLocation(meeting.location)}
             {:else}
                 <a href={generateMapURL(meeting.location.building)}
                         class=
-                        'text-orange underline rounded-md
-                        hover:bg-hoverLight hover:dark:bg-hoverDark transition
-                        p-0.5'
+                        'text-orange underline rounded-md p-0.5
+                        hover:bg-hoverLight hover:dark:bg-hoverDark transition'
                         on:mouseenter={() => {
                             locationHover = true;
                             removeHoverSection();

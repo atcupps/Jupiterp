@@ -167,6 +167,5 @@ export function getProfsLookup(profs: Instructor[]): Record<string, Instructor> 
  */
 export function pendingResults(): boolean {
     const result = cache.isPending();
-    console.log('Pending results: ' + result);
     return result;
 }
