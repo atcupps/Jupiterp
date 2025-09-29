@@ -2,12 +2,12 @@
  * This file is part of Jupiterp. For terms of use, please see the file
  * called LICENSE at the top level of the Jupiterp source tree (online at
  * https://github.com/atcupps/Jupiterp/LICENSE).
- * Copyright (C) 2024 Andrew Cupps
+ * Copyright (C) 2025 Andrew Cupps
  * 
  * @fileoverview Types and interfaces used in Jupiterp
  */
 
-import type { ClassMeeting, Course, Section } from "@jupiterp/jupiterp"
+import type { ClassMeeting, Course, CourseBasic, Section } from "@jupiterp/jupiterp"
 
 /**
  * A section of a class selected by the user, along with metadata used for
@@ -18,7 +18,7 @@ interface ScheduleSelection {
     /**
      * The course this selection belongs to
      */
-    course: Course,
+    course: CourseBasic,
 
     /**
      * The section selected by the user
@@ -128,3 +128,84 @@ interface ClasstimeBound {
     earliestStart: number,
     latestEnd: number
 }
+
+/**
+ * Legacy version of course selections used in local storage.
+ * @deprecated Use `ScheduleSelection` instead.
+ */
+interface LegacyScheduleSelection {
+    course: LegacyCourse
+    section: LegacySection,
+    courseCode: string,
+    hover: boolean,
+    differences: string[],
+    credits: number,
+    colorNumber: number,
+}
+
+/**
+ * Legacy version of Course used in local storage.
+ * @deprecated Use `Course` from @jupiterp/jupiterp instead.
+ */
+interface LegacyCourse {
+    code: string,
+    name: string,
+    credits: CreditCount,
+    gen_eds: string[] | null,
+    conditions: string[] | null,
+    description: string,
+    sections: LegacySection[] | null
+}
+
+/**
+ * Legacy version of Section used in local storage.
+ * @deprecated Use `Section` from @jupiterp/jupiterp instead.
+ */
+interface LegacySection {
+    sec_code: string,
+    instructors: string[],
+    class_meetings: LegacyClassMeeting[]
+}
+
+/**
+ * Number of credits, either a fixed amount or a range.
+ * @deprecated Use `Course` from @jupiterp/jupiterp instead.
+ */
+type CreditCount =
+    { Amount: number } | { Range: number[] }
+
+/**
+ * Legacy version of ClassMeeting used in local storage.
+ * @deprecated Use `ClassMeeting` from @jupiterp/jupiterp instead.
+ */
+type LegacyClassMeeting =
+    | string
+    | { OnlineSync: LegacyClasstime }
+    | { InPerson: InPersonClass }
+
+/**
+ * Legacy version of InPersonClass used in local storage.
+ * @deprecated Use `ClassMeeting` from @jupiterp/jupiterp instead.
+ */
+interface InPersonClass {
+    classtime: LegacyClasstime | null,
+    location: string[] | null
+}
+
+/**
+ * Legacy version of Classtime used in local storage.
+ * @deprecated Use `Classtime` from @jupiterp/jupiterp instead.
+ */
+interface LegacyClasstime {
+    days: string,
+    start_time: TimeComponent[],
+    end_time: TimeComponent[]
+}
+
+/**
+ * A component of time, either a number (for hours and minutes) or a string
+ * (for "AM" and "PM").
+ * @deprecated Use `Classtime` from @jupiterp/jupiterp instead.
+ */
+type TimeComponent =
+    number | string;
