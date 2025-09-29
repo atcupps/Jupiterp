@@ -36,7 +36,9 @@ Copyright (C) 2024 Andrew Cupps
          <span class:grow={!condensed} class:text-right={!condensed}>
             {#if condensed}&nbsp;in {/if}
             {#if meeting.location.building.length !== 3 || meeting.location.room == null}
-                {formatLocation(meeting.location)}
+                <span class='pr-0.5'>
+                    {formatLocation(meeting.location)}
+                </span>
             {:else}
                 <a href={generateMapURL(meeting.location.building)}
                         class=

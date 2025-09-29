@@ -230,7 +230,7 @@ Copyright (C) 2024 Andrew Cupps
             <span class='font-black underline'>
                 GenEds:
             </span>
-            {courseInfoCourse.genEds.join(', ')}
+            {courseInfoCourse.genEds.map((g) => g.code).join(', ')}
         </div>
     {/if}
 
