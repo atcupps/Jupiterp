@@ -144,6 +144,15 @@ interface LegacyScheduleSelection {
 }
 
 /**
+ * Legacy version of StoredSchedule used in local storage.
+ * @deprecated Use `StoredSchedule` instead.
+ */
+interface LegacyStoredSchedule {
+    scheduleName: string,
+    selections: LegacyScheduleSelection[]
+}
+
+/**
  * Legacy version of Course used in local storage.
  * @deprecated Use `Course` from @jupiterp/jupiterp instead.
  */

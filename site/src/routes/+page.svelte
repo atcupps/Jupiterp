@@ -8,7 +8,7 @@ Copyright (C) 2024 Andrew Cupps
     import Schedule from '../components/course-planner/schedule/Schedule.svelte';
     import CourseSearch from '../components/course-planner/course-search/CourseSearch.svelte';
     import { onMount } from 'svelte';
-    import { retrieveCourses, updateStoredSchedules } from '../lib/course-planner/CourseLoad';
+    import { resolveSelections, resolveStoredSchedules } from '../lib/course-planner/CourseLoad';
     import { getProfsLookup } from '$lib/course-planner/CourseSearch';
     import {
         ProfsLookupStore,
@@ -23,9 +23,6 @@ Copyright (C) 2024 Andrew Cupps
         type InstructorsResponse
     } from '@jupiterp/jupiterp';
     import type { ScheduleSelection, StoredSchedule } from '../types';
-
-    // Load profs and course data from `+page.ts`
-    export let data;
 
     // Function to retreive professor data; called in `onMount`.
     async function fetchProfessorData() {
@@ -121,17 +118,18 @@ Copyright (C) 2024 Andrew Cupps
         // Retrieve data from client local storage
         try {
             if (typeof window !== 'undefined') {
+                // Get stored selections from local storage
                 const storedSelectionsOption = 
                                 localStorage.getItem('selectedSections');
                 let storedSelections: ScheduleSelection[];
                 if (storedSelectionsOption) {
-                    storedSelections = retrieveCourses(
-                        JSON.parse(storedSelectionsOption), data.departments
-                    );
+                    storedSelections = 
+                        resolveSelections(storedSelectionsOption);
                 } else {
                     storedSelections = [];
                 }
 
+                // Get stored current schedule name from local storage
                 const storedScheduleNameOption = 
                                 localStorage.getItem('scheduleName');
                 let storedScheduleName: string;
@@ -141,18 +139,22 @@ Copyright (C) 2024 Andrew Cupps
                     storedScheduleName = "Schedule 1";
                 }
 
+                // Get stored non-selected schedules from local storage
                 const storedNonselectedSchedulesOption = 
                                 localStorage.getItem('nonselectedSchedules');
                 let storedNonselectedSchedules: StoredSchedule[];
                 if (storedNonselectedSchedulesOption) {
-                    storedNonselectedSchedules = updateStoredSchedules(
-                        JSON.parse(storedNonselectedSchedulesOption),
-                        data.departments
-                    );
+                    storedNonselectedSchedules = 
+                        resolveStoredSchedules(
+                            storedNonselectedSchedulesOption);
                 } else {
                     storedNonselectedSchedules = [];
                 }
 
+                // TODO: Find differences between stored selections and
+                // most up-to-date course data, and update accordingly.
+                
+                // Set the stores
                 CurrentScheduleStore.set({
                     scheduleName: storedScheduleName,
                     selections: storedSelections
