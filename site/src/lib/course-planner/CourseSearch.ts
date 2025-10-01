@@ -7,9 +7,10 @@
  * @fileoverview Functions relating to searching for courses in Jupiterp.
  */
 
-import type { Course, Department, Instructor } from "@jupiterp/jupiterp";
+import type { Course, CoursesConfig, Department, Instructor } from "@jupiterp/jupiterp";
 import { CourseDataCache } from "./CourseDataCache";
 import { DepartmentsStore, DeptSuggestionsStore, SearchResultsStore } from "../../stores/CoursePlannerStores";
+import { client } from "$lib/client";
 
 const cache = new CourseDataCache();
 
@@ -68,7 +69,10 @@ export async function setSearchResults(input: string) {
         DeptSuggestionsStore.set([]);
         // Get from cache/API
         const deptCourses: Course[] = 
-            (await cache.getCoursesForDept(matchingDepts[0]))
+            (await cache.getCoursesForDept({
+                type: "deptCode",
+                value: matchingDepts[0]
+            }))
             .sort((a, b) => {
                 return a.courseCode.localeCompare(b.courseCode);
             });
@@ -98,46 +102,30 @@ export async function setSearchResults(input: string) {
     // This could be because the input is just numbers, or because it is
     // not a valid department code.
 
-    // Clear search results for now.
-    SearchResultsStore.set([]);
-    if (!shouldShowSuggestions) {
-        DeptSuggestionsStore.set([]);
+    // If the search is 3 numbers and optionally a letter,
+    // match courses with the number (+ letter).
+    if (simpleInput.length >= 3 && /^[0-9]{3}[A-Z]?$/i.test(simpleInput)) {
+        const numberInput = simpleInput.substring(0, 3);
+        const courses: Course[] =
+            (await cache.getCoursesForDept({
+                type: "courseNumber",
+                value: numberInput
+            }))
+            .filter((course) => {
+                return course.courseCode
+                        .substring(4)
+                        .toUpperCase()
+                        .startsWith(simpleInput);
+            });
+
+        SearchResultsStore.set(courses);
+        return;
     }
-    
-    // If the search input is just numbers, match courses with that number
-    // if (simpleInput.length >= 2 && /^[0-9]+$/i.test(simpleInput)) {
 
-    //     // get all the courses from every department 
-    //     const allDeptCourses: Record<string, Course> = {};
-    //     for (const dept of deptList) {
-    //         const deptCourses = courseLookup[dept];
-    //         if (deptCourses !== undefined) {
-    //             for (const courseCode in deptCourses) {
-    //                 const uniqueCourseCode = `${dept}-${courseCode}`;
-    //                 allDeptCourses[uniqueCourseCode] = deptCourses[courseCode];
-    //             }
-    //         }
-    //     }
-
-    //     for (const courseCode in allDeptCourses) {
-    //         let shouldBeInResult = true;
-    //         if (simpleInput.length > courseCode.length) {
-    //             shouldBeInResult = false;
-    //         } else {
-    //             const courseNumber = courseCode.substring(5);
-    //             for (let i = 0; i < simpleInput.length; i++) { 
-    //                 if (simpleInput[i] != courseNumber[i]) {
-    //                     shouldBeInResult = false;
-    //                 }
-    //             }
-    //         }
-    //         if (shouldBeInResult) {
-    //             result.push(allDeptCourses[courseCode]);
-    //         }
-    //     }
-    // }
-    
-    // return result;
+    // If we reach here, the input is not a valid department code or a course
+    // number. Clear results.
+    SearchResultsStore.set([]);
+    return;
 }
 
 /**

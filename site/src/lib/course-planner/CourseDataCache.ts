@@ -7,7 +7,7 @@
  * @fileoverview A cache to store course data fetched from the API.
  */
 
-import type { Course } from "@jupiterp/jupiterp";
+import type { Course, CoursesConfig } from "@jupiterp/jupiterp";
 import { client } from "$lib/client";
 
 export class CourseDataCache {
@@ -71,9 +71,9 @@ export class CourseDataCache {
      * @returns A `Promise` which resolves to the list of `Course`s for
      *          the department code.
      */
-    public async getCoursesForDept(deptCode: string): Promise<Course[]> {
-        this.mostRecentAccess = deptCode;
-        const cacheEntry = this.cache[deptCode];
+    public async getCoursesForDept(input: RequestInput): Promise<Course[]> {
+        this.mostRecentAccess = input.value;
+        const cacheEntry = this.cache[input.value];
         if (cacheEntry) {
             if (cacheEntry.status === "data") {
                 this.lruCounter += 1;
@@ -81,10 +81,10 @@ export class CourseDataCache {
                 return cacheEntry.data;
             }
 
-            const pending = this.pendingRequests[deptCode];
+            const pending = this.pendingRequests[input.value];
             if (cacheEntry.status === "request sent" && pending) {
                 const data = await pending;
-                const updatedEntry = this.cache[deptCode];
+                const updatedEntry = this.cache[input.value];
                 if (updatedEntry && updatedEntry.status === "data") {
                     this.lruCounter += 1;
                     updatedEntry.lastUsed = this.lruCounter;
@@ -95,46 +95,52 @@ export class CourseDataCache {
         }
 
         const hadEntry = Boolean(cacheEntry);
-        this.cache[deptCode] = { status: "request sent" };
-        this.pendingRequests[deptCode] = this.requestCoursesForDept(deptCode, !hadEntry);
+        this.cache[input.value] = { status: "request sent" };
+        const requestConfig: CoursesConfig = 
+            input.type === "deptCode" ?
+            { prefix: input.value, limit: 500 } :
+            { number: input.value, limit: 500 };
+        this.pendingRequests[input.value] = 
+            this.requestCoursesForDept(input.value, requestConfig, !hadEntry);
         if (!hadEntry) {
             this.size += 1;
         }
 
         try {
-            return await this.pendingRequests[deptCode];
+            return await this.pendingRequests[input.value];
         } finally {
-            delete this.pendingRequests[deptCode];
+            delete this.pendingRequests[input.value];
         }
     }
 
-    private async requestCoursesForDept(deptCode: string, isNewEntry: boolean): Promise<Course[]> {
+    private async requestCoursesForDept(input: string, 
+                    cfg: CoursesConfig, isNewEntry: boolean): Promise<Course[]> {
         try {
-            const response = await client.coursesWithSections({ prefix: deptCode, limit: 500 });
+            const response = await client.coursesWithSections(cfg);
 
             if (!response.ok()) {
                 throw new Error(
-                    `API request to get courses for ${deptCode} failed: ${response.statusCode} ${response.statusMessage}`
+                    `API request to get courses for ${input} failed: ${response.statusCode} ${response.statusMessage}`
                 );
             }
 
             const courses = response.data;
             if (courses == null) {
-                throw new Error(`Null course data returned for ${deptCode}`);
+                throw new Error(`Null course data returned for ${input}`);
             }
 
-            const existingEntry = this.cache[deptCode];
+            const existingEntry = this.cache[input];
             if (!existingEntry || existingEntry.status !== "request sent") {
                 return courses;
             }
 
             this.lruCounter += 1;
-            this.cache[deptCode] = { status: "data", data: courses, lastUsed: this.lruCounter };
-            this.evictLeastRecentlyUsed(deptCode);
+            this.cache[input] = { status: "data", data: courses, lastUsed: this.lruCounter };
+            this.evictLeastRecentlyUsed(input);
             return courses;
         } catch (error) {
-            if (deptCode in this.cache) {
-                delete this.cache[deptCode];
+            if (input in this.cache) {
+                delete this.cache[input];
                 if (isNewEntry) {
                     this.size = Math.max(0, this.size - 1);
                 }
@@ -184,3 +190,8 @@ export class CourseDataCache {
 type CourseDataCacheEntry =
     | { status: "request sent" }
     | { status: "data"; data: Course[]; lastUsed: number };
+
+export interface RequestInput {
+    type: "deptCode" | "courseNumber";
+    value: string;
+}
