@@ -9,7 +9,7 @@
  */
 
 import type { LegacyScheduleSelection, LegacyStoredSchedule, ScheduleSelection, StoredSchedule } from "../../types";
-import { modernizeSelections } from "./Modernization";
+import { assignColorNumbers, modernizeSelections } from "./Modernization";
 
 /**
  * Resolve a stored schedule selection array from a string in local storage,
@@ -29,11 +29,12 @@ export function resolveSelections(selectionsRaw: string): ScheduleSelection[] {
 
     if ('credits' in parsed[0]) {
         // If 'credits' is a property, this is legacy
-        return modernizeSelections(
-            parsed as LegacyScheduleSelection[]);
+        return assignColorNumbers(
+                modernizeSelections(
+                    parsed as LegacyScheduleSelection[]));
     }
 
-    return parsed as ScheduleSelection[];
+    return assignColorNumbers(parsed as ScheduleSelection[]);
 }
 
 export function resolveStoredSchedules(storedRaw: string): StoredSchedule[] {
@@ -56,7 +57,12 @@ export function resolveStoredSchedules(storedRaw: string): StoredSchedule[] {
         });
     }
 
-    return parsed as StoredSchedule[];
+    return (parsed as StoredSchedule[]).map((stored) => {
+        return {
+            scheduleName: stored.scheduleName,
+            selections: assignColorNumbers(stored.selections)
+        };
+    });
 }
 
 /**

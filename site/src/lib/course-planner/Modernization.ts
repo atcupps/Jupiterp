@@ -132,7 +132,7 @@ function modernizeSelection(selection: LegacyScheduleSelection): ScheduleSelecti
     };
 }
 
-function assignColorNumbers(
+export function assignColorNumbers(
             selections: ScheduleSelection[]): ScheduleSelection[] {
     for (let i = 0; i < selections.length; i++) {
         selections[i].colorNumber = i;
@@ -142,5 +142,5 @@ function assignColorNumbers(
 
 export function modernizeSelections(
                 selections: LegacyScheduleSelection[]): ScheduleSelection[] {
-    return assignColorNumbers(selections.map(modernizeSelection));
+    return selections.map(modernizeSelection);
 }
