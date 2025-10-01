@@ -54,13 +54,27 @@ export function formatCredits(minCredits: number, maxCredits: number | null): st
 }
 
 /**
+ * Format a building name, converting 'OnlineSync' to 'Online'
+ * @param building A building name to format
+ * @returns A formatted building name
+ */
+function formatPossibleOnlineSync(building: string): string {
+    if (building === 'OnlineSync') {
+        return 'Online';
+    }
+    
+    return building;
+}
+
+/**
  * Format a `Location` as a `string`
  * @param location A `Location` to format
  * @returns A `string` representation of the `Location`
  */
 export function formatLocation(location: Location): string {
     return location.room ? 
-        location.building + ' ' + location.room : location.building;
+        formatPossibleOnlineSync(location.building) + ' ' + location.room 
+        : formatPossibleOnlineSync(location.building);
 }
 
 /**

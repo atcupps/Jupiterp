@@ -5,7 +5,7 @@ https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2024 Andrew Cupps
 -->
 <script lang='ts'>
-    import type { ClassMeeting, Location, Classtime } from "@jupiterp/jupiterp";
+    import type { ClassMeeting } from "@jupiterp/jupiterp";
     import { formatClassDayTime, formatLocation } from "../../../lib/course-planner/Formatting";
 
     export let meeting: ClassMeeting;

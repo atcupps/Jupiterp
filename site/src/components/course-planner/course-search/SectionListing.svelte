@@ -12,12 +12,12 @@ Copyright (C) 2024 Andrew Cupps
         CurrentScheduleStore
     } from "../../../stores/CoursePlannerStores";
     import SeatData from "./SeatData.svelte";
-    import type { Section, Course } from "@jupiterp/jupiterp";
+    import type { Section, CourseBasic } from "@jupiterp/jupiterp";
     import type { ScheduleSelection } from "../../../types";
 
     export let courseCode: string;
     export let section: Section;
-    export let course: Course;
+    export let course: CourseBasic;
 
     let hoveredSection: ScheduleSelection | null;
     HoveredSectionStore.subscribe((store) => { hoveredSection = store });

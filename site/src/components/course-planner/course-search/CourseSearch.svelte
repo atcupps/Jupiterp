@@ -89,7 +89,7 @@ Copyright (C) 2024 Andrew Cupps
         if (hoveredSection) {
             let index = searchResults.findIndex(course => {
                 return hoveredSection && 
-                            course.courseCode === hoveredSection.course.courseCode;
+                            course.courseCode === hoveredSection.section.courseCode;
             });
             if (index === -1) {
                 HoveredSectionStore.set(null);

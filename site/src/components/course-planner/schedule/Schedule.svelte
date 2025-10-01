@@ -20,7 +20,7 @@ Copyright (C) 2024 Andrew Cupps
     import SeatData from '../course-search/SeatData.svelte';
     import CourseCondition from '../course-search/CourseCondition.svelte';
     import type { Schedule, ScheduleSelection } from '../../../types';
-    import type { Course, Section } from '@jupiterp/jupiterp';
+    import type { CourseBasic, Section } from '@jupiterp/jupiterp';
 
     let hoveredSection: ScheduleSelection | null = null;
     let selections: ScheduleSelection[] = [];
@@ -76,7 +76,7 @@ Copyright (C) 2024 Andrew Cupps
 
     let showCourseInfo: string | null = null;
     let showSectionInfo: string | null = null;
-    let courseInfoCourse: Course | null = null;
+    let courseInfoCourse: CourseBasic | null = null;
     let courseInfoSection: Section | null = null;
     $: if (showCourseInfo !== null) {
         let index = selections.findIndex(selection => {
