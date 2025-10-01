@@ -37,12 +37,20 @@ interface ScheduleSelection {
      * icon in the UI if the section has changed since the user added it to
      * their schedule.
      */
-    differences: string[],
+    differences: SelectionDifferences,
 
     /**
      * The number used to color-code this selection in the UI.
      */
     colorNumber: number,
+}
+
+interface SelectionDifferences {
+    instructors: boolean,
+    numMeetings: boolean,
+    meetingType: boolean,
+    meetingTime: boolean,
+    meetingLocation: boolean
 }
 
 /**
@@ -109,7 +117,7 @@ interface ClassMeetingExtended {
      * icon in the UI if the section has changed since the user added it to
      * their schedule.
      */
-    differences: string[]
+    differences: SelectionDifferences
 }
 
 /**

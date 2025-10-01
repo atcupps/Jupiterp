@@ -15,7 +15,11 @@ Copyright (C) 2024 Andrew Cupps
     import { afterUpdate } from 'svelte';
     import Tooltip from './Tooltip.svelte';
     import { CurrentScheduleStore } from '../../../stores/CoursePlannerStores';
-    import type { ClassMeetingExtended, ScheduleSelection } from '../../../types';
+    import type {
+        ClassMeetingExtended,
+        ScheduleSelection,
+        SelectionDifferences
+    } from '../../../types';
 
     export let meeting: ClassMeetingExtended;
     export let earliestClassStart: number = 0;
@@ -32,16 +36,12 @@ Copyright (C) 2024 Andrew Cupps
         scheduleName = stored.scheduleName;
     });
 
-    const differences: string[] = meeting.differences;
-    const instructorsChange: boolean = differences.includes('Instructors');
-    const numClassMeetingsChange: boolean = 
-                            differences.includes('Number of class meetings');
-    const meetingsTypeChange: boolean = 
-                                    differences.includes('Type of meeting');
-    const meetingTimeChange: boolean = numClassMeetingsChange ||
-                                         differences.includes('Meeting time');
-    const meetingLocChange: boolean = 
-                                    differences.includes('Meeting location');
+    const differences: SelectionDifferences = meeting.differences;
+    const instructorsChange = differences.instructors;
+    const numClassMeetingsChange = differences.numMeetings;
+    const meetingsTypeChange = differences.meetingType;
+    const meetingTimeChange = differences.meetingTime;
+    const meetingLocChange = differences.meetingLocation;
 
     let formattedInstructors: string = formatInstructors(meeting.instructors);
     let formattedTime: string;

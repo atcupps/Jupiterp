@@ -8,7 +8,11 @@ Copyright (C) 2024 Andrew Cupps
     import Schedule from '../components/course-planner/schedule/Schedule.svelte';
     import CourseSearch from '../components/course-planner/course-search/CourseSearch.svelte';
     import { onMount } from 'svelte';
-    import { resolveSelections, resolveStoredSchedules } from '../lib/course-planner/CourseLoad';
+    import {
+        ensureUpToDateAndSetStores,
+        resolveSelections,
+        resolveStoredSchedules
+    } from '../lib/course-planner/CourseLoad';
     import { getProfsLookup } from '$lib/course-planner/CourseSearch';
     import {
         ProfsLookupStore,
@@ -22,7 +26,7 @@ Copyright (C) 2024 Andrew Cupps
         type InstructorsConfig, 
         type InstructorsResponse
     } from '@jupiterp/jupiterp';
-    import type { ScheduleSelection, StoredSchedule } from '../types';
+    import type { ScheduleSelection, StoredSchedule } from '../../types';
 
     // Function to retreive professor data; called in `onMount`.
     async function fetchProfessorData() {
@@ -139,6 +143,11 @@ Copyright (C) 2024 Andrew Cupps
                     storedScheduleName = "Schedule 1";
                 }
 
+                const currentSchedule: StoredSchedule = {
+                    scheduleName: storedScheduleName,
+                    selections: storedSelections
+                };
+
                 // Get stored non-selected schedules from local storage
                 const storedNonselectedSchedulesOption = 
                                 localStorage.getItem('nonselectedSchedules');
@@ -151,16 +160,9 @@ Copyright (C) 2024 Andrew Cupps
                     storedNonselectedSchedules = [];
                 }
 
-                // TODO: Find differences between stored selections and
+                // Find differences between stored selections and
                 // most up-to-date course data, and update accordingly.
-                
-                // Set the stores
-                CurrentScheduleStore.set({
-                    scheduleName: storedScheduleName,
-                    selections: storedSelections
-                });
-
-                NonselectedScheduleStore.set(storedNonselectedSchedules);
+                ensureUpToDateAndSetStores(currentSchedule, storedNonselectedSchedules);
 
                 hasReadLocalStorage = true;
             }
