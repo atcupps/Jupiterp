@@ -75,7 +75,7 @@ export function resolveStoredSchedules(storedRaw: string): StoredSchedule[] {
 
 function diffAndUpdate(old: ScheduleSelection,
                         upToDateCourse: Course): ScheduleSelection | null {
-    let differences: SelectionDifferences = {
+    const differences: SelectionDifferences = {
         instructors: false,
         numMeetings: false,
         meetingType: false,

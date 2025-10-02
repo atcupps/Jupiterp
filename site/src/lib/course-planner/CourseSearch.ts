@@ -7,10 +7,9 @@
  * @fileoverview Functions relating to searching for courses in Jupiterp.
  */
 
-import type { Course, CoursesConfig, Department, Instructor } from "@jupiterp/jupiterp";
+import type { Course, Instructor } from "@jupiterp/jupiterp";
 import { CourseDataCache } from "./CourseDataCache";
 import { DepartmentsStore, DeptSuggestionsStore, SearchResultsStore } from "../../stores/CoursePlannerStores";
-import { client } from "$lib/client";
 
 const cache = new CourseDataCache();
 

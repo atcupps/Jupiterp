@@ -7,7 +7,7 @@
  * @fileoverview Types and interfaces used in Jupiterp
  */
 
-import type { ClassMeeting, Course, CourseBasic, Section } from "@jupiterp/jupiterp"
+import type { ClassMeeting, CourseBasic, Section } from "@jupiterp/jupiterp"
 
 /**
  * A section of a class selected by the user, along with metadata used for

@@ -10,7 +10,7 @@ Copyright (C) 2024 Andrew Cupps
     import { slide } from "svelte/transition";
     import CourseCondition from "./CourseCondition.svelte";
     import { AngleRightOutline } from "flowbite-svelte-icons";
-    import type { ClassMeeting, Course, Section } from "@jupiterp/jupiterp";
+    import type { Course, Section } from "@jupiterp/jupiterp";
 
     export let course: Course;
 
