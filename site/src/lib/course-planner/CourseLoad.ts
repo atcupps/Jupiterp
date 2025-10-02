@@ -88,6 +88,12 @@ function diffAndUpdate(old: ScheduleSelection,
         return old;
     }
 
+    // Test for pseudo section used for courses with no section
+    if (old.section.sectionCode === 'N/A'
+            && upToDateCourse.sections.length === 0) {
+        return old;
+    }
+
     const upToDateSection = upToDateCourse.sections.find((section) => {
         return section.sectionCode === old.section.sectionCode;
     });

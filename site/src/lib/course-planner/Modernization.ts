@@ -10,6 +10,7 @@
 
 import { GenEd, type ClassMeeting, type Classtime, type CourseBasic, type Location, type Section } from "@jupiterp/jupiterp";
 import type { CreditCount, LegacyClassMeeting, LegacyCourse, LegacyScheduleSelection, LegacySection, ScheduleSelection, TimeComponent } from "../../types";
+import { noDifferences } from "./Schedule";
 
 function extractMinCredits(legacy: CreditCount): number {
     if ('Amount' in legacy) {
@@ -127,7 +128,7 @@ function modernizeSelection(selection: LegacyScheduleSelection): ScheduleSelecti
         course: modernizeCourse(selection.course),
         section: modernizeSection(selection.courseCode, selection.section),
         hover: false,
-        differences: [], // set these later
+        differences: noDifferences(), // set these later
         colorNumber: 0,  // set later
     };
 }

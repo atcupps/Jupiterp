@@ -38,7 +38,6 @@ Copyright (C) 2024 Andrew Cupps
 
     const differences: SelectionDifferences = meeting.differences;
     const instructorsChange = differences.instructors;
-    const numClassMeetingsChange = differences.numMeetings;
     const meetingsTypeChange = differences.meetingType;
     const meetingTimeChange = differences.meetingTime;
     const meetingLocChange = differences.meetingLocation;
@@ -79,6 +78,9 @@ Copyright (C) 2024 Andrew Cupps
                     break;
                 case 'Unspecified':
                     formattedTime = 'UNSPECIFIED TIME';
+                    break;
+                case 'No Sections':
+                    formattedTime = 'NO SECTIONS';
                     break;
             }
             secCode = meeting.sectionCode;

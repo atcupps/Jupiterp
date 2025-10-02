@@ -10,7 +10,7 @@
  */
 
 import type { ClassMeeting, Classtime } from "@jupiterp/jupiterp";
-import type { ClassMeetingExtended, ClasstimeBound, Schedule, ScheduleSelection } from "../../types";
+import type { ClassMeetingExtended, ClasstimeBound, Schedule, ScheduleSelection, SelectionDifferences } from "../../types";
 
 enum Day {
     Monday = 'monday',
@@ -349,5 +349,18 @@ export function appendHoveredSection(selections: ScheduleSelection[],
         return [...selections, hoveredSection];
     } else {
         return selections;
+    }
+}
+
+/**
+ * @returns A `SelectionDifferences` object with all fields set to `false`.
+ */
+export function noDifferences(): SelectionDifferences {
+    return {
+        instructors: false,
+        numMeetings: false,
+        meetingType: false,
+        meetingTime: false,
+        meetingLocation: false
     }
 }

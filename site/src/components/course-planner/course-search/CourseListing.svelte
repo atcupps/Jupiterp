@@ -10,7 +10,7 @@ Copyright (C) 2024 Andrew Cupps
     import { slide } from "svelte/transition";
     import CourseCondition from "./CourseCondition.svelte";
     import { AngleRightOutline } from "flowbite-svelte-icons";
-    import type { Course, Section } from "@jupiterp/jupiterp";
+    import type { ClassMeeting, Course, Section } from "@jupiterp/jupiterp";
 
     export let course: Course;
 
@@ -19,7 +19,7 @@ Copyright (C) 2024 Andrew Cupps
             courseCode: course.courseCode,
             sectionCode: 'N/A',
             instructors: ['Testudo Terrapin 🐢'],
-            meetings: [],
+            meetings: ["No Sections"],
             openSeats: 0,
             totalSeats: 0,
             waitlist: 0,
@@ -105,7 +105,7 @@ Copyright (C) 2024 Andrew Cupps
     {/if}
 
     <!-- Sections -->
-    {#if course.sections != null}
+    {#if course.sections != null && course.sections.length > 0}
         {#each course.sections as section}
             <SectionListing courseCode={course.courseCode}
                 section={section}

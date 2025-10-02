@@ -14,6 +14,7 @@ Copyright (C) 2024 Andrew Cupps
     import SeatData from "./SeatData.svelte";
     import type { Section, CourseBasic } from "@jupiterp/jupiterp";
     import type { ScheduleSelection } from "../../../types";
+    import { noDifferences } from "$lib/course-planner/Schedule";
 
     export let courseCode: string;
     export let section: Section;
@@ -33,7 +34,7 @@ Copyright (C) 2024 Andrew Cupps
         course,
         section,
         hover: false,
-        differences: [],
+        differences: noDifferences(),
         colorNumber: -1,
     }
     let sectionAdded: boolean;
@@ -45,7 +46,7 @@ Copyright (C) 2024 Andrew Cupps
         course,
         section,
         hover: true,
-        differences: [],
+        differences: noDifferences(),
         colorNumber: -1,
     }
 
