@@ -7,16 +7,17 @@ Copyright (C) 2024 Andrew Cupps
 <script lang='ts'>
     import { fade } from "svelte/transition";
     import CourseListing from "./CourseListing.svelte";
-    import { 
-        getCourseLookup, 
-        searchCourses 
-    } from "../../../lib/course-planner/CourseSearch";
+    import { deptCodeToName, pendingResults, setSearchResults } from "../../../lib/course-planner/CourseSearch";
     import { appendHoveredSection } from "../../../lib/course-planner/Schedule";
-    import { 
+    import {
         HoveredSectionStore, 
-        CurrentScheduleStore 
+        CurrentScheduleStore,
+        SearchResultsStore,
+        DeptSuggestionsStore
     } from "../../../stores/CoursePlannerStores";
     import ScheduleSelector from "./ScheduleSelector.svelte";
+    import type { Course } from "@jupiterp/jupiterp";
+    import type { ScheduleSelection } from "../../../types";
 
     let hoveredSection: ScheduleSelection | null;
     HoveredSectionStore.subscribe((hovered) => { hoveredSection = hovered });
@@ -24,24 +25,61 @@ Copyright (C) 2024 Andrew Cupps
     let selections: ScheduleSelection[] = [];
     CurrentScheduleStore.subscribe((stored) => { selections = stored.selections });
 
-    // Load profs and depts data
-    export let data;
-    let depts: Department[] = data.departments;
-    let deptList = depts.map((d) => d.name);
-
-    // Create course lookup table
-    const courseLookup = getCourseLookup(depts);
-
     // Variable and function for handling course search input
     let searchInput = '';
     let searchResults: Course[] = [];
-    function handleInput() {
-        // Sorting is done to ensure courses are displayed in
-        // alphabetical order
-        searchResults = searchCourses(searchInput, courseLookup, deptList)
-                            .sort((a, b) => {
-                                return a.code.localeCompare(b.code);
-                            });
+    SearchResultsStore.subscribe((results) => { searchResults = results });
+    let deptSuggestions: string[] = [];
+    let highlightedSuggestionIndex = -1;
+    DeptSuggestionsStore.subscribe((suggestions) => {
+        deptSuggestions = suggestions;
+        if (suggestions.length === 0) {
+            highlightedSuggestionIndex = -1;
+        } else if (highlightedSuggestionIndex >= suggestions.length) {
+            highlightedSuggestionIndex = suggestions.length - 1;
+        }
+    });
+
+    let isPendingResults = false;
+    $: if (searchInput.length > 0 && searchResults.length === 0) {
+        isPendingResults = pendingResults();
+    } else {
+        isPendingResults = false;
+    }
+
+    function selectDepartment(dept: string) {
+        searchInput = dept;
+        highlightedSuggestionIndex = -1;
+        setSearchResults(dept);
+    }
+
+    function handleSearchKeydown(event: KeyboardEvent) {
+        if (deptSuggestions.length <= 1 || searchInput.length <= 1) {
+            return;
+        }
+
+        if (event.key === 'ArrowDown') {
+            event.preventDefault();
+            highlightedSuggestionIndex =
+                highlightedSuggestionIndex + 1 < deptSuggestions.length
+                    ? highlightedSuggestionIndex + 1
+                    : 0;
+        } else if (event.key === 'ArrowUp') {
+            event.preventDefault();
+            highlightedSuggestionIndex =
+                highlightedSuggestionIndex > 0
+                    ? highlightedSuggestionIndex - 1
+                    : deptSuggestions.length - 1;
+        } else if (event.key === 'Enter') {
+            if (highlightedSuggestionIndex >= 0 && highlightedSuggestionIndex < deptSuggestions.length) {
+                event.preventDefault();
+                selectDepartment(deptSuggestions[highlightedSuggestionIndex]);
+            }
+        }
+    }
+
+    $: if (searchInput.length <= 1 || deptSuggestions.length <= 1) {
+        highlightedSuggestionIndex = -1;
     }
 
     // Boolean for toggling search menu on smaller screens
@@ -51,7 +89,7 @@ Copyright (C) 2024 Andrew Cupps
         if (hoveredSection) {
             let index = searchResults.findIndex(course => {
                 return hoveredSection && 
-                            course.code === hoveredSection.courseCode;
+                            course.courseCode === hoveredSection.section.courseCode;
             });
             if (index === -1) {
                 HoveredSectionStore.set(null);
@@ -65,7 +103,7 @@ Copyright (C) 2024 Andrew Cupps
         let selectionsWithHovered = 
                 appendHoveredSection(selections, hoveredSection);
         selectionsWithHovered.forEach((selection) => {
-            totalCredits += selection.credits;
+            totalCredits += selection.course.minCredits;
         })
     }
 </script>
@@ -104,22 +142,58 @@ Copyright (C) 2024 Andrew Cupps
 
     <ScheduleSelector />
 
-    <div class='flex flex-col w-full border-solid 
+    <div class='flex flex-col w-full border-solid relative
                             border-b-2 border-t-2 p-1 lg:px-0
                             border-divBorderLight dark:border-divBorderDark'>
-        <input type='text' bind:value={searchInput} on:input={handleInput}
+        <input type='text' 
+            bind:value={searchInput}
+            on:input={() => {setSearchResults(searchInput)}}
+            on:keydown={handleSearchKeydown}
             placeholder='Search course codes, ex: "MATH140"'
             class="border-solid border-2 border-outlineLight 
                             dark:border-outlineDark rounded-lg
                             bg-transparent px-2 w-full text-xl
                             lg:text-base lg:placeholder:text-sm
                             placeholder:text-base">
+        {#if searchInput.length > 0 && deptSuggestions.length > 1}
+            <div class='absolute left-1 right-1 top-full mt-2 rounded-lg border
+                        border-outlineLight dark:border-outlineDark
+                        bg-bgLight dark:bg-bgDark shadow-lg z-[60]'>
+                {#each deptSuggestions as deptOption, index}
+                    <button type='button'
+                        class={`flex w-full text-left px-3 py-1 text-base lg:text-sm transition-colors
+                                hover:bg-outlineLight hover:bg-opacity-20 items-end
+                                dark:hover:bg-outlineDark dark:hover:bg-opacity-30 
+                                ${highlightedSuggestionIndex === index ? 
+                                    `bg-outlineLight bg-opacity-20
+                                    dark:bg-outlineDark dark:bg-opacity-30` 
+                                    : ''}`}
+                        on:mouseenter={() => { highlightedSuggestionIndex = index; }}
+                        on:click={() => selectDepartment(deptOption)}>
+                        <span class='font-black min-w-[17%] shrink-0'>
+                            {deptOption}
+                        </span>
+                        <span class='text-xs inline-block italic grow truncate'>
+                            {deptCodeToName[deptOption]}
+                        </span>
+                    </button>
+                {/each}
+            </div>
+        {/if}
     </div>
     <div class='grow courses-list overflow-y-scroll overflow-x-none
                 px-1 lg:pr-1 lg:pl-0'>
-        {#each searchResults as courseMatch (courseMatch.code)}
+        {#each searchResults as courseMatch (courseMatch.courseCode)}
             <CourseListing course={courseMatch} />
         {/each}
+
+        {#if isPendingResults}
+            <div class='flex justify-center py-4' aria-live='polite'>
+                <span class='h-8 w-8 animate-spin text-center'>
+                    Loading...
+                </span>
+            </div>
+        {/if}
     </div>
 </div>
 

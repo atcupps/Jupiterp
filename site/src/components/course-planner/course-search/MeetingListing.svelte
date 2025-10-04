@@ -5,6 +5,7 @@ https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2024 Andrew Cupps
 -->
 <script lang='ts'>
+    import type { ClassMeeting } from "@jupiterp/jupiterp";
     import { formatClassDayTime, formatLocation } from "../../../lib/course-planner/Formatting";
 
     export let meeting: ClassMeeting;
@@ -25,27 +26,24 @@ Copyright (C) 2024 Andrew Cupps
 <div class='flex flex-row text-xs 2xl:text-base font-medium w-full'>
     {#if typeof meeting === 'string'}
         {meeting}
-    {:else if 'OnlineSync' in meeting}
-        {formatClassDayTime(meeting.OnlineSync)}
     {:else}
+        <!-- Classtime -->
         <span class:grow={!condensed}>
-            {#if meeting.InPerson.classtime === null}
-                Classtime TBA
-            {:else}
-                {formatClassDayTime(
-                    meeting.InPerson.classtime
-                    )}{#if condensed}&nbspin&nbsp{/if}
-            {/if}
+            {formatClassDayTime(meeting.classtime)}
         </span>
-        <span class:grow={!condensed} class:text-right={!condensed}>
-            {#if meeting.InPerson.location === null}
-                Location TBA
+
+        <!-- Location -->
+         <span class:grow={!condensed} class:text-right={!condensed}>
+            {#if condensed}&nbsp;in {/if}
+            {#if meeting.location.building.length !== 3 || meeting.location.room == null}
+                <span class='pr-0.5'>
+                    {formatLocation(meeting.location)}
+                </span>
             {:else}
-                <a href={generateMapURL(meeting.InPerson.location[0])}
+                <a href={generateMapURL(meeting.location.building)}
                         class=
-                        'text-orange underline rounded-md
-                        hover:bg-hoverLight hover:dark:bg-hoverDark transition
-                        p-0.5'
+                        'text-orange underline rounded-md p-0.5
+                        hover:bg-hoverLight hover:dark:bg-hoverDark transition'
                         on:mouseenter={() => {
                             locationHover = true;
                             removeHoverSection();
@@ -57,9 +55,9 @@ Copyright (C) 2024 Andrew Cupps
                         on:click={handleLinkClick}
                         target='_blank'
                         title='View on UMD Map'>
-                    {formatLocation(meeting.InPerson.location)}
+                    {formatLocation(meeting.location)}
                 </a>
             {/if}
-        </span>
+         </span>
     {/if}
 </div>

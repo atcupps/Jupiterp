@@ -10,12 +10,16 @@ Copyright (C) 2024 Andrew Cupps
         formatInstructors, 
         formatLocation, 
         splitCourseCode
-
     } from '../../../lib/course-planner/Formatting';
-    import { getColorFromNumber, timeToNumber } from '../../../lib/course-planner/ClassMeetingUtils';
+    import { getColorFromNumber } from '../../../lib/course-planner/ClassMeetingUtils';
     import { afterUpdate } from 'svelte';
     import Tooltip from './Tooltip.svelte';
     import { CurrentScheduleStore } from '../../../stores/CoursePlannerStores';
+    import type {
+        ClassMeetingExtended,
+        ScheduleSelection,
+        SelectionDifferences
+    } from '../../../types';
 
     export let meeting: ClassMeetingExtended;
     export let earliestClassStart: number = 0;
@@ -32,16 +36,11 @@ Copyright (C) 2024 Andrew Cupps
         scheduleName = stored.scheduleName;
     });
 
-    const differences: string[] = meeting.differences;
-    const instructorsChange: boolean = differences.includes('Instructors');
-    const numClassMeetingsChange: boolean = 
-                            differences.includes('Number of class meetings');
-    const meetingsTypeChange: boolean = 
-                                    differences.includes('Type of meeting');
-    const meetingTimeChange: boolean = numClassMeetingsChange ||
-                                         differences.includes('Meeting time');
-    const meetingLocChange: boolean = 
-                                    differences.includes('Meeting location');
+    const differences: SelectionDifferences = meeting.differences;
+    const instructorsChange = differences.instructors;
+    const meetingsTypeChange = differences.meetingType;
+    const meetingTimeChange = differences.meetingTime;
+    const meetingLocChange = differences.meetingLocation;
 
     let formattedInstructors: string = formatInstructors(meeting.instructors);
     let formattedTime: string;
@@ -52,40 +51,39 @@ Copyright (C) 2024 Andrew Cupps
     let location: string;
 
     $: if (meeting.meeting != null) {
-        secCode = meeting.secCode;
+        secCode = meeting.sectionCode;
         if (typeof meeting.meeting !== 'string') {
-            if ('OnlineSync' in meeting.meeting) {
-                formattedTime = formatClasstime(meeting.meeting.OnlineSync);
-                decStartTime = 
-                           timeToNumber(meeting.meeting.OnlineSync.start_time);
-                decEndTime = timeToNumber(meeting.meeting.OnlineSync.end_time);
-                location = 'ONLINE';
+            formattedTime = formatClasstime(meeting.meeting.classtime);
+            decStartTime = meeting.meeting.classtime.start;
+            decEndTime = meeting.meeting.classtime.end;
+            if (meeting.meeting.location.room != null) {
+                location = formatLocation(meeting.meeting.location);
+            }
+            else if (meeting.meeting.location.building === "OnlineSync") {
+                location = "ONLINE";
             } else {
-                const inPerson = meeting.meeting.InPerson;
-                if (inPerson.classtime != null) {
-                    const days = isInOther ? inPerson.classtime.days + ' ' : '';
-                    formattedTime = days + formatClasstime(inPerson.classtime);
-                    decStartTime = timeToNumber(inPerson.classtime.start_time);
-                    decEndTime = timeToNumber(inPerson.classtime.end_time);
-                } else {
-                    formattedTime = 'Classtime TBA';
-                }
-
-                if (inPerson.location != null) {
-                    location = formatLocation(inPerson.location);
-                } else {
-                    location = 'Location TBA';
-                }
+                location = meeting.meeting.location.building;
             }
         } else {
             hasLocation = false;
-            if (meeting.meeting === 'OnlineAsync') {
-                formattedTime = 'ONLINE ASYNC';
+            switch (meeting.meeting) {
+                case 'TBA':
+                    formattedTime = 'TBA';
+                    break;
+                case 'OnlineAsync':
+                    formattedTime = 'ONLINE ASYNC';
+                    break;
+                case 'Unknown':
+                    formattedTime = 'UNKNOWN TIME';
+                    break;
+                case 'Unspecified':
+                    formattedTime = 'UNSPECIFIED TIME';
+                    break;
+                case 'No Sections':
+                    formattedTime = 'NO SECTIONS';
+                    break;
             }
-            else {
-                formattedTime = meeting.meeting;
-            }
-            secCode = meeting.secCode;
+            secCode = meeting.sectionCode;
         }
     }
 
@@ -127,8 +125,8 @@ Copyright (C) 2024 Andrew Cupps
     }
 
     function selectionEqualsByCode(s: ScheduleSelection): boolean {
-        return s.courseCode === meeting.course &&
-            s.section.sec_code === secCode;
+        return s.course.courseCode === meeting.courseCode 
+                && s.section.sectionCode === secCode;
     }
 
     export let showCourseInfo: string | null;
@@ -136,12 +134,12 @@ Copyright (C) 2024 Andrew Cupps
 
     function toggleCourseInfo() {
         if (showCourseInfo !== null 
-                    && showCourseInfo === meeting.course
-                    && showSectionInfo === meeting.secCode) {
+                && showCourseInfo === meeting.courseCode
+                && showSectionInfo === meeting.sectionCode) {
             showCourseInfo = null;
         } else {
-            showCourseInfo = meeting.course;
-            showSectionInfo = meeting.secCode;
+            showCourseInfo = meeting.courseCode;
+            showSectionInfo = meeting.sectionCode;
         }
     }
 
@@ -186,7 +184,7 @@ Copyright (C) 2024 Andrew Cupps
                     class:text-sm={w < 120}
                     class:text-xs={w < 104}
                     class:rounded-b-lg={h < 1.75 * fontSize}>
-                <span>{meeting.course}</span>
+                <span>{meeting.courseCode}</span>
             </div>
         {/if}
         <div class='w-full grow font-thin 2xl:font-normal 
@@ -247,7 +245,7 @@ Copyright (C) 2024 Andrew Cupps
     <div class='w-full text-base font-semibold font-sans
                     ont-sans rounded-t-lg text-wrap break-words'
         class:rounded-b-lg={h < 1.75 * fontSize}>
-        {splitCourseCode(meeting.course)}
+        {splitCourseCode(meeting.courseCode)}
     </div>
     {/if}
 </button>

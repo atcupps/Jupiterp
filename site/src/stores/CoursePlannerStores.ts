@@ -1,27 +1,33 @@
-import { getProfsLookup } from "$lib/course-planner/CourseSearch";
-import type { Instructor } from "@jupiterp/jupiterp";
+import type { Course, Department, Instructor } from "@jupiterp/jupiterp";
 import { writable, type Writable } from "svelte/store";
+import type { ScheduleSelection, StoredSchedule } from "../types";
 
-// `Record<string, Instructor>` for getting instructor data from names
-// Initially set to an empty record since the data used here is
-// loaded in `+page.svelte`.
+/** `Record<string, Instructor>` for getting instructor data from names
+/* Initially set to an empty record since the data used here is
+/* loaded in `+page.svelte`.
+ */
 export const ProfsLookupStore: Writable<Record<string, Instructor>> = 
-                                                writable(getProfsLookup([]));
+                                                writable({});
 
-// Track which section is being hovered by the user in Course Search
+/** Track which section is being hovered by the user in Course Search */
 export const HoveredSectionStore: Writable<ScheduleSelection | null> = 
                                                                 writable(null);
 
-// Track selected sections in current schedule
+/** Track selected sections in current schedule */
 export const CurrentScheduleStore: Writable<StoredSchedule> = writable({
     scheduleName: "Schedule 1",
     selections: []
 });
 
-// Track stored schedules that are not the active current schedule
+/** Track stored schedules that are not the active current schedule */
 export const NonselectedScheduleStore: Writable<StoredSchedule[]> = 
                                                                 writable([]);
 
-// Number of seats in each course-section combination
-export const SeatDataStore: Writable<Record<string, number[]>> = 
-                                                            writable({});
+/** List of departments */
+export const DepartmentsStore: Writable<Department[]> = writable([]);
+
+/** Search results */
+export const SearchResultsStore: Writable<Course[]> = writable([]);
+
+/** Potential department suggestions for partial searches */
+export const DeptSuggestionsStore: Writable<string[]> = writable([]);

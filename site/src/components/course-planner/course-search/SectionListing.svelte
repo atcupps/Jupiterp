@@ -12,11 +12,13 @@ Copyright (C) 2024 Andrew Cupps
         CurrentScheduleStore
     } from "../../../stores/CoursePlannerStores";
     import SeatData from "./SeatData.svelte";
+    import type { Section, CourseBasic } from "@jupiterp/jupiterp";
+    import type { ScheduleSelection } from "../../../types";
+    import { noDifferences } from "$lib/course-planner/Schedule";
 
     export let courseCode: string;
     export let section: Section;
-    export let minCredits: number;
-    export let course: Course;
+    export let course: CourseBasic;
 
     let hoveredSection: ScheduleSelection | null;
     HoveredSectionStore.subscribe((store) => { hoveredSection = store });
@@ -29,26 +31,22 @@ Copyright (C) 2024 Andrew Cupps
     });
 
     let newSelection: ScheduleSelection = {
-        courseCode,
+        course,
         section,
         hover: false,
-        differences: [],
-        credits: minCredits,
-        course,
+        differences: noDifferences(),
         colorNumber: -1,
-    };
+    }
     let sectionAdded: boolean;
     $: if (selectionsList || hoveredSection) {
         sectionAdded = selectionsList.some(obj => selectionEquals(obj));
     }
     
     let hoverSection: ScheduleSelection = {
-        courseCode,
+        course,
         section,
         hover: true,
-        differences: [],
-        credits: minCredits,
-        course,
+        differences: noDifferences(),
         colorNumber: -1,
     }
 
@@ -123,8 +121,8 @@ Copyright (C) 2024 Andrew Cupps
     }
 
     function selectionEquals(s: ScheduleSelection): boolean {
-        return s.courseCode === courseCode && 
-            s.section.sec_code === section.sec_code && !s.hover;
+        return s.course.courseCode === courseCode && 
+            s.section.sectionCode === section.sectionCode && !s.hover;
     }
 
     function firstAvailableColor(selections: ScheduleSelection[]): number {
@@ -175,7 +173,7 @@ Copyright (C) 2024 Andrew Cupps
     <!-- Section code -->
     <div class='text-secCodesLight dark:text-secCodesDark font-semibold 
                 text-sm xl:text-base w-12 xl:w-14'>
-        {section.sec_code}
+        {section.sectionCode}
     </div>
 
     <!-- Section info -->
@@ -187,10 +185,10 @@ Copyright (C) 2024 Andrew Cupps
         {/each}
 
         <!-- Seats info -->
-        <SeatData course={courseCode} section={section.sec_code} />
+        <SeatData section={section} />
         
         <!-- Class meetings -->
-        {#each section.class_meetings as meeting}
+        {#each section.meetings as meeting}
             <MeetingListing meeting={meeting} 
                 bind:locationHover {removeHoverSection} />
         {/each}

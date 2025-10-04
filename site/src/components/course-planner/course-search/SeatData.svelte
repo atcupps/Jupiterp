@@ -1,23 +1,20 @@
 <script lang='ts'>
-    import { SeatDataStore } from "../../../stores/CoursePlannerStores";
+    import type { Section } from "@jupiterp/jupiterp";
 
-    export let course: string;
-    export let section: string;
-
-    let seats: number[] | null;
-    $: if (course && section) {
-        SeatDataStore.subscribe((value) => {
-            seats = value[course + '-' + section];
-        });
-    }
+    export let section: Section;
 </script>
 
-{#if seats}
-    <div class='flex flex-row text-xs 2xl:text-base font-medium w-full pb-1'>
-        {seats[0]} / {seats[1]} seats available
+
+{#if section.totalSeats > 0}
+<div class='flex flex-row text-xs 2xl:text-base font-medium w-full pb-1'>
+    {section.openSeats} / {section.totalSeats} seats available
+    <br>
+    {#if section.openSeats == 0}
+        Waitlist: {section.waitlist}
+    {/if}
+    {#if section.holdfile != null}
         <br>
-        {#if seats[0] == 0}
-            Waitlist: {seats[2]}
-        {/if}
-    </div>
+        Holdfile: {section.holdfile}
+    {/if}
+</div>
 {/if}
