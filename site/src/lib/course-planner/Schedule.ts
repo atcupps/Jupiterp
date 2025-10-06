@@ -192,14 +192,14 @@ export function getClasstimeBounds(schedule: Schedule): ClasstimeBound {
             const meeting = classMeeting.meeting;
             if (typeof meeting != 'string') {
                 result = {
-                    earliestStart: Math.min(
-                        Math.floor(result.earliestStart),
+                    earliestStart: Math.floor(Math.min(
+                        result.earliestStart,
                         meeting.classtime.start
-                    ),
-                    latestEnd: Math.max(
+                    )),
+                    latestEnd: Math.ceil(Math.max(
                         Math.ceil(result.latestEnd),
                         meeting.classtime.end
-                    )
+                    ))
                 }
             }
         });
