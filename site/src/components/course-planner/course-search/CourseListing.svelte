@@ -6,52 +6,24 @@ Copyright (C) 2024 Andrew Cupps
 -->
 <script lang="ts">
     import SectionListing from "./SectionListing.svelte";
-    import { formatCredits, getMinCredits, testudoLink } from "../../../lib/course-planner/Formatting";
+    import { formatCredits, testudoLink } from "../../../lib/course-planner/Formatting";
     import { slide } from "svelte/transition";
     import CourseCondition from "./CourseCondition.svelte";
     import { AngleRightOutline } from "flowbite-svelte-icons";
+    import type { Course, Section } from "@jupiterp/jupiterp";
 
     export let course: Course;
 
     function pseudoSection(): Section {
         return {
-            sec_code: 'N/A',
+            courseCode: course.courseCode,
+            sectionCode: 'N/A',
             instructors: ['Testudo Terrapin 🐢'],
-            class_meetings: ['No Class Meetings']
-        }
-    }
-    
-    // TODO(#672): Make this not hard-coded
-    function genEdFullName(acronym: string): string {
-        switch(acronym) {
-            case "FSAW":
-                return "Academic Writing";
-            case "FSAR":
-                return "Analytic Reasoning";
-            case "FSMA":
-                return "Math";
-            case "FSOC":
-                return "Oral Communications";
-            case "FSPW":
-                return "Professional Writing";
-            case "DSHS":
-                return "History and Social Sciences";
-            case "DSHU":
-                return "Humanities";
-            case "DSNS":
-                return "Natural Sciences";
-            case "DSNL":
-                return "Natural Science Lab";
-            case "DSSP":
-                return "Scholarship in Practice";
-            case "DVCC":
-                return "Cultural Competency";
-            case "DVUP":
-                return "Understanding Plural Societies";
-            case "SCIS":
-                return "Signature Courses - Big Question (I-Series)";
-            default:
-                return "Unknown Code";
+            meetings: ["No Sections"],
+            openSeats: 0,
+            totalSeats: 0,
+            waitlist: 0,
+            holdfile: null
         }
     }
 
@@ -65,10 +37,10 @@ Copyright (C) 2024 Andrew Cupps
     <!-- Course code and credit count -->
     <div class='flex flex-row align-middle'>
         <div class='grow text-left align-middle'>
-            <b>{course.code}</b>
+            <b>{course.courseCode}</b>
         </div>
         <div class='grow text-right text-sm 2xl:text-base align-middle'>
-            Credits: {formatCredits(course.credits)}
+            Credits: {formatCredits(course.minCredits, course.maxCredits)}
         </div>
     </div>
 
@@ -78,17 +50,17 @@ Copyright (C) 2024 Andrew Cupps
         {course.name}
     </div>
 
-    {#if course.gen_eds != null && course.gen_eds.length > 0}
+    {#if course.genEds != null && course.genEds.length > 0}
         <div class='w-full flex flex-row justify-start align-center my-1'>
-            {#each course.gen_eds as genEd}
+            {#each course.genEds as genEd}
                 <a class='text-[0.625rem] 2xl:text-xs text-orange leading-tight
                             font-bold rounded-xl border border-orange px-1 mr-1
                             hover:bg-orange hover:text-bgSecondaryLight 
                             hover:dark:text-bgSecondaryDark transition'
-                    href={"https://app.testudo.umd.edu/soc/gen-ed/202601/" + genEd}
+                    href={"https://app.testudo.umd.edu/soc/gen-ed/202601/" + genEd.code}
                     target="_blank"
-                    title={"GenEd: " + genEdFullName(genEd)}>
-                    {genEd}
+                    title={"GenEd: " + genEd.name}>
+                    {genEd.code}
                 </a>
             {/each}
         </div>
@@ -113,7 +85,7 @@ Copyright (C) 2024 Andrew Cupps
         <div class='text-sm 2xl:text-base py-1 font-base flex flex-col leading-tight'
                 transition:slide>
             <div class='pb-1'>
-                <a href={testudoLink(course.code)} 
+                <a href={testudoLink(course.courseCode)} 
                     class='text-orange underline'
                     target='_blank'>
                     View on Testudo
@@ -126,22 +98,22 @@ Copyright (C) 2024 Andrew Cupps
                 {/each}
             {/if}
 
-            {course.description}
+            {#if course.description != null}
+                {course.description}
+            {/if}
         </div>
     {/if}
 
     <!-- Sections -->
-    {#if course.sections != null}
+    {#if course.sections != null && course.sections.length > 0}
         {#each course.sections as section}
-            <SectionListing courseCode={course.code}
+            <SectionListing courseCode={course.courseCode}
                 section={section}
-                        course={course}
-                        minCredits={getMinCredits(course.credits)} />
+                        course={course} />
         {/each}
     {:else}
-        <SectionListing courseCode={course.code}
+        <SectionListing courseCode={course.courseCode}
             section={pseudoSection()}
-                        course={course}
-                        minCredits={getMinCredits(course.credits)} />
+            course={course} />
     {/if}
 </div>

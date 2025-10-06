@@ -7,121 +7,135 @@
  * @fileoverview Functions relating to searching for courses in Jupiterp.
  */
 
-import type { Instructor } from "@jupiterp/jupiterp";
+import type { Course, Instructor } from "@jupiterp/jupiterp";
+import { CourseDataCache } from "./CourseDataCache";
+import { DepartmentsStore, DeptSuggestionsStore, SearchResultsStore } from "../../stores/CoursePlannerStores";
 
-/**
- * Get a course-lookup object which can be used to find courses given a 
- * department and course number.
- * 
- * @param departments An array of `Department`s with courses to be available
- *                      for lookup
- * 
- * @returns A `Record` which can match department-name inputs to another 
- *          `Record` matching course numbers to `Course` objects.
- */
-export function getCourseLookup(departments: Department[]):
-                                    Record<string, Record<string, Course>> {
-    const result: Record<string, Record<string, Course>> = {};
-    departments.forEach((dept) => {
-        const deptName: string = dept.name;
-        const deptCourses: Course[] = dept.courses;
-        const deptRecord: Record<string, Course> = {};
-        for (const course of deptCourses) {
-            const courseNum = course.code.substring(4);
-            deptRecord[courseNum] = course;
-        }
-        result[deptName] = deptRecord;
+const cache = new CourseDataCache();
+
+// Load department list data
+let deptCodes: string[];
+export let deptCodeToName: Record<string, string> = {};
+DepartmentsStore.subscribe((depts) => {
+    deptCodes = depts.map(dept => dept.deptCode);
+    deptCodeToName = {};
+    depts.forEach(dept => {
+        deptCodeToName[dept.deptCode] = dept.name;
     });
-    return result;
-}
+});
 
 /**
- * Given an `input`, search for courses in a `courseLookup` and return a list
- * of possible `Course`s.
- * 
- * @param input A string of input used to search for `Course`s
- * @param courseLookup A `Record` used to match departments and course numbers
- *                      to `Course`s; can be generated using `getCourseLookup`
- * @param deptList A list of departments used to search for courses by number
- * 
- * @returns An array of possible courses given the `input`.
+ * Given an `input` (which should already be simplified to remove whitespace
+ * and convert to uppercase), returns a list of department codes that match the
+ * input.
+ * @param input 
  */
-export function searchCourses(input: string, courseLookup: 
-                            Record<string, Record<string, Course>>, deptList: string[]): Course[] {
-    const result: Course[] = [];
-    // For an `input` to be worth searching, it should be at least the four
-    // letter department code, and the department code must be in 
-    // `courseLookup`. Jupiterp also doesn't care about whitespace, so it is 
-    // removed.
-    const simpleInput: string = input.toUpperCase().replace(/\s/g, '');
-    if (simpleInput.length >= 4) {
-        const dept: string = simpleInput.substring(0, 4);
-        const deptCourses: Record<string, Course> = courseLookup[dept];
-        if (deptCourses != undefined) {
-            for (const courseCode in deptCourses) {
-                let shouldBeInResult = true;
-                const inputCode = simpleInput.substring(4);
-                if (inputCode.length > courseCode.length) {
-                    shouldBeInResult = false;
-                } else {
-                    for (let i = 0; i < inputCode.length; i++) { 
-                        if (inputCode[i] != courseCode[i]) {
-                            shouldBeInResult = false;
-                        }
-                    }
-                }
-                if (shouldBeInResult) {
-                    result.push(deptCourses[courseCode]);
-                }
-            }
-        }
-    } 
-    
-    // If the search input is just numbers, match courses with that number
-    if (simpleInput.length >= 2 && /^[0-9]+$/i.test(simpleInput)) {
-
-        // get all the courses from every department 
-        const allDeptCourses: Record<string, Course> = {};
-        for (const dept of deptList) {
-            const deptCourses = courseLookup[dept];
-            if (deptCourses !== undefined) {
-                for (const courseCode in deptCourses) {
-                    const uniqueCourseCode = `${dept}-${courseCode}`;
-                    allDeptCourses[uniqueCourseCode] = deptCourses[courseCode];
-                }
-            }
-        }
-
-        for (const courseCode in allDeptCourses) {
-            let shouldBeInResult = true;
-            if (simpleInput.length > courseCode.length) {
-                shouldBeInResult = false;
-            } else {
-                const courseNumber = courseCode.substring(5);
-                for (let i = 0; i < simpleInput.length; i++) { 
-                    if (simpleInput[i] != courseNumber[i]) {
-                        shouldBeInResult = false;
-                    }
-                }
-            }
-            if (shouldBeInResult) {
-                result.push(allDeptCourses[courseCode]);
-            }
-        }
+function resolveInputToDepartment(input: string): string[] {
+    if (!deptCodes || input.length < 1) {
+        return [];
     }
-    
-    return result;
+
+    // You may think that if the input length is 4 or longer, we should just
+    // use that as the input to get from the cache. But consider that we need
+    // to check that the input is a valid department code, which is an O(n)
+    // operation anyway. So there's no point in adding additional logic for the
+    // case where the input length is a full department code.
+    const deptInput = input.length > 4 ? input.substring(0, 4) : input;
+    const possibleDepts: string[] =
+        deptCodes.filter((dept) => dept.startsWith(deptInput));
+
+    return possibleDepts;
 }
 
 /**
- * Creates and returns an object mapping professor names to `Professor`s.
- * If there are multiple `Professor`s in `profs` with the same `name`,
- * neither will be in the result because in `CourseSearch`, professors'
+ * Given an `input`, search for any matching courses in the course data cache
+ * (which retrieves from the API if necessary) and sets the `SearchResultsStore`
+ * to the list of matching courses.
+ * @param input A search input string
+ */
+export async function setSearchResults(input: string) {
+    // Don't care about case or whitespace in searches
+    const simpleInput: string = input.toUpperCase().replace(/\s/g, '');
+
+    // If the search input matches a department code, get the courses for that
+    // department and then filter by course number.
+    const matchingDepts = resolveInputToDepartment(simpleInput);
+    const shouldShowSuggestions =
+        simpleInput.length > 0 && matchingDepts.length > 1;
+    DeptSuggestionsStore.set(shouldShowSuggestions ? matchingDepts : []);
+
+    if (matchingDepts.length === 1) {
+        DeptSuggestionsStore.set([]);
+        // Get from cache/API
+        const deptCourses: Course[] = 
+            (await cache.getCoursesForDept({
+                type: "deptCode",
+                value: matchingDepts[0]
+            }))
+            .sort((a, b) => {
+                return a.courseCode.localeCompare(b.courseCode);
+            });
+
+        // Ensure that the department for this search is still the most recent
+        // search. If not, abort to avoid displaying outdated results.
+        if (cache.getMostRecentAccess() !== matchingDepts[0]) {
+            return;
+        }
+
+        // If the input contains no numbers, all dept courses are matching.
+        if (simpleInput.length <= 4) {
+            SearchResultsStore.set(deptCourses);
+            return;
+        }
+
+        // Otherwise, filter by course number
+        const inputCode = simpleInput.substring(4);
+        const matchingCourses = deptCourses.filter((course) => {
+            return course.courseCode.startsWith(inputCode, 4);
+        });
+        SearchResultsStore.set(matchingCourses);
+        return;
+    }
+
+    // If we reach here, the input does not match a single department code.
+    // This could be because the input is just numbers, or because it is
+    // not a valid department code.
+
+    // If the search is 3 numbers and optionally a letter,
+    // match courses with the number (+ letter).
+    if (simpleInput.length >= 3 && /^[0-9]{3}[A-Z]?$/i.test(simpleInput)) {
+        const numberInput = simpleInput.substring(0, 3);
+        const courses: Course[] =
+            (await cache.getCoursesForDept({
+                type: "courseNumber",
+                value: numberInput
+            }))
+            .filter((course) => {
+                return course.courseCode
+                        .substring(4)
+                        .toUpperCase()
+                        .startsWith(simpleInput);
+            });
+
+        SearchResultsStore.set(courses);
+        return;
+    }
+
+    // If we reach here, the input is not a valid department code or a course
+    // number. Clear results.
+    SearchResultsStore.set([]);
+    return;
+}
+
+/**
+ * Creates and returns an object mapping instructor names to `Instructor`s.
+ * If there are multiple `Instructor`s in `profs` with the same `name`,
+ * neither will be in the result because in `CourseSearch`, instructors'
  * ratings and slugs will only be looked for on the basis of their name, absent
  * of any additional information like what course they are teaching.
- * @param profs An array `Professor[]` to be included in a lookup
- * @returns A `Record<string, Professor>` where professor names as `string`s
- *              are mapped to `Professor` objects.
+ * @param profs An array `Instructor[]` to be included in a lookup
+ * @returns A `Record<string, Instructor>` where instructor names as `string`s
+ *              are mapped to `Instructor` objects.
  */
 export function getProfsLookup(profs: Instructor[]): Record<string, Instructor> {
     const result: Record<string, Instructor> = {};
@@ -135,5 +149,13 @@ export function getProfsLookup(profs: Instructor[]): Record<string, Instructor> 
             names.add(name);
         }
     }
+    return result;
+}
+
+/**
+ * Returns true if the most recent request is still awaiting results.
+ */
+export function pendingResults(): boolean {
+    const result = cache.isPending();
     return result;
 }

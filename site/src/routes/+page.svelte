@@ -8,51 +8,35 @@ Copyright (C) 2024 Andrew Cupps
     import Schedule from '../components/course-planner/schedule/Schedule.svelte';
     import CourseSearch from '../components/course-planner/course-search/CourseSearch.svelte';
     import { onMount } from 'svelte';
-    import { retrieveCourses, updateStoredSchedules } from '../lib/course-planner/CourseLoad';
+    import {
+        ensureUpToDateAndSetStores,
+        resolveSelections,
+        resolveStoredSchedules
+    } from '../lib/course-planner/CourseLoad';
     import { getProfsLookup } from '$lib/course-planner/CourseSearch';
     import {
-        SeatDataStore,
         ProfsLookupStore,
         CurrentScheduleStore,
-        NonselectedScheduleStore
+        NonselectedScheduleStore,
+        DepartmentsStore
     } from '../stores/CoursePlannerStores';
     import { client } from '$lib/client';
-    import type { Instructor, InstructorsConfig, InstructorsResponse } from '@jupiterp/jupiterp';
+    import {
+        type Instructor,
+        type InstructorsConfig, 
+        type InstructorsResponse
+    } from '@jupiterp/jupiterp';
+    import type { ScheduleSelection, StoredSchedule } from '../../types';
 
-    // Load profs and course data from `+page.ts`
-    export let data;
-
-    // Function to retreive seats data; seats data is returned as a record
-    // where the key is a string concatenation of "courseID-sectionID",
-    // and the record value is [currentSeats, totalSeats, waitlist].
-    // Called in `onMount`.
-    async function fetchSeatData() {
-        try {
-            const response = await fetch('/seats');
-            if (!response.ok) {
-                throw new Error(`Failed to fetch data: ${response.statusText}`);
-            }
-            const seatsDataMap = await response.json();
-            
-            // Update the SeatDataStore with the fetched data
-            SeatDataStore.set(seatsDataMap);
-        } catch (error) {
-            console.error('Error fetching seat data:', error);
-        }
-    }
-
+    // Function to retreive professor data; called in `onMount`.
     async function fetchProfessorData() {
         try {
             let limit = 500;
             let offset = 0;
             let allInstructors: Instructor[] = [];
             let config: InstructorsConfig = {
-                instructorNames: null,
-                instructorSlugs: null,
-                ratings: null,
                 limit: limit,
                 offset: offset,
-                sortBy: null,
             };
             let complete = false;
             while (!complete) {
@@ -75,6 +59,18 @@ Copyright (C) 2024 Andrew Cupps
         }
         catch (error) {
             console.error('Error fetching professor data:', error);
+        }
+    }
+
+    // Function to get list of department codes as an array of strings
+    // and set the DepartmentsStore.
+    async function fetchDeptCodes() {
+        const res = await client.deptList();
+        if (res.ok() && res.data != null) {
+            const depts = res.data;
+            DepartmentsStore.set(depts);
+        } else {
+            console.error('Error fetching department codes:', res.errorBody);
         }
     }
 
@@ -117,20 +113,27 @@ Copyright (C) 2024 Andrew Cupps
     })
 
     onMount(() => {
+        // Fetch instructor data from API
+        fetchProfessorData();
+
+        // Fetch department codes from API
+        fetchDeptCodes();
+
+        // Retrieve data from client local storage
         try {
-            // Retreive data from client local storage
             if (typeof window !== 'undefined') {
+                // Get stored selections from local storage
                 const storedSelectionsOption = 
                                 localStorage.getItem('selectedSections');
                 let storedSelections: ScheduleSelection[];
                 if (storedSelectionsOption) {
-                    storedSelections = retrieveCourses(
-                        JSON.parse(storedSelectionsOption), data.departments
-                    );
+                    storedSelections = 
+                        resolveSelections(storedSelectionsOption);
                 } else {
                     storedSelections = [];
                 }
 
+                // Get stored current schedule name from local storage
                 const storedScheduleNameOption = 
                                 localStorage.getItem('scheduleName');
                 let storedScheduleName: string;
@@ -140,33 +143,29 @@ Copyright (C) 2024 Andrew Cupps
                     storedScheduleName = "Schedule 1";
                 }
 
+                const currentSchedule: StoredSchedule = {
+                    scheduleName: storedScheduleName,
+                    selections: storedSelections
+                };
+
+                // Get stored non-selected schedules from local storage
                 const storedNonselectedSchedulesOption = 
                                 localStorage.getItem('nonselectedSchedules');
                 let storedNonselectedSchedules: StoredSchedule[];
                 if (storedNonselectedSchedulesOption) {
-                    storedNonselectedSchedules = updateStoredSchedules(
-                        JSON.parse(storedNonselectedSchedulesOption),
-                        data.departments
-                    );
+                    storedNonselectedSchedules = 
+                        resolveStoredSchedules(
+                            storedNonselectedSchedulesOption);
                 } else {
                     storedNonselectedSchedules = [];
                 }
 
-                CurrentScheduleStore.set({
-                    scheduleName: storedScheduleName,
-                    selections: storedSelections
-                });
-
-                NonselectedScheduleStore.set(storedNonselectedSchedules);
+                // Find differences between stored selections and
+                // most up-to-date course data, and update accordingly.
+                ensureUpToDateAndSetStores(currentSchedule, storedNonselectedSchedules);
 
                 hasReadLocalStorage = true;
             }
-
-            // Fetch instructor data from API
-            fetchProfessorData();
-
-            // Fetch seat data from API
-            fetchSeatData();
         } catch (e) {
             console.log('Unable to retrieve courses: ' + e);
             CurrentScheduleStore.set({
@@ -208,6 +207,6 @@ Copyright (C) 2024 Andrew Cupps
 <div class='fixed flex flex-row w-full px-8
             text-textLight dark:text-textDark lg:px-8
             top-[3rem] lg:top-[3.5rem] xl:top-[4rem] bottom-0'>
-    <CourseSearch data={data} bind:courseSearchSelected />
+    <CourseSearch bind:courseSearchSelected />
     <Schedule />
 </div>
