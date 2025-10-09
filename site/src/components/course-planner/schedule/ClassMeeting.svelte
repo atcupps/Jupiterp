@@ -14,9 +14,13 @@ Copyright (C) 2024 Andrew Cupps
     import { getColorFromNumber } from '../../../lib/course-planner/ClassMeetingUtils';
     import { afterUpdate } from 'svelte';
     import Tooltip from './Tooltip.svelte';
-    import { CurrentScheduleStore } from '../../../stores/CoursePlannerStores';
+    import {
+        CourseInfoPairStore,
+        CurrentScheduleStore,
+    } from '../../../stores/CoursePlannerStores';
     import type {
         ClassMeetingExtended,
+        CourseSectionPair,
         ScheduleSelection,
         SelectionDifferences
     } from '../../../types';
@@ -129,17 +133,21 @@ Copyright (C) 2024 Andrew Cupps
                 && s.section.sectionCode === secCode;
     }
 
-    export let showCourseInfo: string | null;
-    export let showSectionInfo: string | null;
+    let courseInfoPair: CourseSectionPair | null;
+    CourseInfoPairStore.subscribe((val) => {
+        courseInfoPair = val;
+    });
 
     function toggleCourseInfo() {
-        if (showCourseInfo !== null 
-                && showCourseInfo === meeting.courseCode
-                && showSectionInfo === meeting.sectionCode) {
-            showCourseInfo = null;
+        if (courseInfoPair !== null 
+                && courseInfoPair.courseCode === meeting.courseCode
+                && courseInfoPair.sectionCode === meeting.sectionCode) {
+            CourseInfoPairStore.set(null);
         } else {
-            showCourseInfo = meeting.courseCode;
-            showSectionInfo = meeting.sectionCode;
+            CourseInfoPairStore.set({
+                courseCode: meeting.courseCode,
+                sectionCode: meeting.sectionCode
+            });
         }
     }
 

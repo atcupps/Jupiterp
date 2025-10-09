@@ -10,8 +10,7 @@ Copyright (C) 2024 Andrew Cupps
     import { 
         HoveredSectionStore,
         CurrentScheduleStore,
-        ShowCourseInfoStore,
-        ShowSectionInfoStore
+        CourseInfoPairStore,
     } from "../../../stores/CoursePlannerStores";
     import SeatData from "./SeatData.svelte";
     import type { Section, CourseBasic } from "@jupiterp/jupiterp";
@@ -91,12 +90,12 @@ Copyright (C) 2024 Andrew Cupps
                 scheduleName,
                 selections: [...selectionsList, newSelection]
             });
-            ShowCourseInfoStore.update(value => {
-                return value === null ? null : courseCode;
-            })
-            ShowSectionInfoStore.update(value => {
-                return value === null ? null : section.sectionCode;
-            })
+            CourseInfoPairStore.update(value => {
+                return value === null ? null : {
+                    courseCode: courseCode,
+                    sectionCode: section.sectionCode
+                };
+            });
         } else {
             showRemoveAlert();
             const index = selectionsList.findIndex(obj => 
@@ -110,6 +109,12 @@ Copyright (C) 2024 Andrew Cupps
                     ]
                 });
             }
+            CourseInfoPairStore.update(value => {
+                return value !== null 
+                        && value.courseCode === courseCode
+                        && value.sectionCode === section.sectionCode 
+                    ? null : value;
+            })
         }
         sectionAdded = !sectionAdded;
         if (isDesktop) {
