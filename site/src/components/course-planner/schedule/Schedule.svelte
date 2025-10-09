@@ -14,7 +14,9 @@ Copyright (C) 2024 Andrew Cupps
     import { afterUpdate } from 'svelte';
     import InstructorListing from '../course-search/InstructorListing.svelte';
     import {
-        HoveredSectionStore, CurrentScheduleStore
+        HoveredSectionStore,
+        CurrentScheduleStore,
+        CourseInfoPairStore,
     } from '../../../stores/CoursePlannerStores';
     import MeetingListing from '../course-search/MeetingListing.svelte';
     import SeatData from '../course-search/SeatData.svelte';
@@ -78,6 +80,17 @@ Copyright (C) 2024 Andrew Cupps
     let showSectionInfo: string | null = null;
     let courseInfoCourse: CourseBasic | null = null;
     let courseInfoSection: Section | null = null;
+
+    CourseInfoPairStore.subscribe((pair) => {
+        if (pair === null) {
+            showCourseInfo = null;
+            showSectionInfo = null;
+        } else {
+            showCourseInfo = pair.courseCode;
+            showSectionInfo = pair.sectionCode;
+        }
+    });
+
     $: if (showCourseInfo !== null) {
         let index = selections.findIndex(selection => {
             return selection.course.courseCode === showCourseInfo
@@ -130,45 +143,32 @@ Copyright (C) 2024 Andrew Cupps
             bind:earliestClassStart
             bind:latestClassEnd 
             bind:bgHeight
-            bind:showCourseInfo
-            bind:showSectionInfo
             />
         <ScheduleDay name='Tue' classes={schedule.tuesday}
             bind:earliestClassStart
             bind:latestClassEnd  
             bind:bgHeight
-            bind:showCourseInfo 
-            bind:showSectionInfo
             />
         <ScheduleDay name='Wed' classes={schedule.wednesday}
             bind:earliestClassStart
             bind:latestClassEnd  
             bind:bgHeight
-            bind:showCourseInfo 
-            bind:showSectionInfo
             />
         <ScheduleDay name='Thu' classes={schedule.thursday}
             bind:earliestClassStart
             bind:latestClassEnd  
             bind:bgHeight
-            bind:showCourseInfo 
-            bind:showSectionInfo
             />
         <ScheduleDay name='Fri' classes={schedule.friday}
             bind:earliestClassStart
             bind:latestClassEnd  
             bind:bgHeight
-            bind:showCourseInfo 
-            bind:showSectionInfo
             />
 
         <!-- 'Other' classes (OnlineAsync, Unspecified) -->
         {#if schedule.other.length > 0}
             <ScheduleDay name='Other' classes={schedule.other} type='Other'
                 {bgHeight}
-
-            bind:showCourseInfo 
-            bind:showSectionInfo
             />
         {/if}
     </div>
@@ -189,7 +189,7 @@ Copyright (C) 2024 Andrew Cupps
     <!-- X Button to get rid of course info -->
     <button class='absolute h-7 w-7 top-0 right-0
             2xl:top-1 2xl:right-1 justify-center'
-            on:click={() => {showCourseInfo = null}}
+            on:click={() => { CourseInfoPairStore.set(null); }}
             title='Hide course info panel'>
         <svg xmlns="http://www.w3.org/2000/svg" 
             viewBox="0 0 384 512"

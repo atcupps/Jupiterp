@@ -8,9 +8,18 @@ Copyright (C) 2024 Andrew Cupps
     import ChangelogItem from "../../components/changelog/ChangelogItem.svelte";
 </script>
 
-<div class='fixed flex flex-col w-full px-8 py-2
+<div class='fixed flex flex-col w-full px-8 py-2 overflow-y-scroll
             text-textLight dark:text-textDark lg:px-8
             top-[3rem] lg:top-[3.5rem] xl:top-[4rem] bottom-0'>
+
+    <ChangelogItem title='Jupiterp 2 (SQL)' version='v1.1.2: Enceladus'
+                                                        date='Oct 8, 2025'>
+        Major backend overhaul to use SQL-powered Jupiterp API for fetching
+        course and instruction data. Paves the way for some future great
+        improvements! Also some minor UI changes: course info panel now changes
+        when selecting a course on the search, and departments show up when
+        searching before it resolves to a single department.
+    </ChangelogItem>
 
     <ChangelogItem title='GenEd Maxxing' version='v1.1.1: Titan'
                                                         date='Apr 7, 2025'>

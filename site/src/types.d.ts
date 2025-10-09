@@ -226,3 +226,8 @@ interface LegacyClasstime {
  */
 type TimeComponent =
     number | string;
+
+export interface CourseSectionPair {
+    courseCode: string,
+    sectionCode: string
+}

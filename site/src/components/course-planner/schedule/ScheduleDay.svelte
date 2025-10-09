@@ -14,8 +14,6 @@ Copyright (C) 2024 Andrew Cupps
     export let latestClassEnd: number = 0;
     export let bgHeight: number;
     export let type: string = 'Day';
-    export let showCourseInfo: string | null;
-    export let showSectionInfo: string | null;
     $: bgHeight;
 </script>
 
@@ -29,8 +27,7 @@ Copyright (C) 2024 Andrew Cupps
                             index (`${index}-${classMeeting.instructors}`)}
             <ClassMeeting meeting={classMeeting} isInOther={type==='Other'}
                 bind:earliestClassStart 
-                bind:latestClassEnd bind:showCourseInfo 
-                bind:showSectionInfo />
+                bind:latestClassEnd />
         {/each}
     </div>
 </div>
