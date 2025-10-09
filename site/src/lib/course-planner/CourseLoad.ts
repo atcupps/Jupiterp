@@ -57,7 +57,7 @@ function isLegacyStoredSchedule(parsed: any[]): boolean {
         }
     }
     
-    return true;
+    return false;
 }
 
 export function resolveStoredSchedules(storedRaw: string): StoredSchedule[] {
