@@ -45,10 +45,8 @@ export function resolveSelections(selectionsRaw: string): ScheduleSelection[] {
     return parsed as ScheduleSelection[];
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function isLegacyStoredSchedule(parsed: any[]): boolean {
-    let result = false;
-    
-    // 'credits' in parsed[0].selections[0]
     for (const schedule of parsed) {
         if (schedule.selections && Array.isArray(schedule.selections)) {
             for (const selection of schedule.selections) {
@@ -59,7 +57,7 @@ function isLegacyStoredSchedule(parsed: any[]): boolean {
         }
     }
     
-    return result;
+    return true;
 }
 
 export function resolveStoredSchedules(storedRaw: string): StoredSchedule[] {
