@@ -95,7 +95,7 @@ Copyright (C) 2024 Andrew Cupps
                 return value === null ? null : courseCode;
             })
             ShowSectionInfoStore.update(value => {
-                return value === null ? null : section.sec_code;
+                return value === null ? null : section.sectionCode;
             })
         } else {
             showRemoveAlert();
