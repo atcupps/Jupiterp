@@ -45,6 +45,23 @@ export function resolveSelections(selectionsRaw: string): ScheduleSelection[] {
     return parsed as ScheduleSelection[];
 }
 
+function isLegacyStoredSchedule(parsed: any[]): boolean {
+    let result = false;
+    
+    // 'credits' in parsed[0].selections[0]
+    for (const schedule of parsed) {
+        if (schedule.selections && Array.isArray(schedule.selections)) {
+            for (const selection of schedule.selections) {
+                if ('credits' in selection) {
+                    return true;
+                }
+            }
+        }
+    }
+    
+    return result;
+}
+
 export function resolveStoredSchedules(storedRaw: string): StoredSchedule[] {
     const parsed = JSON.parse(storedRaw);
     if (!Array.isArray(parsed)) {
@@ -55,8 +72,7 @@ export function resolveStoredSchedules(storedRaw: string): StoredSchedule[] {
         return [];
     }
 
-    if ('credits' in parsed[0].selections[0]) {
-        // If 'credits' is a property, this is legacy
+    if (isLegacyStoredSchedule(parsed)) {
         return (parsed as LegacyStoredSchedule[]).map((legacy) => {
             return {
                 scheduleName: legacy.scheduleName,
