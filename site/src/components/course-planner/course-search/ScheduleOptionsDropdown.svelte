@@ -86,14 +86,14 @@ Copyright (C) 2024 Andrew Cupps
                             flex justify-start items-center"
                     title='Delete current schedule'
                     on:click={deleteCurrentSchedule}>
-        <TrashBinOutline class="w-3 h-3 mr-1" /> Delete
+        <TrashBinOutline class="w-3 h-3 mr-1 z-50" /> Delete
     </DropdownItem>
 
     <DropdownItem class="hover:bg-hoverLight dark:hover:bg-hoverDark px-2
                             flex justify-start items-center"
                     title='Duplicate current schedule'
                     on:click={duplicateSchedule}>
-        <FileCopyOutline class="w-3 h-3 mr-1" /> Duplicate
+        <FileCopyOutline class="w-3 h-3 mr-1 z-50" /> Duplicate
     </DropdownItem>
 
     <!-- TODO(@atcupps): Add share schedule feature -->

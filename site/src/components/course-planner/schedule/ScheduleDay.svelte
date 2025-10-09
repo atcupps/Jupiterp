@@ -5,6 +5,7 @@ https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2024 Andrew Cupps
 -->
 <script lang='ts'>
+    import type { ClassMeetingExtended } from "../../../types";
     import ClassMeeting from "./ClassMeeting.svelte";
 
     export let name: string;
