@@ -14,7 +14,6 @@ Copyright (C) 2024 Andrew Cupps
     used in any meaningfully important functional way. This might be
     improved in the future with TODO(#29): Ensure accessibility features -->
 <!-- svelte-ignore a11y-no-static-element-interactions -->
-<!-- svelte-ignore a11y-mouse-events-have-key-events -->
 <span
     class="tooltip-trigger underline decoration-dotted cursor-help"
     on:mouseenter={() => tooltipVisible = true}
