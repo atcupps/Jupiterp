@@ -16,14 +16,15 @@ Copyright (C) 2024 Andrew Cupps
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <!-- svelte-ignore a11y-mouse-events-have-key-events -->
 <span
-    on:mouseover={() => tooltipVisible = true}
-    on:mouseout={() => tooltipVisible = false}>
+    class="tooltip-trigger underline decoration-dotted cursor-help"
+    on:mouseenter={() => tooltipVisible = true}
+    on:mouseleave={() => tooltipVisible = false}>
     {text}
 </span>
 {#if tooltipVisible}
     <div class="absolute bg-black text-white p-2 text-center rounded-md
-                left-[50%] translate-x-[-50%] text-wrap w-[128px] z-30 top-0">
+                left-[50%] translate-x-[-50%] text-wrap w-[128px] z-30 top-0 
+                pointer-events-none">
         {tooltipText}
     </div>
 {/if}
-  
