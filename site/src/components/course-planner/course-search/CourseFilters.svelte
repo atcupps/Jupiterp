@@ -17,6 +17,25 @@ Copyright (C) 2025 Andrew Cupps
     let showFiltersMenu = false;
     let showGenEdMenu = false;
     let genEdSelections: GenEd[] = [];
+    let minCredits: number = 0;
+    let maxCredits: number = 20;
+
+    $: if (minCredits > maxCredits) {
+        maxCredits = minCredits;
+    }
+
+    $: {
+        appliedFiltersCount = 0;
+        if (genEdSelections.length > 0) {
+            appliedFiltersCount += 1;
+        }
+        if (minCredits !== 0) {
+            appliedFiltersCount += 1;
+        }
+        if (maxCredits !== 20) {
+            appliedFiltersCount += 1;
+        }
+    }
 </script>
 
 <div class="flex flex-col
@@ -33,12 +52,12 @@ Copyright (C) 2025 Andrew Cupps
 
     <!-- Filters menu -->
     {#if showFiltersMenu}
-        <div class="flex flex-col px-2 py-1 mx-1 my-1"
+        <div class="flex flex-col px-2 py-1 mx-1 my-1 gap-2"
             transition:slide>
 
             <!-- Gen-Eds -->
             <div class="flex flex-row text-xs">
-                <span class="mr-2 whitespace-nowrap">
+                <span class="whitespace-nowrap w-16">
                     Gen-Eds:
                 </span>
                 
@@ -115,8 +134,33 @@ Copyright (C) 2025 Andrew Cupps
                 </div>
             </div>
 
-            <!-- Credits -->
-
+            <!-- Min credits -->
+            <span class="flex flex-row items-center text-xs">
+                <span class="w-16">
+                    Min credits: 
+                </span>
+                <input type="number" min="0" step="1" max="20" placeholder="0"
+                    bind:value={minCredits}
+                    class="border border-secCodesDark dark:border-divBorderDark
+                            rounded-md w-12 px-1 py-0 text-xs
+                            bg-bgLight dark:bg-bgDark
+                            focus:outline-none focus:ring
+                            text-sm"/>
+            </span>
+                
+            <!-- Max credits -->
+            <span class="flex flex-row items-center text-xs">
+                <span class="w-16">
+                    Max credits: 
+                </span>
+                <input type="number" min="0" max="20" step="1" placeholder="10"
+                    bind:value={maxCredits}
+                    class="border border-secCodesDark dark:border-divBorderDark
+                            rounded-md w-12 px-1 py-0
+                            bg-bgLight dark:bg-bgDark text-xs
+                            focus:outline-none focus:ring
+                            text-sm"/>
+            </span>
 
             <!-- Total class size -->
 
