@@ -17,8 +17,11 @@ Copyright (C) 2025 Andrew Cupps
     let showFiltersMenu = false;
     let showGenEdMenu = false;
     let genEdSelections: GenEd[] = [];
-    let minCredits: number = 0;
-    let maxCredits: number = 20;
+
+    const defaultMinCredits = 0;
+    const defaultMaxCredits = 20;
+    let minCredits: number = defaultMinCredits;
+    let maxCredits: number = defaultMaxCredits;
 
     $: if (minCredits > maxCredits) {
         maxCredits = minCredits;
@@ -36,19 +39,35 @@ Copyright (C) 2025 Andrew Cupps
             appliedFiltersCount += 1;
         }
     }
+
+    function resetFilters() {
+        genEdSelections = [];
+        minCredits = defaultMinCredits;
+        maxCredits = defaultMaxCredits;
+    }
 </script>
 
 <div class="flex flex-col
             text-secCodesLight dark:text-secCodesDark">
     <!-- Filters button -->
-    <button class="w-full flex flex-row px-1 py-0.5 mt-1
-                text-sm items-center rounded-md
-                hover:text-textLight dark:hover:text-textDark"
-            title="Show/hide course search filters"
-            on:click={() => { showFiltersMenu = !showFiltersMenu }}>
-        <AdjustmentsHorizontalOutline class="w-4 h-4 mr-1" />
-        {appliedFiltersCount} filters applied
-    </button>
+    <div class="flex flex-row items-center gap-1 justify-between
+                 px-1 py-0.5 mt-1">
+        <button class="grow flex flex-row
+                    text-sm items-center rounded-md
+                    hover:text-textLight dark:hover:text-textDark"
+                title="Show/hide course search filters"
+                on:click={() => { showFiltersMenu = !showFiltersMenu }}>
+            <AdjustmentsHorizontalOutline class="w-4 h-4 mr-1" />
+            {appliedFiltersCount} filters applied
+        </button>
+
+        <button class="text-right text-sm
+                    hover:text-textLight dark:hover:text-textDark"
+                on:click={resetFilters}
+                title="Clear all filters">
+            Clear filters
+        </button>
+    </div>
 
     <!-- Filters menu -->
     {#if showFiltersMenu}
