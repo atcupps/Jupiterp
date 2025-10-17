@@ -157,7 +157,7 @@ Copyright (C) 2025 Andrew Cupps
                             dark:border-outlineDark rounded-lg
                             bg-transparent px-2 w-full text-xl
                             lg:text-base lg:placeholder:text-sm
-                            placeholder:text-base">
+                            placeholder:text-base py-0">
 
         <CourseFilters />
 

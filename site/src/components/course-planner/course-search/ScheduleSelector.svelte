@@ -17,6 +17,7 @@ Copyright (C) 2024 Andrew Cupps
         deleteNonselectedSchedule,
         uniqueScheduleName
     } from "$lib/course-planner/ScheduleSelector";
+    import type { ScheduleSelection, StoredSchedule } from "../../../types";
 
     let dropdownOpen: boolean = false;
 
@@ -123,8 +124,9 @@ Copyright (C) 2024 Andrew Cupps
                     bind:this={scheduleNameElement}
                     on:blur={changeScheduleName}
                     title='Schedule name'
-                    class='bg-bgLight dark:bg-bgDark
-                            px-0.5 mr-1 rounded cursor-text grow'>
+                    class='bg-bgLight dark:bg-bgDark text-sm 2xl:text-md
+                            px-0.5 mr-1 rounded cursor-text grow
+                            border-none outline-none py-0'>
         </div>
 
         <ScheduleOptionsDropdown />
