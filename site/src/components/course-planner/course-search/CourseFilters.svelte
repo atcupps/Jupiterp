@@ -58,7 +58,7 @@ Copyright (C) 2025 Andrew Cupps
                 title="Show/hide course search filters"
                 on:click={() => { showFiltersMenu = !showFiltersMenu }}>
             <AdjustmentsHorizontalOutline class="w-4 h-4 mr-1" />
-            {appliedFiltersCount} filters applied
+            {appliedFiltersCount} filter{appliedFiltersCount === 1 ? '' : 's'} applied
         </button>
 
         <button class="text-right text-sm
