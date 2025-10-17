@@ -2,7 +2,7 @@
 This file is part of Jupiterp. For terms of use, please see the file
 called LICENSE at the top level of the Jupiterp source tree (online at
 https://github.com/atcupps/Jupiterp/LICENSE).
-Copyright (C) 2024 Andrew Cupps
+Copyright (C) 2025 Andrew Cupps
 -->
 <script lang='ts'>
     import { fade } from "svelte/transition";
@@ -18,6 +18,7 @@ Copyright (C) 2024 Andrew Cupps
     import ScheduleSelector from "./ScheduleSelector.svelte";
     import type { Course } from "@jupiterp/jupiterp";
     import type { ScheduleSelection } from "../../../types";
+    import CourseFilters from "./CourseFilters.svelte";
 
     let hoveredSection: ScheduleSelection | null;
     HoveredSectionStore.subscribe((hovered) => { hoveredSection = hovered });
@@ -130,7 +131,7 @@ Copyright (C) 2024 Andrew Cupps
                             transition-transform duration-300'
         class:course-search-transition={!courseSearchSelected}
         class:shadow-lg={courseSearchSelected}>
-    
+
     <div class='flex flex-row text-xs ml-1 pb-1 2xl:text-sm'>
         <div>
             Spring 2026
@@ -145,6 +146,8 @@ Copyright (C) 2024 Andrew Cupps
     <div class='flex flex-col w-full border-solid relative
                             border-b-2 border-t-2 p-1 lg:px-0
                             border-divBorderLight dark:border-divBorderDark'>
+
+        <!-- Course search box -->
         <input type='text' 
             bind:value={searchInput}
             on:input={() => {setSearchResults(searchInput)}}
@@ -155,6 +158,10 @@ Copyright (C) 2024 Andrew Cupps
                             bg-transparent px-2 w-full text-xl
                             lg:text-base lg:placeholder:text-sm
                             placeholder:text-base">
+
+        <CourseFilters />
+
+        <!-- Department suggestions dropdown -->
         {#if searchInput.length > 0 && deptSuggestions.length > 1}
             <div class='absolute left-1 right-1 top-full mt-2 rounded-lg border
                         border-outlineLight dark:border-outlineDark
@@ -181,6 +188,8 @@ Copyright (C) 2024 Andrew Cupps
             </div>
         {/if}
     </div>
+
+    <!-- Course search results -->
     <div class='grow courses-list overflow-y-scroll overflow-x-none
                 px-1 lg:pr-1 lg:pl-0'>
         {#each searchResults as courseMatch (courseMatch.courseCode)}
