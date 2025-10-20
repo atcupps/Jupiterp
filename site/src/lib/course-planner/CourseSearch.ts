@@ -9,7 +9,12 @@
 
 import type { Course, Instructor } from "@jupiterp/jupiterp";
 import { CourseDataCache } from "./CourseDataCache";
-import { DepartmentsStore, DeptSuggestionsStore, SearchResultsStore } from "../../stores/CoursePlannerStores";
+import {
+    DepartmentsStore,
+    DeptSuggestionsStore,
+    SearchResultsStore,
+    ProfsLookupStore,
+} from "../../stores/CoursePlannerStores";
 
 const cache = new CourseDataCache();
 
@@ -22,6 +27,13 @@ DepartmentsStore.subscribe((depts) => {
     depts.forEach(dept => {
         deptCodeToName[dept.deptCode] = dept.name;
     });
+});
+
+// Load professor name data
+let profNames: string[] = [];
+ProfsLookupStore.subscribe((profs) => {
+    profNames = Object.keys(profs);
+    profNames.sort();
 });
 
 /**
@@ -158,4 +170,21 @@ export function getProfsLookup(profs: Instructor[]): Record<string, Instructor> 
 export function pendingResults(): boolean {
     const result = cache.isPending();
     return result;
+}
+
+/**
+ * Given a partial or un-formatted professor name, returns an array of all matching standardized names.
+ * @param partial A partial or un-formatted professor name
+ */
+export function matchingStandardizedProfessorNames(partial: string): string[] {
+    const simpleInput: string = partial.toUpperCase().replace(/\s/g, '');
+    const matches: string[] = [];
+    for (const profName of profNames) {
+        const simpleProfName: string =
+            profName.toUpperCase().replace(/\s/g, '');
+        if (simpleProfName.startsWith(simpleInput)) {
+            matches.push(profName);
+        }
+    }
+    return matches;
 }

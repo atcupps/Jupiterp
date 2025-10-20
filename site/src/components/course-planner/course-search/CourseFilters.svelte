@@ -12,6 +12,9 @@ Copyright (C) 2025 Andrew Cupps
         CloseOutline
     } from "flowbite-svelte-icons";
     import { slide } from "svelte/transition";
+    import type { FilterParams } from "../../../types";
+    import { CourseSearchFilterStore } from "../../../stores/CoursePlannerStores";
+    import { matchingStandardizedProfessorNames } from "$lib/course-planner/CourseSearch";
 
     let appliedFiltersCount = 0;
     let showFiltersMenu = false;
@@ -19,6 +22,7 @@ Copyright (C) 2025 Andrew Cupps
     let genEdSelections: GenEd[] = [];
     let onlyOpenSections = false;
     let instructor: string = '';
+    let matchingInstructors: string[] = [];
 
     const defaultMinCredits = 0;
     const defaultMaxCredits = 20;
@@ -30,21 +34,39 @@ Copyright (C) 2025 Andrew Cupps
     }
 
     $: {
+        const params: FilterParams = {
+            applied: false
+        };
         appliedFiltersCount = 0;
+
         if (genEdSelections.length > 0) {
             appliedFiltersCount += 1;
+            params.genEds = genEdSelections;
         }
         if (minCredits !== 0) {
             appliedFiltersCount += 1;
+            params.minCredits = minCredits;
         }
         if (maxCredits !== 20) {
             appliedFiltersCount += 1;
+            params.maxCredits = maxCredits;
         }
         if (onlyOpenSections) {
             appliedFiltersCount += 1;
+            params.onlyOpen = onlyOpenSections;
         }
         if (instructor.trim().length > 0) {
             appliedFiltersCount += 1;
+            matchingInstructors = matchingStandardizedProfessorNames(instructor);
+            if (matchingInstructors.length == 1) {
+                console.log(matchingInstructors[0]);
+                params.instructor = matchingInstructors[0];
+            }
+            else {
+                params.instructor = instructor;
+            }
+        } else {
+            matchingInstructors = [];
         }
     }
 
@@ -195,27 +217,48 @@ Copyright (C) 2025 Andrew Cupps
             </div>
 
             <!-- Instructor -->
-            <div class="flex flex-row items-center text-xs">
+            <div class="flex flex-row text-xs">
                 <span class="min-w-16">
                     Instructor:
                 </span>
-                <div class="flex flex-row grow">
-                    <div class="grow border-l border-t border-b border-secCodesDark
-                                    dark:border-divBorderDark rounded-l-md">
-                        <input class="rounded-l-md border-none w-full px-2 py-0 text-xs
-                                        focus:outline-none focus:ring
-                                        bg-bgLight dark:bg-bgDark"
-                            type="text" placeholder="Instructor name" bind:value={instructor} />
+                <div class="flex flex-col grow">
+                    <!-- Instructor input box -->
+                    <div class="flex flex-row grow">
+                        <div class="grow border-l border-t border-b border-secCodesDark
+                                        dark:border-divBorderDark rounded-l-md">
+                            <input class="rounded-l-md border-none w-full px-2 py-0 text-xs
+                                            focus:outline-none focus:ring
+                                            bg-bgLight dark:bg-bgDark"
+                                type="text" placeholder="Instructor name" bind:value={instructor} />
+                        </div>
+                        
+                        <button class="rounded-r-md self-end px-0.5
+                                        border border-1 h-full
+                                        border-secCodesDark dark:border-divBorderDark
+                                        hover:bg-hoverLight hover:dark:bg-hoverDark"
+                                    title="Clear Gen Ed filters"
+                                    on:click={() => { instructor = '';}}>
+                            <CloseOutline class="w-4 h-4" />
+                        </button>
                     </div>
-                    
-                    <button class="rounded-r-md self-end px-0.5
-                                    border border-1 h-full
-                                    border-secCodesDark dark:border-divBorderDark
-                                    hover:bg-hoverLight hover:dark:bg-hoverDark"
-                                title="Clear Gen Ed filters"
-                                on:click={() => { instructor = '';}}>
-                        <CloseOutline class="w-4 h-4" />
-                    </button>
+
+                    <!-- Matching instructors list -->
+                    {#if (matchingInstructors.length > 1)
+                        || (matchingInstructors.length == 1 && matchingInstructors[0] !== instructor)}
+                        <div class="w-full flex flex-col max-h-40 overflow-y-auto mt-1 rounded-md
+                                    border border-outlineLight dark:border-outlineDark
+                                    bg-bgLight dark:bg-bgDark shadow-lg z-[60]">
+                            {#each matchingInstructors as profName}
+                                <button class="px-2 py-1 text-left
+                                            hover:bg-outlineLight hover:bg-opacity-20
+                                            dark:hover:bg-outlineDark dark:hover:bg-opacity-30
+                                            cursor-pointer"
+                                    on:click={() => { instructor = profName; }}>
+                                    {profName}
+                                </button>
+                            {/each}
+                        </div>
+                    {/if}
                 </div>
             </div>
 
