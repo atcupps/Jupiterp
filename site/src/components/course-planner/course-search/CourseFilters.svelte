@@ -199,11 +199,12 @@ Copyright (C) 2025 Andrew Cupps
                 <span class="min-w-16">
                     Instructor:
                 </span>
-                <div class="flex flex-row grow bg-bgLight dark:bg-bgDark">
+                <div class="flex flex-row grow">
                     <div class="grow border-l border-t border-b border-secCodesDark
                                     dark:border-divBorderDark rounded-l-md">
                         <input class="rounded-l-md border-none w-full px-2 py-0 text-xs
-                                        focus:outline-none focus:ring"
+                                        focus:outline-none focus:ring
+                                        bg-bgLight dark:bg-bgDark"
                             type="text" placeholder="Instructor name" bind:value={instructor} />
                     </div>
                     
