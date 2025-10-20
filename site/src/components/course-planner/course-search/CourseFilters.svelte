@@ -17,6 +17,7 @@ Copyright (C) 2025 Andrew Cupps
     let showFiltersMenu = false;
     let showGenEdMenu = false;
     let genEdSelections: GenEd[] = [];
+    let onlyOpenSections = false;
 
     const defaultMinCredits = 0;
     const defaultMaxCredits = 20;
@@ -38,12 +39,16 @@ Copyright (C) 2025 Andrew Cupps
         if (maxCredits !== 20) {
             appliedFiltersCount += 1;
         }
+        if (onlyOpenSections) {
+            appliedFiltersCount += 1;
+        }
     }
 
     function resetFilters() {
         genEdSelections = [];
         minCredits = defaultMinCredits;
         maxCredits = defaultMaxCredits;
+        onlyOpenSections = false;
     }
 </script>
 
@@ -153,39 +158,54 @@ Copyright (C) 2025 Andrew Cupps
                 </div>
             </div>
 
-            <!-- Min credits -->
-            <span class="flex flex-row items-center text-xs">
-                <span class="min-w-16">
-                    Min credits: 
-                </span>
-                <input type="number" min="0" step="1" max="20" placeholder="0"
-                    bind:value={minCredits}
-                    class="border border-secCodesDark dark:border-divBorderDark
-                            rounded-md w-12 px-1 py-0 text-xs
-                            bg-bgLight dark:bg-bgDark
-                            focus:outline-none focus:ring
-                            text-sm"/>
-            </span>
-                
-            <!-- Max credits -->
-            <span class="flex flex-row items-center text-xs">
-                <span class="min-w-16">
-                    Max credits: 
-                </span>
-                <input type="number" min="0" max="20" step="1" placeholder="10"
-                    bind:value={maxCredits}
-                    class="border border-secCodesDark dark:border-divBorderDark
-                            rounded-md w-12 px-1 py-0
-                            bg-bgLight dark:bg-bgDark text-xs
-                            focus:outline-none focus:ring
-                            text-sm"/>
-            </span>
+            <!-- Credits -->
+            <div class="flex flex-row gap-4">
+                <!-- Min credits -->
+                <div class="flex flex-row items-center text-xs">
+                    <span class="min-w-16">
+                        Min credits: 
+                    </span>
+                    <input type="number" min="0" step="1" max="20" placeholder="0"
+                        bind:value={minCredits}
+                        class="border border-secCodesDark dark:border-divBorderDark
+                                rounded-md w-12 px-1 py-0 text-xs
+                                bg-bgLight dark:bg-bgDark
+                                focus:outline-none focus:ring
+                                text-sm"/>
+                </div>
+
+                <!-- Max credits -->
+                <div class="flex flex-row items-center text-xs">
+                    <span class="min-w-16">
+                        Max credits: 
+                    </span>
+                    <input type="number" min="0" max="20" step="1" placeholder="10"
+                        bind:value={maxCredits}
+                        class="border border-secCodesDark dark:border-divBorderDark
+                                rounded-md w-12 px-1 py-0
+                                bg-bgLight dark:bg-bgDark text-xs
+                                focus:outline-none focus:ring
+                                text-sm"/>
+                </div>
+            </div>
 
             <!-- Total class size -->
-
+            <!-- Considering this, add later potentially -->
 
             <!-- Only open sections -->
-
+            <div class="flex flex-row items-center text-xs">
+                <input type="checkbox" id="only-open-sections"
+                    class="mr-2 rounded-md text-orange
+                        border-secCodesDark dark:border-divBorderDark
+                        bg-divBorderLight dark:bg-divBorderDark
+                        focus:ring-orange
+                        hover:cursor-pointer"
+                    bind:checked={onlyOpenSections} />
+                <label for="only-open-sections"
+                    class="text-xs hover:cursor-pointer">
+                    Only show open sections
+                </label>
+            </div>
 
             <!-- Instructor -->
 
