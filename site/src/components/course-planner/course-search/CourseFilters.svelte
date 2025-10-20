@@ -18,6 +18,7 @@ Copyright (C) 2025 Andrew Cupps
     let showGenEdMenu = false;
     let genEdSelections: GenEd[] = [];
     let onlyOpenSections = false;
+    let instructor: string = '';
 
     const defaultMinCredits = 0;
     const defaultMaxCredits = 20;
@@ -42,6 +43,9 @@ Copyright (C) 2025 Andrew Cupps
         if (onlyOpenSections) {
             appliedFiltersCount += 1;
         }
+        if (instructor.trim().length > 0) {
+            appliedFiltersCount += 1;
+        }
     }
 
     function resetFilters() {
@@ -49,6 +53,7 @@ Copyright (C) 2025 Andrew Cupps
         minCredits = defaultMinCredits;
         maxCredits = defaultMaxCredits;
         onlyOpenSections = false;
+        instructor = '';
     }
 </script>
 
@@ -189,6 +194,30 @@ Copyright (C) 2025 Andrew Cupps
                 </div>
             </div>
 
+            <!-- Instructor -->
+            <div class="flex flex-row items-center text-xs">
+                <span class="min-w-16">
+                    Instructor:
+                </span>
+                <div class="flex flex-row grow bg-bgLight dark:bg-bgDark">
+                    <div class="grow border-l border-t border-b border-secCodesDark
+                                    dark:border-divBorderDark rounded-l-md">
+                        <input class="rounded-l-md border-none w-full px-2 py-0 text-xs
+                                        focus:outline-none focus:ring"
+                            type="text" placeholder="Instructor name" bind:value={instructor} />
+                    </div>
+                    
+                    <button class="rounded-r-md self-end px-0.5
+                                    border border-1 h-full
+                                    border-secCodesDark dark:border-divBorderDark
+                                    hover:bg-hoverLight hover:dark:bg-hoverDark"
+                                title="Clear Gen Ed filters"
+                                on:click={() => { instructor = '';}}>
+                        <CloseOutline class="w-4 h-4" />
+                    </button>
+                </div>
+            </div>
+
             <!-- Total class size -->
             <!-- Considering this, add later potentially -->
 
@@ -206,10 +235,6 @@ Copyright (C) 2025 Andrew Cupps
                     Only show open sections
                 </label>
             </div>
-
-            <!-- Instructor -->
-
-
         </div>
     {/if}
 </div>
