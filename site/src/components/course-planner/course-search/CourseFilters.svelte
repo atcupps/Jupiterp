@@ -48,7 +48,7 @@ Copyright (C) 2025 Andrew Cupps
 </script>
 
 <div class="flex flex-col
-            text-secCodesLight dark:text-secCodesDark">
+            text-secCodesLight dark:text-[#8892a8]">
     <!-- Filters button -->
     <div class="flex flex-row items-center gap-1 justify-between
                  px-1 py-0.5 mt-1">
@@ -71,12 +71,12 @@ Copyright (C) 2025 Andrew Cupps
 
     <!-- Filters menu -->
     {#if showFiltersMenu}
-        <div class="flex flex-col px-2 py-1 mx-1 my-1 gap-2"
+        <div class="flex flex-col px-2 py-1 mx-1 my-1 gap-2 text-xs"
             transition:slide>
 
             <!-- Gen-Eds -->
             <div class="flex flex-row text-xs">
-                <span class="whitespace-nowrap w-16">
+                <span class="whitespace-nowrap min-w-16">
                     Gen-Eds:
                 </span>
                 
@@ -155,7 +155,7 @@ Copyright (C) 2025 Andrew Cupps
 
             <!-- Min credits -->
             <span class="flex flex-row items-center text-xs">
-                <span class="w-16">
+                <span class="min-w-16">
                     Min credits: 
                 </span>
                 <input type="number" min="0" step="1" max="20" placeholder="0"
@@ -169,7 +169,7 @@ Copyright (C) 2025 Andrew Cupps
                 
             <!-- Max credits -->
             <span class="flex flex-row items-center text-xs">
-                <span class="w-16">
+                <span class="min-w-16">
                     Max credits: 
                 </span>
                 <input type="number" min="0" max="20" step="1" placeholder="10"
