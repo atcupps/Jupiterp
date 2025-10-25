@@ -36,4 +36,7 @@ export const SearchResultsStore: Writable<Course[]> = writable([]);
 export const DeptSuggestionsStore: Writable<string[]> = writable([]);
 
 /** Filter parameters for course search */
-export const CourseSearchFilterStore: Writable<FilterParams> = writable({applied: true});
+export const CourseSearchFilterStore: Writable<FilterParams> = writable({
+    serverSideFilters: {},
+    clientSideFilters: {}
+});

@@ -11,6 +11,7 @@ Copyright (C) 2024 Andrew Cupps
         HoveredSectionStore,
         CurrentScheduleStore,
         CourseInfoPairStore,
+        CourseSearchFilterStore,
     } from "../../../stores/CoursePlannerStores";
     import SeatData from "./SeatData.svelte";
     import type { Section, CourseBasic } from "@jupiterp/jupiterp";
@@ -31,6 +32,11 @@ Copyright (C) 2024 Andrew Cupps
         scheduleName = stored.scheduleName;
     });
 
+    let onlyShowingOpen = false;
+    CourseSearchFilterStore.subscribe((store) => {
+        onlyShowingOpen = store.clientSideFilters.onlyOpen === true;
+    });
+
     let newSelection: ScheduleSelection = {
         course,
         section,
@@ -39,8 +45,12 @@ Copyright (C) 2024 Andrew Cupps
         colorNumber: -1,
     }
     let sectionAdded: boolean;
-    $: if (selectionsList || hoveredSection) {
-        sectionAdded = selectionsList.some(obj => selectionEquals(obj));
+    $: if (selectionsList || hoveredSection || (onlyShowingOpen || false)) {
+        if (onlyShowingOpen && section.openSeats === 0) {
+            sectionAdded = false;
+        } else {
+            sectionAdded = selectionsList.some(obj => selectionEquals(obj));
+        }
     }
     
     let hoverSection: ScheduleSelection = {

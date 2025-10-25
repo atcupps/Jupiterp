@@ -236,14 +236,17 @@ export interface CourseSectionPair {
  * Parameters for filtering course search results.
  */
 export interface FilterParams {
+    serverSideFilters: ServerSideFilterParams,
+    clientSideFilters: ClientSideFilterParams,
+}
+
+export interface ServerSideFilterParams {
     genEds?: GenEd[],
+    instructor?: string,
+}
+
+export interface ClientSideFilterParams {
     minCredits?: number,
     maxCredits?: number,
     onlyOpen?: boolean,
-    instructor?: string,
-
-    /**
-     * Indicates whether any filters are currently applied.
-     */
-    applied: boolean
 }

@@ -31,36 +31,37 @@ Copyright (C) 2025 Andrew Cupps
 
     $: {
         const params: FilterParams = {
-            applied: false
+            serverSideFilters: {},
+            clientSideFilters: {}
         };
         appliedFiltersCount = 0;
 
         if (genEdSelections.length > 0) {
             appliedFiltersCount += 1;
-            params.genEds = genEdSelections
+            params.serverSideFilters.genEds = genEdSelections
                                 .sort((a, b) => a.code.localeCompare(b.code));
         }
         if (minCredits !== 0) {
             appliedFiltersCount += 1;
-            params.minCredits = minCredits;
+            params.clientSideFilters.minCredits = minCredits;
         }
         if (maxCredits !== 20) {
             appliedFiltersCount += 1;
-            params.maxCredits = maxCredits;
+            params.clientSideFilters.maxCredits = maxCredits;
         }
         if (onlyOpenSections) {
             appliedFiltersCount += 1;
-            params.onlyOpen = onlyOpenSections;
+            params.clientSideFilters.onlyOpen = onlyOpenSections;
         }
         if (instructor.trim().length > 0) {
             appliedFiltersCount += 1;
             matchingInstructors = matchingStandardizedProfessorNames(instructor);
             if (matchingInstructors.length == 1) {
                 console.log(matchingInstructors[0]);
-                params.instructor = matchingInstructors[0];
+                params.serverSideFilters.instructor = matchingInstructors[0];
             }
             else {
-                params.instructor = undefined;
+                params.serverSideFilters.instructor = undefined;
             }
         } else {
             matchingInstructors = [];
@@ -69,10 +70,12 @@ Copyright (C) 2025 Andrew Cupps
         if (appliedFiltersCount > 0) {
             CourseSearchFilterStore.set({
                 ...params,
-                applied: false
             });
         } else {
-            CourseSearchFilterStore.set({ applied: false });
+            CourseSearchFilterStore.set({
+                serverSideFilters: {},
+                clientSideFilters: {}
+            });
         }
     }
 

@@ -7,9 +7,9 @@
  * @fileoverview A cache to store course data fetched from the API.
  */
 
-import { CreditFilter, SortBy, type Course, type CoursesWithSectionsConfig } from "@jupiterp/jupiterp";
+import { SortBy, type Course, type CoursesWithSectionsConfig } from "@jupiterp/jupiterp";
 import { client } from "$lib/client";
-import type { FilterParams } from "../../types";
+import type { ServerSideFilterParams } from "../../types";
 
 export class CourseDataCache {
     /**
@@ -197,7 +197,7 @@ function generateRequestConfig(input: RequestInput): CoursesWithSectionsConfig {
         sortBy: new SortBy().ascending("course_code"),
     };
 
-    const filters = input.filters || { applied: false };
+    const filters: ServerSideFilterParams = input.filters ?? {};
 
     if (input.type === "deptCode") {
         cfg.prefix = input.value;
@@ -213,10 +213,6 @@ function generateRequestConfig(input: RequestInput): CoursesWithSectionsConfig {
         cfg.instructor = filters.instructor;
     }
 
-    if (filters.onlyOpen === true) {
-        cfg.onlyOpen = true;
-    }
-
     return cfg;
 }
 
@@ -227,5 +223,5 @@ type CourseDataCacheEntry =
 export interface RequestInput {
     type: "deptCode" | "courseNumber";
     value: string;
-    filters?: FilterParams;
+    filters?: ServerSideFilterParams;
 }

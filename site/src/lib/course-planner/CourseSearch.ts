@@ -41,7 +41,10 @@ ProfsLookupStore.subscribe((profs) => {
 let mostRecentInput: string = "";
 
 // Filtering data
-let filters: FilterParams = { applied: false };
+let filters: FilterParams = {
+    serverSideFilters: {},
+    clientSideFilters: {}
+};
 CourseSearchFilterStore.subscribe((newFilters) => {
     filters = newFilters;
     setSearchResults(mostRecentInput);
@@ -74,13 +77,38 @@ function filterAndSortCourseArray(courses: Course[]): Course[] {
     const sorted = courses.sort((a, b) => {
         return a.courseCode.localeCompare(b.courseCode);
     });
-    if (filters.maxCredits === undefined && filters.minCredits === undefined) {
+
+    const fs = filters.clientSideFilters;
+
+    const filtered = fs.onlyOpen !== true ? sorted :
+        sorted.map((course) => {
+            if (course.sections === null || course.sections.length === 0) {
+                return course;
+            }
+
+            const openSections = course.sections.filter((section) => {
+                return section.openSeats > 0;
+            });
+
+            return {
+                ...course,
+                sections: openSections,
+            };
+        });
+
+    if (fs.maxCredits === undefined && fs.minCredits === undefined && 
+        (fs.onlyOpen === undefined || fs.onlyOpen === false)) {
         return sorted;
     }
 
-    return sorted.filter((course) => {
-        const maxCredits = filters.maxCredits ?? Number.MAX_SAFE_INTEGER;
-        const minCredits = filters.minCredits ?? 0;
+    return filtered.filter((course) => {
+        if (fs.onlyOpen === true && 
+            (course.sections === null || course.sections.length === 0)) {
+            return false;
+        }
+
+        const maxCredits = fs.maxCredits ?? Number.MAX_SAFE_INTEGER;
+        const minCredits = fs.minCredits ?? 0;
         
         if (course.maxCredits === null) {
             return course.minCredits >= minCredits && course.minCredits <= maxCredits;
@@ -117,7 +145,7 @@ export async function setSearchResults(input: string) {
         const requestInput: RequestInput = {
             type: "deptCode",
             value: matchingDepts[0],
-            filters: filters,
+            filters: filters.serverSideFilters,
         }
 
         // Get from cache/API
@@ -157,7 +185,7 @@ export async function setSearchResults(input: string) {
         const requestInput: RequestInput = {
             type: "courseNumber",
             value: numberInput,
-            filters: filters,
+            filters: filters.serverSideFilters,
         }
 
         const courses: Course[] =
@@ -185,13 +213,14 @@ export async function setSearchResults(input: string) {
     // If we reach here, the input is not a valid department code or a course
     // number. If there is an instructor or GenEd filter applied, we can search
     // all courses for matches. Only do this if search is empty.
+    const fs = filters.serverSideFilters;
     if (simpleInput.length === 0 
-            && ((filters.genEds !== undefined && filters.genEds.length > 0) 
-                || (filters.instructor !== undefined && filters.instructor.length > 0))) {
+            && ((fs.genEds !== undefined && fs.genEds.length > 0) 
+                || (fs.instructor !== undefined && fs.instructor.length > 0))) {
         const requestInput: RequestInput = {
             type: "deptCode",
             value: "", // Empty prefix to get all courses
-            filters: filters,
+            filters: filters.serverSideFilters,
         }
 
         const courses: Course[] =
