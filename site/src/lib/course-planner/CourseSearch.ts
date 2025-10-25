@@ -70,6 +70,26 @@ function resolveInputToDepartment(input: string): string[] {
     return possibleDepts;
 }
 
+function filterAndSortCourseArray(courses: Course[]): Course[] {
+    const sorted = courses.sort((a, b) => {
+        return a.courseCode.localeCompare(b.courseCode);
+    });
+    if (filters.maxCredits === undefined && filters.minCredits === undefined) {
+        return sorted;
+    }
+
+    return sorted.filter((course) => {
+        const maxCredits = filters.maxCredits ?? Number.MAX_SAFE_INTEGER;
+        const minCredits = filters.minCredits ?? 0;
+        
+        if (course.maxCredits === null) {
+            return course.minCredits >= minCredits && course.minCredits <= maxCredits;
+        } else {
+            return course.minCredits <= maxCredits && course.maxCredits >= minCredits;
+        }
+    });
+}
+
 /**
  * Given an `input`, search for any matching courses in the course data cache
  * (which retrieves from the API if necessary) and sets the `SearchResultsStore`
@@ -102,10 +122,7 @@ export async function setSearchResults(input: string) {
 
         // Get from cache/API
         const deptCourses: Course[] = 
-            (await cache.getCoursesAndSections(requestInput))
-            .sort((a, b) => {
-                return a.courseCode.localeCompare(b.courseCode);
-            });
+            filterAndSortCourseArray(await cache.getCoursesAndSections(requestInput));
 
         // Ensure that the department for this search is still the most recent
         // search. If not, abort to avoid displaying outdated results.
@@ -144,13 +161,16 @@ export async function setSearchResults(input: string) {
         }
 
         const courses: Course[] =
-            (await cache.getCoursesAndSections(requestInput))
-            .filter((course) => {
-                return course.courseCode
-                        .substring(4)
-                        .toUpperCase()
-                        .startsWith(simpleInput);
-            });
+            filterAndSortCourseArray(
+                (await cache.getCoursesAndSections(requestInput))
+                .filter((course) => {
+                    // API only matches the number, but the input may
+                    // include a letter suffix as well. Filter that here.
+                    return course.courseCode
+                            .substring(4)
+                            .toUpperCase()
+                            .startsWith(simpleInput);
+                }));
         
         // Ensure that the course number for this search is still the most recent
         // search. If not, abort to avoid displaying outdated results.
@@ -164,9 +184,10 @@ export async function setSearchResults(input: string) {
 
     // If we reach here, the input is not a valid department code or a course
     // number. If there is an instructor or GenEd filter applied, we can search
-    // all courses for matches.
-    if (filters.genEds !== undefined && filters.genEds.length > 0 ||
-            filters.instructor !== undefined && filters.instructor.length > 0) {
+    // all courses for matches. Only do this if search is empty.
+    if (simpleInput.length === 0 
+            && ((filters.genEds !== undefined && filters.genEds.length > 0) 
+                || (filters.instructor !== undefined && filters.instructor.length > 0))) {
         const requestInput: RequestInput = {
             type: "deptCode",
             value: "", // Empty prefix to get all courses
@@ -174,13 +195,8 @@ export async function setSearchResults(input: string) {
         }
 
         const courses: Course[] =
-            (await cache.getCoursesAndSections(requestInput))
-            .filter((course) => {
-                return course.courseCode
-                        .toUpperCase()
-                        .includes(simpleInput);
-            });
-        
+            filterAndSortCourseArray(await cache.getCoursesAndSections(requestInput));
+
         // Ensure that the course number for this search is still the most recent
         // search. If not, abort to avoid displaying outdated results.
         if (cache.getMostRecentAccess() !== requestInput) {

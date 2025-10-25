@@ -29,10 +29,6 @@ Copyright (C) 2025 Andrew Cupps
     let minCredits: number = defaultMinCredits;
     let maxCredits: number = defaultMaxCredits;
 
-    $: if (minCredits > maxCredits) {
-        maxCredits = minCredits;
-    }
-
     $: {
         const params: FilterParams = {
             applied: false

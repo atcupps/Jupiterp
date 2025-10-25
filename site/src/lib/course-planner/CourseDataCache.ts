@@ -213,20 +213,6 @@ function generateRequestConfig(input: RequestInput): CoursesWithSectionsConfig {
         cfg.instructor = filters.instructor;
     }
 
-    let credits: CreditFilter = new CreditFilter();
-    let hasCreditFilters = false;
-    if (filters.minCredits !== null && filters.minCredits !== undefined) {
-        credits = credits.greaterThanOrEqualTo(filters.minCredits);
-        hasCreditFilters = true;
-    }
-    if (filters.maxCredits !== null && filters.maxCredits !== undefined) {
-        credits = credits.lessThanOrEqualTo(filters.maxCredits);
-        hasCreditFilters = true;
-    }
-    if (hasCreditFilters) {
-        cfg.creditFilters = credits;
-    }
-
     if (filters.onlyOpen === true) {
         cfg.onlyOpen = true;
     }
