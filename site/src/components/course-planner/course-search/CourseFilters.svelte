@@ -41,7 +41,8 @@ Copyright (C) 2025 Andrew Cupps
 
         if (genEdSelections.length > 0) {
             appliedFiltersCount += 1;
-            params.genEds = genEdSelections;
+            params.genEds = genEdSelections
+                                .sort((a, b) => a.code.localeCompare(b.code));
         }
         if (minCredits !== 0) {
             appliedFiltersCount += 1;

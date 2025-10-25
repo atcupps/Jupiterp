@@ -38,10 +38,13 @@ ProfsLookupStore.subscribe((profs) => {
     profNames.sort();
 });
 
+let mostRecentInput: string = "";
+
 // Filtering data
 let filters: FilterParams = { applied: false };
 CourseSearchFilterStore.subscribe((newFilters) => {
     filters = newFilters;
+    setSearchResults(mostRecentInput);
 });
 
 /**
@@ -74,6 +77,8 @@ function resolveInputToDepartment(input: string): string[] {
  * @param input A search input string
  */
 export async function setSearchResults(input: string) {
+    mostRecentInput = input;
+
     // Don't care about case or whitespace in searches
     const simpleInput: string = input.toUpperCase().replace(/\s/g, '');
 
