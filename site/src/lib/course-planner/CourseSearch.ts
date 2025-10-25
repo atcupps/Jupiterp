@@ -8,13 +8,15 @@
  */
 
 import type { Course, Instructor } from "@jupiterp/jupiterp";
-import { CourseDataCache } from "./CourseDataCache";
+import { CourseDataCache, type RequestInput } from "./CourseDataCache";
 import {
     DepartmentsStore,
     DeptSuggestionsStore,
     SearchResultsStore,
     ProfsLookupStore,
+    CourseSearchFilterStore,
 } from "../../stores/CoursePlannerStores";
+import type { FilterParams } from "../../types";
 
 const cache = new CourseDataCache();
 
@@ -34,6 +36,12 @@ let profNames: string[] = [];
 ProfsLookupStore.subscribe((profs) => {
     profNames = Object.keys(profs);
     profNames.sort();
+});
+
+// Filtering data
+let filters: FilterParams = { applied: false };
+CourseSearchFilterStore.subscribe((newFilters) => {
+    filters = newFilters;
 });
 
 /**
@@ -78,19 +86,25 @@ export async function setSearchResults(input: string) {
 
     if (matchingDepts.length === 1) {
         DeptSuggestionsStore.set([]);
+        console.log(`Searching for dept: ${matchingDepts[0]}`);
+
+        // Generate cache request input
+        const requestInput: RequestInput = {
+            type: "deptCode",
+            value: matchingDepts[0],
+            filters: filters,
+        }
+
         // Get from cache/API
         const deptCourses: Course[] = 
-            (await cache.getCoursesForDept({
-                type: "deptCode",
-                value: matchingDepts[0]
-            }))
+            (await cache.getCoursesAndSections(requestInput))
             .sort((a, b) => {
                 return a.courseCode.localeCompare(b.courseCode);
             });
 
         // Ensure that the department for this search is still the most recent
         // search. If not, abort to avoid displaying outdated results.
-        if (cache.getMostRecentAccess() !== matchingDepts[0]) {
+        if (cache.getMostRecentAccess() !== requestInput) {
             return;
         }
 
@@ -117,17 +131,27 @@ export async function setSearchResults(input: string) {
     // match courses with the number (+ letter).
     if (simpleInput.length >= 3 && /^[0-9]{3}[A-Z]?$/i.test(simpleInput)) {
         const numberInput = simpleInput.substring(0, 3);
+
+        const requestInput: RequestInput = {
+            type: "courseNumber",
+            value: numberInput,
+            filters: filters,
+        }
+
         const courses: Course[] =
-            (await cache.getCoursesForDept({
-                type: "courseNumber",
-                value: numberInput
-            }))
+            (await cache.getCoursesAndSections(requestInput))
             .filter((course) => {
                 return course.courseCode
                         .substring(4)
                         .toUpperCase()
                         .startsWith(simpleInput);
             });
+        
+        // Ensure that the course number for this search is still the most recent
+        // search. If not, abort to avoid displaying outdated results.
+        if (cache.getMostRecentAccess() !== requestInput) {
+            return;
+        }
 
         SearchResultsStore.set(courses);
         return;

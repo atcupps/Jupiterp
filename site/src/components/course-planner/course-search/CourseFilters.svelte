@@ -68,6 +68,15 @@ Copyright (C) 2025 Andrew Cupps
         } else {
             matchingInstructors = [];
         }
+
+        if (appliedFiltersCount > 0) {
+            CourseSearchFilterStore.set({
+                ...params,
+                applied: false
+            });
+        } else {
+            CourseSearchFilterStore.set({ applied: false });
+        }
     }
 
     function resetFilters() {

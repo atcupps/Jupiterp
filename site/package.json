@@ -32,7 +32,7 @@
   },
   "type": "module",
   "dependencies": {
-    "@jupiterp/jupiterp": "^0.8.3",
+    "@jupiterp/jupiterp": "^0.8.5",
     "@sentry/sveltekit": "^8.15.0",
     "@supabase/supabase-js": "^2.45.4",
     "@svelte-put/clickoutside": "^3.0.2",
