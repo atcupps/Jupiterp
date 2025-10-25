@@ -160,12 +160,17 @@ Copyright (C) 2025 Andrew Cupps
                             placeholder:text-base py-0">
 
         <CourseFilters />
+    </div>
+
+    <!-- Course search results & dept suggestions -->
+    <div class='grow courses-list overflow-y-scroll overflow-x-none
+                px-1 lg:pr-1 lg:pl-0'>
 
         <!-- Department suggestions dropdown -->
         {#if searchInput.length > 0 && deptSuggestions.length > 1}
-            <div class='absolute left-1 right-1 top-full mt-2 rounded-lg border
+            <div class='mt-2 rounded-lg border
                         border-outlineLight dark:border-outlineDark
-                        bg-bgLight dark:bg-bgDark shadow-lg z-[60]'>
+                        bg-bgLight dark:bg-bgDark shadow-lg'>
                 {#each deptSuggestions as deptOption, index}
                     <button type='button'
                         class={`flex w-full text-left px-3 py-1 text-base lg:text-sm transition-colors
@@ -187,11 +192,8 @@ Copyright (C) 2025 Andrew Cupps
                 {/each}
             </div>
         {/if}
-    </div>
 
-    <!-- Course search results -->
-    <div class='grow courses-list overflow-y-scroll overflow-x-none
-                px-1 lg:pr-1 lg:pl-0'>
+        <!-- Course search results -->
         {#each searchResults as courseMatch (courseMatch.courseCode)}
             <CourseListing course={courseMatch} />
         {/each}
