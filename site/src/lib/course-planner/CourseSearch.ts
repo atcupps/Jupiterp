@@ -163,7 +163,35 @@ export async function setSearchResults(input: string) {
     }
 
     // If we reach here, the input is not a valid department code or a course
-    // number. Clear results.
+    // number. If there is an instructor or GenEd filter applied, we can search
+    // all courses for matches.
+    if (filters.genEds !== undefined && filters.genEds.length > 0 ||
+            filters.instructor !== undefined && filters.instructor.length > 0) {
+        const requestInput: RequestInput = {
+            type: "deptCode",
+            value: "", // Empty prefix to get all courses
+            filters: filters,
+        }
+
+        const courses: Course[] =
+            (await cache.getCoursesAndSections(requestInput))
+            .filter((course) => {
+                return course.courseCode
+                        .toUpperCase()
+                        .includes(simpleInput);
+            });
+        
+        // Ensure that the course number for this search is still the most recent
+        // search. If not, abort to avoid displaying outdated results.
+        if (cache.getMostRecentAccess() !== requestInput) {
+            return;
+        }
+
+        SearchResultsStore.set(courses);
+        return;
+    }
+
+    // If these filters aren't applied, clear results.
     SearchResultsStore.set([]);
     return;
 }

@@ -64,7 +64,7 @@ Copyright (C) 2025 Andrew Cupps
                 params.instructor = matchingInstructors[0];
             }
             else {
-                params.instructor = instructor;
+                params.instructor = undefined;
             }
         } else {
             matchingInstructors = [];
