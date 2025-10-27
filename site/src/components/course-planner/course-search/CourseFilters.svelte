@@ -18,7 +18,7 @@ Copyright (C) 2025 Andrew Cupps
 
     let appliedFiltersCount = 0;
     let showFiltersMenu = false;
-    let showGenEdMenu = false;
+    export let showGenEdMenu = false;
     let genEdSelections: GenEd[] = [];
     let onlyOpenSections = false;
     let instructor: string = '';
@@ -162,7 +162,7 @@ Copyright (C) 2025 Andrew Cupps
                     {#if showGenEdMenu}
                         <div class="flex flex-col gap-2
                                     mt-1 py-2"
-                             transition:slide>
+                             transition:slide={{ duration: 350 }}>
 
                             <!-- Individual gen-ed checkbox -->
                             {#each GenEd.list() as genEd}

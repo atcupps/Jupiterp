@@ -20,6 +20,8 @@ Copyright (C) 2025 Andrew Cupps
     import type { ScheduleSelection } from "../../../types";
     import CourseFilters from "./CourseFilters.svelte";
 
+    const FILTER_SCROLL_COLLAPSE_THRESHOLD = 100;
+
     let hoveredSection: ScheduleSelection | null;
     HoveredSectionStore.subscribe((hovered) => { hoveredSection = hovered });
 
@@ -47,6 +49,8 @@ Copyright (C) 2025 Andrew Cupps
     } else {
         isPendingResults = false;
     }
+
+    let genEdMenuOpen = false;
 
     function selectDepartment(dept: string) {
         searchInput = dept;
@@ -107,6 +111,22 @@ Copyright (C) 2025 Andrew Cupps
             totalCredits += selection.course.minCredits;
         })
     }
+
+    let scrollAcc = 0;
+    function handleResultsScroll(event: WheelEvent) {
+        if (!genEdMenuOpen) {
+            return;
+        }
+
+        scrollAcc += event.deltaY;
+        if (scrollAcc < 0) {
+            scrollAcc = 0;
+        }
+        if (scrollAcc >= FILTER_SCROLL_COLLAPSE_THRESHOLD) {
+            genEdMenuOpen = false;
+            scrollAcc = 0;
+        }
+    }
 </script>
 
 <!-- Layer to exit course search if user taps on the Schedule -->
@@ -159,12 +179,13 @@ Copyright (C) 2025 Andrew Cupps
                             lg:text-base lg:placeholder:text-sm
                             placeholder:text-base py-0">
 
-        <CourseFilters />
+        <CourseFilters bind:showGenEdMenu={genEdMenuOpen} />
     </div>
 
     <!-- Course search results & dept suggestions -->
     <div class='grow courses-list overflow-y-scroll overflow-x-none
-                px-1 lg:pr-1 lg:pl-0'>
+                px-1 lg:pr-1 lg:pl-0'
+        on:wheel={handleResultsScroll}>
 
         <!-- Department suggestions dropdown -->
         {#if searchInput.length > 0 && deptSuggestions.length > 1}
