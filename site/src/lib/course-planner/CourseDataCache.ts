@@ -187,7 +187,7 @@ export class CourseDataCache {
 }
 
 function keyFromRequestInput(input: RequestInput): string {
-    let filtersPart = JSON.stringify(input.filters);
+    const filtersPart = JSON.stringify(input.filters);
     return `${input.type}:${input.value}|filters:${filtersPart}`;
 }
 
