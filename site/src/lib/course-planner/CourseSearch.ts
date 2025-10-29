@@ -33,9 +33,22 @@ DepartmentsStore.subscribe((depts) => {
 
 // Load professor name data
 let profNames: string[] = [];
+let profNamesReverse: string[] = [];
 ProfsLookupStore.subscribe((profs) => {
     profNames = Object.keys(profs);
     profNames.sort();
+
+    profNamesReverse = profNames.map((name) => {
+        const parts = name.split(' ');
+        if (parts.length < 2) {
+            return name;
+        }
+
+        const lastName = parts.pop();
+        const firstNames = parts.join(' ');
+        return `${lastName}, ${firstNames}`;
+    });
+    profNamesReverse.sort();
 });
 
 let mostRecentInput: string = "";
@@ -275,7 +288,8 @@ export function pendingResults(): boolean {
 }
 
 /**
- * Given a partial or un-formatted professor name, returns an array of all matching standardized names.
+ * Given a partial or un-formatted professor name, returns an array of
+ * all matching standardized professor names. Also searches by last name.
  * @param partial A partial or un-formatted professor name
  */
 export function matchingStandardizedProfessorNames(partial: string): string[] {
@@ -286,6 +300,23 @@ export function matchingStandardizedProfessorNames(partial: string): string[] {
             profName.toUpperCase().replace(/\s/g, '');
         if (simpleProfName.startsWith(simpleInput)) {
             matches.push(profName);
+        }
+    }
+    for (const profName of profNamesReverse) {
+        const simpleProfName: string =
+            profName.toUpperCase().replace(/\s/g, '');
+        if (simpleProfName.startsWith(simpleInput)) {
+            // Convert back to normal name order
+            const parts = profName.split(', ');
+            if (parts.length < 2) {
+                continue;
+            }
+            const firstNames = parts[1];
+            const lastName = parts[0];
+            const normalName = `${firstNames} ${lastName}`;
+            if (!matches.includes(normalName)) {
+                matches.push(normalName);
+            }
         }
     }
     return matches;
