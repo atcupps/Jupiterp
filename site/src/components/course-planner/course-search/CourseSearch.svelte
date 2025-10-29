@@ -2,7 +2,7 @@
 This file is part of Jupiterp. For terms of use, please see the file
 called LICENSE at the top level of the Jupiterp source tree (online at
 https://github.com/atcupps/Jupiterp/LICENSE).
-Copyright (C) 2024 Andrew Cupps
+Copyright (C) 2025 Andrew Cupps
 -->
 <script lang='ts'>
     import { fade } from "svelte/transition";
@@ -18,6 +18,9 @@ Copyright (C) 2024 Andrew Cupps
     import ScheduleSelector from "./ScheduleSelector.svelte";
     import type { Course } from "@jupiterp/jupiterp";
     import type { ScheduleSelection } from "../../../types";
+    import CourseFilters from "./CourseFilters.svelte";
+
+    const FILTER_SCROLL_COLLAPSE_THRESHOLD = 100;
 
     let hoveredSection: ScheduleSelection | null;
     HoveredSectionStore.subscribe((hovered) => { hoveredSection = hovered });
@@ -46,6 +49,8 @@ Copyright (C) 2024 Andrew Cupps
     } else {
         isPendingResults = false;
     }
+
+    let genEdMenuOpen = false;
 
     function selectDepartment(dept: string) {
         searchInput = dept;
@@ -106,6 +111,22 @@ Copyright (C) 2024 Andrew Cupps
             totalCredits += selection.course.minCredits;
         })
     }
+
+    let scrollAcc = 0;
+    function handleResultsScroll(event: WheelEvent) {
+        if (!genEdMenuOpen) {
+            return;
+        }
+
+        scrollAcc += event.deltaY;
+        if (scrollAcc < 0) {
+            scrollAcc = 0;
+        }
+        if (scrollAcc >= FILTER_SCROLL_COLLAPSE_THRESHOLD) {
+            genEdMenuOpen = false;
+            scrollAcc = 0;
+        }
+    }
 </script>
 
 <!-- Layer to exit course search if user taps on the Schedule -->
@@ -130,7 +151,7 @@ Copyright (C) 2024 Andrew Cupps
                             transition-transform duration-300'
         class:course-search-transition={!courseSearchSelected}
         class:shadow-lg={courseSearchSelected}>
-    
+
     <div class='flex flex-row text-xs ml-1 pb-1 2xl:text-sm'>
         <div>
             Spring 2026
@@ -145,6 +166,8 @@ Copyright (C) 2024 Andrew Cupps
     <div class='flex flex-col w-full border-solid relative
                             border-b-2 border-t-2 p-1 lg:px-0
                             border-divBorderLight dark:border-divBorderDark'>
+
+        <!-- Course search box -->
         <input type='text' 
             bind:value={searchInput}
             on:input={() => {setSearchResults(searchInput)}}
@@ -154,11 +177,21 @@ Copyright (C) 2024 Andrew Cupps
                             dark:border-outlineDark rounded-lg
                             bg-transparent px-2 w-full text-xl
                             lg:text-base lg:placeholder:text-sm
-                            placeholder:text-base">
+                            placeholder:text-base py-0">
+
+        <CourseFilters bind:showGenEdMenu={genEdMenuOpen} />
+    </div>
+
+    <!-- Course search results & dept suggestions -->
+    <div class='grow courses-list overflow-y-scroll overflow-x-none
+                px-1 lg:pr-1 lg:pl-0'
+        on:wheel={handleResultsScroll}>
+
+        <!-- Department suggestions dropdown -->
         {#if searchInput.length > 0 && deptSuggestions.length > 1}
-            <div class='absolute left-1 right-1 top-full mt-2 rounded-lg border
+            <div class='mt-2 rounded-lg border
                         border-outlineLight dark:border-outlineDark
-                        bg-bgLight dark:bg-bgDark shadow-lg z-[60]'>
+                        bg-bgLight dark:bg-bgDark shadow-lg'>
                 {#each deptSuggestions as deptOption, index}
                     <button type='button'
                         class={`flex w-full text-left px-3 py-1 text-base lg:text-sm transition-colors
@@ -180,9 +213,8 @@ Copyright (C) 2024 Andrew Cupps
                 {/each}
             </div>
         {/if}
-    </div>
-    <div class='grow courses-list overflow-y-scroll overflow-x-none
-                px-1 lg:pr-1 lg:pl-0'>
+
+        <!-- Course search results -->
         {#each searchResults as courseMatch (courseMatch.courseCode)}
             <CourseListing course={courseMatch} />
         {/each}

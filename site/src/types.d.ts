@@ -7,7 +7,7 @@
  * @fileoverview Types and interfaces used in Jupiterp
  */
 
-import type { ClassMeeting, CourseBasic, Section } from "@jupiterp/jupiterp"
+import type { ClassMeeting, CourseBasic, GenEd, Section } from "@jupiterp/jupiterp"
 
 /**
  * A section of a class selected by the user, along with metadata used for
@@ -230,4 +230,23 @@ type TimeComponent =
 export interface CourseSectionPair {
     courseCode: string,
     sectionCode: string
+}
+
+/**
+ * Parameters for filtering course search results.
+ */
+export interface FilterParams {
+    serverSideFilters: ServerSideFilterParams,
+    clientSideFilters: ClientSideFilterParams,
+}
+
+export interface ServerSideFilterParams {
+    genEds?: GenEd[],
+    instructor?: string,
+}
+
+export interface ClientSideFilterParams {
+    minCredits?: number,
+    maxCredits?: number,
+    onlyOpen?: boolean,
 }

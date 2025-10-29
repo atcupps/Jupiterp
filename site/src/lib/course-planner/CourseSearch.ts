@@ -8,8 +8,15 @@
  */
 
 import type { Course, Instructor } from "@jupiterp/jupiterp";
-import { CourseDataCache } from "./CourseDataCache";
-import { DepartmentsStore, DeptSuggestionsStore, SearchResultsStore } from "../../stores/CoursePlannerStores";
+import { CourseDataCache, type RequestInput } from "./CourseDataCache";
+import {
+    DepartmentsStore,
+    DeptSuggestionsStore,
+    SearchResultsStore,
+    ProfsLookupStore,
+    CourseSearchFilterStore,
+} from "../../stores/CoursePlannerStores";
+import type { FilterParams } from "../../types";
 
 const cache = new CourseDataCache();
 
@@ -22,6 +29,38 @@ DepartmentsStore.subscribe((depts) => {
     depts.forEach(dept => {
         deptCodeToName[dept.deptCode] = dept.name;
     });
+});
+
+// Load professor name data
+let profNames: string[] = [];
+let profNamesReverse: string[] = [];
+ProfsLookupStore.subscribe((profs) => {
+    profNames = Object.keys(profs);
+    profNames.sort();
+
+    profNamesReverse = profNames.map((name) => {
+        const parts = name.split(' ');
+        if (parts.length < 2) {
+            return name;
+        }
+
+        const lastName = parts.pop();
+        const firstNames = parts.join(' ');
+        return `${lastName}, ${firstNames}`;
+    });
+    profNamesReverse.sort();
+});
+
+let mostRecentInput: string = "";
+
+// Filtering data
+let filters: FilterParams = {
+    serverSideFilters: {},
+    clientSideFilters: {}
+};
+CourseSearchFilterStore.subscribe((newFilters) => {
+    filters = newFilters;
+    setSearchResults(mostRecentInput);
 });
 
 /**
@@ -47,6 +86,51 @@ function resolveInputToDepartment(input: string): string[] {
     return possibleDepts;
 }
 
+function filterAndSortCourseArray(courses: Course[]): Course[] {
+    const sorted = courses.sort((a, b) => {
+        return a.courseCode.localeCompare(b.courseCode);
+    });
+
+    const fs = filters.clientSideFilters;
+
+    const filtered = fs.onlyOpen !== true ? sorted :
+        sorted.map((course) => {
+            if (course.sections === null || course.sections.length === 0) {
+                return course;
+            }
+
+            const openSections = course.sections.filter((section) => {
+                return section.openSeats > 0;
+            });
+
+            return {
+                ...course,
+                sections: openSections,
+            };
+        });
+
+    if (fs.maxCredits === undefined && fs.minCredits === undefined && 
+        (fs.onlyOpen === undefined || fs.onlyOpen === false)) {
+        return sorted;
+    }
+
+    return filtered.filter((course) => {
+        if (fs.onlyOpen === true && 
+            (course.sections === null || course.sections.length === 0)) {
+            return false;
+        }
+
+        const maxCredits = fs.maxCredits ?? Number.MAX_SAFE_INTEGER;
+        const minCredits = fs.minCredits ?? 0;
+        
+        if (course.maxCredits === null) {
+            return course.minCredits >= minCredits && course.minCredits <= maxCredits;
+        } else {
+            return course.minCredits <= maxCredits && course.maxCredits >= minCredits;
+        }
+    });
+}
+
 /**
  * Given an `input`, search for any matching courses in the course data cache
  * (which retrieves from the API if necessary) and sets the `SearchResultsStore`
@@ -54,6 +138,8 @@ function resolveInputToDepartment(input: string): string[] {
  * @param input A search input string
  */
 export async function setSearchResults(input: string) {
+    mostRecentInput = input;
+
     // Don't care about case or whitespace in searches
     const simpleInput: string = input.toUpperCase().replace(/\s/g, '');
 
@@ -66,19 +152,22 @@ export async function setSearchResults(input: string) {
 
     if (matchingDepts.length === 1) {
         DeptSuggestionsStore.set([]);
+        console.log(`Searching for dept: ${matchingDepts[0]}`);
+
+        // Generate cache request input
+        const requestInput: RequestInput = {
+            type: "deptCode",
+            value: matchingDepts[0],
+            filters: filters.serverSideFilters,
+        }
+
         // Get from cache/API
         const deptCourses: Course[] = 
-            (await cache.getCoursesForDept({
-                type: "deptCode",
-                value: matchingDepts[0]
-            }))
-            .sort((a, b) => {
-                return a.courseCode.localeCompare(b.courseCode);
-            });
+            filterAndSortCourseArray(await cache.getCoursesAndSections(requestInput));
 
         // Ensure that the department for this search is still the most recent
         // search. If not, abort to avoid displaying outdated results.
-        if (cache.getMostRecentAccess() !== matchingDepts[0]) {
+        if (cache.getMostRecentAccess() !== requestInput) {
             return;
         }
 
@@ -105,24 +194,62 @@ export async function setSearchResults(input: string) {
     // match courses with the number (+ letter).
     if (simpleInput.length >= 3 && /^[0-9]{3}[A-Z]?$/i.test(simpleInput)) {
         const numberInput = simpleInput.substring(0, 3);
+
+        const requestInput: RequestInput = {
+            type: "courseNumber",
+            value: numberInput,
+            filters: filters.serverSideFilters,
+        }
+
         const courses: Course[] =
-            (await cache.getCoursesForDept({
-                type: "courseNumber",
-                value: numberInput
-            }))
-            .filter((course) => {
-                return course.courseCode
-                        .substring(4)
-                        .toUpperCase()
-                        .startsWith(simpleInput);
-            });
+            filterAndSortCourseArray(
+                (await cache.getCoursesAndSections(requestInput))
+                .filter((course) => {
+                    // API only matches the number, but the input may
+                    // include a letter suffix as well. Filter that here.
+                    return course.courseCode
+                            .substring(4)
+                            .toUpperCase()
+                            .startsWith(simpleInput);
+                }));
+        
+        // Ensure that the course number for this search is still the most recent
+        // search. If not, abort to avoid displaying outdated results.
+        if (cache.getMostRecentAccess() !== requestInput) {
+            return;
+        }
 
         SearchResultsStore.set(courses);
         return;
     }
 
     // If we reach here, the input is not a valid department code or a course
-    // number. Clear results.
+    // number. If there is an instructor or GenEd filter applied, we can search
+    // all courses for matches. Only do this if search is empty.
+    const fs = filters.serverSideFilters;
+    if (simpleInput.length === 0 
+            && ((fs.genEds !== undefined && fs.genEds.length > 0) 
+                || (fs.instructor !== undefined && fs.instructor.length > 0))) {
+        const requestInput: RequestInput = {
+            type: "deptCode",
+            value: "", // Empty prefix to get all courses
+            filters: filters.serverSideFilters,
+        }
+
+        const courses: Course[] =
+            filterAndSortCourseArray(await cache.getCoursesAndSections(requestInput));
+
+        // Ensure that the course number for this search is still the most recent
+        // search. If not, abort to avoid displaying outdated results.
+        if (cache.getMostRecentAccess() !== requestInput) {
+            return;
+        }
+
+        SearchResultsStore.set(courses);
+        return;
+    }
+
+    // If these filters aren't applied, clear results.
     SearchResultsStore.set([]);
     return;
 }
@@ -158,4 +285,39 @@ export function getProfsLookup(profs: Instructor[]): Record<string, Instructor> 
 export function pendingResults(): boolean {
     const result = cache.isPending();
     return result;
+}
+
+/**
+ * Given a partial or un-formatted professor name, returns an array of
+ * all matching standardized professor names. Also searches by last name.
+ * @param partial A partial or un-formatted professor name
+ */
+export function matchingStandardizedProfessorNames(partial: string): string[] {
+    const simpleInput: string = partial.toUpperCase().replace(/\s/g, '');
+    const matches: string[] = [];
+    for (const profName of profNames) {
+        const simpleProfName: string =
+            profName.toUpperCase().replace(/\s/g, '');
+        if (simpleProfName.startsWith(simpleInput)) {
+            matches.push(profName);
+        }
+    }
+    for (const profName of profNamesReverse) {
+        const simpleProfName: string =
+            profName.toUpperCase().replace(/\s/g, '');
+        if (simpleProfName.startsWith(simpleInput)) {
+            // Convert back to normal name order
+            const parts = profName.split(', ');
+            if (parts.length < 2) {
+                continue;
+            }
+            const firstNames = parts[1];
+            const lastName = parts[0];
+            const normalName = `${firstNames} ${lastName}`;
+            if (!matches.includes(normalName)) {
+                matches.push(normalName);
+            }
+        }
+    }
+    return matches;
 }

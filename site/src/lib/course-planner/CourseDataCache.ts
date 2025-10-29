@@ -7,13 +7,14 @@
  * @fileoverview A cache to store course data fetched from the API.
  */
 
-import type { Course, CoursesConfig } from "@jupiterp/jupiterp";
+import { SortBy, type Course, type CoursesWithSectionsConfig } from "@jupiterp/jupiterp";
 import { client } from "$lib/client";
+import type { ServerSideFilterParams } from "../../types";
 
 export class CourseDataCache {
     /**
-     * A cache storing data from the API. Matches department
-     * codes to `Course[]`.
+     * A cache storing data from the API. Matches a string constructed from
+     * the request query and filter params to the cached data.
      */
     private cache: Record<string, CourseDataCacheEntry>;
 
@@ -44,7 +45,7 @@ export class CourseDataCache {
      * asynchronous, this is used to validate that the list of courses used
      * in course search is the most recently requested one.
      */
-    private mostRecentAccess: string | null = null;
+    private mostRecentAccess: RequestInput | null = null;
 
     /**
      * @param maxSize The maximum number of entries to store in the cache.
@@ -61,7 +62,7 @@ export class CourseDataCache {
      * @returns The most recently-accessed department code, or `null` if no
      * accesses have been made yet.
      */
-    public getMostRecentAccess(): string | null {
+    public getMostRecentAccess(): RequestInput | null {
         return this.mostRecentAccess;
     }
 
@@ -69,11 +70,12 @@ export class CourseDataCache {
      * Get course data for a department code. If the data is not in the
      * cache, it requests it from the API and stores it in the cache.
      * @returns A `Promise` which resolves to the list of `Course`s for
-     *          the department code.
+     *          the input.
      */
-    public async getCoursesForDept(input: RequestInput): Promise<Course[]> {
-        this.mostRecentAccess = input.value;
-        const cacheEntry = this.cache[input.value];
+    public async getCoursesAndSections(input: RequestInput): Promise<Course[]> {
+        const key = keyFromRequestInput(input);
+        this.mostRecentAccess = input;
+        const cacheEntry = this.cache[key];
         if (cacheEntry) {
             if (cacheEntry.status === "data") {
                 this.lruCounter += 1;
@@ -81,10 +83,10 @@ export class CourseDataCache {
                 return cacheEntry.data;
             }
 
-            const pending = this.pendingRequests[input.value];
+            const pending = this.pendingRequests[key];
             if (cacheEntry.status === "request sent" && pending) {
                 const data = await pending;
-                const updatedEntry = this.cache[input.value];
+                const updatedEntry = this.cache[key];
                 if (updatedEntry && updatedEntry.status === "data") {
                     this.lruCounter += 1;
                     updatedEntry.lastUsed = this.lruCounter;
@@ -95,52 +97,49 @@ export class CourseDataCache {
         }
 
         const hadEntry = Boolean(cacheEntry);
-        this.cache[input.value] = { status: "request sent" };
-        const requestConfig: CoursesConfig = 
-            input.type === "deptCode" ?
-            { prefix: input.value, limit: 500 } :
-            { number: input.value, limit: 500 };
-        this.pendingRequests[input.value] = 
-            this.requestCoursesForDept(input.value, requestConfig, !hadEntry);
+        this.cache[key] = { status: "request sent" };
+        const requestConfig: CoursesWithSectionsConfig = generateRequestConfig(input);
+        this.pendingRequests[key] = 
+            this.requestCoursesForDept(key, requestConfig, !hadEntry);
         if (!hadEntry) {
             this.size += 1;
         }
 
         try {
-            return await this.pendingRequests[input.value];
+            return await this.pendingRequests[key];
         } finally {
-            delete this.pendingRequests[input.value];
+            delete this.pendingRequests[key];
         }
     }
 
-    private async requestCoursesForDept(input: string, 
-                    cfg: CoursesConfig, isNewEntry: boolean): Promise<Course[]> {
+    private async requestCoursesForDept(key: string, 
+                    cfg: CoursesWithSectionsConfig, isNewEntry: boolean): Promise<Course[]> {
         try {
             const response = await client.coursesWithSections(cfg);
 
             if (!response.ok()) {
                 throw new Error(
-                    `API request to get courses for ${input} failed: ${response.statusCode} ${response.statusMessage}`
+                    `API request to get courses for ${key} failed: ${response.statusCode} ${response.statusMessage}`
                 );
             }
 
             const courses = response.data;
             if (courses == null) {
-                throw new Error(`Null course data returned for ${input}`);
+                throw new Error(`Null course data returned for ${key}`);
             }
 
-            const existingEntry = this.cache[input];
+            const existingEntry = this.cache[key];
             if (!existingEntry || existingEntry.status !== "request sent") {
                 return courses;
             }
 
             this.lruCounter += 1;
-            this.cache[input] = { status: "data", data: courses, lastUsed: this.lruCounter };
-            this.evictLeastRecentlyUsed(input);
+            this.cache[key] = { status: "data", data: courses, lastUsed: this.lruCounter };
+            this.evictLeastRecentlyUsed(key);
             return courses;
         } catch (error) {
-            if (input in this.cache) {
-                delete this.cache[input];
+            if (key in this.cache) {
+                delete this.cache[key];
                 if (isNewEntry) {
                     this.size = Math.max(0, this.size - 1);
                 }
@@ -183,8 +182,38 @@ export class CourseDataCache {
 
     public isPending(): boolean {
         return this.mostRecentAccess !== null 
-                && this.mostRecentAccess in this.pendingRequests;
+                && keyFromRequestInput(this.mostRecentAccess) in this.pendingRequests;
     }
+}
+
+function keyFromRequestInput(input: RequestInput): string {
+    const filtersPart = JSON.stringify(input.filters);
+    return `${input.type}:${input.value}|filters:${filtersPart}`;
+}
+
+function generateRequestConfig(input: RequestInput): CoursesWithSectionsConfig {
+    const cfg: CoursesWithSectionsConfig = {
+        limit: 500,
+        sortBy: new SortBy().ascending("course_code"),
+    };
+
+    const filters: ServerSideFilterParams = input.filters ?? {};
+
+    if (input.type === "deptCode") {
+        cfg.prefix = input.value;
+    } else if (input.type === "courseNumber") {
+        cfg.number = input.value;
+    }
+
+    if (filters.genEds && filters.genEds.length > 0) {
+        cfg.genEds = new Set(filters.genEds);
+    }
+
+    if (filters.instructor && filters.instructor.length > 0) {
+        cfg.instructor = filters.instructor;
+    }
+
+    return cfg;
 }
 
 type CourseDataCacheEntry =
@@ -194,4 +223,5 @@ type CourseDataCacheEntry =
 export interface RequestInput {
     type: "deptCode" | "courseNumber";
     value: string;
+    filters?: ServerSideFilterParams;
 }
