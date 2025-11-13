@@ -43,6 +43,11 @@ jobs:
           credentials_json: ${{ secrets.GCP_CREDENTIALS }}
           project_id: ${{ secrets.GCP_PROJECT_ID }}
 
+      - name: Record deployment start timestamp
+        if: steps.team.outputs.allowed == 'yes'
+        run: |
+          echo "DEPLOY_TIME=$(date -u +'%Y-%m-%d %H:%M:%SZ')" >> $GITHUB_ENV
+
       - name: Comment that deployment is starting
         if: steps.team.outputs.allowed == 'yes'
         uses: marocchino/sticky-pull-request-comment@v2
@@ -53,7 +58,9 @@ jobs:
 
             Deploying... ⏳
 
-      - name: Record deployment timestamp
+            Started at (UTC): `${{ env.DEPLOY_TIME }}`
+
+      - name: Record deployment end timestamp
         if: steps.team.outputs.allowed == 'yes'
         run: |
           echo "DEPLOY_TIME=$(date -u +'%Y-%m-%d %H:%M:%SZ')" >> $GITHUB_ENV
@@ -95,9 +102,7 @@ jobs:
 
             **${{ env.URL || format('https://{0}.jupiterp.com', steps.team.outputs.author) }}**
 
-            Latest deployment (UTC):
-
-            `${{ env.DEPLOY_TIME }}`
+            Latest deployment (UTC): `${{ env.DEPLOY_TIME }}`
 
       - name: Comment that deployment failed
         if: steps.team.outputs.allowed == 'yes' && steps.deploy.outcome != 'success'
@@ -109,9 +114,7 @@ jobs:
 
             Check the workflow logs for details. Re-run the job once the issue is resolved.
 
-            Latest deployment attempt (UTC):
-
-            `${{ env.DEPLOY_TIME }}`
+            Latest deployment attempt (UTC): `${{ env.DEPLOY_TIME }}`
 
       - name: Fail workflow when deployment fails
         if: steps.team.outputs.allowed == 'yes' && steps.deploy.outcome != 'success'
