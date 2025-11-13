@@ -43,8 +43,25 @@ jobs:
           credentials_json: ${{ secrets.GCP_CREDENTIALS }}
           project_id: ${{ secrets.GCP_PROJECT_ID }}
 
+      - name: Comment that deployment is starting
+        if: steps.team.outputs.allowed == 'yes'
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          message: |
+            **Preview deployment running for ${{ steps.team.outputs.author }}**
+
+            Deploying... ⏳
+
+      - name: Record deployment timestamp
+        if: steps.team.outputs.allowed == 'yes'
+        run: |
+          echo "DEPLOY_TIME=$(date -u +'%Y-%m-%d %H:%M:%SZ')" >> $GITHUB_ENV
+
       - name: Deploy to Author's Preview Environment
         if: steps.team.outputs.allowed == 'yes'
+        id: deploy
+        continue-on-error: true
         run: |
           AUTHOR="${{ steps.team.outputs.author }}"
           REGION="${{ secrets.GCP_REGION }}"
@@ -66,14 +83,38 @@ jobs:
 
           echo "URL=$URL" >> $GITHUB_ENV
 
-      - name: Comment on PR with preview link
-        if: steps.team.outputs.allowed == 'yes'
+      - name: Comment that deployment succeeded
+        if: steps.team.outputs.allowed == 'yes' && steps.deploy.outcome == 'success'
         uses: marocchino/sticky-pull-request-comment@v2
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           message: |
-            **Preview Updated for ${{ steps.team.outputs.author }}**
+            **Preview updated for ${{ steps.team.outputs.author }} ✅**
 
             Live preview URL:
 
-            **https://${{ steps.team.outputs.author }}.jupiterp.com**
+            **${{ env.URL || format('https://{0}.jupiterp.com', steps.team.outputs.author) }}**
+
+            Latest deployment (UTC):
+
+            `${{ env.DEPLOY_TIME }}`
+
+      - name: Comment that deployment failed
+        if: steps.team.outputs.allowed == 'yes' && steps.deploy.outcome != 'success'
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          message: |
+            **Preview deployment failed for ${{ steps.team.outputs.author }} ❌**
+
+            Check the workflow logs for details. Re-run the job once the issue is resolved.
+
+            Latest deployment attempt (UTC):
+
+            `${{ env.DEPLOY_TIME }}`
+
+      - name: Fail workflow when deployment fails
+        if: steps.team.outputs.allowed == 'yes' && steps.deploy.outcome != 'success'
+        run: |
+          echo "Deployment failed; marking job as failed after commenting."
+          exit 1
