@@ -29,14 +29,8 @@ In general, code should be as easy to read as possible by utilizing self-documen
 	 - For tasks that must be put off until after a commit or merge, mark places relevant to those tasks with `TODO` comments. These should include a relevant issue number and a brief description of the task. As an example:
 		 - `//TODO(2): Investigate sharing HTTP requests between calls to this fn.` where issue #2 is to investigate sharing HTTP requests as described in the comment.
 
-Lastly, add a comment to all code files specifying that the file is part of Jupiterp. In Rust, that would look like:
-```rust
-// This file is part of Jupiterp. For terms of use, please see the file
-// called LICENSE at the top level of the Jupiterp source tree (online at
-// https://github.com/atcupps/Jupiterp/LICENSE).
-// Copyright (C) 2024 Andrew Cupps
-```
-And in JS/TS:
+Lastly, add a comment to all code files specifying that the file is part of Jupiterp.
+In JS/TS:
 ```js
 /**
  * This file is part of Jupiterp. For terms of use, please see the file
@@ -55,15 +49,11 @@ Copyright (C) 2024 Andrew Cupps
 -->
 ```
 
-## Rust style
-
-When programming in rust, adhere to the practices of default `rustfmt`. This is fairly simple: just run `cargo fmt` in the `datagen` folder and the code will automatically be formatted. Additionally, use the lint results from running `cargo clippy` to ensure your code follows best practices in Rust. In certain cases, your code may be a better option than that suggested by `clippy`; use the appropriate `#[allow(clippy::_____)]` to mark such cases. Jupiterp uses GitHub actions to check that your code satisfies these requirements.
-
 ## JavaScript/TypeScript
 
-For lints, Jupiterp uses ESLint. You can use this by navigating to the `site` folder and running `npm run lint`. Similar to `clippy`, GitHub jobs check that your code conforms to the style prescribed by ESLint.
+For lints, Jupiterp uses ESLint. You can use this by navigating to the `site` folder and running `npm run lint`.
 
-Unlike with Rust, Jupiterp does not use an automatic formatter like `cargo fmt` for JS/TS code. So, the rules for formatting are not too controlling, but generally:
+The rules for formatting are not too controlling, but generally:
 - Group relevant imports
 - Use single quotes `'` rather than double quotes `"` for strings
 - Mark variable types, especially for custom types, classes, or interfaces

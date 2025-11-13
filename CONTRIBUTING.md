@@ -1,7 +1,8 @@
 # Contributing to Jupiterp
 
 ## Introduction
-Jupiterp is a WIP open-source schedule planning and building tool for students at the University of Maryland. Jupiterp expands on the capabilities of existing tools like Venus and the Testudo schedule visualizer by integrating reviews and a more intuitive interface to provide a user experience aimed at improving students' workflow and their course selection process.
+
+Jupiterp is an open-source schedule-planning tool for students at the University of Maryland. Jupiterp expands on the capabilities of existing tools like Venus and the Testudo schedule visualizer by integrating reviews and a more intuitive interface to provide a user experience aimed at improving students' workflow and their course selection process.
 
 ## Code of Conduct
 
@@ -25,29 +26,26 @@ Examples of unacceptable behavior by participants include:
 
 ### Leadership
 
-This project is led and maintained by the core team, which currently consists of:
-- @atcupps
-- @alanliu2009
+This project is led by Andrew Cupps (@atcupps). Project leadership is tasked with managing Jupiterp and ensuring all contributions are productive and aligned with the mission of Jupiterp. The project leader has the rights and responsibilities to remove, edit, or reject comments, commits, code, wiki edits, issues, and other contributions that are not aligned with this Code of Conduct, or to temporarily or permanently ban any contributor for other behaviors deemed inappropriate, threatening, offensive, or harmful.
 
-The core team is tasked with managing Jupiterp and ensuring all contributions are productive and aligned with the mission of Jupiterp. The core team has the rights and responsibilities to remove, edit, or reject comments, commits, code, wiki edits, issues, and other contributions that are not aligned with this Code of Conduct, or to ban temporarily or permanently any contributor for other behaviors that they deem inappropriate, threatening, offensive, or harmful.
+If Jupiterp becomes a monetized operation, the project leader will be responsible for determining how funds are acquired and used. Both contributors and Jupiterp users should expect that the core team be mission-driven, rather than profit-driven. But, community members should understand that, although Jupiterp is an open-source project, contributing to Jupiterp does not entitle them to any share of revenue generated.
 
-If Jupiterp becomes a monetized operation, the core team will be responsible for determining how funds are acquired and used. Both contributors and Jupiterp users should expect that the core team be mission-driven, rather than profit-driven. But, community members should understand that, although Jupiterp is an open-source project, contributing to Jupiterp does not entitle them to any share of revenue generated.
-
-Within the core team and the project as a whole, @atcupps has ultimate decision-making and administrative power. Any contributors should expect both @atcupps and the rest of the core team to fulfill their roles within this project dutifully, and should hold them accountable should they stray from the mission and values of Jupiterp. However, contributors should also understand that unpopular or controversial decisions do not necessarily constitute an abuse of power by the core team.
+Within the core team and the project as a whole, Andrew Cupps has ultimate decision-making and administrative power. Any contributors should expect both Andrew Cupps and the rest of the Jupiterp team to fulfill their roles within this project dutifully, and should hold them accountable should they stray from the mission and values of Jupiterp. However, contributors should also understand that unpopular or controversial decisions do not necessarily constitute an abuse of power by the team or its leadership.
 
 ### Enforcement
 
-Instances of abusive, harassing, or otherwise unacceptable behavior may be reported by contacting the core team. All complaints will be reviewed and investigated and will result in a response that is deemed necessary and appropriate to the circumstances. The core team is obligated to maintain confidentiality with regard to the reporter of an incident.
+Instances of abusive, harassing, or otherwise unacceptable behavior may be reported by contacting Andrew Cupps. All complaints will be reviewed and investigated and will result in a response that is deemed necessary and appropriate to the circumstances. The core team is obligated to maintain confidentiality with regard to the reporter of an incident.
 
 Project maintainers who do not follow or enforce the Code of Conduct in good faith may face temporary or permanent repercussions as determined by other members of the project's leadership.
 
 ## Getting Started
 
-Jupiterp is separated into two components:
-- The `datagen` component, which is built in Rust. This component uses web-scraping and APIs to gather professor, course, and section data and write it to easily-parsable JSON files used by the `site` component.
-- The `site` component, which is built using Svelte with TypeScript. This is both the front and back ends of the actual site users will be able to use and interact with.
+This repository is for the main Jupiterp site, which is built with SvelteKit and TypeScript. In addition to this repository, other components of Jupiterp can be found in the [jupiterp-umd](https://github.com/jupiterp-umd) GitHub group, including:
+- The [Jupiterp API](http://api.jupiterp.com/), an open-source API for getting course data
+- The Jupiterp web-scraper, which collects course information to be used in the site
+- The [@jupiterp/jupiterp](https://www.npmjs.com/package/@jupiterp/jupiterp/) npm package, which provides a TS interface wrapping the Jupiterp API
 
-To get started, see `README.md`.
+To get started on working on the site, see `README.md`.
 
 ### Finding Issues to Work On
 
@@ -69,13 +67,11 @@ When you make changes, please abide by the style guide found in `STYLE.md`.
 
 If you are not finished with development on a task, but want to share your code or receive feedback or review, you can open up a draft pull request from your local or forked branch to a branch of Jupiterp. This can then be viewed by other contributors; when ready, the draft PR can be converted to a normal PR and merged, or closed.
 
-If you are ready to merge changes on a local or forked branch to this repository, you can open a pull request (PR) on GitHub. Pull requests should not attempt to merge code directly into the `main` branch, but instead into an appropriate development branch. Development branches are named by version; for example: `dev-1.0.2`. This allows code to be tested thoroughly before pushing changes to production. If you are unsure of which development branch to target, choose one and you may be directed to change your target branch. In your pull request, provide a brief description of what your PR does and link any relevant issues rather than closing them.
+If you are ready to merge changes on a local or forked branch to this repository, you can open a pull request (PR) on GitHub. In your pull request, provide a brief description of what your PR does and link any relevant issues rather than closing them.
 
 ### Code Review
 
 When you open a pull request, you are required to receive approval from appropriate contributors in the code review process. You can also request a review from others, which is especially recommended if a particular contributor is especially knowledgeable of or responsible for an area of code you have altered.
-
-If you are conducting a review, do so in a respectful and constructive way. Using [Conventional Comments](https://conventionalcomments.org/) is suggested to clarify the meaning of your comments.
 
 ### CI Jobs
 
