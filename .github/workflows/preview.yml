@@ -32,6 +32,22 @@ jobs:
           
           echo "author=$AUTHOR" >> $GITHUB_OUTPUT
           echo "allowed=$MATCH" >> $GITHUB_OUTPUT
+          
+          SAFE_AUTHOR=$(printf '%s' "$AUTHOR" | tr '[:upper:]' '[:lower:]')
+          SAFE_AUTHOR=$(printf '%s' "$SAFE_AUTHOR" | sed 's/[^a-z0-9-]/-/g')
+          SAFE_AUTHOR=$(printf '%s' "$SAFE_AUTHOR" | sed 's/^-*//; s/-*$//')
+          if [ -z "$SAFE_AUTHOR" ]; then
+            SAFE_AUTHOR="user"
+          fi
+          if [[ ! $SAFE_AUTHOR =~ ^[a-z] ]]; then
+            SAFE_AUTHOR="u-$SAFE_AUTHOR"
+          fi
+          SAFE_AUTHOR=${SAFE_AUTHOR:0:63}
+          SAFE_AUTHOR=$(printf '%s' "$SAFE_AUTHOR" | sed 's/-*$//')
+          if [ -z "$SAFE_AUTHOR" ]; then
+            SAFE_AUTHOR="u-preview"
+          fi
+          echo "sanitized_author=$SAFE_AUTHOR" >> $GITHUB_OUTPUT
 
       - name: Stop if author not in team
         if: steps.team.outputs.allowed == 'no'
@@ -74,8 +90,9 @@ jobs:
         continue-on-error: true
         run: |
           AUTHOR="${{ steps.team.outputs.author }}"
+          SAFE_AUTHOR="${{ steps.team.outputs.sanitized_author }}"
           REGION="${{ secrets.GCP_REGION }}"
-          SERVICE="${AUTHOR}-preview"
+          SERVICE="${SAFE_AUTHOR}-preview"
 
           cd site
 
@@ -103,7 +120,7 @@ jobs:
 
             Live preview URL:
 
-            **${{ env.URL || format('https://{0}.jupiterp.com', steps.team.outputs.author) }}**
+            **${{ env.URL || format('https://{0}.jupiterp.com', steps.team.outputs.sanitized_author) }}**
 
             Latest deployment (UTC): `${{ env.DEPLOY_TIME }}`
 
