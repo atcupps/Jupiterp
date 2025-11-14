@@ -1,6 +1,7 @@
 name: Nightly Beta Deployment
 
 on:
+    workflow_dispatch:
     schedule:
         - cron: '0 3 * * *'  # Every day at 03:00 UTC
 
