@@ -3,6 +3,8 @@ name: Team Preview Deployment
 on:
   pull_request:
     types: [opened, synchronize, reopened]
+    paths:
+      - 'site/**'
 
 jobs:
   deploy-preview:
