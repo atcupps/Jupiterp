@@ -12,3 +12,5 @@ vite.config.ts.timestamp-*
 
 # Sentry Config File
 .sentryclirc
+
+# Hey, Akash was here!
