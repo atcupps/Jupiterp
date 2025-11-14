@@ -40,6 +40,7 @@ jobs:
           exit 0
 
       - name: Set up gcloud
+        if: steps.team.outputs.allowed == 'yes'
         uses: google-github-actions/auth@v2
         with:
           credentials_json: ${{ secrets.GCP_CREDENTIALS }}
