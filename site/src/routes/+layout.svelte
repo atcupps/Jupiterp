@@ -17,9 +17,7 @@ Copyright (C) 2024 Andrew Cupps
                             border-divBorderLight dark:border-divBorderDark
                             justify-center lg:justify-start'>
         <a href='/' class='flex w-64'>
-            <!-- <img src='logo.svg' alt='Jupiterp Beta logo'/> -->
-
-            andrew's jupiterp
+            <img src='logo.svg' alt='Jupiterp Beta logo'/>
         </a>
         <SiteLinks />
     </div>
