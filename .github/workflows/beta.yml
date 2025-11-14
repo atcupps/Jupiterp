@@ -23,20 +23,11 @@ jobs:
         id: deploy
         continue-on-error: true
         run: |
-          SERVICE="$beta-preview"
-
           cd site
 
           # Deploy preview service for that user
-          gcloud run deploy $SERVICE \
+          gcloud run deploy beta-preview \
             --source . \
-            --region $REGION \
+            --region us-east4 \
             --platform managed \
             --allow-unauthenticated
-
-          # Get actual Cloud Run URL
-          URL=$(gcloud run services describe $SERVICE \
-            --region $REGION \
-            --format='value(status.url)')
-
-          echo "URL=$URL" >> $GITHUB_ENV
