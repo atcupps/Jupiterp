@@ -31,3 +31,9 @@ jobs:
             --region us-east4 \
             --platform managed \
             --allow-unauthenticated
+
+      - name: Fail if deployment failed
+        if: steps.deploy.outcome != 'success'
+        run: |
+          echo "Beta deployment failed."
+          exit 1
