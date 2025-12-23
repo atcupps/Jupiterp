@@ -9,7 +9,8 @@
     "start": "node build",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "format-check": "node scripts/format-check.js"
   },
   "devDependencies": {
     "@sveltejs/adapter-node": "^5.4.0",
