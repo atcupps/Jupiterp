@@ -85,7 +85,7 @@ function checkOwnership(content, filePath) {
  * // format-check exempt 5 does not check the next 5 lines
  * // format-check exempt 5 5 checks the next 5 lines for being below 85 chars
  */
-function checkLineLength(content, filePath) {
+function checkLineLength(content) {
     const lines = content.split('\n');
     const violations = [];
 
