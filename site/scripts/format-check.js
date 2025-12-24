@@ -15,13 +15,22 @@ import path from 'path';
 
 const MAX_LINE_LENGTH = 80;
 
+// Skipped Directories 
+const FORBIDDEN_DIRECTORIES = ['node_modules', '.svelte-kit', 'build'];
+
 // Expected ownership comment patterns
 const TS_OWNERSHIP_PATTERN = /^\/\*\*\s*\n\s*\*\s*This file is part of Jupiterp/;
 const SVELTE_OWNERSHIP_PATTERN = /^<!--\s*\nThis file is part of Jupiterp/;
 
+// Exemption comments
+// Format: // format-check exempt <lines> [extra-chars]
+// Or: <!-- format-check exempt <lines> [extra-chars] -->
+const TS_EXEMPT_PATTERN = /\/\/\s*format-check\s+exempt\s+(\d+)(?:\s+(\d+))?/;
+const SVELTE_EXEMPT_PATTERN = /<!--\s*format-check\s+exempt\s+(\d+)(?:\s+(\d+))?\s*-->/;
+
 /**
  * Recursively finds all .ts and .svelte files in a directory,
- * excluding node_modules.
+ * excluding forbidden directories.
  */
 function findFiles(dir, files = []) {
     const entries = fs.readdirSync(dir, { withFileTypes: true });
@@ -30,7 +39,7 @@ function findFiles(dir, files = []) {
         const fullPath = path.join(dir, entry.name);
 
         if (entry.isDirectory()) {
-            if (entry.name === 'node_modules' || entry.name === '.svelte-kit') {
+            if (FORBIDDEN_DIRECTORIES.includes(entry.name)) {
                 continue;
             }
             findFiles(fullPath, files);
@@ -66,14 +75,59 @@ function checkOwnership(content, filePath) {
 }
 
 /**
- * Checks all lines for the 80-char limit, includes indentations as per PEP-8
+ * Checks all lines for the 80-char limit, includes indentations as per PEP-8.
+ * In order to except a line, or many lines add the following comments:
+ *   // format-check exempt <lines> [extra-chars]
+ *   <!-- format-check exempt <lines> [extra-chars] -->
+ * <lines> is the number of following lines to exempt,
+ *  [extra-chars] is optional and allows that many extra characters beyond 80.
+ * Ex: 
+ * // format-check exempt 5 does not check the next 5 lines
+ * // format-check exempt 5 5 checks the next 5 lines for being below 85 chars
  */
 function checkLineLength(content, filePath) {
     const lines = content.split('\n');
     const violations = [];
 
+    let exemptLinesRemaining = 0;
+    let extraCharsAllowed = 0;
+
     for (let i = 0; i < lines.length; i++) {
         const line = lines[i];
+
+        // Check for exemption comments
+        const tsMatch = line.match(TS_EXEMPT_PATTERN);
+        const svelteMatch = line.match(SVELTE_EXEMPT_PATTERN);
+        const match = tsMatch || svelteMatch;
+
+        if (match) {
+            exemptLinesRemaining = parseInt(match[1], 10);
+            extraCharsAllowed = match[2] ? parseInt(match[2], 10) : Infinity;
+            continue;
+        }
+
+        // Apply exemption if active
+        if (exemptLinesRemaining > 0) {
+            const effectiveLimit = extraCharsAllowed === Infinity
+                ? Infinity
+                : MAX_LINE_LENGTH + extraCharsAllowed;
+
+            if (line.length > effectiveLimit) {
+                violations.push({
+                    type: 'line-length',
+                    line: i + 1,
+                    length: line.length,
+                    message: `Line ${i + 1} exceeds ${effectiveLimit} columns`,
+                    preview: line.length > 60
+                        ? line.substring(0, 57) + '...'
+                        : line
+                });
+            }
+            exemptLinesRemaining--;
+            continue;
+        }
+
+        // Normal check
         if (line.length > MAX_LINE_LENGTH) {
             violations.push({
                 type: 'line-length',
@@ -152,7 +206,10 @@ function main() {
                 totalErrors++;
                 if (error.type === 'ownership') {
                     console.log(`  \x1b[33m⚠ ${error.message}\x1b[0m`);
-                    console.log(`    ${error.suggestion.split('\n')[0]}`);
+                    const suggestionLines = error.suggestion.split('\n');
+                    for (const suggestionLine of suggestionLines) {
+                        console.log(`    ${suggestionLine}`);
+                    }
                 } else if (error.type === 'line-length') {
                     console.log(
                         `  \x1b[33m⚠ ${error.message}\x1b[0m ` +
