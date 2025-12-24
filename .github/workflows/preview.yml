@@ -14,130 +14,102 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Load team users into array
-        id: team
+      - name: Prepare deployment metadata
+        id: prepare
+        env:
+          PR_AUTHOR: ${{ github.event.pull_request.user.login }}
+          AUTHORIZED_PR_AUTHORS: ${{ secrets.AUTHORIZED_PR_AUTHORS }}
         run: |
-          TEAM="${{ secrets.TEAM_USERS }}"
-          AUTHOR="${{ github.event.pull_request.user.login }}"
-          
-          # Convert CSV to bash array
-          IFS=',' read -ra ARRAY <<< "$TEAM"
-          
-          MATCH="no"
-          for u in "${ARRAY[@]}"; do
-            if [ "$u" = "$AUTHOR" ]; then
-              MATCH="yes"
-            fi
-          done
-          
-          echo "author=$AUTHOR" >> $GITHUB_OUTPUT
-          echo "allowed=$MATCH" >> $GITHUB_OUTPUT
-          
-          SAFE_AUTHOR=$(printf '%s' "$AUTHOR" | tr '[:upper:]' '[:lower:]')
-          SAFE_AUTHOR=$(printf '%s' "$SAFE_AUTHOR" | sed 's/[^a-z0-9-]/-/g')
-          SAFE_AUTHOR=$(printf '%s' "$SAFE_AUTHOR" | sed 's/^-*//; s/-*$//')
-          if [ -z "$SAFE_AUTHOR" ]; then
-            SAFE_AUTHOR="user"
-          fi
-          if [[ ! $SAFE_AUTHOR =~ ^[a-z] ]]; then
-            SAFE_AUTHOR="u-$SAFE_AUTHOR"
-          fi
-          SAFE_AUTHOR=${SAFE_AUTHOR:0:63}
-          SAFE_AUTHOR=$(printf '%s' "$SAFE_AUTHOR" | sed 's/-*$//')
-          if [ -z "$SAFE_AUTHOR" ]; then
-            SAFE_AUTHOR="u-preview"
-          fi
-          echo "sanitized_author=$SAFE_AUTHOR" >> $GITHUB_OUTPUT
+          python - <<'PY'
+          import os
+          from deployment.preview import sanitize_author, parse_authorized
 
-      - name: Stop if author not in team
-        if: steps.team.outputs.allowed == 'no'
-        run: |
-          echo "User '${{ steps.team.outputs.author }}' is not in preview team. Skipping."
-          exit 0
+          author = os.environ["PR_AUTHOR"]
+          authorized = parse_authorized(os.environ.get("AUTHORIZED_PR_AUTHORS", ""))
+          allowed = "yes" if author.lower() in authorized else "no"
+          sanitized = sanitize_author(author)
 
-      - name: Set up gcloud
-        if: steps.team.outputs.allowed == 'yes'
-        uses: google-github-actions/auth@v2
+          with open(os.environ["GITHUB_OUTPUT"], "w") as f:
+              f.write(f"author={author}\n")
+              f.write(f"sanitized_author={sanitized}\n")
+              f.write(f"allowed={allowed}\n")
+          PY
+
+      - name: Install gcloud CLI
+        if: steps.prepare.outputs.allowed == 'yes'
+        uses: google-github-actions/setup-gcloud@v2
         with:
-          credentials_json: ${{ secrets.GCP_CREDENTIALS }}
           project_id: ${{ secrets.GCP_PROJECT_ID }}
 
       - name: Record deployment start timestamp
-        if: steps.team.outputs.allowed == 'yes'
-        run: |
-          echo "DEPLOY_TIME=$(date -u +'%Y-%m-%d %H:%M:%SZ')" >> $GITHUB_ENV
+        if: steps.prepare.outputs.allowed == 'yes'
+        run: echo "DEPLOY_START=$(date -u +'%Y-%m-%d %H:%M:%SZ')" >> $GITHUB_ENV
 
       - name: Comment that deployment is starting
-        if: steps.team.outputs.allowed == 'yes'
+        if: steps.prepare.outputs.allowed == 'yes'
         uses: marocchino/sticky-pull-request-comment@v2
         with:
+          header: preview-deployment
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           message: |
-            **Preview deployment running for ${{ steps.team.outputs.author }}**
+            **Preview deployment for @${{ steps.prepare.outputs.author }}**
 
-            Deploying... ⏳
+            Status: starting ⏳
 
-            Started at (UTC): `${{ env.DEPLOY_TIME }}`
+            Service: `${{ steps.prepare.outputs.sanitized_author }}`
+
+            Preview URL (when ready): https://${{ steps.prepare.outputs.sanitized_author }}.jupiterp.com
+
+            Started at (UTC): `${{ env.DEPLOY_START }}`
+
+      - name: Deploy preview
+        id: deploy
+        if: steps.prepare.outputs.allowed == 'yes'
+        continue-on-error: true
+        env:
+          GCP_CREDENTIALS: ${{ secrets.GCP_CREDENTIALS }}
+          GCP_PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
+          GCP_REGION: ${{ secrets.GCP_REGION }}
+          PR_AUTHOR: ${{ steps.prepare.outputs.author }}
+          AUTHORIZED_PR_AUTHORS: ${{ secrets.AUTHORIZED_PR_AUTHORS }}
+        run: python deployment/preview.py
 
       - name: Record deployment end timestamp
-        if: steps.team.outputs.allowed == 'yes'
-        run: |
-          echo "DEPLOY_TIME=$(date -u +'%Y-%m-%d %H:%M:%SZ')" >> $GITHUB_ENV
-
-      - name: Deploy to Author's Preview Environment
-        if: steps.team.outputs.allowed == 'yes'
-        id: deploy
-        continue-on-error: true
-        run: |
-          AUTHOR="${{ steps.team.outputs.author }}"
-          SAFE_AUTHOR="${{ steps.team.outputs.sanitized_author }}"
-          REGION="${{ secrets.GCP_REGION }}"
-          SERVICE="${SAFE_AUTHOR}-preview"
-
-          cd site
-
-          # Deploy preview service for that user
-          gcloud run deploy $SERVICE \
-            --source . \
-            --region $REGION \
-            --platform managed \
-            --allow-unauthenticated
-
-          # Get actual Cloud Run URL
-          URL=$(gcloud run services describe $SERVICE \
-            --region $REGION \
-            --format='value(status.url)')
-
-          echo "URL=$URL" >> $GITHUB_ENV
+        if: steps.prepare.outputs.allowed == 'yes'
+        run: echo "DEPLOY_END=$(date -u +'%Y-%m-%d %H:%M:%SZ')" >> $GITHUB_ENV
 
       - name: Comment that deployment succeeded
-        if: steps.team.outputs.allowed == 'yes' && steps.deploy.outcome == 'success'
+        if: steps.prepare.outputs.allowed == 'yes' && steps.deploy.outcome == 'success'
         uses: marocchino/sticky-pull-request-comment@v2
         with:
+          header: preview-deployment
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           message: |
-            **Preview updated for ${{ steps.team.outputs.author }} ✅**
+            **Preview updated for @${{ steps.prepare.outputs.author }} ✅**
 
-            Live preview URL:
+            Preview URL: https://${{ steps.prepare.outputs.sanitized_author }}.jupiterp.com
 
-            **${{ env.URL || format('https://{0}.jupiterp.com', steps.team.outputs.sanitized_author) }}**
-
-            Latest deployment (UTC): `${{ env.DEPLOY_TIME }}`
+            Started at (UTC): `${{ env.DEPLOY_START }}`
+            Completed at (UTC): `${{ env.DEPLOY_END }}`
 
       - name: Comment that deployment failed
-        if: steps.team.outputs.allowed == 'yes' && steps.deploy.outcome != 'success'
+        if: steps.prepare.outputs.allowed == 'yes' && steps.deploy.outcome != 'success'
         uses: marocchino/sticky-pull-request-comment@v2
         with:
+          header: preview-deployment
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           message: |
-            **Preview deployment failed for ${{ steps.team.outputs.author }} ❌**
+            **Preview deployment failed for @${{ steps.prepare.outputs.author }} ❌**
 
-            Check the workflow logs for details. Re-run the job once the issue is resolved.
+            Preview URL (may be stale): https://${{ steps.prepare.outputs.sanitized_author }}.jupiterp.com
 
-            Latest deployment attempt (UTC): `${{ env.DEPLOY_TIME }}`
+            Started at (UTC): `${{ env.DEPLOY_START }}`
+            Completed at (UTC): `${{ env.DEPLOY_END }}`
+
+            Check the workflow logs for details, then re-run the job once fixed.
 
       - name: Fail workflow when deployment fails
-        if: steps.team.outputs.allowed == 'yes' && steps.deploy.outcome != 'success'
+        if: steps.prepare.outputs.allowed == 'yes' && steps.deploy.outcome != 'success'
         run: |
           echo "Deployment failed; marking job as failed after commenting."
           exit 1
