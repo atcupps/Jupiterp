@@ -59,8 +59,8 @@ Copyright (C) 2025 Andrew Cupps
       --ring-2-size: calc(var(--wrapper-size) * 0.50); /* ~130px */
       --ring-3-size: calc(var(--wrapper-size) * 0.69); /* ~180px */
 
-      --p-inner-size: 6px;
-      --p-outer-size: 6px;
+      --p-inner-size: 12px;
+      --p-outer-size: 12px;
 
       display: inline-flex;
       justify-content: center;
@@ -115,7 +115,9 @@ Copyright (C) 2025 Andrew Cupps
       transform: translate(0, 0);
       box-sizing: border-box;
       background: transparent;
-      outline: none;
+      outline: none !important;
+      box-shadow: none;
+      -webkit-tap-highlight-color: transparent;
   }
 
   .ring-2 {
@@ -143,7 +145,7 @@ Copyright (C) 2025 Andrew Cupps
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      border: var(--gap-size) solid var(--bg-color);
+      border: var(--gap-size) solid transparent;
       box-sizing: content-box;
   }
 
