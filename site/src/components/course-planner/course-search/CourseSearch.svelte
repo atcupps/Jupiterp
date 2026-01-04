@@ -10,7 +10,7 @@ Copyright (C) 2025 Andrew Cupps
     import { deptCodeToName, pendingResults, setSearchResults } from "../../../lib/course-planner/CourseSearch";
     import { appendHoveredSection } from "../../../lib/course-planner/Schedule";
     import {
-        HoveredSectionStore, 
+        HoveredSectionStore,
         CurrentScheduleStore,
         SearchResultsStore,
         DeptSuggestionsStore
@@ -19,6 +19,7 @@ Copyright (C) 2025 Andrew Cupps
     import type { Course } from "@jupiterp/jupiterp";
     import type { ScheduleSelection } from "../../../types";
     import CourseFilters from "./CourseFilters.svelte";
+    import SolarSystemLoader from "./SolarSystemLoader.svelte";
 
     const FILTER_SCROLL_COLLAPSE_THRESHOLD = 100;
 
@@ -220,10 +221,12 @@ Copyright (C) 2025 Andrew Cupps
         {/each}
 
         {#if isPendingResults}
-            <div class='flex justify-center py-4' aria-live='polite'>
-                <span class='h-8 w-8 animate-spin text-center'>
-                    Loading...
-                </span>
+            <div class='flex justify-center items-center py-8'>
+                <SolarSystemLoader
+                    size={120}
+                    color='currentColor'
+                    bgColor='transparent'
+                />
             </div>
         {/if}
     </div>
