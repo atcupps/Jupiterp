@@ -50,7 +50,7 @@ Copyright (C) 2025 Andrew Cupps
   /* Local Scoped Variables */
   .solar-system-wrapper {
       /* Internal variables derived from props */
-      --orbit-width: 4px;
+      --orbit-width: 2px;
       --moon-border-width: 4px;
       --gap-size: 2px;
 
@@ -115,7 +115,7 @@ Copyright (C) 2025 Andrew Cupps
       transform: translate(0, 0);
       box-sizing: border-box;
       background: transparent;
-      outline: none !important;
+      outline: none;
       box-shadow: none;
       -webkit-tap-highlight-color: transparent;
   }
@@ -145,20 +145,22 @@ Copyright (C) 2025 Andrew Cupps
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      border: var(--gap-size) solid transparent;
-      box-sizing: content-box;
+      border: none;
+      box-sizing: border-box;
   }
 
   .planet-inner {
       width: var(--p-inner-size);
       height: var(--p-inner-size);
       right: calc( -1 * (var(--p-inner-size) / 2) - var(--gap-size) );
+      margin-right: var(--gap-size);
   }
 
   .planet-outer {
       width: var(--p-outer-size);
       height: var(--p-outer-size);
       right: calc( -1 * (var(--p-outer-size) / 2) - var(--gap-size) );
+      margin-right: var(--gap-size);
   }
 
   /* --- ANIMATIONS --- */
