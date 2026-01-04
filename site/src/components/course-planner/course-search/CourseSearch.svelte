@@ -225,7 +225,6 @@ Copyright (C) 2025 Andrew Cupps
                 <SolarSystemLoader
                     size={120}
                     color='currentColor'
-                    bgColor='transparent'
                 />
             </div>
         {/if}

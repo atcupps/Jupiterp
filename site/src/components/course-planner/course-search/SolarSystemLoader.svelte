@@ -13,7 +13,6 @@ Copyright (C) 2025 Andrew Cupps
   // Props for customization (optional)
   export let size: number = 260; // Overall width/height in px
   export let color: string = '#ffffff'; // Main stroke color
-  export let bgColor: string = 'transparent'; // Background color (used for gaps)
 </script>
 
 <div
@@ -21,7 +20,6 @@ Copyright (C) 2025 Andrew Cupps
   style="
     --wrapper-size: {size}px;
     --stroke-color: {color};
-    --bg-color: {bgColor};
   "
   role="status"
   aria-label="Loading courses"
