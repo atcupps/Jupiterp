@@ -13,7 +13,7 @@ Copyright (C) 2025 Andrew Cupps
   // Props for customization (optional)
   export let size: number = 260; // Overall width/height in px
   export let color: string = '#ffffff'; // Main stroke color
-  export let bgColor: string = '#2A3045'; // Background color (used for gaps)
+  export let bgColor: string = 'transparent'; // Background color (used for gaps)
 </script>
 
 <div
@@ -176,6 +176,6 @@ Copyright (C) 2025 Andrew Cupps
 
   @keyframes moon-pulse {
       0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.02); }
+      50% { transform: scale(1); }
   }
 </style>
