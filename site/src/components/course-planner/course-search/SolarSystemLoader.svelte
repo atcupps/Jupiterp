@@ -7,11 +7,12 @@ Copyright (C) 2025 Andrew Cupps
 <script lang="ts">
   /**
    * SolarSystemLoader.svelte
-   * A minimalist, CSS-only solar system animation for loading states.
+   * A simple solar system themed loading animation
+   * based on Marvin Rudolph's Orbit Loader
    */
 
-  export let size: number = 260; // Overall width/height in px
-  export let color: string = '#ffffff'; // Main stroke color
+  export let size: number = 260; // Default size in pixels
+  export let color: string = '#ffffff'; // Default stroke color
 </script>
 
 <div
@@ -48,15 +49,14 @@ Copyright (C) 2025 Andrew Cupps
 <style>
   /* Local Scoped Variables */
   .solar-system-wrapper {
-      /* Internal variables derived from props */
       --orbit-width: 2px;
       --moon-border-width: 4px;
       --gap-size: 2px;
 
-      /* Relative sizing based on the generic "size" prop */
-      --moon-size: calc(var(--wrapper-size) * 0.30); /* ~80px relative to 260px */
-      --ring-2-size: calc(var(--wrapper-size) * 0.50); /* ~130px */
-      --ring-3-size: calc(var(--wrapper-size) * 0.69); /* ~180px */
+      /* Sizing based on the input of size */
+      --moon-size: calc(var(--wrapper-size) * 0.30);
+      --ring-2-size: calc(var(--wrapper-size) * 0.50);
+      --ring-3-size: calc(var(--wrapper-size) * 0.69); 
 
       --p-inner-size: 12px;
       --p-outer-size: 12px;
@@ -77,7 +77,7 @@ Copyright (C) 2025 Andrew Cupps
       animation: appear-disappear 4s ease-in-out infinite;
   }
 
-  /* --- THE Moon --- */
+  /* --- The Moon --- */
   .moon {
       width: var(--moon-size);
       height: var(--moon-size);
@@ -101,7 +101,7 @@ Copyright (C) 2025 Andrew Cupps
       border-radius: 50%;
   }
 
-  /* Craters positioned using % to stay responsive if size changes */
+  /* Craters stay responsive with site */
   .crater.c1 { width: 25%; height: 25%; top: 17%; left: 20%; }
   .crater.c2 { width: 15%; height: 15%; bottom: 20%; right: 22%; }
   .crater.c3 { width: 11%; height: 11%; top: 37%; right: 17%; }
@@ -162,7 +162,7 @@ Copyright (C) 2025 Andrew Cupps
       margin-right: var(--gap-size);
   }
 
-  /* --- ANIMATIONS --- */
+  /* --- ANIMATION --- */
   @keyframes appear-disappear {
       0% { opacity: 0; transform: scale(0.8); }
       15% { opacity: 1; transform: scale(1); }
