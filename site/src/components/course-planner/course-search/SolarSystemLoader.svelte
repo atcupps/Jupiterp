@@ -10,7 +10,6 @@ Copyright (C) 2025 Andrew Cupps
    * A minimalist, CSS-only solar system animation for loading states.
    */
 
-  // Props for customization (optional)
   export let size: number = 260; // Overall width/height in px
   export let color: string = '#ffffff'; // Main stroke color
 </script>
