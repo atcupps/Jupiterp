@@ -1,6 +1,18 @@
+/**
+ * This file is part of Jupiterp. For terms of use, please see the file
+ * called LICENSE at the top level of the Jupiterp source tree (online at
+ * https://github.com/atcupps/Jupiterp/LICENSE).
+ * Copyright (C) 2026 Andrew Cupps
+ */
+
 import type { Course, Department, Instructor } from "@jupiterp/jupiterp";
 import { writable, type Writable } from "svelte/store";
-import type { CourseSectionPair, FilterParams, ScheduleSelection, StoredSchedule } from "../types";
+import type {
+    CourseSectionPair,
+    FilterParams,
+    ScheduleSelection,
+    StoredSchedule
+} from "../types";
 
 /** `Record<string, Instructor>` for getting instructor data from names
 /* Initially set to an empty record since the data used here is

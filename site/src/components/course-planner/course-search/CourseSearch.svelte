@@ -7,8 +7,14 @@ Copyright (C) 2026 Andrew Cupps
 <script lang='ts'>
     import { fade } from "svelte/transition";
     import CourseListing from "./CourseListing.svelte";
-    import { deptCodeToName, pendingResults, setSearchResults } from "../../../lib/course-planner/CourseSearch";
-    import { appendHoveredSection } from "../../../lib/course-planner/Schedule";
+    import {
+        deptCodeToName,
+        pendingResults,
+        setSearchResults
+    } from "../../../lib/course-planner/CourseSearch";
+    import {
+        appendHoveredSection
+    } from "../../../lib/course-planner/Schedule";
     import {
         HoveredSectionStore,
         CurrentScheduleStore,
@@ -27,7 +33,9 @@ Copyright (C) 2026 Andrew Cupps
     HoveredSectionStore.subscribe((hovered) => { hoveredSection = hovered });
 
     let selections: ScheduleSelection[] = [];
-    CurrentScheduleStore.subscribe((stored) => { selections = stored.selections });
+    CurrentScheduleStore.subscribe(
+        (stored) => { selections = stored.selections }
+    );
 
     // Variable and function for handling course search input
     let searchInput = '';
@@ -77,7 +85,8 @@ Copyright (C) 2026 Andrew Cupps
                     ? highlightedSuggestionIndex - 1
                     : deptSuggestions.length - 1;
         } else if (event.key === 'Enter') {
-            if (highlightedSuggestionIndex >= 0 && highlightedSuggestionIndex < deptSuggestions.length) {
+            if (highlightedSuggestionIndex >= 0 &&
+                    highlightedSuggestionIndex < deptSuggestions.length) {
                 event.preventDefault();
                 selectDepartment(deptSuggestions[highlightedSuggestionIndex]);
             }
@@ -95,7 +104,7 @@ Copyright (C) 2026 Andrew Cupps
         if (hoveredSection) {
             let index = searchResults.findIndex(course => {
                 return hoveredSection && 
-                            course.courseCode === hoveredSection.section.courseCode;
+                    course.courseCode === hoveredSection.section.courseCode;
             });
             if (index === -1) {
                 HoveredSectionStore.set(null);
@@ -195,19 +204,25 @@ Copyright (C) 2026 Andrew Cupps
                         bg-bgLight dark:bg-bgDark shadow-lg'>
                 {#each deptSuggestions as deptOption, index}
                     <button type='button'
-                        class={`flex w-full text-left px-3 py-1 text-base lg:text-sm transition-colors
-                                hover:bg-outlineLight hover:bg-opacity-20 items-end
-                                dark:hover:bg-outlineDark dark:hover:bg-opacity-30 
+                        class={`flex w-full text-left px-3 py-1
+                                text-base lg:text-sm transition-colors
+                                hover:bg-outlineLight
+                                hover:bg-opacity-20 items-end
+                                dark:hover:bg-outlineDark
+                                dark:hover:bg-opacity-30 
                                 ${highlightedSuggestionIndex === index ? 
                                     `bg-outlineLight bg-opacity-20
                                     dark:bg-outlineDark dark:bg-opacity-30` 
                                     : ''}`}
-                        on:mouseenter={() => { highlightedSuggestionIndex = index; }}
+                        on:mouseenter={
+                            () => { highlightedSuggestionIndex = index; }
+                        }
                         on:click={() => selectDepartment(deptOption)}>
                         <span class='font-black min-w-[17%] shrink-0'>
                             {deptOption}
                         </span>
-                        <span class='text-xs inline-block italic grow truncate'>
+                        <span class='text-xs inline-block
+                                    italic grow truncate'>
                             {deptCodeToName[deptOption]}
                         </span>
                     </button>

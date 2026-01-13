@@ -10,7 +10,13 @@
  */
 
 import type { ClassMeeting, Classtime } from "@jupiterp/jupiterp";
-import type { ClassMeetingExtended, ClasstimeBound, Schedule, ScheduleSelection, SelectionDifferences } from "../../types";
+import type {
+    ClassMeetingExtended,
+    ClasstimeBound,
+    Schedule,
+    ScheduleSelection,
+    SelectionDifferences
+} from "../../types";
 
 enum Day {
     Monday = 'monday',

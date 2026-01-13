@@ -29,6 +29,22 @@ const TS_EXEMPT_PATTERN = /\/\/\s*format-check\s+exempt\s+(\d+)(?:\s+(\d+))?/;
 const SVELTE_EXEMPT_PATTERN = /<!--\s*format-check\s+exempt\s+(\d+)(?:\s+(\d+))?\s*-->/;
 
 /**
+ * Checks that a .ts or .svelte file is exempt from checks based on its path.
+ */
+function fileExempt(filePath) {
+    const exemptFiles = [
+        "vite.config.ts",
+    ];
+
+    for (const exemptFile of exemptFiles) {
+        if (filePath.endsWith(exemptFile)) {
+            return true;
+        }
+    }
+    return false;
+}
+
+/**
  * Recursively finds all .ts and .svelte files in a directory,
  * excluding forbidden directories.
  */
@@ -43,7 +59,7 @@ function findFiles(dir, files = []) {
                 continue;
             }
             findFiles(fullPath, files);
-        } else if (entry.isFile()) {
+        } else if (entry.isFile() && !fileExempt(fullPath)) {
             if (entry.name.endsWith('.ts') || entry.name.endsWith('.svelte')) {
                 files.push(fullPath);
             }

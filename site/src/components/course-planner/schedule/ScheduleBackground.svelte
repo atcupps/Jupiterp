@@ -31,6 +31,7 @@ Copyright (C) 2026 Andrew Cupps
         if (decTimeInDay > 12) {
             return (decTimeInDay - 12) + ' PM';
         }
+        // format-check exempt 1
         throw Error('Impossible `decTime` was not less than, equal to, or greater than 12');
     }
 

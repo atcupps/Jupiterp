@@ -7,7 +7,11 @@
  * @fileoverview A cache to store course data fetched from the API.
  */
 
-import { SortBy, type Course, type CoursesWithSectionsConfig } from "@jupiterp/jupiterp";
+import {
+    SortBy,
+    type Course,
+    type CoursesWithSectionsConfig
+} from "@jupiterp/jupiterp";
 import { client } from "$lib/client";
 import type { ServerSideFilterParams } from "../../types";
 
@@ -98,7 +102,8 @@ export class CourseDataCache {
 
         const hadEntry = Boolean(cacheEntry);
         this.cache[key] = { status: "request sent" };
-        const requestConfig: CoursesWithSectionsConfig = generateRequestConfig(input);
+        const requestConfig =
+            generateRequestConfig(input);
         this.pendingRequests[key] = 
             this.requestCoursesForDept(key, requestConfig, !hadEntry);
         if (!hadEntry) {
@@ -112,12 +117,15 @@ export class CourseDataCache {
         }
     }
 
-    private async requestCoursesForDept(key: string, 
-                    cfg: CoursesWithSectionsConfig, isNewEntry: boolean): Promise<Course[]> {
+    private async requestCoursesForDept(
+                    key: string, 
+                    cfg: CoursesWithSectionsConfig,
+                    isNewEntry: boolean): Promise<Course[]> {
         try {
             const response = await client.coursesWithSections(cfg);
 
             if (!response.ok()) {
+                // format-check exempt 2
                 throw new Error(
                     `API request to get courses for ${key} failed: ${response.statusCode} ${response.statusMessage}`
                 );
@@ -134,7 +142,11 @@ export class CourseDataCache {
             }
 
             this.lruCounter += 1;
-            this.cache[key] = { status: "data", data: courses, lastUsed: this.lruCounter };
+            this.cache[key] = {
+                status: "data",
+                data: courses,
+                lastUsed: this.lruCounter
+            };
             this.evictLeastRecentlyUsed(key);
             return courses;
         } catch (error) {
@@ -181,8 +193,9 @@ export class CourseDataCache {
     }
 
     public isPending(): boolean {
-        return this.mostRecentAccess !== null 
-                && keyFromRequestInput(this.mostRecentAccess) in this.pendingRequests;
+        // format-check exempt 2
+        return this.mostRecentAccess !== null &&
+                keyFromRequestInput(this.mostRecentAccess) in this.pendingRequests;
     }
 }
 

@@ -6,7 +6,10 @@ Copyright (C) 2026 Andrew Cupps
 -->
 <script lang="ts">
     import SectionListing from "./SectionListing.svelte";
-    import { formatCredits, testudoLink } from "../../../lib/course-planner/Formatting";
+    import {
+        formatCredits,
+        testudoLink
+    } from "../../../lib/course-planner/Formatting";
     import { slide } from "svelte/transition";
     import CourseCondition from "./CourseCondition.svelte";
     import { AngleRightOutline } from "flowbite-svelte-icons";
@@ -53,11 +56,12 @@ Copyright (C) 2026 Andrew Cupps
     {#if course.genEds != null && course.genEds.length > 0}
         <div class='w-full flex flex-row justify-start align-center my-1'>
             {#each course.genEds as genEd}
+                <!-- format-check exempt 5 -->
                 <a class='text-[0.625rem] 2xl:text-xs text-orange leading-tight
                             font-bold rounded-xl border border-orange px-1 mr-1
                             hover:bg-orange hover:text-bgSecondaryLight 
                             hover:dark:text-bgSecondaryDark transition'
-                    href={"https://app.testudo.umd.edu/soc/gen-ed/202601/" + genEd.code}
+                    href={`https://app.testudo.umd.edu/soc/gen-ed/202601/` + genEd.code}
                     target="_blank"
                     title={"GenEd: " + genEd.name}>
                     {genEd.code}
@@ -70,7 +74,8 @@ Copyright (C) 2026 Andrew Cupps
                 text-secCodesLight hover:text-[#4a5366]
                 dark:text-[#8892a8] hover:text-secCodesDark
                 w-full flex flex-row content-center'
-            title={!showMoreInfo ? "Show more course details" : "Hide course details"}
+            title={!showMoreInfo ?
+                    "Show more course details" : "Hide course details"}
             on:click={() => {showMoreInfo = !showMoreInfo}}>
         <div class='h-full self-center transition-transform -ml-1' 
              class:rotate-90={showMoreInfo}>
@@ -82,7 +87,8 @@ Copyright (C) 2026 Andrew Cupps
     </button>
 
     {#if showMoreInfo}
-        <div class='text-sm 2xl:text-base py-1 font-base flex flex-col leading-tight'
+        <div class='text-sm 2xl:text-base py-1
+                    font-base flex flex-col leading-tight'
                 transition:slide>
             <div class='pb-1'>
                 <a href={testudoLink(course.courseCode)} 

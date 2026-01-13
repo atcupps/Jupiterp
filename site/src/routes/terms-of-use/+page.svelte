@@ -94,7 +94,8 @@ Last Updated: March 9th, 2024
 
 <p class={pClasses}>
     For any questions or concerns regarding these Terms, please contact us at 
-    <code class='text-sm bg-bgSecondaryLight dark:bg-bgSecondaryDark rounded-md'>
+    <code class='text-sm bg-bgSecondaryLight
+                dark:bg-bgSecondaryDark rounded-md'>
         admin@jupiterp.com</code>.
 </p>
 

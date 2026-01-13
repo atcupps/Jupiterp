@@ -6,7 +6,10 @@ Copyright (C) 2026 Andrew Cupps
 -->
 <script lang='ts'>
     import type { ClassMeeting } from "@jupiterp/jupiterp";
-    import { formatClassDayTime, formatLocation } from "../../../lib/course-planner/Formatting";
+    import {
+        formatClassDayTime,
+        formatLocation
+    } from "../../../lib/course-planner/Formatting";
 
     export let meeting: ClassMeeting;
     export let locationHover: boolean;
@@ -19,6 +22,7 @@ Copyright (C) 2026 Andrew Cupps
     }
 
     function generateMapURL(location: string): string {
+        // format-check exempt 1
         return 'https://maps.umd.edu/map/index.html?Welcome=False&MapView=Detailed&LocationType=Building&LocationName=' + location
     }
 </script>
@@ -35,7 +39,8 @@ Copyright (C) 2026 Andrew Cupps
         <!-- Location -->
          <span class:grow={!condensed} class:text-right={!condensed}>
             {#if condensed}&nbsp;in {/if}
-            {#if meeting.location.building.length !== 3 || meeting.location.room == null}
+            {#if meeting.location.building.length !== 3 ||
+                    meeting.location.room == null}
                 <span class='pr-0.5'>
                     {formatLocation(meeting.location)}
                 </span>

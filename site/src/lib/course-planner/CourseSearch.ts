@@ -124,9 +124,11 @@ function filterAndSortCourseArray(courses: Course[]): Course[] {
         const minCredits = fs.minCredits ?? 0;
         
         if (course.maxCredits === null) {
-            return course.minCredits >= minCredits && course.minCredits <= maxCredits;
+            return course.minCredits >= minCredits && 
+                    course.minCredits <= maxCredits;
         } else {
-            return course.minCredits <= maxCredits && course.maxCredits >= minCredits;
+            return course.minCredits <= maxCredits && 
+                    course.maxCredits >= minCredits;
         }
     });
 }
@@ -163,7 +165,8 @@ export async function setSearchResults(input: string) {
 
         // Get from cache/API
         const deptCourses: Course[] = 
-            filterAndSortCourseArray(await cache.getCoursesAndSections(requestInput));
+            filterAndSortCourseArray(
+                await cache.getCoursesAndSections(requestInput));
 
         // Ensure that the department for this search is still the most recent
         // search. If not, abort to avoid displaying outdated results.
@@ -213,8 +216,8 @@ export async function setSearchResults(input: string) {
                             .startsWith(simpleInput);
                 }));
         
-        // Ensure that the course number for this search is still the most recent
-        // search. If not, abort to avoid displaying outdated results.
+        // Ensure that the course number for this search is still the most
+        // recent search. If not, abort to avoid displaying outdated results.
         if (cache.getMostRecentAccess() !== requestInput) {
             return;
         }
@@ -228,8 +231,8 @@ export async function setSearchResults(input: string) {
     // all courses for matches. Only do this if search is empty.
     const fs = filters.serverSideFilters;
     if (simpleInput.length === 0 
-            && ((fs.genEds !== undefined && fs.genEds.length > 0) 
-                || (fs.instructor !== undefined && fs.instructor.length > 0))) {
+            && ((fs.genEds !== undefined && fs.genEds.length > 0) || 
+                (fs.instructor !== undefined && fs.instructor.length > 0))) {
         const requestInput: RequestInput = {
             type: "deptCode",
             value: "", // Empty prefix to get all courses
@@ -237,10 +240,11 @@ export async function setSearchResults(input: string) {
         }
 
         const courses: Course[] =
-            filterAndSortCourseArray(await cache.getCoursesAndSections(requestInput));
+            filterAndSortCourseArray(
+                await cache.getCoursesAndSections(requestInput));
 
-        // Ensure that the course number for this search is still the most recent
-        // search. If not, abort to avoid displaying outdated results.
+        // Ensure that the course number for this search is still the most
+        // recent search. If not, abort to avoid displaying outdated results.
         if (cache.getMostRecentAccess() !== requestInput) {
             return;
         }
@@ -264,7 +268,8 @@ export async function setSearchResults(input: string) {
  * @returns A `Record<string, Instructor>` where instructor names as `string`s
  *              are mapped to `Instructor` objects.
  */
-export function getProfsLookup(profs: Instructor[]): Record<string, Instructor> {
+export function getProfsLookup(
+                    profs: Instructor[]): Record<string, Instructor> {
     const result: Record<string, Instructor> = {};
     const names: Set<string> = new Set<string>();
     for (const prof of profs) {

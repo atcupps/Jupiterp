@@ -11,8 +11,13 @@ Copyright (C) 2026 Andrew Cupps
         TrashBinOutline,
         FileCopyOutline,
     } from 'flowbite-svelte-icons';
-    import { CurrentScheduleStore, NonselectedScheduleStore } from '../../../stores/CoursePlannerStores';
-    import { uniqueScheduleName } from '$lib/course-planner/ScheduleSelector';
+    import {
+        CurrentScheduleStore,
+        NonselectedScheduleStore
+    } from '../../../stores/CoursePlannerStores';
+    import {
+        uniqueScheduleName
+    } from '$lib/course-planner/ScheduleSelector';
     import type { ScheduleSelection, StoredSchedule } from '../../../types';
 
     let dropdownOpen = false;
