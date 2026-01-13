@@ -2,7 +2,7 @@
 This file is part of Jupiterp. For terms of use, please see the file
 called LICENSE at the top level of the Jupiterp source tree (online at
 https://github.com/atcupps/Jupiterp/LICENSE).
-Copyright (C) 2024 Andrew Cupps
+Copyright (C) 2026 Andrew Cupps
 -->
 <script lang='ts'>
     import { 
@@ -11,7 +11,9 @@ Copyright (C) 2024 Andrew Cupps
         formatLocation, 
         splitCourseCode
     } from '../../../lib/course-planner/Formatting';
-    import { getColorFromNumber } from '../../../lib/course-planner/ClassMeetingUtils';
+    import {
+        getColorFromNumber
+    } from '../../../lib/course-planner/ClassMeetingUtils';
     import { afterUpdate } from 'svelte';
     import Tooltip from './Tooltip.svelte';
     import {
@@ -175,6 +177,7 @@ Copyright (C) 2024 Andrew Cupps
                         2xl:top-1 2xl:right-1 justify-center'
                 on:click={removeCourseByClassMeeting}
                 title='Remove course from schedule'>
+            <!-- format-check exempt 4 -->
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"
                 class='absolute h-2 w-2 2xl:h-3 2xl:w-3 top-[50%] left-[50%]'
                 style='transform: translateX(-50%) translateY(-50%);'>

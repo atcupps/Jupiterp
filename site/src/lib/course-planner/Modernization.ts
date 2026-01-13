@@ -2,14 +2,29 @@
  * This file is part of Jupiterp. For terms of use, please see the file
  * called LICENSE at the top level of the Jupiterp source tree (online at
  * https://github.com/atcupps/Jupiterp/LICENSE).
- * Copyright (C) 2025 Andrew Cupps
+ * Copyright (C) 2026 Andrew Cupps
  * 
  * @fileoverview Contains functions used to modernize legacy schedule types
  * to current formats.
  */
 
-import { GenEd, type ClassMeeting, type Classtime, type CourseBasic, type Location, type Section } from "@jupiterp/jupiterp";
-import type { CreditCount, LegacyClassMeeting, LegacyCourse, LegacyScheduleSelection, LegacySection, ScheduleSelection, TimeComponent } from "../../types";
+import {
+    GenEd,
+    type ClassMeeting,
+    type Classtime,
+    type CourseBasic,
+    type Location,
+    type Section
+} from "@jupiterp/jupiterp";
+import type {
+    CreditCount,
+    LegacyClassMeeting,
+    LegacyCourse,
+    LegacyScheduleSelection,
+    LegacySection,
+    ScheduleSelection,
+    TimeComponent
+} from "../../types";
 import { noDifferences } from "./Schedule";
 
 function extractMinCredits(legacy: CreditCount): number {
@@ -123,7 +138,8 @@ function modernizeSection(
     }
 }
 
-function modernizeSelection(selection: LegacyScheduleSelection): ScheduleSelection {
+function modernizeSelection(
+            selection: LegacyScheduleSelection): ScheduleSelection {
     return {
         course: modernizeCourse(selection.course),
         section: modernizeSection(selection.courseCode, selection.section),

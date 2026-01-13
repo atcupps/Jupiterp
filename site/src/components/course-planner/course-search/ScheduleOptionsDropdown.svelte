@@ -2,7 +2,7 @@
 This file is part of Jupiterp. For terms of use, please see the file
 called LICENSE at the top level of the Jupiterp source tree (online at
 https://github.com/atcupps/Jupiterp/LICENSE).
-Copyright (C) 2024 Andrew Cupps
+Copyright (C) 2026 Andrew Cupps
  -->
  <script lang="ts">
     import { Dropdown, DropdownItem } from 'flowbite-svelte';
@@ -11,8 +11,13 @@ Copyright (C) 2024 Andrew Cupps
         TrashBinOutline,
         FileCopyOutline,
     } from 'flowbite-svelte-icons';
-    import { CurrentScheduleStore, NonselectedScheduleStore } from '../../../stores/CoursePlannerStores';
-    import { uniqueScheduleName } from '$lib/course-planner/ScheduleSelector';
+    import {
+        CurrentScheduleStore,
+        NonselectedScheduleStore
+    } from '../../../stores/CoursePlannerStores';
+    import {
+        uniqueScheduleName
+    } from '$lib/course-planner/ScheduleSelector';
     import type { ScheduleSelection, StoredSchedule } from '../../../types';
 
     let dropdownOpen = false;

@@ -2,12 +2,17 @@
  * This file is part of Jupiterp. For terms of use, please see the file
  * called LICENSE at the top level of the Jupiterp source tree (online at
  * https://github.com/atcupps/Jupiterp/LICENSE).
- * Copyright (C) 2025 Andrew Cupps
+ * Copyright (C) 2026 Andrew Cupps
  * 
  * @fileoverview Types and interfaces used in Jupiterp
  */
 
-import type { ClassMeeting, CourseBasic, GenEd, Section } from "@jupiterp/jupiterp"
+import type {
+    ClassMeeting,
+    CourseBasic,
+    GenEd,
+    Section
+} from "@jupiterp/jupiterp"
 
 /**
  * A section of a class selected by the user, along with metadata used for

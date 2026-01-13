@@ -2,7 +2,7 @@
 This file is part of Jupiterp. For terms of use, please see the file
 called LICENSE at the top level of the Jupiterp source tree (online at
 https://github.com/atcupps/Jupiterp/LICENSE).
-Copyright (C) 2024 Andrew Cupps
+Copyright (C) 2026 Andrew Cupps
 -->
 <script lang='ts'>
     import { fade } from 'svelte/transition';
@@ -42,6 +42,7 @@ Copyright (C) 2024 Andrew Cupps
 <!-- Button to toggle course search on mobile -->
 <button class='absolute h-6 w-6 top-3 right-5 visible lg:hidden z-[52]'
         on:click={() => {siteLinksSelected = !siteLinksSelected}}>
+    <!-- format-check exempt 10 -->
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
             class='visible h-full w-full transition 
                     fill-textLight dark:fill-textDark'

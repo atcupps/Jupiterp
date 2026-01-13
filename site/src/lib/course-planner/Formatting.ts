@@ -2,7 +2,7 @@
  * This file is part of Jupiterp. For terms of use, please see the file
  * called LICENSE at the top level of the Jupiterp source tree (online at
  * https://github.com/atcupps/Jupiterp/LICENSE).
- * Copyright (C) 2024 Andrew Cupps
+ * Copyright (C) 2026 Andrew Cupps
  * 
  * @fileoverview Functions for formatting various Jupiterp objects as strings.
  */
@@ -28,14 +28,18 @@ export function formatClasstime(time: Classtime): string {
 
     let startHours = Math.floor(startTimeNumber) % 12;
     if (startHours === 0) startHours = 12; // handle midnight and noon
-    const startMinutes = Math.round((startTimeNumber - Math.floor(startTimeNumber)) * 60);
+    const startMinutes = 
+        Math.round((startTimeNumber - Math.floor(startTimeNumber)) * 60);
+
     let endHours = Math.floor(endTimeNumber) % 12;
     if (endHours === 0) endHours = 12; // handle midnight and noon
-    const endMinutes = Math.round((endTimeNumber - Math.floor(endTimeNumber)) * 60);
+    const endMinutes = 
+        Math.round((endTimeNumber - Math.floor(endTimeNumber)) * 60);
 
     const startAmPm = startTimeNumber >= 12 ? 'pm' : 'am';
     const endAmPm = endTimeNumber >= 12 ? 'pm' : 'am';
 
+    // format-check exempt 1
     return `${startHours}:${("0" + startMinutes).slice(-2)}${startAmPm} - ${endHours}:${("0" + endMinutes).slice(-2)}${endAmPm}`;
 }
 
@@ -45,7 +49,8 @@ export function formatClasstime(time: Classtime): string {
  * @param maxCredits A maximum number of credits
  * @returns A string representation of the credit range
  */
-export function formatCredits(minCredits: number, maxCredits: number | null): string {
+export function formatCredits(
+                    minCredits: number, maxCredits: number | null): string {
     if (maxCredits !== null) {
         return minCredits + ' - ' + maxCredits;
     } else {
@@ -91,6 +96,7 @@ export function formatInstructors(instructors: string[]): string {
  * @param courseCode The course code for which to generate a link
  */
 export function testudoLink(courseCode: string): string {
+    // format-check exempt 1
     return 'https://app.testudo.umd.edu/soc/search?courseId=' + courseCode + '&sectionId=&termId=202601&_openSectionsOnly=on&creditCompare=%3E%3D&credits=0.0&courseLevelFilter=ALL&instructor=&_facetoface=on&_blended=on&_online=on&courseStartCompare=&courseStartHour=&courseStartMin=&courseStartAM=&courseEndHour=&courseEndMin=&courseEndAM=&teachingCenter=ALL&_classDay1=on&_classDay2=on&_classDay3=on&_classDay4=on&_classDay5=on'
 }
 

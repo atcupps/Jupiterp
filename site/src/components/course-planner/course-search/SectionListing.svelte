@@ -2,7 +2,7 @@
 This file is part of Jupiterp. For terms of use, please see the file
 called LICENSE at the top level of the Jupiterp source tree (online at
 https://github.com/atcupps/Jupiterp/LICENSE).
-Copyright (C) 2024 Andrew Cupps
+Copyright (C) 2026 Andrew Cupps
 -->
 <script lang="ts">
     import InstructorListing from "./InstructorListing.svelte";
@@ -66,9 +66,10 @@ Copyright (C) 2024 Andrew Cupps
     let removeAlertVisible: boolean = false;
     let removeAlertShouldFade: boolean = false;
 
-    // Function to show or fade 
+    // Function to show or fade
+    // format-check exempt 8
     function showAddAlert() {
-        addAlertVisible = true;    // Make the div visible
+        addAlertVisible = true;     // Make the div visible
         addAlertShouldFade = false; // Reset fading in case it's a subsequent click
         setTimeout(() => {
             addAlertShouldFade = true; // Start fading after 10 seconds
@@ -181,6 +182,7 @@ Copyright (C) 2024 Andrew Cupps
 
 <!-- Ignoring a11y for mouseover because it's a non-essential feature -->
 <!-- svelte-ignore a11y-mouse-events-have-key-events -->
+<!-- format-check exempt 17 5 -->
 <button on:click={addSectionToSchedule}
         on:mouseover={isDesktop ? addHoverSection : null}
         on:mouseout={isDesktop ? removeHoverSection : null}

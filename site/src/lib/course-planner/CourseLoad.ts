@@ -2,13 +2,17 @@
  * This file is part of Jupiterp. For terms of use, please see the file
  * called LICENSE at the top level of the Jupiterp source tree (online at
  * https://github.com/atcupps/Jupiterp/LICENSE).
- * Copyright (C) 2025 Andrew Cupps
+ * Copyright (C) 2026 Andrew Cupps
  * 
  * @fileoverview This file contains a function `retrieveCourses` which is
  * used as part of loading courses from local storage.
  */
 
-import type { Course, CoursesConfig, CoursesResponse } from "@jupiterp/jupiterp";
+import type {
+    Course,
+    CoursesConfig,
+    CoursesResponse
+ } from "@jupiterp/jupiterp";
 import type {
     LegacyScheduleSelection,
     LegacyStoredSchedule,
@@ -18,7 +22,10 @@ import type {
 } from "../../types";
 import { assignColorNumbers, modernizeSelections } from "./Modernization";
 import { client } from "$lib/client";
-import { CurrentScheduleStore, NonselectedScheduleStore } from "../../stores/CoursePlannerStores";
+import {
+    CurrentScheduleStore,
+    NonselectedScheduleStore
+} from "../../stores/CoursePlannerStores";
 
 /**
  * Resolve a stored schedule selection array from a string in local storage,
@@ -157,7 +164,8 @@ function diffAndUpdate(old: ScheduleSelection,
                 continue;
             }
 
-            if (typeof oldMeeting === 'object' && typeof newMeeting === 'object') {
+            if (typeof oldMeeting === 'object' &&
+                    typeof newMeeting === 'object') {
                 // Compare classtime
                 if (JSON.stringify(oldMeeting.classtime) !==
                         JSON.stringify(newMeeting.classtime)) {
@@ -265,7 +273,8 @@ export async function ensureUpToDateAndSetStores(
     nonselected.forEach((stored) => {
         const updatedSelections: ScheduleSelection[] = [];
         stored.selections.forEach((selection) => {
-            const upToDate: Course = upToDateCourses[selection.course.courseCode];
+            const upToDate: Course = 
+                upToDateCourses[selection.course.courseCode];
             if (!upToDate) {
                 // Course no longer exists, skip
                 return;

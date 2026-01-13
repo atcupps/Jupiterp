@@ -2,7 +2,7 @@
 This file is part of Jupiterp. For terms of use, please see the file
 called LICENSE at the top level of the Jupiterp source tree (online at
 https://github.com/atcupps/Jupiterp/LICENSE).
-Copyright (C) 2024 Andrew Cupps
+Copyright (C) 2026 Andrew Cupps
  -->
 <script lang='ts'>
     const h1Classes = 
@@ -79,9 +79,10 @@ Copyright (C) 2024 Andrew Cupps
         primarily maintained by
         <a href='https://atcupps.github.io/'
             target='_blank' class='text-orange underline'>
-            Andrew Cupps</a>. Jupiterp is run at personal cost, and doesn't make any money
-        from ads, selling data, etc., so if you want to support continued
-        work on Jupiterp, please consider
+            Andrew Cupps</a>. Jupiterp is run at personal cost,
+            and doesn't make any money from ads, selling data, etc.,
+            so if you want to support continued
+            work on Jupiterp, please consider
         <a href='https://buymeacoffee.com/jupiterp'
             target='_blank' class='text-orange underline'>
             donating</a> a small amount!
@@ -91,7 +92,8 @@ Copyright (C) 2024 Andrew Cupps
     </h2>
     <p class={pClasses}>
         To contact the Jupiterp team, email 
-        <code class='text-sm bg-bgSecondaryLight dark:bg-bgSecondaryDark rounded-md'>
+        <code class='text-sm bg-bgSecondaryLight
+                    dark:bg-bgSecondaryDark rounded-md'>
             admin@jupiterp.com</code>.
     </p>
 </div>

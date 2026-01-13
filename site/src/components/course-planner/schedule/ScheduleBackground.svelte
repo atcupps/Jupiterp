@@ -2,7 +2,7 @@
 This file is part of Jupiterp. For terms of use, please see the file
 called LICENSE at the top level of the Jupiterp source tree (online at
 https://github.com/atcupps/Jupiterp/LICENSE).
-Copyright (C) 2024 Andrew Cupps
+Copyright (C) 2026 Andrew Cupps
 -->
 <script lang='ts'>
     import TimeLine from "./TimeLine.svelte";
@@ -31,6 +31,7 @@ Copyright (C) 2024 Andrew Cupps
         if (decTimeInDay > 12) {
             return (decTimeInDay - 12) + ' PM';
         }
+        // format-check exempt 1
         throw Error('Impossible `decTime` was not less than, equal to, or greater than 12');
     }
 

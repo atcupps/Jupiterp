@@ -2,7 +2,7 @@
 This file is part of Jupiterp. For terms of use, please see the file
 called LICENSE at the top level of the Jupiterp source tree (online at
 https://github.com/atcupps/Jupiterp/LICENSE).
-Copyright (C) 2024 Andrew Cupps
+Copyright (C) 2026 Andrew Cupps
  -->
  <script lang='ts'>
     const h1Classes = 
@@ -94,7 +94,8 @@ Last Updated: March 9th, 2024
 
 <p class={pClasses}>
     For any questions or concerns regarding these Terms, please contact us at 
-    <code class='text-sm bg-bgSecondaryLight dark:bg-bgSecondaryDark rounded-md'>
+    <code class='text-sm bg-bgSecondaryLight
+                dark:bg-bgSecondaryDark rounded-md'>
         admin@jupiterp.com</code>.
 </p>
 

@@ -2,7 +2,7 @@
 This file is part of Jupiterp. For terms of use, please see the file
 called LICENSE at the top level of the Jupiterp source tree (online at
 https://github.com/atcupps/Jupiterp/LICENSE).
-Copyright (C) 2024 Andrew Cupps
+Copyright (C) 2026 Andrew Cupps
 -->
 <script lang="ts">
     import { 
@@ -10,7 +10,10 @@ Copyright (C) 2024 Andrew Cupps
     } from '../../../lib/course-planner/Schedule';
     import ScheduleDay from './ScheduleDay.svelte';
     import ScheduleBackground from './ScheduleBackground.svelte';
-    import { formatCredits, testudoLink } from '../../../lib/course-planner/Formatting';
+    import {
+        formatCredits,
+        testudoLink
+    } from '../../../lib/course-planner/Formatting';
     import { afterUpdate } from 'svelte';
     import InstructorListing from '../course-search/InstructorListing.svelte';
     import {
@@ -55,7 +58,8 @@ Copyright (C) 2024 Andrew Cupps
     // selects new classes, this if block is needed to run `schedulify`
     // if `selections` changes.
     $: if (selections || hoveredSection) {
-        const selectionsWithHovered = appendHoveredSection(selections, hoveredSection);
+        const selectionsWithHovered = 
+            appendHoveredSection(selections, hoveredSection);
         schedule = schedulify(selectionsWithHovered);
         if (selectionsWithHovered.length === 0) {
             earliestClassStart = 8;
@@ -131,6 +135,7 @@ Copyright (C) 2024 Andrew Cupps
     >
         
         <!-- Background lines for the schedule -->
+         <!-- format-check exempt 2 -->
         <div class='absolute timelines z-0 h-full top-[1.75rem]' 
                 style='width: {schedule.other.length == 0 ? '100%' : '83.3%'};;'>
             <ScheduleBackground bind:earliest={earliestClassStart}
@@ -191,6 +196,7 @@ Copyright (C) 2024 Andrew Cupps
             2xl:top-1 2xl:right-1 justify-center'
             on:click={() => { CourseInfoPairStore.set(null); }}
             title='Hide course info panel'>
+        <!-- format-check exempt 7 -->
         <svg xmlns="http://www.w3.org/2000/svg" 
             viewBox="0 0 384 512"
             class='absolute h-5 w-5 2xl:h-6 2xl:w-6 
@@ -250,7 +256,8 @@ Copyright (C) 2024 Andrew Cupps
     <SeatData section={courseInfoSection} />
 
     <div class='text-base 2xl:text-lg leading-5'>
-        {#if courseInfoCourse.conditions != null && courseInfoCourse.conditions.length > 0}
+        {#if courseInfoCourse.conditions != null &&
+                courseInfoCourse.conditions.length > 0}
             <div class='text-sm 2xl:text-base pb-2'>
                 {#each courseInfoCourse.conditions as condition}
                     <CourseCondition {condition} />
