@@ -36,18 +36,6 @@ Copyright (C) 2024 Andrew Cupps
     <NavBarElement link='https://github.com/atcupps/Jupiterp'
                                         text='GitHub'
                                         target='_blank' />
-
-    <ExpandableNavBarElement text='Export to Calender' target='_blank' >
-        <div class='w-full my-1'>
-            <NavBarElement link='./terms-of-use' text='Export to Google Calender' reduceXMargin={true} fullWidth={true} />
-        </div>
-        <div class='w-full my-1'>
-            <NavBarElement link='./terms-of-use' text='Download .csv' reduceXMargin={true} fullWidth={true} />
-        </div>
-        <div class='w-full my-1'>
-            <NavBarElement link='./terms-of-use' text='Download .ics' reduceXMargin={true} fullWidth={true} />
-        </div>
-    </ExpandableNavBarElement>
     <DarkModeToggle />
 </div>
 
@@ -102,19 +90,6 @@ Copyright (C) 2024 Andrew Cupps
                                                     text='GitHub'
                                                     target='_blank' 
                                                     fullWidth={true}/>
-    </div>
-    <div class='w-full my-2 text-lg'>
-        <ExpandableNavBarElement text='Export to Calender' target='_blank' >
-        <div class='w-full my-1'>
-            <NavBarElement link='./terms-of-use' text='Export to Google Calender' reduceXMargin={true} fullWidth={true} />
-        </div>
-        <div class='w-full my-1'>
-            <NavBarElement link='./terms-of-use' text='Download .csv' reduceXMargin={true} fullWidth={true} />
-        </div>
-        <div class='w-full my-1'>
-            <NavBarElement link='./terms-of-use' text='Download .ics' reduceXMargin={true} fullWidth={true} />
-        </div>
-    </ExpandableNavBarElement>
     </div>
 </div>
 
