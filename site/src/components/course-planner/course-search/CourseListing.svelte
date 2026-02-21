@@ -61,7 +61,7 @@ Copyright (C) 2026 Andrew Cupps
                             font-bold rounded-xl border border-orange px-1 mr-1
                             hover:bg-orange hover:text-bgSecondaryLight 
                             hover:dark:text-bgSecondaryDark transition'
-                    href={`https://app.testudo.umd.edu/soc/gen-ed/202601/` + genEd.code}
+                    href={`https://app.testudo.umd.edu/soc/gen-ed/202608/` + genEd.code}
                     target="_blank"
                     title={"GenEd: " + genEd.name}>
                     {genEd.code}
