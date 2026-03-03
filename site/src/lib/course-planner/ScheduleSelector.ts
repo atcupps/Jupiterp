@@ -14,10 +14,10 @@ import type { StoredSchedule } from "../../types";
 import type { AcademicTerm } from "./Terms";
 
 const TERM_SORT_ORDER: Record<AcademicTerm, number> = {
-    Winter: 0,
-    Spring: 1,
-    Summer: 2,
-    Fall: 3,
+    Summer: 1,
+    Winter: 2,
+    Spring: 3,
+    Fall: 4,
 };
 
 export interface ScheduleGroup {

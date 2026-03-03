@@ -6,12 +6,14 @@ Copyright (C) 2026 Andrew Cupps
  -->
 <script>
 	import { page } from '$app/stores';
+
+    $: errorMessage = $page.error?.message ?? 'Unknown error';
 </script>
 
 <div class='error'>
     <h1 class='text-black dark:text-white error-message'>
         Error {$page.status}:
-        {$page.error.message}
+        {errorMessage}
     </h1>
 </div>
 
