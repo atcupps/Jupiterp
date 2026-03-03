@@ -21,6 +21,49 @@ Before working on Jupiterp, make sure your computer has installed [Node.js](http
 
 To test the site, navigate to the `site` folder. Use `npm run dev` to run the site locally, then use a browser to navigate to http://localhost:5173/.
 
+### Optional: Supabase Auth + Cloud Schedules
+
+The site now supports user sign-in (Email magic link + Google OAuth) and per-user schedule sync when Supabase is configured.
+
+1. In `site/.env`, add:
+
+```bash
+PUBLIC_SUPABASE_URL=your_supabase_project_url
+PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+```
+
+2. In Supabase SQL editor, create the schedule table and enable row-level security:
+
+```sql
+create table if not exists public.user_schedules (
+	user_id uuid primary key references auth.users(id) on delete cascade,
+	schedules jsonb not null,
+	updated_at timestamptz not null default now()
+);
+
+alter table public.user_schedules enable row level security;
+
+create policy "users can read own schedules"
+on public.user_schedules
+for select
+using (auth.uid() = user_id);
+
+create policy "users can insert own schedules"
+on public.user_schedules
+for insert
+with check (auth.uid() = user_id);
+
+create policy "users can update own schedules"
+on public.user_schedules
+for update
+using (auth.uid() = user_id)
+with check (auth.uid() = user_id);
+```
+
+3. In Supabase Auth providers, enable:
+	 - Email
+	 - Google (with OAuth credentials and redirect URL to your site origin)
+
 ## Contributing
 
 See `CONTRIBUTING.md` to view instructions on the collaborative development process for Jupiterp.

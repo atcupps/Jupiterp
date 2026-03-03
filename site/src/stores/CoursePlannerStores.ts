@@ -13,6 +13,7 @@ import type {
     ScheduleSelection,
     StoredSchedule
 } from "../types";
+import { getDefaultTermYear } from "$lib/course-planner/Terms";
 
 /** `Record<string, Instructor>` for getting instructor data from names
 /* Initially set to an empty record since the data used here is
@@ -26,9 +27,12 @@ export const HoveredSectionStore: Writable<ScheduleSelection | null> =
                                                                 writable(null);
 
 /** Track selected sections in current schedule */
+const defaultTermYear = getDefaultTermYear();
 export const CurrentScheduleStore: Writable<StoredSchedule> = writable({
     scheduleName: "Schedule 1",
-    selections: []
+    selections: [],
+    term: defaultTermYear.term,
+    year: defaultTermYear.year,
 });
 
 /** Track stored schedules that are not the active current schedule */

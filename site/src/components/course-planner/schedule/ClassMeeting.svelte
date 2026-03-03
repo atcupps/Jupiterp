@@ -37,9 +37,13 @@ Copyright (C) 2026 Andrew Cupps
 
     let selections: ScheduleSelection[];
     let scheduleName: string;
+    let scheduleTerm: 'Fall' | 'Spring' | 'Winter' | 'Summer';
+    let scheduleYear: number;
     CurrentScheduleStore.subscribe((stored) => {
         selections = stored.selections;
         scheduleName = stored.scheduleName;
+        scheduleTerm = stored.term;
+        scheduleYear = stored.year;
     });
 
     const differences: SelectionDifferences = meeting.differences;
@@ -125,7 +129,9 @@ Copyright (C) 2026 Andrew Cupps
                 selections: [
                     ...selections.slice(0, index),
                     ...selections.slice(index + 1)
-                ]
+                ],
+                term: scheduleTerm,
+                year: scheduleYear,
             });
         }
     }

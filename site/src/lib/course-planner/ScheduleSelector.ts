@@ -11,6 +11,21 @@
 
 import { NonselectedScheduleStore } from "../../stores/CoursePlannerStores";
 import type { StoredSchedule } from "../../types";
+import type { AcademicTerm } from "./Terms";
+
+const TERM_SORT_ORDER: Record<AcademicTerm, number> = {
+    Winter: 0,
+    Spring: 1,
+    Summer: 2,
+    Fall: 3,
+};
+
+export interface ScheduleGroup {
+    groupLabel: string,
+    term: AcademicTerm,
+    year: number,
+    schedules: StoredSchedule[],
+}
 
 /**
  * Ensure that a schedule name is unique by appending another string if
@@ -56,4 +71,35 @@ export function deleteNonselectedSchedule(schedule: StoredSchedule,
         nonselectedSchedules.splice(index, 1);
         NonselectedScheduleStore.set(nonselectedSchedules);
     }
+}
+
+export function groupSchedulesByTerm(
+                            schedules: StoredSchedule[]): ScheduleGroup[] {
+    const grouped = new Map<string, ScheduleGroup>();
+
+    for (const schedule of schedules) {
+        const key = `${schedule.year}-${schedule.term}`;
+        if (!grouped.has(key)) {
+            grouped.set(key, {
+                groupLabel: `${schedule.term} ${schedule.year}`,
+                term: schedule.term,
+                year: schedule.year,
+                schedules: [],
+            });
+        }
+
+        const existing = grouped.get(key);
+        if (!existing) {
+            continue;
+        }
+        existing.schedules.push(schedule);
+    }
+
+    return Array.from(grouped.values()).sort((a, b) => {
+        if (a.year !== b.year) {
+            return b.year - a.year;
+        }
+
+        return TERM_SORT_ORDER[b.term] - TERM_SORT_ORDER[a.term];
+    });
 }

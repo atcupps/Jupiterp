@@ -8,7 +8,7 @@ Copyright (C) 2026 Andrew Cupps
     // format-check exempt 2
     import Schedule from '../components/course-planner/schedule/Schedule.svelte';
     import CourseSearch from '../components/course-planner/course-search/CourseSearch.svelte';
-    import { onMount } from 'svelte';
+    import { onDestroy, onMount } from 'svelte';
     import {
         ensureUpToDateAndSetStores,
         resolveSelections,
@@ -23,11 +23,22 @@ Copyright (C) 2026 Andrew Cupps
     } from '../stores/CoursePlannerStores';
     import { client } from '$lib/client';
     import {
+        getAuthUser,
+        isSupabaseConfigured,
+        loadUserSchedules,
+        onAuthStateChanged,
+        saveUserSchedules,
+    } from '$lib/supabase';
+    import {
+        getDefaultTermYear,
+        normalizeStoredSchedule,
+    } from '$lib/course-planner/Terms';
+    import {
         type Instructor,
         type InstructorsConfig, 
         type InstructorsResponse
     } from '@jupiterp/jupiterp';
-    import type { ScheduleSelection, StoredSchedule } from '../../types';
+    import type { ScheduleSelection, StoredSchedule } from '../types';
 
     // Function to retreive professor data; called in `onMount`.
     async function fetchProfessorData() {
@@ -80,6 +91,9 @@ Copyright (C) 2026 Andrew Cupps
     // Keep track of chosen sections
     let currentSchedule: StoredSchedule;
     let hasReadLocalStorage: boolean = false;
+    let authUserId: string | null = null;
+    let authUnsubscribe: (() => void) | null = null;
+    let cloudSyncTimeout: ReturnType<typeof setTimeout> | null = null;
     CurrentScheduleStore.subscribe((stored) => {
         if (hasReadLocalStorage) {
             currentSchedule = stored;
@@ -92,12 +106,19 @@ Copyright (C) 2026 Andrew Cupps
                     localStorage.setItem(
                         'scheduleName', currentSchedule.scheduleName
                     );
+                    localStorage.setItem('scheduleTerm', currentSchedule.term);
+                    localStorage.setItem(
+                        'scheduleYear',
+                        currentSchedule.year.toString()
+                    );
                 }
             }
+
+            queueCloudSync();
         }
     });
 
-    let nonselectedSchedules: StoredSchedule[];
+    let nonselectedSchedules: StoredSchedule[] = [];
     // Save non-selected schedules to local storage
     NonselectedScheduleStore.subscribe((stored) => {
         if (hasReadLocalStorage) {
@@ -112,8 +133,68 @@ Copyright (C) 2026 Andrew Cupps
                     );
                 }
             }
+
+            queueCloudSync();
         }
     })
+
+    async function hydrateFromCloud(userId: string) {
+        try {
+            const cloudValue = await loadUserSchedules(userId);
+            if (!cloudValue) {
+                if (currentSchedule) {
+                    await saveUserSchedules(userId, {
+                        currentSchedule,
+                        nonselectedSchedules,
+                    });
+                }
+                return;
+            }
+
+            const defaultTermYear = getDefaultTermYear();
+            const cloudCurrent = normalizeStoredSchedule(
+                cloudValue.currentSchedule,
+                defaultTermYear
+            );
+            const cloudNonselected =
+                cloudValue.nonselectedSchedules.map((schedule) => {
+                    return normalizeStoredSchedule(schedule, defaultTermYear);
+                });
+
+            ensureUpToDateAndSetStores(cloudCurrent, cloudNonselected);
+        } catch (error) {
+            console.error('Failed loading cloud schedules:', error);
+        }
+    }
+
+    function queueCloudSync() {
+        if (!hasReadLocalStorage || !authUserId || !currentSchedule) {
+            return;
+        }
+
+        if (!isSupabaseConfigured()) {
+            return;
+        }
+
+        if (cloudSyncTimeout !== null) {
+            clearTimeout(cloudSyncTimeout);
+        }
+
+        cloudSyncTimeout = setTimeout(async () => {
+            if (!authUserId) {
+                return;
+            }
+
+            try {
+                await saveUserSchedules(authUserId, {
+                    currentSchedule,
+                    nonselectedSchedules,
+                });
+            } catch (error) {
+                console.error('Failed saving cloud schedules:', error);
+            }
+        }, 400);
+    }
 
     onMount(() => {
         // Fetch instructor data from API
@@ -146,9 +227,29 @@ Copyright (C) 2026 Andrew Cupps
                     storedScheduleName = "Schedule 1";
                 }
 
-                const currentSchedule: StoredSchedule = {
+                const defaultTermYear = getDefaultTermYear();
+                const storedScheduleTermOption =
+                    localStorage.getItem('scheduleTerm');
+                const storedScheduleYearOption =
+                    localStorage.getItem('scheduleYear');
+                const parsedStoredYear = Number(storedScheduleYearOption);
+                const storedScheduleYear = Number.isInteger(parsedStoredYear) &&
+                        parsedStoredYear >= 1900 && parsedStoredYear <= 3000
+                    ? parsedStoredYear
+                    : defaultTermYear.year;
+
+                const currentScheduleFromStorage: StoredSchedule = {
                     scheduleName: storedScheduleName,
-                    selections: storedSelections
+                    selections: storedSelections,
+                    term: (
+                        storedScheduleTermOption === 'Winter' ||
+                        storedScheduleTermOption === 'Spring' ||
+                        storedScheduleTermOption === 'Summer' ||
+                        storedScheduleTermOption === 'Fall'
+                    )
+                        ? storedScheduleTermOption
+                        : defaultTermYear.term,
+                    year: storedScheduleYear,
                 };
 
                 // Get stored non-selected schedules from local storage
@@ -166,19 +267,56 @@ Copyright (C) 2026 Andrew Cupps
                 // Find differences between stored selections and
                 // most up-to-date course data, and update accordingly.
                 ensureUpToDateAndSetStores(
-                    currentSchedule,
+                    currentScheduleFromStorage,
                     storedNonselectedSchedules
                 );
 
+                currentSchedule = currentScheduleFromStorage;
+                nonselectedSchedules = storedNonselectedSchedules;
+
                 hasReadLocalStorage = true;
+
+                if (isSupabaseConfigured()) {
+                    getAuthUser().then((user) => {
+                        authUserId = user?.id ?? null;
+                        if (authUserId) {
+                            hydrateFromCloud(authUserId);
+                        }
+                    });
+
+                    authUnsubscribe = onAuthStateChanged((user) => {
+                        const nextAuthId = user?.id ?? null;
+                        if (nextAuthId === authUserId) {
+                            return;
+                        }
+
+                        authUserId = nextAuthId;
+                        if (authUserId) {
+                            hydrateFromCloud(authUserId);
+                        }
+                    });
+                }
             }
         } catch (e) {
             console.log('Unable to retrieve courses: ' + e);
+            const defaultTermYear = getDefaultTermYear();
             CurrentScheduleStore.set({
                 scheduleName: "Schedule 1",
-                selections: []
+                selections: [],
+                term: defaultTermYear.term,
+                year: defaultTermYear.year,
             });
             NonselectedScheduleStore.set([]);
+        }
+    });
+
+    onDestroy(() => {
+        if (authUnsubscribe) {
+            authUnsubscribe();
+        }
+
+        if (cloudSyncTimeout !== null) {
+            clearTimeout(cloudSyncTimeout);
         }
     });
 

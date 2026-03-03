@@ -33,8 +33,14 @@ Copyright (C) 2026 Andrew Cupps
     HoveredSectionStore.subscribe((hovered) => { hoveredSection = hovered });
 
     let selections: ScheduleSelection[] = [];
+    let activeTerm: 'Fall' | 'Spring' | 'Winter' | 'Summer' = 'Fall';
+    let activeYear: number = 2026;
     CurrentScheduleStore.subscribe(
-        (stored) => { selections = stored.selections }
+        (stored) => {
+            selections = stored.selections;
+            activeTerm = stored.term;
+            activeYear = stored.year;
+        }
     );
 
     // Variable and function for handling course search input
@@ -164,7 +170,7 @@ Copyright (C) 2026 Andrew Cupps
 
     <div class='flex flex-row text-xs ml-1 pb-1 2xl:text-sm'>
         <div>
-            Fall 2026
+            {activeTerm} {activeYear}
         </div>
         <div class='grow text-right'>
             Credits: {totalCredits}

@@ -15,17 +15,23 @@ Copyright (C) 2026 Andrew Cupps
     import { slide } from "svelte/transition";
     import {
         deleteNonselectedSchedule,
+        groupSchedulesByTerm,
         uniqueScheduleName
     } from "$lib/course-planner/ScheduleSelector";
+    import { TERM_VALUES } from "$lib/course-planner/Terms";
     import type { ScheduleSelection, StoredSchedule } from "../../../types";
 
     let dropdownOpen: boolean = false;
 
     let currentScheduleName: string;
     let currentScheduleSelections: ScheduleSelection[];
+    let currentScheduleTerm: StoredSchedule['term'];
+    let currentScheduleYear: number;
     CurrentScheduleStore.subscribe((stored) => {
         currentScheduleName = stored.scheduleName;
         currentScheduleSelections = stored.selections;
+        currentScheduleTerm = stored.term;
+        currentScheduleYear = stored.year;
     });
 
     function changeScheduleName() {
@@ -38,7 +44,9 @@ Copyright (C) 2026 Andrew Cupps
             );
             CurrentScheduleStore.set({
                 scheduleName: currentScheduleName,
-                selections: currentScheduleSelections
+                selections: currentScheduleSelections,
+                term: currentScheduleTerm,
+                year: currentScheduleYear,
             });
         }
         else {
@@ -49,8 +57,46 @@ Copyright (C) 2026 Andrew Cupps
             );
             CurrentScheduleStore.set({
                 scheduleName: currentScheduleName,
-                selections: currentScheduleSelections
+                selections: currentScheduleSelections,
+                term: currentScheduleTerm,
+                year: currentScheduleYear,
             });
+        }
+    }
+
+    function changeScheduleTerm(term: StoredSchedule['term']) {
+        currentScheduleTerm = term;
+        CurrentScheduleStore.set({
+            scheduleName: currentScheduleName,
+            selections: currentScheduleSelections,
+            term: currentScheduleTerm,
+            year: currentScheduleYear,
+        });
+    }
+
+    function changeScheduleYear(event: Event) {
+        const target = event.currentTarget as HTMLInputElement;
+        const parsed = Number(target.value);
+        if (!Number.isInteger(parsed) || parsed < 1900 || parsed > 3000) {
+            target.value = currentScheduleYear.toString();
+            return;
+        }
+
+        currentScheduleYear = parsed;
+        CurrentScheduleStore.set({
+            scheduleName: currentScheduleName,
+            selections: currentScheduleSelections,
+            term: currentScheduleTerm,
+            year: currentScheduleYear,
+        });
+    }
+
+    function handleScheduleTermChange(event: Event) {
+        const target = event.currentTarget as HTMLSelectElement;
+        const value = target.value;
+        if (value === 'Fall' || value === 'Spring' ||
+                value === 'Winter' || value === 'Summer') {
+            changeScheduleTerm(value);
         }
     }
 
@@ -64,6 +110,8 @@ Copyright (C) 2026 Andrew Cupps
         nonselectedSchedules = stored;
     });
 
+    let scheduleGroups = groupSchedulesByTerm(nonselectedSchedules);
+
     function changeSchedule(newSchedule: StoredSchedule) {
         const index = nonselectedSchedules.indexOf(newSchedule);
         if (index === -1) {
@@ -73,16 +121,22 @@ Copyright (C) 2026 Andrew Cupps
         else {
             const scheduleToReplace: StoredSchedule = {
                 scheduleName: currentScheduleName,
-                selections: currentScheduleSelections
+                selections: currentScheduleSelections,
+                term: currentScheduleTerm,
+                year: currentScheduleYear,
             }
             nonselectedSchedules.splice(index, 1);
             nonselectedSchedules = [scheduleToReplace,...nonselectedSchedules];
             currentScheduleName = newSchedule.scheduleName;
             currentScheduleSelections = newSchedule.selections;
+            currentScheduleTerm = newSchedule.term;
+            currentScheduleYear = newSchedule.year;
             
             CurrentScheduleStore.set({
                 scheduleName: currentScheduleName,
-                selections: currentScheduleSelections
+                selections: currentScheduleSelections,
+                term: currentScheduleTerm,
+                year: currentScheduleYear,
             });
 
             NonselectedScheduleStore.set(nonselectedSchedules);
@@ -92,7 +146,9 @@ Copyright (C) 2026 Andrew Cupps
     function createNewSchedule() {
         const oldSchedule: StoredSchedule = {
             scheduleName: currentScheduleName,
-            selections: currentScheduleSelections
+            selections: currentScheduleSelections,
+            term: currentScheduleTerm,
+            year: currentScheduleYear,
         };
         nonselectedSchedules = [oldSchedule, ...nonselectedSchedules];
         NonselectedScheduleStore.set(nonselectedSchedules);
@@ -104,9 +160,13 @@ Copyright (C) 2026 Andrew Cupps
         currentScheduleSelections = [];
         CurrentScheduleStore.set({
             scheduleName: currentScheduleName,
-            selections: currentScheduleSelections
+            selections: currentScheduleSelections,
+            term: currentScheduleTerm,
+            year: currentScheduleYear,
         });
     }
+
+    $: scheduleGroups = groupSchedulesByTerm(nonselectedSchedules);
 </script>
 
 <div class='flex w-full flex-col'>
@@ -139,30 +199,56 @@ Copyright (C) 2026 Andrew Cupps
         </button>
     </div>
 
+    <div class='flex flex-row gap-1 w-full pb-1 pr-5 pl-4'>
+        <select class='bg-bgLight dark:bg-bgDark text-xs border-none rounded
+                        px-1 py-0.5 outline-none'
+                title='Schedule term'
+                bind:value={currentScheduleTerm}
+                on:change={handleScheduleTermChange}>
+            {#each TERM_VALUES as termOption}
+                <option value={termOption}>{termOption}</option>
+            {/each}
+        </select>
+
+        <input class='bg-bgLight dark:bg-bgDark text-xs border-none rounded
+                        px-1 py-0.5 outline-none w-16'
+                title='Schedule year'
+                type='number'
+                min='1900'
+                max='3000'
+                bind:value={currentScheduleYear}
+                on:blur={changeScheduleYear}>
+    </div>
+
     {#if dropdownOpen}
         <div class='w-full pr-5 pl-4 pb-0.5' transition:slide>
-            {#each nonselectedSchedules as schedule}
-                <div class='h-6 w-full flex flex-row'>
-                    <button class='text-sm hover:bg-hoverLight text-sm
-                                    dark:hover:bg-hoverDark text-left rounded-md
-                                    h-6 items-center grow pl-1.5'
-                            title={'Switch to ' + schedule.scheduleName}
-                            on:click={() => changeSchedule(schedule)}>
-                        <div>{schedule.scheduleName}</div>
-                    </button>
-
-                    <button class='rounded-md hover:bg-hoverLight
-                                    dark:hover:bg-hoverDark h-6 w-6
-                                    flex justify-center items-center'
-                            title={'Delete ' + schedule.scheduleName}
-                            on:click={
-                                ()=> deleteNonselectedSchedule(
-                                        schedule, nonselectedSchedules
-                                    )
-                            }>
-                        <TrashBinOutline class='w-4 h-4' />
-                    </button>
+            {#each scheduleGroups as scheduleGroup}
+                <div class='text-xs font-semibold opacity-70 pt-1 pb-0.5'>
+                    {scheduleGroup.groupLabel}
                 </div>
+                {#each scheduleGroup.schedules as schedule}
+                    <div class='h-6 w-full flex flex-row'>
+                        <button class='text-sm hover:bg-hoverLight text-sm
+                                        dark:hover:bg-hoverDark text-left rounded-md
+                                        h-6 items-center grow pl-1.5'
+                                title={'Switch to ' + schedule.scheduleName}
+                                on:click={() => changeSchedule(schedule)}>
+                            <div>{schedule.scheduleName}</div>
+                        </button>
+
+                        <button class='rounded-md hover:bg-hoverLight
+                                        dark:hover:bg-hoverDark h-6 w-6
+                                        flex justify-center items-center'
+                                title={'Delete ' + schedule.scheduleName}
+                                on:click={
+                                    ()=> deleteNonselectedSchedule(
+                                            schedule, nonselectedSchedules
+                                        )
+                                }>
+                            <TrashBinOutline class='w-4 h-4' />
+                        </button>
+                    </div>
+                {/each}
             {/each}
         </div>
     {/if}

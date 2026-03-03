@@ -27,9 +27,13 @@ Copyright (C) 2026 Andrew Cupps
 
     let selectionsList: ScheduleSelection[];
     let scheduleName: string;
+    let scheduleTerm: 'Fall' | 'Spring' | 'Winter' | 'Summer';
+    let scheduleYear: number;
     CurrentScheduleStore.subscribe((stored) => {
         selectionsList = stored.selections;
         scheduleName = stored.scheduleName;
+        scheduleTerm = stored.term;
+        scheduleYear = stored.year;
     });
 
     let onlyShowingOpen = false;
@@ -99,7 +103,9 @@ Copyright (C) 2026 Andrew Cupps
             newSelection.colorNumber = firstAvailableColor(selectionsList);
             CurrentScheduleStore.set({
                 scheduleName,
-                selections: [...selectionsList, newSelection]
+                selections: [...selectionsList, newSelection],
+                term: scheduleTerm,
+                year: scheduleYear,
             });
             CourseInfoPairStore.update(value => {
                 return value === null ? null : {
@@ -117,7 +123,9 @@ Copyright (C) 2026 Andrew Cupps
                     selections: [
                         ...selectionsList.slice(0, index),
                         ...selectionsList.slice(index + 1)
-                    ]
+                    ],
+                    term: scheduleTerm,
+                    year: scheduleYear,
                 });
             }
             CourseInfoPairStore.update(value => {

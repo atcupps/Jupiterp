@@ -18,15 +18,20 @@ Copyright (C) 2026 Andrew Cupps
     import {
         uniqueScheduleName
     } from '$lib/course-planner/ScheduleSelector';
+    import { getDefaultTermYear } from '$lib/course-planner/Terms';
     import type { ScheduleSelection, StoredSchedule } from '../../../types';
 
     let dropdownOpen = false;
 
     let currentScheduleName: string;
     let currentScheduleSelections: ScheduleSelection[];
+    let currentScheduleTerm: StoredSchedule['term'];
+    let currentScheduleYear: number;
     CurrentScheduleStore.subscribe((stored) => {
         currentScheduleName = stored.scheduleName,
-        currentScheduleSelections = stored.selections
+        currentScheduleSelections = stored.selections,
+        currentScheduleTerm = stored.term,
+        currentScheduleYear = stored.year
     });
 
     let nonselectedSchedules: StoredSchedule[];
@@ -44,17 +49,22 @@ Copyright (C) 2026 Andrew Cupps
 
             CurrentScheduleStore.set({
                 scheduleName: currentScheduleName,
-                selections: currentScheduleSelections
+                selections: currentScheduleSelections,
+                term: currentScheduleTerm,
+                year: currentScheduleYear,
             });
 
             NonselectedScheduleStore.set(nonselectedSchedules);
         } else {
+            const defaultTermYear = getDefaultTermYear();
             currentScheduleName = 'My schedule';
             currentScheduleSelections = [];
 
             CurrentScheduleStore.set({
                 scheduleName: currentScheduleName,
-                selections: currentScheduleSelections
+                selections: currentScheduleSelections,
+                term: defaultTermYear.term,
+                year: defaultTermYear.year,
             });
         }
     }
@@ -64,7 +74,9 @@ Copyright (C) 2026 Andrew Cupps
 
         nonselectedSchedules = [{
             scheduleName: currentScheduleName,
-            selections: currentScheduleSelections
+            selections: currentScheduleSelections,
+            term: currentScheduleTerm,
+            year: currentScheduleYear,
         }, ...nonselectedSchedules];
         currentScheduleName = uniqueScheduleName(
             currentScheduleName,
@@ -75,7 +87,9 @@ Copyright (C) 2026 Andrew Cupps
         NonselectedScheduleStore.set(nonselectedSchedules);
         CurrentScheduleStore.set({
             scheduleName: currentScheduleName,
-            selections: currentScheduleSelections
+            selections: currentScheduleSelections,
+            term: currentScheduleTerm,
+            year: currentScheduleYear,
         });
     }
 </script>
