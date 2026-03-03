@@ -8,6 +8,7 @@ Copyright (C) 2026 Andrew Cupps
     // format-check exempt 2
     import Schedule from '../components/course-planner/schedule/Schedule.svelte';
     import CourseSearch from '../components/course-planner/course-search/CourseSearch.svelte';
+    import ScheduleManager from '../components/course-planner/schedule/ScheduleManager.svelte';
     import { onDestroy, onMount } from 'svelte';
     import {
         ensureUpToDateAndSetStores,
@@ -335,28 +336,68 @@ Copyright (C) 2026 Andrew Cupps
     }
 
     let courseSearchSelected: boolean = false;
+    type PlannerTab = 'schedules' | 'add-classes';
+    let activePlannerTab: PlannerTab = 'schedules';
+
+    let activeScheduleLabel = 'Schedule 1';
+    CurrentScheduleStore.subscribe((stored) => {
+        activeScheduleLabel = `${stored.scheduleName} (${stored.term} ${stored.year})`;
+    });
 </script>
 
-<!-- Button to toggle course search on mobile -->
-<button class='fixed h-5 w-5 top-[0.9rem] left-5 visible lg:hidden z-[52]'
-        on:click={() => {courseSearchSelected = !courseSearchSelected}}>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
-            class='visible h-full w-full transition 
-                    fill-textLight dark:fill-textDark'
-            class:hidden={courseSearchSelected}>
-                <!-- format-check exempt 1 -->
-                <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"
-            class='visible h-full w-full transition 
-                    fill-textLight dark:fill-textDark'
-            class:hidden={!courseSearchSelected}>
-                <!-- format-check exempt 1 -->
-                <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206 56.6 43.5C45.3 29.9 25.1 28.1 11.5 39.4S-3.9 70.9 7.4 84.5L150.3 256 7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306 327.4 468.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256 376.6 84.5z"/></svg>
-</button>
-
-<div class='fixed flex flex-row w-full px-8
+<div class='fixed flex flex-col w-full px-8
             text-textLight dark:text-textDark lg:px-8
             top-[3rem] lg:top-[3.5rem] xl:top-[4rem] bottom-0'>
-    <CourseSearch bind:courseSearchSelected />
-    <Schedule />
+    <div class='flex flex-row gap-1 pb-2'>
+        <button class='rounded-md px-3 py-1 text-sm border
+                        border-outlineLight dark:border-outlineDark
+                        hover:bg-hoverLight dark:hover:bg-hoverDark'
+                class:bg-hoverLight={activePlannerTab === 'schedules'}
+                class:dark:bg-hoverDark={activePlannerTab === 'schedules'}
+                on:click={() => activePlannerTab = 'schedules'}>
+            Schedules
+        </button>
+        <button class='rounded-md px-3 py-1 text-sm border
+                        border-outlineLight dark:border-outlineDark
+                        hover:bg-hoverLight dark:hover:bg-hoverDark'
+                class:bg-hoverLight={activePlannerTab === 'add-classes'}
+                class:dark:bg-hoverDark={activePlannerTab === 'add-classes'}
+                on:click={() => activePlannerTab = 'add-classes'}>
+            Add Classes
+        </button>
+    </div>
+
+    {#if activePlannerTab === 'schedules'}
+        <div class='grow min-h-0 pb-2'>
+            <ScheduleManager onSwitchToAddClasses={() => {
+                activePlannerTab = 'add-classes';
+            }} />
+        </div>
+    {:else}
+        <!-- Button to toggle course search on mobile -->
+        <button class='fixed h-5 w-5 top-[4.1rem] left-5 visible lg:hidden z-[52]'
+                on:click={() => {courseSearchSelected = !courseSearchSelected}}>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+                    class='visible h-full w-full transition 
+                            fill-textLight dark:fill-textDark'
+                    class:hidden={courseSearchSelected}>
+                        <!-- format-check exempt 1 -->
+                        <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"
+                    class='visible h-full w-full transition 
+                            fill-textLight dark:fill-textDark'
+                    class:hidden={!courseSearchSelected}>
+                        <!-- format-check exempt 1 -->
+                        <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206 56.6 43.5C45.3 29.9 25.1 28.1 11.5 39.4S-3.9 70.9 7.4 84.5L150.3 256 7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306 327.4 468.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256 376.6 84.5z"/></svg>
+        </button>
+
+        <div class='grow min-h-0 flex flex-row'>
+            <CourseSearch bind:courseSearchSelected
+                {activeScheduleLabel}
+                onChangeToSchedules={() => {
+                    activePlannerTab = 'schedules';
+                }} />
+            <Schedule />
+        </div>
+    {/if}
 </div>

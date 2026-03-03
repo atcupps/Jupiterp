@@ -9,7 +9,11 @@ Copyright (C) 2026 Andrew Cupps
 
     interface ScheduleOption {
         id: string,
-        label: string,
+        name: string,
+        term: Term,
+        year: number,
+        credits: number,
+        isActive: boolean,
     }
 
     export let activeScheduleName: string;
@@ -17,7 +21,6 @@ Copyright (C) 2026 Andrew Cupps
     export let activeYear: number;
     export let credits: number;
     export let schedules: ScheduleOption[] = [];
-    export let activeScheduleId: string = '';
     export let filtersActiveCount: number = 0;
 
     export let onChangeSchedule: (id: string) => void;
@@ -25,7 +28,11 @@ Copyright (C) 2026 Andrew Cupps
     export let onChangeYear: (year: number) => void;
     export let onOpenFilters: () => void;
     export let onClearFilters: () => void;
-    export let onCreateSchedule: () => void;
+    export let onCreateSchedule: (payload: {
+        name: string,
+        term: Term,
+        year: number,
+    }) => void;
     export let onDuplicateSchedule: () => void;
     export let onDeleteSchedule: () => void;
 
@@ -33,6 +40,17 @@ Copyright (C) 2026 Andrew Cupps
     export let maxYear: number = new Date().getFullYear();
 
     const TERMS: Term[] = ['Fall', 'Winter', 'Spring', 'Summer'];
+    const TIMELINE_TERM_ORDER: Record<Term, number> = {
+        Fall: 0,
+        Winter: 1,
+        Spring: 2,
+        Summer: 3,
+    };
+
+    let showCreatePanel = false;
+    let newScheduleName = '';
+    let newScheduleTerm: Term = activeTerm;
+    let newScheduleYear = activeYear;
 
     function handleYearChange(event: Event) {
         const target = event.currentTarget as HTMLInputElement;
@@ -46,10 +64,34 @@ Copyright (C) 2026 Andrew Cupps
         onChangeYear(clamped);
     }
 
-    function handleScheduleChange(event: Event) {
-        const target = event.currentTarget as HTMLSelectElement;
-        onChangeSchedule(target.value);
+    function openCreatePanel() {
+        showCreatePanel = true;
+        newScheduleName = '';
+        newScheduleTerm = activeTerm;
+        newScheduleYear = activeYear;
     }
+
+    function cancelCreate() {
+        showCreatePanel = false;
+    }
+
+    function submitCreate() {
+        const clampedYear = Math.max(minYear, Math.min(maxYear, newScheduleYear));
+        onCreateSchedule({
+            name: newScheduleName.trim(),
+            term: newScheduleTerm,
+            year: clampedYear,
+        });
+        showCreatePanel = false;
+    }
+
+    $: sortedSchedules = [...schedules].sort((a, b) => {
+        if (a.year !== b.year) {
+            return a.year - b.year;
+        }
+
+        return TIMELINE_TERM_ORDER[a.term] - TIMELINE_TERM_ORDER[b.term];
+    });
 </script>
 
 <section class='rounded-xl border border-outlineLight dark:border-outlineDark
@@ -73,8 +115,8 @@ Copyright (C) 2026 Andrew Cupps
             <button class='text-xs rounded-md px-2 py-1 border
                             border-outlineLight dark:border-outlineDark
                             hover:bg-hoverLight dark:hover:bg-hoverDark'
-                    on:click={onCreateSchedule}>
-                Create Schedule
+                    on:click={openCreatePanel}>
+                + New Schedule
             </button>
             <button class='text-xs rounded-md px-2 py-1 border
                             border-outlineLight dark:border-outlineDark
@@ -94,19 +136,38 @@ Copyright (C) 2026 Andrew Cupps
     <section class='mt-3 rounded-lg border border-divBorderLight dark:border-divBorderDark
                     p-2 flex flex-col gap-2 lg:flex-row lg:items-center lg:flex-wrap'>
         <div class='min-w-[14rem] grow'>
-            <label class='text-xs opacity-70 block mb-1' for='schedule-picker'>
-                Schedule
+            <label class='text-xs opacity-70 block mb-1' for='schedule-timeline'>
+                Schedule timeline
             </label>
-            <select class='w-full bg-bgLight dark:bg-bgDark rounded-md px-2 py-1
-                            border border-outlineLight dark:border-outlineDark
-                            outline-none'
-                    id='schedule-picker'
-                    value={activeScheduleId}
-                    on:change={handleScheduleChange}>
-                {#each schedules as schedule}
-                    <option value={schedule.id}>{schedule.label}</option>
+            <div class='flex flex-row gap-2 overflow-x-auto pb-1'
+                id='schedule-timeline'
+                role='group'
+                aria-label='Schedule timeline'>
+                {#each sortedSchedules as schedule}
+                    <button class='min-w-[180px] rounded-md border p-2 text-left
+                                    hover:bg-hoverLight dark:hover:bg-hoverDark'
+                            class:border-orange={schedule.isActive}
+                            class:bg-hoverLight={schedule.isActive}
+                            class:dark:bg-hoverDark={schedule.isActive}
+                            class:border-outlineLight={!schedule.isActive}
+                            class:dark:border-outlineDark={!schedule.isActive}
+                            on:click={() => onChangeSchedule(schedule.id)}>
+                        <div class='text-sm font-semibold truncate'>
+                            {schedule.name}
+                        </div>
+                        <div class='text-xs opacity-70'>
+                            {schedule.term} {schedule.year}
+                        </div>
+                        <div class='text-xs opacity-70'>Credits: {schedule.credits}</div>
+                        {#if schedule.isActive}
+                            <span class='inline-block mt-1 text-[11px] rounded-full
+                                            px-2 py-0.5 border border-orange'>
+                                Now viewing
+                            </span>
+                        {/if}
+                    </button>
                 {/each}
-            </select>
+            </div>
         </div>
 
         <div>
@@ -162,4 +223,49 @@ Copyright (C) 2026 Andrew Cupps
             {/if}
         </div>
     </section>
+
+    {#if showCreatePanel}
+        <section class='mt-2 rounded-lg border border-divBorderLight
+                        dark:border-divBorderDark p-2'>
+            <div class='text-xs opacity-70 mb-2'>Create new schedule</div>
+            <div class='grid grid-cols-1 md:grid-cols-4 gap-2'>
+                <input class='bg-bgLight dark:bg-bgDark rounded-md px-2 py-1
+                                border border-outlineLight dark:border-outlineDark
+                                outline-none md:col-span-2'
+                        placeholder='Name (optional)'
+                        bind:value={newScheduleName}>
+
+                <select class='bg-bgLight dark:bg-bgDark rounded-md px-2 py-1
+                                border border-outlineLight dark:border-outlineDark
+                                outline-none'
+                        bind:value={newScheduleTerm}>
+                    {#each TERMS as term}
+                        <option value={term}>{term}</option>
+                    {/each}
+                </select>
+
+                <input class='bg-bgLight dark:bg-bgDark rounded-md px-2 py-1
+                                border border-outlineLight dark:border-outlineDark
+                                outline-none'
+                        type='number'
+                        min={minYear}
+                        max={maxYear}
+                        bind:value={newScheduleYear}>
+            </div>
+            <div class='flex flex-row justify-end gap-2 mt-2'>
+                <button class='text-xs rounded-md px-2 py-1 border
+                                border-outlineLight dark:border-outlineDark
+                                hover:bg-hoverLight dark:hover:bg-hoverDark'
+                        on:click={cancelCreate}>
+                    Cancel
+                </button>
+                <button class='text-xs rounded-md px-2 py-1 border
+                                border-outlineLight dark:border-outlineDark
+                                hover:bg-hoverLight dark:hover:bg-hoverDark'
+                        on:click={submitCreate}>
+                    Create
+                </button>
+            </div>
+        </section>
+    {/if}
 </section>
