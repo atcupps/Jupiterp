@@ -115,11 +115,19 @@ Copyright (C) 2026 Andrew Cupps
     let innerWidth: number;
     let infoPanelLeft: number;
     let infoPanelWidth: number;
+    let hasScheduledClasses = false;
+    let alternatingRows: number[] = [];
     $: if (elt || innerWidth) {
         afterUpdate(() => {
             infoPanelLeft = elt.getBoundingClientRect().left;
             infoPanelWidth = elt.getBoundingClientRect().right - infoPanelLeft;
         });
+    }
+
+    $: hasScheduledClasses = selections.some((selection) => !selection.hover);
+    $: alternatingRows = [];
+    $: for (let time = earliestClassStart; time < latestClassEnd; time += 1) {
+        alternatingRows.push(time);
     }
 </script>
 
@@ -127,12 +135,23 @@ Copyright (C) 2026 Andrew Cupps
 
 <div class='h-full w-full flex flex-row px-2 font-medium overflow-x-scroll
             text-lg text-center text-black dark:text-white overflow-y-scroll'>
-    <div class='grid grow relative pl-8'
+    <div class='grid grow relative pl-8 rounded-xl border
+                border-outlineLight dark:border-outlineDark
+                bg-bgSecondaryLight dark:bg-bgSecondaryDark'
          style='height: calc(100% - 1.75rem);'
          class:grid-cols-5={schedule.other.length == 0}
          class:grid-cols-6={schedule.other.length > 0}
          bind:this={elt}
     >
+        {#each alternatingRows as rowTime, index}
+            {#if index % 2 === 0}
+                <div class='absolute left-8 top-[1.75rem] z-0
+                            bg-bgLight dark:bg-bgDark opacity-20'
+                        style='width: {schedule.other.length == 0 ? 'calc(100% - 2rem)' : 'calc(83.3% - 2rem)'};
+                                height: {bgHeight / Math.max(1, (latestClassEnd - earliestClassStart))}px;
+                                transform: translateY({(rowTime - earliestClassStart) * (bgHeight / Math.max(1, (latestClassEnd - earliestClassStart)))}px);'/>
+            {/if}
+        {/each}
         
         <!-- Background lines for the schedule -->
          <!-- format-check exempt 2 -->
@@ -175,6 +194,20 @@ Copyright (C) 2026 Andrew Cupps
             <ScheduleDay name='Other' classes={schedule.other} type='Other'
                 {bgHeight}
             />
+        {/if}
+
+        {#if !hasScheduledClasses}
+            <div class='absolute inset-0 z-30 flex items-center justify-center
+                        pointer-events-none'>
+                <div class='text-center rounded-lg border border-outlineLight
+                            dark:border-outlineDark px-4 py-3 bg-bgLight
+                            dark:bg-bgDark shadow-sm'>
+                    <div class='font-semibold'>No courses in this schedule yet.</div>
+                    <div class='text-sm opacity-75'>
+                        Use the Course Planner panel to add classes.
+                    </div>
+                </div>
+            </div>
         {/if}
     </div>
 </div>

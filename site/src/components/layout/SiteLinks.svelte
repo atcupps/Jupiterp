@@ -7,84 +7,19 @@ Copyright (C) 2026 Andrew Cupps
 <script lang='ts'>
     import { fade } from 'svelte/transition';
     import { page } from '$app/stores';
-    import { onMount } from 'svelte';
     import NavBarElement from './NavBarElement.svelte';
     import DarkModeToggle from './DarkModeToggle.svelte';
     import ExpandableNavBarElement from './ExpandableNavBarElement.svelte';
-    import {
-        getAuthUser,
-        isSupabaseConfigured,
-        onAuthStateChanged,
-        signInWithEmail,
-        signInWithGoogle,
-        signOutUser,
-    } from '$lib/supabase';
 
     let siteLinksSelected: boolean = false;
-    let authReady = false;
-    let authEmail: string = '';
-    let userEmail: string | null = null;
-    const authEnabled = isSupabaseConfigured();
 
     $: currentPage = $page.url.pathname;
-
-    onMount(() => {
-        if (!authEnabled) {
-            authReady = true;
-            return;
-        }
-
-        const unsubscribe = onAuthStateChanged((user) => {
-            userEmail = user?.email ?? null;
-            authReady = true;
-        });
-
-        getAuthUser().then((user) => {
-            userEmail = user?.email ?? null;
-            authReady = true;
-        });
-
-        return () => {
-            unsubscribe();
-        }
-    });
-
-    async function emailSignIn() {
-        const email = authEmail.trim();
-        if (email.length === 0) {
-            return;
-        }
-
-        try {
-            await signInWithEmail(email, window.location.origin);
-            alert('Sign-in link sent. Check your email.');
-            authEmail = '';
-        } catch (error) {
-            console.error('Email sign-in failed:', error);
-            alert('Could not send sign-in email.');
-        }
-    }
-
-    async function googleSignIn() {
-        try {
-            await signInWithGoogle(window.location.origin);
-        } catch (error) {
-            console.error('Google sign-in failed:', error);
-            alert('Could not start Google sign-in.');
-        }
-    }
-
-    async function signOut() {
-        try {
-            await signOutUser();
-        } catch (error) {
-            console.error('Sign-out failed:', error);
-        }
-    }
 </script>
 
 <!-- For larger screens -->
 <div class='grow justify-end self-center hidden lg:flex'>
+    <NavBarElement link='./profile' text='Profile'
+                                        isOnPage={currentPage == '/profile'}/>
     <NavBarElement link='./' text='Course Planner'
                                         isOnPage={currentPage == '/'}/>
     <NavBarElement link='./bugs' text='Report an Issue' 
@@ -103,46 +38,6 @@ Copyright (C) 2026 Andrew Cupps
     <NavBarElement link='https://github.com/atcupps/Jupiterp'
                                         text='GitHub'
                                         target='_blank' />
-    {#if authEnabled && authReady}
-        {#if userEmail}
-            <div class='mx-2 text-sm flex items-center gap-2'>
-                <span class='max-w-36 truncate text-textLight dark:text-textDark'
-                        title={userEmail}>
-                    {userEmail}
-                </span>
-                <button class='px-2 py-0.5 rounded-md hover:bg-hoverLight
-                                dark:hover:bg-hoverDark text-sm'
-                        title='Sign out'
-                        on:click={signOut}>
-                    Sign Out
-                </button>
-            </div>
-        {:else}
-            <div class='mx-2 text-sm flex items-center gap-1'>
-                <input class='bg-bgLight dark:bg-bgDark border-none rounded
-                                px-1 py-0.5 w-40 outline-none text-sm'
-                        placeholder='Email'
-                        bind:value={authEmail}
-                        on:keydown={(event) => {
-                            if (event.key === 'Enter') {
-                                emailSignIn();
-                            }
-                        }}>
-                <button class='px-2 py-0.5 rounded-md hover:bg-hoverLight
-                                dark:hover:bg-hoverDark text-sm'
-                        title='Sign in with email'
-                        on:click={emailSignIn}>
-                    Email
-                </button>
-                <button class='px-2 py-0.5 rounded-md hover:bg-hoverLight
-                                dark:hover:bg-hoverDark text-sm'
-                        title='Sign in with Google'
-                        on:click={googleSignIn}>
-                    Google
-                </button>
-            </div>
-        {/if}
-    {/if}
     <DarkModeToggle />
 </div>
 
@@ -181,6 +76,9 @@ Copyright (C) 2026 Andrew Cupps
         class:site-links-transition={!siteLinksSelected}
         class:shadow-lg={siteLinksSelected}>
     <div class='w-full my-2 text-lg'>
+        <NavBarElement link='./profile' text='Profile' fullWidth={true}/>
+    </div>
+    <div class='w-full my-2 text-lg'>
         <NavBarElement link='./' text='Course Planner' fullWidth={true}/>
     </div>
     <div class='w-full my-2 text-lg'>
@@ -199,45 +97,6 @@ Copyright (C) 2026 Andrew Cupps
                                                     target='_blank' 
                                                     fullWidth={true}/>
     </div>
-    {#if authEnabled && authReady}
-        {#if userEmail}
-            <div class='w-full my-2 text-lg px-4'>
-                <div class='text-sm opacity-80 truncate' title={userEmail}>
-                    {userEmail}
-                </div>
-                <button class='mt-2 px-2 py-1 rounded-md hover:bg-hoverLight
-                                dark:hover:bg-hoverDark text-base w-full text-left'
-                        title='Sign out'
-                        on:click={signOut}>
-                    Sign Out
-                </button>
-            </div>
-        {:else}
-            <div class='w-full my-2 text-lg px-4 flex flex-col gap-2'>
-                <input class='bg-bgLight dark:bg-bgDark border-none rounded
-                                px-2 py-1 w-full outline-none text-base'
-                        placeholder='Email'
-                        bind:value={authEmail}
-                        on:keydown={(event) => {
-                            if (event.key === 'Enter') {
-                                emailSignIn();
-                            }
-                        }}>
-                <button class='px-2 py-1 rounded-md hover:bg-hoverLight
-                                dark:hover:bg-hoverDark text-base w-full text-left'
-                        title='Sign in with email'
-                        on:click={emailSignIn}>
-                    Sign In with Email
-                </button>
-                <button class='px-2 py-1 rounded-md hover:bg-hoverLight
-                                dark:hover:bg-hoverDark text-base w-full text-left'
-                        title='Sign in with Google'
-                        on:click={googleSignIn}>
-                    Sign In with Google
-                </button>
-            </div>
-        {/if}
-    {/if}
 </div>
 
 <style>

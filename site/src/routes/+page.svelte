@@ -31,6 +31,8 @@ Copyright (C) 2026 Andrew Cupps
     } from '$lib/supabase';
     import {
         getDefaultTermYear,
+        getMaxScheduleYear,
+        MIN_SCHEDULE_YEAR,
         normalizeStoredSchedule,
     } from '$lib/course-planner/Terms';
     import {
@@ -233,8 +235,10 @@ Copyright (C) 2026 Andrew Cupps
                 const storedScheduleYearOption =
                     localStorage.getItem('scheduleYear');
                 const parsedStoredYear = Number(storedScheduleYearOption);
+                const maxScheduleYear = getMaxScheduleYear();
                 const storedScheduleYear = Number.isInteger(parsedStoredYear) &&
-                        parsedStoredYear >= 1900 && parsedStoredYear <= 3000
+                        parsedStoredYear >= MIN_SCHEDULE_YEAR &&
+                        parsedStoredYear <= maxScheduleYear
                     ? parsedStoredYear
                     : defaultTermYear.year;
 

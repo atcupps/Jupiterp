@@ -18,10 +18,12 @@ Copyright (C) 2026 Andrew Cupps
 </script>
 
 <div class='w-full h-full z-10 flex flex-col px-2'>
-    <div>
+    <div class='sticky top-0 z-20 text-sm font-semibold bg-bgLight
+                dark:bg-bgDark rounded-md'>
         {name}
     </div>
-    <div class='relative top-[14px]' 
+    <div class='relative top-[14px] border-l border-divBorderLight
+                dark:border-divBorderDark' 
         style='height: {bgHeight}px;'>
         {#each classes as classMeeting, 
                             index (`${index}-${classMeeting.instructors}`)}

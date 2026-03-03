@@ -164,7 +164,8 @@ Copyright (C) 2026 Andrew Cupps
 <svelte:window bind:innerHeight bind:innerWidth />
 
 <button class='absolute w-full justify-center text-black 
-                flex flex-col rounded-lg pb-1 justify-items-center'
+        flex flex-col rounded-lg pb-1 justify-items-center
+        border border-black border-opacity-10 shadow-sm'
         bind:this={elt} on:click={toggleCourseInfo}
         style=' top: {(decStartTime - earliestClassStart) / boundDiff * 100}%;
                 height: {(decEndTime - decStartTime) / boundDiff * 100}%;

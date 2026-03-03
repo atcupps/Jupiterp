@@ -18,12 +18,15 @@ Copyright (C) 2026 Andrew Cupps
     import {
         HoveredSectionStore,
         CurrentScheduleStore,
+        NonselectedScheduleStore,
         SearchResultsStore,
-        DeptSuggestionsStore
+        DeptSuggestionsStore,
+        CourseSearchFilterStore,
     } from "../../../stores/CoursePlannerStores";
-    import ScheduleSelector from "./ScheduleSelector.svelte";
+    import CurrentSchedulePanel from "./CurrentSchedulePanel.svelte";
     import type { Course } from "@jupiterp/jupiterp";
-    import type { ScheduleSelection } from "../../../types";
+    import type { ScheduleSelection, StoredSchedule } from "../../../types";
+    import { uniqueScheduleName } from "$lib/course-planner/ScheduleSelector";
     import CourseFilters from "./CourseFilters.svelte";
     import SolarSystemLoader from "./SolarSystemLoader.svelte";
 
@@ -35,13 +38,19 @@ Copyright (C) 2026 Andrew Cupps
     let selections: ScheduleSelection[] = [];
     let activeTerm: 'Fall' | 'Spring' | 'Winter' | 'Summer' = 'Fall';
     let activeYear: number = 2026;
+    let activeScheduleName = 'Schedule 1';
+    let nonselectedSchedules: StoredSchedule[] = [];
     CurrentScheduleStore.subscribe(
         (stored) => {
             selections = stored.selections;
             activeTerm = stored.term;
             activeYear = stored.year;
+            activeScheduleName = stored.scheduleName;
         }
     );
+    NonselectedScheduleStore.subscribe((stored) => {
+        nonselectedSchedules = stored;
+    });
 
     // Variable and function for handling course search input
     let searchInput = '';
@@ -66,6 +75,174 @@ Copyright (C) 2026 Andrew Cupps
     }
 
     let genEdMenuOpen = false;
+    let filtersMenuOpen = false;
+    let filtersResetNonce = 0;
+    let activeFiltersCount = 0;
+
+    CourseSearchFilterStore.subscribe((filters) => {
+        let count = 0;
+        if (filters.serverSideFilters.genEds &&
+                filters.serverSideFilters.genEds.length > 0) {
+            count += 1;
+        }
+        if (filters.serverSideFilters.instructor &&
+                filters.serverSideFilters.instructor.trim().length > 0) {
+            count += 1;
+        }
+        if (filters.clientSideFilters.minCredits !== undefined) {
+            count += 1;
+        }
+        if (filters.clientSideFilters.maxCredits !== undefined) {
+            count += 1;
+        }
+        if (filters.clientSideFilters.onlyOpen === true) {
+            count += 1;
+        }
+        activeFiltersCount = count;
+    });
+
+    $: scheduleOptions = [
+        {
+            id: 'current',
+            label: `${activeScheduleName} — ${activeTerm} ${activeYear}`
+        },
+        ...nonselectedSchedules.map((schedule, index) => {
+            return {
+                id: `stored-${index}`,
+                label: `${schedule.scheduleName} — ${schedule.term} ${schedule.year}`
+            };
+        })
+    ];
+
+    function setCurrentSchedule(schedule: StoredSchedule) {
+        CurrentScheduleStore.set({
+            scheduleName: schedule.scheduleName,
+            selections: schedule.selections,
+            term: schedule.term,
+            year: schedule.year,
+        });
+    }
+
+    function onChangeSchedule(id: string) {
+        if (id === 'current') {
+            return;
+        }
+
+        const indexRaw = id.replace('stored-', '');
+        const index = Number(indexRaw);
+        if (!Number.isInteger(index) || index < 0 ||
+                index >= nonselectedSchedules.length) {
+            return;
+        }
+
+        const target = nonselectedSchedules[index];
+        const oldCurrent: StoredSchedule = {
+            scheduleName: activeScheduleName,
+            selections,
+            term: activeTerm,
+            year: activeYear,
+        };
+
+        const updated = [...nonselectedSchedules];
+        updated.splice(index, 1);
+        updated.unshift(oldCurrent);
+        NonselectedScheduleStore.set(updated);
+        setCurrentSchedule(target);
+    }
+
+    function onChangeTerm(term: StoredSchedule['term']) {
+        setCurrentSchedule({
+            scheduleName: activeScheduleName,
+            selections,
+            term,
+            year: activeYear,
+        });
+    }
+
+    function onChangeYear(year: number) {
+        setCurrentSchedule({
+            scheduleName: activeScheduleName,
+            selections,
+            term: activeTerm,
+            year,
+        });
+    }
+
+    function onCreateSchedule() {
+        const nameInput = window.prompt('Name this new schedule:', 'New schedule');
+        if (nameInput === null) {
+            return;
+        }
+
+        const oldCurrent: StoredSchedule = {
+            scheduleName: activeScheduleName,
+            selections,
+            term: activeTerm,
+            year: activeYear,
+        };
+
+        const updated = [oldCurrent, ...nonselectedSchedules];
+        NonselectedScheduleStore.set(updated);
+
+        const uniqueName = uniqueScheduleName(
+            nameInput.trim().length > 0 ? nameInput.trim() : 'New schedule',
+            'New ',
+            updated
+        );
+        setCurrentSchedule({
+            scheduleName: uniqueName,
+            selections: [],
+            term: activeTerm,
+            year: activeYear,
+        });
+    }
+
+    function onDuplicateSchedule() {
+        const duplicate: StoredSchedule = {
+            scheduleName: activeScheduleName,
+            selections,
+            term: activeTerm,
+            year: activeYear,
+        };
+
+        const updated = [duplicate, ...nonselectedSchedules];
+        NonselectedScheduleStore.set(updated);
+        const uniqueName = uniqueScheduleName(
+            activeScheduleName,
+            'Copy of ',
+            updated
+        );
+        setCurrentSchedule({
+            scheduleName: uniqueName,
+            selections,
+            term: activeTerm,
+            year: activeYear,
+        });
+    }
+
+    function onDeleteSchedule() {
+        if (nonselectedSchedules.length === 0) {
+            setCurrentSchedule({
+                scheduleName: 'Schedule 1',
+                selections: [],
+                term: activeTerm,
+                year: activeYear,
+            });
+            return;
+        }
+
+        const [nextCurrent, ...remaining] = nonselectedSchedules;
+        NonselectedScheduleStore.set(remaining);
+        setCurrentSchedule(nextCurrent);
+    }
+
+    function onOpenFilters() {
+        filtersMenuOpen = !filtersMenuOpen;
+    }
+
+    function onClearFilters() {
+        filtersResetNonce += 1;
+    }
 
     function selectDepartment(dept: string) {
         searchInput = dept;
@@ -168,16 +345,25 @@ Copyright (C) 2026 Andrew Cupps
         class:course-search-transition={!courseSearchSelected}
         class:shadow-lg={courseSearchSelected}>
 
-    <div class='flex flex-row text-xs ml-1 pb-1 2xl:text-sm'>
-        <div>
-            {activeTerm} {activeYear}
-        </div>
-        <div class='grow text-right'>
-            Credits: {totalCredits}
-        </div>
-    </div>
-
-    <ScheduleSelector />
+    <CurrentSchedulePanel
+        activeScheduleName={activeScheduleName}
+        activeTerm={activeTerm}
+        activeYear={activeYear}
+        credits={totalCredits}
+        schedules={scheduleOptions}
+        activeScheduleId='current'
+        filtersActiveCount={activeFiltersCount}
+        minYear={2022}
+        maxYear={new Date().getFullYear()}
+        {onChangeSchedule}
+        {onChangeTerm}
+        {onChangeYear}
+        {onOpenFilters}
+        {onClearFilters}
+        {onCreateSchedule}
+        {onDuplicateSchedule}
+        {onDeleteSchedule}
+    />
 
     <div class='flex flex-col w-full border-solid relative
                             border-b-2 border-t-2 p-1 lg:px-0
@@ -195,7 +381,11 @@ Copyright (C) 2026 Andrew Cupps
                             lg:text-base lg:placeholder:text-sm
                             placeholder:text-base py-0">
 
-        <CourseFilters bind:showGenEdMenu={genEdMenuOpen} />
+        <CourseFilters bind:showGenEdMenu={genEdMenuOpen}
+            bind:showFiltersMenu={filtersMenuOpen}
+            showHeaderButton={false}
+            bind:appliedFiltersCount={activeFiltersCount}
+            resetNonce={filtersResetNonce} />
     </div>
 
     <!-- Course search results & dept suggestions -->

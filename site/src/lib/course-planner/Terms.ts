@@ -10,6 +10,7 @@
 import type { StoredSchedule } from "../../types";
 
 export const TERM_VALUES = ["Winter", "Spring", "Summer", "Fall"] as const;
+export const MIN_SCHEDULE_YEAR = 2022;
 
 export type AcademicTerm = typeof TERM_VALUES[number];
 
@@ -23,16 +24,13 @@ export function isAcademicTerm(value: unknown): value is AcademicTerm {
         TERM_VALUES.includes(value as AcademicTerm);
 }
 
+export function getMaxScheduleYear(date = new Date()): number {
+    return date.getFullYear();
+}
+
 export function getDefaultTermYear(date = new Date()): TermYear {
     const month = date.getMonth();
     const year = date.getFullYear();
-
-    if (month === 11) {
-        return {
-            term: "Winter",
-            year: year + 1,
-        };
-    }
 
     if (month <= 1) {
         return {
@@ -64,9 +62,10 @@ export function getDefaultTermYear(date = new Date()): TermYear {
 export function normalizeStoredSchedule(
                         schedule: Partial<StoredSchedule>,
                         defaultValue = getDefaultTermYear()): StoredSchedule {
+    const maxYear = getMaxScheduleYear();
     const parsedYear = Number(schedule.year);
     const year = Number.isInteger(parsedYear) &&
-            parsedYear >= 1900 && parsedYear <= 3000
+            parsedYear >= MIN_SCHEDULE_YEAR && parsedYear <= maxYear
         ? parsedYear
         : defaultValue.year;
 
