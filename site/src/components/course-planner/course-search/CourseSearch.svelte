@@ -129,8 +129,7 @@ Copyright (C) 2026 Andrew Cupps
     style='--sidebar-width: {Math.max(180, Math.min(560, sidebarWidth))}px;'
     >
 
-    <div class='rounded-lg border border-outlineLight dark:border-outlineDark
-                bg-bgSecondaryLight dark:bg-bgSecondaryDark px-2 py-2 mb-2'>
+    <div class='bg-white dark:bg-bgDark px-2 py-2 mb-2'>
         <button class='w-full flex items-center justify-between rounded-md px-2 py-1
                         text-sm hover:bg-hoverLight dark:hover:bg-hoverDark'
                 type='button'
