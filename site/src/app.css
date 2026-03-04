@@ -121,6 +121,20 @@ body {
     .schedule-page {
         overflow: visible !important;
         height: auto !important;
+        width: 100% !important;
+        max-width: none !important;
+    }
+
+    .schedule-print-pane,
+    .schedule-view,
+    .schedule-view > .grid {
+        width: 100% !important;
+        max-width: none !important;
+        min-width: 0 !important;
+    }
+
+    .schedule-view .sticky {
+        position: static !important;
     }
 
     .print-only {
