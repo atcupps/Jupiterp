@@ -5,6 +5,7 @@ https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2026 Andrew Cupps
 -->
 <script lang='ts'>
+    import { tick } from 'svelte';
     import {
         PlusOutline,
         TrashBinOutline,
@@ -13,6 +14,7 @@ Copyright (C) 2026 Andrew Cupps
         CurrentScheduleStore,
         NonselectedScheduleStore
     } from '../../stores/CoursePlannerStores';
+    import Modal from '../layout/Modal.svelte';
     import type { StoredSchedule } from '../../types';
 
     type Term = StoredSchedule['term'];
@@ -22,6 +24,7 @@ Copyright (C) 2026 Andrew Cupps
         source: 'current' | 'nonselected',
         nonselectedIndex: number | null,
         displayIndex: number,
+        rowKey: string,
     }
 
     interface ScheduleGroup {
@@ -30,6 +33,11 @@ Copyright (C) 2026 Andrew Cupps
         term: Term,
         year: number,
         rows: ScheduleRowEntry[],
+    }
+
+    interface MutableRow {
+        schedule: StoredSchedule,
+        source: 'current' | 'nonselected',
     }
 
     const TERM_SORT_ORDER: Record<Term, number> = {
@@ -59,6 +67,18 @@ Copyright (C) 2026 Andrew Cupps
     let collapsedGroupKeys: string[] = [];
     let currentDisplayIndex = 0;
 
+    let createModalOpen = false;
+    let createTerm: Term = 'Fall';
+    let createYear = new Date().getFullYear();
+    let createScheduleName = '';
+    let createNameInput: HTMLInputElement;
+
+    let openMenuRowKey: string | null = null;
+
+    let draggedDisplayIndex: number | null = null;
+    let dragOverRowIndex: number | null = null;
+    let dragOverGroupKey: string | null = null;
+
     function makeUniqueName(baseName: string): string {
         const trimmed = baseName.trim();
         const defaultName = trimmed.length > 0 ? trimmed : 'New schedule';
@@ -81,27 +101,103 @@ Copyright (C) 2026 Andrew Cupps
         return candidate;
     }
 
-    function createNewSchedule(term: Term, year: number) {
-        const rawName = window.prompt('Name this new schedule:', 'New schedule');
-        if (rawName === null) {
+    function toMutableRows(): MutableRow[] {
+        return displayRows.map((row) => {
+            return {
+                schedule: {
+                    scheduleName: row.schedule.scheduleName,
+                    selections: row.schedule.selections,
+                    term: row.schedule.term,
+                    year: row.schedule.year,
+                },
+                source: row.source,
+            };
+        });
+    }
+
+    function applyRows(rows: MutableRow[]) {
+        const currentRowIndex = rows.findIndex((row) => row.source === 'current');
+        if (currentRowIndex === -1) {
             return;
         }
 
-        const insertIndex = Math.max(
-            0,
-            Math.min(currentDisplayIndex, nonselectedSchedules.length)
+        CurrentScheduleStore.set(rows[currentRowIndex].schedule);
+        NonselectedScheduleStore.set(
+            rows
+                .filter((row) => row.source === 'nonselected')
+                .map((row) => row.schedule)
         );
 
-        const updated = [...nonselectedSchedules];
-        updated.splice(insertIndex, 0, currentSchedule);
-        NonselectedScheduleStore.set(updated);
+        currentDisplayIndex = currentRowIndex;
+    }
 
-        CurrentScheduleStore.set({
-            scheduleName: makeUniqueName(rawName),
-            selections: [],
-            term,
-            year,
+    function getSmartDefaultName(term: Term, year: number): string {
+        const inTerm = displayRows.filter((row) => {
+            return row.schedule.term === term && row.schedule.year === year;
+        }).length;
+
+        const termLabel = `${term} ${year}`;
+        if (inTerm === 0) {
+            return `${termLabel} – Main`;
+        }
+
+        return `${termLabel} – Plan ${inTerm + 1}`;
+    }
+
+    function openCreateScheduleModal(term: Term, year: number) {
+        createTerm = term;
+        createYear = year;
+        createScheduleName = makeUniqueName(getSmartDefaultName(term, year));
+        createModalOpen = true;
+
+        tick().then(() => {
+            createNameInput?.focus();
+            createNameInput?.select();
         });
+    }
+
+    function closeCreateScheduleModal() {
+        createModalOpen = false;
+    }
+
+    function submitCreateSchedule() {
+        const trimmed = createScheduleName.trim();
+        if (trimmed.length === 0) {
+            return;
+        }
+
+        const rows = toMutableRows();
+        const currentRowIndex = rows.findIndex((row) => row.source === 'current');
+        if (currentRowIndex === -1) {
+            return;
+        }
+
+        rows[currentRowIndex] = {
+            ...rows[currentRowIndex],
+            source: 'nonselected',
+        };
+
+        const insertAfterIndex = rows.reduce((lastIndex, row, index) => {
+            if (row.schedule.term === createTerm && row.schedule.year === createYear) {
+                return index;
+            }
+            return lastIndex;
+        }, -1);
+
+        const insertIndex = insertAfterIndex >= 0 ? insertAfterIndex + 1 : rows.length;
+
+        rows.splice(insertIndex, 0, {
+            schedule: {
+                scheduleName: makeUniqueName(trimmed),
+                selections: [],
+                term: createTerm,
+                year: createYear,
+            },
+            source: 'current',
+        });
+
+        applyRows(rows);
+        closeCreateScheduleModal();
     }
 
     function selectSchedule(entry: ScheduleRowEntry) {
@@ -118,8 +214,9 @@ Copyright (C) 2026 Andrew Cupps
         currentDisplayIndex = entry.displayIndex;
     }
 
-    function editSchedule(entry: ScheduleRowEntry) {
-        const rawName = window.prompt('Edit schedule name:', entry.schedule.scheduleName);
+    function renameSchedule(entry: ScheduleRowEntry) {
+        openMenuRowKey = null;
+        const rawName = window.prompt('Rename schedule:', entry.schedule.scheduleName);
         if (rawName === null) {
             return;
         }
@@ -149,45 +246,59 @@ Copyright (C) 2026 Andrew Cupps
         NonselectedScheduleStore.set(updated);
     }
 
-    function deleteSchedule(entry: ScheduleRowEntry) {
-        if (entry.source === 'nonselected') {
-            if (entry.nonselectedIndex === null) {
-                return;
-            }
-
-            const updated = [...nonselectedSchedules];
-            updated.splice(entry.nonselectedIndex, 1);
-            NonselectedScheduleStore.set(updated);
-
-            if (entry.nonselectedIndex < currentDisplayIndex) {
-                currentDisplayIndex = Math.max(0, currentDisplayIndex - 1);
-            }
+    function duplicateSchedule(entry: ScheduleRowEntry) {
+        openMenuRowKey = null;
+        const rows = toMutableRows();
+        const currentRowIndex = rows.findIndex((row) => row.source === 'current');
+        if (currentRowIndex === -1) {
             return;
         }
 
-        if (nonselectedSchedules.length === 0) {
+        rows[currentRowIndex] = {
+            ...rows[currentRowIndex],
+            source: 'nonselected',
+        };
+
+        rows.splice(entry.displayIndex + 1, 0, {
+            source: 'current',
+            schedule: {
+                scheduleName: makeUniqueName(`${entry.schedule.scheduleName} Copy`),
+                selections: entry.schedule.selections,
+                term: entry.schedule.term,
+                year: entry.schedule.year,
+            },
+        });
+
+        applyRows(rows);
+    }
+
+    function deleteSchedule(entry: ScheduleRowEntry) {
+        openMenuRowKey = null;
+        const rows = toMutableRows();
+        const deleteIndex = entry.displayIndex;
+        rows.splice(deleteIndex, 1);
+
+        if (rows.length === 0) {
             CurrentScheduleStore.set({
                 scheduleName: 'Schedule 1',
                 selections: [],
                 term: currentSchedule.term,
                 year: currentSchedule.year,
             });
+            NonselectedScheduleStore.set([]);
             currentDisplayIndex = 0;
             return;
         }
 
-        const replacementIndex = Math.min(
-            currentDisplayIndex,
-            nonselectedSchedules.length - 1
-        );
-        const replacement = nonselectedSchedules[replacementIndex];
+        const hasCurrent = rows.some((row) => row.source === 'current');
+        if (!hasCurrent) {
+            const replacementIndex = Math.min(deleteIndex, rows.length - 1);
+            rows.forEach((row, index) => {
+                row.source = index === replacementIndex ? 'current' : 'nonselected';
+            });
+        }
 
-        const updated = [...nonselectedSchedules];
-        updated.splice(replacementIndex, 1);
-        NonselectedScheduleStore.set(updated);
-
-        CurrentScheduleStore.set(replacement);
-        currentDisplayIndex = replacementIndex;
+        applyRows(rows);
     }
 
     function toggleGroup(key: string) {
@@ -197,6 +308,87 @@ Copyright (C) 2026 Andrew Cupps
         }
 
         collapsedGroupKeys = [...collapsedGroupKeys, key];
+    }
+
+    function moveDraggedTo(targetIndex: number, term: Term, year: number) {
+        if (draggedDisplayIndex === null) {
+            return;
+        }
+
+        const rows = toMutableRows();
+        const fromIndex = draggedDisplayIndex;
+
+        if (fromIndex < 0 || fromIndex >= rows.length) {
+            return;
+        }
+
+        const [moved] = rows.splice(fromIndex, 1);
+        moved.schedule = {
+            ...moved.schedule,
+            term,
+            year,
+        };
+
+        let insertIndex = targetIndex;
+        if (insertIndex > fromIndex) {
+            insertIndex -= 1;
+        }
+        insertIndex = Math.max(0, Math.min(insertIndex, rows.length));
+
+        rows.splice(insertIndex, 0, moved);
+        applyRows(rows);
+    }
+
+    function handleDragStart(event: DragEvent, row: ScheduleRowEntry) {
+        draggedDisplayIndex = row.displayIndex;
+        dragOverRowIndex = null;
+        dragOverGroupKey = null;
+
+        if (event.dataTransfer) {
+            event.dataTransfer.effectAllowed = 'move';
+            event.dataTransfer.setData('text/plain', row.rowKey);
+        }
+    }
+
+    function handleDragEnd() {
+        draggedDisplayIndex = null;
+        dragOverRowIndex = null;
+        dragOverGroupKey = null;
+    }
+
+    function handleRowDragOver(event: DragEvent, row: ScheduleRowEntry) {
+        event.preventDefault();
+        dragOverRowIndex = row.displayIndex;
+        dragOverGroupKey = null;
+
+        if (event.dataTransfer) {
+            event.dataTransfer.dropEffect = 'move';
+        }
+    }
+
+    function handleRowDrop(event: DragEvent, row: ScheduleRowEntry) {
+        event.preventDefault();
+        moveDraggedTo(row.displayIndex, row.schedule.term, row.schedule.year);
+        handleDragEnd();
+    }
+
+    function handleGroupDragOver(event: DragEvent, group: ScheduleGroup) {
+        event.preventDefault();
+        dragOverGroupKey = group.key;
+        dragOverRowIndex = null;
+
+        if (event.dataTransfer) {
+            event.dataTransfer.dropEffect = 'move';
+        }
+    }
+
+    function handleGroupDrop(event: DragEvent, group: ScheduleGroup) {
+        event.preventDefault();
+        const lastRowIndex = group.rows.length > 0
+            ? group.rows[group.rows.length - 1].displayIndex
+            : displayRows.length - 1;
+        moveDraggedTo(lastRowIndex + 1, group.term, group.year);
+        handleDragEnd();
     }
 
     $: {
@@ -217,16 +409,19 @@ Copyright (C) 2026 Andrew Cupps
                     source: 'current',
                     nonselectedIndex: null,
                     displayIndex: index,
+                    rowKey: `current-${currentSchedule.scheduleName}-${index}`,
                 });
                 continue;
             }
 
             const nonselectedIndex = index < slot ? index : index - 1;
+            const nonselected = nonselectedSchedules[nonselectedIndex];
             rows.push({
-                schedule: nonselectedSchedules[nonselectedIndex],
+                schedule: nonselected,
                 source: 'nonselected',
                 nonselectedIndex,
                 displayIndex: index,
+                rowKey: `nonselected-${nonselectedIndex}-${nonselected.scheduleName}`,
             });
         }
 
@@ -262,13 +457,15 @@ Copyright (C) 2026 Andrew Cupps
     }
 </script>
 
+<svelte:window on:click={() => { openMenuRowKey = null; }} />
+
 <div class='flex w-full flex-col'>
     {#if groups.length === 0}
         <div class='text-sm text-gray-500 px-2 py-1'>No schedules yet</div>
     {/if}
 
     {#each groups as group}
-        <div class='mb-2'>
+        <section class='mb-2'>
             <div class='flex items-center justify-between px-1 py-1'>
                 <button class='inline-flex items-center gap-1 text-sm text-gray-500'
                         type='button'
@@ -282,17 +479,33 @@ Copyright (C) 2026 Andrew Cupps
                 <button class='inline-flex items-center gap-1 rounded px-2 py-1 text-xs
                                 text-gray-600 hover:bg-hoverLight dark:hover:bg-hoverDark'
                         type='button'
-                        on:click={() => createNewSchedule(group.term, group.year)}>
+                        on:click={() => openCreateScheduleModal(group.term, group.year)}>
                     <PlusOutline class='w-3.5 h-3.5' />
                     Add schedule
                 </button>
             </div>
 
             {#if !collapsedGroupKeys.includes(group.key)}
-                <div class='flex flex-col gap-1'>
+                <div class='flex flex-col gap-1'
+                     role='list'
+                     on:dragover={(event) => handleGroupDragOver(event, group)}
+                     on:drop={(event) => handleGroupDrop(event, group)}
+                     class:bg-hoverLight={dragOverGroupKey === group.key}
+                     class:dark:bg-hoverDark={dragOverGroupKey === group.key}>
                     {#each group.rows as row}
-                        <div class='flex items-center gap-2 rounded px-2 py-1'
-                                class:bg-orange={row.source === 'current'}>
+                        <div class='relative flex items-center gap-2 rounded px-2 py-1'
+                                role='listitem'
+                                class:bg-orange={row.source === 'current'}
+                                class:opacity-70={draggedDisplayIndex === row.displayIndex}
+                                draggable='true'
+                                on:dragstart={(event) => handleDragStart(event, row)}
+                                on:dragend={handleDragEnd}
+                                on:dragover={(event) => handleRowDragOver(event, row)}
+                                on:drop={(event) => handleRowDrop(event, row)}>
+                            {#if dragOverRowIndex === row.displayIndex && draggedDisplayIndex !== row.displayIndex}
+                                <div class='absolute left-1 right-1 -top-0.5 h-0.5 bg-orange' />
+                            {/if}
+
                             <button class='grow truncate text-left text-sm text-gray-700'
                                     class:text-white={row.source === 'current'}
                                     type='button'
@@ -300,27 +513,87 @@ Copyright (C) 2026 Andrew Cupps
                                 {row.schedule.scheduleName}
                             </button>
 
-                            <button class='rounded px-2 py-0.5 text-xs text-gray-700
-                                            hover:bg-hoverLight dark:hover:bg-hoverDark'
+                            <button class='rounded p-1 hover:bg-hoverLight dark:hover:bg-hoverDark'
                                     class:text-white={row.source === 'current'}
                                     type='button'
-                                    on:click={() => editSchedule(row)}>
-                                Edit
+                                    title='Schedule actions'
+                                    on:click|stopPropagation={(event) => {
+                                        event.stopPropagation();
+                                        openMenuRowKey = openMenuRowKey === row.rowKey
+                                            ? null
+                                            : row.rowKey;
+                                    }}>
+                                ⋯
                             </button>
 
-                            <button class='ml-auto rounded p-1 hover:bg-hoverLight dark:hover:bg-hoverDark'
-                                    type='button'
-                                    title={'Delete ' + row.schedule.scheduleName}
-                                    on:click={() => deleteSchedule(row)}>
-                                <TrashBinOutline
-                                    class={`w-4 h-4 ${
-                                        row.source === 'current' ? 'text-white' : ''
-                                    }`} />
-                            </button>
+                            {#if openMenuRowKey === row.rowKey}
+                                <div class='absolute right-2 top-[calc(100%+2px)] z-20 min-w-28
+                                            rounded-md border border-outlineLight dark:border-outlineDark
+                                        bg-bgLight dark:bg-bgDark shadow-lg py-1'>
+                                    <button class='w-full text-left px-2 py-1 text-xs flex items-center gap-1
+                                                    hover:bg-hoverLight dark:hover:bg-hoverDark'
+                                            type='button'
+                                            on:click={() => renameSchedule(row)}>
+                                        Rename
+                                    </button>
+                                    <button class='w-full text-left px-2 py-1 text-xs flex items-center gap-1
+                                                    hover:bg-hoverLight dark:hover:bg-hoverDark'
+                                            type='button'
+                                            on:click={() => duplicateSchedule(row)}>
+                                        Duplicate
+                                    </button>
+                                    <button class='w-full text-left px-2 py-1 text-xs flex items-center gap-1
+                                                    hover:bg-hoverLight dark:hover:bg-hoverDark'
+                                            type='button'
+                                            on:click={() => deleteSchedule(row)}>
+                                        <TrashBinOutline class='w-3.5 h-3.5' />
+                                        Delete
+                                    </button>
+                                </div>
+                            {/if}
                         </div>
                     {/each}
                 </div>
             {/if}
-        </div>
+        </section>
     {/each}
 </div>
+
+<Modal open={createModalOpen}
+       title='Create new schedule'
+       on:close={closeCreateScheduleModal}>
+    <form class='flex flex-col gap-3'
+          on:submit|preventDefault={submitCreateSchedule}>
+        <label class='text-sm'>
+            <span class='block text-xs opacity-70 mb-1'>Schedule name</span>
+            <input class='w-full rounded-md border border-outlineLight dark:border-outlineDark
+                            bg-bgLight dark:bg-bgDark px-2 py-1 outline-none'
+                   bind:this={createNameInput}
+                   bind:value={createScheduleName} />
+        </label>
+
+        <div class='text-sm'>
+            <div class='text-xs opacity-70 mb-1'>Term</div>
+            <div class='rounded-md border border-outlineLight dark:border-outlineDark
+                        px-2 py-1 bg-bgSecondaryLight dark:bg-bgSecondaryDark'>
+                {createTerm} {createYear}
+            </div>
+        </div>
+
+        <div class='flex items-center justify-end gap-2 pt-1'>
+            <button class='rounded-md px-3 py-1 text-sm border
+                            border-outlineLight dark:border-outlineDark
+                            hover:bg-hoverLight dark:hover:bg-hoverDark'
+                    type='button'
+                    on:click={closeCreateScheduleModal}>
+                Cancel
+            </button>
+            <button class='rounded-md px-3 py-1 text-sm border
+                            border-outlineLight dark:border-outlineDark
+                            hover:bg-hoverLight dark:hover:bg-hoverDark'
+                    type='submit'>
+                Create schedule
+            </button>
+        </div>
+    </form>
+</Modal>
