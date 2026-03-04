@@ -130,11 +130,9 @@ Copyright (C) 2026 Andrew Cupps
 
 <svelte:window bind:innerWidth />
 
-<div class='schedule-view h-full w-full flex flex-row px-2 font-medium overflow-auto
+<div class='schedule-view h-full w-full flex flex-row px-0 font-medium overflow-auto
         text-lg text-center text-black dark:text-white min-h-0'>
-    <div class='grid grow relative pl-12 2xl:pl-14 rounded-xl border
-                border-outlineLight dark:border-outlineDark
-                bg-white dark:bg-bgSecondaryDark'
+    <div class='grid grow relative pl-12 2xl:pl-14 bg-white dark:bg-bgSecondaryDark'
      style='min-height: {scheduleHeightPx}px;'
          class:grid-cols-5={schedule.other.length == 0}
          class:grid-cols-6={schedule.other.length > 0}

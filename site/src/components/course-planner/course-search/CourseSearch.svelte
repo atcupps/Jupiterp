@@ -5,7 +5,6 @@ https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2026 Andrew Cupps
 -->
 <script lang='ts'>
-    import { fade } from "svelte/transition";
     import CourseListing from "./CourseListing.svelte";
     import {
         deptCodeToName,
@@ -24,7 +23,6 @@ Copyright (C) 2026 Andrew Cupps
 
     const FILTER_SCROLL_COLLAPSE_THRESHOLD = 100;
 
-    export let courseSearchSelected: boolean = false;
     export let activeScheduleLabel: string = 'Schedule 1';
     export let onChangeToSchedules: () => void = () => {};
     export let sidebarWidth: number = 300;
@@ -121,26 +119,15 @@ Copyright (C) 2026 Andrew Cupps
     }
 </script>
 
-{#if courseSearchSelected}
-    <button class='fixed w-full bg-black bg-opacity-20 z-[51] lg:hidden'
-            style='height: calc(100% - 3rem);'
-        in:fade={{ duration: 150 }}
-        out:fade={{ duration: 150 }}
-        on:click={() => courseSearchSelected = false}/>
-{/if}
-
-<div class='lg:flex flex-col 2xl:text-lg
-                lg:w-[var(--sidebar-width)] lg:min-w-[var(--sidebar-width)] lg:max-w-[var(--sidebar-width)]
-                w-[300px] z-[52] fixed lg:static
-                            lg:h-full course-search visible
+<div class='flex flex-col 2xl:text-lg
+                w-[var(--sidebar-width)] min-w-[var(--sidebar-width)] max-w-[var(--sidebar-width)]
+                h-full course-search
                             border-r-2 border-divBorderLight
                             dark:border-divBorderDark border-solid py-1 pr-2
-                            pl-1 lg:pl-0 lg:ml-1.5 lg:shadow-none
-                            bg-bgLight dark:bg-bgDark lg:bg-transparent left-0
-                            transition-transform duration-300'
-    style='--sidebar-width: {Math.max(240, Math.min(560, sidebarWidth))}px;'
-        class:course-search-transition={!courseSearchSelected}
-        class:shadow-lg={courseSearchSelected}>
+                pl-1 shadow-none
+                bg-bgLight dark:bg-bgDark'
+    style='--sidebar-width: {Math.max(180, Math.min(560, sidebarWidth))}px;'
+    >
 
     <div class='rounded-lg border border-outlineLight dark:border-outlineDark
                 bg-bgSecondaryLight dark:bg-bgSecondaryDark px-2 py-1 mb-1
@@ -153,7 +140,7 @@ Copyright (C) 2026 Andrew Cupps
     </div>
 
     <div class='flex flex-col w-full border-solid relative
-                            border-b-2 border-t-2 p-1 lg:px-0
+                            border-b-2 border-t-2 p-1
                             border-divBorderLight dark:border-divBorderDark'>
         <input type='text'
             bind:value={searchInput}
@@ -170,7 +157,7 @@ Copyright (C) 2026 Andrew Cupps
     </div>
 
     <div class='grow courses-list overflow-y-scroll overflow-x-none
-                px-1 lg:pr-1 lg:pl-0'
+                px-1'
         on:wheel={handleResultsScroll}>
 
         {#if searchInput.length > 0 && deptSuggestions.length > 1}
@@ -215,20 +202,4 @@ Copyright (C) 2026 Andrew Cupps
 </div>
 
 <style>
-    @media screen and (max-width: 1023px) {
-        .course-search {
-            height: calc(100svh - 3rem);
-        }
-
-        .courses-list {
-            height: calc(100svh - 3rem - 8.75rem);
-        }
-
-        .course-search-transition {
-            transition-property: transform;
-            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-            transition-duration: 150ms;
-            transform: translateX(calc(-100% - 2px));
-        }
-    }
 </style>

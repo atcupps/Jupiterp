@@ -5,7 +5,7 @@ https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2026 Andrew Cupps
 -->
 <script lang='ts'>
-    import Schedule from './Schedule.svelte';
+    import CalendarView from './CalendarView.svelte';
     import { CurrentScheduleStore } from '../../../stores/CoursePlannerStores';
     import type { StoredSchedule } from '../../../types';
 
@@ -36,8 +36,8 @@ Copyright (C) 2026 Andrew Cupps
     }
 </script>
 
-<section class='schedule-print-pane p-2 flex flex-col min-h-0 grow min-w-0'>
-    <div class='schedule-screen-header flex items-center justify-between pb-2'>
+<section class='schedule-print-pane flex flex-col min-h-0 grow min-w-0'>
+    <div class='schedule-screen-header flex items-center justify-between pb-2 px-2'>
         <div>
             <div class='text-lg font-semibold'>{currentSchedule.scheduleName}</div>
             <div class='text-xs opacity-70'>
@@ -62,6 +62,6 @@ Copyright (C) 2026 Andrew Cupps
                 {rowCredits(currentSchedule)} credits · {currentSchedule.selections.length} courses · Printed {printedOn}
             </p>
         </div>
-        <Schedule />
+        <CalendarView />
     </div>
 </section>

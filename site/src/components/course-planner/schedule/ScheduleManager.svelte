@@ -9,14 +9,11 @@ Copyright (C) 2026 Andrew Cupps
         CurrentScheduleStore,
         NonselectedScheduleStore
     } from '../../../stores/CoursePlannerStores';
-    import CurrentSchedulePanel from './CurrentSchedulePanel.svelte';
     import { uniqueScheduleName } from '$lib/course-planner/ScheduleSelector';
     import { MIN_SCHEDULE_YEAR, getMaxScheduleYear } from '$lib/course-planner/Terms';
     import type { StoredSchedule } from '../../../types';
 
     export let sidebarWidth = 300;
-    export let showCalendarPane = true;
-    export let allowInternalResize = true;
 
     type Term = StoredSchedule['term'];
     type ContextTarget = 'background' | 'group' | 'row';
@@ -74,11 +71,6 @@ Copyright (C) 2026 Andrew Cupps
     let editYear = getMaxScheduleYear();
 
     let draggedRowId: string | null = null;
-    let layoutContainer: HTMLDivElement;
-    let isResizingSidebar = false;
-
-    const MIN_SIDEBAR_WIDTH = 260;
-    const MAX_SIDEBAR_WIDTH = 560;
 
     function clampYear(year: number): number {
         const max = getMaxScheduleYear();
@@ -404,31 +396,9 @@ Copyright (C) 2026 Andrew Cupps
         editYear = parsed;
     }
 
-    function startSidebarResize(event: MouseEvent) {
-        event.preventDefault();
-        isResizingSidebar = true;
-    }
-
-    function onSidebarResize(event: MouseEvent) {
-        if (!isResizingSidebar || !layoutContainer) {
-            return;
-        }
-
-        const bounds = layoutContainer.getBoundingClientRect();
-        const maxByContainer = Math.max(MIN_SIDEBAR_WIDTH, bounds.width - 320);
-        const maxWidth = Math.min(MAX_SIDEBAR_WIDTH, maxByContainer);
-        const proposed = event.clientX - bounds.left;
-        sidebarWidth = Math.max(MIN_SIDEBAR_WIDTH, Math.min(maxWidth, proposed));
-    }
-
-    function stopSidebarResize() {
-        isResizingSidebar = false;
-    }
 </script>
 
-<svelte:window on:click={closeContextMenu}
-    on:mousemove={onSidebarResize}
-    on:mouseup={stopSidebarResize} />
+<svelte:window on:click={closeContextMenu} />
 
 <div class='w-full h-full flex flex-col'>
     <div class='flex flex-row items-center gap-2 pb-2'>
@@ -441,14 +411,11 @@ Copyright (C) 2026 Andrew Cupps
         </button>
     </div>
 
-    <div class='flex flex-col xl:flex-row gap-3 h-full min-h-0'
-        bind:this={layoutContainer}
-        class:select-none={isResizingSidebar}>
+    <div class='h-full min-h-0'>
         <section class='schedule-list-pane rounded-xl border border-outlineLight dark:border-outlineDark
                 bg-bgSecondaryLight dark:bg-bgSecondaryDark p-2
-                xl:shrink-0 xl:grow-0
-                overflow-y-auto min-h-0'
-                style='width: min(100%, {sidebarWidth}px);'
+            overflow-y-auto min-h-0 shrink-0'
+            style='width: {Math.max(180, Math.min(560, sidebarWidth))}px;'
                 role='group'
                 on:contextmenu={(event) => {
                     openContextMenu(
@@ -584,21 +551,6 @@ Copyright (C) 2026 Andrew Cupps
                 </div>
             {/each}
         </section>
-
-        {#if showCalendarPane && allowInternalResize}
-            <button class='hidden xl:flex w-2 cursor-col-resize items-center justify-center
-                        hover:bg-hoverLight dark:hover:bg-hoverDark rounded-sm transition-colors'
-                type='button'
-                aria-label='Resize schedule list sidebar'
-                on:mousedown={startSidebarResize}>
-                <div class='h-full w-px bg-divBorderLight dark:bg-divBorderDark
-                        hover:bg-textLight dark:hover:bg-textDark transition-colors' />
-            </button>
-        {/if}
-
-        {#if showCalendarPane}
-            <CurrentSchedulePanel />
-        {/if}
     </div>
 
     {#if contextOpen}
