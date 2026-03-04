@@ -15,14 +15,14 @@ Copyright (C) 2026 Andrew Cupps
         testudoLink
     } from '../../../lib/course-planner/Formatting';
     import { afterUpdate } from 'svelte';
-    import InstructorListing from '../course-search/InstructorListing.svelte';
+    import InstructorListing from '../InstructorListing.svelte';
     import {
         HoveredSectionStore,
         CurrentScheduleStore,
         CourseInfoPairStore,
     } from '../../../stores/CoursePlannerStores';
-    import MeetingListing from '../course-search/MeetingListing.svelte';
-    import SeatData from '../course-search/SeatData.svelte';
+    import MeetingListing from '../MeetingListing.svelte';
+    import SeatData from '../SeatData.svelte';
     import CourseCondition from '../course-search/CourseCondition.svelte';
     import type { Schedule, ScheduleSelection } from '../../../types';
     import type { CourseBasic, Section } from '@jupiterp/jupiterp';

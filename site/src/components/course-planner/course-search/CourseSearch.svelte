@@ -19,7 +19,7 @@ Copyright (C) 2026 Andrew Cupps
     import type { Course } from "@jupiterp/jupiterp";
     import type { ScheduleSelection } from "../../../types";
     import CourseFilters from "./CourseFilters.svelte";
-    import SolarSystemLoader from "./SolarSystemLoader.svelte";
+    import SolarSystemLoader from "../SolarSystemLoader.svelte";
 
     const FILTER_SCROLL_COLLAPSE_THRESHOLD = 100;
 

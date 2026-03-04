@@ -5,17 +5,17 @@ https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2026 Andrew Cupps
 -->
 <script lang="ts">
-    import InstructorListing from "../InstructorListing.svelte";
-    import MeetingListing from "../MeetingListing.svelte";
-    import {
+    import InstructorListing from "./InstructorListing.svelte";
+    import MeetingListing from "./MeetingListing.svelte";
+    import { 
         HoveredSectionStore,
         CurrentScheduleStore,
         CourseInfoPairStore,
         CourseSearchFilterStore,
-    } from "../../../stores/CoursePlannerStores";
-    import SeatData from "../SeatData.svelte";
+    } from "../../stores/CoursePlannerStores";
+    import SeatData from "./SeatData.svelte";
     import type { Section, CourseBasic } from "@jupiterp/jupiterp";
-    import type { ScheduleSelection } from "../../../types";
+    import type { ScheduleSelection } from "../../types";
     import { noDifferences } from "$lib/course-planner/Schedule";
 
     export let courseCode: string;

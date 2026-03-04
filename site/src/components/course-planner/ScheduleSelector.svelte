@@ -12,9 +12,9 @@ Copyright (C) 2026 Andrew Cupps
     import {
         CurrentScheduleStore,
         NonselectedScheduleStore
-    } from "../../../stores/CoursePlannerStores";
+    } from "../../stores/CoursePlannerStores";
     import { groupSchedulesByTerm } from "$lib/course-planner/ScheduleSelector";
-    import type { ScheduleSelection, StoredSchedule } from "../../../types";
+    import type { ScheduleSelection, StoredSchedule } from "../../types";
 
     const MIN_YEAR = 2022;
     const MAX_YEAR = new Date().getFullYear();

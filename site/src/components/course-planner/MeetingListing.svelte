@@ -9,7 +9,7 @@ Copyright (C) 2026 Andrew Cupps
     import {
         formatClassDayTime,
         formatLocation
-    } from "../../../lib/course-planner/Formatting";
+    } from "../../lib/course-planner/Formatting";
 
     export let meeting: ClassMeeting;
     export let locationHover: boolean;

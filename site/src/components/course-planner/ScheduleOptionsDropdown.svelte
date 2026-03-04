@@ -14,12 +14,12 @@ Copyright (C) 2026 Andrew Cupps
     import {
         CurrentScheduleStore,
         NonselectedScheduleStore
-    } from '../../../stores/CoursePlannerStores';
+    } from '../../stores/CoursePlannerStores';
     import {
         uniqueScheduleName
     } from '$lib/course-planner/ScheduleSelector';
     import { getDefaultTermYear } from '$lib/course-planner/Terms';
-    import type { ScheduleSelection, StoredSchedule } from '../../../types';
+    import type { ScheduleSelection, StoredSchedule } from '../../types';
 
     let dropdownOpen = false;
 
