@@ -118,6 +118,11 @@ body {
         padding: 0 !important;
     }
 
+    .schedule-page {
+        overflow: visible !important;
+        height: auto !important;
+    }
+
     .print-only {
         display: block !important;
     }

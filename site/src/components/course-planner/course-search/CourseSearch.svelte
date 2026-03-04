@@ -52,6 +52,7 @@ Copyright (C) 2026 Andrew Cupps
     }
 
     let genEdMenuOpen = false;
+    let schedulePanelExpanded = true;
 
     function selectDepartment(dept: string) {
         searchInput = dept;
@@ -130,7 +131,21 @@ Copyright (C) 2026 Andrew Cupps
 
     <div class='rounded-lg border border-outlineLight dark:border-outlineDark
                 bg-bgSecondaryLight dark:bg-bgSecondaryDark px-2 py-2 mb-2'>
-        <ScheduleSelector />
+        <button class='w-full flex items-center justify-between rounded-md px-2 py-1
+                        text-sm hover:bg-hoverLight dark:hover:bg-hoverDark'
+                type='button'
+                on:click={() => { schedulePanelExpanded = !schedulePanelExpanded; }}>
+            <span class='font-semibold'>Schedules</span>
+            <span class='text-xs opacity-70'>
+                {schedulePanelExpanded ? 'Hide' : 'Show'}
+            </span>
+        </button>
+
+        {#if schedulePanelExpanded}
+            <div class='pt-2'>
+                <ScheduleSelector />
+            </div>
+        {/if}
     </div>
 
     <div class='flex flex-col w-full border-solid relative
