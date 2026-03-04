@@ -38,6 +38,14 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Validate public env vars
+        env:
+          PUBLIC_SUPABASE_URL: ${{ secrets.PUBLIC_SUPABASE_URL }}
+          PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.PUBLIC_SUPABASE_ANON_KEY }}
+        run: |
+          test -n "$PUBLIC_SUPABASE_URL" || { echo "Missing PUBLIC_SUPABASE_URL secret"; exit 1; }
+          test -n "$PUBLIC_SUPABASE_ANON_KEY" || { echo "Missing PUBLIC_SUPABASE_ANON_KEY secret"; exit 1; }
+
       - name: Build for GitHub Pages
         env:
           GH_PAGES: '1'

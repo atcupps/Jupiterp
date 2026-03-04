@@ -8,7 +8,10 @@
  */
 
 import { createClient, type User } from "@supabase/supabase-js";
-import { env } from "$env/dynamic/public";
+import {
+    PUBLIC_SUPABASE_ANON_KEY,
+    PUBLIC_SUPABASE_URL,
+} from "$env/static/public";
 import type { StoredSchedule } from "../types";
 
 interface UserScheduleRow {
@@ -23,11 +26,11 @@ let initialized = false;
 let supabaseClient: ReturnType<typeof createClient> | null = null;
 
 function getSupabaseUrl(): string {
-    return env.PUBLIC_SUPABASE_URL ?? "";
+    return PUBLIC_SUPABASE_URL ?? "";
 }
 
 function getSupabaseAnonKey(): string {
-    return env.PUBLIC_SUPABASE_ANON_KEY ?? "";
+    return PUBLIC_SUPABASE_ANON_KEY ?? "";
 }
 
 function initSupabase() {

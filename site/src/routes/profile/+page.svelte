@@ -6,6 +6,7 @@ Copyright (C) 2026 Andrew Cupps
 -->
 <script lang='ts'>
     import { onMount } from 'svelte';
+    import { base } from '$app/paths';
     import {
         getAuthUser,
         isSupabaseConfigured,
@@ -33,7 +34,10 @@ Copyright (C) 2026 Andrew Cupps
         if (url.hostname === '127.0.0.1') {
             url.hostname = 'localhost';
         }
-        url.pathname = '/profile';
+        const profilePath = `${base}/profile`;
+        url.pathname = profilePath.startsWith('/')
+            ? profilePath
+            : `/${profilePath}`;
         url.search = '';
         url.hash = '';
         return url.toString();

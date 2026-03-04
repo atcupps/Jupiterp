@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
-    "build:pages": "GH_PAGES=1 PUBLIC_SITE_URL=https://jjfrisch.github.io/Jupiterp vite build",
+    "build:pages": "GH_PAGES=1 vite build",
     "preview": "vite preview",
     "start": "node build",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
