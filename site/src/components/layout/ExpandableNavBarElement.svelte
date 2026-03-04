@@ -10,7 +10,7 @@ Copyright (C) 2026 Andrew Cupps
 
     export let link: string;
     export let text: string;
-    export let target: string = '_self';
+    export let target: string | undefined = undefined;
     export let fullWidth: boolean = false;
     export let isOnPage: boolean = false;
 

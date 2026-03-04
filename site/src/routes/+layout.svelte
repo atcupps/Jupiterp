@@ -6,6 +6,7 @@ Copyright (C) 2026 Andrew Cupps
  -->
 <script lang='ts'>
     import '../app.css';
+    import { base } from '$app/paths';
     import Analytics from '../components/layout/Analytics.svelte';
     import SiteLinks from '../components/layout/SiteLinks.svelte';
 </script>
@@ -16,7 +17,7 @@ Copyright (C) 2026 Andrew Cupps
     <div class='flex flex-row h-12 lg:h-14 xl:h-16 w-full border-b-2
                             border-divBorderLight dark:border-divBorderDark
                             justify-center lg:justify-start'>
-        <a href='/' class='flex w-64'>
+        <a href={`${base}/`} class='flex w-64'>
             <img src='logo.svg' alt='Jupiterp Beta logo'/>
         </a>
         <SiteLinks />

@@ -11,7 +11,7 @@ const config = {
   kit: {
     adapter: isGitHubPages
       ? adapterStatic({
-          fallback: 'index.html'
+          fallback: '404.html'
         })
       : isVercel
         ? adapterVercel()

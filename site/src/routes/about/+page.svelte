@@ -5,6 +5,8 @@ https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2026 Andrew Cupps
  -->
 <script lang='ts'>
+    import { base } from '$app/paths';
+
     const h1Classes = 
         'text-2xl border-b-2 border-divBorderLight dark:border-divBorderDark';
     const h2Classes =
@@ -41,7 +43,7 @@ Copyright (C) 2026 Andrew Cupps
         <a href='https://github.com/atcupps/Jupiterp/issues' target='_blank'
             class='text-orange underline'>here</a>.
     </p>
-    <a href='/changelog' class='text-orange underline'>View changelog</a>
+    <a href={`${base}/changelog`} class='text-orange underline'>View changelog</a>
     <h2 class={h2Classes}>
         Professor Ratings
     </h2>

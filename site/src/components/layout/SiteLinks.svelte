@@ -6,6 +6,7 @@ Copyright (C) 2026 Andrew Cupps
 -->
 <script lang='ts'>
     import { fade } from 'svelte/transition';
+    import { base } from '$app/paths';
     import { page } from '$app/stores';
     import NavBarElement from './NavBarElement.svelte';
     import DarkModeToggle from './DarkModeToggle.svelte';
@@ -13,25 +14,27 @@ Copyright (C) 2026 Andrew Cupps
 
     let siteLinksSelected: boolean = false;
 
-    $: currentPage = $page.url.pathname;
+    $: currentPage = $page.url.pathname.startsWith(base)
+        ? $page.url.pathname.slice(base.length) || '/'
+        : $page.url.pathname;
 </script>
 
 <!-- For larger screens -->
 <div class='grow justify-end self-center hidden lg:flex'>
-    <NavBarElement link='./profile' text='Profile'
+    <NavBarElement link={`${base}/profile`} text='Profile'
                                         isOnPage={currentPage == '/profile'}/>
-    <NavBarElement link='./' text='Course Planner'
+    <NavBarElement link={`${base}/`} text='Course Planner'
                                         isOnPage={currentPage == '/'}/>
-    <NavBarElement link='./bugs' text='Report an Issue' 
+    <NavBarElement link={`${base}/bugs`} text='Report an Issue' 
                                         isOnPage={currentPage == '/bugs'}/>
-    <ExpandableNavBarElement link='./about' text='About' 
+    <ExpandableNavBarElement link={`${base}/about`} text='About' 
                                         isOnPage={currentPage == '/about'}>   
         <div class='w-full my-1'>
-            <NavBarElement link='./terms-of-use' text='Terms of Use'
+            <NavBarElement link={`${base}/terms-of-use`} text='Terms of Use'
                                 reduceXMargin={true} fullWidth={true} />
         </div>
         <div class='w-full my-1'>
-            <NavBarElement link='./changelog' text='Changelog'
+            <NavBarElement link={`${base}/changelog`} text='Changelog'
                                 reduceXMargin={true} fullWidth={true} />
         </div>
     </ExpandableNavBarElement>
@@ -76,19 +79,19 @@ Copyright (C) 2026 Andrew Cupps
         class:site-links-transition={!siteLinksSelected}
         class:shadow-lg={siteLinksSelected}>
     <div class='w-full my-2 text-lg'>
-        <NavBarElement link='./profile' text='Profile' fullWidth={true}/>
+        <NavBarElement link={`${base}/profile`} text='Profile' fullWidth={true}/>
     </div>
     <div class='w-full my-2 text-lg'>
-        <NavBarElement link='./' text='Course Planner' fullWidth={true}/>
+        <NavBarElement link={`${base}/`} text='Course Planner' fullWidth={true}/>
     </div>
     <div class='w-full my-2 text-lg'>
-        <NavBarElement link='./bugs' text='Report an Issue' fullWidth={true}/>
+        <NavBarElement link={`${base}/bugs`} text='Report an Issue' fullWidth={true}/>
     </div>
     <div class='w-full my-2 text-lg'>
-        <NavBarElement link='./about' text='About'  fullWidth={true}/>
+        <NavBarElement link={`${base}/about`} text='About'  fullWidth={true}/>
     </div>
     <div class='w-full my-2 text-lg'>
-        <NavBarElement link='./terms-of-use' text='Terms of Use'
+        <NavBarElement link={`${base}/terms-of-use`} text='Terms of Use'
                                                         fullWidth={true} />
     </div>
     <div class='w-full my-2 text-lg'>
