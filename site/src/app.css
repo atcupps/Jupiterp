@@ -91,7 +91,10 @@ body {
     .add-classes-panel,
     .export-button,
     .delete-button,
-    .add-schedule-button {
+    .add-schedule-button,
+    .schedule-screen-header,
+    .schedule-context-menu,
+    [aria-label='Resize schedule list sidebar'] {
         display: none !important;
     }
 

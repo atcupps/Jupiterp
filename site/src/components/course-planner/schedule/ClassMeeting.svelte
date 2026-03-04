@@ -59,7 +59,6 @@ Copyright (C) 2026 Andrew Cupps
     let decEndTime: number;
     let hasLocation: boolean = true;
     let location: string;
-    let accentColor = '#cbd5e1';
 
     $: if (meeting.meeting != null) {
         secCode = meeting.sectionCode;
@@ -97,8 +96,6 @@ Copyright (C) 2026 Andrew Cupps
             secCode = meeting.sectionCode;
         }
     }
-
-    $: accentColor = getColorFromNumber(meeting.colorNumber);
 
     let elt: HTMLButtonElement;
     let innerHeight: number;
@@ -173,8 +170,7 @@ Copyright (C) 2026 Andrew Cupps
         bind:this={elt} on:click={toggleCourseInfo}
         style=' top: {(decStartTime - earliestClassStart) / boundDiff * 100}%;
                 height: {(decEndTime - decStartTime) / boundDiff * 100}%;
-                background-color: #ffffff;
-                border-left: 4px solid {accentColor};
+                background-color: {getColorFromNumber(meeting.colorNumber)};
                 opacity: {meeting.hover ? 0.4 : 1.0};
                 width: {(1 / meeting.conflictTotal) * 100}%;
                 left: {

@@ -17,5 +17,5 @@ Copyright (C) 2026 Andrew Cupps
     </div>
     <div class='h-[1px] bg-divBorderLight 
         dark:bg-divBorderDark absolute left-8 2xl:left-10' 
-        style='top: 50%; width: calc(100% - 32px);'/>
+        style='top: 50%; width: calc(100% - 32px); opacity: 0.35;'/>
 </div>

@@ -117,7 +117,6 @@ Copyright (C) 2026 Andrew Cupps
     let infoPanelLeft: number;
     let infoPanelWidth: number;
     let hasScheduledClasses = false;
-    let alternatingRows: number[] = [];
     $: if (elt || innerWidth) {
         afterUpdate(() => {
             infoPanelLeft = elt.getBoundingClientRect().left;
@@ -126,10 +125,6 @@ Copyright (C) 2026 Andrew Cupps
     }
 
     $: hasScheduledClasses = selections.some((selection) => !selection.hover);
-    $: alternatingRows = [];
-    $: for (let time = earliestClassStart; time < latestClassEnd; time += 1) {
-        alternatingRows.push(time);
-    }
     $: scheduleHeightPx = Math.max(640, (latestClassEnd - earliestClassStart) * 88);
 </script>
 
@@ -139,22 +134,12 @@ Copyright (C) 2026 Andrew Cupps
         text-lg text-center text-black dark:text-white min-h-0'>
     <div class='grid grow relative pl-8 rounded-xl border
                 border-outlineLight dark:border-outlineDark
-                bg-bgSecondaryLight dark:bg-bgSecondaryDark'
+                bg-white dark:bg-bgSecondaryDark'
      style='min-height: {scheduleHeightPx}px;'
          class:grid-cols-5={schedule.other.length == 0}
          class:grid-cols-6={schedule.other.length > 0}
          bind:this={elt}
     >
-        {#each alternatingRows as rowTime, index}
-            {#if index % 2 === 0}
-                <div class='absolute left-8 top-[1.75rem] z-0
-                            bg-bgLight dark:bg-bgDark opacity-20'
-                        style='width: {schedule.other.length == 0 ? 'calc(100% - 2rem)' : 'calc(83.3% - 2rem)'};
-                                height: {bgHeight / Math.max(1, (latestClassEnd - earliestClassStart))}px;
-                                transform: translateY({(rowTime - earliestClassStart) * (bgHeight / Math.max(1, (latestClassEnd - earliestClassStart)))}px);'/>
-            {/if}
-        {/each}
-        
         <!-- Background lines for the schedule -->
          <!-- format-check exempt 2 -->
         <div class='absolute timelines z-0 h-full top-[1.75rem]' 

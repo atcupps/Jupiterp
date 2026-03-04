@@ -589,17 +589,19 @@ Copyright (C) 2026 Andrew Cupps
             {/each}
         </section>
 
-        <button class='hidden xl:flex w-2 cursor-col-resize items-center justify-center'
+        <button class='hidden xl:flex w-2 cursor-col-resize items-center justify-center
+                        hover:bg-hoverLight dark:hover:bg-hoverDark rounded-sm transition-colors'
             type='button'
             aria-label='Resize schedule list sidebar'
             on:mousedown={startSidebarResize}>
-            <div class='h-full w-px bg-divBorderLight dark:bg-divBorderDark' />
+            <div class='h-full w-px bg-divBorderLight dark:bg-divBorderDark
+                        hover:bg-textLight dark:hover:bg-textDark transition-colors' />
         </button>
 
         <section class='schedule-print-pane rounded-xl border border-outlineLight dark:border-outlineDark
                 bg-bgSecondaryLight dark:bg-bgSecondaryDark p-2
                 flex flex-col min-h-0 grow min-w-0'>
-            <div class='flex items-center justify-between pb-2'>
+            <div class='schedule-screen-header flex items-center justify-between pb-2'>
                 <div>
                     <div class='text-lg font-semibold'>{currentSchedule.scheduleName}</div>
                     <div class='text-xs opacity-70'>
@@ -630,7 +632,7 @@ Copyright (C) 2026 Andrew Cupps
     </div>
 
     {#if contextOpen}
-        <div class='fixed z-[80] rounded-md border border-outlineLight
+        <div class='schedule-context-menu fixed z-[80] rounded-md border border-outlineLight
                     dark:border-outlineDark bg-bgLight dark:bg-bgDark
                     shadow-lg py-1 text-sm'
             role='menu'
