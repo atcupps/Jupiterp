@@ -48,9 +48,10 @@ Copyright (C) 2026 Andrew Cupps
 
 <div class='h-full' bind:this={elt}>
     <TimeLine number={formatDecTime(earliest)} position={0} />
-    {#each displayTimes.slice(1, displayTimes.length) as time}
+    {#each displayTimes.slice(1, displayTimes.length) as time, index}
         <TimeLine position={((time - earliest) * 2 - 1) / numBars} />
         <TimeLine number={formatDecTime(time)} 
-                        position={(time - earliest) * 2 / numBars} />
+                        position={(time - earliest) * 2 / numBars}
+                        isLast={index === displayTimes.slice(1, displayTimes.length).length - 1} />
     {/each}
 </div>

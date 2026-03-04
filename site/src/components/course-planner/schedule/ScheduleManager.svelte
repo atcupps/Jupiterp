@@ -9,10 +9,14 @@ Copyright (C) 2026 Andrew Cupps
         CurrentScheduleStore,
         NonselectedScheduleStore
     } from '../../../stores/CoursePlannerStores';
-    import Schedule from './Schedule.svelte';
+    import CurrentSchedulePanel from './CurrentSchedulePanel.svelte';
     import { uniqueScheduleName } from '$lib/course-planner/ScheduleSelector';
     import { MIN_SCHEDULE_YEAR, getMaxScheduleYear } from '$lib/course-planner/Terms';
     import type { StoredSchedule } from '../../../types';
+
+    export let sidebarWidth = 300;
+    export let showCalendarPane = true;
+    export let allowInternalResize = true;
 
     type Term = StoredSchedule['term'];
     type ContextTarget = 'background' | 'group' | 'row';
@@ -70,15 +74,11 @@ Copyright (C) 2026 Andrew Cupps
     let editYear = getMaxScheduleYear();
 
     let draggedRowId: string | null = null;
-    let printedOn = '';
     let layoutContainer: HTMLDivElement;
-    let sidebarWidth = 360;
     let isResizingSidebar = false;
 
     const MIN_SIDEBAR_WIDTH = 260;
     const MAX_SIDEBAR_WIDTH = 560;
-
-    $: printedOn = new Date().toLocaleDateString();
 
     function clampYear(year: number): number {
         const max = getMaxScheduleYear();
@@ -254,10 +254,6 @@ Copyright (C) 2026 Andrew Cupps
             return;
         }
         deleteRow(rowId);
-    }
-
-    function exportCurrentToPdf() {
-        window.print();
     }
 
     function startInlineEdit(row: Row) {
@@ -589,46 +585,20 @@ Copyright (C) 2026 Andrew Cupps
             {/each}
         </section>
 
-        <button class='hidden xl:flex w-2 cursor-col-resize items-center justify-center
+        {#if showCalendarPane && allowInternalResize}
+            <button class='hidden xl:flex w-2 cursor-col-resize items-center justify-center
                         hover:bg-hoverLight dark:hover:bg-hoverDark rounded-sm transition-colors'
-            type='button'
-            aria-label='Resize schedule list sidebar'
-            on:mousedown={startSidebarResize}>
-            <div class='h-full w-px bg-divBorderLight dark:bg-divBorderDark
+                type='button'
+                aria-label='Resize schedule list sidebar'
+                on:mousedown={startSidebarResize}>
+                <div class='h-full w-px bg-divBorderLight dark:bg-divBorderDark
                         hover:bg-textLight dark:hover:bg-textDark transition-colors' />
-        </button>
+            </button>
+        {/if}
 
-        <section class='schedule-print-pane rounded-xl border border-outlineLight dark:border-outlineDark
-                bg-bgSecondaryLight dark:bg-bgSecondaryDark p-2
-                flex flex-col min-h-0 grow min-w-0'>
-            <div class='schedule-screen-header flex items-center justify-between pb-2'>
-                <div>
-                    <div class='text-lg font-semibold'>{currentSchedule.scheduleName}</div>
-                    <div class='text-xs opacity-70'>
-                        {currentSchedule.term} {currentSchedule.year} ·
-                        Credits {rowCredits(currentSchedule)}
-                    </div>
-                </div>
-                <button class='rounded-md px-3 py-1 text-sm border
-                                border-outlineLight dark:border-outlineDark
-                                hover:bg-hoverLight dark:hover:bg-hoverDark'
-                        class:export-button={true}
-                        on:click={exportCurrentToPdf}>
-                    Export to PDF
-                </button>
-            </div>
-            <div class='schedule-page grow min-h-0 overflow-auto'>
-                <div class='print-only pb-3 text-left'>
-                    <h1 class='text-xl font-semibold leading-tight'>
-                        {currentSchedule.scheduleName} — {currentSchedule.term} {currentSchedule.year}
-                    </h1>
-                    <p class='text-sm opacity-70'>
-                        {rowCredits(currentSchedule)} credits · {currentSchedule.selections.length} courses · Printed {printedOn}
-                    </p>
-                </div>
-                <Schedule />
-            </div>
-        </section>
+        {#if showCalendarPane}
+            <CurrentSchedulePanel />
+        {/if}
     </div>
 
     {#if contextOpen}

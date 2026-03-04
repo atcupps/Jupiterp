@@ -94,6 +94,7 @@ body {
     .add-schedule-button,
     .schedule-screen-header,
     .schedule-context-menu,
+    .course-info-panel,
     [aria-label='Resize schedule list sidebar'] {
         display: none !important;
     }

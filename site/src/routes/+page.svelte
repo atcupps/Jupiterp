@@ -5,10 +5,9 @@ https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2026 Andrew Cupps
  -->
 <script lang="ts">
-    // format-check exempt 2
-    import Schedule from '../components/course-planner/schedule/Schedule.svelte';
     import CourseSearch from '../components/course-planner/course-search/CourseSearch.svelte';
     import ScheduleManager from '../components/course-planner/schedule/ScheduleManager.svelte';
+    import CurrentSchedulePanel from '../components/course-planner/schedule/CurrentSchedulePanel.svelte';
     import { onDestroy, onMount } from 'svelte';
     import {
         ensureUpToDateAndSetStores,
@@ -338,6 +337,30 @@ Copyright (C) 2026 Andrew Cupps
     let courseSearchSelected: boolean = false;
     type PlannerTab = 'schedules' | 'add-classes';
     let activePlannerTab: PlannerTab = 'schedules';
+    let sidebarWidth = 300;
+    let addClassesLayoutContainer: HTMLDivElement;
+    let resizingAddClassesSidebar = false;
+
+    function startAddClassesResize(event: MouseEvent) {
+        event.preventDefault();
+        resizingAddClassesSidebar = true;
+    }
+
+    function stopAddClassesResize() {
+        resizingAddClassesSidebar = false;
+    }
+
+    function onAddClassesResize(event: MouseEvent) {
+        if (!resizingAddClassesSidebar || !addClassesLayoutContainer) {
+            return;
+        }
+
+        const bounds = addClassesLayoutContainer.getBoundingClientRect();
+        const minSidebar = 240;
+        const maxSidebar = Math.max(minSidebar, bounds.width - 320);
+        const proposed = event.clientX - bounds.left;
+        sidebarWidth = Math.max(minSidebar, Math.min(560, Math.min(maxSidebar, proposed)));
+    }
 
     let activeScheduleLabel = 'Schedule 1';
     CurrentScheduleStore.subscribe((stored) => {
@@ -345,10 +368,13 @@ Copyright (C) 2026 Andrew Cupps
     });
 </script>
 
+<svelte:window on:mousemove={onAddClassesResize}
+    on:mouseup={stopAddClassesResize} />
+
 <div class='fixed flex flex-col w-full px-8
             text-textLight dark:text-textDark lg:px-8
             top-[3rem] lg:top-[3.5rem] xl:top-[4rem] bottom-0'>
-    <div class='flex flex-row gap-1 pb-2'>
+    <div class='flex flex-row gap-1 pb-2 pt-3'>
         <button class='rounded-md px-3 py-1 text-sm border
                         border-outlineLight dark:border-outlineDark
                         hover:bg-hoverLight dark:hover:bg-hoverDark'
@@ -367,11 +393,7 @@ Copyright (C) 2026 Andrew Cupps
         </button>
     </div>
 
-    {#if activePlannerTab === 'schedules'}
-        <div class='grow min-h-0 pb-2'>
-            <ScheduleManager />
-        </div>
-    {:else}
+    {#if activePlannerTab !== 'schedules'}
         <!-- Button to toggle course search on mobile -->
         <button class='fixed h-5 w-5 top-[4.1rem] left-5 visible lg:hidden z-[52]'
                 on:click={() => {courseSearchSelected = !courseSearchSelected}}>
@@ -388,14 +410,33 @@ Copyright (C) 2026 Andrew Cupps
                         <!-- format-check exempt 1 -->
                         <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206 56.6 43.5C45.3 29.9 25.1 28.1 11.5 39.4S-3.9 70.9 7.4 84.5L150.3 256 7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306 327.4 468.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256 376.6 84.5z"/></svg>
         </button>
+    {/if}
 
-        <div class='grow min-h-0 flex flex-row'>
+    <div class='grow min-h-0 flex flex-row pt-2'
+        bind:this={addClassesLayoutContainer}
+        class:select-none={resizingAddClassesSidebar}>
+        {#if activePlannerTab === 'schedules'}
+            <ScheduleManager bind:sidebarWidth
+                showCalendarPane={false}
+                allowInternalResize={false} />
+        {:else}
             <CourseSearch bind:courseSearchSelected
+                {sidebarWidth}
                 {activeScheduleLabel}
                 onChangeToSchedules={() => {
                     activePlannerTab = 'schedules';
                 }} />
-            <Schedule />
-        </div>
-    {/if}
+        {/if}
+
+        <button class='hidden lg:flex w-2 cursor-col-resize items-center justify-center
+                        hover:bg-hoverLight dark:hover:bg-hoverDark rounded-sm transition-colors'
+                type='button'
+                aria-label='Resize schedule list sidebar'
+                on:mousedown={startAddClassesResize}>
+            <div class='h-full w-px bg-divBorderLight dark:bg-divBorderDark
+                        hover:bg-textLight dark:hover:bg-textDark transition-colors' />
+        </button>
+
+        <CurrentSchedulePanel />
+    </div>
 </div>

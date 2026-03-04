@@ -132,7 +132,7 @@ Copyright (C) 2026 Andrew Cupps
 
 <div class='schedule-view h-full w-full flex flex-row px-2 font-medium overflow-auto
         text-lg text-center text-black dark:text-white min-h-0'>
-    <div class='grid grow relative pl-8 rounded-xl border
+    <div class='grid grow relative pl-12 2xl:pl-14 rounded-xl border
                 border-outlineLight dark:border-outlineDark
                 bg-white dark:bg-bgSecondaryDark'
      style='min-height: {scheduleHeightPx}px;'
@@ -204,6 +204,7 @@ Copyright (C) 2026 Andrew Cupps
     && courseInfoCourse !== null 
     && courseInfoSection !== null}
 <div class='absolute z-10 shadow-md bottom-[0.75rem]
+    course-info-panel
         rounded-xl border-2 border-outlineLight
         dark:border-outlineDark bg-bgSecondaryLight
         dark:bg-bgSecondaryDark text-left px-2 py-1'

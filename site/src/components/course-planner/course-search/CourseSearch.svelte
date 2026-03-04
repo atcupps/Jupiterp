@@ -27,6 +27,7 @@ Copyright (C) 2026 Andrew Cupps
     export let courseSearchSelected: boolean = false;
     export let activeScheduleLabel: string = 'Schedule 1';
     export let onChangeToSchedules: () => void = () => {};
+    export let sidebarWidth: number = 300;
 
     let hoveredSection: ScheduleSelection | null;
     HoveredSectionStore.subscribe((hovered) => { hoveredSection = hovered });
@@ -128,14 +129,16 @@ Copyright (C) 2026 Andrew Cupps
         on:click={() => courseSearchSelected = false}/>
 {/if}
 
-<div class='lg:flex flex-col xl:min-w-[320px] 2xl:min-w-[400px] 2xl:text-lg
-                            lg:min-w-[260px] w-[300px] z-[52] fixed lg:static
+<div class='lg:flex flex-col 2xl:text-lg
+                lg:w-[var(--sidebar-width)] lg:min-w-[var(--sidebar-width)] lg:max-w-[var(--sidebar-width)]
+                w-[300px] z-[52] fixed lg:static
                             lg:h-full course-search visible
                             border-r-2 border-divBorderLight
                             dark:border-divBorderDark border-solid py-1 pr-2
                             pl-1 lg:pl-0 lg:ml-1.5 lg:shadow-none
                             bg-bgLight dark:bg-bgDark lg:bg-transparent left-0
                             transition-transform duration-300'
+    style='--sidebar-width: {Math.max(240, Math.min(560, sidebarWidth))}px;'
         class:course-search-transition={!courseSearchSelected}
         class:shadow-lg={courseSearchSelected}>
 
