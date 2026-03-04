@@ -358,10 +358,6 @@ Copyright (C) 2026 Andrew Cupps
         sidebarWidth = Math.max(minSidebar, Math.min(560, Math.min(maxSidebar, proposed)));
     }
 
-    let activeScheduleLabel = 'Schedule 1';
-    CurrentScheduleStore.subscribe((stored) => {
-        activeScheduleLabel = `${stored.scheduleName} (${stored.term} ${stored.year})`;
-    });
 </script>
 
 <svelte:window on:mousemove={onAddClassesResize}
@@ -374,8 +370,7 @@ Copyright (C) 2026 Andrew Cupps
         bind:this={addClassesLayoutContainer}
         class:select-none={resizingAddClassesSidebar}>
         <CourseSearch
-            {sidebarWidth}
-            {activeScheduleLabel} />
+            {sidebarWidth} />
 
         <button class='flex w-2 cursor-col-resize items-center justify-center
                         hover:bg-hoverLight dark:hover:bg-hoverDark rounded-sm transition-colors'

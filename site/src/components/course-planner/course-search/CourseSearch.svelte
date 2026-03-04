@@ -6,6 +6,7 @@ Copyright (C) 2026 Andrew Cupps
 -->
 <script lang='ts'>
     import CourseListing from "./CourseListing.svelte";
+    import ScheduleSelector from "../ScheduleSelector.svelte";
     import {
         deptCodeToName,
         pendingResults,
@@ -23,7 +24,6 @@ Copyright (C) 2026 Andrew Cupps
 
     const FILTER_SCROLL_COLLAPSE_THRESHOLD = 100;
 
-    export let activeScheduleLabel: string = 'Schedule 1';
     export let sidebarWidth: number = 300;
 
     let hoveredSection: ScheduleSelection | null;
@@ -129,9 +129,8 @@ Copyright (C) 2026 Andrew Cupps
     >
 
     <div class='rounded-lg border border-outlineLight dark:border-outlineDark
-                bg-bgSecondaryLight dark:bg-bgSecondaryDark px-2 py-1 mb-1
-                text-sm'>
-        <div class='font-semibold truncate'>Adding classes to: {activeScheduleLabel}</div>
+                bg-bgSecondaryLight dark:bg-bgSecondaryDark px-2 py-2 mb-2'>
+        <ScheduleSelector />
     </div>
 
     <div class='flex flex-col w-full border-solid relative

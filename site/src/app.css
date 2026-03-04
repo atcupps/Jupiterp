@@ -60,7 +60,6 @@ body {
 
 @media print {
     [style*='position: fixed'],
-    .fixed,
     .absolute.z-\[80\],
     .z-\[52\],
     .z-\[51\] {
