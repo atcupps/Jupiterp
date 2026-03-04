@@ -5,42 +5,34 @@ https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2026 Andrew Cupps
 -->
 <script lang='ts'>
-    import { fade } from "svelte/transition";
     import CourseListing from "./CourseListing.svelte";
+    import ScheduleSelector from "../ScheduleSelector.svelte";
     import {
         deptCodeToName,
         pendingResults,
         setSearchResults
     } from "../../../lib/course-planner/CourseSearch";
     import {
-        appendHoveredSection
-    } from "../../../lib/course-planner/Schedule";
-    import {
         HoveredSectionStore,
-        CurrentScheduleStore,
         SearchResultsStore,
-        DeptSuggestionsStore
+        DeptSuggestionsStore,
     } from "../../../stores/CoursePlannerStores";
-    import ScheduleSelector from "./ScheduleSelector.svelte";
     import type { Course } from "@jupiterp/jupiterp";
     import type { ScheduleSelection } from "../../../types";
     import CourseFilters from "./CourseFilters.svelte";
-    import SolarSystemLoader from "./SolarSystemLoader.svelte";
+    import SolarSystemLoader from "../SolarSystemLoader.svelte";
 
     const FILTER_SCROLL_COLLAPSE_THRESHOLD = 100;
+
+    export let sidebarWidth: number = 300;
 
     let hoveredSection: ScheduleSelection | null;
     HoveredSectionStore.subscribe((hovered) => { hoveredSection = hovered });
 
-    let selections: ScheduleSelection[] = [];
-    CurrentScheduleStore.subscribe(
-        (stored) => { selections = stored.selections }
-    );
-
-    // Variable and function for handling course search input
     let searchInput = '';
     let searchResults: Course[] = [];
     SearchResultsStore.subscribe((results) => { searchResults = results });
+
     let deptSuggestions: string[] = [];
     let highlightedSuggestionIndex = -1;
     DeptSuggestionsStore.subscribe((suggestions) => {
@@ -60,6 +52,7 @@ Copyright (C) 2026 Andrew Cupps
     }
 
     let genEdMenuOpen = false;
+    let schedulePanelExpanded = true;
 
     function selectDepartment(dept: string) {
         searchInput = dept;
@@ -97,29 +90,16 @@ Copyright (C) 2026 Andrew Cupps
         highlightedSuggestionIndex = -1;
     }
 
-    // Boolean for toggling search menu on smaller screens
-    export let courseSearchSelected: boolean = false;
-
     $: {
         if (hoveredSection) {
-            let index = searchResults.findIndex(course => {
-                return hoveredSection && 
+            const index = searchResults.findIndex((course) => {
+                return hoveredSection &&
                     course.courseCode === hoveredSection.section.courseCode;
             });
             if (index === -1) {
                 HoveredSectionStore.set(null);
             }
         }
-    }
-
-    let totalCredits: number = 0;
-    $: if (selections || hoveredSection) {
-        totalCredits = 0;
-        let selectionsWithHovered = 
-                appendHoveredSection(selections, hoveredSection);
-        selectionsWithHovered.forEach((selection) => {
-            totalCredits += selection.course.minCredits;
-        })
     }
 
     let scrollAcc = 0;
@@ -139,65 +119,56 @@ Copyright (C) 2026 Andrew Cupps
     }
 </script>
 
-<!-- Layer to exit course search if user taps on the Schedule -->
-<!-- Using this method to avoid having to listen to a variable on Schedule -->
-{#if courseSearchSelected}
-    <button class='fixed w-full bg-black bg-opacity-20 z-[51]
-                    lg:hidden'
-            style='height: calc(100% - 3rem);'
-        in:fade={{ duration: 150 }}
-        out:fade={{ duration: 150 }} 
-        on:click={() => courseSearchSelected = false}/>
-{/if}
-
-<!-- Course Search -->
-<div class='lg:flex flex-col xl:min-w-[320px] 2xl:min-w-[400px] 2xl:text-lg
-                            lg:min-w-[260px] w-[300px] z-[52] fixed lg:static
-                            lg:h-full course-search visible
+<div class='flex flex-col 2xl:text-lg
+                w-[var(--sidebar-width)] min-w-[var(--sidebar-width)] max-w-[var(--sidebar-width)]
+                h-full course-search
                             border-r-2 border-divBorderLight
                             dark:border-divBorderDark border-solid py-1 pr-2
-                            pl-1 lg:pl-0 lg:ml-1.5 lg:shadow-none
-                            bg-bgLight dark:bg-bgDark lg:bg-transparent left-0
-                            transition-transform duration-300'
-        class:course-search-transition={!courseSearchSelected}
-        class:shadow-lg={courseSearchSelected}>
+                pl-1 shadow-none
+                bg-bgLight dark:bg-bgDark'
+    style='--sidebar-width: {Math.max(180, Math.min(560, sidebarWidth))}px;'
+    >
 
-    <div class='flex flex-row text-xs ml-1 pb-1 2xl:text-sm'>
-        <div>
-            Fall 2026
-        </div>
-        <div class='grow text-right'>
-            Credits: {totalCredits}
-        </div>
+    <div class='rounded-lg border border-outlineLight dark:border-outlineDark
+                bg-bgSecondaryLight dark:bg-bgSecondaryDark px-2 py-2 mb-2'>
+        <button class='w-full flex items-center justify-between rounded-md px-2 py-1
+                        text-sm hover:bg-hoverLight dark:hover:bg-hoverDark'
+                type='button'
+                on:click={() => { schedulePanelExpanded = !schedulePanelExpanded; }}>
+            <span class='font-semibold'>Schedules</span>
+            <span class='text-xs opacity-70'>
+                {schedulePanelExpanded ? 'Hide' : 'Show'}
+            </span>
+        </button>
+
+        {#if schedulePanelExpanded}
+            <div class='pt-2'>
+                <ScheduleSelector />
+            </div>
+        {/if}
     </div>
 
-    <ScheduleSelector />
-
     <div class='flex flex-col w-full border-solid relative
-                            border-b-2 border-t-2 p-1 lg:px-0
+                            border-b-2 border-t-2 p-1
                             border-divBorderLight dark:border-divBorderDark'>
-
-        <!-- Course search box -->
-        <input type='text' 
+        <input type='text'
             bind:value={searchInput}
             on:input={() => {setSearchResults(searchInput)}}
             on:keydown={handleSearchKeydown}
             placeholder='Search course codes, ex: "MATH140"'
-            class="border-solid border-2 border-outlineLight 
+            class='border-solid border-2 border-outlineLight
                             dark:border-outlineDark rounded-lg
                             bg-transparent px-2 w-full text-xl
                             lg:text-base lg:placeholder:text-sm
-                            placeholder:text-base py-0">
+                            placeholder:text-base py-0'>
 
         <CourseFilters bind:showGenEdMenu={genEdMenuOpen} />
     </div>
 
-    <!-- Course search results & dept suggestions -->
     <div class='grow courses-list overflow-y-scroll overflow-x-none
-                px-1 lg:pr-1 lg:pl-0'
+                px-1'
         on:wheel={handleResultsScroll}>
 
-        <!-- Department suggestions dropdown -->
         {#if searchInput.length > 0 && deptSuggestions.length > 1}
             <div class='mt-2 rounded-lg border
                         border-outlineLight dark:border-outlineDark
@@ -209,20 +180,17 @@ Copyright (C) 2026 Andrew Cupps
                                 hover:bg-outlineLight
                                 hover:bg-opacity-20 items-end
                                 dark:hover:bg-outlineDark
-                                dark:hover:bg-opacity-30 
-                                ${highlightedSuggestionIndex === index ? 
+                                dark:hover:bg-opacity-30
+                                ${highlightedSuggestionIndex === index ?
                                     `bg-outlineLight bg-opacity-20
-                                    dark:bg-outlineDark dark:bg-opacity-30` 
+                                    dark:bg-outlineDark dark:bg-opacity-30`
                                     : ''}`}
-                        on:mouseenter={
-                            () => { highlightedSuggestionIndex = index; }
-                        }
+                        on:mouseenter={() => { highlightedSuggestionIndex = index; }}
                         on:click={() => selectDepartment(deptOption)}>
                         <span class='font-black min-w-[17%] shrink-0'>
                             {deptOption}
                         </span>
-                        <span class='text-xs inline-block
-                                    italic grow truncate'>
+                        <span class='text-xs inline-block italic grow truncate'>
                             {deptCodeToName[deptOption]}
                         </span>
                     </button>
@@ -230,37 +198,17 @@ Copyright (C) 2026 Andrew Cupps
             </div>
         {/if}
 
-        <!-- Course search results -->
         {#each searchResults as courseMatch (courseMatch.courseCode)}
             <CourseListing course={courseMatch} />
         {/each}
 
         {#if isPendingResults}
             <div class='flex justify-center items-center py-8'>
-                <SolarSystemLoader
-                    size={120}
-                    color='currentColor'
-                />
+                <SolarSystemLoader size={120} color='currentColor' />
             </div>
         {/if}
     </div>
 </div>
 
 <style>
-    @media screen and (max-width: 1023px) {
-        .course-search {
-            height: calc(100svh - 3rem);
-        }
-
-        .courses-list {
-            height: calc(100svh - 3rem - 2.54166667rem - 2px);
-        }
-
-        .course-search-transition {
-            transition-property: transform;
-            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-            transition-duration: 150ms;
-            transform: translateX(calc(-100% - 2px));
-        }
-    }
 </style>

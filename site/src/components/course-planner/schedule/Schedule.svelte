@@ -15,14 +15,14 @@ Copyright (C) 2026 Andrew Cupps
         testudoLink
     } from '../../../lib/course-planner/Formatting';
     import { afterUpdate } from 'svelte';
-    import InstructorListing from '../course-search/InstructorListing.svelte';
+    import InstructorListing from '../InstructorListing.svelte';
     import {
         HoveredSectionStore,
         CurrentScheduleStore,
         CourseInfoPairStore,
     } from '../../../stores/CoursePlannerStores';
-    import MeetingListing from '../course-search/MeetingListing.svelte';
-    import SeatData from '../course-search/SeatData.svelte';
+    import MeetingListing from '../MeetingListing.svelte';
+    import SeatData from '../SeatData.svelte';
     import CourseCondition from '../course-search/CourseCondition.svelte';
     import type { Schedule, ScheduleSelection } from '../../../types';
     import type { CourseBasic, Section } from '@jupiterp/jupiterp';
@@ -49,6 +49,7 @@ Copyright (C) 2026 Andrew Cupps
     })
 
     let bgHeight: number;
+    let scheduleHeightPx = 0;
 
     // Keep track of the range of times to display on the Schedule
     let earliestClassStart: number = 8;
@@ -115,25 +116,28 @@ Copyright (C) 2026 Andrew Cupps
     let innerWidth: number;
     let infoPanelLeft: number;
     let infoPanelWidth: number;
+    let hasScheduledClasses = false;
     $: if (elt || innerWidth) {
         afterUpdate(() => {
             infoPanelLeft = elt.getBoundingClientRect().left;
             infoPanelWidth = elt.getBoundingClientRect().right - infoPanelLeft;
         });
     }
+
+    $: hasScheduledClasses = selections.some((selection) => !selection.hover);
+    $: scheduleHeightPx = Math.max(640, (latestClassEnd - earliestClassStart) * 88);
 </script>
 
 <svelte:window bind:innerWidth />
 
-<div class='h-full w-full flex flex-row px-2 font-medium overflow-x-scroll
-            text-lg text-center text-black dark:text-white overflow-y-scroll'>
-    <div class='grid grow relative pl-8'
-         style='height: calc(100% - 1.75rem);'
+<div class='schedule-view h-full w-full flex flex-row px-0 font-medium overflow-auto
+        text-lg text-center text-black dark:text-white min-h-0'>
+    <div class='grid grow relative pl-12 2xl:pl-14 bg-white dark:bg-bgSecondaryDark'
+     style='min-height: {scheduleHeightPx}px;'
          class:grid-cols-5={schedule.other.length == 0}
          class:grid-cols-6={schedule.other.length > 0}
          bind:this={elt}
     >
-        
         <!-- Background lines for the schedule -->
          <!-- format-check exempt 2 -->
         <div class='absolute timelines z-0 h-full top-[1.75rem]' 
@@ -176,6 +180,20 @@ Copyright (C) 2026 Andrew Cupps
                 {bgHeight}
             />
         {/if}
+
+        {#if !hasScheduledClasses}
+            <div class='absolute inset-0 z-30 flex items-center justify-center
+                        pointer-events-none'>
+                <div class='text-center rounded-lg border border-outlineLight
+                            dark:border-outlineDark px-4 py-3 bg-bgLight
+                            dark:bg-bgDark shadow-sm'>
+                    <div class='font-semibold'>No courses in this schedule yet.</div>
+                    <div class='text-sm opacity-75'>
+                        Use the Course Planner panel to add classes.
+                    </div>
+                </div>
+            </div>
+        {/if}
     </div>
 </div>
 
@@ -184,6 +202,7 @@ Copyright (C) 2026 Andrew Cupps
     && courseInfoCourse !== null 
     && courseInfoSection !== null}
 <div class='absolute z-10 shadow-md bottom-[0.75rem]
+    course-info-panel
         rounded-xl border-2 border-outlineLight
         dark:border-outlineDark bg-bgSecondaryLight
         dark:bg-bgSecondaryDark text-left px-2 py-1'

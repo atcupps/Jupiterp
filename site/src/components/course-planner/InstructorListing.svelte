@@ -6,15 +6,16 @@ Copyright (C) 2026 Andrew Cupps
 -->
 <script lang='ts'>
     import type { Instructor } from "@jupiterp/jupiterp";
-    import { ptLinkFromSlug } from "../../../lib/course-planner/Professors";
-    import { ProfsLookupStore } from "../../../stores/CoursePlannerStores";
+    import { ptLinkFromSlug } from "$lib/course-planner/Professors";
+    import { ProfsLookupStore } from "../../stores/CoursePlannerStores";
 
     export let instructor: string = 'No instructor';
 
-    let profs: Record<string, Instructor>;
-    ProfsLookupStore.subscribe((lookup) => { profs = lookup });
+    let profs: Record<string, Instructor> = {};
+    ProfsLookupStore.subscribe((lookup: Record<string, Instructor>) => {
+        profs = lookup;
+    });
 
-    // Convert rating to a percentage for CSS
     function convertRating(rating: string | null): number {
         if (rating == null) {
             throw Error(
@@ -25,7 +26,6 @@ Copyright (C) 2026 Andrew Cupps
     }
 
     function handleLinkClick(event: MouseEvent) {
-        // Prevent the event from propagating to the button
         event.stopPropagation();
     }
 
@@ -45,7 +45,7 @@ Copyright (C) 2026 Andrew Cupps
                         removeHoverSection();
                     }}
                     on:mouseleave={() => {
-                        profsHover = false
+                        profsHover = false;
                         removeHoverSection();
                     }}
                     on:click={handleLinkClick}
@@ -79,12 +79,9 @@ Copyright (C) 2026 Andrew Cupps
                             rgba(115, 53, 26, 1) var(--rating), 
                             rgba(115, 53, 26, 1) 100%);
         
-        /* Set the background size and repeat properties. */
         background-size: 100%;
         background-repeat: repeat;
 
-        /* Use the text as a mask for the background. */
-        /* This will show the gradient as a text color. */
         background-clip: text;
         -webkit-text-fill-color: transparent; 
         -moz-background-clip: text;

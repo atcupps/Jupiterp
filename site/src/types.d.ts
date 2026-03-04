@@ -63,7 +63,9 @@ interface SelectionDifferences {
  */
 interface StoredSchedule {
     scheduleName: string,
-    selections: ScheduleSelection[]
+    selections: ScheduleSelection[],
+    term: 'Fall' | 'Spring' | 'Winter' | 'Summer',
+    year: number,
 }
 
 /**

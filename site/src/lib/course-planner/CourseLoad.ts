@@ -23,6 +23,10 @@ import type {
 import { assignColorNumbers, modernizeSelections } from "./Modernization";
 import { client } from "$lib/client";
 import {
+    getDefaultTermYear,
+    normalizeStoredSchedule
+} from "./Terms";
+import {
     CurrentScheduleStore,
     NonselectedScheduleStore
 } from "../../stores/CoursePlannerStores";
@@ -68,6 +72,7 @@ function isLegacyStoredSchedule(parsed: any[]): boolean {
 }
 
 export function resolveStoredSchedules(storedRaw: string): StoredSchedule[] {
+    const defaultTermYear = getDefaultTermYear();
     const parsed = JSON.parse(storedRaw);
     if (!Array.isArray(parsed)) {
         return [];
@@ -79,18 +84,20 @@ export function resolveStoredSchedules(storedRaw: string): StoredSchedule[] {
 
     if (isLegacyStoredSchedule(parsed)) {
         return (parsed as LegacyStoredSchedule[]).map((legacy) => {
-            return {
+            return normalizeStoredSchedule({
                 scheduleName: legacy.scheduleName,
                 selections: modernizeSelections(legacy.selections)
-            };
+            }, defaultTermYear);
         });
     }
 
     return (parsed as StoredSchedule[]).map((stored) => {
-        return {
+        return normalizeStoredSchedule({
             scheduleName: stored.scheduleName,
-            selections: stored.selections
-        };
+            selections: stored.selections,
+            term: stored.term,
+            year: stored.year,
+        }, defaultTermYear);
     });
 }
 
@@ -286,20 +293,26 @@ export async function ensureUpToDateAndSetStores(
         });
         updatedNonSelectedSchedules.push({
             scheduleName: stored.scheduleName,
-            selections: updatedSelections
+            selections: updatedSelections,
+            term: stored.term,
+            year: stored.year,
         });
     });
 
     CurrentScheduleStore.set({
         scheduleName: current.scheduleName,
-        selections: assignColorNumbers(updatedCurrentSelections)
+        selections: assignColorNumbers(updatedCurrentSelections),
+        term: current.term,
+        year: current.year,
     });
 
     NonselectedScheduleStore.set(
         updatedNonSelectedSchedules.map((stored) => {
             return {
                 scheduleName: stored.scheduleName,
-                selections: assignColorNumbers(stored.selections)
+                selections: assignColorNumbers(stored.selections),
+                term: stored.term,
+                year: stored.year,
             };
         })
     );

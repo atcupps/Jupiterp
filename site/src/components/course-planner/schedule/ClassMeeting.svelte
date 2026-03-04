@@ -37,9 +37,13 @@ Copyright (C) 2026 Andrew Cupps
 
     let selections: ScheduleSelection[];
     let scheduleName: string;
+    let scheduleTerm: 'Fall' | 'Spring' | 'Winter' | 'Summer';
+    let scheduleYear: number;
     CurrentScheduleStore.subscribe((stored) => {
         selections = stored.selections;
         scheduleName = stored.scheduleName;
+        scheduleTerm = stored.term;
+        scheduleYear = stored.year;
     });
 
     const differences: SelectionDifferences = meeting.differences;
@@ -125,7 +129,9 @@ Copyright (C) 2026 Andrew Cupps
                 selections: [
                     ...selections.slice(0, index),
                     ...selections.slice(index + 1)
-                ]
+                ],
+                term: scheduleTerm,
+                year: scheduleYear,
             });
         }
     }
@@ -157,12 +163,14 @@ Copyright (C) 2026 Andrew Cupps
 
 <svelte:window bind:innerHeight bind:innerWidth />
 
-<button class='absolute w-full justify-center text-black 
-                flex flex-col rounded-lg pb-1 justify-items-center'
+<button class='absolute w-full justify-center text-black dark:text-white
+        flex flex-col rounded-lg pb-1 justify-items-center
+    border border-outlineLight dark:border-outlineDark shadow-sm
+    overflow-hidden whitespace-normal break-words'
         bind:this={elt} on:click={toggleCourseInfo}
         style=' top: {(decStartTime - earliestClassStart) / boundDiff * 100}%;
                 height: {(decEndTime - decStartTime) / boundDiff * 100}%;
-                background-color: {getColorFromNumber(meeting.colorNumber)};  
+                background-color: {getColorFromNumber(meeting.colorNumber)};
                 opacity: {meeting.hover ? 0.4 : 1.0};
                 width: {(1 / meeting.conflictTotal) * 100}%;
                 left: {
@@ -263,7 +271,7 @@ Copyright (C) 2026 Andrew Cupps
 
 <style>
     .translucentGray {
-        background-color: rgba(0, 0, 0, 0.07)
+        background-color: rgba(148, 163, 184, 0.12)
     }
 
     .otherCategoryClassMeeting {

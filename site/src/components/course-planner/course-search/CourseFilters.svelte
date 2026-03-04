@@ -20,8 +20,11 @@ Copyright (C) 2026 Andrew Cupps
         matchingStandardizedProfessorNames
     } from "$lib/course-planner/CourseSearch";
 
-    let appliedFiltersCount = 0;
-    let showFiltersMenu = false;
+    export let appliedFiltersCount = 0;
+    export let showFiltersMenu = false;
+    export let showHeaderButton = true;
+    export let resetNonce = 0;
+    let previousResetNonce = resetNonce;
     export let showGenEdMenu = false;
     let genEdSelections: GenEd[] = [];
     let onlyOpenSections = false;
@@ -32,6 +35,11 @@ Copyright (C) 2026 Andrew Cupps
     const defaultMaxCredits = 20;
     let minCredits: number = defaultMinCredits;
     let maxCredits: number = defaultMaxCredits;
+
+    $: if (resetNonce !== previousResetNonce) {
+        previousResetNonce = resetNonce;
+        resetFilters();
+    }
 
     $: {
         const params: FilterParams = {
@@ -96,25 +104,27 @@ Copyright (C) 2026 Andrew Cupps
 <div class="flex flex-col
             text-secCodesLight dark:text-[#8892a8]">
     <!-- Filters button -->
-    <div class="flex flex-row items-center gap-1 justify-between
-                 px-1 py-0.5 mt-1">
-        <button class="grow flex flex-row
-                    text-sm items-center rounded-md
-                    hover:text-textLight dark:hover:text-textDark"
-                title="Show/hide course search filters"
-                on:click={() => { showFiltersMenu = !showFiltersMenu }}>
-            <AdjustmentsHorizontalOutline class="w-4 h-4 mr-1" />
-            <!-- format-check exempt 1 -->
-            {appliedFiltersCount} filter{appliedFiltersCount === 1 ? '' : 's'} applied
-        </button>
+    {#if showHeaderButton}
+        <div class="flex flex-row items-center gap-1 justify-between
+                    px-1 py-0.5 mt-1">
+            <button class="grow flex flex-row
+                        text-sm items-center rounded-md
+                        hover:text-textLight dark:hover:text-textDark"
+                    title="Show/hide course search filters"
+                    on:click={() => { showFiltersMenu = !showFiltersMenu }}>
+                <AdjustmentsHorizontalOutline class="w-4 h-4 mr-1" />
+                <!-- format-check exempt 1 -->
+                {appliedFiltersCount} filter{appliedFiltersCount === 1 ? '' : 's'} applied
+            </button>
 
-        <button class="text-right text-sm
-                    hover:text-textLight dark:hover:text-textDark"
-                on:click={resetFilters}
-                title="Clear all filters">
-            Clear filters
-        </button>
-    </div>
+            <button class="text-right text-sm
+                        hover:text-textLight dark:hover:text-textDark"
+                    on:click={resetFilters}
+                    title="Clear all filters">
+                Clear filters
+            </button>
+        </div>
+    {/if}
 
     <!-- Filters menu -->
     {#if showFiltersMenu}

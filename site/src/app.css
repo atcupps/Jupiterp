@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+@page {
+    margin: 0.4in;
+}
+
 body {
     background-color: white;
     height: 100svh;
@@ -56,4 +60,107 @@ body {
         background-color: #3F475A;
         border-radius: 8px;
     }
+}
+
+@media print {
+    [style*='position: fixed'],
+    .absolute.z-\[80\],
+    .z-\[52\],
+    .z-\[51\] {
+        display: none !important;
+    }
+
+    body * {
+        visibility: hidden;
+    }
+
+    .schedule-print-pane,
+    .schedule-print-pane * {
+        visibility: visible;
+    }
+
+    .schedule-print-pane {
+        position: static !important;
+        inset: auto !important;
+        width: 100%;
+        min-height: 0 !important;
+    }
+
+    body {
+        background: #ffffff !important;
+        height: auto;
+        margin: 0;
+    }
+
+    nav,
+    header,
+    .course-search,
+    .schedule-list-pane,
+    .top-nav,
+    .sidebar,
+    .filters-panel,
+    .add-classes-panel,
+    .export-button,
+    .delete-button,
+    .add-schedule-button,
+    .schedule-screen-header,
+    .schedule-context-menu,
+    .course-info-panel,
+    [aria-label='Resize schedule list sidebar'] {
+        display: none !important;
+    }
+
+    .schedule-print-pane {
+        border: none !important;
+        background: #ffffff !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+    }
+
+    .schedule-view {
+        overflow: visible !important;
+        padding: 0 !important;
+    }
+
+    .schedule-page {
+        overflow: visible !important;
+        height: auto !important;
+        width: 100% !important;
+        max-width: none !important;
+    }
+
+    .schedule-print-pane,
+    .schedule-view,
+    .schedule-view > .grid {
+        width: 100% !important;
+        max-width: none !important;
+        min-width: 0 !important;
+    }
+
+    .schedule-view .sticky {
+        position: static !important;
+    }
+
+    .print-only {
+        display: block !important;
+    }
+
+    .schedule-page h1 {
+        font-size: 1.25rem;
+        margin-bottom: 0.15rem;
+    }
+
+    .schedule-page p {
+        font-size: 0.9rem;
+        margin-bottom: 0.6rem;
+        color: #4b5563;
+    }
+
+    .schedule-view {
+        font-size: 0.8rem;
+    }
+}
+
+.print-only {
+    display: none;
 }
