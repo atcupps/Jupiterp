@@ -7,7 +7,12 @@
  * @fileoverview This file is the endpoint for Jupiterp's sitemap.xml file.
  */
 
+export const prerender = true;
+
 export async function GET() {
+    const siteUrl = (process.env.PUBLIC_SITE_URL ?? 'https://www.jupiterp.com')
+        .replace(/\/+$/, '');
+
     const pages = [
         { url: '/', changefreq: 'daily', priority: 0.7 },
         { url: '/about', changefreq: 'monthly', priority: 0.3 },
@@ -22,7 +27,7 @@ export async function GET() {
                         ${pages
                             .map(page => {
                                 return `<url>
-                            <loc>https://www.jupiterp.com${page.url}</loc>
+                            <loc>${siteUrl}${page.url}</loc>
                             <changefreq>${page.changefreq}</changefreq>
                             <priority>${page.priority}</priority>
                         </url>`;
