@@ -6,7 +6,6 @@ Copyright (C) 2026 Andrew Cupps
  -->
 <script lang="ts">
     import CourseSearch from '../components/course-planner/course-search/CourseSearch.svelte';
-    import ScheduleManager from '../components/course-planner/schedule/ScheduleManager.svelte';
     import CurrentSchedulePanel from '../components/course-planner/schedule/CurrentSchedulePanel.svelte';
     import { onDestroy, onMount } from 'svelte';
     import {
@@ -334,8 +333,6 @@ Copyright (C) 2026 Andrew Cupps
         return JSON.stringify(finalSelections);
     }
 
-    type PlannerTab = 'schedules' | 'add-classes';
-    let activePlannerTab: PlannerTab = 'schedules';
     let sidebarWidth = 260;
     let addClassesLayoutContainer: HTMLDivElement;
     let resizingAddClassesSidebar = false;
@@ -373,39 +370,12 @@ Copyright (C) 2026 Andrew Cupps
 <div class='fixed flex flex-col w-full px-2 lg:px-3
             text-textLight dark:text-textDark
             top-[3rem] lg:top-[3.5rem] xl:top-[4rem] bottom-0'>
-    <div class='flex flex-row gap-1 pb-2 pt-3'>
-        <button class='rounded-md px-3 py-1 text-sm border
-                        border-outlineLight dark:border-outlineDark
-                        hover:bg-hoverLight dark:hover:bg-hoverDark'
-                class:bg-hoverLight={activePlannerTab === 'schedules'}
-                class:dark:bg-hoverDark={activePlannerTab === 'schedules'}
-                on:click={() => activePlannerTab = 'schedules'}>
-            Schedules
-        </button>
-        <button class='rounded-md px-3 py-1 text-sm border
-                        border-outlineLight dark:border-outlineDark
-                        hover:bg-hoverLight dark:hover:bg-hoverDark'
-                class:bg-hoverLight={activePlannerTab === 'add-classes'}
-                class:dark:bg-hoverDark={activePlannerTab === 'add-classes'}
-                on:click={() => activePlannerTab = 'add-classes'}>
-            Add Classes
-        </button>
-    </div>
-
     <div class='grow min-h-0 flex flex-row pt-2'
         bind:this={addClassesLayoutContainer}
         class:select-none={resizingAddClassesSidebar}>
-        {#if activePlannerTab === 'schedules'}
-            <ScheduleManager bind:sidebarWidth
-                />
-        {:else}
-            <CourseSearch
-                {sidebarWidth}
-                {activeScheduleLabel}
-                onChangeToSchedules={() => {
-                    activePlannerTab = 'schedules';
-                }} />
-        {/if}
+        <CourseSearch
+            {sidebarWidth}
+            {activeScheduleLabel} />
 
         <button class='flex w-2 cursor-col-resize items-center justify-center
                         hover:bg-hoverLight dark:hover:bg-hoverDark rounded-sm transition-colors'

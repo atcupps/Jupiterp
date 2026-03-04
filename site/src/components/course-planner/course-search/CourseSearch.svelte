@@ -24,7 +24,6 @@ Copyright (C) 2026 Andrew Cupps
     const FILTER_SCROLL_COLLAPSE_THRESHOLD = 100;
 
     export let activeScheduleLabel: string = 'Schedule 1';
-    export let onChangeToSchedules: () => void = () => {};
     export let sidebarWidth: number = 300;
 
     let hoveredSection: ScheduleSelection | null;
@@ -133,10 +132,6 @@ Copyright (C) 2026 Andrew Cupps
                 bg-bgSecondaryLight dark:bg-bgSecondaryDark px-2 py-1 mb-1
                 text-sm'>
         <div class='font-semibold truncate'>Adding classes to: {activeScheduleLabel}</div>
-        <button class='text-xs underline opacity-80 hover:opacity-100'
-                on:click={onChangeToSchedules}>
-            Change schedule
-        </button>
     </div>
 
     <div class='flex flex-col w-full border-solid relative
