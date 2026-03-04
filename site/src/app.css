@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+@page {
+    margin: 0.4in;
+}
+
 body {
     background-color: white;
     height: 100svh;
@@ -76,10 +80,10 @@ body {
     }
 
     .schedule-print-pane {
-        position: absolute;
-        inset: 0;
+        position: static !important;
+        inset: auto !important;
         width: 100%;
-        min-height: 100%;
+        min-height: 0 !important;
     }
 
     body {
@@ -110,7 +114,7 @@ body {
         border: none !important;
         background: #ffffff !important;
         box-shadow: none !important;
-        padding: 0.5in !important;
+        padding: 0 !important;
     }
 
     .schedule-view {
