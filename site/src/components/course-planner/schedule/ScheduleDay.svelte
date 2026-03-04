@@ -23,7 +23,7 @@ Copyright (C) 2026 Andrew Cupps
         {name}
     </div>
     <div class='relative top-[14px] border-l border-divBorderLight
-                dark:border-divBorderDark' 
+                dark:border-divBorderDark overflow-hidden' 
         style='height: {bgHeight}px;'>
         {#each classes as classMeeting, 
                             index (`${index}-${classMeeting.instructors}`)}

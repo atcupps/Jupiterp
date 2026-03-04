@@ -57,3 +57,76 @@ body {
         border-radius: 8px;
     }
 }
+
+@media print {
+    body * {
+        visibility: hidden;
+    }
+
+    .schedule-print-pane,
+    .schedule-print-pane * {
+        visibility: visible;
+    }
+
+    .schedule-print-pane {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        min-height: 100%;
+    }
+
+    body {
+        background: #ffffff !important;
+        height: auto;
+        margin: 0;
+    }
+
+    nav,
+    header,
+    .course-search,
+    .schedule-list-pane,
+    .top-nav,
+    .sidebar,
+    .filters-panel,
+    .add-classes-panel,
+    .export-button,
+    .delete-button,
+    .add-schedule-button {
+        display: none !important;
+    }
+
+    .schedule-print-pane {
+        border: none !important;
+        background: #ffffff !important;
+        box-shadow: none !important;
+        padding: 0.5in !important;
+    }
+
+    .schedule-view {
+        overflow: visible !important;
+        padding: 0 !important;
+    }
+
+    .print-only {
+        display: block !important;
+    }
+
+    .schedule-page h1 {
+        font-size: 1.25rem;
+        margin-bottom: 0.15rem;
+    }
+
+    .schedule-page p {
+        font-size: 0.9rem;
+        margin-bottom: 0.6rem;
+        color: #4b5563;
+    }
+
+    .schedule-view {
+        font-size: 0.8rem;
+    }
+}
+
+.print-only {
+    display: none;
+}

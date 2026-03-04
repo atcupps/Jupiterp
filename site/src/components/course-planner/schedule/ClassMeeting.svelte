@@ -59,6 +59,7 @@ Copyright (C) 2026 Andrew Cupps
     let decEndTime: number;
     let hasLocation: boolean = true;
     let location: string;
+    let accentColor = '#cbd5e1';
 
     $: if (meeting.meeting != null) {
         secCode = meeting.sectionCode;
@@ -96,6 +97,8 @@ Copyright (C) 2026 Andrew Cupps
             secCode = meeting.sectionCode;
         }
     }
+
+    $: accentColor = getColorFromNumber(meeting.colorNumber);
 
     let elt: HTMLButtonElement;
     let innerHeight: number;
@@ -163,13 +166,15 @@ Copyright (C) 2026 Andrew Cupps
 
 <svelte:window bind:innerHeight bind:innerWidth />
 
-<button class='absolute w-full justify-center text-black 
+<button class='absolute w-full justify-center text-black dark:text-white
         flex flex-col rounded-lg pb-1 justify-items-center
-        border border-black border-opacity-10 shadow-sm'
+    border border-outlineLight dark:border-outlineDark shadow-sm
+    overflow-hidden whitespace-normal break-words'
         bind:this={elt} on:click={toggleCourseInfo}
         style=' top: {(decStartTime - earliestClassStart) / boundDiff * 100}%;
                 height: {(decEndTime - decStartTime) / boundDiff * 100}%;
-                background-color: {getColorFromNumber(meeting.colorNumber)};  
+                background-color: #ffffff;
+                border-left: 4px solid {accentColor};
                 opacity: {meeting.hover ? 0.4 : 1.0};
                 width: {(1 / meeting.conflictTotal) * 100}%;
                 left: {
@@ -270,7 +275,7 @@ Copyright (C) 2026 Andrew Cupps
 
 <style>
     .translucentGray {
-        background-color: rgba(0, 0, 0, 0.07)
+        background-color: rgba(148, 163, 184, 0.12)
     }
 
     .otherCategoryClassMeeting {

@@ -369,9 +369,7 @@ Copyright (C) 2026 Andrew Cupps
 
     {#if activePlannerTab === 'schedules'}
         <div class='grow min-h-0 pb-2'>
-            <ScheduleManager onSwitchToAddClasses={() => {
-                activePlannerTab = 'add-classes';
-            }} />
+            <ScheduleManager />
         </div>
     {:else}
         <!-- Button to toggle course search on mobile -->

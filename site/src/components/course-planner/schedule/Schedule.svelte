@@ -49,6 +49,7 @@ Copyright (C) 2026 Andrew Cupps
     })
 
     let bgHeight: number;
+    let scheduleHeightPx = 0;
 
     // Keep track of the range of times to display on the Schedule
     let earliestClassStart: number = 8;
@@ -129,16 +130,17 @@ Copyright (C) 2026 Andrew Cupps
     $: for (let time = earliestClassStart; time < latestClassEnd; time += 1) {
         alternatingRows.push(time);
     }
+    $: scheduleHeightPx = Math.max(640, (latestClassEnd - earliestClassStart) * 88);
 </script>
 
 <svelte:window bind:innerWidth />
 
-<div class='h-full w-full flex flex-row px-2 font-medium overflow-x-scroll
-            text-lg text-center text-black dark:text-white overflow-y-scroll'>
+<div class='schedule-view h-full w-full flex flex-row px-2 font-medium overflow-auto
+        text-lg text-center text-black dark:text-white min-h-0'>
     <div class='grid grow relative pl-8 rounded-xl border
                 border-outlineLight dark:border-outlineDark
                 bg-bgSecondaryLight dark:bg-bgSecondaryDark'
-         style='height: calc(100% - 1.75rem);'
+     style='min-height: {scheduleHeightPx}px;'
          class:grid-cols-5={schedule.other.length == 0}
          class:grid-cols-6={schedule.other.length > 0}
          bind:this={elt}
