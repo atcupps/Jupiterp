@@ -13,6 +13,7 @@ import {
     PUBLIC_SUPABASE_URL,
 } from "$env/static/public";
 import type { StoredSchedule } from "../types";
+import type { FriendVisibility } from "$lib/friends/types";
 
 interface UserScheduleRow {
     user_id: string,
@@ -20,6 +21,14 @@ interface UserScheduleRow {
         currentSchedule: StoredSchedule,
         nonselectedSchedules: StoredSchedule[],
     }
+}
+
+export interface UserProfileRow {
+    id: string,
+    email: string | null,
+    display_name: string | null,
+    friend_code: string,
+    friends_visibility: FriendVisibility,
 }
 
 let initialized = false;
@@ -76,6 +85,21 @@ export async function getAuthUser(): Promise<User | null> {
     }
 
     return data.user;
+}
+
+export async function getAccessToken(): Promise<string | null> {
+    if (!isSupabaseConfigured()) {
+        return null;
+    }
+
+    const supabase = requireSupabase();
+    const { data, error } = await supabase.auth.getSession();
+    if (error) {
+        console.error("Failed to get auth session:", error.message);
+        return null;
+    }
+
+    return data.session?.access_token ?? null;
 }
 
 export function onAuthStateChanged(callback: (user: User | null) => void) {
@@ -190,6 +214,97 @@ export async function saveUserSchedules(
         }, {
             onConflict: "user_id",
         });
+
+    if (error) {
+        throw new Error(error.message);
+    }
+}
+
+export async function ensureUserProfile(): Promise<UserProfileRow | null> {
+    const user = await getAuthUser();
+    if (!user) {
+        return null;
+    }
+
+    const supabase = requireSupabase() as unknown as {
+        from: (table: string) => {
+            select: (query: string) => {
+                eq: (column: string, value: string) => {
+                    maybeSingle: <T>() => Promise<{
+                        data: T | null,
+                        error: { message: string } | null,
+                    }>
+                }
+            },
+            insert: (values: Record<string, unknown>) => {
+                select: (query: string) => {
+                    single: <T>() => Promise<{
+                        data: T | null,
+                        error: { message: string } | null,
+                    }>
+                }
+            },
+            update: (values: Record<string, unknown>) => {
+                eq: (column: string, value: string) => Promise<{
+                    error: { message: string } | null,
+                }>
+            },
+        }
+    };
+
+    const { data, error } = await supabase
+        .from("profiles")
+        .select("id,email,display_name,friend_code,friends_visibility")
+        .eq("id", user.id)
+        .maybeSingle<UserProfileRow>();
+
+    if (error) {
+        throw new Error(error.message);
+    }
+
+    if (data) {
+        return data;
+    }
+
+    const { data: inserted, error: insertError } = await supabase
+        .from("profiles")
+        .insert({
+            id: user.id,
+            email: user.email ?? null,
+            display_name: user.email ?? null,
+        })
+        .select("id,email,display_name,friend_code,friends_visibility")
+        .single<UserProfileRow>();
+
+    if (insertError) {
+        throw new Error(insertError.message);
+    }
+
+    return inserted;
+}
+
+export async function updateFriendsVisibility(
+    value: FriendVisibility,
+): Promise<void> {
+    const user = await getAuthUser();
+    if (!user) {
+        throw new Error("Sign in required");
+    }
+
+    const supabase = requireSupabase() as unknown as {
+        from: (table: string) => {
+            update: (values: Record<string, unknown>) => {
+                eq: (column: string, value: string) => Promise<{
+                    error: { message: string } | null,
+                }>
+            },
+        }
+    };
+
+    const { error } = await supabase
+        .from("profiles")
+        .update({ friends_visibility: value })
+        .eq("id", user.id);
 
     if (error) {
         throw new Error(error.message);

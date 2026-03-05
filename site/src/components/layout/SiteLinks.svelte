@@ -23,6 +23,8 @@ Copyright (C) 2026 Andrew Cupps
 <div class='grow justify-end self-center hidden lg:flex'>
     <NavBarElement link={`${base}/profile`} text='Profile'
                                         isOnPage={currentPage == '/profile'}/>
+    <NavBarElement link={`${base}/friends`} text='Friends'
+                                        isOnPage={currentPage == '/friends'}/>
     <NavBarElement link={`${base}/`} text='Course Planner'
                                         isOnPage={currentPage == '/'}/>
     <NavBarElement link={`${base}/bugs`} text='Report an Issue' 
@@ -83,6 +85,9 @@ Copyright (C) 2026 Andrew Cupps
     </div>
     <div class='w-full my-2 text-lg'>
         <NavBarElement link={`${base}/`} text='Course Planner' fullWidth={true}/>
+    </div>
+    <div class='w-full my-2 text-lg'>
+        <NavBarElement link={`${base}/friends`} text='Friends' fullWidth={true}/>
     </div>
     <div class='w-full my-2 text-lg'>
         <NavBarElement link={`${base}/bugs`} text='Report an Issue' fullWidth={true}/>

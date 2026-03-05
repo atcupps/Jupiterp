@@ -8,6 +8,7 @@ Copyright (C) 2026 Andrew Cupps
     import { onMount } from 'svelte';
     import { base } from '$app/paths';
     import {
+        ensureUserProfile,
         getAuthUser,
         isSupabaseConfigured,
         onAuthStateChanged,
@@ -28,6 +29,7 @@ Copyright (C) 2026 Andrew Cupps
     let major: string = '';
     let friendCodeInput: string = '';
     let generatedFriendCode: string = '';
+    let friendsVisibility: 'full' | 'busy_free' | 'off' = 'full';
 
     function getAuthRedirectTo(): string {
         const url = new URL(window.location.href);
@@ -63,6 +65,24 @@ Copyright (C) 2026 Andrew Cupps
             .padEnd(8, '0');
         generatedFriendCode = randomCode;
         localStorage.setItem('profileFriendCode', randomCode);
+    }
+
+    async function loadProfileFromSupabase() {
+        if (!authEnabled) {
+            return;
+        }
+
+        try {
+            const profile = await ensureUserProfile();
+            if (!profile) {
+                return;
+            }
+
+            generatedFriendCode = profile.friend_code;
+            friendsVisibility = profile.friends_visibility;
+        } catch (error) {
+            console.error('Unable to load profile from Supabase:', error);
+        }
     }
 
     function saveMajor() {
@@ -144,6 +164,7 @@ Copyright (C) 2026 Andrew Cupps
             authUserId = user?.id ?? null;
             userEmail = user?.email ?? null;
             refreshGeneratedFriendCode();
+            loadProfileFromSupabase();
         });
 
         getAuthUser().then((user) => {
@@ -151,6 +172,7 @@ Copyright (C) 2026 Andrew Cupps
             authUserId = user?.id ?? null;
             userEmail = user?.email ?? null;
             refreshGeneratedFriendCode();
+            loadProfileFromSupabase();
         });
 
         return () => unsubscribe();
@@ -246,6 +268,7 @@ Copyright (C) 2026 Andrew Cupps
                     p-3 flex flex-col gap-1'>
             <div class='text-xs opacity-70'>Your friend code</div>
             <div class='font-semibold tracking-wider'>{generatedFriendCode}</div>
+            <div class='text-xs opacity-70'>Friends see: {friendsVisibility}</div>
             <label class='text-xs opacity-70 mt-2' for='friend-code-field'>
                 Add friend by code
             </label>
