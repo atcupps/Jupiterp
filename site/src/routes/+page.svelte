@@ -15,13 +15,19 @@ Copyright (C) 2026 Andrew Cupps
     } from '../lib/course-planner/CourseLoad';
     import { getProfsLookup } from '$lib/course-planner/CourseSearch';
     import {
+        ActiveViewerStore,
+        ScheduleReadOnlyStore,
+        ScheduleVisibilityStore,
         ProfsLookupStore,
         CurrentScheduleStore,
         NonselectedScheduleStore,
-        DepartmentsStore
+        DepartmentsStore,
+        ViewerNoticeStore,
+        ViewerOptionsStore,
     } from '../stores/CoursePlannerStores';
     import { client } from '$lib/client';
     import {
+        getAccessToken,
         getAuthUser,
         isSupabaseConfigured,
         loadUserSchedules,
@@ -39,6 +45,7 @@ Copyright (C) 2026 Andrew Cupps
         type InstructorsConfig, 
         type InstructorsResponse
     } from '@jupiterp/jupiterp';
+    import type { FriendVisibility } from '$lib/friends/types';
     import type { ScheduleSelection, StoredSchedule } from '../types';
 
     // Function to retreive professor data; called in `onMount`.
@@ -91,13 +98,27 @@ Copyright (C) 2026 Andrew Cupps
 
     // Keep track of chosen sections
     let currentSchedule: StoredSchedule;
+    let activeViewerId = 'self';
+    let isViewingSelf = true;
+    let lastHandledViewerId: string | null = null;
+    let accessToken: string | null = null;
+    let ownCurrentSchedule: StoredSchedule | null = null;
+    let ownNonselectedSchedules: StoredSchedule[] = [];
+    let hasCapturedOwnState = false;
+
     let hasReadLocalStorage: boolean = false;
     let authUserId: string | null = null;
     let authUnsubscribe: (() => void) | null = null;
     let cloudSyncTimeout: ReturnType<typeof setTimeout> | null = null;
+
+    ActiveViewerStore.subscribe((stored) => {
+        activeViewerId = stored;
+    });
+
     CurrentScheduleStore.subscribe((stored) => {
-        if (hasReadLocalStorage) {
-            currentSchedule = stored;
+        currentSchedule = stored;
+
+        if (hasReadLocalStorage && isViewingSelf) {
 
             // Save to local storage
             if (currentSchedule) {
@@ -122,8 +143,9 @@ Copyright (C) 2026 Andrew Cupps
     let nonselectedSchedules: StoredSchedule[] = [];
     // Save non-selected schedules to local storage
     NonselectedScheduleStore.subscribe((stored) => {
-        if (hasReadLocalStorage) {
-            nonselectedSchedules = stored;
+        nonselectedSchedules = stored;
+
+        if (hasReadLocalStorage && isViewingSelf) {
 
             // Save to local storage
             if (nonselectedSchedules) {
@@ -169,7 +191,7 @@ Copyright (C) 2026 Andrew Cupps
     }
 
     function queueCloudSync() {
-        if (!hasReadLocalStorage || !authUserId || !currentSchedule) {
+        if (!hasReadLocalStorage || !authUserId || !currentSchedule || !isViewingSelf) {
             return;
         }
 
@@ -197,7 +219,144 @@ Copyright (C) 2026 Andrew Cupps
         }, 400);
     }
 
+    function cloneSchedule(schedule: StoredSchedule): StoredSchedule {
+        return {
+            scheduleName: schedule.scheduleName,
+            selections: schedule.selections,
+            term: schedule.term,
+            year: schedule.year,
+        };
+    }
+
+    async function loadViewerOptions() {
+        if (!accessToken) {
+            ViewerOptionsStore.set([
+                { id: 'self', label: 'You', type: 'self' },
+            ]);
+            return;
+        }
+
+        try {
+            const response = await fetch('/api/friends/view-options', {
+                headers: {
+                    authorization: `Bearer ${accessToken}`,
+                },
+            });
+
+            if (!response.ok) {
+                ViewerOptionsStore.set([
+                    { id: 'self', label: 'You', type: 'self' },
+                ]);
+                return;
+            }
+
+            const payload = await response.json() as {
+                selfName: string,
+                friends: Array<{ id: string, label: string }>,
+            };
+
+            ViewerOptionsStore.set([
+                {
+                    id: 'self',
+                    label: `You (${payload.selfName})`,
+                    type: 'self',
+                },
+                ...payload.friends.map((friend) => {
+                    return {
+                        id: friend.id,
+                        label: friend.label,
+                        type: 'friend' as const,
+                    };
+                }),
+            ]);
+        } catch (error) {
+            console.error('Unable to load viewer options:', error);
+            ViewerOptionsStore.set([
+                { id: 'self', label: 'You', type: 'self' },
+            ]);
+        }
+    }
+
+    async function handleViewerSelection(viewerId: string) {
+        if (viewerId === 'self') {
+            isViewingSelf = true;
+            ScheduleReadOnlyStore.set(false);
+            ScheduleVisibilityStore.set('full');
+            ViewerNoticeStore.set(null);
+
+            if (hasCapturedOwnState && ownCurrentSchedule) {
+                CurrentScheduleStore.set(cloneSchedule(ownCurrentSchedule));
+                NonselectedScheduleStore.set([...ownNonselectedSchedules]);
+            }
+            return;
+        }
+
+        if (!accessToken || !currentSchedule) {
+            ViewerNoticeStore.set('Sign in to view friend schedules.');
+            ActiveViewerStore.set('self');
+            return;
+        }
+
+        if (!hasCapturedOwnState) {
+            ownCurrentSchedule = cloneSchedule(currentSchedule);
+            ownNonselectedSchedules = [...nonselectedSchedules];
+            hasCapturedOwnState = true;
+        }
+
+        isViewingSelf = false;
+        ScheduleReadOnlyStore.set(true);
+
+        const url = new URL('/api/friends/schedule', window.location.origin);
+        url.searchParams.set('friendId', viewerId);
+        url.searchParams.set('term', currentSchedule.term);
+        url.searchParams.set('year', currentSchedule.year.toString());
+
+        try {
+            const response = await fetch(url.toString(), {
+                headers: {
+                    authorization: `Bearer ${accessToken}`,
+                },
+            });
+            const payload = await response.json() as {
+                visibility: FriendVisibility,
+                friendName: string,
+                schedule: StoredSchedule | null,
+                message: string | null,
+            };
+
+            ScheduleVisibilityStore.set(payload.visibility);
+
+            if (payload.visibility === 'off' || !payload.schedule) {
+                ViewerNoticeStore.set(
+                    payload.message ?? `${payload.friendName}'s schedule is unavailable.`
+                );
+                CurrentScheduleStore.set({
+                    scheduleName: `${payload.friendName}`,
+                    selections: [],
+                    term: currentSchedule.term,
+                    year: currentSchedule.year,
+                });
+                NonselectedScheduleStore.set([]);
+                return;
+            }
+
+            CurrentScheduleStore.set(payload.schedule);
+            NonselectedScheduleStore.set([]);
+            const suffix = payload.visibility === 'busy_free'
+                ? ' (busy/free view)'
+                : '';
+            ViewerNoticeStore.set(`Viewing ${payload.friendName}'s schedule${suffix}.`);
+        } catch (error) {
+            console.error('Unable to load friend schedule:', error);
+            ViewerNoticeStore.set('Unable to load this friend schedule right now.');
+        }
+    }
+
     onMount(() => {
+        ScheduleReadOnlyStore.set(false);
+        ScheduleVisibilityStore.set('full');
+        ViewerNoticeStore.set(null);
+
         // Fetch instructor data from API
         fetchProfessorData();
 
@@ -279,12 +438,31 @@ Copyright (C) 2026 Andrew Cupps
 
                 hasReadLocalStorage = true;
 
+                accessToken = null;
+                getAccessToken().then((token) => {
+                    accessToken = token;
+                    loadViewerOptions();
+
+                    if (typeof window !== 'undefined') {
+                        const requestedViewer =
+                            new URLSearchParams(window.location.search).get('view');
+                        if (requestedViewer && requestedViewer.length > 0) {
+                            ActiveViewerStore.set(requestedViewer);
+                        }
+                    }
+                });
+
                 if (isSupabaseConfigured()) {
                     getAuthUser().then((user) => {
                         authUserId = user?.id ?? null;
                         if (authUserId) {
                             hydrateFromCloud(authUserId);
                         }
+
+                        getAccessToken().then((token) => {
+                            accessToken = token;
+                            loadViewerOptions();
+                        });
                     });
 
                     authUnsubscribe = onAuthStateChanged((user) => {
@@ -294,8 +472,15 @@ Copyright (C) 2026 Andrew Cupps
                         }
 
                         authUserId = nextAuthId;
+                        getAccessToken().then((token) => {
+                            accessToken = token;
+                            loadViewerOptions();
+                        });
+
                         if (authUserId) {
                             hydrateFromCloud(authUserId);
+                        } else {
+                            ActiveViewerStore.set('self');
                         }
                     });
                 }
@@ -312,6 +497,11 @@ Copyright (C) 2026 Andrew Cupps
             NonselectedScheduleStore.set([]);
         }
     });
+
+    $: if (hasReadLocalStorage && activeViewerId !== lastHandledViewerId) {
+        lastHandledViewerId = activeViewerId;
+        void handleViewerSelection(activeViewerId);
+    }
 
     onDestroy(() => {
         if (authUnsubscribe) {
