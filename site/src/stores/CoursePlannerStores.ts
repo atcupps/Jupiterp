@@ -14,6 +14,7 @@ import type {
     StoredSchedule
 } from "../types";
 import { getDefaultTermYear } from "$lib/course-planner/Terms";
+import type { FriendVisibility } from "$lib/friends/types";
 
 /** `Record<string, Instructor>` for getting instructor data from names
 /* Initially set to an empty record since the data used here is
@@ -56,3 +57,25 @@ export const CourseSearchFilterStore: Writable<FilterParams> = writable({
     serverSideFilters: {},
     clientSideFilters: {}
 });
+
+export interface ViewerOption {
+    id: string,
+    label: string,
+    type: 'self' | 'friend',
+}
+
+export const ViewerOptionsStore: Writable<ViewerOption[]> = writable([
+    {
+        id: 'self',
+        label: 'You',
+        type: 'self',
+    },
+]);
+
+export const ActiveViewerStore: Writable<string> = writable('self');
+
+export const ScheduleReadOnlyStore: Writable<boolean> = writable(false);
+
+export const ScheduleVisibilityStore: Writable<FriendVisibility> = writable('full');
+
+export const ViewerNoticeStore: Writable<string | null> = writable(null);
