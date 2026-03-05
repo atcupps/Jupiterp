@@ -1,4 +1,5 @@
 import { json } from '@sveltejs/kit';
+import type { RequestHandler } from './$types';
 import {
     acceptFriendRequest,
     cancelOutgoingFriendRequest,
@@ -13,7 +14,7 @@ interface ActionPayload {
     action: 'accept' | 'decline' | 'cancel',
 }
 
-export async function POST({ request, params }) {
+export const POST: RequestHandler = async ({ request, params }) => {
     try {
         const { userId, accessToken } = await requireAuthUser(request);
         const payload = await request.json() as ActionPayload;
@@ -34,4 +35,4 @@ export async function POST({ request, params }) {
         const message = error instanceof Error ? error.message : 'Unable to update request';
         return json({ ok: false, message }, { status: 500 });
     }
-}
+};

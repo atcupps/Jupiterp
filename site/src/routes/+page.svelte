@@ -297,11 +297,9 @@ Copyright (C) 2026 Andrew Cupps
             return;
         }
 
-        if (!hasCapturedOwnState) {
-            ownCurrentSchedule = cloneSchedule(currentSchedule);
-            ownNonselectedSchedules = [...nonselectedSchedules];
-            hasCapturedOwnState = true;
-        }
+        ownCurrentSchedule = cloneSchedule(currentSchedule);
+        ownNonselectedSchedules = [...nonselectedSchedules];
+        hasCapturedOwnState = true;
 
         isViewingSelf = false;
         ScheduleReadOnlyStore.set(true);

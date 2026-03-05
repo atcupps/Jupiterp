@@ -1,6 +1,7 @@
 <script lang='ts'>
     import { onMount } from 'svelte';
     import { base } from '$app/paths';
+    import type { PageData } from './$types';
     import type {
         FriendRecord,
         FriendsSummary,
@@ -16,6 +17,7 @@
     } from '$lib/supabase';
 
     const authEnabled = isSupabaseConfigured();
+    export let data: PageData;
 
     let loading = true;
     let token: string | null = null;
@@ -38,17 +40,16 @@
     let defaultVisibility: FriendVisibility = 'full';
     let updatingDefaultVisibility = false;
 
-    function withAuthHeaders() {
-        if (!token) {
-            return {
-                'content-type': 'application/json',
-            };
+    function withAuthHeaders(): Record<string, string> {
+        const headers: Record<string, string> = {
+            'content-type': 'application/json',
+        };
+
+        if (token) {
+            headers.authorization = `Bearer ${token}`;
         }
 
-        return {
-            'content-type': 'application/json',
-            authorization: `Bearer ${token}`,
-        };
+        return headers;
     }
 
     async function loadSummary() {
@@ -264,6 +265,16 @@
             ?? friend.friend.friendCode;
     }
 
+    function onDefaultVisibilityChange(event: Event) {
+        const target = event.currentTarget as HTMLSelectElement;
+        void setDefaultVisibility(target.value as FriendVisibility);
+    }
+
+    function onFriendVisibilityChange(friendId: string, event: Event) {
+        const target = event.currentTarget as HTMLSelectElement;
+        void setFriendVisibility(friendId, target.value as FriendVisibility);
+    }
+
     onMount(() => {
         if (!authEnabled) {
             loading = false;
@@ -271,7 +282,23 @@
             return;
         }
 
-        refreshAll();
+        if (data.initialSummary) {
+            incoming = data.initialSummary.incoming;
+            outgoing = data.initialSummary.outgoing;
+            friends = data.initialSummary.friends;
+            selfFriendCode = data.initialSummary.selfProfile.friendCode;
+            defaultVisibility = data.initialSummary.selfProfile.friendsVisibility;
+            loading = false;
+        }
+
+        if (data.initialError) {
+            errorMessage = data.initialError;
+            loading = false;
+        }
+
+        if (!data.initialSummary) {
+            refreshAll();
+        }
     });
 </script>
 
@@ -395,10 +422,7 @@
                                     bg-bgLight dark:bg-bgDark'
                             disabled={updatingDefaultVisibility}
                             bind:value={defaultVisibility}
-                            on:change={(event) => {
-                                const target = event.currentTarget as HTMLSelectElement;
-                                setDefaultVisibility(target.value as FriendVisibility);
-                            }}>
+                            on:change={onDefaultVisibilityChange}>
                             <option value='full'>Full schedule</option>
                             <option value='busy_free'>Busy/free only</option>
                             <option value='off'>Off</option>
@@ -423,10 +447,7 @@
                                                     bg-bgLight dark:bg-bgDark'
                                             disabled={friendUpdateInFlightId === friend.friend.id}
                                             bind:value={friend.visibility}
-                                            on:change={(event) => {
-                                                const target = event.currentTarget as HTMLSelectElement;
-                                                setFriendVisibility(friend.friend.id, target.value as FriendVisibility);
-                                            }}>
+                                            on:change={(event) => onFriendVisibilityChange(friend.friend.id, event)}>
                                             <option value='full'>Full schedule</option>
                                             <option value='busy_free'>Busy/free</option>
                                             <option value='off'>Off</option>

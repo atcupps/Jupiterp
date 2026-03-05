@@ -540,7 +540,12 @@ export async function getFriendScheduleForViewer(
     }
 
     const relationshipRow = relationship as FriendRow;
-    if (relationshipRow.visibility === 'off') {
+    const profileVisibility = friendProfile?.friends_visibility ?? 'full';
+    const effectiveVisibility = profileVisibility === 'off'
+        ? 'off'
+        : relationshipRow.visibility;
+
+    if (effectiveVisibility === 'off') {
         return {
             visibility: 'off' as FriendVisibility,
             friendName,
@@ -566,7 +571,7 @@ export async function getFriendScheduleForViewer(
 
     if (!schedules) {
         return {
-            visibility: relationshipRow.visibility,
+            visibility: effectiveVisibility,
             friendName,
             schedule: null,
             message: 'No schedule available for this friend yet',
@@ -576,7 +581,7 @@ export async function getFriendScheduleForViewer(
     const selectedSchedule = findScheduleByTermYear(schedules, term, year);
 
     return {
-        visibility: relationshipRow.visibility,
+        visibility: effectiveVisibility,
         friendName,
         schedule: selectedSchedule,
         message: null,

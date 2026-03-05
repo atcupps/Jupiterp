@@ -1,11 +1,12 @@
 import { json } from '@sveltejs/kit';
+import type { RequestHandler } from './$types';
 import { getFriendScheduleForViewer } from '$lib/server/friends';
 import {
     createSupabaseServerClient,
     requireAuthUser,
 } from '$lib/server/supabase';
 
-export async function GET({ request, url }) {
+export const GET: RequestHandler = async ({ request, url }) => {
     try {
         const { userId, accessToken } = await requireAuthUser(request);
         const friendId = url.searchParams.get('friendId');
@@ -41,4 +42,4 @@ export async function GET({ request, url }) {
             message,
         }, { status: 401 });
     }
-}
+};

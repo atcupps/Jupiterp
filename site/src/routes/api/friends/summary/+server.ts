@@ -1,11 +1,12 @@
 import { json } from '@sveltejs/kit';
+import type { RequestHandler } from './$types';
 import { getFriendsSummary } from '$lib/server/friends';
 import {
     createSupabaseServerClient,
     requireAuthUser,
 } from '$lib/server/supabase';
 
-export async function GET({ request }) {
+export const GET: RequestHandler = async ({ request }) => {
     try {
         const { userId, accessToken } = await requireAuthUser(request);
         const supabase = createSupabaseServerClient(accessToken);
@@ -15,4 +16,4 @@ export async function GET({ request }) {
         const message = error instanceof Error ? error.message : 'Unauthorized';
         return json({ error: message }, { status: 401 });
     }
-}
+};

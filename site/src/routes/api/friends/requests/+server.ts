@@ -1,4 +1,5 @@
 import { json } from '@sveltejs/kit';
+import type { RequestHandler } from './$types';
 import {
     sendFriendRequestByCode,
     sendFriendRequestByEmail,
@@ -13,7 +14,7 @@ interface RequestPayload {
     value: string,
 }
 
-export async function POST({ request }) {
+export const POST: RequestHandler = async ({ request }) => {
     try {
         const { userId, accessToken } = await requireAuthUser(request);
         const payload = await request.json() as RequestPayload;
@@ -32,4 +33,4 @@ export async function POST({ request }) {
         const message = error instanceof Error ? error.message : 'Unable to send request';
         return json({ ok: false, message }, { status: 500 });
     }
-}
+};

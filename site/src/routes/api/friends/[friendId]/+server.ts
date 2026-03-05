@@ -1,4 +1,5 @@
 import { json } from '@sveltejs/kit';
+import type { RequestHandler } from './$types';
 import {
     removeFriend,
     updateFriendVisibility,
@@ -12,7 +13,7 @@ interface PatchPayload {
     visibility: 'full' | 'busy_free' | 'off',
 }
 
-export async function PATCH({ request, params }) {
+export const PATCH: RequestHandler = async ({ request, params }) => {
     try {
         const { userId, accessToken } = await requireAuthUser(request);
         const friendId = params.friendId;
@@ -34,9 +35,9 @@ export async function PATCH({ request, params }) {
         const message = error instanceof Error ? error.message : 'Unable to update friend';
         return json({ ok: false, message }, { status: 500 });
     }
-}
+};
 
-export async function DELETE({ request, params }) {
+export const DELETE: RequestHandler = async ({ request, params }) => {
     try {
         const { userId, accessToken } = await requireAuthUser(request);
         const friendId = params.friendId;
@@ -51,4 +52,4 @@ export async function DELETE({ request, params }) {
         const message = error instanceof Error ? error.message : 'Unable to remove friend';
         return json({ ok: false, message }, { status: 500 });
     }
-}
+};
