@@ -63,6 +63,7 @@ body {
 }
 
 @media print {
+    /* Hide overlays and floating controls that can leak into PDF capture. */
     [style*='position: fixed'],
     .absolute.z-\[80\],
     .z-\[52\],
@@ -70,6 +71,7 @@ body {
         display: none !important;
     }
 
+    /* Print only the schedule pane and descendants. */
     body * {
         visibility: hidden;
     }
@@ -83,7 +85,10 @@ body {
         position: static !important;
         inset: auto !important;
         width: 100%;
+        height: auto !important;
+        max-height: none !important;
         min-height: 0 !important;
+        overflow: visible !important;
     }
 
     body {
@@ -96,6 +101,7 @@ body {
     header,
     .course-search,
     .schedule-list-pane,
+    .site-links,
     .top-nav,
     .sidebar,
     .filters-panel,
@@ -125,8 +131,25 @@ body {
     .schedule-page {
         overflow: visible !important;
         height: auto !important;
+        max-height: none !important;
         width: 100% !important;
         max-width: none !important;
+    }
+
+    /* Remove viewport clipping from the app shell during print so content can
+       span multiple pages naturally. */
+    .planner-root,
+    .planner-root > .grow,
+    .planner-root > .grow > .schedule-print-pane,
+    .planner-root > .grow > .schedule-print-pane > .schedule-page,
+    .schedule-view,
+    .schedule-view > .grid {
+        position: static !important;
+        inset: auto !important;
+        height: auto !important;
+        min-height: 0 !important;
+        max-height: none !important;
+        overflow: visible !important;
     }
 
     .schedule-print-pane,

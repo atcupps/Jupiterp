@@ -363,7 +363,7 @@ Copyright (C) 2026 Andrew Cupps
 <svelte:window on:mousemove={onAddClassesResize}
     on:mouseup={stopAddClassesResize} />
 
-<div class='fixed flex flex-col w-full px-2 lg:px-3
+<div class='planner-root fixed flex flex-col w-full px-2 lg:px-3
             text-textLight dark:text-textDark
             top-[3rem] lg:top-[3.5rem] xl:top-[4rem] bottom-0'>
     <div class='grow min-h-0 flex flex-row pt-2'

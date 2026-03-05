@@ -50,6 +50,10 @@ Copyright (C) 2026 Andrew Cupps
 
     let bgHeight: number;
     let scheduleHeightPx = 0;
+    let isPreparingPrint = false;
+
+    const PRINT_MIN_START_HOUR = 9;
+    const PRINT_MIN_END_HOUR = 21;
 
     // Keep track of the range of times to display on the Schedule
     let earliestClassStart: number = 8;
@@ -78,6 +82,13 @@ Copyright (C) 2026 Andrew Cupps
         if (earliestClassStart === -5 && latestClassEnd === 5) {
             earliestClassStart = 8;
             latestClassEnd = 16;
+        }
+
+        // Print-only safety range: ensure evening hours are available when
+        // exporting the weekly timetable to PDF.
+        if (isPreparingPrint) {
+            earliestClassStart = Math.min(earliestClassStart, PRINT_MIN_START_HOUR);
+            latestClassEnd = Math.max(latestClassEnd, PRINT_MIN_END_HOUR);
         }
     }
 
@@ -126,9 +137,19 @@ Copyright (C) 2026 Andrew Cupps
 
     $: hasScheduledClasses = selections.some((selection) => !selection.hover);
     $: scheduleHeightPx = Math.max(640, (latestClassEnd - earliestClassStart) * 88);
+
+    function handleBeforePrint() {
+        isPreparingPrint = true;
+    }
+
+    function handleAfterPrint() {
+        isPreparingPrint = false;
+    }
 </script>
 
-<svelte:window bind:innerWidth />
+<svelte:window bind:innerWidth
+    on:beforeprint={handleBeforePrint}
+    on:afterprint={handleAfterPrint} />
 
 <div class='schedule-view h-full w-full flex flex-row px-0 font-medium overflow-auto
         text-lg text-center text-black dark:text-white min-h-0'>

@@ -14,6 +14,11 @@ Copyright (C) 2026 Andrew Cupps
         CurrentScheduleStore,
         NonselectedScheduleStore
     } from '../../stores/CoursePlannerStores';
+    import {
+        TERM_VALUES,
+        MIN_SCHEDULE_YEAR,
+        getMaxScheduleYear,
+    } from '$lib/course-planner/Terms';
     import Modal from '../layout/Modal.svelte';
     import type { StoredSchedule } from '../../types';
 
@@ -68,10 +73,12 @@ Copyright (C) 2026 Andrew Cupps
     let currentDisplayIndex = 0;
 
     let createModalOpen = false;
-    let createTerm: Term = 'Fall';
-    let createYear = new Date().getFullYear();
+    let createTerm: Term = TERM_VALUES[TERM_VALUES.length - 1];
+    let createYear = getMaxScheduleYear();
     let createScheduleName = '';
     let createNameInput: HTMLInputElement;
+
+    const CREATE_MODAL_TERMS: readonly Term[] = TERM_VALUES;
 
     let openMenuRowKey: string | null = null;
 
@@ -166,6 +173,11 @@ Copyright (C) 2026 Andrew Cupps
             return;
         }
 
+        const clampedYear = Math.max(
+            MIN_SCHEDULE_YEAR,
+            Math.min(getMaxScheduleYear(), Number(createYear) || createYear)
+        );
+
         const rows = toMutableRows();
         const currentRowIndex = rows.findIndex((row) => row.source === 'current');
         if (currentRowIndex === -1) {
@@ -191,7 +203,7 @@ Copyright (C) 2026 Andrew Cupps
                 scheduleName: makeUniqueName(trimmed),
                 selections: [],
                 term: createTerm,
-                year: createYear,
+                year: clampedYear,
             },
             source: 'current',
         });
@@ -572,12 +584,27 @@ Copyright (C) 2026 Andrew Cupps
                    bind:value={createScheduleName} />
         </label>
 
-        <div class='text-sm'>
-            <div class='text-xs opacity-70 mb-1'>Term</div>
-            <div class='rounded-md border border-outlineLight dark:border-outlineDark
-                        px-2 py-1 bg-bgSecondaryLight dark:bg-bgSecondaryDark'>
-                {createTerm} {createYear}
-            </div>
+        <div class='grid grid-cols-1 sm:grid-cols-2 gap-2'>
+            <label class='text-sm'>
+                <span class='block text-xs opacity-70 mb-1'>Term</span>
+                <select class='w-full rounded-md border border-outlineLight dark:border-outlineDark
+                                bg-bgLight dark:bg-bgDark px-2 py-1 outline-none'
+                        bind:value={createTerm}>
+                    {#each CREATE_MODAL_TERMS as term}
+                        <option value={term}>{term}</option>
+                    {/each}
+                </select>
+            </label>
+
+            <label class='text-sm'>
+                <span class='block text-xs opacity-70 mb-1'>Year</span>
+                <input class='w-full rounded-md border border-outlineLight dark:border-outlineDark
+                                bg-bgLight dark:bg-bgDark px-2 py-1 outline-none'
+                        type='number'
+                        min={MIN_SCHEDULE_YEAR}
+                        max={getMaxScheduleYear()}
+                        bind:value={createYear} />
+            </label>
         </div>
 
         <div class='flex items-center justify-end gap-2 pt-1'>
