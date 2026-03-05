@@ -1,5 +1,12 @@
 export type FriendVisibility = 'full' | 'busy_free' | 'off';
 
+export interface SharedScheduleSnapshot {
+    scheduleName: string,
+    selections: unknown[],
+    term: 'Fall' | 'Spring' | 'Winter' | 'Summer',
+    year: number,
+}
+
 export interface FriendProfile {
     id: string,
     email: string | null,
@@ -37,6 +44,6 @@ export interface FriendsSummary {
 export interface FriendScheduleResponse {
     visibility: FriendVisibility,
     friendName: string,
-    schedule: StoredSchedule | null,
+    schedule: SharedScheduleSnapshot | null,
     message: string | null,
 }
