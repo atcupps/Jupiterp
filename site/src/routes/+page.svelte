@@ -559,17 +559,19 @@ Copyright (C) 2026 Andrew Cupps
     <div class='grow min-h-0 flex flex-row pt-2'
         bind:this={addClassesLayoutContainer}
         class:select-none={resizingAddClassesSidebar}>
-        <CourseSearch
-            {sidebarWidth} />
+        {#if isViewingSelf}
+            <CourseSearch
+                {sidebarWidth} />
 
-        <button class='flex w-2 cursor-col-resize items-center justify-center
-                        hover:bg-hoverLight dark:hover:bg-hoverDark rounded-sm transition-colors'
-                type='button'
-                aria-label='Resize schedule list sidebar'
-                on:mousedown={startAddClassesResize}>
-            <div class='h-full w-px bg-divBorderLight dark:bg-divBorderDark
-                        hover:bg-textLight dark:hover:bg-textDark transition-colors' />
-        </button>
+            <button class='flex w-2 cursor-col-resize items-center justify-center
+                            hover:bg-hoverLight dark:hover:bg-hoverDark rounded-sm transition-colors'
+                    type='button'
+                    aria-label='Resize schedule list sidebar'
+                    on:mousedown={startAddClassesResize}>
+                <div class='h-full w-px bg-divBorderLight dark:bg-divBorderDark
+                            hover:bg-textLight dark:hover:bg-textDark transition-colors' />
+            </button>
+        {/if}
 
         <CurrentSchedulePanel />
     </div>

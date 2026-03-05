@@ -19,6 +19,8 @@ Copyright (C) 2026 Andrew Cupps
     import {
         CourseInfoPairStore,
         CurrentScheduleStore,
+        ScheduleReadOnlyStore,
+        ScheduleVisibilityStore,
     } from '../../../stores/CoursePlannerStores';
     import type {
         ClassMeetingExtended,
@@ -39,11 +41,21 @@ Copyright (C) 2026 Andrew Cupps
     let scheduleName: string;
     let scheduleTerm: 'Fall' | 'Spring' | 'Winter' | 'Summer';
     let scheduleYear: number;
+    let scheduleReadOnly = false;
+    let scheduleVisibility: 'full' | 'busy_free' | 'off' = 'full';
     CurrentScheduleStore.subscribe((stored) => {
         selections = stored.selections;
         scheduleName = stored.scheduleName;
         scheduleTerm = stored.term;
         scheduleYear = stored.year;
+    });
+
+    ScheduleReadOnlyStore.subscribe((stored) => {
+        scheduleReadOnly = stored;
+    });
+
+    ScheduleVisibilityStore.subscribe((stored) => {
+        scheduleVisibility = stored;
     });
 
     const differences: SelectionDifferences = meeting.differences;
@@ -120,6 +132,10 @@ Copyright (C) 2026 Andrew Cupps
     }
 
     function removeCourseByClassMeeting() {
+        if (scheduleReadOnly) {
+            return;
+        }
+
         const index = selections.findIndex(obj =>
             selectionEqualsByCode(obj)
         );
@@ -147,6 +163,10 @@ Copyright (C) 2026 Andrew Cupps
     });
 
     function toggleCourseInfo() {
+        if (scheduleVisibility !== 'full') {
+            return;
+        }
+
         if (courseInfoPair !== null 
                 && courseInfoPair.courseCode === meeting.courseCode
                 && courseInfoPair.sectionCode === meeting.sectionCode) {
@@ -180,7 +200,7 @@ Copyright (C) 2026 Andrew Cupps
         title='Click to show more course info'>
 
     <!-- x button to remove course -->
-    {#if !meeting.hover}
+    {#if !meeting.hover && !scheduleReadOnly}
         <button class='absolute h-4 w-4 top-0 right-0
                         2xl:top-1 2xl:right-1 justify-center'
                 on:click={removeCourseByClassMeeting}
@@ -203,12 +223,12 @@ Copyright (C) 2026 Andrew Cupps
                     class:text-sm={w < 120}
                     class:text-xs={w < 104}
                     class:rounded-b-lg={h < 1.75 * fontSize}>
-                <span>{meeting.courseCode}</span>
+                <span>{scheduleVisibility === 'busy_free' ? 'Busy' : meeting.courseCode}</span>
             </div>
         {/if}
         <div class='w-full grow font-thin 2xl:font-normal 
                                                     text-xs font-sans px-2'>
-            {#if h - (24 * fontSize) > (64 * fontSize) || isInOther}
+            {#if scheduleVisibility === 'full' && (h - (24 * fontSize) > (64 * fontSize) || isInOther)}
                 <div class='truncate static'  
                                 class:underline={instructorsChange}
                                 class:decoration-dotted={instructorsChange}>
@@ -240,12 +260,12 @@ Copyright (C) 2026 Andrew Cupps
                     {/if}
                 </div>
             {/if}
-            {#if h - (24 * fontSize) > (32 * fontSize) || isInOther}
+            {#if scheduleVisibility === 'full' && (h - (24 * fontSize) > (32 * fontSize) || isInOther)}
                 <div class='truncate static'>
                     Section {secCode}
                 </div>
             {/if}
-            {#if h - (24 * fontSize) > (16 * fontSize) && hasLocation}
+            {#if scheduleVisibility === 'full' && (h - (24 * fontSize) > (16 * fontSize) && hasLocation)}
                 <div class='truncate static'
                                 class:underline={meetingLocChange}
                                 class:decoration-dotted={meetingLocChange}>

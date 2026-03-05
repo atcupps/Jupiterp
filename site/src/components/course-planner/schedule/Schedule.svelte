@@ -20,6 +20,7 @@ Copyright (C) 2026 Andrew Cupps
         HoveredSectionStore,
         CurrentScheduleStore,
         CourseInfoPairStore,
+        ScheduleVisibilityStore,
     } from '../../../stores/CoursePlannerStores';
     import MeetingListing from '../MeetingListing.svelte';
     import SeatData from '../SeatData.svelte';
@@ -94,8 +95,19 @@ Copyright (C) 2026 Andrew Cupps
 
     let showCourseInfo: string | null = null;
     let showSectionInfo: string | null = null;
+    let scheduleVisibility: 'full' | 'busy_free' | 'off' = 'full';
     let courseInfoCourse: CourseBasic | null = null;
     let courseInfoSection: Section | null = null;
+
+    ScheduleVisibilityStore.subscribe((stored) => {
+        scheduleVisibility = stored;
+        if (stored !== 'full') {
+            showCourseInfo = null;
+            showSectionInfo = null;
+            courseInfoCourse = null;
+            courseInfoSection = null;
+        }
+    });
 
     CourseInfoPairStore.subscribe((pair) => {
         if (pair === null) {
@@ -219,7 +231,7 @@ Copyright (C) 2026 Andrew Cupps
 </div>
 
 <!-- Course info panel -->
-{#if showCourseInfo !== null 
+{#if scheduleVisibility === 'full' && showCourseInfo !== null 
     && courseInfoCourse !== null 
     && courseInfoSection !== null}
 <div class='absolute z-10 shadow-md bottom-[0.75rem]
