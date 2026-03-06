@@ -148,6 +148,39 @@ function resolveInputToDepartment(input: string): string[] {
     return possibleDepts;
 }
 
+function filterCoursesBySearchInput(
+    courses: Course[],
+    simpleInput: string,
+    matchingDepts: string[]
+): Course[] {
+    if (simpleInput.length === 0) {
+        return courses;
+    }
+
+    if (/^[A-Z]{4}[0-9]{3}[A-Z]{0,2}$/.test(simpleInput)) {
+        return courses.filter((course) => {
+            return course.courseCode.toUpperCase() === simpleInput;
+        });
+    }
+
+    if (matchingDepts.length > 0) {
+        return courses.filter((course) => {
+            return course.courseCode.toUpperCase().startsWith(simpleInput);
+        });
+    }
+
+    if (simpleInput.length >= 3 && /^[0-9]{3}[A-Z]?$/i.test(simpleInput)) {
+        return courses.filter((course) => {
+            return course.courseCode.substring(4).toUpperCase().startsWith(simpleInput);
+        });
+    }
+
+    return courses.filter((course) => {
+        return course.courseCode.toUpperCase().includes(simpleInput) ||
+            course.name.toUpperCase().includes(simpleInput);
+    });
+}
+
 function filterAndSortCourseArray(courses: Course[]): Course[] {
     const sorted = courses.sort((a, b) => {
         return a.courseCode.localeCompare(b.courseCode);
@@ -195,6 +228,38 @@ function filterAndSortCourseArray(courses: Course[]): Course[] {
     });
 }
 
+function applyServerFiltersLocally(
+    courses: Course[],
+    serverFilters: FilterParams['serverSideFilters']
+): Course[] {
+    return courses.filter((course) => {
+        if (serverFilters.genEds && serverFilters.genEds.length > 0) {
+            const presentCodes = new Set(
+                (course.genEds ?? []).map((genEd) => genEd.code.toUpperCase())
+            );
+            for (const required of serverFilters.genEds) {
+                if (!presentCodes.has(required.code.toUpperCase())) {
+                    return false;
+                }
+            }
+        }
+
+        if (serverFilters.instructor && serverFilters.instructor.length > 0) {
+            const normalizedInstructor = serverFilters.instructor.trim().toLowerCase();
+            const hasInstructor = (course.sections ?? []).some((section) => {
+                return section.instructors.some((name) => {
+                    return name.trim().toLowerCase() === normalizedInstructor;
+                });
+            });
+            if (!hasInstructor) {
+                return false;
+            }
+        }
+
+        return true;
+    });
+}
+
 /**
  * Given an `input`, search for any matching courses in the course data cache
  * (which retrieves from the API if necessary) and sets the `SearchResultsStore`
@@ -227,6 +292,40 @@ export async function setSearchResults(input: string) {
     const shouldShowSuggestions =
         simpleInput.length > 0 && matchingDepts.length > 1;
     DeptSuggestionsStore.set(shouldShowSuggestions ? matchingDepts : []);
+
+    const hasSelectedTermOverride =
+        filters.clientSideFilters.searchTerm !== undefined;
+
+    if (hasSelectedTermOverride) {
+        const requestInput: RequestInput = {
+            type: "deptCode",
+            value: "",
+            filters: {},
+            semester: requestTermYear.semester,
+            term: requestTermYear.term,
+            year: requestTermYear.year,
+        };
+
+        const semesterCourses = filterAndSortCourseArray(
+            applyServerFiltersLocally(
+                await cache.getCoursesAndSections(requestInput),
+                filters.serverSideFilters
+            )
+        );
+
+        if (cache.getMostRecentAccess() !== requestInput) {
+            return;
+        }
+
+        const matchingCourses = filterCoursesBySearchInput(
+            semesterCourses,
+            simpleInput,
+            matchingDepts
+        );
+
+        SearchResultsStore.set(matchingCourses);
+        return;
+    }
 
     if (/^[A-Z]{4}[0-9]{3}[A-Z]{0,2}$/.test(simpleInput)) {
         DeptSuggestionsStore.set([]);

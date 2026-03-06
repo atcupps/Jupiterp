@@ -15,6 +15,7 @@ Copyright (C) 2026 Andrew Cupps
     import type { FilterParams } from "../../../types";
     import {
         CourseSearchFilterStore,
+        CurrentScheduleStore,
         ResolvedSearchTermYearStore,
         type ResolvedSearchTermYear,
     } from "../../../stores/CoursePlannerStores";
@@ -33,10 +34,36 @@ Copyright (C) 2026 Andrew Cupps
     let instructor: string = '';
     let matchingInstructors: string[] = [];
     let searchTerm: '' | 'Fall' | 'Winter' | 'Spring' | 'Summer' = '';
+    let scheduleTerm: 'Fall' | 'Winter' | 'Spring' | 'Summer' = 'Fall';
+    let scheduleYear: number = new Date().getFullYear();
+    let hasInitializedScheduleTerm = false;
     let resolvedSearchTermYear: ResolvedSearchTermYear | null = null;
+
+    CurrentScheduleStore.subscribe((stored) => {
+        const nextScheduleTerm = stored.term;
+        const nextScheduleYear = stored.year;
+
+        if (!hasInitializedScheduleTerm) {
+            scheduleTerm = nextScheduleTerm;
+            scheduleYear = nextScheduleYear;
+            searchTerm = nextScheduleTerm;
+            hasInitializedScheduleTerm = true;
+            return;
+        }
+
+        const wasUsingScheduleTerm = searchTerm === scheduleTerm;
+        scheduleTerm = nextScheduleTerm;
+        scheduleYear = nextScheduleYear;
+        if (wasUsingScheduleTerm) {
+            searchTerm = nextScheduleTerm;
+        }
+    });
+
     ResolvedSearchTermYearStore.subscribe((value) => {
         resolvedSearchTermYear = value;
     });
+
+    $: termOverrideActive = searchTerm.length > 0 && searchTerm !== scheduleTerm;
 
     const defaultMinCredits = 0;
     const defaultMaxCredits = 20;
@@ -72,7 +99,7 @@ Copyright (C) 2026 Andrew Cupps
             appliedFiltersCount += 1;
             params.clientSideFilters.onlyOpen = onlyOpenSections;
         }
-        if (searchTerm.length > 0) {
+        if (termOverrideActive) {
             appliedFiltersCount += 1;
             params.clientSideFilters.searchTerm =
                 searchTerm as 'Fall' | 'Winter' | 'Spring' | 'Summer';
@@ -110,7 +137,7 @@ Copyright (C) 2026 Andrew Cupps
         maxCredits = defaultMaxCredits;
         onlyOpenSections = false;
         instructor = '';
-        searchTerm = '';
+        searchTerm = scheduleTerm;
     }
 </script>
 
@@ -336,20 +363,19 @@ Copyright (C) 2026 Andrew Cupps
                                     bg-bgLight dark:bg-bgDark
                                     focus:outline-none focus:ring"
                             bind:value={searchTerm}>
-                        <option value="">Current schedule term</option>
                         <option value="Fall">Fall</option>
                         <option value="Winter">Winter</option>
                         <option value="Spring">Spring</option>
                         <option value="Summer">Summer</option>
                     </select>
 
-                    {#if searchTerm.length > 0}
+                    {#if termOverrideActive}
                         <div class="mt-1 text-[11px] leading-tight opacity-80">
                             {#if resolvedSearchTermYear}
                                 Using {resolvedSearchTermYear.term} {resolvedSearchTermYear.year}
                                 ({resolvedSearchTermYear.semester})
                             {:else}
-                                Using {searchTerm} {new Date().getFullYear()} (fallback)
+                                Using {searchTerm} {scheduleYear} (fallback)
                             {/if}
                         </div>
                     {/if}
