@@ -20,3 +20,19 @@ Before working on Jupiterp, make sure your computer has installed [Node.js](http
 #### Site
 
 To test the site, navigate to the `site` folder. Use `npm run dev` to run the site locally, then use a browser to navigate to http://localhost:5173/.
+
+### Course Data Source Toggle
+
+The course search data backend can be selected with the public env var
+`PUBLIC_COURSE_DATA_SOURCE`:
+
+- `auto` (default): try `umd.io` first, then fall back to Jupiter API
+- `umd-io`: force `umd.io` gatherer only
+- `jupiter-api`: force Jupiter API only
+
+Example:
+
+```bash
+cd site
+PUBLIC_COURSE_DATA_SOURCE=umd-io npm run dev
+```

@@ -15,6 +15,17 @@ import {
 import { GenEd } from "@jupiterp/jupiterp";
 import type { ServerSideFilterParams } from "../../types";
 import { gatherCoursesFromUmdIo } from './UmdIoGatherer';
+import { env } from '$env/dynamic/public';
+
+type CourseDataSource = 'auto' | 'umd-io' | 'jupiter-api';
+
+function getConfiguredCourseDataSource(): CourseDataSource {
+    const value = (env.PUBLIC_COURSE_DATA_SOURCE ?? '').trim().toLowerCase();
+    if (value === 'umd-io' || value === 'jupiter-api' || value === 'auto') {
+        return value;
+    }
+    return 'auto';
+}
 
 export class CourseDataCache {
     /**
@@ -124,33 +135,19 @@ export class CourseDataCache {
                     isNewEntry: boolean,
                     input: RequestInput): Promise<Course[]> {
         try {
+            const source = getConfiguredCourseDataSource();
             let courses: Course[];
-            try {
+
+            if (source === 'umd-io') {
                 courses = await gatherCoursesFromUmdIo(input);
-            } catch {
-                const params = coursesWithSectionsQueryParams(cfg);
-                if (input.term) {
-                    params.append('term', input.term);
+            } else if (source === 'jupiter-api') {
+                courses = await fetchFromJupiterApi(key, cfg, input);
+            } else {
+                try {
+                    courses = await gatherCoursesFromUmdIo(input);
+                } catch {
+                    courses = await fetchFromJupiterApi(key, cfg, input);
                 }
-                if (input.year !== undefined && input.year !== null) {
-                    params.append('year', String(input.year));
-                }
-
-                const url = `https://api.jupiterp.com/v0/courses/withSections?${params.toString()}`;
-                const res = await fetch(url);
-                const statusCode = res.status;
-                const statusMessage = res.statusText;
-
-                if (!res.ok) {
-                    const errorBody = await res.text();
-                    // format-check exempt 2
-                    throw new Error(
-                        `API request to get courses for ${key} failed: ${statusCode} ${statusMessage}${errorBody ? `\n${errorBody}` : ''}`
-                    );
-                }
-
-                const raw = (await res.json()) as CourseRaw[];
-                courses = raw.map(parseCourseRaw);
             }
 
             const existingEntry = this.cache[key];
@@ -190,11 +187,9 @@ export class CourseDataCache {
                 continue;
             }
 
-            if (entry.status === "data") {
-                if (entry.lastUsed < oldestMarker) {
-                    oldestMarker = entry.lastUsed;
-                    candidateKey = key;
-                }
+            if (entry.status === "data" && entry.lastUsed < oldestMarker) {
+                oldestMarker = entry.lastUsed;
+                candidateKey = key;
             }
         }
 
@@ -258,6 +253,36 @@ export interface RequestInput {
     filters?: ServerSideFilterParams;
     term?: string;
     year?: number;
+}
+
+async function fetchFromJupiterApi(
+    key: string,
+    cfg: CoursesWithSectionsConfig,
+    input: RequestInput
+): Promise<Course[]> {
+    const params = coursesWithSectionsQueryParams(cfg);
+    if (input.term) {
+        params.append('term', input.term);
+    }
+    if (input.year !== undefined && input.year !== null) {
+        params.append('year', String(input.year));
+    }
+
+    const url = `https://api.jupiterp.com/v0/courses/withSections?${params.toString()}`;
+    const res = await fetch(url);
+    const statusCode = res.status;
+    const statusMessage = res.statusText;
+
+    if (!res.ok) {
+        const errorBody = await res.text();
+        // format-check exempt 2
+        throw new Error(
+            `API request to get courses for ${key} failed: ${statusCode} ${statusMessage}${errorBody ? `\n${errorBody}` : ''}`
+        );
+    }
+
+    const raw = (await res.json()) as CourseRaw[];
+    return raw.map(parseCourseRaw);
 }
 
 type CourseRaw = {
