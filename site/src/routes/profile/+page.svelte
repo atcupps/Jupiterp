@@ -13,6 +13,7 @@ Copyright (C) 2026 Andrew Cupps
         isSupabaseConfigured,
         onAuthStateChanged,
         signInWithEmail,
+        signInWithApple,
         signInWithGoogle,
         signOutUser,
     } from '$lib/supabase';
@@ -26,6 +27,7 @@ Copyright (C) 2026 Andrew Cupps
     let authErrorMessage: string | null = null;
     let isSubmittingEmail = false;
     let isSubmittingGoogle = false;
+    let isSubmittingApple = false;
     let major: string = '';
     let friendCodeInput: string = '';
     let generatedFriendCode: string = '';
@@ -117,6 +119,23 @@ Copyright (C) 2026 Andrew Cupps
             authErrorMessage = 'Could not send sign-in email.';
         } finally {
             isSubmittingEmail = false;
+        }
+    }
+
+        async function appleSignIn() {
+        if (isSubmittingApple || isSubmittingEmail) {
+            return;
+        }
+
+        authStatusMessage = null;
+        authErrorMessage = null;
+        try {
+            isSubmittingApple = true;
+            await signInWithApple(getAuthRedirectTo());
+        } catch (error) {
+            console.error('Apple sign-in failed:', error);
+            authErrorMessage = 'Could not start Apple sign-in.';
+            isSubmittingApple = false;
         }
     }
 
@@ -224,14 +243,21 @@ Copyright (C) 2026 Andrew Cupps
                     <button class='px-3 py-1 rounded-md hover:bg-hoverLight
                                     dark:hover:bg-hoverDark border
                                     border-outlineLight dark:border-outlineDark'
-                            disabled={isSubmittingEmail || isSubmittingGoogle}
+                            disabled={isSubmittingEmail || isSubmittingGoogle || isSubmittingApple}
                             on:click={emailSignIn}>
                         {isSubmittingEmail ? 'Sending Link...' : 'Continue with Email'}
                     </button>
                     <button class='px-3 py-1 rounded-md hover:bg-hoverLight
                                     dark:hover:bg-hoverDark border
                                     border-outlineLight dark:border-outlineDark'
-                            disabled={isSubmittingGoogle || isSubmittingEmail}
+                            disabled={isSubmittingApple || isSubmittingEmail || isSubmittingGoogle}
+                            on:click={appleSignIn}>
+                        {isSubmittingApple ? 'Opening Apple...' : 'Continue with Apple'}
+                    </button>
+                    <button class='px-3 py-1 rounded-md hover:bg-hoverLight
+                                    dark:hover:bg-hoverDark border
+                                    border-outlineLight dark:border-outlineDark'
+                            disabled={isSubmittingGoogle || isSubmittingEmail || isSubmittingApple}
                             on:click={googleSignIn}>
                         {isSubmittingGoogle ? 'Opening Google...' : 'Continue with Google'}
                     </button>
