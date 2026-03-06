@@ -59,12 +59,25 @@ function getFunctionBaseUrl(): string {
     return value.trim();
 }
 
+function getSupabaseAnonKey(): string {
+    const value = import.meta.env.PUBLIC_SUPABASE_ANON_KEY as string | undefined;
+    return (value ?? '').trim();
+}
+
 function requireFunctionBaseUrl(): string {
     const url = getFunctionBaseUrl();
     if (url.length === 0) {
         throw new Error('Friends API URL is not configured. Set PUBLIC_SUPABASE_FUNCTION_FRIENDS_URL.');
     }
     return url;
+}
+
+function requireSupabaseAnonKey(): string {
+    const anonKey = getSupabaseAnonKey();
+    if (anonKey.length === 0) {
+        throw new Error('Supabase anon key is not configured. Set PUBLIC_SUPABASE_ANON_KEY.');
+    }
+    return anonKey;
 }
 
 function normalizePath(base: string, path: string): string {
@@ -108,6 +121,11 @@ function extractErrorMessage(payload: LegacyEnvelope | null, fallback: string): 
         return payload.message;
     }
 
+    const normalized = fallback.toLowerCase();
+    if (normalized.includes('invalid jwt') || normalized.includes('jwt')) {
+        return 'Session expired. Please sign out and sign back in.';
+    }
+
     return fallback;
 }
 
@@ -118,12 +136,14 @@ async function request<T>(
     body?: Record<string, unknown>,
 ): Promise<T> {
     const baseUrl = requireFunctionBaseUrl();
+    const anonKey = requireSupabaseAnonKey();
     const url = normalizePath(baseUrl, path);
 
     const response = await fetch(url, {
         method,
         headers: {
             'Content-Type': 'application/json',
+            apikey: anonKey,
             Authorization: `Bearer ${accessToken}`,
         },
         body: body ? JSON.stringify(body) : undefined,
@@ -131,7 +151,10 @@ async function request<T>(
 
     const envelope = await parseJsonResponse<T>(response);
     if (!response.ok || !envelope.success || envelope.data === undefined) {
-        throw new Error(envelope.error ?? 'Friends API request failed');
+        throw new Error(extractErrorMessage(
+            envelope as LegacyEnvelope,
+            `Friends API request failed (HTTP ${response.status})`
+        ));
     }
 
     return envelope.data;
@@ -143,12 +166,14 @@ async function mutate(
     body?: Record<string, unknown>,
 ): Promise<MutationResult> {
     const baseUrl = requireFunctionBaseUrl();
+    const anonKey = requireSupabaseAnonKey();
     const url = normalizePath(baseUrl, path);
 
     const response = await fetch(url, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
+            apikey: anonKey,
             Authorization: `Bearer ${accessToken}`,
         },
         body: JSON.stringify(body ?? {}),

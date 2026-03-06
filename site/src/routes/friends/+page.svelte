@@ -43,6 +43,15 @@
     let defaultVisibility: FriendVisibility = 'full';
     let updatingDefaultVisibility = false;
 
+    async function getFreshTokenOrThrow(): Promise<string> {
+        const nextToken = await getAccessToken();
+        if (!nextToken) {
+            throw new Error('Session expired. Please sign in again.');
+        }
+        token = nextToken;
+        return nextToken;
+    }
+
     function toUserFriendlyFriendsError(message: string): string {
         const normalized = message.toLowerCase();
         if (
@@ -79,10 +88,7 @@
         errorMessage = null;
 
         try {
-            token = await getAccessToken();
-            if (!token) {
-                throw new Error('Sign in to use Friends');
-            }
+            await getFreshTokenOrThrow();
             await loadSummary();
         } catch (error) {
             errorMessage = toUserFriendlyFriendsError(
@@ -122,7 +128,8 @@
         }
 
         try {
-            const payload = await sendFriendRequest(token, {
+            const freshToken = await getFreshTokenOrThrow();
+            const payload = await sendFriendRequest(freshToken, {
                 mode,
                 value: trimmed,
             });
@@ -158,7 +165,8 @@
         errorMessage = null;
 
         try {
-            const payload = await updateFriendRequest(token, {
+            const freshToken = await getFreshTokenOrThrow();
+            const payload = await updateFriendRequest(freshToken, {
                 requestId,
                 action,
             });
@@ -185,7 +193,8 @@
         errorMessage = null;
 
         try {
-            const payload = await removeFriendApi(token, friendId);
+            const freshToken = await getFreshTokenOrThrow();
+            const payload = await removeFriendApi(freshToken, friendId);
 
             message = payload.message;
             await loadSummary();
@@ -209,7 +218,8 @@
         errorMessage = null;
 
         try {
-            const payload = await updateFriendVisibility(token, {
+            const freshToken = await getFreshTokenOrThrow();
+            const payload = await updateFriendVisibility(freshToken, {
                 friendId,
                 visibility,
             });
@@ -232,11 +242,8 @@
         errorMessage = null;
 
         try {
-            if (!token) {
-                throw new Error('Sign in required');
-            }
-
-            const payload = await updateDefaultVisibility(token, next);
+            const freshToken = await getFreshTokenOrThrow();
+            const payload = await updateDefaultVisibility(freshToken, next);
             message = payload.message;
         } catch (error) {
             errorMessage = toUserFriendlyFriendsError(

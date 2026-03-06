@@ -233,6 +233,7 @@ Copyright (C) 2026 Andrew Cupps
     }
 
     async function loadViewerOptions() {
+        accessToken = await getAccessToken();
         if (!accessToken) {
             ViewerOptionsStore.set([
                 { id: 'self', label: 'You', type: 'self' },
@@ -279,6 +280,7 @@ Copyright (C) 2026 Andrew Cupps
             return;
         }
 
+        accessToken = await getAccessToken();
         if (!accessToken || !currentSchedule) {
             ViewerNoticeStore.set('Sign in to view friend schedules.');
             ActiveViewerStore.set('self');

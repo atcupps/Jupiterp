@@ -96,10 +96,20 @@ export async function getAccessToken(): Promise<string | null> {
     const { data, error } = await supabase.auth.getSession();
     if (error) {
         console.error("Failed to get auth session:", error.message);
+    }
+
+    if (data.session?.access_token) {
+        return data.session.access_token;
+    }
+
+    const { data: refreshed, error: refreshError } =
+        await supabase.auth.refreshSession();
+    if (refreshError) {
+        console.error("Failed to refresh auth session:", refreshError.message);
         return null;
     }
 
-    return data.session?.access_token ?? null;
+    return refreshed.session?.access_token ?? null;
 }
 
 export function onAuthStateChanged(callback: (user: User | null) => void) {
