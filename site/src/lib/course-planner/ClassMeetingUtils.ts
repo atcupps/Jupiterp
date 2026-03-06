@@ -9,22 +9,22 @@
 
 /* Colors for courses on the Schedule */
 const colorMapping = [
-    '#B3C8F2',
-    '#F2B3B3',
-    '#F2EFB3',
-    '#B3F2E6',
-    '#DEB3F2',
-    '#B8F2B3',
-    '#f2c996',
-    '#EDAFD6',
-    '#E6CDE3',
-    '#FEDFCC',
-    '#ADE0F6',
-    '#FDD4F3',
-    '#C4BBF1',
-    '#D3F4BA',
-    '#AAEFF4',
-    '#FFC6B0',
+    '#7FA0E0',
+    '#E07F7F',
+    '#E0DA7F',
+    '#7FE0CF',
+    '#B97FE0',
+    '#86E07F',
+    '#E0A86F',
+    '#E07FB5',
+    '#C9A6C1',
+    '#E6BFA5',
+    '#6FC1E0',
+    '#E6A6D6',
+    '#8F84E0',
+    '#B6E07F',
+    '#6FD3E0',
+    '#E0977F',
 ];
 
 /**

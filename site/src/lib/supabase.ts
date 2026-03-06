@@ -171,6 +171,20 @@ export async function signInWithGoogle(redirectTo: string): Promise<void> {
     }
 }
 
+export async function signInWithApple(redirectTo: string): Promise<void> {
+    const supabase = requireSupabase();
+    const { error } = await supabase.auth.signInWithOAuth({
+        provider: "apple",
+        options: {
+            redirectTo,
+        },
+    });
+
+    if (error) {
+        throw new Error(error.message);
+    }
+}
+
 export async function signInWithEmail(
                         email: string,
                         redirectTo: string): Promise<void> {
