@@ -228,6 +228,30 @@ export async function setSearchResults(input: string) {
         simpleInput.length > 0 && matchingDepts.length > 1;
     DeptSuggestionsStore.set(shouldShowSuggestions ? matchingDepts : []);
 
+    if (/^[A-Z]{4}[0-9]{3}[A-Z]{0,2}$/.test(simpleInput)) {
+        DeptSuggestionsStore.set([]);
+
+        const requestInput: RequestInput = {
+            type: "courseCode",
+            value: simpleInput,
+            filters: filters.serverSideFilters,
+            semester: requestTermYear.semester,
+            term: requestTermYear.term,
+            year: requestTermYear.year,
+        };
+
+        const courses = filterAndSortCourseArray(
+            await cache.getCoursesAndSections(requestInput)
+        );
+
+        if (cache.getMostRecentAccess() !== requestInput) {
+            return;
+        }
+
+        SearchResultsStore.set(courses);
+        return;
+    }
+
     if (matchingDepts.length === 1) {
         DeptSuggestionsStore.set([]);
         console.log(`Searching for dept: ${matchingDepts[0]}`);

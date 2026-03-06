@@ -231,6 +231,8 @@ function generateRequestConfig(input: RequestInput): CoursesWithSectionsConfig {
         cfg.prefix = input.value;
     } else if (input.type === "courseNumber") {
         cfg.number = input.value;
+    } else if (input.type === "courseCode") {
+        cfg.courseCodes = new Set([input.value]);
     }
 
     if (filters.genEds && filters.genEds.length > 0) {
@@ -249,7 +251,7 @@ type CourseDataCacheEntry =
     | { status: "data"; data: Course[]; lastUsed: number };
 
 export interface RequestInput {
-    type: "deptCode" | "courseNumber";
+    type: "deptCode" | "courseNumber" | "courseCode";
     value: string;
     filters?: ServerSideFilterParams;
     semester?: string;

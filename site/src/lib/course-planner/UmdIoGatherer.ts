@@ -91,9 +91,14 @@ export async function resolveMostRecentTermYear(
 export async function gatherCoursesFromUmdIo(input: RequestInput): Promise<Course[]> {
     const semester = await resolveSemester(input.semester, input.term, input.year);
 
-    const courses = input.type === 'deptCode'
-        ? await fetchCoursesByDept(input.value, semester)
-        : await fetchCoursesByNumber(input.value, semester);
+    let courses: UmdCourse[];
+    if (input.type === 'deptCode') {
+        courses = await fetchCoursesByDept(input.value, semester);
+    } else if (input.type === 'courseNumber') {
+        courses = await fetchCoursesByNumber(input.value, semester);
+    } else {
+        courses = await fetchCoursesByIds([input.value], semester);
+    }
 
     if (courses.length === 0) {
         return [];
@@ -153,8 +158,16 @@ async function fetchCoursesByNumber(courseNumberPrefix: string, semester: string
         return [];
     }
 
+    return fetchCoursesByIds(matchingIds, semester);
+}
+
+async function fetchCoursesByIds(courseIds: string[], semester: string): Promise<UmdCourse[]> {
+    if (courseIds.length === 0) {
+        return [];
+    }
+
     const results: UmdCourse[] = [];
-    for (const batch of chunkArray(matchingIds, COURSE_BATCH_SIZE)) {
+    for (const batch of chunkArray(courseIds, COURSE_BATCH_SIZE)) {
         const joinedCourseIds = batch.map((id) => encodeURIComponent(id)).join(',');
         const path = `/courses/${joinedCourseIds}`;
         const courses = await fetchJson<UmdCourse[]>(path, {
