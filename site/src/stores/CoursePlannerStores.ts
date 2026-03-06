@@ -15,6 +15,7 @@ import type {
 } from "../types";
 import { getDefaultTermYear } from "$lib/course-planner/Terms";
 import type { FriendVisibility } from "$lib/friends/types";
+import type { AcademicTerm } from "$lib/course-planner/Terms";
 
 /** `Record<string, Instructor>` for getting instructor data from names
 /* Initially set to an empty record since the data used here is
@@ -57,6 +58,15 @@ export const CourseSearchFilterStore: Writable<FilterParams> = writable({
     serverSideFilters: {},
     clientSideFilters: {}
 });
+
+export interface ResolvedSearchTermYear {
+    term: AcademicTerm,
+    year: number,
+    semester: string,
+}
+
+export const ResolvedSearchTermYearStore:
+    Writable<ResolvedSearchTermYear | null> = writable(null);
 
 export interface ViewerOption {
     id: string,

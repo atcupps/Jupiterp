@@ -108,7 +108,7 @@ Copyright (C) 2026 Andrew Cupps
     }
 </script>
 
-<div class="flex flex-col
+<div class="flex w-full flex-col
             text-secCodesLight dark:text-[#8892a8]">
     <!-- Filters button -->
     {#if showHeaderButton}
@@ -135,7 +135,7 @@ Copyright (C) 2026 Andrew Cupps
 
     <!-- Filters menu -->
     {#if showFiltersMenu}
-        <div class="flex flex-col px-2 py-1 mx-1 my-1 gap-2 text-xs"
+        <div class="flex w-full flex-col px-2 py-1 mx-1 my-1 gap-2 text-xs"
             transition:slide>
 
             <!-- Gen-Eds -->
@@ -223,7 +223,7 @@ Copyright (C) 2026 Andrew Cupps
             </div>
 
             <!-- Credits -->
-            <div class="flex flex-row gap-4">
+            <div class="flex flex-col gap-2 sm:flex-row sm:gap-4">
                 <!-- Min credits -->
                 <div class="flex flex-row items-center text-xs">
                     <span class="min-w-16">

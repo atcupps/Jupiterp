@@ -11,12 +11,19 @@
 import { GenEd, type Course } from '@jupiterp/jupiterp';
 import type { ServerSideFilterParams } from '../../types';
 import type { RequestInput } from './CourseDataCache';
+import type { AcademicTerm } from './Terms';
 
 const UMD_IO_BASE_URL = 'https://api.umd.io/v1';
 const PAGE_SIZE = 100;
 const COURSE_BATCH_SIZE = 40;
 
-type PlannerTerm = 'Fall' | 'Winter' | 'Spring' | 'Summer';
+type PlannerTerm = AcademicTerm;
+
+export interface AvailableTermYear {
+    term: AcademicTerm;
+    year: number;
+    semester: string;
+}
 
 type UmdCourse = {
     course_id: string;
@@ -59,6 +66,27 @@ type PlannerSection = {
 };
 
 let semesterCache: string[] | null = null;
+
+export async function listAvailableTermYears(): Promise<AvailableTermYear[]> {
+    const semesters = await fetchSemesters();
+    const options: AvailableTermYear[] = [];
+
+    for (const semester of semesters) {
+        const mapped = mapSemesterToTermYear(semester);
+        if (mapped) {
+            options.push(mapped);
+        }
+    }
+
+    return options;
+}
+
+export async function resolveMostRecentTermYear(
+    term: AcademicTerm
+): Promise<AvailableTermYear | null> {
+    const options = await listAvailableTermYears();
+    return options.find((option) => option.term === term) ?? null;
+}
 
 export async function gatherCoursesFromUmdIo(input: RequestInput): Promise<Course[]> {
     const semester = await resolveSemester(input.term, input.year);
@@ -332,38 +360,36 @@ async function resolveSemester(
     term: string | undefined,
     year: number | undefined
 ): Promise<string> {
-    if (!term || !year) {
+    if (!term) {
         const all = await fetchSemesters();
         return all[0] ?? `${new Date().getFullYear()}08`;
     }
 
     const plannerTerm = term as PlannerTerm;
-    const all = await fetchSemesters();
-    const preferred = semesterCandidates(plannerTerm, year);
-
-    for (const candidate of preferred) {
-        if (all.includes(candidate)) {
-            return candidate;
+    const available = await listAvailableTermYears();
+    const matching = available.filter((option) => {
+        if (option.term !== plannerTerm) {
+            return false;
         }
+
+        if (year === undefined || year === null) {
+            return true;
+        }
+
+        return option.year === year;
+    });
+
+    if (matching.length > 0) {
+        return matching[0].semester;
     }
 
-    return preferred[0];
-}
-
-function semesterCandidates(term: PlannerTerm, year: number): string[] {
-    if (term === 'Spring') {
-        return [`${year}01`];
+    const fallback = await resolveMostRecentTermYear(plannerTerm);
+    if (fallback) {
+        return fallback.semester;
     }
 
-    if (term === 'Summer') {
-        return [`${year}05`];
-    }
-
-    if (term === 'Fall') {
-        return [`${year}08`];
-    }
-
-    return [`${year}12`, `${year - 1}12`, `${year}01`];
+    const all = await fetchSemesters();
+    return all[0] ?? `${new Date().getFullYear()}08`;
 }
 
 async function fetchSemesters(): Promise<string[]> {
@@ -374,6 +400,36 @@ async function fetchSemesters(): Promise<string[]> {
     const data = await fetchJson<string[]>('/courses/semesters');
     semesterCache = [...data].sort((a, b) => b.localeCompare(a));
     return semesterCache;
+}
+
+function mapSemesterToTermYear(semester: string): AvailableTermYear | null {
+    if (!/^[0-9]{6}$/.test(semester)) {
+        return null;
+    }
+
+    const year = Number.parseInt(semester.substring(0, 4), 10);
+    const code = semester.substring(4);
+    let term: AcademicTerm | null = null;
+
+    if (code === '01') {
+        term = 'Spring';
+    } else if (code === '05') {
+        term = 'Summer';
+    } else if (code === '08') {
+        term = 'Fall';
+    } else if (code === '12') {
+        term = 'Winter';
+    }
+
+    if (!term) {
+        return null;
+    }
+
+    return {
+        term,
+        year,
+        semester,
+    };
 }
 
 async function fetchAllPages<T>(path: string, query: Record<string, string>): Promise<T[]> {

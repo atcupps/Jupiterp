@@ -16,8 +16,11 @@ import {
     ProfsLookupStore,
     CourseSearchFilterStore,
     CurrentScheduleStore,
+    ResolvedSearchTermYearStore,
 } from "../../stores/CoursePlannerStores";
 import type { FilterParams } from "../../types";
+import type { AcademicTerm } from "./Terms";
+import { resolveMostRecentTermYear } from "./UmdIoGatherer";
 
 const cache = new CourseDataCache();
 
@@ -78,9 +81,37 @@ CourseSearchFilterStore.subscribe((newFilters) => {
     setSearchResults(mostRecentInput);
 });
 
-function getRequestTerm(): 'Fall' | 'Winter' | 'Spring' | 'Summer' {
-    return filters.clientSideFilters.searchTerm ??
-        (activeTerm as 'Fall' | 'Winter' | 'Spring' | 'Summer');
+async function getRequestTermYear(): Promise<{
+    term: 'Fall' | 'Winter' | 'Spring' | 'Summer',
+    year: number,
+}> {
+    const selectedTerm = filters.clientSideFilters.searchTerm;
+    if (selectedTerm) {
+        const resolved = await resolveMostRecentTermYear(selectedTerm as AcademicTerm);
+        if (resolved) {
+            ResolvedSearchTermYearStore.set({
+                term: resolved.term,
+                year: resolved.year,
+                semester: resolved.semester,
+            });
+            return {
+                term: resolved.term,
+                year: resolved.year,
+            };
+        }
+
+        ResolvedSearchTermYearStore.set(null);
+        return {
+            term: selectedTerm,
+            year: activeYear,
+        };
+    }
+
+    ResolvedSearchTermYearStore.set(null);
+    return {
+        term: activeTerm as 'Fall' | 'Winter' | 'Spring' | 'Summer',
+        year: activeYear,
+    };
 }
 
 /**
@@ -161,6 +192,7 @@ function filterAndSortCourseArray(courses: Course[]): Course[] {
  */
 export async function setSearchResults(input: string) {
     mostRecentInput = input;
+    const requestTermYear = await getRequestTermYear();
 
     // Don't care about case or whitespace in searches
     const simpleInput: string = input.toUpperCase().replace(/\s/g, '');
@@ -181,8 +213,8 @@ export async function setSearchResults(input: string) {
             type: "deptCode",
             value: matchingDepts[0],
             filters: filters.serverSideFilters,
-            term: getRequestTerm(),
-            year: activeYear,
+            term: requestTermYear.term,
+            year: requestTermYear.year,
         }
 
         // Get from cache/API
@@ -224,8 +256,8 @@ export async function setSearchResults(input: string) {
             type: "courseNumber",
             value: numberInput,
             filters: filters.serverSideFilters,
-            term: getRequestTerm(),
-            year: activeYear,
+            term: requestTermYear.term,
+            year: requestTermYear.year,
         }
 
         const courses: Course[] =
@@ -261,8 +293,8 @@ export async function setSearchResults(input: string) {
             type: "deptCode",
             value: "", // Empty prefix to get all courses
             filters: filters.serverSideFilters,
-            term: getRequestTerm(),
-            year: activeYear,
+            term: requestTermYear.term,
+            year: requestTermYear.year,
         }
 
         const courses: Course[] =
@@ -299,7 +331,7 @@ export function getProfsLookup(
     const result: Record<string, Instructor> = {};
     const names: Set<string> = new Set<string>();
     for (const prof of profs) {
-        const name = prof.name;
+        const { name } = prof;
         if (names.has(name)) {
             delete result[name];
         } else {
@@ -314,8 +346,7 @@ export function getProfsLookup(
  * Returns true if the most recent request is still awaiting results.
  */
 export function pendingResults(): boolean {
-    const result = cache.isPending();
-    return result;
+    return cache.isPending();
 }
 
 /**

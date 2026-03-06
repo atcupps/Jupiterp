@@ -210,7 +210,7 @@ Copyright (C) 2026 Andrew Cupps
                         transition-colors' />
         </button>
 
-        <div class='flex min-h-0 grow flex-col w-full border-solid relative
+        <div class='flex shrink-0 w-full flex-col border-solid relative
                             border-b-2 border-t-2 p-1
                             border-divBorderLight dark:border-divBorderDark'>
             <input type='text'
@@ -227,8 +227,8 @@ Copyright (C) 2026 Andrew Cupps
             <CourseFilters bind:showGenEdMenu={genEdMenuOpen} />
         </div>
 
-        <div class='grow min-h-0 courses-list overflow-y-scroll overflow-x-none
-                px-1'
+        <div class='grow min-h-0 courses-list overflow-y-scroll overflow-x-hidden
+                px-1 pt-2'
             on:wheel={handleResultsScroll}>
 
             {#if searchInput.length > 0 && deptSuggestions.length > 1}
