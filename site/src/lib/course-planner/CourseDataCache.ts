@@ -14,6 +14,7 @@ import {
 } from "@jupiterp/jupiterp";
 import { GenEd } from "@jupiterp/jupiterp";
 import type { ServerSideFilterParams } from "../../types";
+import { gatherCoursesFromUmdIo } from './UmdIoGatherer';
 
 export class CourseDataCache {
     /**
@@ -123,29 +124,34 @@ export class CourseDataCache {
                     isNewEntry: boolean,
                     input: RequestInput): Promise<Course[]> {
         try {
-            const params = coursesWithSectionsQueryParams(cfg);
-            if (input.term) {
-                params.append('term', input.term);
-            }
-            if (input.year !== undefined && input.year !== null) {
-                params.append('year', String(input.year));
-            }
+            let courses: Course[];
+            try {
+                courses = await gatherCoursesFromUmdIo(input);
+            } catch {
+                const params = coursesWithSectionsQueryParams(cfg);
+                if (input.term) {
+                    params.append('term', input.term);
+                }
+                if (input.year !== undefined && input.year !== null) {
+                    params.append('year', String(input.year));
+                }
 
-            const url = `https://api.jupiterp.com/v0/courses/withSections?${params.toString()}`;
-            const res = await fetch(url);
-            const statusCode = res.status;
-            const statusMessage = res.statusText;
+                const url = `https://api.jupiterp.com/v0/courses/withSections?${params.toString()}`;
+                const res = await fetch(url);
+                const statusCode = res.status;
+                const statusMessage = res.statusText;
 
-            if (!res.ok) {
-                const errorBody = await res.text();
-                // format-check exempt 2
-                throw new Error(
-                    `API request to get courses for ${key} failed: ${statusCode} ${statusMessage}${errorBody ? `\n${errorBody}` : ''}`
-                );
+                if (!res.ok) {
+                    const errorBody = await res.text();
+                    // format-check exempt 2
+                    throw new Error(
+                        `API request to get courses for ${key} failed: ${statusCode} ${statusMessage}${errorBody ? `\n${errorBody}` : ''}`
+                    );
+                }
+
+                const raw = (await res.json()) as CourseRaw[];
+                courses = raw.map(parseCourseRaw);
             }
-
-            const raw = (await res.json()) as CourseRaw[];
-            const courses = raw.map(parseCourseRaw);
 
             const existingEntry = this.cache[key];
             if (!existingEntry || existingEntry.status !== "request sent") {

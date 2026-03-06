@@ -35,7 +35,7 @@ const colorMapping = [
  */
 export function getColorFromNumber(num: number): string {
     const base = colorMapping[num % colorMapping.length];
-    return blendHexTowardWhite(base, 0.45);
+    return blendHexTowardWhite(base, 0.55); // Blend toward white to make the colors lighter and more pastel, which looks better on the schedule.
 }
 
 function blendHexTowardWhite(hex: string, amount: number): string {
