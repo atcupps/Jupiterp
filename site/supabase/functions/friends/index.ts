@@ -1,4 +1,3 @@
-import { serve } from 'https://deno.land/std@0.224.0/http/server.ts';
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.49.4';
 
 type FriendVisibility = 'full' | 'busy_free' | 'off';
@@ -43,9 +42,28 @@ interface UserSchedulesRow {
 const corsHeaders: HeadersInit = {
     'Access-Control-Allow-Origin': '*',
     'Access-Control-Allow-Headers':
-        'authorization, x-client-info, apikey, content-type',
+        'authorization, Authorization, x-client-info, apikey, content-type',
     'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
 };
+
+function getAccessTokenFromRequest(request: Request): string | null {
+    const authorizationHeader =
+        request.headers.get('authorization')
+        ?? request.headers.get('Authorization')
+        ?? '';
+
+    const match = authorizationHeader.match(/^Bearer\s+(.+)$/i);
+    if (!match) {
+        return null;
+    }
+
+    const token = match[1]?.trim();
+    if (!token) {
+        return null;
+    }
+
+    return token;
+}
 
 function toResponse<T>(
     body: ApiEnvelope<T>,
@@ -137,7 +155,7 @@ function sanitizeError(message: string): string {
     return message;
 }
 
-serve(async (request: Request): Promise<Response> => {
+Deno.serve(async (request: Request): Promise<Response> => {
     if (request.method === 'OPTIONS') {
         return new Response(null, {
             status: 204,
@@ -155,15 +173,14 @@ serve(async (request: Request): Promise<Response> => {
             }, 500);
         }
 
-        const authorization = request.headers.get('Authorization') ?? '';
-        if (!authorization.startsWith('Bearer ')) {
+        const accessToken = getAccessTokenFromRequest(request);
+        if (!accessToken) {
             return toResponse({
                 success: false,
                 error: 'Missing or invalid Authorization header',
             }, 401);
         }
 
-        const accessToken = authorization.slice(7).trim();
         const supabase = createClient(supabaseUrl, supabaseAnonKey, {
             global: {
                 headers: {
