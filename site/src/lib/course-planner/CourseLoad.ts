@@ -233,7 +233,7 @@ async function getUpToDateCoursesForSchedule(
     });
 
     const semester = semesterFromTermYear(schedule.term, schedule.year);
-    const entries = await Promise.all(Array.from(codes).map(async (courseCode) => {
+    const entries = await Promise.allSettled(Array.from(codes).map(async (courseCode) => {
         const input: RequestInput = {
             type: 'courseCode',
             value: courseCode,
@@ -251,7 +251,13 @@ async function getUpToDateCoursesForSchedule(
     }));
 
     const record: Record<string, Course> = {};
-    entries.forEach(([courseCode, course]) => {
+    entries.forEach((entry) => {
+        if (entry.status !== 'fulfilled') {
+            console.error('Failed to refresh selected course for schedule:', entry.reason);
+            return;
+        }
+
+        const [courseCode, course] = entry.value;
         if (course) {
             record[courseCode] = course;
         }
@@ -267,20 +273,15 @@ export async function ensureUpToDateAndSetStores(
         return;
     }
 
-    let upToDateCurrentCourses: Record<string, Course>;
-    try {
-        upToDateCurrentCourses = await getUpToDateCoursesForSchedule(current);
-    } catch (e) {
-        console.error("Failed to retrieve up-to-date course data:", e);
-        return;
-    }
+    const upToDateCurrentCourses = await getUpToDateCoursesForSchedule(current);
 
     const updatedCurrentSelections: ScheduleSelection[] = [];
     current.selections.forEach((selection) => {
         const upToDate: Course =
             upToDateCurrentCourses[selection.course.courseCode];
         if (!upToDate) {
-            // Course no longer exists, skip
+            // Keep old selection if refresh failed for this course.
+            updatedCurrentSelections.push(selection);
             return;
         }
         const updated = diffAndUpdate(selection, upToDate);
@@ -291,20 +292,15 @@ export async function ensureUpToDateAndSetStores(
 
     const updatedNonSelectedSchedules: StoredSchedule[] = [];
     for (const stored of nonselected) {
-        let upToDateCourses: Record<string, Course>;
-        try {
-            upToDateCourses = await getUpToDateCoursesForSchedule(stored);
-        } catch (e) {
-            console.error("Failed to retrieve up-to-date course data:", e);
-            upToDateCourses = {};
-        }
+        const upToDateCourses = await getUpToDateCoursesForSchedule(stored);
 
         const updatedSelections: ScheduleSelection[] = [];
         stored.selections.forEach((selection) => {
             const upToDate: Course = 
                 upToDateCourses[selection.course.courseCode];
             if (!upToDate) {
-                // Course no longer exists, skip
+                // Keep old selection if refresh failed for this course.
+                updatedSelections.push(selection);
                 return;
             }
             const updated = diffAndUpdate(selection, upToDate);
