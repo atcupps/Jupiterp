@@ -73,6 +73,8 @@ Copyright (C) 2026 Andrew Cupps
     let currentDisplayIndex = 0;
 
     let createModalOpen = false;
+    let createModalMode: 'create' | 'edit' = 'create';
+    let editTarget: { source: 'current' } | { source: 'nonselected', nonselectedIndex: number } | null = null;
     let createTerm: Term = TERM_VALUES[TERM_VALUES.length - 1];
     let createYear = getMaxScheduleYear();
     let createScheduleName = '';
@@ -93,6 +95,29 @@ Copyright (C) 2026 Andrew Cupps
             currentSchedule.scheduleName,
             ...nonselectedSchedules.map((schedule) => schedule.scheduleName),
         ]);
+
+        if (!allNames.has(defaultName)) {
+            return defaultName;
+        }
+
+        let index = 2;
+        let candidate = `${defaultName} ${index}`;
+        while (allNames.has(candidate)) {
+            index += 1;
+            candidate = `${defaultName} ${index}`;
+        }
+
+        return candidate;
+    }
+
+    function makeUniqueNameForEdit(baseName: string, ignoreExistingName: string): string {
+        const trimmed = baseName.trim();
+        const defaultName = trimmed.length > 0 ? trimmed : 'New schedule';
+        const allNames = new Set<string>([
+            currentSchedule.scheduleName,
+            ...nonselectedSchedules.map((schedule) => schedule.scheduleName),
+        ]);
+        allNames.delete(ignoreExistingName);
 
         if (!allNames.has(defaultName)) {
             return defaultName;
@@ -152,6 +177,8 @@ Copyright (C) 2026 Andrew Cupps
     }
 
     function openCreateScheduleModal(term: Term, year: number) {
+        createModalMode = 'create';
+        editTarget = null;
         createTerm = term;
         createYear = year;
         createScheduleName = makeUniqueName(getSmartDefaultName(term, year));
@@ -165,6 +192,8 @@ Copyright (C) 2026 Andrew Cupps
 
     function closeCreateScheduleModal() {
         createModalOpen = false;
+        createModalMode = 'create';
+        editTarget = null;
     }
 
     function submitCreateSchedule() {
@@ -178,6 +207,43 @@ Copyright (C) 2026 Andrew Cupps
             Math.min(getMaxScheduleYear(), Number(createYear) || createYear)
         );
 
+        if (createModalMode === 'edit') {
+            if (!editTarget) {
+                return;
+            }
+
+            if (editTarget.source === 'current') {
+                const nextName = makeUniqueNameForEdit(trimmed, currentSchedule.scheduleName);
+                CurrentScheduleStore.set({
+                    ...currentSchedule,
+                    scheduleName: nextName,
+                    term: createTerm,
+                    year: clampedYear,
+                });
+                closeCreateScheduleModal();
+                return;
+            }
+
+            const idx = editTarget.nonselectedIndex;
+            if (idx < 0 || idx >= nonselectedSchedules.length) {
+                closeCreateScheduleModal();
+                return;
+            }
+
+            const updated = [...nonselectedSchedules];
+            const existing = updated[idx];
+            const nextName = makeUniqueNameForEdit(trimmed, existing.scheduleName);
+            updated[idx] = {
+                ...existing,
+                scheduleName: nextName,
+                term: createTerm,
+                year: clampedYear,
+            };
+            NonselectedScheduleStore.set(updated);
+            closeCreateScheduleModal();
+            return;
+        }
+
         const rows = toMutableRows();
         const currentRowIndex = rows.findIndex((row) => row.source === 'current');
         if (currentRowIndex === -1) {
@@ -190,7 +256,7 @@ Copyright (C) 2026 Andrew Cupps
         };
 
         const insertAfterIndex = rows.reduce((lastIndex, row, index) => {
-            if (row.schedule.term === createTerm && row.schedule.year === createYear) {
+            if (row.schedule.term === createTerm && row.schedule.year === clampedYear) {
                 return index;
             }
             return lastIndex;
@@ -228,34 +294,25 @@ Copyright (C) 2026 Andrew Cupps
 
     function renameSchedule(entry: ScheduleRowEntry) {
         openMenuRowKey = null;
-        const rawName = window.prompt('Rename schedule:', entry.schedule.scheduleName);
-        if (rawName === null) {
+        createModalMode = 'edit';
+        createTerm = entry.schedule.term;
+        createYear = entry.schedule.year;
+        createScheduleName = entry.schedule.scheduleName;
+        editTarget = entry.source === 'current'
+            ? { source: 'current' }
+            : (entry.nonselectedIndex === null
+                ? null
+                : { source: 'nonselected', nonselectedIndex: entry.nonselectedIndex });
+        if (!editTarget) {
+            createModalMode = 'create';
             return;
         }
 
-        const nextName = rawName.trim();
-        if (nextName.length === 0) {
-            return;
-        }
-
-        if (entry.source === 'current') {
-            CurrentScheduleStore.set({
-                ...currentSchedule,
-                scheduleName: nextName,
-            });
-            return;
-        }
-
-        if (entry.nonselectedIndex === null) {
-            return;
-        }
-
-        const updated = [...nonselectedSchedules];
-        updated[entry.nonselectedIndex] = {
-            ...updated[entry.nonselectedIndex],
-            scheduleName: nextName,
-        };
-        NonselectedScheduleStore.set(updated);
+        createModalOpen = true;
+        tick().then(() => {
+            createNameInput?.focus();
+            createNameInput?.select();
+        });
     }
 
     function duplicateSchedule(entry: ScheduleRowEntry) {
@@ -572,7 +629,7 @@ Copyright (C) 2026 Andrew Cupps
 </div>
 
 <Modal open={createModalOpen}
-       title='Create new schedule'
+    title={createModalMode === 'create' ? 'Create new schedule' : 'Edit schedule'}
        on:close={closeCreateScheduleModal}>
     <form class='flex flex-col gap-3'
           on:submit|preventDefault={submitCreateSchedule}>
@@ -619,7 +676,7 @@ Copyright (C) 2026 Andrew Cupps
                             border-outlineLight dark:border-outlineDark
                             hover:bg-hoverLight dark:hover:bg-hoverDark'
                     type='submit'>
-                Create schedule
+                {createModalMode === 'create' ? 'Create schedule' : 'Save'}
             </button>
         </div>
     </form>

@@ -25,7 +25,7 @@ export function isAcademicTerm(value: unknown): value is AcademicTerm {
 }
 
 export function getMaxScheduleYear(date = new Date()): number {
-    return date.getFullYear();
+    return date.getFullYear() + 10;
 }
 
 export function getDefaultTermYear(date = new Date()): TermYear {

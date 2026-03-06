@@ -5,6 +5,8 @@ https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2026 Andrew Cupps
 -->
 <script lang='ts'>
+    import { getMaxScheduleYear } from '$lib/course-planner/Terms';
+
     type Term = 'Fall' | 'Winter' | 'Spring' | 'Summer';
 
     interface ScheduleOption {
@@ -37,7 +39,7 @@ Copyright (C) 2026 Andrew Cupps
     export let onDeleteSchedule: () => void;
 
     export let minYear: number = 2022;
-    export let maxYear: number = new Date().getFullYear();
+    export let maxYear: number = getMaxScheduleYear();
 
     const TERMS: Term[] = ['Fall', 'Winter', 'Spring', 'Summer'];
     const TIMELINE_TERM_ORDER: Record<Term, number> = {
