@@ -52,3 +52,20 @@ npm run dev
 
 - Until migration is applied, `/friends` will show a friendly setup message instead of raw PostgREST errors.
 - Existing auth users get profile rows lazily through app code (`ensureUserProfile`) when they open friends/profile pages.
+
+## 5) Deploy Friends edge function
+
+The GitHub Pages build is static, so `/api/*` SvelteKit server routes are not
+available in production. Friends calls must go through a Supabase Edge Function.
+
+```bash
+cd site
+supabase functions deploy friends
+```
+
+Set a public app variable for the function URL in your deployment environment:
+
+`PUBLIC_SUPABASE_FUNCTION_FRIENDS_URL=https://<project-ref>.functions.supabase.co/friends`
+
+For GitHub Pages builds, add this as a GitHub Actions secret and pass it to the
+pages build step.

@@ -1,23 +1,26 @@
 <script lang='ts'>
     import { onMount } from 'svelte';
     import { base } from '$app/paths';
-    import type { PageData } from './$types';
     import type {
         FriendRecord,
-        FriendsSummary,
         FriendVisibility,
         IncomingFriendRequest,
         OutgoingFriendRequest,
     } from '$lib/friends/types';
     import {
-        ensureUserProfile,
         getAccessToken,
         isSupabaseConfigured,
-        updateFriendsVisibility,
     } from '$lib/supabase';
+    import {
+        getFriendsSummary,
+        removeFriend as removeFriendApi,
+        sendFriendRequest,
+        updateDefaultVisibility,
+        updateFriendRequest,
+        updateFriendVisibility,
+    } from '$lib/api/friendsClient';
 
     const authEnabled = isSupabaseConfigured();
-    export let data: PageData;
 
     let loading = true;
     let token: string | null = null;
@@ -53,18 +56,6 @@
         return message;
     }
 
-    function withAuthHeaders(): Record<string, string> {
-        const headers: Record<string, string> = {
-            'content-type': 'application/json',
-        };
-
-        if (token) {
-            headers.authorization = `Bearer ${token}`;
-        }
-
-        return headers;
-    }
-
     async function loadSummary() {
         if (!token) {
             incoming = [];
@@ -73,16 +64,7 @@
             return;
         }
 
-        const response = await fetch(`${base}/api/friends/summary`, {
-            headers: withAuthHeaders(),
-        });
-
-        const payload = await response.json() as FriendsSummary | { error: string };
-        if (!response.ok || 'error' in payload) {
-            throw new Error(toUserFriendlyFriendsError(
-                'error' in payload ? payload.error : 'Unable to load friends'
-            ));
-        }
+        const payload = await getFriendsSummary(token);
 
         incoming = payload.incoming;
         outgoing = payload.outgoing;
@@ -101,7 +83,6 @@
             if (!token) {
                 throw new Error('Sign in to use Friends');
             }
-            await ensureUserProfile();
             await loadSummary();
         } catch (error) {
             errorMessage = toUserFriendlyFriendsError(
@@ -122,6 +103,11 @@
             return;
         }
 
+        if (mode === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmed)) {
+            errorMessage = 'Enter a valid email address';
+            return;
+        }
+
         if (!token) {
             errorMessage = 'Sign in required';
             return;
@@ -136,19 +122,10 @@
         }
 
         try {
-            const response = await fetch(`${base}/api/friends/requests`, {
-                method: 'POST',
-                headers: withAuthHeaders(),
-                body: JSON.stringify({
-                    mode,
-                    value: trimmed,
-                }),
+            const payload = await sendFriendRequest(token, {
+                mode,
+                value: trimmed,
             });
-            const payload = await response.json() as { ok: boolean, message: string };
-            if (!response.ok || !payload.ok) {
-                errorMessage = payload.message;
-                return;
-            }
 
             message = payload.message;
             if (mode === 'email') {
@@ -181,16 +158,10 @@
         errorMessage = null;
 
         try {
-            const response = await fetch(`${base}/api/friends/requests/${requestId}`, {
-                method: 'POST',
-                headers: withAuthHeaders(),
-                body: JSON.stringify({ action }),
+            const payload = await updateFriendRequest(token, {
+                requestId,
+                action,
             });
-            const payload = await response.json() as { ok: boolean, message: string };
-            if (!response.ok || !payload.ok) {
-                errorMessage = payload.message;
-                return;
-            }
 
             message = payload.message;
             await loadSummary();
@@ -214,15 +185,7 @@
         errorMessage = null;
 
         try {
-            const response = await fetch(`${base}/api/friends/${friendId}`, {
-                method: 'DELETE',
-                headers: withAuthHeaders(),
-            });
-            const payload = await response.json() as { ok: boolean, message: string };
-            if (!response.ok || !payload.ok) {
-                errorMessage = payload.message;
-                return;
-            }
+            const payload = await removeFriendApi(token, friendId);
 
             message = payload.message;
             await loadSummary();
@@ -246,16 +209,10 @@
         errorMessage = null;
 
         try {
-            const response = await fetch(`${base}/api/friends/${friendId}`, {
-                method: 'PATCH',
-                headers: withAuthHeaders(),
-                body: JSON.stringify({ visibility }),
+            const payload = await updateFriendVisibility(token, {
+                friendId,
+                visibility,
             });
-            const payload = await response.json() as { ok: boolean, message: string };
-            if (!response.ok || !payload.ok) {
-                errorMessage = payload.message;
-                return;
-            }
 
             message = payload.message;
             await loadSummary();
@@ -275,8 +232,12 @@
         errorMessage = null;
 
         try {
-            await updateFriendsVisibility(next);
-            message = 'Default visibility updated';
+            if (!token) {
+                throw new Error('Sign in required');
+            }
+
+            const payload = await updateDefaultVisibility(token, next);
+            message = payload.message;
         } catch (error) {
             errorMessage = toUserFriendlyFriendsError(
                 error instanceof Error ? error.message : 'Unable to update default visibility'
@@ -309,23 +270,7 @@
             return;
         }
 
-        if (data.initialSummary) {
-            incoming = data.initialSummary.incoming;
-            outgoing = data.initialSummary.outgoing;
-            friends = data.initialSummary.friends;
-            selfFriendCode = data.initialSummary.selfProfile.friendCode;
-            defaultVisibility = data.initialSummary.selfProfile.friendsVisibility;
-            loading = false;
-        }
-
-        if (data.initialError) {
-            errorMessage = data.initialError;
-            loading = false;
-        }
-
-        if (!data.initialSummary) {
-            refreshAll();
-        }
+        refreshAll();
     });
 </script>
 

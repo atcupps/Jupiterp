@@ -35,6 +35,10 @@ Copyright (C) 2026 Andrew Cupps
         saveUserSchedules,
     } from '$lib/supabase';
     import {
+        getFriendSchedule,
+        getViewerOptions,
+    } from '$lib/api/friendsClient';
+    import {
         getDefaultTermYear,
         getMaxScheduleYear,
         MIN_SCHEDULE_YEAR,
@@ -237,23 +241,7 @@ Copyright (C) 2026 Andrew Cupps
         }
 
         try {
-            const response = await fetch('/api/friends/view-options', {
-                headers: {
-                    authorization: `Bearer ${accessToken}`,
-                },
-            });
-
-            if (!response.ok) {
-                ViewerOptionsStore.set([
-                    { id: 'self', label: 'You', type: 'self' },
-                ]);
-                return;
-            }
-
-            const payload = await response.json() as {
-                selfName: string,
-                friends: Array<{ id: string, label: string }>,
-            };
+            const payload = await getViewerOptions(accessToken);
 
             ViewerOptionsStore.set([
                 {
@@ -304,23 +292,12 @@ Copyright (C) 2026 Andrew Cupps
         isViewingSelf = false;
         ScheduleReadOnlyStore.set(true);
 
-        const url = new URL('/api/friends/schedule', window.location.origin);
-        url.searchParams.set('friendId', viewerId);
-        url.searchParams.set('term', currentSchedule.term);
-        url.searchParams.set('year', currentSchedule.year.toString());
-
         try {
-            const response = await fetch(url.toString(), {
-                headers: {
-                    authorization: `Bearer ${accessToken}`,
-                },
+            const payload = await getFriendSchedule(accessToken, {
+                friendId: viewerId,
+                term: currentSchedule.term,
+                year: currentSchedule.year,
             });
-            const payload = await response.json() as {
-                visibility: FriendVisibility,
-                friendName: string,
-                schedule: StoredSchedule | null,
-                message: string | null,
-            };
 
             ScheduleVisibilityStore.set(payload.visibility);
 
@@ -338,7 +315,7 @@ Copyright (C) 2026 Andrew Cupps
                 return;
             }
 
-            CurrentScheduleStore.set(payload.schedule);
+            CurrentScheduleStore.set(payload.schedule as StoredSchedule);
             NonselectedScheduleStore.set([]);
             const suffix = payload.visibility === 'busy_free'
                 ? ' (busy/free view)'
