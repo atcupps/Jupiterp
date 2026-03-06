@@ -1,0 +1,24 @@
+{
+  "name": "jupiterp",
+  "version": "1.0.0",
+  "description": "Jupiterp is a website built to help students at the University of Maryland plan their schedules and make informed decisions about their course and section selections. Jupiterp provides a course planner that allows students to search for courses, see sections complete with professor reviews from [PlanetTerp](https://planetterp.com), and visualize their course schedule.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JJFrisch/Jupiterp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/JJFrisch/Jupiterp/issues"
+  },
+  "homepage": "https://github.com/JJFrisch/Jupiterp#readme",
+  "dependencies": {
+    "jsonwebtoken": "^9.0.3"
+  }
+}
