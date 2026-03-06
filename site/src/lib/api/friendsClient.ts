@@ -86,6 +86,21 @@ function normalizePath(base: string, path: string): string {
     return `${cleanBase}${cleanPath}`;
 }
 
+function logFriendsRequestHeaders(method: 'GET' | 'POST', url: string, headers: Record<string, string>): void {
+    if (!import.meta.env.DEV) {
+        return;
+    }
+
+    const hasAuthorization = typeof headers.Authorization === 'string' && headers.Authorization.startsWith('Bearer ');
+    const hasApiKey = typeof headers.apikey === 'string' && headers.apikey.length > 0;
+    console.debug('[friends-api] request headers', {
+        method,
+        url,
+        hasAuthorization,
+        hasApiKey,
+    });
+}
+
 async function parseJsonResponse<T>(response: Response): Promise<ApiEnvelope<T>> {
     let payload: unknown;
 
@@ -138,14 +153,17 @@ async function request<T>(
     const baseUrl = requireFunctionBaseUrl();
     const anonKey = requireSupabaseAnonKey();
     const url = normalizePath(baseUrl, path);
+    const headers = {
+        'Content-Type': 'application/json',
+        apikey: anonKey,
+        Authorization: `Bearer ${accessToken}`,
+    };
+
+    logFriendsRequestHeaders(method, url, headers);
 
     const response = await fetch(url, {
         method,
-        headers: {
-            'Content-Type': 'application/json',
-            apikey: anonKey,
-            Authorization: `Bearer ${accessToken}`,
-        },
+        headers,
         body: body ? JSON.stringify(body) : undefined,
     });
 
@@ -168,14 +186,17 @@ async function mutate(
     const baseUrl = requireFunctionBaseUrl();
     const anonKey = requireSupabaseAnonKey();
     const url = normalizePath(baseUrl, path);
+    const headers = {
+        'Content-Type': 'application/json',
+        apikey: anonKey,
+        Authorization: `Bearer ${accessToken}`,
+    };
+
+    logFriendsRequestHeaders('POST', url, headers);
 
     const response = await fetch(url, {
         method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            apikey: anonKey,
-            Authorization: `Bearer ${accessToken}`,
-        },
+        headers,
         body: JSON.stringify(body ?? {}),
     });
 
