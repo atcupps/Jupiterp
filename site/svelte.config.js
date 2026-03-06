@@ -9,6 +9,9 @@ const isGitHubPages = process.env.GH_PAGES === '1' || process.env.GITHUB_PAGES =
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
   kit: {
+    // GitHub Pages serves this project from https://jjfrisch.github.io/Jupiterp,
+    // so we build a static app with a /Jupiterp base path when GH Pages flags
+    // are present in CI/local pages builds.
     adapter: isGitHubPages
       ? adapterStatic({
           fallback: '404.html'

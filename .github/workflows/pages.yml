@@ -60,6 +60,8 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
+          # Build runs in site/, but artifact upload path is workspace-root
+          # relative. adapter-static writes to site/build.
           path: site/build
 
   deploy:
