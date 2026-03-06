@@ -88,6 +88,9 @@ function requireSupabaseAnonKey(): string {
 
 function normalizePath(base: string, path: string): string {
     const cleanBase = base.endsWith('/') ? base.slice(0, -1) : base;
+    if (path === '' || path === '/') {
+        return cleanBase;
+    }
     const cleanPath = path.startsWith('/') ? path : `/${path}`;
     return `${cleanBase}${cleanPath}`;
 }
@@ -317,7 +320,7 @@ export async function sendFriendRequest(
 
     // Use root endpoint for maximum compatibility with Supabase edge function
     // deployments that do not route nested subpaths.
-    return mutate('/', accessToken, input.mode === 'email'
+    return mutate('', accessToken, input.mode === 'email'
         ? {
             mode: 'email',
             email: trimmed,
