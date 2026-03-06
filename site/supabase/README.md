@@ -67,5 +67,9 @@ Set a public app variable for the function URL in your deployment environment:
 
 `PUBLIC_SUPABASE_FUNCTION_FRIENDS_URL=https://<project-ref>.functions.supabase.co/friends`
 
+Current Jupiterp project default:
+
+`PUBLIC_SUPABASE_FUNCTION_FRIENDS_URL=https://zjhuagbdwgsipprsqxpq.supabase.co/functions/v1/friends`
+
 For GitHub Pages builds, add this as a GitHub Actions secret and pass it to the
 pages build step.

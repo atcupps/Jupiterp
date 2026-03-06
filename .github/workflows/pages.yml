@@ -52,7 +52,7 @@ jobs:
           PUBLIC_SITE_URL: 'https://jjfrisch.github.io/Jupiterp'
           PUBLIC_SUPABASE_URL: ${{ secrets.PUBLIC_SUPABASE_URL }}
           PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.PUBLIC_SUPABASE_ANON_KEY }}
-          PUBLIC_SUPABASE_FUNCTION_FRIENDS_URL: ${{ secrets.PUBLIC_SUPABASE_FUNCTION_FRIENDS_URL }}
+          PUBLIC_SUPABASE_FUNCTION_FRIENDS_URL: ${{ secrets.PUBLIC_SUPABASE_FUNCTION_FRIENDS_URL || 'https://zjhuagbdwgsipprsqxpq.supabase.co/functions/v1/friends' }}
         run: npm run build:pages
 
       - name: Setup Pages

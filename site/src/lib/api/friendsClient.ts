@@ -45,7 +45,10 @@ interface GetFriendScheduleInput {
 }
 
 function getFunctionBaseUrl(): string {
-    const value = (import.meta.env.PUBLIC_SUPABASE_FUNCTION_FRIENDS_URL ?? '') as string;
+    const value = (
+        import.meta.env.PUBLIC_SUPABASE_FUNCTION_FRIENDS_URL
+            ?? 'https://zjhuagbdwgsipprsqxpq.supabase.co/functions/v1/friends'
+    ) as string;
     return value.trim();
 }
 
