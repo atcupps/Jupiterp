@@ -34,5 +34,30 @@ const colorMapping = [
  * @returns A hex code color string
  */
 export function getColorFromNumber(num: number): string {
-    return colorMapping[num % colorMapping.length];
+    const base = colorMapping[num % colorMapping.length];
+    return blendHexTowardWhite(base, 0.55);
+}
+
+function blendHexTowardWhite(hex: string, amount: number): string {
+    const normalized = hex.startsWith('#') ? hex.slice(1) : hex;
+    if (normalized.length !== 6) {
+        return hex;
+    }
+
+    const r = parseInt(normalized.slice(0, 2), 16);
+    const g = parseInt(normalized.slice(2, 4), 16);
+    const b = parseInt(normalized.slice(4, 6), 16);
+
+    if ([r, g, b].some((v) => Number.isNaN(v))) {
+        return hex;
+    }
+
+    const clamp01 = (v: number) => Math.max(0, Math.min(1, v));
+    const t = clamp01(amount);
+    const mix = (channel: number) => Math.round(channel * (1 - t) + 255 * t);
+
+    const rr = mix(r).toString(16).padStart(2, '0');
+    const gg = mix(g).toString(16).padStart(2, '0');
+    const bb = mix(b).toString(16).padStart(2, '0');
+    return `#${rr}${gg}${bb}`;
 }

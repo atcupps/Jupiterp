@@ -12,7 +12,7 @@ import {
     type Course,
     type CoursesWithSectionsConfig
 } from "@jupiterp/jupiterp";
-import { client } from "$lib/client";
+import { GenEd } from "@jupiterp/jupiterp";
 import type { ServerSideFilterParams } from "../../types";
 
 export class CourseDataCache {
@@ -105,7 +105,7 @@ export class CourseDataCache {
         const requestConfig =
             generateRequestConfig(input);
         this.pendingRequests[key] = 
-            this.requestCoursesForDept(key, requestConfig, !hadEntry);
+            this.requestCoursesForDept(key, requestConfig, !hadEntry, input);
         if (!hadEntry) {
             this.size += 1;
         }
@@ -120,21 +120,32 @@ export class CourseDataCache {
     private async requestCoursesForDept(
                     key: string, 
                     cfg: CoursesWithSectionsConfig,
-                    isNewEntry: boolean): Promise<Course[]> {
+                    isNewEntry: boolean,
+                    input: RequestInput): Promise<Course[]> {
         try {
-            const response = await client.coursesWithSections(cfg);
+            const params = coursesWithSectionsQueryParams(cfg);
+            if (input.term) {
+                params.append('term', input.term);
+            }
+            if (input.year !== undefined && input.year !== null) {
+                params.append('year', String(input.year));
+            }
 
-            if (!response.ok()) {
+            const url = `https://api.jupiterp.com/v0/courses/withSections?${params.toString()}`;
+            const res = await fetch(url);
+            const statusCode = res.status;
+            const statusMessage = res.statusText;
+
+            if (!res.ok) {
+                const errorBody = await res.text();
                 // format-check exempt 2
                 throw new Error(
-                    `API request to get courses for ${key} failed: ${response.statusCode} ${response.statusMessage}`
+                    `API request to get courses for ${key} failed: ${statusCode} ${statusMessage}${errorBody ? `\n${errorBody}` : ''}`
                 );
             }
 
-            const courses = response.data;
-            if (courses == null) {
-                throw new Error(`Null course data returned for ${key}`);
-            }
+            const raw = (await res.json()) as CourseRaw[];
+            const courses = raw.map(parseCourseRaw);
 
             const existingEntry = this.cache[key];
             if (!existingEntry || existingEntry.status !== "request sent") {
@@ -201,7 +212,9 @@ export class CourseDataCache {
 
 function keyFromRequestInput(input: RequestInput): string {
     const filtersPart = JSON.stringify(input.filters);
-    return `${input.type}:${input.value}|filters:${filtersPart}`;
+    const termPart = input.term ? `|term:${input.term}` : '';
+    const yearPart = input.year !== undefined && input.year !== null ? `|year:${input.year}` : '';
+    return `${input.type}:${input.value}|filters:${filtersPart}${termPart}${yearPart}`;
 }
 
 function generateRequestConfig(input: RequestInput): CoursesWithSectionsConfig {
@@ -237,4 +250,157 @@ export interface RequestInput {
     type: "deptCode" | "courseNumber";
     value: string;
     filters?: ServerSideFilterParams;
+    term?: string;
+    year?: number;
+}
+
+type CourseRaw = {
+    course_code: string;
+    name: string;
+    min_credits: number;
+    max_credits: number | null;
+    gen_eds: string[] | null;
+    conditions: string[] | null;
+    description: string | null;
+    sections: SectionRaw[] | null;
+};
+
+type SectionRaw = {
+    course_code: string;
+    sec_code: string;
+    instructors: string[];
+    meetings: string[];
+    open_seats: number;
+    total_seats: number;
+    waitlist: number;
+    holdfile: number | null;
+};
+
+function coursesWithSectionsQueryParams(cfg: CoursesWithSectionsConfig): URLSearchParams {
+    const params = new URLSearchParams();
+
+    if (cfg.courseCodes && cfg.courseCodes.size > 0) {
+        params.append('courseCodes', Array.from(cfg.courseCodes).join(','));
+    }
+
+    if (cfg.prefix) {
+        params.append('prefix', cfg.prefix);
+    }
+
+    if (cfg.number) {
+        params.append('number', cfg.number);
+    }
+
+    if (cfg.genEds && cfg.genEds.size > 0) {
+        const codes = Array.from(cfg.genEds).map((ge) => (ge as any).code ?? String(ge));
+        params.append('genEds', codes.join(','));
+    }
+
+    if (cfg.limit !== null && cfg.limit !== undefined) {
+        params.append('limit', String(cfg.limit));
+    }
+
+    if (cfg.offset !== null && cfg.offset !== undefined) {
+        params.append('offset', String(cfg.offset));
+    }
+
+    if (cfg.creditFilters) {
+        for (const clause of cfg.creditFilters.argsArray()) {
+            params.append('credits', clause);
+        }
+    }
+
+    if (cfg.sortBy && cfg.sortBy.length() > 0) {
+        params.append('sortBy', cfg.sortBy.argsArray().join(','));
+    }
+
+    if (cfg.totalClassSize !== null && cfg.totalClassSize !== undefined) {
+        params.append('totalClassSize', String(cfg.totalClassSize));
+    }
+
+    if (cfg.onlyOpen !== null && cfg.onlyOpen !== undefined) {
+        params.append('onlyOpen', String(cfg.onlyOpen));
+    }
+
+    if (cfg.instructor) {
+        params.append('instructor', cfg.instructor);
+    }
+
+    return params;
+}
+
+function parseCourseRaw(raw: CourseRaw): Course {
+    return {
+        courseCode: raw.course_code,
+        name: raw.name,
+        minCredits: raw.min_credits,
+        maxCredits: raw.max_credits,
+        genEds: raw.gen_eds ? raw.gen_eds.map(GenEd.fromCode) : null,
+        conditions: raw.conditions,
+        description: raw.description,
+        sections: raw.sections ? raw.sections.map(parseSectionRaw) : null,
+    };
+}
+
+function parseSectionRaw(raw: SectionRaw): any {
+    const meetings = raw.meetings && raw.meetings.length > 0
+        ? raw.meetings.map(parseMeeting)
+        : ['No Sections'];
+
+    return {
+        courseCode: raw.course_code,
+        sectionCode: raw.sec_code,
+        instructors: raw.instructors,
+        meetings,
+        openSeats: raw.open_seats,
+        totalSeats: raw.total_seats,
+        waitlist: raw.waitlist,
+        holdfile: raw.holdfile,
+    };
+}
+
+function parseMeeting(raw: string): any {
+    switch (raw) {
+        case 'OnlineAsync':
+        case 'Unknown':
+        case 'TBA':
+        case 'Unspecified':
+            return raw;
+        default:
+            break;
+    }
+
+    const parts = raw.split('-');
+    if (parts.length < 3) {
+        return 'Unknown';
+    }
+
+    const days = parts[0];
+    const start = parseClock(parts[1]);
+    const end = parseClock(parts[2]);
+    const building = parts[3] ?? '';
+    const room = parts.length > 4 ? parts[4] : null;
+
+    return {
+        classtime: { days, start, end },
+        location: { building, room },
+    };
+}
+
+function parseClock(value: string): number {
+    const lower = value.toLowerCase().trim();
+    const [hhRaw, mmRaw] = lower.split(':');
+    const hoursRaw = Number.parseInt(hhRaw ?? '', 10);
+    const minutesRaw = Number.parseInt((mmRaw ?? '').replace(/am|pm/g, ''), 10);
+
+    let hours = Number.isFinite(hoursRaw) ? hoursRaw : 0;
+    const minutes = Number.isFinite(minutesRaw) ? minutesRaw : 0;
+
+    if (lower.includes('pm') && hours < 12) {
+        hours += 12;
+    } else if (lower.includes('am') && hours === 12) {
+        hours = 0;
+    }
+
+    return hours + minutes / 60;
 }

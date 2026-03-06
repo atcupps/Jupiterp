@@ -15,6 +15,7 @@ import {
     SearchResultsStore,
     ProfsLookupStore,
     CourseSearchFilterStore,
+    CurrentScheduleStore,
 } from "../../stores/CoursePlannerStores";
 import type { FilterParams } from "../../types";
 
@@ -52,6 +53,20 @@ ProfsLookupStore.subscribe((profs) => {
 });
 
 let mostRecentInput: string = "";
+
+// Current schedule term/year, used to scope course searches.
+let activeTerm: string = 'Fall';
+let activeYear: number = new Date().getFullYear();
+CurrentScheduleStore.subscribe((stored) => {
+    const nextTerm = stored.term;
+    const nextYear = stored.year;
+    const changed = nextTerm !== activeTerm || nextYear !== activeYear;
+    activeTerm = nextTerm;
+    activeYear = nextYear;
+    if (changed) {
+        setSearchResults(mostRecentInput);
+    }
+});
 
 // Filtering data
 let filters: FilterParams = {
@@ -161,6 +176,8 @@ export async function setSearchResults(input: string) {
             type: "deptCode",
             value: matchingDepts[0],
             filters: filters.serverSideFilters,
+            term: activeTerm,
+            year: activeYear,
         }
 
         // Get from cache/API
@@ -202,6 +219,8 @@ export async function setSearchResults(input: string) {
             type: "courseNumber",
             value: numberInput,
             filters: filters.serverSideFilters,
+            term: activeTerm,
+            year: activeYear,
         }
 
         const courses: Course[] =
@@ -237,6 +256,8 @@ export async function setSearchResults(input: string) {
             type: "deptCode",
             value: "", // Empty prefix to get all courses
             filters: filters.serverSideFilters,
+            term: activeTerm,
+            year: activeYear,
         }
 
         const courses: Course[] =
