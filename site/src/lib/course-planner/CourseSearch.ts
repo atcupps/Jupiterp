@@ -78,6 +78,11 @@ CourseSearchFilterStore.subscribe((newFilters) => {
     setSearchResults(mostRecentInput);
 });
 
+function getRequestTerm(): 'Fall' | 'Winter' | 'Spring' | 'Summer' {
+    return filters.clientSideFilters.searchTerm ??
+        (activeTerm as 'Fall' | 'Winter' | 'Spring' | 'Summer');
+}
+
 /**
  * Given an `input` (which should already be simplified to remove whitespace
  * and convert to uppercase), returns a list of department codes that match the
@@ -176,7 +181,7 @@ export async function setSearchResults(input: string) {
             type: "deptCode",
             value: matchingDepts[0],
             filters: filters.serverSideFilters,
-            term: activeTerm,
+            term: getRequestTerm(),
             year: activeYear,
         }
 
@@ -219,7 +224,7 @@ export async function setSearchResults(input: string) {
             type: "courseNumber",
             value: numberInput,
             filters: filters.serverSideFilters,
-            term: activeTerm,
+            term: getRequestTerm(),
             year: activeYear,
         }
 
@@ -256,7 +261,7 @@ export async function setSearchResults(input: string) {
             type: "deptCode",
             value: "", // Empty prefix to get all courses
             filters: filters.serverSideFilters,
-            term: activeTerm,
+            term: getRequestTerm(),
             year: activeYear,
         }
 

@@ -30,6 +30,7 @@ Copyright (C) 2026 Andrew Cupps
     let onlyOpenSections = false;
     let instructor: string = '';
     let matchingInstructors: string[] = [];
+    let searchTerm: '' | 'Fall' | 'Winter' | 'Spring' | 'Summer' = '';
 
     const defaultMinCredits = 0;
     const defaultMaxCredits = 20;
@@ -65,6 +66,11 @@ Copyright (C) 2026 Andrew Cupps
             appliedFiltersCount += 1;
             params.clientSideFilters.onlyOpen = onlyOpenSections;
         }
+        if (searchTerm.length > 0) {
+            appliedFiltersCount += 1;
+            params.clientSideFilters.searchTerm =
+                searchTerm as 'Fall' | 'Winter' | 'Spring' | 'Summer';
+        }
         if (instructor.trim().length > 0) {
             appliedFiltersCount += 1;
             matchingInstructors = 
@@ -98,6 +104,7 @@ Copyright (C) 2026 Andrew Cupps
         maxCredits = defaultMaxCredits;
         onlyOpenSections = false;
         instructor = '';
+        searchTerm = '';
     }
 </script>
 
@@ -308,6 +315,27 @@ Copyright (C) 2026 Andrew Cupps
                             {/each}
                         </div>
                     {/if}
+                </div>
+            </div>
+
+            <!-- Search term -->
+            <div class="flex flex-row text-xs">
+                <span class="min-w-16">
+                    Term:
+                </span>
+                <div class="flex flex-col grow">
+                    <select class="border border-secCodesDark
+                                    dark:border-divBorderDark
+                                    rounded-md px-2 py-1 text-xs
+                                    bg-bgLight dark:bg-bgDark
+                                    focus:outline-none focus:ring"
+                            bind:value={searchTerm}>
+                        <option value="">Current schedule term</option>
+                        <option value="Fall">Fall</option>
+                        <option value="Winter">Winter</option>
+                        <option value="Spring">Spring</option>
+                        <option value="Summer">Summer</option>
+                    </select>
                 </div>
             </div>
 

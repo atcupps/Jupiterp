@@ -35,7 +35,7 @@ const colorMapping = [
  */
 export function getColorFromNumber(num: number): string {
     const base = colorMapping[num % colorMapping.length];
-    return blendHexTowardWhite(base, 0.55);
+    return blendHexTowardWhite(base, 0.45);
 }
 
 function blendHexTowardWhite(hex: string, amount: number): string {

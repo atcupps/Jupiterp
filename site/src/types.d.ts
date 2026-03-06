@@ -256,4 +256,5 @@ export interface ClientSideFilterParams {
     minCredits?: number,
     maxCredits?: number,
     onlyOpen?: boolean,
+    searchTerm?: 'Fall' | 'Winter' | 'Spring' | 'Summer',
 }

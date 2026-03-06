@@ -5,6 +5,7 @@ https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2026 Andrew Cupps
 -->
 <script lang='ts'>
+    import { onMount } from 'svelte';
     import CourseListing from "./CourseListing.svelte";
     import ScheduleSelector from "../ScheduleSelector.svelte";
     import {
@@ -23,6 +24,9 @@ Copyright (C) 2026 Andrew Cupps
     import SolarSystemLoader from "../SolarSystemLoader.svelte";
 
     const FILTER_SCROLL_COLLAPSE_THRESHOLD = 100;
+    const MIN_SCHEDULE_PANE_HEIGHT = 140;
+    const MIN_RESULTS_PANE_HEIGHT = 180;
+    const SPLIT_HANDLE_HEIGHT = 8;
 
     export let sidebarWidth: number = 300;
 
@@ -52,7 +56,55 @@ Copyright (C) 2026 Andrew Cupps
     }
 
     let genEdMenuOpen = false;
-    let schedulePanelExpanded = true;
+    let courseSearchSplitContainer: HTMLDivElement;
+    let schedulePaneHeight = 360;
+    let resizingSchedulePane = false;
+
+    onMount(() => {
+        if (!courseSearchSplitContainer) {
+            return;
+        }
+
+        schedulePaneHeight = Math.round(
+            courseSearchSplitContainer.getBoundingClientRect().height / 2
+        );
+        clampSchedulePaneHeight(schedulePaneHeight);
+    });
+
+    function clampSchedulePaneHeight(nextHeight: number) {
+        if (!courseSearchSplitContainer) {
+            return;
+        }
+
+        const bounds = courseSearchSplitContainer.getBoundingClientRect();
+        const maxSchedulePaneHeight = Math.max(
+            MIN_SCHEDULE_PANE_HEIGHT,
+            bounds.height - MIN_RESULTS_PANE_HEIGHT - SPLIT_HANDLE_HEIGHT
+        );
+        schedulePaneHeight = Math.max(
+            MIN_SCHEDULE_PANE_HEIGHT,
+            Math.min(maxSchedulePaneHeight, nextHeight)
+        );
+    }
+
+    function startSchedulePaneResize(event: MouseEvent) {
+        event.preventDefault();
+        resizingSchedulePane = true;
+    }
+
+    function stopSchedulePaneResize() {
+        resizingSchedulePane = false;
+    }
+
+    function onSchedulePaneResize(event: MouseEvent) {
+        if (!resizingSchedulePane || !courseSearchSplitContainer) {
+            return;
+        }
+
+        const bounds = courseSearchSplitContainer.getBoundingClientRect();
+        const proposedHeight = event.clientY - bounds.top;
+        clampSchedulePaneHeight(proposedHeight);
+    }
 
     function selectDepartment(dept: string) {
         searchInput = dept;
@@ -119,6 +171,9 @@ Copyright (C) 2026 Andrew Cupps
     }
 </script>
 
+<svelte:window on:mousemove={onSchedulePaneResize}
+    on:mouseup={stopSchedulePaneResize} />
+
 <div class='flex flex-col 2xl:text-lg
                 w-[var(--sidebar-width)] min-w-[var(--sidebar-width)] max-w-[var(--sidebar-width)]
                 h-full course-search
@@ -129,51 +184,59 @@ Copyright (C) 2026 Andrew Cupps
     style='--sidebar-width: {Math.max(180, Math.min(560, sidebarWidth))}px;'
     >
 
-    <div class='bg-white dark:bg-bgDark px-2 py-2 mb-2'>
-        <button class='w-full flex items-center justify-between rounded-md px-2 py-1
-                        text-sm hover:bg-hoverLight dark:hover:bg-hoverDark'
-                type='button'
-                on:click={() => { schedulePanelExpanded = !schedulePanelExpanded; }}>
-            <span class='font-semibold'>Schedules</span>
-            <span class='text-xs opacity-70'>
-                {schedulePanelExpanded ? 'Hide' : 'Show'}
-            </span>
-        </button>
+    <div class='flex grow min-h-0 flex-col'
+        bind:this={courseSearchSplitContainer}
+        class:select-none={resizingSchedulePane}>
 
-        {#if schedulePanelExpanded}
+        <div class='bg-white dark:bg-bgDark px-2 py-2 mb-1 overflow-y-auto
+                    min-h-[140px]'
+            style='height: {schedulePaneHeight}px;'>
+            <div class='w-full rounded-md px-2 py-1 text-sm'>
+                <span class='font-semibold'>Schedules</span>
+            </div>
+
             <div class='pt-2'>
                 <ScheduleSelector />
             </div>
-        {/if}
-    </div>
+        </div>
 
-    <div class='flex flex-col w-full border-solid relative
+        <button class='flex h-2 w-full cursor-row-resize items-center justify-center
+                        rounded-sm transition-colors
+                        hover:bg-hoverLight dark:hover:bg-hoverDark'
+                type='button'
+                aria-label='Resize schedules and course search panes'
+                on:mousedown={startSchedulePaneResize}>
+            <div class='h-px w-full bg-divBorderLight dark:bg-divBorderDark
+                        transition-colors' />
+        </button>
+
+        <div class='flex min-h-0 grow flex-col w-full border-solid relative
                             border-b-2 border-t-2 p-1
                             border-divBorderLight dark:border-divBorderDark'>
-        <input type='text'
-            bind:value={searchInput}
-            on:input={() => {setSearchResults(searchInput)}}
-            on:keydown={handleSearchKeydown}
-            placeholder='Search course codes, ex: "MATH140"'
-            class='border-solid border-2 border-outlineLight
+            <input type='text'
+                bind:value={searchInput}
+                on:input={() => {setSearchResults(searchInput)}}
+                on:keydown={handleSearchKeydown}
+                placeholder='Search course codes, ex: "MATH140"'
+                class='border-solid border-2 border-outlineLight
                             dark:border-outlineDark rounded-lg
                             bg-transparent px-2 w-full text-xl
                             lg:text-base lg:placeholder:text-sm
                             placeholder:text-base py-0'>
 
-        <CourseFilters bind:showGenEdMenu={genEdMenuOpen} />
-    </div>
+            <CourseFilters bind:showGenEdMenu={genEdMenuOpen} />
+        </div>
 
-    <div class='grow courses-list overflow-y-scroll overflow-x-none
+        <div class='grow min-h-0 courses-list overflow-y-scroll overflow-x-none
                 px-1'
-        on:wheel={handleResultsScroll}>
+            on:wheel={handleResultsScroll}>
 
-        {#if searchInput.length > 0 && deptSuggestions.length > 1}
-            <div class='mt-2 rounded-lg border
+            {#if searchInput.length > 0 && deptSuggestions.length > 1}
+                <div class='mt-2 rounded-lg border
                         border-outlineLight dark:border-outlineDark
                         bg-bgLight dark:bg-bgDark shadow-lg'>
-                {#each deptSuggestions as deptOption, index}
-                    <button type='button'
+                    {#each deptSuggestions as deptOption, index}
+                        <button type='button'
                         class={`flex w-full text-left px-3 py-1
                                 text-base lg:text-sm transition-colors
                                 hover:bg-outlineLight
@@ -184,28 +247,29 @@ Copyright (C) 2026 Andrew Cupps
                                     `bg-outlineLight bg-opacity-20
                                     dark:bg-outlineDark dark:bg-opacity-30`
                                     : ''}`}
-                        on:mouseenter={() => { highlightedSuggestionIndex = index; }}
-                        on:click={() => selectDepartment(deptOption)}>
-                        <span class='font-black min-w-[17%] shrink-0'>
-                            {deptOption}
-                        </span>
-                        <span class='text-xs inline-block italic grow truncate'>
-                            {deptCodeToName[deptOption]}
-                        </span>
-                    </button>
-                {/each}
-            </div>
-        {/if}
+                            on:mouseenter={() => { highlightedSuggestionIndex = index; }}
+                            on:click={() => selectDepartment(deptOption)}>
+                            <span class='font-black min-w-[17%] shrink-0'>
+                                {deptOption}
+                            </span>
+                            <span class='text-xs inline-block italic grow truncate'>
+                                {deptCodeToName[deptOption]}
+                            </span>
+                        </button>
+                    {/each}
+                </div>
+            {/if}
 
-        {#each searchResults as courseMatch (courseMatch.courseCode)}
-            <CourseListing course={courseMatch} />
-        {/each}
+            {#each searchResults as courseMatch (courseMatch.courseCode)}
+                <CourseListing course={courseMatch} />
+            {/each}
 
-        {#if isPendingResults}
-            <div class='flex justify-center items-center py-8'>
-                <SolarSystemLoader size={120} color='currentColor' />
-            </div>
-        {/if}
+            {#if isPendingResults}
+                <div class='flex justify-center items-center py-8'>
+                    <SolarSystemLoader size={120} color='currentColor' />
+                </div>
+            {/if}
+        </div>
     </div>
 </div>
 
