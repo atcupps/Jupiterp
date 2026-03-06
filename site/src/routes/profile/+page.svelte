@@ -6,7 +6,11 @@ Copyright (C) 2026 Andrew Cupps
 -->
 <script lang='ts'>
     import { onMount } from 'svelte';
+    import { invalidateAll } from '$app/navigation';
     import { base } from '$app/paths';
+    import type { PageData } from './$types';
+    import type { GenEdCategory } from '$lib/gened/requirements';
+    import GenEdProgressTable from './GenEdProgressTable.svelte';
     import {
         ensureUserProfile,
         getAuthUser,
@@ -17,6 +21,8 @@ Copyright (C) 2026 Andrew Cupps
         signInWithGoogle,
         signOutUser,
     } from '$lib/supabase';
+
+    export let data: PageData;
 
     const authEnabled = isSupabaseConfigured();
     let authReady = false;
@@ -32,6 +38,41 @@ Copyright (C) 2026 Andrew Cupps
     let friendCodeInput: string = '';
     let generatedFriendCode: string = '';
     let friendsVisibility: 'full' | 'busy_free' | 'off' = 'full';
+
+    type CategorySummary = {
+        completed: number,
+        required: number,
+    };
+
+    const categoryOrder: GenEdCategory[] = [
+        'Fundamental Studies',
+        'Distributive Studies',
+        'I-Series / Big Question',
+        'Diversity',
+    ];
+
+    $: categorySummaries = categoryOrder.reduce(
+        (accumulator, category) => {
+            const rows = data.genEdProgress.filter(
+                (row) => row.requirement.category === category
+            );
+            accumulator[category] = {
+                completed: rows.reduce(
+                    (sum, row) => sum + Math.min(
+                        row.completedCount,
+                        row.requirement.requiredCount
+                    ),
+                    0
+                ),
+                required: rows.reduce(
+                    (sum, row) => sum + row.requirement.requiredCount,
+                    0
+                ),
+            };
+            return accumulator;
+        },
+        {} as Record<GenEdCategory, CategorySummary>
+    );
 
     function getAuthRedirectTo(): string {
         const url = new URL(window.location.href);
@@ -162,6 +203,7 @@ Copyright (C) 2026 Andrew Cupps
         try {
             await signOutUser();
             authStatusMessage = 'You have been signed out.';
+            void invalidateAll();
         } catch (error) {
             console.error('Sign-out failed:', error);
             authErrorMessage = 'Could not sign out right now.';
@@ -184,6 +226,7 @@ Copyright (C) 2026 Andrew Cupps
             userEmail = user?.email ?? null;
             refreshGeneratedFriendCode();
             loadProfileFromSupabase();
+            void invalidateAll();
         });
 
         getAuthUser().then((user) => {
@@ -305,6 +348,38 @@ Copyright (C) 2026 Andrew Cupps
                     bind:value={friendCodeInput}
                     on:blur={saveFriendInput}
                     placeholder='Enter code'>
+        </div>
+
+        <div class='rounded-md border border-outlineLight dark:border-outlineDark
+                    p-3 flex flex-col gap-3'>
+            <div>
+                <h2 class='text-lg font-semibold'>Gen Ed Progress</h2>
+                <div class='text-xs opacity-70'>
+                    Requirement progress by official UMD Gen Ed codes.
+                </div>
+            </div>
+
+            {#if data.genEdLoadError}
+                <div class='rounded-md border border-outlineLight dark:border-outlineDark p-2 text-sm'>
+                    {data.genEdLoadError}
+                </div>
+            {/if}
+
+            <div class='grid grid-cols-1 sm:grid-cols-2 gap-2'>
+                {#each categoryOrder as category}
+                    <div class='rounded-md border border-outlineLight dark:border-outlineDark p-2'>
+                        <div class='text-xs opacity-70'>{category}</div>
+                        <div class='text-sm font-semibold'>
+                            {categorySummaries[category]?.completed ?? 0}
+                            /
+                            {categorySummaries[category]?.required ?? 0}
+                            courses completed
+                        </div>
+                    </div>
+                {/each}
+            </div>
+
+            <GenEdProgressTable rows={data.genEdProgress} />
         </div>
     </div>
 </div>

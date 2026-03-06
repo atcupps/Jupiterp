@@ -72,6 +72,10 @@ function requireSupabase() {
     return supabaseClient;
 }
 
+export function getSupabaseClient() {
+    return requireSupabase();
+}
+
 export async function getAuthUser(): Promise<User | null> {
     if (!isSupabaseConfigured()) {
         return null;

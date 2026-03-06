@@ -281,16 +281,10 @@ Copyright (C) 2026 Andrew Cupps
             courseInfoCourse.minCredits, courseInfoCourse.maxCredits
         )} credits |
         Section {courseInfoSection.sectionCode}
+        {#if courseInfoCourse.genEds != null && courseInfoCourse.genEds.length > 0}
+            | {courseInfoCourse.genEds.map((g) => g.code).join(', ')}
+        {/if}
     </div>
-
-    {#if courseInfoCourse.genEds != null && courseInfoCourse.genEds.length > 0}
-        <div class='text-sm 2xl:text-base'>
-            <span class='font-black underline'>
-                GenEds:
-            </span>
-            {courseInfoCourse.genEds.map((g) => g.code).join(', ')}
-        </div>
-    {/if}
 
     {#each courseInfoSection.instructors as instructor}
         <InstructorListing instructor={instructor}
