@@ -84,27 +84,38 @@ CourseSearchFilterStore.subscribe((newFilters) => {
 async function getRequestTermYear(): Promise<{
     term: 'Fall' | 'Winter' | 'Spring' | 'Summer',
     year: number,
+    semester?: string,
 }> {
     const selectedTerm = filters.clientSideFilters.searchTerm;
     if (selectedTerm) {
-        const resolved = await resolveMostRecentTermYear(selectedTerm as AcademicTerm);
-        if (resolved) {
-            ResolvedSearchTermYearStore.set({
-                term: resolved.term,
-                year: resolved.year,
-                semester: resolved.semester,
-            });
+        try {
+            const resolved = await resolveMostRecentTermYear(selectedTerm as AcademicTerm);
+            if (resolved) {
+                ResolvedSearchTermYearStore.set({
+                    term: resolved.term,
+                    year: resolved.year,
+                    semester: resolved.semester,
+                });
+                return {
+                    term: resolved.term,
+                    year: resolved.year,
+                    semester: resolved.semester,
+                };
+            }
+
+            ResolvedSearchTermYearStore.set(null);
             return {
-                term: resolved.term,
-                year: resolved.year,
+                term: selectedTerm,
+                year: activeYear,
+            };
+        } catch (error) {
+            console.error('Unable to resolve available term-year list:', error);
+            ResolvedSearchTermYearStore.set(null);
+            return {
+                term: selectedTerm,
+                year: activeYear,
             };
         }
-
-        ResolvedSearchTermYearStore.set(null);
-        return {
-            term: selectedTerm,
-            year: activeYear,
-        };
     }
 
     ResolvedSearchTermYearStore.set(null);
@@ -192,7 +203,20 @@ function filterAndSortCourseArray(courses: Course[]): Course[] {
  */
 export async function setSearchResults(input: string) {
     mostRecentInput = input;
-    const requestTermYear = await getRequestTermYear();
+    let requestTermYear: {
+        term: 'Fall' | 'Winter' | 'Spring' | 'Summer',
+        year: number,
+        semester?: string,
+    };
+    try {
+        requestTermYear = await getRequestTermYear();
+    } catch (error) {
+        console.error('Unable to resolve search term/year. Using active schedule term/year.', error);
+        requestTermYear = {
+            term: activeTerm as 'Fall' | 'Winter' | 'Spring' | 'Summer',
+            year: activeYear,
+        };
+    }
 
     // Don't care about case or whitespace in searches
     const simpleInput: string = input.toUpperCase().replace(/\s/g, '');
@@ -213,6 +237,7 @@ export async function setSearchResults(input: string) {
             type: "deptCode",
             value: matchingDepts[0],
             filters: filters.serverSideFilters,
+            semester: requestTermYear.semester,
             term: requestTermYear.term,
             year: requestTermYear.year,
         }
@@ -256,6 +281,7 @@ export async function setSearchResults(input: string) {
             type: "courseNumber",
             value: numberInput,
             filters: filters.serverSideFilters,
+            semester: requestTermYear.semester,
             term: requestTermYear.term,
             year: requestTermYear.year,
         }
@@ -293,6 +319,7 @@ export async function setSearchResults(input: string) {
             type: "deptCode",
             value: "", // Empty prefix to get all courses
             filters: filters.serverSideFilters,
+            semester: requestTermYear.semester,
             term: requestTermYear.term,
             year: requestTermYear.year,
         }

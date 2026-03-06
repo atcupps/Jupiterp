@@ -14,7 +14,9 @@ Copyright (C) 2026 Andrew Cupps
     import { slide } from "svelte/transition";
     import type { FilterParams } from "../../../types";
     import {
-        CourseSearchFilterStore
+        CourseSearchFilterStore,
+        ResolvedSearchTermYearStore,
+        type ResolvedSearchTermYear,
     } from "../../../stores/CoursePlannerStores";
     import {
         matchingStandardizedProfessorNames
@@ -31,6 +33,10 @@ Copyright (C) 2026 Andrew Cupps
     let instructor: string = '';
     let matchingInstructors: string[] = [];
     let searchTerm: '' | 'Fall' | 'Winter' | 'Spring' | 'Summer' = '';
+    let resolvedSearchTermYear: ResolvedSearchTermYear | null = null;
+    ResolvedSearchTermYearStore.subscribe((value) => {
+        resolvedSearchTermYear = value;
+    });
 
     const defaultMinCredits = 0;
     const defaultMaxCredits = 20;
@@ -336,6 +342,17 @@ Copyright (C) 2026 Andrew Cupps
                         <option value="Spring">Spring</option>
                         <option value="Summer">Summer</option>
                     </select>
+
+                    {#if searchTerm.length > 0}
+                        <div class="mt-1 text-[11px] leading-tight opacity-80">
+                            {#if resolvedSearchTermYear}
+                                Using {resolvedSearchTermYear.term} {resolvedSearchTermYear.year}
+                                ({resolvedSearchTermYear.semester})
+                            {:else}
+                                Using {searchTerm} {new Date().getFullYear()} (fallback)
+                            {/if}
+                        </div>
+                    {/if}
                 </div>
             </div>
 

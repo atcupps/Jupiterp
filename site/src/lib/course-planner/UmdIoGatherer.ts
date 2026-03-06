@@ -13,7 +13,7 @@ import type { ServerSideFilterParams } from '../../types';
 import type { RequestInput } from './CourseDataCache';
 import type { AcademicTerm } from './Terms';
 
-const UMD_IO_BASE_URL = 'https://api.umd.io/v1';
+const UMD_IO_PROXY_BASE_PATH = '/api/umd';
 const PAGE_SIZE = 100;
 const COURSE_BATCH_SIZE = 40;
 
@@ -89,7 +89,7 @@ export async function resolveMostRecentTermYear(
 }
 
 export async function gatherCoursesFromUmdIo(input: RequestInput): Promise<Course[]> {
-    const semester = await resolveSemester(input.term, input.year);
+    const semester = await resolveSemester(input.semester, input.term, input.year);
 
     const courses = input.type === 'deptCode'
         ? await fetchCoursesByDept(input.value, semester)
@@ -124,7 +124,7 @@ export async function gatherCoursesFromUmdIo(input: RequestInput): Promise<Cours
 async function fetchCoursesByDept(deptCode: string, semester: string): Promise<UmdCourse[]> {
     const basePath = '/courses';
     const query: Record<string, string> = {
-        semester: `${semester}|eq`,
+        semester,
         per_page: String(PAGE_SIZE),
         sort: 'course_id',
     };
@@ -138,7 +138,7 @@ async function fetchCoursesByDept(deptCode: string, semester: string): Promise<U
 
 async function fetchCoursesByNumber(courseNumberPrefix: string, semester: string): Promise<UmdCourse[]> {
     const minifiedCourses = await fetchAllPages<UmdCourseListItem>('/courses/list', {
-        semester: `${semester}|eq`,
+        semester,
         per_page: String(PAGE_SIZE),
         sort: 'course_id',
     });
@@ -155,9 +155,10 @@ async function fetchCoursesByNumber(courseNumberPrefix: string, semester: string
 
     const results: UmdCourse[] = [];
     for (const batch of chunkArray(matchingIds, COURSE_BATCH_SIZE)) {
-        const path = `/courses/${encodeURIComponent(batch.join(','))}`;
+        const joinedCourseIds = batch.map((id) => encodeURIComponent(id)).join(',');
+        const path = `/courses/${joinedCourseIds}`;
         const courses = await fetchJson<UmdCourse[]>(path, {
-            semester: `${semester}|eq`,
+            semester,
         });
         results.push(...courses);
     }
@@ -175,9 +176,10 @@ async function fetchSectionsForCourses(
     }
 
     for (const batch of chunkArray(courseIds, COURSE_BATCH_SIZE)) {
-        const path = `/courses/${encodeURIComponent(batch.join(','))}/sections`;
+        const joinedCourseIds = batch.map((id) => encodeURIComponent(id)).join(',');
+        const path = `/courses/${joinedCourseIds}/sections`;
         const sections = await fetchJson<UmdSection[]>(path, {
-            semester: `${semester}|eq`,
+            semester,
         });
 
         for (const section of sections) {
@@ -357,9 +359,14 @@ function parseCredits(rawCredits: string): { minCredits: number; maxCredits: num
 }
 
 async function resolveSemester(
+    explicitSemester: string | undefined,
     term: string | undefined,
     year: number | undefined
 ): Promise<string> {
+    if (explicitSemester && /^[0-9]{6}$/.test(explicitSemester)) {
+        return explicitSemester;
+    }
+
     if (!term) {
         const all = await fetchSemesters();
         return all[0] ?? `${new Date().getFullYear()}08`;
@@ -397,8 +404,18 @@ async function fetchSemesters(): Promise<string[]> {
         return semesterCache;
     }
 
-    const data = await fetchJson<string[]>('/courses/semesters');
-    semesterCache = [...data].sort((a, b) => b.localeCompare(a));
+    let data: Array<string | number> = [];
+    try {
+        data = await fetchJson<Array<string | number>>('/courses/semesters');
+    } catch (error) {
+        console.error('Failed to fetch umd.io semesters list:', error);
+    }
+
+    const normalized = data
+        .map((value) => String(value).trim())
+        .filter((value) => /^[0-9]{6}$/.test(value));
+
+    semesterCache = [...normalized].sort((a, b) => b.localeCompare(a));
     return semesterCache;
 }
 
@@ -454,14 +471,19 @@ async function fetchAllPages<T>(path: string, query: Record<string, string>): Pr
 }
 
 async function fetchJson<T>(path: string, query?: Record<string, string>): Promise<T> {
-    const url = new URL(path, UMD_IO_BASE_URL);
+    const params = new URLSearchParams();
     if (query) {
         for (const [key, value] of Object.entries(query)) {
-            url.searchParams.set(key, value);
+            params.set(key, value);
         }
     }
 
-    const response = await fetch(url.toString());
+    const queryString = params.toString();
+    const url = `${UMD_IO_PROXY_BASE_PATH}${path}${
+        queryString.length > 0 ? `?${queryString}` : ''
+    }`;
+
+    const response = await fetch(url);
     if (!response.ok) {
         const errorBody = await response.text();
         throw new Error(
