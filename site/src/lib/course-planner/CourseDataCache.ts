@@ -213,10 +213,13 @@ export class CourseDataCache {
 
 function keyFromRequestInput(input: RequestInput): string {
     const filtersPart = JSON.stringify(input.filters);
+    const includeSectionsPart = input.includeSections === false
+        ? '|sections:off'
+        : '|sections:on';
     const semesterPart = input.semester ? `|semester:${input.semester}` : '';
     const termPart = input.term ? `|term:${input.term}` : '';
     const yearPart = input.year !== undefined && input.year !== null ? `|year:${input.year}` : '';
-    return `${input.type}:${input.value}|filters:${filtersPart}${semesterPart}${termPart}${yearPart}`;
+    return `${input.type}:${input.value}|filters:${filtersPart}${includeSectionsPart}${semesterPart}${termPart}${yearPart}`;
 }
 
 function generateRequestConfig(input: RequestInput): CoursesWithSectionsConfig {
@@ -254,6 +257,7 @@ export interface RequestInput {
     type: "deptCode" | "courseNumber" | "courseCode";
     value: string;
     filters?: ServerSideFilterParams;
+    includeSections?: boolean;
     semester?: string;
     term?: string;
     year?: number;

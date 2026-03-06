@@ -332,10 +332,16 @@ export async function setSearchResults(input: string) {
         filters.clientSideFilters.searchTerm !== undefined;
 
     if (hasSelectedTermOverride) {
+        const needsSectionData =
+            (filters.serverSideFilters.instructor !== undefined &&
+                filters.serverSideFilters.instructor.trim().length > 0) ||
+            filters.clientSideFilters.onlyOpen === true;
+
         const requestInput: RequestInput = {
             type: "deptCode",
             value: "",
             filters: {},
+            includeSections: needsSectionData,
             semester: requestTermYear.semester,
             term: requestTermYear.term,
             year: requestTermYear.year,

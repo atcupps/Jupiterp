@@ -92,6 +92,7 @@ export async function resolveMostRecentTermYear(
 
 export async function gatherCoursesFromUmdIo(input: RequestInput): Promise<Course[]> {
     const semester = await resolveSemester(input.semester, input.term, input.year);
+    const includeSections = input.includeSections !== false;
 
     let courses: UmdCourse[];
     if (input.type === 'deptCode') {
@@ -106,10 +107,12 @@ export async function gatherCoursesFromUmdIo(input: RequestInput): Promise<Cours
         return [];
     }
 
-    const sectionsByCourse = await fetchSectionsForCourses(
-        courses.map((course) => course.course_id),
-        semester
-    );
+    const sectionsByCourse = includeSections
+        ? await fetchSectionsForCourses(
+            courses.map((course) => course.course_id),
+            semester
+        )
+        : {};
 
     const filtered = applyServerSideFilters(courses, sectionsByCourse, input.filters);
 
@@ -123,7 +126,9 @@ export async function gatherCoursesFromUmdIo(input: RequestInput): Promise<Cours
             genEds: mapGenEds(course.gen_ed),
             conditions: mapRelationshipsToConditions(course.relationships),
             description: course.description,
-            sections: (sectionsByCourse[course.course_id] ?? []).map(mapSection),
+            sections: includeSections
+                ? (sectionsByCourse[course.course_id] ?? []).map(mapSection)
+                : null,
         };
     });
 }
