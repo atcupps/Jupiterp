@@ -15,9 +15,6 @@ Copyright (C) 2026 Andrew Cupps
     import type { FilterParams } from "../../../types";
     import {
         CourseSearchFilterStore,
-        CurrentScheduleStore,
-        ResolvedSearchTermYearStore,
-        type ResolvedSearchTermYear,
     } from "../../../stores/CoursePlannerStores";
     import {
         matchingStandardizedProfessorNames
@@ -33,37 +30,6 @@ Copyright (C) 2026 Andrew Cupps
     let onlyOpenSections = false;
     let instructor: string = '';
     let matchingInstructors: string[] = [];
-    let searchTerm: '' | 'Fall' | 'Winter' | 'Spring' | 'Summer' = '';
-    let scheduleTerm: 'Fall' | 'Winter' | 'Spring' | 'Summer' = 'Fall';
-    let scheduleYear: number = new Date().getFullYear();
-    let hasInitializedScheduleTerm = false;
-    let resolvedSearchTermYear: ResolvedSearchTermYear | null = null;
-
-    CurrentScheduleStore.subscribe((stored) => {
-        const nextScheduleTerm = stored.term;
-        const nextScheduleYear = stored.year;
-
-        if (!hasInitializedScheduleTerm) {
-            scheduleTerm = nextScheduleTerm;
-            scheduleYear = nextScheduleYear;
-            searchTerm = nextScheduleTerm;
-            hasInitializedScheduleTerm = true;
-            return;
-        }
-
-        const wasUsingScheduleTerm = searchTerm === scheduleTerm;
-        scheduleTerm = nextScheduleTerm;
-        scheduleYear = nextScheduleYear;
-        if (wasUsingScheduleTerm) {
-            searchTerm = nextScheduleTerm;
-        }
-    });
-
-    ResolvedSearchTermYearStore.subscribe((value) => {
-        resolvedSearchTermYear = value;
-    });
-
-    $: termOverrideActive = searchTerm.length > 0 && searchTerm !== scheduleTerm;
 
     const defaultMinCredits = 0;
     const defaultMaxCredits = 20;
@@ -99,11 +65,6 @@ Copyright (C) 2026 Andrew Cupps
             appliedFiltersCount += 1;
             params.clientSideFilters.onlyOpen = onlyOpenSections;
         }
-        if (termOverrideActive) {
-            appliedFiltersCount += 1;
-            params.clientSideFilters.searchTerm =
-                searchTerm as 'Fall' | 'Winter' | 'Spring' | 'Summer';
-        }
         if (instructor.trim().length > 0) {
             appliedFiltersCount += 1;
             matchingInstructors = 
@@ -137,7 +98,6 @@ Copyright (C) 2026 Andrew Cupps
         maxCredits = defaultMaxCredits;
         onlyOpenSections = false;
         instructor = '';
-        searchTerm = scheduleTerm;
     }
 </script>
 
@@ -346,37 +306,6 @@ Copyright (C) 2026 Andrew Cupps
                                     {profName}
                                 </button>
                             {/each}
-                        </div>
-                    {/if}
-                </div>
-            </div>
-
-            <!-- Search term -->
-            <div class="flex flex-row text-xs">
-                <span class="min-w-16">
-                    Term:
-                </span>
-                <div class="flex flex-col grow">
-                    <select class="border border-secCodesDark
-                                    dark:border-divBorderDark
-                                    rounded-md px-2 py-1 text-xs
-                                    bg-bgLight dark:bg-bgDark
-                                    focus:outline-none focus:ring"
-                            bind:value={searchTerm}>
-                        <option value="Fall">Fall</option>
-                        <option value="Winter">Winter</option>
-                        <option value="Spring">Spring</option>
-                        <option value="Summer">Summer</option>
-                    </select>
-
-                    {#if termOverrideActive}
-                        <div class="mt-1 text-[11px] leading-tight opacity-80">
-                            {#if resolvedSearchTermYear}
-                                Using {resolvedSearchTermYear.term} {resolvedSearchTermYear.year}
-                                ({resolvedSearchTermYear.semester})
-                            {:else}
-                                Using {searchTerm} {scheduleYear} (fallback)
-                            {/if}
                         </div>
                     {/if}
                 </div>
