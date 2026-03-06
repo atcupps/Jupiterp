@@ -92,14 +92,43 @@ export async function getAccessToken(): Promise<string | null> {
         return null;
     }
 
+    function decodeJwtExpiry(accessToken: string): number | null {
+        const parts = accessToken.split('.');
+        if (parts.length !== 3) {
+            return null;
+        }
+
+        try {
+            const payload = JSON.parse(atob(parts[1])) as { exp?: number };
+            if (typeof payload.exp !== 'number') {
+                return null;
+            }
+            return payload.exp;
+        } catch (_error) {
+            return null;
+        }
+    }
+
+    function shouldRefreshToken(accessToken: string): boolean {
+        const exp = decodeJwtExpiry(accessToken);
+        if (!exp) {
+            return false;
+        }
+
+        const nowSeconds = Math.floor(Date.now() / 1000);
+        const refreshWindowSeconds = 120;
+        return exp <= (nowSeconds + refreshWindowSeconds);
+    }
+
     const supabase = requireSupabase();
     const { data, error } = await supabase.auth.getSession();
     if (error) {
         console.error("Failed to get auth session:", error.message);
     }
 
-    if (data.session?.access_token) {
-        return data.session.access_token;
+    const currentAccessToken = data.session?.access_token;
+    if (currentAccessToken && !shouldRefreshToken(currentAccessToken)) {
+        return currentAccessToken;
     }
 
     const { data: refreshed, error: refreshError } =
