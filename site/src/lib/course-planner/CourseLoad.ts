@@ -9,9 +9,7 @@
  */
 
 import type {
-    Course,
-    CoursesConfig,
-    CoursesResponse
+    Course
  } from "@jupiterp/jupiterp";
 import type {
     LegacyScheduleSelection,
@@ -21,7 +19,7 @@ import type {
     StoredSchedule
 } from "../../types";
 import { assignColorNumbers, modernizeSelections } from "./Modernization";
-import { client } from "$lib/client";
+import { CourseDataCache, type RequestInput } from "./CourseDataCache";
 import {
     getDefaultTermYear,
     normalizeStoredSchedule
@@ -30,6 +28,8 @@ import {
     CurrentScheduleStore,
     NonselectedScheduleStore
 } from "../../stores/CoursePlannerStores";
+
+const updateCache = new CourseDataCache();
 
 /**
  * Resolve a stored schedule selection array from a string in local storage,
@@ -205,41 +205,58 @@ function diffAndUpdate(old: ScheduleSelection,
     }
 }
 
-function getCoursesToRetrieve(
-            current: StoredSchedule,
-            nonselected: StoredSchedule[]): Set<string> {
-    const result: Set<string> = new Set<string>();
-
-    current.selections.forEach((selection) => {
-        result.add(selection.course.courseCode);
-    });
-
-    nonselected.forEach((stored) => {
-        stored.selections.forEach((selection) => {
-            result.add(selection.course.courseCode);
-        });
-    });
-
-    return result;
-}
-
-async function getUpToDateCourses(
-                courseCodes: Set<string>): 
-                    Promise<Record<string, Course>> {
-    const cfg: CoursesConfig = {
-        courseCodes
-    };
-    
-    const courses: CoursesResponse = await client.coursesWithSections(cfg);
-    if (!courses.ok() || !courses.data) {
-        throw new Error("Failed to retrieve course data");
+function semesterFromTermYear(
+    term: StoredSchedule['term'],
+    year: number
+): string {
+    if (term === 'Spring') {
+        return `${year}01`;
     }
 
-    const courseRecord: Record<string, Course> = {};
-    courses.data.forEach((course) => {
-        courseRecord[course.courseCode] = course;
+    if (term === 'Summer') {
+        return `${year}05`;
+    }
+
+    if (term === 'Fall') {
+        return `${year}08`;
+    }
+
+    return `${year}12`;
+}
+
+async function getUpToDateCoursesForSchedule(
+    schedule: StoredSchedule
+): Promise<Record<string, Course>> {
+    const codes = new Set<string>();
+    schedule.selections.forEach((selection) => {
+        codes.add(selection.course.courseCode);
     });
-    return courseRecord;
+
+    const semester = semesterFromTermYear(schedule.term, schedule.year);
+    const entries = await Promise.all(Array.from(codes).map(async (courseCode) => {
+        const input: RequestInput = {
+            type: 'courseCode',
+            value: courseCode,
+            filters: {},
+            includeSections: true,
+            semester,
+            term: schedule.term,
+            year: schedule.year,
+        };
+        const courses = await updateCache.getCoursesAndSections(input);
+        const course = courses.find((candidate) => {
+            return candidate.courseCode === courseCode;
+        }) ?? null;
+        return [courseCode, course] as const;
+    }));
+
+    const record: Record<string, Course> = {};
+    entries.forEach(([courseCode, course]) => {
+        if (course) {
+            record[courseCode] = course;
+        }
+    });
+    return record;
 }
 
 export async function ensureUpToDateAndSetStores(
@@ -250,14 +267,9 @@ export async function ensureUpToDateAndSetStores(
         return;
     }
 
-    const coursesToRetrieve = getCoursesToRetrieve(
-        current, 
-        nonselected
-    );
-
-    let upToDateCourses: Record<string, Course>;
+    let upToDateCurrentCourses: Record<string, Course>;
     try {
-        upToDateCourses = await getUpToDateCourses(coursesToRetrieve);
+        upToDateCurrentCourses = await getUpToDateCoursesForSchedule(current);
     } catch (e) {
         console.error("Failed to retrieve up-to-date course data:", e);
         return;
@@ -265,7 +277,8 @@ export async function ensureUpToDateAndSetStores(
 
     const updatedCurrentSelections: ScheduleSelection[] = [];
     current.selections.forEach((selection) => {
-        const upToDate: Course = upToDateCourses[selection.course.courseCode];
+        const upToDate: Course =
+            upToDateCurrentCourses[selection.course.courseCode];
         if (!upToDate) {
             // Course no longer exists, skip
             return;
@@ -277,7 +290,15 @@ export async function ensureUpToDateAndSetStores(
     });
 
     const updatedNonSelectedSchedules: StoredSchedule[] = [];
-    nonselected.forEach((stored) => {
+    for (const stored of nonselected) {
+        let upToDateCourses: Record<string, Course>;
+        try {
+            upToDateCourses = await getUpToDateCoursesForSchedule(stored);
+        } catch (e) {
+            console.error("Failed to retrieve up-to-date course data:", e);
+            upToDateCourses = {};
+        }
+
         const updatedSelections: ScheduleSelection[] = [];
         stored.selections.forEach((selection) => {
             const upToDate: Course = 
@@ -297,7 +318,7 @@ export async function ensureUpToDateAndSetStores(
             term: stored.term,
             year: stored.year,
         });
-    });
+    }
 
     CurrentScheduleStore.set({
         scheduleName: current.scheduleName,
