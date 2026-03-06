@@ -41,13 +41,16 @@ Copyright (C) 2026 Andrew Cupps
         onlyShowingOpen = store.clientSideFilters.onlyOpen === true;
     });
 
-    let newSelection: ScheduleSelection = {
-        course,
-        section,
-        hover: false,
-        differences: noDifferences(),
-        colorNumber: -1,
+    function buildSelection(hover: boolean, colorNumber: number): ScheduleSelection {
+        return {
+            course,
+            section,
+            hover,
+            differences: noDifferences(),
+            colorNumber,
+        };
     }
+
     let sectionAdded: boolean;
     $: if (selectionsList || hoveredSection || (onlyShowingOpen || false)) {
         if (onlyShowingOpen && section.openSeats === 0) {
@@ -57,14 +60,6 @@ Copyright (C) 2026 Andrew Cupps
         }
     }
     
-    let hoverSection: ScheduleSelection = {
-        course,
-        section,
-        hover: true,
-        differences: noDifferences(),
-        colorNumber: -1,
-    }
-
     let addAlertVisible: boolean = false;
     let addAlertShouldFade: boolean = false;
     let removeAlertVisible: boolean = false;
@@ -105,7 +100,10 @@ Copyright (C) 2026 Andrew Cupps
         if (!sectionAdded) {
             showAddAlert();
             removeHoverSection();
-            newSelection.colorNumber = firstAvailableColor(selectionsList);
+            const newSelection = buildSelection(
+                false,
+                firstAvailableColor(selectionsList)
+            );
             CurrentScheduleStore.set({
                 scheduleName,
                 selections: [...selectionsList, newSelection],
@@ -177,7 +175,10 @@ Copyright (C) 2026 Andrew Cupps
 
     function addHoverSection() {
         if (!sectionAdded) {
-            hoverSection.colorNumber = firstAvailableColor(selectionsList);
+            const hoverSection = buildSelection(
+                true,
+                firstAvailableColor(selectionsList)
+            );
             HoveredSectionStore.set(hoverSection);
         }
     }

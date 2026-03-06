@@ -112,7 +112,7 @@ Copyright (C) 2026 Andrew Cupps
 
     <!-- Sections -->
     {#if course.sections != null && course.sections.length > 0}
-        {#each course.sections as section}
+        {#each course.sections as section (section.sectionCode)}
             <SectionListing courseCode={course.courseCode}
                 section={section}
                         course={course} />
