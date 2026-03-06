@@ -295,6 +295,43 @@ function applyServerFiltersLocally(
     });
 }
 
+async function hydrateSectionsForMatchedCourses(
+    courses: Course[],
+    requestTermYear: {
+        term: 'Fall' | 'Winter' | 'Spring' | 'Summer',
+        year: number,
+        semester?: string,
+    }
+): Promise<Course[]> {
+    const hydrated = await Promise.all(courses.map(async (course) => {
+        const requestInput: RequestInput = {
+            type: 'courseCode',
+            value: course.courseCode,
+            filters: {},
+            includeSections: true,
+            semester: requestTermYear.semester,
+            term: requestTermYear.term,
+            year: requestTermYear.year,
+        };
+
+        const results = await cache.getCoursesAndSections(requestInput);
+        const fetchedCourse = results.find((row) => {
+            return row.courseCode === course.courseCode;
+        });
+
+        if (!fetchedCourse) {
+            return course;
+        }
+
+        return {
+            ...course,
+            sections: fetchedCourse.sections,
+        };
+    }));
+
+    return hydrated;
+}
+
 /**
  * Given an `input`, search for any matching courses in the course data cache
  * (which retrieves from the API if necessary) and sets the `SearchResultsStore`
@@ -364,7 +401,19 @@ export async function setSearchResults(input: string) {
             matchingDepts
         );
 
-        SearchResultsStore.set(matchingCourses);
+        let coursesToDisplay = matchingCourses;
+        if (!needsSectionData && simpleInput.length > 0 && matchingCourses.length > 0) {
+            coursesToDisplay = await hydrateSectionsForMatchedCourses(
+                matchingCourses,
+                requestTermYear
+            );
+        }
+
+        if (mostRecentInput !== input) {
+            return;
+        }
+
+        SearchResultsStore.set(coursesToDisplay);
         return;
     }
 
