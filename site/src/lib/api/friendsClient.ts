@@ -28,6 +28,13 @@ interface SendFriendRequestInput {
     value: string,
 }
 
+interface LegacyEnvelope {
+    success?: boolean,
+    error?: string,
+    message?: string,
+    data?: unknown,
+}
+
 interface UpdateFriendRequestInput {
     requestId: string,
     action: 'accept' | 'decline' | 'cancel',
@@ -88,6 +95,22 @@ async function parseJsonResponse<T>(response: Response): Promise<ApiEnvelope<T>>
     return payload as ApiEnvelope<T>;
 }
 
+function extractErrorMessage(payload: LegacyEnvelope | null, fallback: string): string {
+    if (!payload) {
+        return fallback;
+    }
+
+    if (typeof payload.error === 'string' && payload.error.length > 0) {
+        return payload.error;
+    }
+
+    if (typeof payload.message === 'string' && payload.message.length > 0) {
+        return payload.message;
+    }
+
+    return fallback;
+}
+
 async function request<T>(
     method: 'GET' | 'POST',
     path: string,
@@ -131,12 +154,35 @@ async function mutate(
         body: JSON.stringify(body ?? {}),
     });
 
-    const envelope = await parseJsonResponse<MutationResult>(response);
-    if (!response.ok || !envelope.success || envelope.data === undefined) {
-        throw new Error(envelope.error ?? 'Friends API request failed');
+    const envelope = await parseJsonResponse<MutationResult>(response) as LegacyEnvelope;
+    if (!response.ok || envelope.success !== true) {
+        throw new Error(extractErrorMessage(
+            envelope,
+            `Friends API request failed (HTTP ${response.status})`
+        ));
     }
 
-    return envelope.data;
+    if (envelope.data && typeof envelope.data === 'object' && 'message' in (envelope.data as Record<string, unknown>)) {
+        const msg = (envelope.data as Record<string, unknown>).message;
+        if (typeof msg === 'string') {
+            return {
+                ok: true,
+                message: msg,
+            };
+        }
+    }
+
+    if (typeof envelope.message === 'string' && envelope.message.length > 0) {
+        return {
+            ok: true,
+            message: envelope.message,
+        };
+    }
+
+    return {
+        ok: true,
+        message: 'Request completed',
+    };
 }
 
 export async function getFriendsSummary(
@@ -175,10 +221,19 @@ export async function sendFriendRequest(
     accessToken: string,
     input: SendFriendRequestInput,
 ): Promise<MutationResult> {
-    return mutate('/requests', accessToken, {
-        mode: input.mode,
-        value: input.value,
-    });
+    const trimmed = input.value.trim();
+
+    // Use root endpoint for maximum compatibility with Supabase edge function
+    // deployments that do not route nested subpaths.
+    return mutate('/', accessToken, input.mode === 'email'
+        ? {
+            mode: 'email',
+            email: trimmed,
+        }
+        : {
+            mode: 'code',
+            code: trimmed,
+        });
 }
 
 export async function updateFriendRequest(

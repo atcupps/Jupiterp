@@ -451,13 +451,18 @@ serve(async (request: Request): Promise<Response> => {
             });
         }
 
-        if (request.method === 'POST' && endpoint === 'requests') {
+        if (request.method === 'POST' && (endpoint === 'requests' || endpoint === 'friends')) {
             const body = await request.json() as {
                 mode: 'email' | 'code',
+                email?: string,
+                code?: string,
                 value: string,
             };
 
-            const value = body.value?.trim() ?? '';
+            const rawValue = body.mode === 'email'
+                ? (body.value ?? body.email ?? '')
+                : (body.value ?? body.code ?? '');
+            const value = rawValue.trim();
             if (value.length === 0) {
                 return toResponse({ success: false, error: 'Enter a value first' }, 400);
             }
