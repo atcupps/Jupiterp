@@ -6,6 +6,19 @@ import {
     requireAuthUser,
 } from '$lib/server/supabase';
 
+function toApiError(message: string): string {
+    const normalized = message.toLowerCase();
+    if (
+        normalized.includes('schema cache') ||
+        normalized.includes('could not find the table') ||
+        normalized.includes('relation')
+    ) {
+        return 'Friends database is not initialized yet.';
+    }
+
+    return message;
+}
+
 export const GET: RequestHandler = async ({ request }) => {
     try {
         const { userId, accessToken } = await requireAuthUser(request);
@@ -13,7 +26,8 @@ export const GET: RequestHandler = async ({ request }) => {
         const summary = await getFriendsSummary(supabase, userId);
         return json(summary);
     } catch (error) {
-        const message = error instanceof Error ? error.message : 'Unauthorized';
+        console.error('Friends summary error:', error);
+        const message = toApiError(error instanceof Error ? error.message : 'Unauthorized');
         return json({ error: message }, { status: 401 });
     }
 };

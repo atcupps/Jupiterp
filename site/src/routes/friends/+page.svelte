@@ -40,6 +40,19 @@
     let defaultVisibility: FriendVisibility = 'full';
     let updatingDefaultVisibility = false;
 
+    function toUserFriendlyFriendsError(message: string): string {
+        const normalized = message.toLowerCase();
+        if (
+            normalized.includes('schema cache') ||
+            normalized.includes('could not find the table') ||
+            normalized.includes('relation')
+        ) {
+            return 'Friends database is not initialized yet. Run the Supabase migration for the Friends feature.';
+        }
+
+        return message;
+    }
+
     function withAuthHeaders(): Record<string, string> {
         const headers: Record<string, string> = {
             'content-type': 'application/json',
@@ -66,7 +79,9 @@
 
         const payload = await response.json() as FriendsSummary | { error: string };
         if (!response.ok || 'error' in payload) {
-            throw new Error('error' in payload ? payload.error : 'Unable to load friends');
+            throw new Error(toUserFriendlyFriendsError(
+                'error' in payload ? payload.error : 'Unable to load friends'
+            ));
         }
 
         incoming = payload.incoming;
@@ -89,7 +104,9 @@
             await ensureUserProfile();
             await loadSummary();
         } catch (error) {
-            errorMessage = error instanceof Error ? error.message : 'Unable to load friends';
+            errorMessage = toUserFriendlyFriendsError(
+                error instanceof Error ? error.message : 'Unable to load friends'
+            );
         } finally {
             loading = false;
         }
@@ -141,7 +158,9 @@
             }
             await loadSummary();
         } catch (error) {
-            errorMessage = error instanceof Error ? error.message : 'Unable to send request';
+            errorMessage = toUserFriendlyFriendsError(
+                error instanceof Error ? error.message : 'Unable to send request'
+            );
         } finally {
             sendingEmail = false;
             sendingCode = false;
@@ -176,7 +195,9 @@
             message = payload.message;
             await loadSummary();
         } catch (error) {
-            errorMessage = error instanceof Error ? error.message : 'Unable to update request';
+            errorMessage = toUserFriendlyFriendsError(
+                error instanceof Error ? error.message : 'Unable to update request'
+            );
         } finally {
             requestInFlightId = null;
         }
@@ -206,7 +227,9 @@
             message = payload.message;
             await loadSummary();
         } catch (error) {
-            errorMessage = error instanceof Error ? error.message : 'Unable to remove friend';
+            errorMessage = toUserFriendlyFriendsError(
+                error instanceof Error ? error.message : 'Unable to remove friend'
+            );
         } finally {
             friendUpdateInFlightId = null;
         }
@@ -237,7 +260,9 @@
             message = payload.message;
             await loadSummary();
         } catch (error) {
-            errorMessage = error instanceof Error ? error.message : 'Unable to update visibility';
+            errorMessage = toUserFriendlyFriendsError(
+                error instanceof Error ? error.message : 'Unable to update visibility'
+            );
         } finally {
             friendUpdateInFlightId = null;
         }
@@ -253,7 +278,9 @@
             await updateFriendsVisibility(next);
             message = 'Default visibility updated';
         } catch (error) {
-            errorMessage = error instanceof Error ? error.message : 'Unable to update default visibility';
+            errorMessage = toUserFriendlyFriendsError(
+                error instanceof Error ? error.message : 'Unable to update default visibility'
+            );
         } finally {
             updatingDefaultVisibility = false;
         }

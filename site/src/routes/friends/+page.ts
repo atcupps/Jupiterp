@@ -5,6 +5,19 @@ import type { FriendsSummary } from '$lib/friends/types';
 
 export const ssr = false;
 
+function toUserFriendlyFriendsError(message: string): string {
+    const normalized = message.toLowerCase();
+    if (
+        normalized.includes("schema cache") ||
+        normalized.includes("could not find the table") ||
+        normalized.includes("relation")
+    ) {
+        return 'Friends database is not initialized yet. Run the Supabase migration for the Friends feature.';
+    }
+
+    return message;
+}
+
 export const load: PageLoad = async ({ fetch }) => {
     const token = await getAccessToken();
     if (!token) {
@@ -25,7 +38,9 @@ export const load: PageLoad = async ({ fetch }) => {
             const payload = await response.json() as { error?: string };
             return {
                 initialSummary: null,
-                initialError: payload.error ?? 'Unable to load friends',
+                initialError: toUserFriendlyFriendsError(
+                    payload.error ?? 'Unable to load friends'
+                ),
             };
         }
 
@@ -37,9 +52,11 @@ export const load: PageLoad = async ({ fetch }) => {
     } catch (error) {
         return {
             initialSummary: null,
-            initialError: error instanceof Error
-                ? error.message
-                : 'Unable to load friends',
+            initialError: toUserFriendlyFriendsError(
+                error instanceof Error
+                    ? error.message
+                    : 'Unable to load friends'
+            ),
         };
     }
 };

@@ -9,6 +9,19 @@ import {
     requireAuthUser,
 } from '$lib/server/supabase';
 
+function toApiError(message: string): string {
+    const normalized = message.toLowerCase();
+    if (
+        normalized.includes('schema cache') ||
+        normalized.includes('could not find the table') ||
+        normalized.includes('relation')
+    ) {
+        return 'Friends database is not initialized yet.';
+    }
+
+    return message;
+}
+
 interface PatchPayload {
     visibility: 'full' | 'busy_free' | 'off',
 }
@@ -32,7 +45,10 @@ export const PATCH: RequestHandler = async ({ request, params }) => {
 
         return json(result, { status: result.ok ? 200 : 400 });
     } catch (error) {
-        const message = error instanceof Error ? error.message : 'Unable to update friend';
+        console.error('Update friend visibility error:', error);
+        const message = toApiError(
+            error instanceof Error ? error.message : 'Unable to update friend'
+        );
         return json({ ok: false, message }, { status: 500 });
     }
 };
@@ -49,7 +65,10 @@ export const DELETE: RequestHandler = async ({ request, params }) => {
         const result = await removeFriend(supabase, userId, friendId);
         return json(result, { status: result.ok ? 200 : 400 });
     } catch (error) {
-        const message = error instanceof Error ? error.message : 'Unable to remove friend';
+        console.error('Remove friend error:', error);
+        const message = toApiError(
+            error instanceof Error ? error.message : 'Unable to remove friend'
+        );
         return json({ ok: false, message }, { status: 500 });
     }
 };
