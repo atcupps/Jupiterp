@@ -1,3 +1,8 @@
+import { dev } from '$app/environment';
+import {
+    PUBLIC_SUPABASE_ANON_KEY,
+    PUBLIC_SUPABASE_FUNCTION_FRIENDS_URL,
+} from '$env/static/public';
 import type {
     FriendScheduleResponse,
     FriendsSummary,
@@ -53,14 +58,14 @@ interface GetFriendScheduleInput {
 
 function getFunctionBaseUrl(): string {
     const value = (
-        import.meta.env.PUBLIC_SUPABASE_FUNCTION_FRIENDS_URL
+        PUBLIC_SUPABASE_FUNCTION_FRIENDS_URL
             ?? 'https://zjhuagbdwgsipprsqxpq.supabase.co/functions/v1/friends'
     ) as string;
     return value.trim();
 }
 
 function getSupabaseAnonKey(): string {
-    const value = import.meta.env.PUBLIC_SUPABASE_ANON_KEY as string | undefined;
+    const value = PUBLIC_SUPABASE_ANON_KEY as string | undefined;
     return (value ?? '').trim();
 }
 
@@ -87,7 +92,7 @@ function normalizePath(base: string, path: string): string {
 }
 
 function logFriendsRequestHeaders(method: 'GET' | 'POST', url: string, headers: Record<string, string>): void {
-    if (!import.meta.env.DEV) {
+    if (!dev) {
         return;
     }
 
