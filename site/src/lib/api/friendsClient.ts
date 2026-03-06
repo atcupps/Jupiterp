@@ -37,6 +37,7 @@ interface LegacyEnvelope {
     success?: boolean,
     error?: string,
     message?: string,
+    code?: number,
     data?: unknown,
 }
 
@@ -149,11 +150,34 @@ function extractErrorMessage(payload: LegacyEnvelope | null, fallback: string): 
     return fallback;
 }
 
+function isInvalidJwtError(payload: LegacyEnvelope | null): boolean {
+    if (!payload) {
+        return false;
+    }
+
+    const errorValue = typeof payload.error === 'string' ? payload.error : '';
+    const messageValue = typeof payload.message === 'string' ? payload.message : '';
+    const combined = `${errorValue} ${messageValue}`.toLowerCase();
+
+    return combined.includes('invalid jwt') || combined.includes('jwt');
+}
+
+async function getRefreshedAccessToken(currentToken: string): Promise<string | null> {
+    const { getAccessToken } = await import('$lib/supabase');
+    const nextToken = await getAccessToken();
+    if (!nextToken || nextToken === currentToken) {
+        return null;
+    }
+
+    return nextToken;
+}
+
 async function request<T>(
     method: 'GET' | 'POST',
     path: string,
     accessToken: string,
     body?: Record<string, unknown>,
+    hasRetried = false,
 ): Promise<T> {
     const baseUrl = requireFunctionBaseUrl();
     const anonKey = requireSupabaseAnonKey();
@@ -173,6 +197,14 @@ async function request<T>(
     });
 
     const envelope = await parseJsonResponse<T>(response);
+
+    if (!hasRetried && response.status === 401 && isInvalidJwtError(envelope as LegacyEnvelope)) {
+        const refreshedToken = await getRefreshedAccessToken(accessToken);
+        if (refreshedToken) {
+            return request<T>(method, path, refreshedToken, body, true);
+        }
+    }
+
     if (!response.ok || !envelope.success || envelope.data === undefined) {
         throw new Error(extractErrorMessage(
             envelope as LegacyEnvelope,
@@ -187,6 +219,7 @@ async function mutate(
     path: string,
     accessToken: string,
     body?: Record<string, unknown>,
+    hasRetried = false,
 ): Promise<MutationResult> {
     const baseUrl = requireFunctionBaseUrl();
     const anonKey = requireSupabaseAnonKey();
@@ -206,6 +239,14 @@ async function mutate(
     });
 
     const envelope = await parseJsonResponse<MutationResult>(response) as LegacyEnvelope;
+
+    if (!hasRetried && response.status === 401 && isInvalidJwtError(envelope)) {
+        const refreshedToken = await getRefreshedAccessToken(accessToken);
+        if (refreshedToken) {
+            return mutate(path, refreshedToken, body, true);
+        }
+    }
+
     if (!response.ok || envelope.success !== true) {
         throw new Error(extractErrorMessage(
             envelope,
