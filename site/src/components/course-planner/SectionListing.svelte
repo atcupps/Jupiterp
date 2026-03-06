@@ -94,6 +94,11 @@ Copyright (C) 2026 Andrew Cupps
         }, 300);
     }
 
+    function hasSameSelectionPayload(existing: ScheduleSelection): boolean {
+        return JSON.stringify(existing.course) === JSON.stringify(course) &&
+            JSON.stringify(existing.section) === JSON.stringify(section);
+    }
+
     // In order for Svelte's reactivity to work properly, `selectionsList`
     // needs to be reassigned instead of using `.push` or `.splice`.
     function addSectionToSchedule() {
@@ -113,20 +118,50 @@ Copyright (C) 2026 Andrew Cupps
                     sectionCode: section.sectionCode
                 };
             });
+            sectionAdded = true;
         } else {
-            showRemoveAlert();
             const index = selectionsList.findIndex(obj => 
                         selectionEquals(obj));
             if (index !== -1) {
-                CurrentScheduleStore.set({
-                    scheduleName,
-                    selections: [
-                        ...selectionsList.slice(0, index),
-                        ...selectionsList.slice(index + 1)
-                    ],
-                    term: scheduleTerm,
-                    year: scheduleYear,
-                });
+                const existing = selectionsList[index];
+                if (!hasSameSelectionPayload(existing)) {
+                    showAddAlert();
+                    removeHoverSection();
+                    CurrentScheduleStore.set({
+                        scheduleName,
+                        selections: [
+                            ...selectionsList.slice(0, index),
+                            {
+                                ...existing,
+                                course,
+                                section,
+                                differences: noDifferences(),
+                            },
+                            ...selectionsList.slice(index + 1)
+                        ],
+                        term: scheduleTerm,
+                        year: scheduleYear,
+                    });
+                    CourseInfoPairStore.update(value => {
+                        return value === null ? null : {
+                            courseCode: courseCode,
+                            sectionCode: section.sectionCode
+                        };
+                    });
+                    sectionAdded = true;
+                } else {
+                    showRemoveAlert();
+                    CurrentScheduleStore.set({
+                        scheduleName,
+                        selections: [
+                            ...selectionsList.slice(0, index),
+                            ...selectionsList.slice(index + 1)
+                        ],
+                        term: scheduleTerm,
+                        year: scheduleYear,
+                    });
+                    sectionAdded = false;
+                }
             }
             CourseInfoPairStore.update(value => {
                 return value !== null 
@@ -135,7 +170,6 @@ Copyright (C) 2026 Andrew Cupps
                     ? null : value;
             })
         }
-        sectionAdded = !sectionAdded;
         if (isDesktop) {
             addHoverSection();
         }
