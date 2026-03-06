@@ -22,6 +22,22 @@ import type { FilterParams } from "../../types";
 import type { AcademicTerm } from "./Terms";
 import { resolveMostRecentTermYear } from "./UmdIoGatherer";
 
+function semesterFromTermYear(term: AcademicTerm, year: number): string {
+    if (term === 'Spring') {
+        return `${year}01`;
+    }
+
+    if (term === 'Summer') {
+        return `${year}05`;
+    }
+
+    if (term === 'Fall') {
+        return `${year}08`;
+    }
+
+    return `${year}12`;
+}
+
 const cache = new CourseDataCache();
 
 // Load department list data
@@ -104,16 +120,35 @@ async function getRequestTermYear(): Promise<{
             }
 
             ResolvedSearchTermYearStore.set(null);
+            const semester = semesterFromTermYear(
+                selectedTerm as AcademicTerm,
+                activeYear
+            );
+            ResolvedSearchTermYearStore.set({
+                term: selectedTerm,
+                year: activeYear,
+                semester,
+            });
             return {
                 term: selectedTerm,
                 year: activeYear,
+                semester,
             };
         } catch (error) {
             console.error('Unable to resolve available term-year list:', error);
-            ResolvedSearchTermYearStore.set(null);
+            const semester = semesterFromTermYear(
+                selectedTerm as AcademicTerm,
+                activeYear
+            );
+            ResolvedSearchTermYearStore.set({
+                term: selectedTerm,
+                year: activeYear,
+                semester,
+            });
             return {
                 term: selectedTerm,
                 year: activeYear,
+                semester,
             };
         }
     }

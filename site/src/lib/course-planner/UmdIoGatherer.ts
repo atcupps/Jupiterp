@@ -12,8 +12,10 @@ import { GenEd, type Course } from '@jupiterp/jupiterp';
 import type { ServerSideFilterParams } from '../../types';
 import type { RequestInput } from './CourseDataCache';
 import type { AcademicTerm } from './Terms';
+import { base } from '$app/paths';
 
-const UMD_IO_PROXY_BASE_PATH = '/api/umd';
+const UMD_IO_PROXY_BASE_PATH = `${base}/api/umd`;
+const UMD_IO_DIRECT_BASE_URL = 'https://api.umd.io/v1';
 const PAGE_SIZE = 100;
 const COURSE_BATCH_SIZE = 40;
 
@@ -421,7 +423,15 @@ async function fetchSemesters(): Promise<string[]> {
     try {
         data = await fetchJson<Array<string | number>>('/courses/semesters');
     } catch (error) {
-        console.error('Failed to fetch umd.io semesters list:', error);
+        try {
+            const staticUrl = `${base}/umd-semesters.json`;
+            const staticRes = await fetch(staticUrl);
+            if (staticRes.ok) {
+                data = (await staticRes.json()) as Array<string | number>;
+            }
+        } catch {
+            console.error('Failed to fetch umd.io semesters list:', error);
+        }
     }
 
     const normalized = data
@@ -492,19 +502,35 @@ async function fetchJson<T>(path: string, query?: Record<string, string>): Promi
     }
 
     const queryString = params.toString();
-    const url = `${UMD_IO_PROXY_BASE_PATH}${path}${
+    const querySuffix =
         queryString.length > 0 ? `?${queryString}` : ''
-    }`;
+    ;
 
-    const response = await fetch(url);
-    if (!response.ok) {
-        const errorBody = await response.text();
-        throw new Error(
-            `umd.io request failed (${response.status} ${response.statusText}) ${path}${errorBody ? `\n${errorBody}` : ''}`
-        );
+    const proxyUrl = `${UMD_IO_PROXY_BASE_PATH}${path}${querySuffix}`;
+    const directUrl = `${UMD_IO_DIRECT_BASE_URL}${path}${querySuffix}`;
+
+    const attempts = [proxyUrl, directUrl];
+    let lastError: unknown = null;
+    for (const url of attempts) {
+        try {
+            const response = await fetch(url);
+            if (!response.ok) {
+                const errorBody = await response.text();
+                lastError = new Error(
+                    `umd.io request failed (${response.status} ${response.statusText}) ${path}${errorBody ? `\n${errorBody}` : ''}`
+                );
+                continue;
+            }
+
+            return (await response.json()) as T;
+        } catch (error) {
+            lastError = error;
+        }
     }
 
-    return (await response.json()) as T;
+    throw lastError instanceof Error
+        ? lastError
+        : new Error(`umd.io request failed for ${path}`);
 }
 
 function chunkArray<T>(values: T[], size: number): T[][] {
