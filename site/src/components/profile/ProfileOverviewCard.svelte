@@ -17,7 +17,7 @@ Copyright (C) 2026 Andrew Cupps
     export let visibility = 'full';
     export let graduationYear: number | null = null;
     export let totalCreditsTaken = 0;
-    export let onSignOut: () => void;
+    export let onSignOut: () => void = () => undefined;
 
     let copied = false;
 
@@ -78,7 +78,7 @@ Copyright (C) 2026 Andrew Cupps
                                 focus:outline-none focus:ring'
                         aria-label='Change avatar'
                         title='Change avatar'>
-                    ✎
+                    Edit
                 </button>
             </div>
 
