@@ -35,7 +35,7 @@ type UmdCourse = {
     department: string;
     credits: string;
     description: string | null;
-    gen_ed?: string[] | null;
+    gen_ed?: string[] | string | null;
     relationships?: Record<string, string[] | string | null> | null;
 };
 
@@ -230,7 +230,9 @@ function applyServerSideFilters(
     return courses.filter((course) => {
         if (filters.genEds && filters.genEds.length > 0) {
             const needed = filters.genEds.map((value) => value.code);
-            const present = new Set((course.gen_ed ?? []).map((value) => value.toUpperCase()));
+            const present = new Set(
+                normalizeGenEdCodes(course.gen_ed).map((value) => value.toUpperCase())
+            );
             for (const code of needed) {
                 if (!present.has(code.toUpperCase())) {
                     return false;
@@ -324,13 +326,30 @@ function mapMeeting(rawMeeting: unknown): any {
     };
 }
 
-function mapGenEds(rawGenEds: string[] | null | undefined): GenEd[] | null {
-    if (!rawGenEds || rawGenEds.length === 0) {
+function normalizeGenEdCodes(
+    rawGenEds: string[] | string | null | undefined
+): string[] {
+    if (!rawGenEds) {
+        return [];
+    }
+
+    const rawValues = Array.isArray(rawGenEds) ? rawGenEds : [rawGenEds];
+    const normalized = rawValues
+        .flatMap((value) => value.split(','))
+        .map((value) => value.trim().toUpperCase())
+        .filter((value) => value.length > 0 && value !== 'NULL');
+
+    return Array.from(new Set(normalized));
+}
+
+function mapGenEds(rawGenEds: string[] | string | null | undefined): GenEd[] | null {
+    const normalizedCodes = normalizeGenEdCodes(rawGenEds);
+    if (normalizedCodes.length === 0) {
         return null;
     }
 
     const values: GenEd[] = [];
-    for (const code of rawGenEds) {
+    for (const code of normalizedCodes) {
         try {
             values.push(GenEd.fromCode(code));
         } catch {
@@ -351,9 +370,17 @@ function mapRelationshipsToConditions(
     const conditions: string[] = [];
     for (const [relation, value] of Object.entries(rawRelationships)) {
         if (Array.isArray(value) && value.length > 0) {
-            conditions.push(`${relation}: ${value.join(', ')}`);
-        } else if (typeof value === 'string' && value.length > 0) {
-            conditions.push(`${relation}: ${value}`);
+            const filtered = value
+                .map((entry) => entry.trim())
+                .filter((entry) => entry.length > 0 && entry.toLowerCase() !== 'null');
+            if (filtered.length > 0) {
+                conditions.push(`${relation}: ${filtered.join(', ')}`);
+            }
+        } else if (typeof value === 'string') {
+            const trimmed = value.trim();
+            if (trimmed.length > 0 && trimmed.toLowerCase() !== 'null') {
+                conditions.push(`${relation}: ${trimmed}`);
+            }
         }
     }
 
