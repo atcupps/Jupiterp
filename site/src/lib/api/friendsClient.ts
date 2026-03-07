@@ -1,19 +1,8 @@
-import { dev } from '$app/environment';
-import {
-    PUBLIC_SUPABASE_ANON_KEY,
-    PUBLIC_SUPABASE_FUNCTION_FRIENDS_URL,
-} from '$env/static/public';
 import type {
     FriendScheduleResponse,
     FriendsSummary,
     FriendVisibility,
 } from '$lib/friends/types';
-
-interface ApiEnvelope<T> {
-    success: boolean,
-    data?: T,
-    error?: string,
-}
 
 interface MutationResult {
     ok: boolean,
@@ -33,14 +22,6 @@ interface SendFriendRequestInput {
     value: string,
 }
 
-interface LegacyEnvelope {
-    success?: boolean,
-    error?: string,
-    message?: string,
-    code?: number,
-    data?: unknown,
-}
-
 interface UpdateFriendRequestInput {
     requestId: string,
     action: 'accept' | 'decline' | 'cancel',
@@ -57,239 +38,75 @@ interface GetFriendScheduleInput {
     year?: number,
 }
 
-function getFunctionBaseUrl(): string {
-    const value = (
-        PUBLIC_SUPABASE_FUNCTION_FRIENDS_URL
-            ?? 'https://zjhuagbdwgsipprsqxpq.supabase.co/functions/v1/friends'
-    ) as string;
-    return value.trim();
+interface ApiErrorShape {
+    error?: string,
+    message?: string,
 }
 
-function getSupabaseAnonKey(): string {
-    const value = PUBLIC_SUPABASE_ANON_KEY as string | undefined;
-    return (value ?? '').trim();
+function authHeaders(accessToken: string): HeadersInit {
+    return {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${accessToken}`,
+    };
 }
 
-function requireFunctionBaseUrl(): string {
-    const url = getFunctionBaseUrl();
-    if (url.length === 0) {
-        throw new Error('Friends API URL is not configured. Set PUBLIC_SUPABASE_FUNCTION_FRIENDS_URL.');
-    }
-    return url;
-}
-
-function requireSupabaseAnonKey(): string {
-    const anonKey = getSupabaseAnonKey();
-    if (anonKey.length === 0) {
-        throw new Error('Supabase anon key is not configured. Set PUBLIC_SUPABASE_ANON_KEY.');
-    }
-    return anonKey;
-}
-
-function normalizePath(base: string, path: string): string {
-    const cleanBase = base.endsWith('/') ? base.slice(0, -1) : base;
-    if (path === '' || path === '/') {
-        return cleanBase;
-    }
-    const cleanPath = path.startsWith('/') ? path : `/${path}`;
-    return `${cleanBase}${cleanPath}`;
-}
-
-function logFriendsRequestHeaders(method: 'GET' | 'POST', url: string, headers: Record<string, string>): void {
-    if (!dev) {
-        return;
-    }
-
-    const hasAuthorization = typeof headers.Authorization === 'string' && headers.Authorization.startsWith('Bearer ');
-    const hasApiKey = typeof headers.apikey === 'string' && headers.apikey.length > 0;
-    console.debug('[friends-api] request headers', {
-        method,
-        url,
-        hasAuthorization,
-        hasApiKey,
-    });
-}
-
-async function parseJsonResponse<T>(response: Response): Promise<ApiEnvelope<T>> {
-    let payload: unknown;
-
+async function parseApiError(response: Response, fallback: string): Promise<string> {
     try {
-        payload = await response.json();
-    } catch (_error) {
-        return {
-            success: false,
-            error: 'Invalid JSON response from server',
-        };
-    }
-
-    if (typeof payload !== 'object' || payload === null) {
-        return {
-            success: false,
-            error: 'Malformed response from server',
-        };
-    }
-
-    return payload as ApiEnvelope<T>;
-}
-
-function extractErrorMessage(payload: LegacyEnvelope | null, fallback: string): string {
-    if (!payload) {
-        return fallback;
-    }
-
-    if (typeof payload.error === 'string' && payload.error.length > 0) {
-        return payload.error;
-    }
-
-    if (typeof payload.message === 'string' && payload.message.length > 0) {
-        return payload.message;
-    }
-
-    const normalized = fallback.toLowerCase();
-    if (normalized.includes('invalid jwt') || normalized.includes('jwt')) {
-        return 'Session expired. Please sign out and sign back in.';
+        const payload = await response.json() as ApiErrorShape;
+        if (typeof payload.error === 'string' && payload.error.length > 0) {
+            return payload.error;
+        }
+        if (typeof payload.message === 'string' && payload.message.length > 0) {
+            return payload.message;
+        }
+    } catch {
+        // Ignore JSON parse errors and use fallback message.
     }
 
     return fallback;
 }
 
-function isInvalidJwtError(payload: LegacyEnvelope | null): boolean {
-    if (!payload) {
-        return false;
-    }
-
-    const errorValue = typeof payload.error === 'string' ? payload.error : '';
-    const messageValue = typeof payload.message === 'string' ? payload.message : '';
-    const combined = `${errorValue} ${messageValue}`.toLowerCase();
-
-    return combined.includes('invalid jwt') || combined.includes('jwt');
-}
-
-async function getRefreshedAccessToken(currentToken: string): Promise<string | null> {
-    const { getAccessToken } = await import('$lib/supabase');
-    const nextToken = await getAccessToken();
-    if (!nextToken || nextToken === currentToken) {
-        return null;
-    }
-
-    return nextToken;
-}
-
-async function request<T>(
-    method: 'GET' | 'POST',
-    path: string,
+async function requestJson<T>(
+    url: string,
+    method: 'GET' | 'POST' | 'PATCH' | 'DELETE',
     accessToken: string,
     body?: Record<string, unknown>,
-    hasRetried = false,
 ): Promise<T> {
-    const baseUrl = requireFunctionBaseUrl();
-    const anonKey = requireSupabaseAnonKey();
-    const url = normalizePath(baseUrl, path);
-    const headers = {
-        'Content-Type': 'application/json',
-        apikey: anonKey,
-        Authorization: `Bearer ${accessToken}`,
-    };
-
-    logFriendsRequestHeaders(method, url, headers);
-
     const response = await fetch(url, {
         method,
-        headers,
+        headers: authHeaders(accessToken),
         body: body ? JSON.stringify(body) : undefined,
     });
 
-    const envelope = await parseJsonResponse<T>(response);
-
-    if (!hasRetried && response.status === 401 && isInvalidJwtError(envelope as LegacyEnvelope)) {
-        const refreshedToken = await getRefreshedAccessToken(accessToken);
-        if (refreshedToken) {
-            return request<T>(method, path, refreshedToken, body, true);
-        }
-    }
-
-    if (!response.ok || !envelope.success || envelope.data === undefined) {
-        throw new Error(extractErrorMessage(
-            envelope as LegacyEnvelope,
+    if (!response.ok) {
+        const message = await parseApiError(
+            response,
             `Friends API request failed (HTTP ${response.status})`
-        ));
+        );
+        throw new Error(message);
     }
 
-    return envelope.data;
-}
-
-async function mutate(
-    path: string,
-    accessToken: string,
-    body?: Record<string, unknown>,
-    hasRetried = false,
-): Promise<MutationResult> {
-    const baseUrl = requireFunctionBaseUrl();
-    const anonKey = requireSupabaseAnonKey();
-    const url = normalizePath(baseUrl, path);
-    const headers = {
-        'Content-Type': 'application/json',
-        apikey: anonKey,
-        Authorization: `Bearer ${accessToken}`,
-    };
-
-    logFriendsRequestHeaders('POST', url, headers);
-
-    const response = await fetch(url, {
-        method: 'POST',
-        headers,
-        body: JSON.stringify(body ?? {}),
-    });
-
-    const envelope = await parseJsonResponse<MutationResult>(response) as LegacyEnvelope;
-
-    if (!hasRetried && response.status === 401 && isInvalidJwtError(envelope)) {
-        const refreshedToken = await getRefreshedAccessToken(accessToken);
-        if (refreshedToken) {
-            return mutate(path, refreshedToken, body, true);
-        }
-    }
-
-    if (!response.ok || envelope.success !== true) {
-        throw new Error(extractErrorMessage(
-            envelope,
-            `Friends API request failed (HTTP ${response.status})`
-        ));
-    }
-
-    if (envelope.data && typeof envelope.data === 'object' && 'message' in (envelope.data as Record<string, unknown>)) {
-        const msg = (envelope.data as Record<string, unknown>).message;
-        if (typeof msg === 'string') {
-            return {
-                ok: true,
-                message: msg,
-            };
-        }
-    }
-
-    if (typeof envelope.message === 'string' && envelope.message.length > 0) {
-        return {
-            ok: true,
-            message: envelope.message,
-        };
-    }
-
-    return {
-        ok: true,
-        message: 'Request completed',
-    };
+    return response.json() as Promise<T>;
 }
 
 export async function getFriendsSummary(
     accessToken: string,
 ): Promise<FriendsSummary> {
-    return request<FriendsSummary>('GET', '/summary', accessToken);
+    return requestJson<FriendsSummary>(
+        '/api/friends/summary',
+        'GET',
+        accessToken,
+    );
 }
 
 export async function getViewerOptions(
     accessToken: string,
 ): Promise<ViewerOptionsResponse> {
-    return request<ViewerOptionsResponse>('GET', '/view-options', accessToken);
+    return requestJson<ViewerOptionsResponse>(
+        '/api/friends/view-options',
+        'GET',
+        accessToken,
+    );
 }
 
 export async function getFriendSchedule(
@@ -305,9 +122,9 @@ export async function getFriendSchedule(
         query.set('year', input.year.toString());
     }
 
-    return request<FriendScheduleResponse>(
+    return requestJson<FriendScheduleResponse>(
+        `/api/friends/schedule?${query.toString()}`,
         'GET',
-        `/schedule?${query.toString()}`,
         accessToken,
     );
 }
@@ -316,51 +133,66 @@ export async function sendFriendRequest(
     accessToken: string,
     input: SendFriendRequestInput,
 ): Promise<MutationResult> {
-    const trimmed = input.value.trim();
-
-    // Use root endpoint for maximum compatibility with Supabase edge function
-    // deployments that do not route nested subpaths.
-    return mutate('', accessToken, input.mode === 'email'
-        ? {
-            mode: 'email',
-            email: trimmed,
+    return requestJson<MutationResult>(
+        '/api/friends/requests',
+        'POST',
+        accessToken,
+        {
+            mode: input.mode,
+            value: input.value.trim(),
         }
-        : {
-            mode: 'code',
-            code: trimmed,
-        });
+    );
 }
 
 export async function updateFriendRequest(
     accessToken: string,
     input: UpdateFriendRequestInput,
 ): Promise<MutationResult> {
-    return mutate(`/requests/${encodeURIComponent(input.requestId)}`, accessToken, {
-        action: input.action,
-    });
+    return requestJson<MutationResult>(
+        `/api/friends/requests/${encodeURIComponent(input.requestId)}`,
+        'POST',
+        accessToken,
+        {
+            action: input.action,
+        },
+    );
 }
 
 export async function removeFriend(
     accessToken: string,
     friendId: string,
 ): Promise<MutationResult> {
-    return mutate(`/friend/${encodeURIComponent(friendId)}/remove`, accessToken);
+    return requestJson<MutationResult>(
+        `/api/friends/${encodeURIComponent(friendId)}`,
+        'DELETE',
+        accessToken,
+    );
 }
 
 export async function updateFriendVisibility(
     accessToken: string,
     input: UpdateFriendVisibilityInput,
 ): Promise<MutationResult> {
-    return mutate(`/friend/${encodeURIComponent(input.friendId)}/visibility`, accessToken, {
-        visibility: input.visibility,
-    });
+    return requestJson<MutationResult>(
+        `/api/friends/${encodeURIComponent(input.friendId)}`,
+        'PATCH',
+        accessToken,
+        {
+            visibility: input.visibility,
+        },
+    );
 }
 
 export async function updateDefaultVisibility(
     accessToken: string,
     visibility: FriendVisibility,
 ): Promise<MutationResult> {
-    return mutate('/profile/visibility', accessToken, {
-        visibility,
-    });
+    return requestJson<MutationResult>(
+        '/api/friends/profile/visibility',
+        'POST',
+        accessToken,
+        {
+            visibility,
+        },
+    );
 }
