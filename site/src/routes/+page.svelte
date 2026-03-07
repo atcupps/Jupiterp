@@ -45,6 +45,11 @@ Copyright (C) 2026 Andrew Cupps
         normalizeStoredSchedule,
     } from '$lib/course-planner/Terms';
     import {
+        hasLocalScheduleSnapshot,
+        readLocalScheduleSnapshot,
+        writeLocalScheduleSnapshot,
+    } from '$lib/course-planner/ScheduleStorage';
+    import {
         type Instructor,
         type InstructorsConfig, 
         type InstructorsResponse
@@ -123,22 +128,7 @@ Copyright (C) 2026 Andrew Cupps
         currentSchedule = stored;
 
         if (hasReadLocalStorage && isViewingSelf) {
-
-            // Save to local storage
-            if (currentSchedule) {
-                if (typeof window !== 'undefined') {
-                    localStorage.setItem('selectedSections', 
-                                jsonifySections(currentSchedule.selections));
-                    localStorage.setItem(
-                        'scheduleName', currentSchedule.scheduleName
-                    );
-                    localStorage.setItem('scheduleTerm', currentSchedule.term);
-                    localStorage.setItem(
-                        'scheduleYear',
-                        currentSchedule.year.toString()
-                    );
-                }
-            }
+            persistLocalSchedules();
 
             queueCloudSync();
         }
@@ -150,31 +140,95 @@ Copyright (C) 2026 Andrew Cupps
         nonselectedSchedules = stored;
 
         if (hasReadLocalStorage && isViewingSelf) {
-
-            // Save to local storage
-            if (nonselectedSchedules) {
-                if (typeof window !== 'undefined') {
-                    localStorage.setItem(
-                        'nonselectedSchedules', 
-                        JSON.stringify(nonselectedSchedules)
-                    );
-                }
-            }
+            persistLocalSchedules();
 
             queueCloudSync();
         }
     })
 
+    function persistLocalSchedules() {
+        if (typeof window === 'undefined' || !currentSchedule) {
+            return;
+        }
+
+        writeLocalScheduleSnapshot(authUserId, {
+            selectedSections: jsonifySections(currentSchedule.selections),
+            scheduleName: currentSchedule.scheduleName,
+            scheduleTerm: currentSchedule.term,
+            scheduleYear: currentSchedule.year.toString(),
+            nonselectedSchedules: JSON.stringify(nonselectedSchedules),
+        });
+    }
+
+    function readScopedLocalSchedules(userId: string | null): {
+        current: StoredSchedule,
+        nonselected: StoredSchedule[],
+    } {
+        const defaultTermYear = getDefaultTermYear();
+        const snapshot = readLocalScheduleSnapshot(userId);
+
+        const scheduleTerm = (
+            snapshot.scheduleTermRaw === 'Winter'
+            || snapshot.scheduleTermRaw === 'Spring'
+            || snapshot.scheduleTermRaw === 'Summer'
+            || snapshot.scheduleTermRaw === 'Fall'
+        ) ? snapshot.scheduleTermRaw : defaultTermYear.term;
+
+        const parsedStoredYear = Number(snapshot.scheduleYearRaw);
+        const maxScheduleYear = getMaxScheduleYear();
+        const scheduleYear = Number.isInteger(parsedStoredYear)
+            && parsedStoredYear >= MIN_SCHEDULE_YEAR
+            && parsedStoredYear <= maxScheduleYear
+            ? parsedStoredYear
+            : defaultTermYear.year;
+
+        const currentFromStorage: StoredSchedule = {
+            scheduleName: snapshot.scheduleNameRaw ?? 'Schedule 1',
+            selections: snapshot.selectedSectionsRaw
+                ? resolveSelections(snapshot.selectedSectionsRaw)
+                : [],
+            term: scheduleTerm,
+            year: scheduleYear,
+        };
+
+        const nonselectedFromStorage = snapshot.nonselectedSchedulesRaw
+            ? resolveStoredSchedules(snapshot.nonselectedSchedulesRaw)
+            : [];
+
+        return {
+            current: currentFromStorage,
+            nonselected: nonselectedFromStorage,
+        };
+    }
+
+    function applyScopedLocalSchedules(userId: string | null) {
+        const fallback = getDefaultTermYear();
+        const hasScopedSnapshot = hasLocalScheduleSnapshot(userId);
+        const scoped = readScopedLocalSchedules(userId);
+
+        const currentForStores = hasScopedSnapshot
+            ? scoped.current
+            : {
+                scheduleName: 'Schedule 1',
+                selections: [],
+                term: fallback.term,
+                year: fallback.year,
+            };
+        const nonselectedForStores = hasScopedSnapshot
+            ? scoped.nonselected
+            : [];
+
+        ensureUpToDateAndSetStores(currentForStores, nonselectedForStores);
+        currentSchedule = currentForStores;
+        nonselectedSchedules = nonselectedForStores;
+        hasReadLocalStorage = true;
+    }
+
     async function hydrateFromCloud(userId: string) {
         try {
             const cloudValue = await loadUserSchedules(userId);
             if (!cloudValue) {
-                if (currentSchedule) {
-                    await saveUserSchedules(userId, {
-                        currentSchedule,
-                        nonselectedSchedules,
-                    });
-                }
+                applyScopedLocalSchedules(userId);
                 return;
             }
 
@@ -189,8 +243,12 @@ Copyright (C) 2026 Andrew Cupps
                 });
 
             ensureUpToDateAndSetStores(cloudCurrent, cloudNonselected);
+            currentSchedule = cloudCurrent;
+            nonselectedSchedules = cloudNonselected;
+            hasReadLocalStorage = true;
         } catch (error) {
             console.error('Failed loading cloud schedules:', error);
+            applyScopedLocalSchedules(userId);
         }
     }
 
@@ -343,77 +401,7 @@ Copyright (C) 2026 Andrew Cupps
         // Retrieve data from client local storage
         try {
             if (typeof window !== 'undefined') {
-                // Get stored selections from local storage
-                const storedSelectionsOption = 
-                                localStorage.getItem('selectedSections');
-                let storedSelections: ScheduleSelection[];
-                if (storedSelectionsOption) {
-                    storedSelections = 
-                        resolveSelections(storedSelectionsOption);
-                } else {
-                    storedSelections = [];
-                }
-
-                // Get stored current schedule name from local storage
-                const storedScheduleNameOption = 
-                                localStorage.getItem('scheduleName');
-                let storedScheduleName: string;
-                if (storedScheduleNameOption) {
-                    storedScheduleName = storedScheduleNameOption;
-                } else {
-                    storedScheduleName = "Schedule 1";
-                }
-
-                const defaultTermYear = getDefaultTermYear();
-                const storedScheduleTermOption =
-                    localStorage.getItem('scheduleTerm');
-                const storedScheduleYearOption =
-                    localStorage.getItem('scheduleYear');
-                const parsedStoredYear = Number(storedScheduleYearOption);
-                const maxScheduleYear = getMaxScheduleYear();
-                const storedScheduleYear = Number.isInteger(parsedStoredYear) &&
-                        parsedStoredYear >= MIN_SCHEDULE_YEAR &&
-                        parsedStoredYear <= maxScheduleYear
-                    ? parsedStoredYear
-                    : defaultTermYear.year;
-
-                const currentScheduleFromStorage: StoredSchedule = {
-                    scheduleName: storedScheduleName,
-                    selections: storedSelections,
-                    term: (
-                        storedScheduleTermOption === 'Winter' ||
-                        storedScheduleTermOption === 'Spring' ||
-                        storedScheduleTermOption === 'Summer' ||
-                        storedScheduleTermOption === 'Fall'
-                    )
-                        ? storedScheduleTermOption
-                        : defaultTermYear.term,
-                    year: storedScheduleYear,
-                };
-
-                // Get stored non-selected schedules from local storage
-                const storedNonselectedSchedulesOption = 
-                                localStorage.getItem('nonselectedSchedules');
-                let storedNonselectedSchedules: StoredSchedule[];
-                if (storedNonselectedSchedulesOption) {
-                    storedNonselectedSchedules = 
-                        resolveStoredSchedules(
-                            storedNonselectedSchedulesOption);
-                } else {
-                    storedNonselectedSchedules = [];
-                }
-
-                // Find differences between stored selections and
-                // most up-to-date course data, and update accordingly.
-                ensureUpToDateAndSetStores(
-                    currentScheduleFromStorage,
-                    storedNonselectedSchedules
-                );
-
-                currentSchedule = currentScheduleFromStorage;
-                nonselectedSchedules = storedNonselectedSchedules;
-
-                hasReadLocalStorage = true;
+                applyScopedLocalSchedules(null);
 
                 accessToken = null;
                 getAccessToken().then((token) => {
@@ -448,6 +436,11 @@ Copyright (C) 2026 Andrew Cupps
                             return;
                         }
 
+                        if (cloudSyncTimeout !== null) {
+                            clearTimeout(cloudSyncTimeout);
+                            cloudSyncTimeout = null;
+                        }
+
                         authUserId = nextAuthId;
                         getAccessToken().then((token) => {
                             accessToken = token;
@@ -457,6 +450,7 @@ Copyright (C) 2026 Andrew Cupps
                         if (authUserId) {
                             hydrateFromCloud(authUserId);
                         } else {
+                            applyScopedLocalSchedules(null);
                             ActiveViewerStore.set('self');
                         }
                     });

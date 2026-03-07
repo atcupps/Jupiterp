@@ -52,15 +52,20 @@ export function readSchedulesFromLocalStorage(userId: string | null = null): Sto
         return [];
     }
 
-    const snapshot = readLocalScheduleSnapshot(userId);
+    const {
+        selectedSectionsRaw,
+        scheduleNameRaw,
+        scheduleTermRaw,
+        scheduleYearRaw,
+        nonselectedSchedulesRaw,
+    } = readLocalScheduleSnapshot(userId);
     const defaultTermYear = getDefaultTermYear();
-    const selectedRaw = snapshot.selectedSectionsRaw;
-    const scheduleName = snapshot.scheduleNameRaw ?? "Schedule";
-    const scheduleTermRaw = snapshot.scheduleTermRaw;
+    const selectedRaw = selectedSectionsRaw;
+    const scheduleName = scheduleNameRaw ?? "Schedule";
     const scheduleTerm = isAcademicTerm(scheduleTermRaw)
         ? scheduleTermRaw
         : defaultTermYear.term;
-    const scheduleYear = Number(snapshot.scheduleYearRaw ?? defaultTermYear.year);
+    const scheduleYear = Number(scheduleYearRaw ?? defaultTermYear.year);
 
     const currentSchedule = normalizeStoredSchedule({
         scheduleName,
@@ -69,7 +74,7 @@ export function readSchedulesFromLocalStorage(userId: string | null = null): Sto
         year: scheduleYear,
     }, defaultTermYear);
 
-    const nonselectedRaw = snapshot.nonselectedSchedulesRaw;
+    const nonselectedRaw = nonselectedSchedulesRaw;
     const nonselected = nonselectedRaw
         ? resolveStoredSchedules(nonselectedRaw)
         : [];

@@ -86,11 +86,11 @@ Copyright (C) 2026 Andrew Cupps
             </div>
 
             <div class='min-w-0'>
-                <h2 class='text-2xl md:text-3xl font-semibold leading-tight'>
+                <h2 class='text-2xl md:text-3xl font-semibold leading-tight break-words'>
                     Hi, {greetingName}
                 </h2>
                 <div class='text-xs opacity-70 mt-1'>Signed in as</div>
-                <div class='text-sm md:text-base font-medium truncate' title={email ?? ''}>
+                <div class='text-sm md:text-base font-medium break-all' title={email ?? ''}>
                     {email ?? 'Not signed in'}
                 </div>
                 <div class='text-sm opacity-80 mt-1'>
@@ -113,7 +113,7 @@ Copyright (C) 2026 Andrew Cupps
             <h3 class='text-base font-semibold'>Quick Profile</h3>
             <div class='grid grid-cols-[120px_1fr] text-sm gap-y-2'>
                 <div class='opacity-70'>Major(s):</div>
-                <div>{majorsLabel}</div>
+                <div class='break-words'>{majorsLabel}</div>
 
                 <div class='opacity-70'>Degree Type:</div>
                 <div>{degreeType}</div>
