@@ -149,6 +149,18 @@ Copyright (C) 2026 Andrew Cupps
         void onDegreeTypeChange(target.value as DegreeType);
     }
 
+    function onUndergraduateMajorSelect(event: Event) {
+        const target = event.currentTarget as HTMLSelectElement;
+        selectedMajor = target.value;
+        void persistCurrentSelection();
+    }
+
+    function onProgramSelect(event: Event) {
+        const target = event.currentTarget as HTMLSelectElement;
+        selectedProgram = target.value;
+        void persistCurrentSelection();
+    }
+
     function addMinor(minor: string) {
         userHasTouchedForm = true;
         if (selectedMinors.includes(minor)) {
@@ -223,7 +235,7 @@ Copyright (C) 2026 Andrew Cupps
                         <select class='rounded-md border border-outlineLight dark:border-outlineDark
                                        bg-bgLight dark:bg-bgDark px-2 py-1 text-sm focus:outline-none focus:ring'
                                 bind:value={selectedMajor}
-                                on:change={() => { void persistCurrentSelection(); }}>
+                            on:change={onUndergraduateMajorSelect}>
                             <option value=''>Select a major</option>
                             {#each UMD_MAJORS as major}
                                 <option value={major}>{major}</option>
@@ -271,7 +283,7 @@ Copyright (C) 2026 Andrew Cupps
                         <select class='rounded-md border border-outlineLight dark:border-outlineDark
                                        bg-bgLight dark:bg-bgDark px-2 py-1 text-sm focus:outline-none focus:ring'
                                 bind:value={selectedProgram}
-                                on:change={() => { void persistCurrentSelection(); }}>
+                            on:change={onProgramSelect}>
                             <option value=''>Select a program</option>
                             {#each UMD_MAJORS as program}
                                 <option value={program}>{program}</option>
