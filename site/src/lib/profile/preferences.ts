@@ -6,6 +6,7 @@
  */
 
 import {
+    DEFAULT_AVATAR_COLOR,
     DEFAULT_PROFILE_PRIVACY,
     DEFAULT_DEGREE_TYPE,
     type DegreeType,
@@ -19,6 +20,8 @@ const MINORS_KEY = "profileMinors";
 const GRAD_YEAR_KEY = "profileGraduationYear";
 const PRIVACY_KEY = "profilePrivacy";
 const DISPLAY_NAME_KEY = "profileDisplayName";
+const AVATAR_URL_KEY = "profileAvatarUrl";
+const AVATAR_COLOR_KEY = "profileAvatarColor";
 
 const DEGREE_TYPES: DegreeType[] = [
     "Undergraduate",
@@ -38,6 +41,8 @@ const PRIVACY_LEVELS: ProfilePrivacyLevel[] = [
 export interface LocalProfileMetadata {
     displayName: string;
     profilePrivacy: ProfilePrivacyLevel;
+    avatarUrl: string | null;
+    avatarColor: string;
 }
 
 export function isDegreeType(value: string | null): value is DegreeType {
@@ -121,17 +126,23 @@ export function readProfileMetadataFromLocalStorage(): LocalProfileMetadata {
         return {
             displayName: "",
             profilePrivacy: DEFAULT_PROFILE_PRIVACY,
+            avatarUrl: null,
+            avatarColor: DEFAULT_AVATAR_COLOR,
         };
     }
 
     const displayName = localStorage.getItem(DISPLAY_NAME_KEY) ?? "";
     const privacyRaw = localStorage.getItem(PRIVACY_KEY);
+    const avatarUrlRaw = localStorage.getItem(AVATAR_URL_KEY);
+    const avatarColor = localStorage.getItem(AVATAR_COLOR_KEY) ?? DEFAULT_AVATAR_COLOR;
 
     return {
         displayName,
         profilePrivacy: isProfilePrivacyLevel(privacyRaw)
             ? privacyRaw
             : DEFAULT_PROFILE_PRIVACY,
+        avatarUrl: avatarUrlRaw && avatarUrlRaw.length > 0 ? avatarUrlRaw : null,
+        avatarColor,
     };
 }
 
@@ -144,4 +155,10 @@ export function saveProfileMetadataToLocalStorage(
 
     localStorage.setItem(DISPLAY_NAME_KEY, metadata.displayName);
     localStorage.setItem(PRIVACY_KEY, metadata.profilePrivacy);
+    if (metadata.avatarUrl) {
+        localStorage.setItem(AVATAR_URL_KEY, metadata.avatarUrl);
+    } else {
+        localStorage.removeItem(AVATAR_URL_KEY);
+    }
+    localStorage.setItem(AVATAR_COLOR_KEY, metadata.avatarColor);
 }

@@ -17,6 +17,8 @@ Copyright (C) 2026 Andrew Cupps
     export let visibility = 'full';
     export let graduationYear: number | null = null;
     export let totalCreditsTaken = 0;
+    export let avatarUrl: string | null = null;
+    export let avatarColor = '#b90e25';
     export let onSignOut: () => void = () => undefined;
     export let onEdit: () => void = () => undefined;
 
@@ -67,11 +69,17 @@ Copyright (C) 2026 Andrew Cupps
         <div class='flex flex-row gap-4 items-start'>
             <div class='relative'>
                 <div class='h-24 w-24 rounded-full bg-gradient-to-br
-                            from-[#b90e25] to-[#ffd54f]
                             text-white font-semibold text-3xl
                             border-4 border-white/90 dark:border-bgDark
-                            flex items-center justify-center shadow-lg'>
-                    {initialsFromName(greetingName)}
+                            flex items-center justify-center shadow-lg overflow-hidden'
+                    style={`background: ${avatarColor};`}>
+                    {#if avatarUrl}
+                        <img src={avatarUrl}
+                             alt='Profile avatar'
+                             class='h-full w-full object-cover'>
+                    {:else}
+                        {initialsFromName(greetingName)}
+                    {/if}
                 </div>
                 <button class='absolute -bottom-1 -right-1 h-7 w-7 rounded-full
                                 border border-outlineLight dark:border-outlineDark

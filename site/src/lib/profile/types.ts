@@ -32,7 +32,10 @@ export interface EditableProfileFields {
     minors: string[];
     graduationYear: number | null;
     profilePrivacy: ProfilePrivacyLevel;
+    avatarUrl: string | null;
+    avatarColor: string;
 }
 
 export const DEFAULT_DEGREE_TYPE: DegreeType = "Undergraduate";
 export const DEFAULT_PROFILE_PRIVACY: ProfilePrivacyLevel = "friends_only";
+export const DEFAULT_AVATAR_COLOR = "#b90e25";

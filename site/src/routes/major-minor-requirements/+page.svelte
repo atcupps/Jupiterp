@@ -191,6 +191,8 @@ Copyright (C) 2026 Andrew Cupps
             minors: selectedMinors,
             graduationYear: profileState.graduationYear,
             profilePrivacy: profileState.profilePrivacy,
+            avatarUrl: profileState.avatarUrl,
+            avatarColor: profileState.avatarColor,
         });
     }
 

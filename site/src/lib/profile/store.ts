@@ -20,6 +20,7 @@ import {
     saveProfilePreferencesToLocalStorage,
 } from "$lib/profile/preferences";
 import {
+    DEFAULT_AVATAR_COLOR,
     DEFAULT_DEGREE_TYPE,
     DEFAULT_PROFILE_PRIVACY,
     type EditableProfileFields,
@@ -40,6 +41,8 @@ const DEFAULT_PROFILE_STATE: ProfileState = {
     minors: [],
     graduationYear: null,
     profilePrivacy: DEFAULT_PROFILE_PRIVACY,
+    avatarUrl: null,
+    avatarColor: DEFAULT_AVATAR_COLOR,
 };
 
 export const ProfileStateStore = writable<ProfileState>(DEFAULT_PROFILE_STATE);
@@ -61,6 +64,8 @@ function localSnapshot(): EditableProfileFields {
         minors: sanitizeMajors(preferences.minors),
         graduationYear: preferences.graduationYear,
         profilePrivacy: metadata.profilePrivacy,
+        avatarUrl: metadata.avatarUrl,
+        avatarColor: metadata.avatarColor,
     };
 }
 
@@ -75,6 +80,8 @@ function saveLocalSnapshot(snapshot: EditableProfileFields): void {
     saveProfileMetadataToLocalStorage({
         displayName: snapshot.displayName,
         profilePrivacy: snapshot.profilePrivacy,
+        avatarUrl: snapshot.avatarUrl,
+        avatarColor: snapshot.avatarColor,
     });
 }
 
@@ -98,6 +105,12 @@ function mergeServerProfile(
         profilePrivacy: (server?.profilePrivacy
             ?? row?.profile_privacy
             ?? current.profilePrivacy) as ProfilePrivacyLevel,
+        avatarUrl: server?.avatarUrl
+            ?? row?.avatar_url
+            ?? current.avatarUrl,
+        avatarColor: server?.avatarColor
+            ?? row?.avatar_color
+            ?? current.avatarColor,
     };
 }
 

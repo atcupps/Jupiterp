@@ -20,6 +20,7 @@ Copyright (C) 2026 Andrew Cupps
         signInWithEmail,
         signInWithGoogle,
         signOutUser,
+        uploadProfileAvatar,
     } from '$lib/supabase';
     import {
         chooseSchedulesForProfile,
@@ -69,7 +70,7 @@ Copyright (C) 2026 Andrew Cupps
     let generatedFriendCode = '';
     let totalCreditsTaken = 0;
 
-    let isEditing = false;
+    let isEditing = true;
     let editError: string | null = null;
     let editMessage: string | null = null;
     let draftDisplayName = '';
@@ -77,6 +78,8 @@ Copyright (C) 2026 Andrew Cupps
     let draftMajors = '';
     let draftPrivacy: ProfilePrivacyLevel = 'friends_only';
     let draftGraduationYear = '';
+    let draftAvatarColor = '#b90e25';
+    let avatarUploading = false;
 
     let profileState = get(ProfileStateStore);
     const unsubscribeProfileState = ProfileStateStore.subscribe((value) => {
@@ -157,6 +160,9 @@ Copyright (C) 2026 Andrew Cupps
         generatedFriendCode = cloudRow?.friend_code ?? generatedFriendCode;
         await loadProfileState(cloudRow);
         await recomputeTotalCredits();
+        if (isEditing) {
+            startEditing();
+        }
     }
 
     function startEditing() {
@@ -169,6 +175,7 @@ Copyright (C) 2026 Andrew Cupps
         draftMajors = profileState.majors.join(', ');
         draftPrivacy = profileState.profilePrivacy;
         draftGraduationYear = profileState.graduationYear?.toString() ?? '';
+        draftAvatarColor = profileState.avatarColor;
     }
 
     function cancelEditing() {
@@ -179,6 +186,25 @@ Copyright (C) 2026 Andrew Cupps
     async function saveEdits() {
         editError = null;
         editMessage = null;
+
+        const parsedMajors = parseMajorsInput(draftMajors);
+
+        if (
+            (draftDegreeType === 'Double Major' || draftDegreeType === 'Dual-Degree')
+            && parsedMajors.length !== 2
+        ) {
+            editError = 'Double Major and Dual-Degree require exactly 2 majors.';
+            return;
+        }
+
+        if (
+            draftDegreeType !== 'Double Major'
+            && draftDegreeType !== 'Dual-Degree'
+            && parsedMajors.length > 1
+        ) {
+            editError = 'Select a single major for this degree type.';
+            return;
+        }
 
         const graduationYear = draftGraduationYear.trim().length === 0
             ? null
@@ -192,9 +218,10 @@ Copyright (C) 2026 Andrew Cupps
         const patch: Partial<EditableProfileFields> = {
             displayName: draftDisplayName.trim(),
             degreeType: draftDegreeType,
-            majors: parseMajorsInput(draftMajors),
+            majors: parsedMajors,
             profilePrivacy: draftPrivacy,
             graduationYear,
+            avatarColor: draftAvatarColor,
         };
 
         const result = await saveProfileStatePatch(patch);
@@ -205,6 +232,56 @@ Copyright (C) 2026 Andrew Cupps
 
         isEditing = false;
         editMessage = 'Profile updated.';
+    }
+
+    async function onAvatarFileChanged(event: Event) {
+        const target = event.currentTarget as HTMLInputElement;
+        const file = target.files?.[0];
+        if (!file) {
+            return;
+        }
+
+        if (!file.type.startsWith('image/')) {
+            editError = 'Please upload a valid image file.';
+            return;
+        }
+
+        avatarUploading = true;
+        editError = null;
+        editMessage = null;
+
+        try {
+            const avatarUrl = await uploadProfileAvatar(file);
+            const result = await saveProfileStatePatch({ avatarUrl });
+            if (!result.ok) {
+                editError = result.message ?? 'Unable to save avatar.';
+                return;
+            }
+            editMessage = 'Avatar updated.';
+        } catch (error) {
+            editError = error instanceof Error
+                ? error.message
+                : 'Unable to upload avatar right now.';
+        } finally {
+            avatarUploading = false;
+            target.value = '';
+        }
+    }
+
+    async function onAvatarColorChanged(event: Event) {
+        const target = event.currentTarget as HTMLInputElement;
+        draftAvatarColor = target.value;
+
+        const result = await saveProfileStatePatch({
+            avatarColor: draftAvatarColor,
+            avatarUrl: null,
+        });
+        if (!result.ok) {
+            editError = result.message ?? 'Unable to update avatar color.';
+            return;
+        }
+
+        editMessage = 'Avatar color updated.';
     }
 
     async function emailSignIn() {
@@ -386,12 +463,37 @@ Copyright (C) 2026 Andrew Cupps
             visibility={privacyLabel(profileState.profilePrivacy)}
             graduationYear={profileState.graduationYear}
             totalCreditsTaken={totalCreditsTaken}
+            avatarUrl={profileState.avatarUrl}
+            avatarColor={profileState.avatarColor}
             onSignOut={signOut}
             onEdit={startEditing} />
 
         {#if isEditing}
             <section class='rounded-xl border border-outlineLight dark:border-outlineDark p-4 md:p-5 bg-bgSecondaryLight/60 dark:bg-bgSecondaryDark/60'>
                 <h2 class='text-lg font-semibold'>Edit Profile</h2>
+                <div class='grid grid-cols-1 md:grid-cols-2 gap-3 mt-3 mb-1'>
+                    <label class='flex flex-col gap-1'>
+                        <span class='text-xs opacity-70'>Avatar image</span>
+                        <input type='file'
+                               accept='image/*'
+                               class='rounded-md border border-outlineLight dark:border-outlineDark bg-bgLight dark:bg-bgDark px-2 py-1 text-sm'
+                               disabled={avatarUploading}
+                               on:change={onAvatarFileChanged}>
+                        <span class='text-xs opacity-70'>
+                            {avatarUploading ? 'Uploading avatar...' : 'Upload an image to replace initials.'}
+                        </span>
+                    </label>
+
+                    <label class='flex flex-col gap-1'>
+                        <span class='text-xs opacity-70'>Initials background color</span>
+                        <input type='color'
+                               class='h-9 w-20 rounded-md border border-outlineLight dark:border-outlineDark'
+                               bind:value={draftAvatarColor}
+                               on:change={onAvatarColorChanged}>
+                        <span class='text-xs opacity-70'>Choosing a color switches back to initials avatar.</span>
+                    </label>
+                </div>
+
                 <div class='grid grid-cols-1 md:grid-cols-2 gap-3 mt-3'>
                     <label class='flex flex-col gap-1'>
                         <span class='text-xs opacity-70'>Name</span>

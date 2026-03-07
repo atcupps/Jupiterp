@@ -15,6 +15,7 @@ import {
 import type { StoredSchedule } from "../types";
 import type { FriendVisibility } from "$lib/friends/types";
 import {
+    DEFAULT_AVATAR_COLOR,
     DEFAULT_PROFILE_PRIVACY,
     DEFAULT_DEGREE_TYPE,
     type EditableProfileFields,
@@ -42,6 +43,8 @@ export interface UserProfileRow {
     minors: string[] | null,
     graduation_year: number | null,
     profile_privacy: ProfilePrivacyLevel,
+    avatar_url: string | null,
+    avatar_color: string,
 }
 
 let initialized = false;
@@ -324,7 +327,7 @@ export async function ensureUserProfile(): Promise<UserProfileRow | null> {
 
     const { data, error } = await supabase
         .from("profiles")
-        .select("id,email,display_name,friend_code,friends_visibility,degree_type,majors,minors,graduation_year,profile_privacy")
+        .select("id,email,display_name,friend_code,friends_visibility,degree_type,majors,minors,graduation_year,profile_privacy,avatar_url,avatar_color")
         .eq("id", user.id)
         .maybeSingle<UserProfileRow>();
 
@@ -346,8 +349,9 @@ export async function ensureUserProfile(): Promise<UserProfileRow | null> {
             majors: [],
             minors: [],
             profile_privacy: DEFAULT_PROFILE_PRIVACY,
+            avatar_color: DEFAULT_AVATAR_COLOR,
         })
-        .select("id,email,display_name,friend_code,friends_visibility,degree_type,majors,minors,graduation_year,profile_privacy")
+        .select("id,email,display_name,friend_code,friends_visibility,degree_type,majors,minors,graduation_year,profile_privacy,avatar_url,avatar_color")
         .single<UserProfileRow>();
 
     if (insertError) {
@@ -412,6 +416,8 @@ export async function getEditableProfile(): Promise<EditableProfileFields | null
         minors: profile.minors ?? [],
         graduationYear: profile.graduation_year ?? null,
         profilePrivacy: profile.profile_privacy ?? DEFAULT_PROFILE_PRIVACY,
+        avatarUrl: profile.avatar_url ?? null,
+        avatarColor: profile.avatar_color ?? DEFAULT_AVATAR_COLOR,
     };
 }
 
@@ -475,6 +481,12 @@ export async function updateEditableProfile(
     if (updates.profilePrivacy) {
         payload.profile_privacy = updates.profilePrivacy;
     }
+    if (updates.avatarUrl !== undefined) {
+        payload.avatar_url = updates.avatarUrl;
+    }
+    if (updates.avatarColor !== undefined) {
+        payload.avatar_color = updates.avatarColor;
+    }
 
     if (Object.keys(payload).length === 0) {
         return;
@@ -498,4 +510,35 @@ export async function updateEditableProfile(
     if (error) {
         throw new Error(error.message);
     }
+}
+
+export async function uploadProfileAvatar(file: File): Promise<string> {
+    const user = await getAuthUser();
+    if (!user) {
+        throw new Error("Sign in required");
+    }
+
+    const { storage } = requireSupabase();
+    const ext = file.name.includes(".")
+        ? file.name.split(".").pop()?.toLowerCase() ?? "png"
+        : "png";
+    const safeExt = /^[a-z0-9]+$/.test(ext) ? ext : "png";
+    const path = `${user.id}/${Date.now()}.${safeExt}`;
+
+    const { error: uploadError } = await storage
+        .from("profile-avatars")
+        .upload(path, file, {
+            cacheControl: "3600",
+            upsert: true,
+            contentType: file.type || undefined,
+        });
+
+    if (uploadError) {
+        throw new Error(uploadError.message);
+    }
+
+    const { data } = storage
+        .from("profile-avatars")
+        .getPublicUrl(path);
+    return data.publicUrl;
 }
