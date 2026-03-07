@@ -15,8 +15,11 @@ import {
 import type { StoredSchedule } from "../types";
 import type { FriendVisibility } from "$lib/friends/types";
 import {
+    DEFAULT_PROFILE_PRIVACY,
     DEFAULT_DEGREE_TYPE,
+    type EditableProfileFields,
     type DegreeType,
+    type ProfilePrivacyLevel,
     type ProfilePreferences,
 } from "$lib/profile/types";
 
@@ -38,6 +41,7 @@ export interface UserProfileRow {
     majors: string[] | null,
     minors: string[] | null,
     graduation_year: number | null,
+    profile_privacy: ProfilePrivacyLevel,
 }
 
 let initialized = false;
@@ -320,7 +324,7 @@ export async function ensureUserProfile(): Promise<UserProfileRow | null> {
 
     const { data, error } = await supabase
         .from("profiles")
-        .select("id,email,display_name,friend_code,friends_visibility,degree_type,majors,minors,graduation_year")
+        .select("id,email,display_name,friend_code,friends_visibility,degree_type,majors,minors,graduation_year,profile_privacy")
         .eq("id", user.id)
         .maybeSingle<UserProfileRow>();
 
@@ -341,8 +345,9 @@ export async function ensureUserProfile(): Promise<UserProfileRow | null> {
             degree_type: DEFAULT_DEGREE_TYPE,
             majors: [],
             minors: [],
+            profile_privacy: DEFAULT_PROFILE_PRIVACY,
         })
-        .select("id,email,display_name,friend_code,friends_visibility,degree_type,majors,minors,graduation_year")
+        .select("id,email,display_name,friend_code,friends_visibility,degree_type,majors,minors,graduation_year,profile_privacy")
         .single<UserProfileRow>();
 
     if (insertError) {
@@ -394,6 +399,22 @@ export async function getProfilePreferences(): Promise<ProfilePreferences | null
     };
 }
 
+export async function getEditableProfile(): Promise<EditableProfileFields | null> {
+    const profile = await ensureUserProfile();
+    if (!profile) {
+        return null;
+    }
+
+    return {
+        displayName: profile.display_name ?? "",
+        degreeType: profile.degree_type ?? DEFAULT_DEGREE_TYPE,
+        majors: profile.majors ?? [],
+        minors: profile.minors ?? [],
+        graduationYear: profile.graduation_year ?? null,
+        profilePrivacy: profile.profile_privacy ?? DEFAULT_PROFILE_PRIVACY,
+    };
+}
+
 export async function updateProfilePreferences(
     preferences: ProfilePreferences
 ): Promise<void> {
@@ -420,6 +441,58 @@ export async function updateProfilePreferences(
             minors: preferences.minors,
             graduation_year: preferences.graduationYear,
         })
+        .eq("id", user.id);
+
+    if (error) {
+        throw new Error(error.message);
+    }
+}
+
+export async function updateEditableProfile(
+    updates: Partial<EditableProfileFields>
+): Promise<void> {
+    const user = await getAuthUser();
+    if (!user) {
+        throw new Error("Sign in required");
+    }
+
+    const payload: Record<string, unknown> = {};
+    if (typeof updates.displayName === "string") {
+        payload.display_name = updates.displayName;
+    }
+    if (updates.degreeType) {
+        payload.degree_type = updates.degreeType;
+    }
+    if (updates.majors) {
+        payload.majors = updates.majors;
+    }
+    if (updates.minors) {
+        payload.minors = updates.minors;
+    }
+    if (updates.graduationYear !== undefined) {
+        payload.graduation_year = updates.graduationYear;
+    }
+    if (updates.profilePrivacy) {
+        payload.profile_privacy = updates.profilePrivacy;
+    }
+
+    if (Object.keys(payload).length === 0) {
+        return;
+    }
+
+    const supabase = requireSupabase() as unknown as {
+        from: (table: string) => {
+            update: (values: Record<string, unknown>) => {
+                eq: (column: string, value: string) => Promise<{
+                    error: { message: string } | null,
+                }>
+            },
+        }
+    };
+
+    const { error } = await supabase
+        .from("profiles")
+        .update(payload)
         .eq("id", user.id);
 
     if (error) {

@@ -18,6 +18,7 @@ Copyright (C) 2026 Andrew Cupps
     export let graduationYear: number | null = null;
     export let totalCreditsTaken = 0;
     export let onSignOut: () => void = () => undefined;
+    export let onEdit: () => void = () => undefined;
 
     let copied = false;
 
@@ -65,10 +66,11 @@ Copyright (C) 2026 Andrew Cupps
     <div class='grid grid-cols-1 lg:grid-cols-2 gap-5'>
         <div class='flex flex-row gap-4 items-start'>
             <div class='relative'>
-                <div class='h-20 w-20 rounded-full bg-gradient-to-br
-                            from-[#e21833]/70 to-[#ffd54f]/80
-                            text-white font-semibold text-2xl
-                            flex items-center justify-center shadow-sm'>
+                <div class='h-24 w-24 rounded-full bg-gradient-to-br
+                            from-[#b90e25] to-[#ffd54f]
+                            text-white font-semibold text-3xl
+                            border-4 border-white/90 dark:border-bgDark
+                            flex items-center justify-center shadow-lg'>
                     {initialsFromName(greetingName)}
                 </div>
                 <button class='absolute -bottom-1 -right-1 h-7 w-7 rounded-full
@@ -77,7 +79,8 @@ Copyright (C) 2026 Andrew Cupps
                                 hover:bg-hoverLight dark:hover:bg-hoverDark
                                 focus:outline-none focus:ring'
                         aria-label='Change avatar'
-                        title='Change avatar'>
+                        title='Edit profile'
+                        on:click={onEdit}>
                     Edit
                 </button>
             </div>
@@ -134,7 +137,7 @@ Copyright (C) 2026 Andrew Cupps
                 <div class='flex items-center gap-2'>
                     <span class='inline-flex rounded-full px-2 py-0.5 text-xs
                                  border border-outlineLight dark:border-outlineDark'>
-                        Friends see: {visibility}
+                        Profile visibility: {visibility}
                     </span>
                     <button class='rounded-md px-1 text-xs opacity-70 hover:opacity-100
                                     focus:outline-none focus:ring'

@@ -5,18 +5,17 @@ https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2026 Andrew Cupps
  -->
 <script lang='ts'>
+    import { get } from 'svelte/store';
     import { onMount } from 'svelte';
-    import {
-        readProfilePreferencesFromLocalStorage,
-        saveProfilePreferencesToLocalStorage,
-    } from '$lib/profile/preferences';
-    import {
-        DEFAULT_DEGREE_TYPE,
-        type DegreeType,
-        type ProfilePreferences,
-    } from '$lib/profile/types';
-    import { getProfilePreferences, updateProfilePreferences } from '$lib/supabase';
     import { UMD_MAJORS, UMD_MINORS } from '$lib/data/umdPrograms';
+    import { ensureUserProfile } from '$lib/supabase';
+    import {
+        loadProfileState,
+        ProfileStateStore,
+        saveProfileStatePatch,
+        selectedProgramPathFromState,
+    } from '$lib/profile/store';
+    import type { DegreeType } from '$lib/profile/types';
 
     const degreeTypes: DegreeType[] = [
         'Undergraduate',
@@ -26,44 +25,86 @@ Copyright (C) 2026 Andrew Cupps
         'P.H.D.',
     ];
 
-    let degreeType: DegreeType = DEFAULT_DEGREE_TYPE;
-    let selectedMajor = UMD_MAJORS[0] ?? '';
-    let selectedProgram = UMD_MAJORS[0] ?? '';
+    let profileState = get(ProfileStateStore);
+    const unsubscribeProfileState = ProfileStateStore.subscribe((value) => {
+        profileState = value;
+    });
+
+    let degreeType: DegreeType = 'Undergraduate';
+    let selectedMajor = '';
+    let selectedProgram = '';
     let selectedMajors: string[] = [];
 
     let minorQuery = '';
     let minorsOpen = false;
     let selectedMinors: string[] = [];
-    let initialized = false;
-    let saveTimeout: ReturnType<typeof setTimeout> | null = null;
+    let selectingTwoMajors = true;
 
-    $: requiresTwoMajors =
-        degreeType === 'Dual-Degree' || degreeType === 'Double Major';
+    let saveMessage: string | null = null;
+    let saveError: string | null = null;
+    let userHasTouchedForm = false;
 
-    $: if (requiresTwoMajors && selectedMajors.length < 2) {
-        selectedMajors = UMD_MAJORS.slice(0, 2);
-    }
-
-    $: if (!requiresTwoMajors && selectedMajors.length > 0) {
-        selectedMajors = [];
-    }
+    $: requiresTwoMajors = degreeType === 'Dual-Degree' || degreeType === 'Double Major';
 
     $: filteredMinors = UMD_MINORS.filter((minor) => {
         const match = minor.toLowerCase().includes(minorQuery.toLowerCase());
         return match && !selectedMinors.includes(minor);
     });
 
+    $: if (profileState.loaded && !userHasTouchedForm) {
+        syncLocalFromStore();
+    }
+
+    function syncLocalFromStore() {
+        degreeType = profileState.degreeType;
+        selectedMinors = profileState.minors;
+
+        if (degreeType === 'Undergraduate') {
+            selectedMajor = profileState.majors[0] ?? '';
+        } else if (requiresTwoMajors) {
+            selectedMajors = profileState.majors.slice(0, 2);
+            selectingTwoMajors = selectedMajors.length < 2;
+        } else {
+            selectedProgram = profileState.majors[0] ?? '';
+        }
+    }
+
+    async function persistCurrentSelection() {
+        userHasTouchedForm = true;
+        saveMessage = null;
+        saveError = null;
+
+        let majors: string[] = [];
+        if (degreeType === 'Undergraduate') {
+            majors = selectedMajor ? [selectedMajor] : [];
+        } else if (requiresTwoMajors) {
+            majors = selectedMajors.slice(0, 2);
+        } else {
+            majors = selectedProgram ? [selectedProgram] : [];
+        }
+
+        const result = await saveProfileStatePatch({
+            degreeType,
+            majors,
+            minors: selectedMinors,
+        });
+
+        if (!result.ok) {
+            saveError = result.message ?? 'Unable to save profile preferences.';
+            return;
+        }
+
+        saveMessage = 'Saved.';
+    }
+
     function toggleMajorSelection(major: string) {
+        userHasTouchedForm = true;
         if (selectedMajors.includes(major)) {
-            if (selectedMajors.length <= 2) {
-                return;
-            }
             selectedMajors = selectedMajors.filter((value) => value !== major);
             return;
         }
 
         if (selectedMajors.length >= 2) {
-            // Keep the selection capped at two but allow users to swap majors.
             selectedMajors = [selectedMajors[1], major];
             return;
         }
@@ -71,7 +112,45 @@ Copyright (C) 2026 Andrew Cupps
         selectedMajors = [...selectedMajors, major];
     }
 
+    async function onDoneSelectingMajors() {
+        if (selectedMajors.length < 2) {
+            saveError = 'Choose two programs before continuing.';
+            return;
+        }
+
+        selectingTwoMajors = false;
+        await persistCurrentSelection();
+    }
+
+    function onEditTwoMajors() {
+        selectingTwoMajors = true;
+        saveError = null;
+    }
+
+    async function onDegreeTypeChange(next: DegreeType) {
+        userHasTouchedForm = true;
+        degreeType = next;
+        saveError = null;
+
+        if (requiresTwoMajors) {
+            selectedMajors = profileState.majors.slice(0, 2);
+            selectingTwoMajors = selectedMajors.length < 2;
+        }
+
+        if (!requiresTwoMajors) {
+            selectingTwoMajors = false;
+        }
+
+        await persistCurrentSelection();
+    }
+
+    function onDegreeTypeSelect(event: Event) {
+        const target = event.currentTarget as HTMLSelectElement;
+        void onDegreeTypeChange(target.value as DegreeType);
+    }
+
     function addMinor(minor: string) {
+        userHasTouchedForm = true;
         if (selectedMinors.includes(minor)) {
             return;
         }
@@ -79,98 +158,42 @@ Copyright (C) 2026 Andrew Cupps
         selectedMinors = [...selectedMinors, minor];
         minorQuery = '';
         minorsOpen = false;
+        void persistCurrentSelection();
     }
 
     function removeMinor(minor: string) {
+        userHasTouchedForm = true;
         selectedMinors = selectedMinors.filter((value) => value !== minor);
+        void persistCurrentSelection();
     }
 
-    function selectedProgramsText(): string {
-        if (degreeType === 'Undergraduate') {
-            return selectedMajor;
-        }
-
-        if (requiresTwoMajors) {
-            return selectedMajors.join(', ');
-        }
-
-        return selectedProgram;
-    }
-
-    function currentMajorsForPreferences(): string[] {
-        if (degreeType === 'Undergraduate') {
-            return selectedMajor ? [selectedMajor] : [];
-        }
-
-        if (requiresTwoMajors) {
-            return selectedMajors;
-        }
-
-        return selectedProgram ? [selectedProgram] : [];
-    }
-
-    async function savePreferences() {
-        const preferences: ProfilePreferences = {
+    function selectedProgramPath(): string {
+        return selectedProgramPathFromState({
+            displayName: profileState.displayName,
             degreeType,
-            majors: currentMajorsForPreferences(),
+            majors: degreeType === 'Undergraduate'
+                ? (selectedMajor ? [selectedMajor] : [])
+                : requiresTwoMajors
+                    ? selectedMajors
+                    : (selectedProgram ? [selectedProgram] : []),
             minors: selectedMinors,
-            graduationYear: null,
-        };
-
-        saveProfilePreferencesToLocalStorage(preferences);
-
-        try {
-            await updateProfilePreferences(preferences);
-        } catch {
-            // Signed-out users and transient API errors should still keep local data.
-        }
+            graduationYear: profileState.graduationYear,
+            profilePrivacy: profileState.profilePrivacy,
+        });
     }
 
-    $: if (initialized) {
-        if (saveTimeout) {
-            clearTimeout(saveTimeout);
-        }
-        saveTimeout = setTimeout(() => {
-            void savePreferences();
-        }, 250);
-    }
-
-    onMount(async () => {
-        const local = readProfilePreferencesFromLocalStorage();
-        degreeType = local.degreeType;
-        selectedMinors = local.minors;
-
-        if (degreeType === 'Undergraduate') {
-            selectedMajor = local.majors[0] ?? (UMD_MAJORS[0] ?? '');
-        } else if (degreeType === 'Dual-Degree' || degreeType === 'Double Major') {
-            selectedMajors = local.majors.length >= 2
-                ? local.majors.slice(0, 2)
-                : UMD_MAJORS.slice(0, 2);
-        } else {
-            selectedProgram = local.majors[0] ?? (UMD_MAJORS[0] ?? '');
-        }
-
-        try {
-            const cloud = await getProfilePreferences();
-            if (cloud) {
-                degreeType = cloud.degreeType;
-                selectedMinors = cloud.minors;
-
-                if (degreeType === 'Undergraduate') {
-                    selectedMajor = cloud.majors[0] ?? selectedMajor;
-                } else if (degreeType === 'Dual-Degree' || degreeType === 'Double Major') {
-                    selectedMajors = cloud.majors.length >= 2
-                        ? cloud.majors.slice(0, 2)
-                        : selectedMajors;
-                } else {
-                    selectedProgram = cloud.majors[0] ?? selectedProgram;
-                }
+    onMount(() => {
+        void (async () => {
+            try {
+                const row = await ensureUserProfile();
+                await loadProfileState(row);
+            } catch {
+                await loadProfileState(null);
             }
-        } catch {
-            // Keep local values when cloud fetch is unavailable.
-        }
+        })();
 
-        initialized = true;
+        syncLocalFromStore();
+        return () => unsubscribeProfileState();
     });
 </script>
 
@@ -184,10 +207,10 @@ Copyright (C) 2026 Andrew Cupps
             <div class='grid grid-cols-1 lg:grid-cols-2 gap-4'>
                 <label class='flex flex-col gap-1'>
                     <span class='text-xs opacity-70'>Degree Type</span>
-                    <select
-                        class='rounded-md border border-outlineLight dark:border-outlineDark
-                               bg-bgLight dark:bg-bgDark px-2 py-1 text-sm focus:outline-none focus:ring'
-                        bind:value={degreeType}>
+                    <select class='rounded-md border border-outlineLight dark:border-outlineDark
+                                   bg-bgLight dark:bg-bgDark px-2 py-1 text-sm focus:outline-none focus:ring'
+                            bind:value={degreeType}
+                            on:change={onDegreeTypeSelect}>
                         {#each degreeTypes as type}
                             <option value={type}>{type}</option>
                         {/each}
@@ -197,41 +220,59 @@ Copyright (C) 2026 Andrew Cupps
                 {#if degreeType === 'Undergraduate'}
                     <label class='flex flex-col gap-1'>
                         <span class='text-xs opacity-70'>Major</span>
-                        <select
-                            class='rounded-md border border-outlineLight dark:border-outlineDark
-                                   bg-bgLight dark:bg-bgDark px-2 py-1 text-sm focus:outline-none focus:ring'
-                            bind:value={selectedMajor}>
+                        <select class='rounded-md border border-outlineLight dark:border-outlineDark
+                                       bg-bgLight dark:bg-bgDark px-2 py-1 text-sm focus:outline-none focus:ring'
+                                bind:value={selectedMajor}
+                                on:change={() => { void persistCurrentSelection(); }}>
+                            <option value=''>Select a major</option>
                             {#each UMD_MAJORS as major}
                                 <option value={major}>{major}</option>
                             {/each}
                         </select>
                     </label>
                 {:else if requiresTwoMajors}
-                    <div class='flex flex-col gap-1'>
-                        <span class='text-xs opacity-70'>Majors (select at least 2)</span>
-                        <div class='max-h-44 overflow-y-auto rounded-md border border-outlineLight dark:border-outlineDark p-2'>
-                            {#each UMD_MAJORS as major}
-                                <label class='flex items-center gap-2 py-0.5 text-sm'>
-                                    <input
-                                        type='checkbox'
-                                        class='rounded border-outlineLight dark:border-outlineDark'
-                                        checked={selectedMajors.includes(major)}
-                                        on:change={() => { toggleMajorSelection(major); }} />
-                                    <span>{major}</span>
-                                </label>
-                            {/each}
-                        </div>
-                        <div class='text-xs opacity-70'>
-                            Selected: {selectedMajors.length} {selectedMajors.length === 1 ? 'major' : 'majors'}
-                        </div>
+                    <div class='flex flex-col gap-2 lg:col-span-2'>
+                        <span class='text-xs opacity-70'>Programs</span>
+                        {#if selectingTwoMajors}
+                            <div class='max-h-44 overflow-y-auto rounded-md border border-outlineLight dark:border-outlineDark p-2'>
+                                {#each UMD_MAJORS as major}
+                                    <label class='flex items-center gap-2 py-0.5 text-sm'>
+                                        <input type='checkbox'
+                                               class='rounded border-outlineLight dark:border-outlineDark'
+                                               checked={selectedMajors.includes(major)}
+                                               on:change={() => { toggleMajorSelection(major); }}>
+                                        <span>{major}</span>
+                                    </label>
+                                {/each}
+                            </div>
+                            <div class='text-xs opacity-70'>Selected: {selectedMajors.length} / 2</div>
+                            <div class='flex gap-2'>
+                                <button class='px-3 py-1 rounded-md border border-outlineLight dark:border-outlineDark text-sm hover:bg-hoverLight dark:hover:bg-hoverDark'
+                                        disabled={selectedMajors.length < 2 || profileState.syncing}
+                                        on:click={onDoneSelectingMajors}>
+                                    {profileState.syncing ? 'Saving...' : 'Done'}
+                                </button>
+                            </div>
+                        {:else}
+                            <div class='rounded-md border border-outlineLight dark:border-outlineDark p-3'>
+                                <div class='text-sm'>
+                                    {selectedMajors.join(', ') || 'None selected'}
+                                </div>
+                                <button class='mt-2 px-3 py-1 rounded-md border border-outlineLight dark:border-outlineDark text-sm hover:bg-hoverLight dark:hover:bg-hoverDark'
+                                        on:click={onEditTwoMajors}>
+                                    Edit
+                                </button>
+                            </div>
+                        {/if}
                     </div>
                 {:else}
                     <label class='flex flex-col gap-1'>
                         <span class='text-xs opacity-70'>Program</span>
-                        <select
-                            class='rounded-md border border-outlineLight dark:border-outlineDark
-                                   bg-bgLight dark:bg-bgDark px-2 py-1 text-sm focus:outline-none focus:ring'
-                            bind:value={selectedProgram}>
+                        <select class='rounded-md border border-outlineLight dark:border-outlineDark
+                                       bg-bgLight dark:bg-bgDark px-2 py-1 text-sm focus:outline-none focus:ring'
+                                bind:value={selectedProgram}
+                                on:change={() => { void persistCurrentSelection(); }}>
+                            <option value=''>Select a program</option>
                             {#each UMD_MAJORS as program}
                                 <option value={program}>{program}</option>
                             {/each}
@@ -250,10 +291,9 @@ Copyright (C) 2026 Andrew Cupps
                     {#each selectedMinors as minor}
                         <span class='inline-flex items-center gap-2 rounded-full border border-outlineLight dark:border-outlineDark px-3 py-1 text-xs'>
                             {minor}
-                            <button
-                                class='text-sm leading-none hover:text-orange focus:outline-none focus:ring rounded-sm'
-                                aria-label={`Remove ${minor}`}
-                                on:click={() => { removeMinor(minor); }}>
+                            <button class='text-sm leading-none hover:text-orange focus:outline-none focus:ring rounded-sm'
+                                    aria-label={`Remove ${minor}`}
+                                    on:click={() => { removeMinor(minor); }}>
                                 x
                             </button>
                         </span>
@@ -261,17 +301,15 @@ Copyright (C) 2026 Andrew Cupps
                 </div>
 
                 <div class='flex flex-row gap-2'>
-                    <input
-                        class='w-full rounded-md border border-outlineLight dark:border-outlineDark
-                               bg-bgLight dark:bg-bgDark px-2 py-1 text-sm focus:outline-none focus:ring'
-                        type='text'
-                        placeholder='Search and add a minor'
-                        bind:value={minorQuery}
-                        on:focus={() => { minorsOpen = true; }} />
-                    <button
-                        class='px-3 py-1 rounded-md border border-outlineLight dark:border-outlineDark
-                               hover:bg-hoverLight dark:hover:bg-hoverDark text-sm'
-                        on:click={() => { minorsOpen = !minorsOpen; }}>
+                    <input class='w-full rounded-md border border-outlineLight dark:border-outlineDark
+                                   bg-bgLight dark:bg-bgDark px-2 py-1 text-sm focus:outline-none focus:ring'
+                           type='text'
+                           placeholder='Search and add a minor'
+                           bind:value={minorQuery}
+                           on:focus={() => { minorsOpen = true; }}>
+                    <button class='px-3 py-1 rounded-md border border-outlineLight dark:border-outlineDark
+                                   hover:bg-hoverLight dark:hover:bg-hoverDark text-sm'
+                            on:click={() => { minorsOpen = !minorsOpen; }}>
                         {minorsOpen ? 'Hide' : 'Browse'}
                     </button>
                 </div>
@@ -283,9 +321,8 @@ Copyright (C) 2026 Andrew Cupps
                             <div class='px-2 py-2 text-xs opacity-70'>No minors found.</div>
                         {/if}
                         {#each filteredMinors as minor}
-                            <button
-                                class='w-full text-left px-2 py-1 text-sm hover:bg-hoverLight dark:hover:bg-hoverDark'
-                                on:click={() => { addMinor(minor); }}>
+                            <button class='w-full text-left px-2 py-1 text-sm hover:bg-hoverLight dark:hover:bg-hoverDark'
+                                    on:click={() => { addMinor(minor); }}>
                                 {minor}
                             </button>
                         {/each}
@@ -294,16 +331,26 @@ Copyright (C) 2026 Andrew Cupps
             </div>
         </section>
 
+        {#if saveError}
+            <div class='rounded-md border border-outlineLight dark:border-outlineDark p-3 text-sm'>
+                {saveError}
+            </div>
+        {/if}
+
+        {#if saveMessage}
+            <div class='rounded-md border border-outlineLight dark:border-outlineDark p-3 text-sm'>
+                {saveMessage}
+            </div>
+        {/if}
+
         <section class='grid grid-cols-1 xl:grid-cols-2 gap-4'>
             <div class='rounded-md border border-outlineLight dark:border-outlineDark p-4'>
                 <h2 class='text-lg font-semibold'>Major Requirements</h2>
                 <p class='text-sm opacity-80 mt-2'>
-                    Selected program path: {selectedProgramsText() || 'None selected'}
+                    Selected program path: {selectedProgramPath()}
                 </p>
                 <p class='text-sm opacity-70 mt-2'>
                     Requirement mapping for the selected degree structure will appear here.
-                    This panel is wired to update as degree type and major/program
-                    selections change.
                 </p>
             </div>
 

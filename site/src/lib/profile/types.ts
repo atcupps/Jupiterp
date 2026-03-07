@@ -12,6 +12,12 @@ export type DegreeType =
     | "Masters"
     | "P.H.D.";
 
+export type ProfilePrivacyLevel =
+    | "public"
+    | "friends_only"
+    | "umd_only"
+    | "private";
+
 export interface ProfilePreferences {
     degreeType: DegreeType;
     majors: string[];
@@ -19,4 +25,14 @@ export interface ProfilePreferences {
     graduationYear: number | null;
 }
 
+export interface EditableProfileFields {
+    displayName: string;
+    degreeType: DegreeType;
+    majors: string[];
+    minors: string[];
+    graduationYear: number | null;
+    profilePrivacy: ProfilePrivacyLevel;
+}
+
 export const DEFAULT_DEGREE_TYPE: DegreeType = "Undergraduate";
+export const DEFAULT_PROFILE_PRIVACY: ProfilePrivacyLevel = "friends_only";

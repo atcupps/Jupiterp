@@ -5,6 +5,7 @@ https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2026 Andrew Cupps
 -->
 <script lang='ts'>
+    import { get } from 'svelte/store';
     import { onMount } from 'svelte';
     import { base } from '$app/paths';
     import ProfileOverviewCard from '../../components/profile/ProfileOverviewCard.svelte';
@@ -12,12 +13,11 @@ Copyright (C) 2026 Andrew Cupps
     import {
         ensureUserProfile,
         getAuthUser,
-        getProfilePreferences,
         isSupabaseConfigured,
         loadUserSchedules,
         onAuthStateChanged,
-        signInWithEmail,
         signInWithApple,
+        signInWithEmail,
         signInWithGoogle,
         signOutUser,
     } from '$lib/supabase';
@@ -27,57 +27,88 @@ Copyright (C) 2026 Andrew Cupps
         totalTakenCreditsAcrossSchedules,
     } from '$lib/gened/schedules';
     import {
-        readProfilePreferencesFromLocalStorage,
-    } from '$lib/profile/preferences';
-    import type { FriendVisibility } from '$lib/friends/types';
-    import type { DegreeType, ProfilePreferences } from '$lib/profile/types';
+        loadProfileState,
+        ProfileStateStore,
+        saveProfileStatePatch,
+        selectedProgramPathFromState,
+    } from '$lib/profile/store';
+    import type {
+        DegreeType,
+        EditableProfileFields,
+        ProfilePrivacyLevel,
+    } from '$lib/profile/types';
 
     const authEnabled = isSupabaseConfigured();
+
+    const degreeTypes: DegreeType[] = [
+        'Undergraduate',
+        'Dual-Degree',
+        'Double Major',
+        'Masters',
+        'P.H.D.',
+    ];
+
+    const privacyOptions: Array<{ value: ProfilePrivacyLevel, label: string }> = [
+        { value: 'public', label: 'Public' },
+        { value: 'friends_only', label: 'Friends only' },
+        { value: 'umd_only', label: 'UMD only' },
+        { value: 'private', label: 'Private' },
+    ];
+
     let authReady = false;
     let authUserId: string | null = null;
     let userEmail: string | null = null;
     let authEmail = '';
     let authStatusMessage: string | null = null;
     let authErrorMessage: string | null = null;
+
     let isSubmittingEmail = false;
     let isSubmittingGoogle = false;
     let isSubmittingApple = false;
 
     let generatedFriendCode = '';
-    let friendsVisibility: FriendVisibility = 'full';
-
-    let degreeType: DegreeType = 'Undergraduate';
-    let majors: string[] = [];
-    let graduationYear: number | null = null;
-
     let totalCreditsTaken = 0;
 
-    function visibilityLabel(value: FriendVisibility): string {
-        if (value === 'busy_free') {
-            return 'busy/free';
-        }
+    let isEditing = false;
+    let editError: string | null = null;
+    let editMessage: string | null = null;
+    let draftDisplayName = '';
+    let draftDegreeType: DegreeType = 'Undergraduate';
+    let draftMajors = '';
+    let draftPrivacy: ProfilePrivacyLevel = 'friends_only';
+    let draftGraduationYear = '';
 
-        return value;
+    let profileState = get(ProfileStateStore);
+    const unsubscribeProfileState = ProfileStateStore.subscribe((value) => {
+        profileState = value;
+    });
+
+    function parseMajorsInput(raw: string): string[] {
+        return raw
+            .split(',')
+            .map((major) => major.trim())
+            .filter((major) => major.length > 0);
     }
 
-    function profileNameFromEmail(email: string | null): string {
-        if (!email) {
+    function profileNameFromData(): string {
+        if (profileState.displayName.trim().length > 0) {
+            return profileState.displayName.trim();
+        }
+
+        if (!userEmail) {
             return 'Student';
         }
 
-        return email.split('@')[0]
+        return userEmail
+            .split('@')[0]
             .split(/[._-]/)
             .filter((part) => part.length > 0)
             .map((part) => `${part[0].toUpperCase()}${part.slice(1)}`)
             .join(' ');
     }
 
-    function majorsLabelFromList(values: string[]): string {
-        if (values.length === 0) {
-            return 'Not set';
-        }
-
-        return values.join(', ');
+    function privacyLabel(value: ProfilePrivacyLevel): string {
+        return privacyOptions.find((option) => option.value === value)?.label ?? 'Friends only';
     }
 
     function getAuthRedirectTo(): string {
@@ -85,18 +116,16 @@ Copyright (C) 2026 Andrew Cupps
         if (url.hostname === '127.0.0.1') {
             url.hostname = 'localhost';
         }
+
         const profilePath = `${base}/profile`;
-        url.pathname = profilePath.startsWith('/')
-            ? profilePath
-            : `/${profilePath}`;
+        url.pathname = profilePath.startsWith('/') ? profilePath : `/${profilePath}`;
         url.search = '';
         url.hash = '';
         return url.toString();
     }
 
     function refreshGeneratedFriendCode() {
-        if (authUserId) {
-            generatedFriendCode = authUserId.substring(0, 8).toUpperCase();
+        if (generatedFriendCode) {
             return;
         }
 
@@ -116,12 +145,6 @@ Copyright (C) 2026 Andrew Cupps
         localStorage.setItem('profileFriendCode', randomCode);
     }
 
-    function applyPreferences(preferences: ProfilePreferences) {
-        degreeType = preferences.degreeType;
-        majors = preferences.majors;
-        graduationYear = preferences.graduationYear;
-    }
-
     async function recomputeTotalCredits() {
         const localSchedules = readSchedulesFromLocalStorage();
         const cloudSchedules = authUserId ? await loadUserSchedules(authUserId) : null;
@@ -129,35 +152,59 @@ Copyright (C) 2026 Andrew Cupps
         totalCreditsTaken = totalTakenCreditsAcrossSchedules(chosen);
     }
 
-    async function loadProfileData() {
-        const localPreferences = readProfilePreferencesFromLocalStorage();
-        applyPreferences(localPreferences);
+    async function hydrateProfile() {
+        const cloudRow = authUserId ? await ensureUserProfile() : null;
+        generatedFriendCode = cloudRow?.friend_code ?? generatedFriendCode;
+        await loadProfileState(cloudRow);
+        await recomputeTotalCredits();
+    }
 
-        if (!authEnabled || !authUserId) {
-            await recomputeTotalCredits();
+    function startEditing() {
+        editError = null;
+        editMessage = null;
+        isEditing = true;
+
+        draftDisplayName = profileState.displayName;
+        draftDegreeType = profileState.degreeType;
+        draftMajors = profileState.majors.join(', ');
+        draftPrivacy = profileState.profilePrivacy;
+        draftGraduationYear = profileState.graduationYear?.toString() ?? '';
+    }
+
+    function cancelEditing() {
+        isEditing = false;
+        editError = null;
+    }
+
+    async function saveEdits() {
+        editError = null;
+        editMessage = null;
+
+        const graduationYear = draftGraduationYear.trim().length === 0
+            ? null
+            : Number(draftGraduationYear);
+
+        if (graduationYear !== null && !Number.isInteger(graduationYear)) {
+            editError = 'Graduation year must be a valid year.';
             return;
         }
 
-        try {
-            const profile = await ensureUserProfile();
-            if (profile) {
-                generatedFriendCode = profile.friend_code;
-                friendsVisibility = profile.friends_visibility;
-            }
-        } catch (error) {
-            console.error('Unable to load profile from Supabase:', error);
+        const patch: Partial<EditableProfileFields> = {
+            displayName: draftDisplayName.trim(),
+            degreeType: draftDegreeType,
+            majors: parseMajorsInput(draftMajors),
+            profilePrivacy: draftPrivacy,
+            graduationYear,
+        };
+
+        const result = await saveProfileStatePatch(patch);
+        if (!result.ok) {
+            editError = result.message ?? 'Unable to save profile updates.';
+            return;
         }
 
-        try {
-            const cloudPreferences = await getProfilePreferences();
-            if (cloudPreferences) {
-                applyPreferences(cloudPreferences);
-            }
-        } catch {
-            // Keep local preferences if cloud preferences cannot be loaded.
-        }
-
-        await recomputeTotalCredits();
+        isEditing = false;
+        editMessage = 'Profile updated.';
     }
 
     async function emailSignIn() {
@@ -232,37 +279,38 @@ Copyright (C) 2026 Andrew Cupps
         }
     }
 
-    $: majorsLabel = majorsLabelFromList(majors);
-    $: greetingName = profileNameFromEmail(userEmail);
-    $: termBlurb = `Degree plan: ${degreeType}`;
-
     onMount(() => {
         refreshGeneratedFriendCode();
 
         if (!authEnabled) {
             authReady = true;
-            void loadProfileData();
-            return;
+            void hydrateProfile();
+            return () => unsubscribeProfileState();
         }
 
-        const unsubscribe = onAuthStateChanged((user) => {
+        const unsubscribeAuth = onAuthStateChanged((user) => {
             authReady = true;
             authUserId = user?.id ?? null;
             userEmail = user?.email ?? null;
-            refreshGeneratedFriendCode();
-            void loadProfileData();
+            void hydrateProfile();
         });
 
         getAuthUser().then((user) => {
             authReady = true;
             authUserId = user?.id ?? null;
             userEmail = user?.email ?? null;
-            refreshGeneratedFriendCode();
-            return loadProfileData();
+            return hydrateProfile();
         });
 
-        return () => unsubscribe();
+        return () => {
+            unsubscribeAuth();
+            unsubscribeProfileState();
+        };
     });
+
+    $: majorsLabel = profileState.majors.length > 0 ? profileState.majors.join(', ') : 'Not set';
+    $: greetingName = profileNameFromData();
+    $: termBlurb = `Degree plan: ${profileState.degreeType} | Path: ${selectedProgramPathFromState(profileState)}`;
 </script>
 
 <div class='fixed left-0 right-0 top-[3rem] lg:top-[3.5rem] xl:top-[4rem]
@@ -279,8 +327,7 @@ Copyright (C) 2026 Andrew Cupps
                 Loading profile...
             </div>
         {:else if !userEmail}
-            <div class='rounded-md border border-outlineLight dark:border-outlineDark
-                        p-3 flex flex-col gap-2'>
+            <div class='rounded-md border border-outlineLight dark:border-outlineDark p-3 flex flex-col gap-2'>
                 <div class='text-xs opacity-70'>Sign in to sync schedules and profile preferences across devices.</div>
                 <input class='bg-bgLight dark:bg-bgDark text-sm rounded px-2 py-1
                              border border-outlineLight dark:border-outlineDark outline-none'
@@ -313,7 +360,6 @@ Copyright (C) 2026 Andrew Cupps
                         {isSubmittingGoogle ? 'Opening Google...' : 'Continue with Google'}
                     </button>
                 </div>
-                <div class='text-[11px] opacity-70'>By signing in, you agree to use secure authentication via Supabase.</div>
             </div>
         {/if}
 
@@ -335,12 +381,84 @@ Copyright (C) 2026 Andrew Cupps
             academicLine={PROFILE_STRINGS.subtitleFallback}
             termBlurb={termBlurb}
             majorsLabel={majorsLabel}
-            degreeType={degreeType}
+            degreeType={profileState.degreeType}
             friendCode={generatedFriendCode}
-            visibility={visibilityLabel(friendsVisibility)}
-            graduationYear={graduationYear}
+            visibility={privacyLabel(profileState.profilePrivacy)}
+            graduationYear={profileState.graduationYear}
             totalCreditsTaken={totalCreditsTaken}
-            onSignOut={signOut} />
+            onSignOut={signOut}
+            onEdit={startEditing} />
+
+        {#if isEditing}
+            <section class='rounded-xl border border-outlineLight dark:border-outlineDark p-4 md:p-5 bg-bgSecondaryLight/60 dark:bg-bgSecondaryDark/60'>
+                <h2 class='text-lg font-semibold'>Edit Profile</h2>
+                <div class='grid grid-cols-1 md:grid-cols-2 gap-3 mt-3'>
+                    <label class='flex flex-col gap-1'>
+                        <span class='text-xs opacity-70'>Name</span>
+                        <input class='rounded-md border border-outlineLight dark:border-outlineDark bg-bgLight dark:bg-bgDark px-2 py-1 text-sm'
+                               bind:value={draftDisplayName}
+                               placeholder='Your display name'>
+                    </label>
+
+                    <label class='flex flex-col gap-1'>
+                        <span class='text-xs opacity-70'>Degree type</span>
+                        <select class='rounded-md border border-outlineLight dark:border-outlineDark bg-bgLight dark:bg-bgDark px-2 py-1 text-sm'
+                                bind:value={draftDegreeType}>
+                            {#each degreeTypes as degree}
+                                <option value={degree}>{degree}</option>
+                            {/each}
+                        </select>
+                    </label>
+
+                    <label class='flex flex-col gap-1 md:col-span-2'>
+                        <span class='text-xs opacity-70'>Major(s)</span>
+                        <input class='rounded-md border border-outlineLight dark:border-outlineDark bg-bgLight dark:bg-bgDark px-2 py-1 text-sm'
+                               bind:value={draftMajors}
+                               placeholder='Computer Science, Mathematics'>
+                    </label>
+
+                    <label class='flex flex-col gap-1'>
+                        <span class='text-xs opacity-70'>Profile privacy</span>
+                        <select class='rounded-md border border-outlineLight dark:border-outlineDark bg-bgLight dark:bg-bgDark px-2 py-1 text-sm'
+                                bind:value={draftPrivacy}>
+                            {#each privacyOptions as option}
+                                <option value={option.value}>{option.label}</option>
+                            {/each}
+                        </select>
+                    </label>
+
+                    <label class='flex flex-col gap-1'>
+                        <span class='text-xs opacity-70'>Graduation year</span>
+                        <input class='rounded-md border border-outlineLight dark:border-outlineDark bg-bgLight dark:bg-bgDark px-2 py-1 text-sm'
+                               bind:value={draftGraduationYear}
+                               placeholder='2028'>
+                    </label>
+                </div>
+
+                {#if editError}
+                    <div class='mt-3 text-sm text-red-500'>{editError}</div>
+                {/if}
+
+                <div class='mt-4 flex gap-2'>
+                    <button class='rounded-md px-3 py-1 text-sm border border-outlineLight dark:border-outlineDark hover:bg-hoverLight dark:hover:bg-hoverDark'
+                            disabled={profileState.syncing}
+                            on:click={saveEdits}>
+                        {profileState.syncing ? 'Saving...' : 'Save changes'}
+                    </button>
+                    <button class='rounded-md px-3 py-1 text-sm border border-outlineLight dark:border-outlineDark hover:bg-hoverLight dark:hover:bg-hoverDark'
+                            disabled={profileState.syncing}
+                            on:click={cancelEditing}>
+                        Cancel
+                    </button>
+                </div>
+            </section>
+        {/if}
+
+        {#if editMessage}
+            <div class='rounded-md border border-outlineLight dark:border-outlineDark p-3 text-sm'>
+                {editMessage}
+            </div>
+        {/if}
 
         <div class='rounded-xl border border-outlineLight dark:border-outlineDark
                     bg-bgSecondaryLight/60 dark:bg-bgSecondaryDark/60 p-4 md:p-5'>
@@ -358,7 +476,7 @@ Copyright (C) 2026 Andrew Cupps
                 <a class='inline-flex px-3 py-1 rounded-md border border-outlineLight
                          dark:border-outlineDark text-sm hover:bg-hoverLight dark:hover:bg-hoverDark
                          focus:outline-none focus:ring'
-                    href={`${base}/settings`}>
+                    href={`${base}/settings#privacy`}>
                     Privacy & Settings
                 </a>
             </div>

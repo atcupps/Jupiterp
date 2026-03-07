@@ -29,6 +29,8 @@
     let friendCodeInput = '';
     let message: string | null = null;
     let errorMessage: string | null = null;
+    let emailFeedback: string | null = null;
+    let codeFeedback: string | null = null;
 
     let sendingEmail = false;
     let sendingCode = false;
@@ -54,6 +56,48 @@
 
     function toUserFriendlyFriendsError(message: string): string {
         const normalized = message.toLowerCase();
+        if (
+            normalized.includes('jwt')
+            || normalized.includes('expired session')
+            || normalized.includes('session expired')
+            || normalized.includes('unauthorized')
+            || normalized.includes('401')
+        ) {
+            return 'Your session expired. Please sign in again.';
+        }
+
+        if (
+            normalized.includes('network')
+            || normalized.includes('failed to fetch')
+            || normalized.includes('fetch')
+        ) {
+            return 'Network issue while contacting Friends services. Check your connection and try again.';
+        }
+
+        if (normalized.includes('rate') || normalized.includes('429')) {
+            return 'Too many requests right now. Please wait a minute before trying again.';
+        }
+
+        if (normalized.includes('no user found with that email')) {
+            return 'No account was found for that email. Double-check the address and try again.';
+        }
+
+        if (normalized.includes('no user found with that friend code')) {
+            return 'That friend code was not found. Confirm the code and try again.';
+        }
+
+        if (normalized.includes('already pending')) {
+            return 'A request is already pending for this person.';
+        }
+
+        if (normalized.includes("already friends")) {
+            return 'You are already connected with this person.';
+        }
+
+        if (normalized.includes('cannot add yourself')) {
+            return 'You cannot send a friend request to yourself.';
+        }
+
         if (
             normalized.includes('schema cache') ||
             normalized.includes('could not find the table') ||
@@ -102,20 +146,36 @@
     async function sendRequest(mode: 'email' | 'code') {
         const value = mode === 'email' ? emailInput : friendCodeInput;
         const trimmed = value.trim();
+        emailFeedback = null;
+        codeFeedback = null;
+
         if (trimmed.length === 0) {
-            errorMessage = mode === 'email'
-                ? 'Enter an email first'
-                : 'Enter a friend code first';
+            const nextError = mode === 'email'
+                ? 'Enter an email before sending an invite.'
+                : 'Enter a friend code before sending a request.';
+            errorMessage = nextError;
+            if (mode === 'email') {
+                emailFeedback = nextError;
+            } else {
+                codeFeedback = nextError;
+            }
             return;
         }
 
         if (mode === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmed)) {
-            errorMessage = 'Enter a valid email address';
+            errorMessage = 'Enter a valid email address.';
+            emailFeedback = 'Enter a valid email address.';
+            return;
+        }
+
+        if (mode === 'code' && !/^[A-Z0-9]{6,10}$/.test(trimmed.toUpperCase())) {
+            errorMessage = 'Friend codes should be 6-10 letters/numbers.';
+            codeFeedback = 'Friend codes should be 6-10 letters/numbers.';
             return;
         }
 
         if (!token) {
-            errorMessage = 'Sign in required';
+            errorMessage = 'You must be signed in to send friend requests.';
             return;
         }
 
@@ -137,17 +197,30 @@
             message = payload.message;
             if (mode === 'email') {
                 emailInput = '';
+                emailFeedback = 'Invite sent. They will appear in Outgoing until they respond.';
             } else {
                 friendCodeInput = '';
+                codeFeedback = 'Friend request sent. They will appear in Outgoing until they respond.';
             }
             await loadSummary();
         } catch (error) {
-            errorMessage = toUserFriendlyFriendsError(
+            const friendly = toUserFriendlyFriendsError(
                 error instanceof Error ? error.message : 'Unable to send request'
             );
+            errorMessage = friendly;
+            if (mode === 'email') {
+                emailFeedback = friendly;
+            } else {
+                codeFeedback = friendly;
+            }
         } finally {
             sendingEmail = false;
             sendingCode = false;
+            try {
+                await loadSummary();
+            } catch {
+                // Keep current UI state if refresh fails.
+            }
         }
     }
 
@@ -179,6 +252,11 @@
             );
         } finally {
             requestInFlightId = null;
+            try {
+                await loadSummary();
+            } catch {
+                // Keep existing state if refresh fails.
+            }
         }
     }
 
@@ -204,6 +282,11 @@
             );
         } finally {
             friendUpdateInFlightId = null;
+            try {
+                await loadSummary();
+            } catch {
+                // Keep existing state if refresh fails.
+            }
         }
     }
 
@@ -232,6 +315,11 @@
             );
         } finally {
             friendUpdateInFlightId = null;
+            try {
+                await loadSummary();
+            } catch {
+                // Keep existing state if refresh fails.
+            }
         }
     }
 
@@ -273,7 +361,7 @@
     onMount(() => {
         if (!authEnabled) {
             loading = false;
-            errorMessage = 'Supabase auth is not configured';
+            errorMessage = 'Supabase auth is not configured. Sign-in is required for Friends.';
             return;
         }
 
@@ -298,6 +386,11 @@
                 </p>
 
                 <div class='text-xs opacity-70 mb-2'>Your friend code: <span class='font-semibold tracking-wider'>{selfFriendCode}</span></div>
+                <a class='inline-flex mb-3 rounded-md px-3 py-1 text-xs border border-outlineLight dark:border-outlineDark
+                         hover:bg-hoverLight dark:hover:bg-hoverDark'
+                    href={`${base}/settings#privacy`}>
+                    Privacy and settings
+                </a>
 
                 <div class='grid grid-cols-1 md:grid-cols-2 gap-3'>
                     <div class='rounded-md border border-divBorderLight dark:border-divBorderDark p-3'>
@@ -313,6 +406,9 @@
                             on:click={() => sendRequest('email')}>
                             {sendingEmail ? 'Sending...' : 'Send invite'}
                         </button>
+                        {#if emailFeedback}
+                            <div class='text-xs mt-2 opacity-80'>{emailFeedback}</div>
+                        {/if}
                     </div>
 
                     <div class='rounded-md border border-divBorderLight dark:border-divBorderDark p-3'>
@@ -327,6 +423,9 @@
                             on:click={() => sendRequest('code')}>
                             {sendingCode ? 'Sending...' : 'Add by code'}
                         </button>
+                        {#if codeFeedback}
+                            <div class='text-xs mt-2 opacity-80'>{codeFeedback}</div>
+                        {/if}
                     </div>
                 </div>
             </section>
