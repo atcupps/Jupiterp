@@ -6,6 +6,7 @@
  */
 
 import type { PageLoad } from "./$types";
+import type { StoredSchedule } from "../../types";
 import { computeGenEdProgress } from "$lib/gened/progress";
 import { GEN_ED_REQUIREMENTS } from "$lib/gened/requirements";
 import {
@@ -13,8 +14,11 @@ import {
     readSchedulesFromLocalStorage,
     schedulesToUserCourses,
 } from "$lib/gened/schedules";
-import { getAuthUser, isSupabaseConfigured, loadUserSchedules } from "$lib/supabase";
-import type { StoredSchedule } from "../../types";
+import {
+    getAuthUser,
+    isSupabaseConfigured,
+    loadUserSchedules,
+} from "$lib/supabase";
 
 export const ssr = false;
 

@@ -5,7 +5,10 @@ https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2026 Andrew Cupps
 -->
 <script lang="ts">
-    import type { GenEdCategory, GenEdRequirementCode } from "$lib/gened/requirements";
+    import type {
+        GenEdCategory,
+        GenEdRequirementCode,
+    } from "$lib/gened/requirements";
     import type { GenEdProgressRow, GenEdStatus } from "$lib/gened/progress";
     import {
         formatTermCode,
@@ -51,9 +54,11 @@ Copyright (C) 2026 Andrew Cupps
         if (status === "not_started") {
             return "Not started";
         }
+
         if (status === "in_progress") {
             return "In progress";
         }
+
         return "Completed";
     }
 
@@ -61,9 +66,11 @@ Copyright (C) 2026 Andrew Cupps
         if (status === "not_started") {
             return "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-300";
         }
+
         if (status === "in_progress") {
             return "bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-300";
         }
+
         return "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300";
     }
 
@@ -95,7 +102,7 @@ Copyright (C) 2026 Andrew Cupps
     $: sortedRows = sortGenEdProgressRows(filteredRows, sortKey, sortDirection);
 </script>
 
-<div class="flex flex-col gap-3">
+<div class="flex flex-col gap-3 w-full">
     <div class="flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
         <div class="flex flex-col gap-2 sm:flex-row sm:items-end">
             <label class="text-xs flex flex-col gap-1">
@@ -156,8 +163,8 @@ Copyright (C) 2026 Andrew Cupps
         </div>
     </div>
 
-    <div class="overflow-x-auto rounded-md border border-outlineLight dark:border-outlineDark">
-        <table class="min-w-full text-sm">
+    <div class="overflow-x-auto rounded-md border border-outlineLight dark:border-outlineDark w-full">
+        <table class="w-full min-w-[1050px] lg:min-w-full text-sm">
             <thead class="bg-hoverLight dark:bg-hoverDark text-left">
                 <tr>
                     <th class="px-3 py-2 font-semibold">Gen Ed</th>

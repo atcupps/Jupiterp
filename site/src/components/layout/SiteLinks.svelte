@@ -9,7 +9,6 @@ Copyright (C) 2026 Andrew Cupps
     import { base } from '$app/paths';
     import { page } from '$app/stores';
     import NavBarElement from './NavBarElement.svelte';
-    import DarkModeToggle from './DarkModeToggle.svelte';
     import ExpandableNavBarElement from './ExpandableNavBarElement.svelte';
 
     let siteLinksSelected: boolean = false;
@@ -27,10 +26,13 @@ Copyright (C) 2026 Andrew Cupps
                                         isOnPage={currentPage == '/friends'}/>
     <NavBarElement link={`${base}/`} text='Course Planner'
                                         isOnPage={currentPage == '/'}/>
-    <NavBarElement link={`${base}/bugs`} text='Report an Issue' 
-                                        isOnPage={currentPage == '/bugs'}/>
-    <ExpandableNavBarElement link={`${base}/about`} text='About' 
-                                        isOnPage={currentPage == '/about'}>   
+    <NavBarElement link={`${base}/gen-eds`} text='Gen Eds'
+                                        isOnPage={currentPage == '/gen-eds'}/>
+    <NavBarElement link={`${base}/major-minor-requirements`}
+                                        text='Major/Minor Requirements'
+                        isOnPage={currentPage == '/major-minor-requirements'}/>
+    <ExpandableNavBarElement link={`${base}/settings`} text='Settings'
+                                        isOnPage={currentPage == '/settings'}>
         <div class='w-full my-1'>
             <NavBarElement link={`${base}/terms-of-use`} text='Terms of Use'
                                 reduceXMargin={true} fullWidth={true} />
@@ -40,10 +42,6 @@ Copyright (C) 2026 Andrew Cupps
                                 reduceXMargin={true} fullWidth={true} />
         </div>
     </ExpandableNavBarElement>
-    <NavBarElement link='https://github.com/atcupps/Jupiterp'
-                                        text='GitHub'
-                                        target='_blank' />
-    <DarkModeToggle />
 </div>
 
 <!-- Button to toggle course search on mobile -->
@@ -90,20 +88,23 @@ Copyright (C) 2026 Andrew Cupps
         <NavBarElement link={`${base}/friends`} text='Friends' fullWidth={true}/>
     </div>
     <div class='w-full my-2 text-lg'>
-        <NavBarElement link={`${base}/bugs`} text='Report an Issue' fullWidth={true}/>
+        <NavBarElement link={`${base}/gen-eds`} text='Gen Eds' fullWidth={true}/>
     </div>
     <div class='w-full my-2 text-lg'>
-        <NavBarElement link={`${base}/about`} text='About'  fullWidth={true}/>
+        <NavBarElement link={`${base}/major-minor-requirements`}
+                                        text='Major/Minor Requirements'
+                                        fullWidth={true}/>
+    </div>
+    <div class='w-full my-2 text-lg'>
+        <NavBarElement link={`${base}/settings`} text='Settings' fullWidth={true}/>
     </div>
     <div class='w-full my-2 text-lg'>
         <NavBarElement link={`${base}/terms-of-use`} text='Terms of Use'
                                                         fullWidth={true} />
     </div>
     <div class='w-full my-2 text-lg'>
-        <NavBarElement link='https://github.com/atcupps/Jupiterp'
-                                                    text='GitHub'
-                                                    target='_blank' 
-                                                    fullWidth={true}/>
+        <NavBarElement link={`${base}/changelog`} text='Changelog'
+                                                        fullWidth={true} />
     </div>
 </div>
 
