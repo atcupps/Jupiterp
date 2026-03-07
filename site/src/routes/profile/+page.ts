@@ -8,29 +8,36 @@
 import type { PageLoad } from "./$types";
 import { computeGenEdProgress } from "$lib/gened/progress";
 import { GEN_ED_REQUIREMENTS } from "$lib/gened/requirements";
-import { fetchUserCoursesForGenEd } from "$lib/gened/userCourses";
-import { getAuthUser, isSupabaseConfigured } from "$lib/supabase";
+import {
+    chooseSchedulesForProfile,
+    readSchedulesFromLocalStorage,
+    schedulesToUserCourses,
+} from "$lib/gened/schedules";
+import { getAuthUser, isSupabaseConfigured, loadUserSchedules } from "$lib/supabase";
+import type { StoredSchedule } from "../../types";
 
 export const ssr = false;
 
 export const load: PageLoad = async () => {
-    if (!isSupabaseConfigured()) {
-        return {
-            genEdProgress: computeGenEdProgress(GEN_ED_REQUIREMENTS, []),
-            genEdLoadError: null as string | null,
-        };
-    }
-
     try {
-        const user = await getAuthUser();
-        if (!user) {
-            return {
-                genEdProgress: computeGenEdProgress(GEN_ED_REQUIREMENTS, []),
-                genEdLoadError: null as string | null,
-            };
+        const localSchedules = readSchedulesFromLocalStorage();
+        let userId = "local";
+        let cloudSchedules: {
+            currentSchedule: StoredSchedule,
+            nonselectedSchedules: StoredSchedule[],
+        } | null = null;
+
+        if (isSupabaseConfigured()) {
+            const user = await getAuthUser();
+            if (user) {
+                userId = user.id;
+                cloudSchedules = await loadUserSchedules(user.id);
+            }
         }
 
-        const userCourses = await fetchUserCoursesForGenEd(user.id);
+        const schedules = chooseSchedulesForProfile(cloudSchedules, localSchedules);
+        const userCourses = schedulesToUserCourses(schedules, undefined, userId);
+
         return {
             genEdProgress: computeGenEdProgress(GEN_ED_REQUIREMENTS, userCourses),
             genEdLoadError: null as string | null,

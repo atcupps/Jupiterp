@@ -19,6 +19,7 @@ export interface GenEdCourseInstance {
     course_title: string;
     term_code: string;
     grade: string | null;
+    completionState: "completed" | "in_progress";
     otherMatchingGenEdCodes: GenEdRequirementCode[];
 }
 
@@ -28,6 +29,8 @@ export interface GenEdCourseInstance {
 export interface GenEdProgressRow {
     requirement: GenEdRequirement;
     completedCount: number;
+    inProgressCount: number;
+    countedCount: number;
     remainingCount: number;
     status: GenEdStatus;
     courses: GenEdCourseInstance[];
@@ -93,8 +96,8 @@ export function compareTermCodes(a: string, b: string): number {
 }
 
 /**
- * Computes progress against each Gen Ed requirement using completed user
- * courses and their tags.
+ * Computes progress against each Gen Ed requirement using user schedule
+ * courses and term-based completion states.
  */
 export function computeGenEdProgress(
     requirements: GenEdRequirement[],
@@ -118,6 +121,7 @@ export function computeGenEdProgress(
                     course_title: course.course_title,
                     term_code: course.term_code,
                     grade: course.grade,
+                    completionState: course.is_completed ? "completed" : "in_progress",
                     otherMatchingGenEdCodes: tags.filter(
                         (tag) => tag !== requirement.code
                     ),
@@ -125,14 +129,20 @@ export function computeGenEdProgress(
             })
             .filter((course): course is GenEdCourseInstance => course !== null);
 
-        const completedCount = matchingCourses.length;
-        const remainingCount = Math.max(requirement.requiredCount - completedCount, 0);
+        const completedCount = matchingCourses.filter((course) => {
+            return course.completionState === "completed";
+        }).length;
+        const inProgressCount = matchingCourses.filter((course) => {
+            return course.completionState === "in_progress";
+        }).length;
+        const countedCount = completedCount + inProgressCount;
+        const remainingCount = Math.max(requirement.requiredCount - countedCount, 0);
         const status: GenEdStatus =
-            completedCount === 0
+            completedCount >= requirement.requiredCount
+                ? "completed"
+                : countedCount === 0
                 ? "not_started"
-                : completedCount >= requirement.requiredCount
-                    ? "completed"
-                    : "in_progress";
+                : "in_progress";
 
         const { earliestTermCode, latestTermCode } = getTermExtents(
             matchingCourses.map((course) => course.term_code)
@@ -141,6 +151,8 @@ export function computeGenEdProgress(
         return {
             requirement,
             completedCount,
+            inProgressCount,
+            countedCount,
             remainingCount,
             status,
             courses: matchingCourses,

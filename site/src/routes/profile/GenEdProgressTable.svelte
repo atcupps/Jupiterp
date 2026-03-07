@@ -199,12 +199,17 @@ Copyright (C) 2026 Andrew Cupps
                         <td class="px-3 py-2">{row.requirement.requiredCount}</td>
                         <td class="px-3 py-2">
                             <div>{row.completedCount}</div>
+                            {#if row.inProgressCount > 0}
+                                <div class="text-xs opacity-70">
+                                    +{row.inProgressCount} in progress
+                                </div>
+                            {/if}
                             {#if row.requirement.requiredCount > 1}
                                 <div class="mt-1 h-1.5 w-24 rounded-full bg-outlineLight dark:bg-outlineDark">
                                     <div
                                         class="h-1.5 rounded-full bg-orange"
                                         style={`width: ${Math.min(
-                                            (Math.min(row.completedCount, row.requirement.requiredCount)
+                                            (Math.min(row.countedCount, row.requirement.requiredCount)
                                                 / row.requirement.requiredCount) * 100,
                                             100
                                         )}%`}></div>
@@ -244,6 +249,7 @@ Copyright (C) 2026 Andrew Cupps
                                                 <div class="font-semibold">{course.course_id} - {course.course_title}</div>
                                                 <div>Term: {formatTermCode(course.term_code)}</div>
                                                 <div>Grade: {course.grade ?? "-"}</div>
+                                                <div>Status: {course.completionState === "completed" ? "Completed" : "In progress"}</div>
                                                 {#if course.otherMatchingGenEdCodes.length > 0}
                                                     <div>
                                                         Also satisfies: {course.otherMatchingGenEdCodes.join(", ")}
@@ -259,6 +265,7 @@ Copyright (C) 2026 Andrew Cupps
                                                 <th class="text-left py-1">Course</th>
                                                 <th class="text-left py-1">Term</th>
                                                 <th class="text-left py-1">Grade</th>
+                                                <th class="text-left py-1">Status</th>
                                                 <th class="text-left py-1">Other Gen Ed Tags</th>
                                             </tr>
                                         </thead>
@@ -270,6 +277,9 @@ Copyright (C) 2026 Andrew Cupps
                                                     </td>
                                                     <td class="py-1 pr-2">{formatTermCode(course.term_code)}</td>
                                                     <td class="py-1 pr-2">{course.grade ?? "-"}</td>
+                                                    <td class="py-1 pr-2">
+                                                        {course.completionState === "completed" ? "Completed" : "In progress"}
+                                                    </td>
                                                     <td class="py-1">
                                                         {course.otherMatchingGenEdCodes.length > 0
                                                             ? course.otherMatchingGenEdCodes.join(", ")

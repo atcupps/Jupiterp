@@ -59,7 +59,7 @@ Copyright (C) 2026 Andrew Cupps
             accumulator[category] = {
                 completed: rows.reduce(
                     (sum, row) => sum + Math.min(
-                        row.completedCount,
+                        row.countedCount,
                         row.requirement.requiredCount
                     ),
                     0
