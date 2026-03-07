@@ -8,8 +8,10 @@
         OutgoingFriendRequest,
     } from '$lib/friends/types';
     import {
+        getAuthUser,
         getAccessToken,
         isSupabaseConfigured,
+        onAuthStateChanged,
     } from '$lib/supabase';
     import {
         getFriendsSummary,
@@ -44,14 +46,28 @@
     let selfFriendCode = '';
     let defaultVisibility: FriendVisibility = 'full';
     let updatingDefaultVisibility = false;
+    let authUnsubscribe: (() => void) | null = null;
+
+    async function wait(ms: number): Promise<void> {
+        await new Promise((resolve) => {
+            setTimeout(resolve, ms);
+        });
+    }
 
     async function getFreshTokenOrThrow(): Promise<string> {
-        const nextToken = await getAccessToken();
-        if (!nextToken) {
-            throw new Error('Session expired. Please sign in again.');
+        let nextToken: string | null = null;
+        for (let attempt = 0; attempt < 4; attempt += 1) {
+            nextToken = await getAccessToken();
+            if (nextToken) {
+                token = nextToken;
+                return nextToken;
+            }
+
+            // Session hydration can lag slightly after page navigation.
+            await wait(200);
         }
-        token = nextToken;
-        return nextToken;
+
+        throw new Error('Session expired. Please sign in again.');
     }
 
     function toUserFriendlyFriendsError(message: string): string {
@@ -365,7 +381,34 @@
             return;
         }
 
-        refreshAll();
+        authUnsubscribe = onAuthStateChanged((user) => {
+            if (!user) {
+                token = null;
+                incoming = [];
+                outgoing = [];
+                friends = [];
+                errorMessage = 'Your session expired. Please sign in again.';
+                return;
+            }
+
+            void refreshAll();
+        });
+
+        void getAuthUser().then((user) => {
+            if (!user) {
+                loading = false;
+                errorMessage = 'Your session expired. Please sign in again.';
+                return;
+            }
+
+            void refreshAll();
+        });
+
+        return () => {
+            if (authUnsubscribe) {
+                authUnsubscribe();
+            }
+        };
     });
 </script>
 
