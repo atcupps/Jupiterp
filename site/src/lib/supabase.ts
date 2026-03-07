@@ -14,6 +14,11 @@ import {
 } from "$env/static/public";
 import type { StoredSchedule } from "../types";
 import type { FriendVisibility } from "$lib/friends/types";
+import {
+    DEFAULT_DEGREE_TYPE,
+    type DegreeType,
+    type ProfilePreferences,
+} from "$lib/profile/types";
 
 interface UserScheduleRow {
     user_id: string,
@@ -29,6 +34,10 @@ export interface UserProfileRow {
     display_name: string | null,
     friend_code: string,
     friends_visibility: FriendVisibility,
+    degree_type: DegreeType,
+    majors: string[] | null,
+    minors: string[] | null,
+    graduation_year: number | null,
 }
 
 let initialized = false;
@@ -311,7 +320,7 @@ export async function ensureUserProfile(): Promise<UserProfileRow | null> {
 
     const { data, error } = await supabase
         .from("profiles")
-        .select("id,email,display_name,friend_code,friends_visibility")
+        .select("id,email,display_name,friend_code,friends_visibility,degree_type,majors,minors,graduation_year")
         .eq("id", user.id)
         .maybeSingle<UserProfileRow>();
 
@@ -329,8 +338,11 @@ export async function ensureUserProfile(): Promise<UserProfileRow | null> {
             id: user.id,
             email: user.email ?? null,
             display_name: user.email ?? null,
+            degree_type: DEFAULT_DEGREE_TYPE,
+            majors: [],
+            minors: [],
         })
-        .select("id,email,display_name,friend_code,friends_visibility")
+        .select("id,email,display_name,friend_code,friends_visibility,degree_type,majors,minors,graduation_year")
         .single<UserProfileRow>();
 
     if (insertError) {
@@ -361,6 +373,53 @@ export async function updateFriendsVisibility(
     const { error } = await supabase
         .from("profiles")
         .update({ friends_visibility: value })
+        .eq("id", user.id);
+
+    if (error) {
+        throw new Error(error.message);
+    }
+}
+
+export async function getProfilePreferences(): Promise<ProfilePreferences | null> {
+    const profile = await ensureUserProfile();
+    if (!profile) {
+        return null;
+    }
+
+    return {
+        degreeType: profile.degree_type ?? DEFAULT_DEGREE_TYPE,
+        majors: profile.majors ?? [],
+        minors: profile.minors ?? [],
+        graduationYear: profile.graduation_year ?? null,
+    };
+}
+
+export async function updateProfilePreferences(
+    preferences: ProfilePreferences
+): Promise<void> {
+    const user = await getAuthUser();
+    if (!user) {
+        throw new Error("Sign in required");
+    }
+
+    const supabase = requireSupabase() as unknown as {
+        from: (table: string) => {
+            update: (values: Record<string, unknown>) => {
+                eq: (column: string, value: string) => Promise<{
+                    error: { message: string } | null,
+                }>
+            },
+        }
+    };
+
+    const { error } = await supabase
+        .from("profiles")
+        .update({
+            degree_type: preferences.degreeType,
+            majors: preferences.majors,
+            minors: preferences.minors,
+            graduation_year: preferences.graduationYear,
+        })
         .eq("id", user.id);
 
     if (error) {

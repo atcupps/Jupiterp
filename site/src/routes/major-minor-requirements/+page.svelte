@@ -5,14 +5,18 @@ https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2026 Andrew Cupps
  -->
 <script lang='ts'>
+    import { onMount } from 'svelte';
+    import {
+        readProfilePreferencesFromLocalStorage,
+        saveProfilePreferencesToLocalStorage,
+    } from '$lib/profile/preferences';
+    import {
+        DEFAULT_DEGREE_TYPE,
+        type DegreeType,
+        type ProfilePreferences,
+    } from '$lib/profile/types';
+    import { getProfilePreferences, updateProfilePreferences } from '$lib/supabase';
     import { UMD_MAJORS, UMD_MINORS } from '$lib/data/umdPrograms';
-
-    type DegreeType =
-        | 'Undergraduate'
-        | 'Dual-Degree'
-        | 'Double Major'
-        | 'Masters'
-        | 'P.H.D.';
 
     const degreeTypes: DegreeType[] = [
         'Undergraduate',
@@ -22,7 +26,7 @@ Copyright (C) 2026 Andrew Cupps
         'P.H.D.',
     ];
 
-    let degreeType: DegreeType = 'Undergraduate';
+    let degreeType: DegreeType = DEFAULT_DEGREE_TYPE;
     let selectedMajor = UMD_MAJORS[0] ?? '';
     let selectedProgram = UMD_MAJORS[0] ?? '';
     let selectedMajors: string[] = [];
@@ -30,6 +34,8 @@ Copyright (C) 2026 Andrew Cupps
     let minorQuery = '';
     let minorsOpen = false;
     let selectedMinors: string[] = [];
+    let initialized = false;
+    let saveTimeout: ReturnType<typeof setTimeout> | null = null;
 
     $: requiresTwoMajors =
         degreeType === 'Dual-Degree' || degreeType === 'Double Major';
@@ -57,6 +63,8 @@ Copyright (C) 2026 Andrew Cupps
         }
 
         if (selectedMajors.length >= 2) {
+            // Keep the selection capped at two but allow users to swap majors.
+            selectedMajors = [selectedMajors[1], major];
             return;
         }
 
@@ -88,6 +96,82 @@ Copyright (C) 2026 Andrew Cupps
 
         return selectedProgram;
     }
+
+    function currentMajorsForPreferences(): string[] {
+        if (degreeType === 'Undergraduate') {
+            return selectedMajor ? [selectedMajor] : [];
+        }
+
+        if (requiresTwoMajors) {
+            return selectedMajors;
+        }
+
+        return selectedProgram ? [selectedProgram] : [];
+    }
+
+    async function savePreferences() {
+        const preferences: ProfilePreferences = {
+            degreeType,
+            majors: currentMajorsForPreferences(),
+            minors: selectedMinors,
+            graduationYear: null,
+        };
+
+        saveProfilePreferencesToLocalStorage(preferences);
+
+        try {
+            await updateProfilePreferences(preferences);
+        } catch {
+            // Signed-out users and transient API errors should still keep local data.
+        }
+    }
+
+    $: if (initialized) {
+        if (saveTimeout) {
+            clearTimeout(saveTimeout);
+        }
+        saveTimeout = setTimeout(() => {
+            void savePreferences();
+        }, 250);
+    }
+
+    onMount(async () => {
+        const local = readProfilePreferencesFromLocalStorage();
+        degreeType = local.degreeType;
+        selectedMinors = local.minors;
+
+        if (degreeType === 'Undergraduate') {
+            selectedMajor = local.majors[0] ?? (UMD_MAJORS[0] ?? '');
+        } else if (degreeType === 'Dual-Degree' || degreeType === 'Double Major') {
+            selectedMajors = local.majors.length >= 2
+                ? local.majors.slice(0, 2)
+                : UMD_MAJORS.slice(0, 2);
+        } else {
+            selectedProgram = local.majors[0] ?? (UMD_MAJORS[0] ?? '');
+        }
+
+        try {
+            const cloud = await getProfilePreferences();
+            if (cloud) {
+                degreeType = cloud.degreeType;
+                selectedMinors = cloud.minors;
+
+                if (degreeType === 'Undergraduate') {
+                    selectedMajor = cloud.majors[0] ?? selectedMajor;
+                } else if (degreeType === 'Dual-Degree' || degreeType === 'Double Major') {
+                    selectedMajors = cloud.majors.length >= 2
+                        ? cloud.majors.slice(0, 2)
+                        : selectedMajors;
+                } else {
+                    selectedProgram = cloud.majors[0] ?? selectedProgram;
+                }
+            }
+        } catch {
+            // Keep local values when cloud fetch is unavailable.
+        }
+
+        initialized = true;
+    });
 </script>
 
 <div class='fixed left-0 right-0 top-[3rem] lg:top-[3.5rem] xl:top-[4rem]

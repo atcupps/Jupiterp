@@ -95,8 +95,7 @@ export function schedulesToUserCourses(
     userId = "local"
 ): UserCourse[] {
     const nowCode = termYearToCode(nowTermYear.term, nowTermYear.year);
-    const dedupe = new Set<string>();
-    const result: UserCourse[] = [];
+    const byCourse = new Map<string, UserCourse>();
 
     for (const schedule of schedules) {
         const termCode = termYearToCode(schedule.term, schedule.year);
@@ -104,24 +103,76 @@ export function schedulesToUserCourses(
 
         for (const selection of schedule.selections) {
             const courseId = selection.course.courseCode;
-            const key = `${courseId}|${termCode}`;
-            if (dedupe.has(key)) {
+            const nextGenEds = (selection.course.genEds ?? []).map((genEd) => genEd.code);
+            const existing = byCourse.get(courseId);
+
+            if (!existing) {
+                byCourse.set(courseId, {
+                    id: courseId,
+                    user_id: userId,
+                    course_id: courseId,
+                    course_title: selection.course.name,
+                    term_code: termCode,
+                    gen_ed_tags: nextGenEds,
+                    grade: null,
+                    is_completed: isCompleted,
+                });
                 continue;
             }
-            dedupe.add(key);
 
-            result.push({
-                id: key,
-                user_id: userId,
-                course_id: courseId,
-                course_title: selection.course.name,
-                term_code: termCode,
-                gen_ed_tags: (selection.course.genEds ?? []).map((genEd) => genEd.code),
-                grade: null,
-                is_completed: isCompleted,
+            const mergedGenEds = Array.from(new Set([
+                ...(existing.gen_ed_tags ?? []),
+                ...nextGenEds,
+            ]));
+
+            const shouldReplaceTerm =
+                (!existing.is_completed && isCompleted)
+                || (
+                    existing.is_completed === isCompleted
+                    && compareTermCodes(termCode, existing.term_code) < 0
+                );
+
+            byCourse.set(courseId, {
+                ...existing,
+                course_title: existing.course_title || selection.course.name,
+                term_code: shouldReplaceTerm ? termCode : existing.term_code,
+                gen_ed_tags: mergedGenEds,
+                is_completed: existing.is_completed || isCompleted,
             });
         }
     }
 
-    return result;
+    return Array.from(byCourse.values());
+}
+
+export function totalCreditsForSchedule(schedule: StoredSchedule): number {
+    return schedule.selections.reduce((sum, selection) => {
+        return sum + selection.course.minCredits;
+    }, 0);
+}
+
+export function totalTakenCreditsAcrossSchedules(
+    schedules: StoredSchedule[],
+    nowTermYear: TermYear = getDefaultTermYear()
+): number {
+    const courses = schedulesToUserCourses(schedules, nowTermYear);
+    const seen = new Set<string>();
+    let total = 0;
+
+    for (const course of courses) {
+        if (!course.is_completed) {
+            continue;
+        }
+        if (seen.has(course.course_id)) {
+            continue;
+        }
+        seen.add(course.course_id);
+
+        const matched = schedules
+            .flatMap((schedule) => schedule.selections)
+            .find((selection) => selection.course.courseCode === course.course_id);
+        total += matched?.course.minCredits ?? 0;
+    }
+
+    return total;
 }
