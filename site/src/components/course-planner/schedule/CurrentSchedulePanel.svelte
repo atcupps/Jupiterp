@@ -9,11 +9,13 @@ Copyright (C) 2026 Andrew Cupps
     import {
         ActiveViewerStore,
         CurrentScheduleStore,
+        NonselectedScheduleStore,
         ViewerNoticeStore,
         ViewerOptionsStore,
         type ViewerOption,
     } from '../../../stores/CoursePlannerStores';
     import type { StoredSchedule } from '../../../types';
+    import { totalTakenCreditsAcrossSchedules } from '$lib/gened/schedules';
 
     let currentSchedule: StoredSchedule = {
         scheduleName: 'Schedule 1',
@@ -25,6 +27,8 @@ Copyright (C) 2026 Andrew Cupps
     let activeViewer = 'self';
     let viewerOptions: ViewerOption[] = [];
     let viewerNotice: string | null = null;
+    let nonselectedSchedules: StoredSchedule[] = [];
+    let totalTakenCredits = 0;
 
     CurrentScheduleStore.subscribe((stored) => {
         currentSchedule = stored;
@@ -42,7 +46,15 @@ Copyright (C) 2026 Andrew Cupps
         viewerNotice = stored;
     });
 
+    NonselectedScheduleStore.subscribe((stored) => {
+        nonselectedSchedules = stored;
+    });
+
     $: printedOn = new Date().toLocaleDateString();
+    $: totalTakenCredits = totalTakenCreditsAcrossSchedules([
+        currentSchedule,
+        ...nonselectedSchedules,
+    ]);
 
     function rowCredits(schedule: StoredSchedule): number {
         let total = 0;
@@ -72,6 +84,10 @@ Copyright (C) 2026 Andrew Cupps
             </div>
         </div>
         <div class='flex items-center gap-2'>
+            <span class='rounded-full border border-outlineLight dark:border-outlineDark
+                         px-2 py-1 text-xs'>
+                Total taken: {totalTakenCredits} credits
+            </span>
             <label class='text-xs opacity-80 flex items-center gap-1'>
                 <span>Viewing:</span>
                 <select class='rounded-md px-2 py-1 text-xs border

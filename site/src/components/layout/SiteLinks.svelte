@@ -20,10 +20,6 @@ Copyright (C) 2026 Andrew Cupps
 
 <!-- For larger screens -->
 <div class='grow justify-end self-center hidden lg:flex'>
-    <NavBarElement link={`${base}/profile`} text='Profile'
-                                        isOnPage={currentPage == '/profile'}/>
-    <NavBarElement link={`${base}/friends`} text='Friends'
-                                        isOnPage={currentPage == '/friends'}/>
     <NavBarElement link={`${base}/`} text='Course Planner'
                                         isOnPage={currentPage == '/'}/>
     <NavBarElement link={`${base}/gen-eds`} text='Gen Eds'
@@ -31,6 +27,10 @@ Copyright (C) 2026 Andrew Cupps
     <NavBarElement link={`${base}/major-minor-requirements`}
                                         text='Major/Minor Requirements'
                         isOnPage={currentPage == '/major-minor-requirements'}/>
+    <NavBarElement link={`${base}/friends`} text='Friends'
+                                        isOnPage={currentPage == '/friends'}/>
+    <NavBarElement link={`${base}/profile`} text='Profile'
+                                        isOnPage={currentPage == '/profile'}/>
     <ExpandableNavBarElement link={`${base}/settings`} text='Settings'
                                         isOnPage={currentPage == '/settings'}>
         <div class='w-full my-1'>
@@ -79,13 +79,7 @@ Copyright (C) 2026 Andrew Cupps
         class:site-links-transition={!siteLinksSelected}
         class:shadow-lg={siteLinksSelected}>
     <div class='w-full my-2 text-lg'>
-        <NavBarElement link={`${base}/profile`} text='Profile' fullWidth={true}/>
-    </div>
-    <div class='w-full my-2 text-lg'>
         <NavBarElement link={`${base}/`} text='Course Planner' fullWidth={true}/>
-    </div>
-    <div class='w-full my-2 text-lg'>
-        <NavBarElement link={`${base}/friends`} text='Friends' fullWidth={true}/>
     </div>
     <div class='w-full my-2 text-lg'>
         <NavBarElement link={`${base}/gen-eds`} text='Gen Eds' fullWidth={true}/>
@@ -94,6 +88,12 @@ Copyright (C) 2026 Andrew Cupps
         <NavBarElement link={`${base}/major-minor-requirements`}
                                         text='Major/Minor Requirements'
                                         fullWidth={true}/>
+    </div>
+    <div class='w-full my-2 text-lg'>
+        <NavBarElement link={`${base}/friends`} text='Friends' fullWidth={true}/>
+    </div>
+    <div class='w-full my-2 text-lg'>
+        <NavBarElement link={`${base}/profile`} text='Profile' fullWidth={true}/>
     </div>
     <div class='w-full my-2 text-lg'>
         <NavBarElement link={`${base}/settings`} text='Settings' fullWidth={true}/>

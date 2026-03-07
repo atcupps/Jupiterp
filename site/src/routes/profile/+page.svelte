@@ -7,7 +7,7 @@ Copyright (C) 2026 Andrew Cupps
 <script lang='ts'>
     import { onMount } from 'svelte';
     import { base } from '$app/paths';
-    import ProfileOverviewCard from '$components/profile/ProfileOverviewCard.svelte';
+    import ProfileOverviewCard from '../../components/profile/ProfileOverviewCard.svelte';
     import { PROFILE_STRINGS } from '$lib/config/profileStrings';
     import {
         ensureUserProfile,
