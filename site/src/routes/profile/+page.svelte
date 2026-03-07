@@ -146,7 +146,7 @@ Copyright (C) 2026 Andrew Cupps
     }
 
     async function recomputeTotalCredits() {
-        const localSchedules = readSchedulesFromLocalStorage();
+        const localSchedules = readSchedulesFromLocalStorage(authUserId);
         const cloudSchedules = authUserId ? await loadUserSchedules(authUserId) : null;
         const chosen = chooseSchedulesForProfile(cloudSchedules, localSchedules);
         totalCreditsTaken = totalTakenCreditsAcrossSchedules(chosen);

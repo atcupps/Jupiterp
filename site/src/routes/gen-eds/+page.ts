@@ -24,8 +24,8 @@ export const ssr = false;
 
 export const load: PageLoad = async () => {
     try {
-        const localSchedules = readSchedulesFromLocalStorage();
         let userId = "local";
+        let localStorageScopeUserId: string | null = null;
         let cloudSchedules: {
             currentSchedule: StoredSchedule,
             nonselectedSchedules: StoredSchedule[],
@@ -35,9 +35,12 @@ export const load: PageLoad = async () => {
             const user = await getAuthUser();
             if (user) {
                 userId = user.id;
+                localStorageScopeUserId = user.id;
                 cloudSchedules = await loadUserSchedules(user.id);
             }
         }
+
+        const localSchedules = readSchedulesFromLocalStorage(localStorageScopeUserId);
 
         const schedules = chooseSchedulesForProfile(cloudSchedules, localSchedules);
         const userCourses = schedulesToUserCourses(schedules, undefined, userId);

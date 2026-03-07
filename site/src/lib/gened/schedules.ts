@@ -18,6 +18,7 @@ import {
     resolveSelections,
     resolveStoredSchedules,
 } from "$lib/course-planner/CourseLoad";
+import { readLocalScheduleSnapshot } from "$lib/course-planner/ScheduleStorage";
 import type { StoredSchedule } from "../../types";
 
 const TERM_SUFFIX: Record<AcademicTerm, string> = {
@@ -46,19 +47,20 @@ function normalizeCloudSchedules(
     return [current, ...nonselected];
 }
 
-export function readSchedulesFromLocalStorage(): StoredSchedule[] {
+export function readSchedulesFromLocalStorage(userId: string | null = null): StoredSchedule[] {
     if (typeof localStorage === "undefined") {
         return [];
     }
 
+    const snapshot = readLocalScheduleSnapshot(userId);
     const defaultTermYear = getDefaultTermYear();
-    const selectedRaw = localStorage.getItem("selectedSections");
-    const scheduleName = localStorage.getItem("scheduleName") ?? "Schedule";
-    const scheduleTermRaw = localStorage.getItem("scheduleTerm");
+    const selectedRaw = snapshot.selectedSectionsRaw;
+    const scheduleName = snapshot.scheduleNameRaw ?? "Schedule";
+    const scheduleTermRaw = snapshot.scheduleTermRaw;
     const scheduleTerm = isAcademicTerm(scheduleTermRaw)
         ? scheduleTermRaw
         : defaultTermYear.term;
-    const scheduleYear = Number(localStorage.getItem("scheduleYear") ?? defaultTermYear.year);
+    const scheduleYear = Number(snapshot.scheduleYearRaw ?? defaultTermYear.year);
 
     const currentSchedule = normalizeStoredSchedule({
         scheduleName,
@@ -67,7 +69,7 @@ export function readSchedulesFromLocalStorage(): StoredSchedule[] {
         year: scheduleYear,
     }, defaultTermYear);
 
-    const nonselectedRaw = localStorage.getItem("nonselectedSchedules");
+    const nonselectedRaw = snapshot.nonselectedSchedulesRaw;
     const nonselected = nonselectedRaw
         ? resolveStoredSchedules(nonselectedRaw)
         : [];
