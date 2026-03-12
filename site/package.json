@@ -12,7 +12,8 @@
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "lint": "eslint .",
     "format-check": "node scripts/format-check.js",
-    "test": "jest"
+    "test": "jest",
+    "sync:umd-courses": "tsx scripts/syncUmdCourses.ts"
   },
   "devDependencies": {
     "@sveltejs/adapter-node": "^5.4.0",
@@ -24,7 +25,7 @@
     "@testing-library/svelte": "^5.3.0",
     "@types/gtag.js": "^0.0.19",
     "@types/jest": "^30.0.0",
-    "@types/node": "^20.10.5",
+    "@types/node": "^20.19.37",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
     "autoprefixer": "^10.4.16",
@@ -39,6 +40,7 @@
     "tailwindcss": "^3.4.0",
     "ts-jest": "^29.4.6",
     "tslib": "^2.4.1",
+    "tsx": "^4.21.0",
     "typescript": "^5.0.0",
     "vite": "^5.4.20"
   },
@@ -55,6 +57,7 @@
     "flowbite-svelte": "^0.45.0",
     "flowbite-svelte-icons": "^1.5.0",
     "node-fetch": "^2.7.0",
+    "path": "^0.12.7",
     "supabase": "^1.192.5",
     "yaml": "^2.8.2"
   }

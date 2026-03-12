@@ -1,0 +1,2775 @@
+[
+  {
+    "id": "BIOE120",
+    "title": "Biology for Engineers",
+    "credits": 3,
+    "departmentId": "BIOE",
+    "description": "Introduction to the functions and interactions of biological systems from a quantitative perspective. Introduction to the modern experimental techniques and methods of data analysis. Roles for bioengineers in biology, and the role of biology in bioengineering will be elucidated.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:26.241Z"
+  },
+  {
+    "id": "BIOE121",
+    "title": "Biology for Engineers Laboratory",
+    "credits": 1,
+    "departmentId": "BIOE",
+    "description": "Bioengineering encompasses numerous sub-disciplines that apply engineering principles to analyze biological systems and that utilize engineering design strategies to solve biological and biomedical problems. This course is aimed at providing students with the opportunity to learn how biology and engineering can synergistically contribute to our understanding of such problems, and to gain hands-on experience in basic techniques relevant to Bioengineering.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:26.241Z"
+  },
+  {
+    "id": "BIOE221",
+    "title": "Academic and Career Planning",
+    "credits": 1,
+    "departmentId": "BIOE",
+    "description": "Provides practical tools to help Bioengineering majors think critically about their goals and career paths. Guides Bioengineering students through accessing useful resources both on- and off-campus.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:26.241Z"
+  },
+  {
+    "id": "BIOE232",
+    "title": "Bioengineering Thermodynamics",
+    "credits": 3,
+    "departmentId": "BIOE",
+    "description": "A quantitative introduction to thermodynamic analysis of bioengineering systems. Bioengineering encompasses a wide range of applications from nanoscale interactions (e.g. reactions between molecules), to cellular interactions (e.g. membrane electrical currents), to overall balances on organisms, all the way to large scale manufacturing. Each of these applications (and many others not mentioned) involve energy interactions which is the domain of thermodynamics. The basic laws of thermodynamics will be introduced and explained through a series of examples related to bioengineering systems.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:26.241Z"
+  },
+  {
+    "id": "BIOE241",
+    "title": "Biocomputational Methods",
+    "credits": 3,
+    "departmentId": "BIOE",
+    "description": "Introduction to programming and computational analysis in bioengineering using MATLAB. Emphasizes modeling of biological systems, biomedical data analysis, and engineering problem-solving. Includes an introduction to machine learning with applications such as biomedical signal classification and pattern recognition.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:26.241Z"
+  },
+  {
+    "id": "BIOE246",
+    "title": "Differential Equations for Bioengineering",
+    "credits": 3,
+    "departmentId": "BIOE",
+    "description": "Students will learn to solve differential equations, including linear first order differential equations, higher order differential equations, and partial differential equations. In addition, students will learn to apply differential equations to concepts in bioengineering.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:26.241Z"
+  },
+  {
+    "id": "BIOE331",
+    "title": "Biofluids",
+    "credits": 3,
+    "departmentId": "BIOE",
+    "description": "Principles and applications of fluid mechanics with a focus on bioengineering topics. Content includes conservation of mass, momentum, and energy, as well as the application of these fundamental relations to hydrostatics, control volume analysis, internal and external flow, and boundary layers. Mass transfer via diffusion and convection is also introduced. Applications to biological and bioengineering problems such as tissue engineering, bioprocessing, imaging, and drug delivery.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:26.241Z"
+  },
+  {
+    "id": "BIOE340",
+    "title": "Quantitative Physiology",
+    "credits": 4,
+    "departmentId": "BIOE",
+    "description": "Human physiology from a systems perspective is integrated with quantitative methods to inform modeling approaches and bioengineering designs. A laboratory component is included.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:26.241Z"
+  },
+  {
+    "id": "BIOE372",
+    "title": "Biostatistics for Experimental Design and Data Analysis",
+    "credits": 3,
+    "departmentId": "BIOE",
+    "description": "This course will instruct students in the fundamentals of probability and statistics through examples in biological phenomenon, the design of bioengineering experiments, and clinical data analysis. Fundamentals covered in the course include probability distributions, hypothesis testing, power analysis, regression analysis, and correlation analysis.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:26.241Z"
+  },
+  {
+    "id": "BIOE389M",
+    "title": "Special Projects in Bioengineering; Research Skills and Professional Development for MARC Scholars",
+    "credits": 1,
+    "departmentId": "BIOE",
+    "description": "The course will provide instruction and opportunities for development in research skills and scientific communication, along with individualized preparation towards graduate school and a career in biomedical research.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:26.241Z"
+  },
+  {
+    "id": "BIOE399",
+    "title": "Independent Study in Bioengineering",
+    "credits": 1,
+    "departmentId": "BIOE",
+    "description": "",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:26.241Z"
+  },
+  {
+    "id": "BIOE399H",
+    "title": "Independent Study in Bioengineering",
+    "credits": 1,
+    "departmentId": "BIOE",
+    "description": "",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:26.241Z"
+  },
+  {
+    "id": "BIOE411",
+    "title": "Tissue Engineering",
+    "credits": 3,
+    "departmentId": "BIOE",
+    "description": "A review of the fundamental principles involved in the design of engineered tissues and organs. Both biological and engineering fundamentals will be considered.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:26.241Z"
+  },
+  {
+    "id": "BIOE413",
+    "title": "Stem Cell Engineering",
+    "credits": 3,
+    "departmentId": "BIOE",
+    "description": "Provides an introduction to the role of stem cells in tissue growth and development, the engineering of stem cells and their environments for regenerative medicine applications, and disease modeling. Topics covered will include basic stem cell biology and mechanobiology; experimental methods for growing, differentiating, studying, and characterizing stem cells; stem cell integration into engineered microenvironments (e.g., tissue scaffolds and biomaterials, organ-on-chip devices, 3D-printed biomaterials); stem cell engineering in clinical applications and disease models; and ethical, commercialization, and regulatory issues in the field of stem cell engineering.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:26.241Z"
+  },
+  {
+    "id": "BIOE415",
+    "title": "Engineering Design for Global Health",
+    "credits": 3,
+    "departmentId": "BIOE",
+    "description": "Many medical technologies are not available in low and middle-income countries due to the cost, infrastructure, and medical expertise required to implement and sustain them. There is tremendous potential to increase access to health care through developing more affordable biomedical technologies, but effective design requires deep understanding of the problem. The goal of this course is to introduce the human-centered design framework and how it can be applied to design new biomedical technologies to solve challenges in global health.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:26.241Z"
+  },
+  {
+    "id": "BIOE420",
+    "title": "Bioimaging",
+    "credits": 3,
+    "departmentId": "BIOE",
+    "description": "Covers the fundamental principles of major biomedical imaging techniques, including X-ray Imaging, Computer Tomography (CT), Magnetic Resonance Imaging (MRI), Ultrasound Imaging, Nuclear Medicine Imaging (SPECT/PET/CT), Optical Coherent Tomography (OCT), and Optical and Hyperspectral Imaging. The course will explore the underlying concepts of imaging system architectures, image reconstruction algorithms, and software implementation. Additionally, it will discuss the clinical interpretation of biomedical images and newer ways to use images for bio-related applications for diagnosis and analysis.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:26.241Z"
+  },
+  {
+    "id": "BIOE437",
+    "title": "Computer-Aided Design in Bioengineering",
+    "credits": 3,
+    "departmentId": "BIOE",
+    "description": "Introduction to Computer-Aided Design (CAD). Lecture topics will summarize design methodology, review best-practices in hardware development, and discuss engineering applications. The course will culminate in a student-selected project leveraging CAD.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:26.241Z"
+  },
+  {
+    "id": "BIOE442",
+    "title": "Python: Introduction to Programming and Data Analysis",
+    "credits": 3,
+    "departmentId": "BIOE",
+    "description": "Provides an introduction to structured programming, computational methods, and data analysis techniques with the goal of building a foundation allowing students to confidently address problems in research and industry. Fundamentals of programming, algorithms, and simulation are covered from a general computer science perspective, while the applied data analysis and visualization portion makes use of the Python SciPy stack.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:26.241Z"
+  },
+  {
+    "id": "BIOE453",
+    "title": "Biomaterials",
+    "credits": 3,
+    "departmentId": "BIOE",
+    "description": "Examination of the structure and function of natural biomaterials, and cell-extracellular matrix interactions. Study physical properties of synthetic biomaterials for biomedical applications. Understanding molecular level interactions between biomolecules and biomaterials to design novel biomaterials with desirable characteristics. Application of biomaterials as implants, drug delivery systems, biosensors, engineered materials such as artificial skin and bone growth scaffolds will be covered.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:26.241Z"
+  },
+  {
+    "id": "BIOE457",
+    "title": "Biomedical Electronics & Instrumentation",
+    "credits": 4,
+    "departmentId": "BIOE",
+    "description": "Students learn fundamental concepts of electronics, assembly of electronic components into functional circuits, and integration of functional electronic devices and circuits into a system. In the lab component, students will learn to assemble and evaluate circuits and systems.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:26.241Z"
+  },
+  {
+    "id": "BIOE461",
+    "title": "Synthetic Biology and Biological Engineering",
+    "credits": 3,
+    "departmentId": "BIOE",
+    "description": "Students are introduce to the scientific foundation and concepts of synthetic biology and biological engineering. Current examples that apply synthetic biology to fundamental and practical challenges will be emphasized. The course will also address the societal issues of synthetic biology, and briefly examine interests to regulate research in this area.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:26.241Z"
+  },
+  {
+    "id": "BIOE462",
+    "title": "Therapeutic Development and Delivery",
+    "credits": 3,
+    "departmentId": "BIOE",
+    "description": "The ultimate purpose of the pharmaceutical and biotechnology industries is the development and delivery of therapeutics. This course covers fundamentals of engineering and the pharmaceutical sciences related to therapeutics, including basic pharmaceutics/drug delivery, pharmacokinetics, biomolecular kinetics, and regulatory issues. Specific focus is placed on biotherapeutics, including antibodies and protein engineering,RNA and DNA therapeutics (gene therapy and RNAi), extracellular vesicle biotechnology (exosomes), and cell-based therapies, including stem cells. The use of delivery technologies to enable therapeutics (e.g. nanomedicine) will also be discussed.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:26.241Z"
+  },
+  {
+    "id": "BIOE485",
+    "title": "Capstone Design I: Entrepreneurship, Regulatory Issues, and Ethics",
+    "credits": 3,
+    "departmentId": "BIOE",
+    "description": "This is the first part of a two-semester senior capstone design course which covers principles involved in engineering design, design approaches, economics of design, ethics in engineering, and patent regulations. It also helps students learn team work and write design project proposals under the mentorship of a faculty advisor.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:26.241Z"
+  },
+  {
+    "id": "BIOE488B",
+    "title": "Research Methods in Bioengineering; Biotechnology",
+    "credits": 3,
+    "departmentId": "BIOE",
+    "description": "Prerequisites: BIOE120, BIOE121, and BSCI330.  This course prepares students for a broad range of opportunities by delivering a practical, hands-on experience appropriate for a student interested in biotechnology. Students will gain exposure to: recombinant DNA, cell culture, transfection/transformation, and molecular biology assayssuch as: PCR/sequencing, gels/blots, reporter gene expression. This course provides students with a working research laboratory environment experience.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:26.241Z"
+  },
+  {
+    "id": "BIOE489H",
+    "title": "Special Topics in Bioengineering; Bioengineering Honors Seminar",
+    "credits": 1,
+    "departmentId": "BIOE",
+    "description": "students in the BIOE Honors Proram.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:26.241Z"
+  },
+  {
+    "id": "BIOE605",
+    "title": "BIOE Graduate Studies I",
+    "credits": 1,
+    "departmentId": "BIOE",
+    "description": "Introduction to the bioengineering graduate program.  Students gain exposure to departmental research through lab rotation and to current research in the field through seminar. Students will also gain preparation and guidance on other first-year academic requirements.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:26.241Z"
+  },
+  {
+    "id": "BIOE608",
+    "title": "Bioengineering Seminar Series",
+    "credits": 1,
+    "departmentId": "BIOE",
+    "description": "For BIOE majors only.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:26.241Z"
+  },
+  {
+    "id": "BIOE610",
+    "title": "Mathematical Methods in Bioengineering",
+    "credits": 3,
+    "departmentId": "BIOE",
+    "description": "From diffusion problems to light-matter interactions, students will learn basic skills needed to create mathematical models in bioengineering. Students will first be exposed to simplified problems in analytical form, and then more complex problems with the help of computer software programs.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:26.241Z"
+  },
+  {
+    "id": "BIOE651",
+    "title": "Applied Mathematics in Bioengineering",
+    "credits": 3,
+    "departmentId": "BIOE",
+    "description": "Students will use and learn mathematical concepts that are directly relevant to their career as a bioengineer. They will apply these concepts to various bioengineering applications while also learning industry-relevant analytical software.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:26.241Z"
+  },
+  {
+    "id": "BIOE658J",
+    "title": "Special Topics in Bioengineering (M.Eng.); Introduction to Programming and Data Analysis using Python",
+    "credits": 3,
+    "departmentId": "BIOE",
+    "description": "Aims to provide an introduction to structured programming, computational  methods, and data analysis techniques, with the goal of equipping students with a foundation that allows them to confidently tackle problems in research and industry. The course begins with basic programming concepts such as data types, operators, logical flow control, debugging, and computational complexity using Python. It then delves into more advanced topics such as dynamic programming, algorithms, and object-oriented programming. Students will also be introduced to effective tools and libraries for data analysis and visualization. Towards the end of the course, there will be an overview of machine learning, artificial intelligence, neural networks, and convolution neural networks, along with some useful libraries and modules.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:26.241Z"
+  },
+  {
+    "id": "BMGT110",
+    "title": "Introduction to the Business Value Chain",
+    "credits": 3,
+    "departmentId": "BMGT",
+    "description": "Students are provided with an introduction to the business value chain with an emphasis on inter-organizational and intra-organizational coordination of core business processes. Emphasis is on cross-functional integration and the efficient and effective management of core processes with an emphasis on marketing, operations and supply chain management.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:24.248Z"
+  },
+  {
+    "id": "BMGT110F",
+    "title": "Introduction to the Business Value Chain",
+    "credits": 3,
+    "departmentId": "BMGT",
+    "description": "Smith School's Smith Start (FPFF) students.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:24.248Z"
+  },
+  {
+    "id": "BMGT110L",
+    "title": "Introduction to the Business Value Chain",
+    "credits": 3,
+    "departmentId": "BMGT",
+    "description": "Students are provided with an introduction to the business value chain with an emphasis on inter-organizational and intra-organizational coordination of core business processes. Emphasis is on cross-functional integration and the efficient and effective management of core processes with an emphasis on marketing, operations and supply chain management.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:24.248Z"
+  },
+  {
+    "id": "BMGT161",
+    "title": "Creative Problem Solving",
+    "credits": 3,
+    "departmentId": "BMGT",
+    "description": "Examines the concept of creative problem solving as it applies in today's and tomorrow's complex business environment. Students will develop an understanding of the creative problem solving process with its distinctive cognitive steps of Divergent Thinking, Emergent Thinking and Convergent Thinking.  Topics include creativity techniques for groups and individuals, creativity as a foundation to recognize business opportunities and develop innovative products and services, selecting ideas and making them stick, mental and organizational obstacles to creativity as well as an overview of electronic tools to increase creative capability.",
+    "genEd": [
+      "DSSP",
+      "SCIS"
+    ],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:24.248Z"
+  },
+  {
+    "id": "BMGT162",
+    "title": "The Future of You, Business and Society",
+    "credits": 3,
+    "departmentId": "BMGT",
+    "description": "Designed to help you (students) explore the future of you, business, and society. Even as the nature of business (the how) evolves with technology, the purpose of business --to create individual and social prosperity (the why) --remains the same. This course will integrate the \"why\" and the \"how\" to prepare students for the future of work. Students will learn the foundational concepts of how to lead themselves with purpose and develop win-win relationships. Students will also learn how organizations solve unmet needs in society, and how they develop and leverage the power of technology and new business practices to create value in a sound and ethical way.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:24.248Z"
+  },
+  {
+    "id": "BMGT207",
+    "title": "Ethics of Artificial Intelligence",
+    "credits": 3,
+    "departmentId": "BMGT",
+    "description": "What ethical considerations should govern the creation, distribution, and use of artificial intelligence innovations in industry, polity, and society in the future?  New and emerging innovations in artificial intelligence (AI) are disrupting sectors as diverse as healthcare, medicine, finance, operations, supply chain, manufacturing, media and journalism, and the creative industries.  In the near future, the dependence of humans on AI for a myriad of social activities including companionship and care is also expected to accelerate.  This course deals with the question of how we should ensure AI will create ethical economic and social systems that reflect the kind of world we want to live in 20 to 30 years from now. The values and ethics of society will influence and govern how AI can either contribute to humanity or lead to a dystrophic future.",
+    "genEd": [
+      "DSSP",
+      "SCIS"
+    ],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:24.248Z"
+  },
+  {
+    "id": "BMGT220",
+    "title": "Principles of Accounting I",
+    "credits": 3,
+    "departmentId": "BMGT",
+    "description": "Basic theory and techniques of contemporary financial accounting. Includes the accounting cycle and the preparation of financial statements for single owner and partnership forms of business organizations operating as service companies or merchandisers.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:24.248Z"
+  },
+  {
+    "id": "BMGT221",
+    "title": "Principles of Accounting II",
+    "credits": 3,
+    "departmentId": "BMGT",
+    "description": "Basic theory and techniques of accounting for managerial decision making. Involves the introduction of the corporation and manufacturing operations. Includes cost-volume-profit analysis and capital budgeting. Introduces the topics of income taxation and international accounting.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:24.248Z"
+  },
+  {
+    "id": "BMGT221L",
+    "title": "Principles of Accounting II",
+    "credits": 3,
+    "departmentId": "BMGT",
+    "description": "Basic theory and techniques of accounting for managerial decision making. Involves the introduction of the corporation and manufacturing operations. Includes cost-volume-profit analysis and capital budgeting. Introduces the topics of income taxation and international accounting.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:24.248Z"
+  },
+  {
+    "id": "BMGT230",
+    "title": "Business Statistics",
+    "credits": 3,
+    "departmentId": "BMGT",
+    "description": "Introductory course in probabilistic and statistical concepts including descriptive statistics, set-theoretic development of probability, the properties of discrete and continuous random variables, sampling theory, estimation, hypothesis testing, regression and decision theory and the application of these concepts to problem solving in business and management.",
+    "genEd": [
+      "FSAR"
+    ],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:24.248Z"
+  },
+  {
+    "id": "BMGT230L",
+    "title": "Business Statistics",
+    "credits": 3,
+    "departmentId": "BMGT",
+    "description": "Introductory course in probabilistic and statistical concepts including descriptive statistics, set-theoretic development of probability, the properties of discrete and continuous random variables, sampling theory, estimation, hypothesis testing, regression and decision theory and the application of these concepts to problem solving in business and management.",
+    "genEd": [
+      "FSAR"
+    ],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:24.248Z"
+  },
+  {
+    "id": "BMGT262",
+    "title": "The Enterprising Leader",
+    "credits": 3,
+    "departmentId": "BMGT",
+    "description": "Designed to help students develop their leadership skills in order to identify their personal and professional purpose with an entrepreneurial mindset, and create strategies that will help them develop their abilities and achieve their aspirations by collaborating within teams and organizations.  Students will apply insights from recent scholarship in entrepreneurship, leadership and strategic management to themselves in order to identify solutions to problems they find meaningful to solve in their own world.  This self-discovery course will introduce students to the \"CEO of ME, Inc.\" framework and tools such as the strategic initiatives matrix and business model canvas that they can use to help guide the choices that lie ahead, and develop collaborative, win-win relationships.  In doing so, students will learn how to unlock the value of business in society and develop entrepreneurial and leadership skills that enable personal happiness and upward mobility.",
+    "genEd": [
+      "DSSP",
+      "SCIS"
+    ],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:24.248Z"
+  },
+  {
+    "id": "BMGT263",
+    "title": "Challenge your Thinking, Challenge the Conversation",
+    "credits": 3,
+    "departmentId": "BMGT",
+    "description": "Provides conceptual frameworks and experiential opportunities that will enable students to engage in rational and respectful discourse.  The course uses the latest pedagogical techniques and relevant literature to develop skills such as thinking like a scientist, negotiating conflict, and giving and receiving constructive feedback.  Specific conversations will draw from current events and issues in business and in society.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:24.248Z"
+  },
+  {
+    "id": "BMGT289B",
+    "title": "How Do Innovators Think?",
+    "credits": 3,
+    "departmentId": "BMGT",
+    "description": "In this course, students will learn about: a) the innovation process and the role of the individual in generating innovations and b) the attributes, habits, and skills of individuals who have successfully started innovative new businesses or significantly added value to an existing company.",
+    "genEd": [
+      "DSSP",
+      "SCIS"
+    ],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:24.248Z"
+  },
+  {
+    "id": "BMGT289D",
+    "title": "Frauds, Scams, and Thefts: What, How and Why?",
+    "credits": 3,
+    "departmentId": "BMGT",
+    "description": "\"Why\" does fraud happen? \"How\" does society address fraud? And \"What\" can you do to avoid and prevent fraud in your personal and future career life? This course is designed to give future professionals and managers of all disciplines a general background of fraud. Topics include the psychology of fraud, the mechanics of fraud, the legal landscape, securities fraud, cybercrime, and what all of us should know to protect ourselves from becoming victims of fraud. Additionally, students experience 21st century lessons in fraud examination that have practical application to our daily lives: avoiding cognitive biases, interviewing techniques, basic business controls, and opening our minds to see what others might miss...the red flags of fraud.",
+    "genEd": [
+      "DSSP",
+      "SCIS"
+    ],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:24.248Z"
+  },
+  {
+    "id": "BMGT289E",
+    "title": "Entrepreneurial Thinking for Non-Business Majors: How Not to Miss Great Opportunities Your Life Throws at You",
+    "credits": 3,
+    "departmentId": "BMGT",
+    "description": "In this course, students learn how to analyze the world around them and then notice and define new trends, emerging problems, impending gaps, and how to turn these into exciting opportunities by providing creative solutions.  Students will have a chance to not only sharpen their critical thinking skills, but also learn how to take initiative, develop a working solution, identify and resolve conflicts, and be confident and persistent, yet flexible enough to respond to changes. Student teams identify a compelling problem in present day life and then propose a creative solution taking into account possible difficulties in implementation.  In addition, students will also be given problems on a much smaller scale and asked to create and present a workable solution. Students will be exposed to how a visionary's mind works and the creative solution process.  In addition, students will also learn how entrepreneurial thinking can improve their day-to-day life.",
+    "genEd": [
+      "DSSP",
+      "SCIS"
+    ],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:24.248Z"
+  },
+  {
+    "id": "BMGT289I",
+    "title": "Why Good Managers Make Bad Decisions",
+    "credits": 3,
+    "departmentId": "BMGT",
+    "description": "This course provides an overview of the concepts, approaches, and vocabulary of evidence-based management (EBM) and provides an understanding of how experts in many disciplines can employ evidenced based decision making. EBM is an emerging movement in business to explicitly use the current best information in management decision making with special emphasis on relevant scientific findings and unbiased organizational facts. The course stresses how individuals practicing EBM learn how to rethink their approaches to data and knowledge in order to make more effective decisions.",
+    "genEd": [
+      "DSSP",
+      "SCIS"
+    ],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:24.248Z"
+  },
+  {
+    "id": "BMGT290H",
+    "title": "Introduction to Design and Quality",
+    "credits": 4,
+    "departmentId": "BMGT",
+    "description": "The first QUEST course introduces foundational principles of design and quality, emphasizing their impact on product development and customer satisfaction. Working in multidisciplinary teams, students will explore design thinking, project management techniques, and quality tools, applying these frameworks to real-world product redesigns and innovations.",
+    "genEd": [
+      "DSSP"
+    ],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:24.248Z"
+  },
+  {
+    "id": "BMGT298J",
+    "title": "Special Topics in Business and Management; Personal Financial Success During College",
+    "credits": 1,
+    "departmentId": "BMGT",
+    "description": "",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:24.248Z"
+  },
+  {
+    "id": "BMGT298K",
+    "title": "Special Topics in Business and Management; Personal Financial Success After College",
+    "credits": 1,
+    "departmentId": "BMGT",
+    "description": "",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:24.248Z"
+  },
+  {
+    "id": "BMGT298L",
+    "title": "Special Topics in Business and Management; Start-up Nation? Tech Entrepreneurship in Israel",
+    "credits": 3,
+    "departmentId": "BMGT",
+    "description": "Cross-listed with ISRL249J and ECON298I.  This interdisciplinary course will explore the unique ecosystem that has contributed to the creation and success of the Israeli tech sector. The course addresses cultural, historical, and social factors and examines key moments and individuals in the country's startup landscape.Through case studies, guest lectures, and interactive projects, students will gain practical insights into entrepreneurship. The course also addresses the ethical considerations and social impacts of entrepreneurship in Israel, providing a well-rounded understanding of the complexities of starting a business in this dynamic environment.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:24.248Z"
+  },
+  {
+    "id": "BMGT301",
+    "title": "Information Systems, AI, and Digital Transformation",
+    "credits": 3,
+    "departmentId": "BMGT",
+    "description": "Provides a comprehensive overview of information systems (IS) and their strategic and tactical roles in the digital transformation of businesses across public and private sectors. Students learn core concepts for analyzing and designing IS for business applications. Topics include data management, databases, data warehousing, data analysis, and data mining, along with the fundamentals and business impact of artificial intelligence (AI). The course also introduces modern IS infrastructure, including cloud computing, IS security, and practical use of application software, such as spreadsheets and data visualization software, for data analysis and visualization.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:24.248Z"
+  },
+  {
+    "id": "BMGT301F",
+    "title": "Information Systems, AI, and Digital Transformation",
+    "credits": 3,
+    "departmentId": "BMGT",
+    "description": "Provides a comprehensive overview of information systems (IS) and their strategic and tactical roles in the digital transformation of businesses across public and private sectors. Students learn core concepts for analyzing and designing IS for business applications. Topics include data management, databases, data warehousing, data analysis, and data mining, along with the fundamentals and business impact of artificial intelligence (AI). The course also introduces modern IS infrastructure, including cloud computing, IS security, and practical use of application software, such as spreadsheets and data visualization software, for data analysis and visualization.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:24.248Z"
+  },
+  {
+    "id": "BMGT301L",
+    "title": "Information Systems, AI, and Digital Transformation",
+    "credits": 3,
+    "departmentId": "BMGT",
+    "description": "Provides a comprehensive overview of information systems (IS) and their strategic and tactical roles in the digital transformation of businesses across public and private sectors. Students learn core concepts for analyzing and designing IS for business applications. Topics include data management, databases, data warehousing, data analysis, and data mining, along with the fundamentals and business impact of artificial intelligence (AI). The course also introduces modern IS infrastructure, including cloud computing, IS security, and practical use of application software, such as spreadsheets and data visualization software, for data analysis and visualization.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:24.248Z"
+  },
+  {
+    "id": "BMGT302",
+    "title": "Essential Programming and AI Skills for Business Analytics",
+    "credits": 3,
+    "departmentId": "BMGT",
+    "description": "This course introduces structured and object-oriented programming, focusing on their applications in business functions and analytics. Students will develop problem-solving skills and learn to design software solutions using programming logic and data structures. Emphasis is placed on hands-on learning through practical exercises using modern, high-level programming languages and industry-standard development tools. The course also introduces students to AI coding assistants, emphasizing fundamental prompt engineering techniques and AI augmented programming methods designed to enhance both productivity and code quality.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:24.248Z"
+  },
+  {
+    "id": "BMGT302F",
+    "title": "Essential Programming and AI Skills for Business Analytics",
+    "credits": 3,
+    "departmentId": "BMGT",
+    "description": "This course introduces structured and object-oriented programming, focusing on their applications in business functions and analytics. Students will develop problem-solving skills and learn to design software solutions using programming logic and data structures. Emphasis is placed on hands-on learning through practical exercises using modern, high-level programming languages and industry-standard development tools. The course also introduces students to AI coding assistants, emphasizing fundamental prompt engineering techniques and AI augmented programming methods designed to enhance both productivity and code quality.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:24.248Z"
+  },
+  {
+    "id": "BMGT310",
+    "title": "Intermediate Accounting I",
+    "credits": 3,
+    "departmentId": "BMGT",
+    "description": "Comprehensive analysis of financial accounting topics related to financial statement preparation and external reporting.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:24.248Z"
+  },
+  {
+    "id": "BMGT311",
+    "title": "Intermediate Accounting II",
+    "credits": 3,
+    "departmentId": "BMGT",
+    "description": "Continuation of BMGT310.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:24.248Z"
+  },
+  {
+    "id": "BMGT313",
+    "title": "Financial Statement Analysis",
+    "credits": 3,
+    "departmentId": "BMGT",
+    "description": "Provides students with the tools to conduct a financial statement analysis, which is part of an overall business analysis. Involves understanding and using the information that financial statements are communicating to users.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:24.248Z"
+  },
+  {
+    "id": "BMGT321",
+    "title": "Managerial Accounting",
+    "credits": 3,
+    "departmentId": "BMGT",
+    "description": "A study of the basic concepts of product costing and cost analysis for management planning and control. Emphasis is placed on the role of the accountant in organizational management, analysis of cost behavior, standard cost budgeting, responsibility accounting and relevant costs for decision-making.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:24.248Z"
+  },
+  {
+    "id": "BSCI126",
+    "title": "Pollinators in Crisis",
+    "credits": 3,
+    "departmentId": "BSCI",
+    "description": "How are pollinators threatened by climate change, habitat destruction, and human interaction, and what are some ways to support and protect them? We will dissect the pollinator crisis, and in the process learn about insects, about the interaction of organisms in complex ecosystems, and about the human-nature interface. Students will work in groups that specialize in an aspect of pollinator biology and their challenges. Instruction will target methods for collecting information, interpretation of scientific information and the professional presentation of findings.",
+    "genEd": [
+      "DSNS",
+      "SCIS"
+    ],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:27.970Z"
+  },
+  {
+    "id": "BSCI135",
+    "title": "Amazing Green: Plants that Transformed the World",
+    "credits": 4,
+    "departmentId": "BSCI",
+    "description": "In what profound ways have plants changed humanity and the world we live in today? An interactive way to learn about plants and science, focusing on how plants have changed human history, the biology of their growth, and the science behind their use.",
+    "genEd": [
+      "DSNL",
+      "SCIS"
+    ],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:27.970Z"
+  },
+  {
+    "id": "BSCI151",
+    "title": "Beyond Race: Human Biological Diversity",
+    "credits": 3,
+    "departmentId": "BSCI",
+    "description": "Do racial labels have any practical use in understanding human biological diversity?  Such categorizations are inextricably linked to racism, including a history of misuse in science going back hundreds of years, yet modern biological research and medicine often include the use of race.  At its core, addressing this question requires understanding the balance between genetic and non-genetic factors underlying human diversity.  The course will help students make an informed critique of the biological basis of race through the study of topics such as: basic biology, data analysis and experimental design, human evolution and genetics, and biomedical research and health outcomes.",
+    "genEd": [
+      "DSNSorDSSP",
+      "DVUP",
+      "SCIS"
+    ],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:27.970Z"
+  },
+  {
+    "id": "BSCI160",
+    "title": "Principles of Ecology and Evolution",
+    "credits": 3,
+    "departmentId": "BSCI",
+    "description": "Basic principles of biology with special emphasis on  ecological and evolutionary biology.",
+    "genEd": [
+      "DSNL(fkwhBSCI161)orDSNS"
+    ],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:27.970Z"
+  },
+  {
+    "id": "BSCI161",
+    "title": "Principles of Ecology and Evolution Lab",
+    "credits": 1,
+    "departmentId": "BSCI",
+    "description": "Basic laboratory principles of biology with special emphasis on ecological and evolutionary biology.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:27.970Z"
+  },
+  {
+    "id": "BSCI161C",
+    "title": "Principles of Ecology and Evolution Lab",
+    "credits": 1,
+    "departmentId": "BSCI",
+    "description": "Basic laboratory principles of biology with special emphasis on ecological and evolutionary biology.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:27.970Z"
+  },
+  {
+    "id": "BSCI161S",
+    "title": "Principles of Ecology and Evolution Lab",
+    "credits": 1,
+    "departmentId": "BSCI",
+    "description": "Basic laboratory principles of biology with special emphasis on ecological and evolutionary biology.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:27.970Z"
+  },
+  {
+    "id": "BSCI170",
+    "title": "Principles of Molecular & Cellular Biology",
+    "credits": 3,
+    "departmentId": "BSCI",
+    "description": "Basic principles of biology with special emphasis on cellular and molecular biology.",
+    "genEd": [
+      "DSNL(fkwhBSCI171)orDSNS"
+    ],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:27.970Z"
+  },
+  {
+    "id": "BSCI171",
+    "title": "Principles of Molecular & Cellular Biology Laboratory",
+    "credits": 1,
+    "departmentId": "BSCI",
+    "description": "Basic laboratory principles of biology with special emphasis on cellular and molecular biology.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:27.970Z"
+  },
+  {
+    "id": "BSCI201",
+    "title": "Human Anatomy and Physiology I",
+    "credits": 4,
+    "departmentId": "BSCI",
+    "description": "Anatomy and physiology of the skeletal, muscular, neural, endocrine, and sensory systems. Course not acceptable toward major requirements in Biological Sciences, Chemistry or Biochemistry.",
+    "genEd": [
+      "DSNL"
+    ],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:27.970Z"
+  },
+  {
+    "id": "BSCI202",
+    "title": "Human Anatomy and Physiology II",
+    "credits": 4,
+    "departmentId": "BSCI",
+    "description": "Anatomy and physiology of the cardiovascular, respiratory, immune, digestive, urinary and reproductive systems. Course not acceptable toward major requirements in Biological Sciences, Chemistry or Biochemistry.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:27.970Z"
+  },
+  {
+    "id": "BSCI207",
+    "title": "Principles of Biology III - Organismal Biology",
+    "credits": 3,
+    "departmentId": "BSCI",
+    "description": "The diversity, structure and function of organisms as understood from the perspective of their common physicochemical principles and unique evolutionary histories.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:27.970Z"
+  },
+  {
+    "id": "BSCI213",
+    "title": "The Public Microbe",
+    "credits": 3,
+    "departmentId": "BSCI",
+    "description": "How are microbes essential for human health yet cause so much disease? This course covers basic concepts in microbiology as they relate to human- microbe interactions by surveying the diversity of microbial life, the role our resident microbiota play in human health, modes of disease tracking, and prophylactic and therapeutic measures designed to control the spread of infectious disease.",
+    "genEd": [
+      "DSNS",
+      "SCIS"
+    ],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:27.970Z"
+  },
+  {
+    "id": "BSCI222",
+    "title": "Principles of Genetics",
+    "credits": 4,
+    "departmentId": "BSCI",
+    "description": "Principles and mechanisms of heredity and gene expression. Considers plant, animal, and microbial organisms.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:27.970Z"
+  },
+  {
+    "id": "BSCI223",
+    "title": "General Microbiology",
+    "credits": 4,
+    "departmentId": "BSCI",
+    "description": "How have microorganisms exploited every conceivable ecological niche, and how have humans harnessed this diversity to improve medicine, agriculture, and biotechnology? The course covers fundamental concepts in morphology, physiology, genetics, immunology, ecology, and pathogenic microbiology. Applications of microbiology to medicine, the food industry, and biotechnology.",
+    "genEd": [
+      "DSNL",
+      "SCIS"
+    ],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:27.970Z"
+  },
+  {
+    "id": "BSCI238I",
+    "title": "Special Topics in Biology Student Initiated Courses; Machine Learning for the Life Sciences",
+    "credits": 1,
+    "departmentId": "BSCI",
+    "description": "Prerequisites: C- or better BSCI170 and either MATH140 or MATH136 Introduces students to the fundamental principles of machine learning and its applications in biology and medicine. Students will learn about key machine learning techniques, including classification, regression, clustering, and deep learning, with a focus on practical applications like cancer diagnosis, gene expression analysis, and protein structure prediction. Through lectures and guided projects, students will gain an understanding of how to apply machine learning models to biological datasets, evaluate their performance, and interpret results. No prior programming or machine learning experience is required.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:27.970Z"
+  },
+  {
+    "id": "BSCI279",
+    "title": "Supplemental Study; Supplemental Study in Biology",
+    "credits": 1,
+    "departmentId": "BSCI",
+    "description": "(Sponsoring Dept.: BIOL).",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:27.970Z"
+  },
+  {
+    "id": "BSCI279P",
+    "title": "Supplemental Study; Undergraduate Teaching Fellows Professional Development Seminar",
+    "credits": 1,
+    "departmentId": "BSCI",
+    "description": "",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:27.970Z"
+  },
+  {
+    "id": "BSCI279Q",
+    "title": "Supplemental Study; Readings in Neurophysiology",
+    "credits": 1,
+    "departmentId": "BSCI",
+    "description": "(Sponsoring Dept.: BIOL).",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:27.970Z"
+  },
+  {
+    "id": "BSCI279R",
+    "title": "Supplemental Study; Undergraduate Research Rotation",
+    "credits": 1,
+    "departmentId": "BSCI",
+    "description": "(Sponsoring Dept.: CBMG).",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:27.970Z"
+  },
+  {
+    "id": "BSCI279T",
+    "title": "Supplemental Study; BSCI Learning Assistants",
+    "credits": 1,
+    "departmentId": "BSCI",
+    "description": "",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:27.970Z"
+  },
+  {
+    "id": "BSCI283",
+    "title": "Principles of Microbiology",
+    "credits": 4,
+    "departmentId": "BSCI",
+    "description": "What makes microorganisms genetically, physiologically, and biochemically unique among organisms in the tree of life? An introduction to microorganisms designed for science majors. Genetic principles underlying microbial abilities; microbial structure-function relationships; metabolism, physiology, and ecology of microorganisms; interactions between microorganisms (including pathogens) and their hosts.",
+    "genEd": [
+      "DSNL",
+      "SCIS"
+    ],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:27.970Z"
+  },
+  {
+    "id": "BSCI300",
+    "title": "Strategies for Success",
+    "credits": 1,
+    "departmentId": "BSCI",
+    "description": "Students often face an increased emphasis on critical thinking, pressure from a typically higher credit hour load, and a faster pace of exposure to new material when moving from lower- to upper-level coursework. The Biological Sciences program designed this course to help all transfer students make successful transitions, both academically and socially, to the University of Maryland at Shady Grove.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:27.970Z"
+  },
+  {
+    "id": "BSCI329",
+    "title": "Instructional Assistance Practicum",
+    "credits": 1,
+    "departmentId": "BSCI",
+    "description": "Prerequiste: permission of department. (Sponsoring Dept.: BIOL). Credit cannot be applied to the requirements of any Biological Sciences Major.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:27.970Z"
+  },
+  {
+    "id": "BSCI331",
+    "title": "Cell Biology and Physiology",
+    "credits": 3,
+    "departmentId": "BSCI",
+    "description": "Biochemical and physiological mechanisms underlying cellular function. Properties of cells which make life possible and mechanisms by which cells provide energy, reproduce, and regulate and integrate with each other and their environment.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:27.970Z"
+  },
+  {
+    "id": "BSCI331H",
+    "title": "Cell Biology and Physiology",
+    "credits": 3,
+    "departmentId": "BSCI",
+    "description": "Biochemical and physiological mechanisms underlying cellular function. Properties of cells which make life possible and mechanisms by which cells provide energy, reproduce, and regulate and integrate with each other and their environment.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:27.970Z"
+  },
+  {
+    "id": "BSCI332",
+    "title": "Cell Biology and Physiology Laboratory",
+    "credits": 1,
+    "departmentId": "BSCI",
+    "description": "Laboratory exercises in Cell biology and physiology",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:27.970Z"
+  },
+  {
+    "id": "BSCI338A",
+    "title": "Special Topics in Biology; Cell Biology and Physiology Lectures",
+    "credits": 3,
+    "departmentId": "BSCI",
+    "description": "",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:27.970Z"
+  },
+  {
+    "id": "BSCI338Z",
+    "title": "Special Topics in Biology; Field Research",
+    "credits": 1,
+    "departmentId": "BSCI",
+    "description": "(Sponsoring Dept: BIOL). Cannot be used as credit toward the major requirements for any Biological Sciences major. Contact the Biology Department Undergraduate Office for course information.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:27.970Z"
+  },
+  {
+    "id": "BSCI339Z",
+    "title": "Selected Topics in Biology; Cell Death and Cancer Research Seminar",
+    "credits": 3,
+    "departmentId": "BSCI",
+    "description": "Credit cannot be applied to the requirements of any Biological Sciences Major.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:27.970Z"
+  },
+  {
+    "id": "CHEM131",
+    "title": "Chemistry I - Fundamentals of General Chemistry",
+    "credits": 3,
+    "departmentId": "CHEM",
+    "description": "An overview of the Periodic Table, inorganic substances, ionic and covalent bonding, bulk properties of materials, chemical equilibrium, and quantitative chemistry. CHEM131 is the first course in a four-semester sequence for students majoring in the sciences, other than Chemistry and Biochemistry majors.",
+    "genEd": [
+      "DSNL(fkwhCHEM132)orDSNS"
+    ],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:29.551Z"
+  },
+  {
+    "id": "CHEM132",
+    "title": "General Chemistry I Laboratory",
+    "credits": 1,
+    "departmentId": "CHEM",
+    "description": "Introduction to the quantification of chemical substances, including the concept of the mole and chemical stoichiometry. Additional work involves the synthesis of ionic substances and their qualitative characterization. Must be taken concurrently with CHEM131.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:29.551Z"
+  },
+  {
+    "id": "CHEM132C",
+    "title": "General Chemistry I Laboratory",
+    "credits": 1,
+    "departmentId": "CHEM",
+    "description": "Introduction to the quantification of chemical substances, including the concept of the mole and chemical stoichiometry. Additional work involves the synthesis of ionic substances and their qualitative characterization. Must be taken concurrently with CHEM131.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:29.551Z"
+  },
+  {
+    "id": "CHEM132S",
+    "title": "General Chemistry I Laboratory",
+    "credits": 1,
+    "departmentId": "CHEM",
+    "description": "Introduction to the quantification of chemical substances, including the concept of the mole and chemical stoichiometry. Additional work involves the synthesis of ionic substances and their qualitative characterization. Must be taken concurrently with CHEM131.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:29.551Z"
+  },
+  {
+    "id": "CHEM134",
+    "title": "Chemical Principles for Engineering",
+    "credits": 1,
+    "departmentId": "CHEM",
+    "description": "Basic chemistry for engineering students. Introduction to organic structures and polymers, gas laws, liquids, solids, phase changes, chemical kinetics and electrochemistry.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:29.551Z"
+  },
+  {
+    "id": "CHEM135",
+    "title": "General Chemistry for Engineers",
+    "credits": 3,
+    "departmentId": "CHEM",
+    "description": "The nature and composition of matter, solutions, chemical reactions, equilibria, and electrochemistry, with applications to various fields of engineering.",
+    "genEd": [
+      "DSNL(fkwhCHEM136)orDSNS"
+    ],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:29.551Z"
+  },
+  {
+    "id": "CHEM136",
+    "title": "General Chemistry Laboratory for Engineers",
+    "credits": 1,
+    "departmentId": "CHEM",
+    "description": "A laboratory course for engineering majors intending to take CHEM231 and CHEM232.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:29.551Z"
+  },
+  {
+    "id": "CHEM146",
+    "title": "Principles of General Chemistry",
+    "credits": 3,
+    "departmentId": "CHEM",
+    "description": "An overview of the Periodic Table, inorganic substances, ionic and covalent bonding, bulk properties of materials, chemical equilibrium, and quantitative chemistry. CHEM146 is the first course in a four-semester sequence for Chemistry and Biochemistry majors.",
+    "genEd": [
+      "DSNL(fkwhCHEM177)orDSNS"
+    ],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:29.551Z"
+  },
+  {
+    "id": "CHEM177",
+    "title": "Introduction to Laboratory Practices and Research in the Chemical Sciences",
+    "credits": 2,
+    "departmentId": "CHEM",
+    "description": "First semester laboratory course required for CHEM and BCHM majors. Introduction to laboratory techniques, including safety practices, scientific ethics, and presentation of current research topics.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:29.551Z"
+  },
+  {
+    "id": "CHEM231",
+    "title": "Organic Chemistry I",
+    "credits": 3,
+    "departmentId": "CHEM",
+    "description": "The chemistry of carbon: aliphatic compounds, aromatic compounds, stereochemistry, arenes, halides, alcohols, esters and spectroscopy.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:29.551Z"
+  },
+  {
+    "id": "CHEM232",
+    "title": "Organic Chemistry Laboratory I",
+    "credits": 1,
+    "departmentId": "CHEM",
+    "description": "Provides experience in developing some basic laboratory techniques, recrystallization, distillation, extraction, chromatography.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:29.551Z"
+  },
+  {
+    "id": "CHEM241",
+    "title": "Organic Chemistry II",
+    "credits": 3,
+    "departmentId": "CHEM",
+    "description": "A continuation of CHEM231 with emphasis on molecular structure; substitution reactions; carbonium ions; aromaticity; synthetic processes; macromolecules.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:29.551Z"
+  },
+  {
+    "id": "CHEM242",
+    "title": "Organic Chemistry Laboratory II",
+    "credits": 1,
+    "departmentId": "CHEM",
+    "description": "Synthetic organic chemistry through functional group manipulation, introduction to instrumentation essential to analysis and structure elucidation.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:29.551Z"
+  },
+  {
+    "id": "CHEM247",
+    "title": "Principles of Organic Chemistry II",
+    "credits": 4,
+    "departmentId": "CHEM",
+    "description": "A continuation of CHEM237 with emphasis on molecular structure, substitution reactions; carbonium ions; aromaticity; synthetic processes; macromolecules.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:29.551Z"
+  },
+  {
+    "id": "CHEM271",
+    "title": "General Chemistry and Energetics",
+    "credits": 2,
+    "departmentId": "CHEM",
+    "description": "An introduction to the physical aspects of chemistry; chemical kinetics, thermodynamics and electrochemistry in the context of current chemistry research.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:29.551Z"
+  },
+  {
+    "id": "CHEM272",
+    "title": "General Bioanalytical Chemistry Laboratory",
+    "credits": 2,
+    "departmentId": "CHEM",
+    "description": "An introduction to analytical chemistry with an emphasis on bio-analytical instrumentation and techniques.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:29.551Z"
+  },
+  {
+    "id": "CHEM277",
+    "title": "Fundamentals of Analytical and Bioanalytical Chemistry Laboratory",
+    "credits": 3,
+    "departmentId": "CHEM",
+    "description": "Quantitative analysis, inorganic analytical chemistry, and an introduction to bio-analytical instrumentation and techniques.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:29.551Z"
+  },
+  {
+    "id": "CHEM398",
+    "title": "Special Projects",
+    "credits": 2,
+    "departmentId": "CHEM",
+    "description": "Limited to chemistry honors students. Consult with Dr. Montague-Smith.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:29.551Z"
+  },
+  {
+    "id": "CHEM399A",
+    "title": "Introduction to Chemical Research",
+    "credits": 1,
+    "departmentId": "CHEM",
+    "description": "",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:29.551Z"
+  },
+  {
+    "id": "CHEM399B",
+    "title": "Introduction to Chemical Research",
+    "credits": 2,
+    "departmentId": "CHEM",
+    "description": "",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:29.551Z"
+  },
+  {
+    "id": "CHEM399C",
+    "title": "Introduction to Chemical Research",
+    "credits": 3,
+    "departmentId": "CHEM",
+    "description": "",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:29.551Z"
+  },
+  {
+    "id": "CHEM399X",
+    "title": "Introduction to Chemical Research; Chemistry Instruction",
+    "credits": 3,
+    "departmentId": "CHEM",
+    "description": "",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:29.551Z"
+  },
+  {
+    "id": "CHEM403",
+    "title": "Radiochemistry",
+    "credits": 3,
+    "departmentId": "CHEM",
+    "description": "Radioactive decay; introduction to properties of atomic nuclei; nuclear processes in cosmology; chemical, biomedical and environmental applications of radioactivity; nuclear processes as chemical tools; interaction of radiation with matter.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:29.551Z"
+  },
+  {
+    "id": "CHEM425",
+    "title": "Instrumental Methods of Analysis",
+    "credits": 4,
+    "departmentId": "CHEM",
+    "description": "Modern instrumentation in analytical chemistry. Electronics, spectroscopy, chromatography and electrochemistry.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:29.551Z"
+  },
+  {
+    "id": "CHEM434",
+    "title": "Air Pollution and Environmental Justice",
+    "credits": 3,
+    "departmentId": "CHEM",
+    "description": "Basic concepts in physics and chemistry of the atmosphere as applied to air pollution and environmental justice. Production, transformation, spatial scales, transport, and removal of air pollutants. The problems of photochemical smog, the greenhouse effect & climate change, stratospheric ozone, visibility.  Numerical simulation of air pollution. Health and environmental effects of air pollution in the developed and developing world; why some communities suffer disproportionately",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:29.551Z"
+  },
+  {
+    "id": "CHEM441",
+    "title": "Advanced Organic Chemistry",
+    "credits": 3,
+    "departmentId": "CHEM",
+    "description": "An advanced study of the compounds of carbon, with special emphasis on molecular orbital theory and organic reaction mechanisms.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:29.551Z"
+  },
+  {
+    "id": "CHEM460",
+    "title": "Structure Determination Using Spectroscopic Methods",
+    "credits": 3,
+    "departmentId": "CHEM",
+    "description": "The use of infrared, ultraviolet-visible, proton and carbon-13 nuclear magnetic resonance and mass spectroscopy for structure determination in organic chemistry.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:29.551Z"
+  },
+  {
+    "id": "CHEM480",
+    "title": "Principles of Physical Chemistry",
+    "credits": 3,
+    "departmentId": "CHEM",
+    "description": "Covers elementary thermodynamics, principles of kinetics and catalysis and selected topics in molecular quantum mechanics, spectroscopy and statistical mechanics. Topics will emphasize core subjects along with applications to biosciences, materials science, environmental science and related areas.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:29.551Z"
+  },
+  {
+    "id": "CHEM481",
+    "title": "Physical Chemistry I",
+    "credits": 3,
+    "departmentId": "CHEM",
+    "description": "Thermodynamics and kinetics of chemical and molecular systems. Topics may include internal energy, heat, work, enthalpy, entropy, free energy, and spontaneity as well as reaction order, differential rate laws, integrated rate laws, and rate laws for multi-step processes.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:29.551Z"
+  },
+  {
+    "id": "CHEM482",
+    "title": "Physical Chemistry II",
+    "credits": 3,
+    "departmentId": "CHEM",
+    "description": "Quantum mechanical nature of atoms and molecules. Topics may include model systems for electronic, vibrational, rotational and translational energies as well as connections to molecular spectroscopy and thermal distributions.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:29.551Z"
+  },
+  {
+    "id": "CMSC100",
+    "title": "Bits and Bytes of Computer and Information Sciences",
+    "credits": 1,
+    "departmentId": "CMSC",
+    "description": "Students are introduced to the fields (and disciplines) of computer science and information science within a small classroom setting. They will learn to make a successful transition from high school to the university, while exploring study skills, student success plans and research opportunities.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:17.530Z"
+  },
+  {
+    "id": "CMSC106",
+    "title": "Introduction to C Programming",
+    "credits": 4,
+    "departmentId": "CMSC",
+    "description": "Design and analysis of programs in C. An introduction to computing using structured programming concepts. Intended for students with no or minimal programming experience.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:17.530Z"
+  },
+  {
+    "id": "CMSC122",
+    "title": "Introduction to Computer Programming via the Web",
+    "credits": 3,
+    "departmentId": "CMSC",
+    "description": "Introduction to computer programming in the context of developing full featured dynamic web sites. Uses a problem solving approach to teach basics of program design and implementation using JavaScript; relates these skills to creation of dynamic web sites; then explores both the potential and limits of web-based information sources for use in research. Intended to help relate a student's major to these emerging technologies.",
+    "genEd": [
+      "DSSP"
+    ],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:17.530Z"
+  },
+  {
+    "id": "CMSC125",
+    "title": "Introduction to Computing",
+    "credits": 3,
+    "departmentId": "CMSC",
+    "description": "Introduces you to the computing field as a whole. You will gain skills used across the spectrum of computing majors and learn about the great variety of routes into the various areas of study and employment in technological fields.",
+    "genEd": [
+      "DSSP"
+    ],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:17.530Z"
+  },
+  {
+    "id": "CMSC131",
+    "title": "Object-Oriented Programming I",
+    "credits": 4,
+    "departmentId": "CMSC",
+    "description": "Introduction to programming and computer science. Emphasizes understanding and implementation of applications using object-oriented techniques. Develops skills such as program design and testing as well as implementation of programs using a graphical IDE. Programming done in Java.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:17.530Z"
+  },
+  {
+    "id": "CMSC132",
+    "title": "Object-Oriented Programming II",
+    "credits": 4,
+    "departmentId": "CMSC",
+    "description": "Introduction to use of computers to solve problems using software engineering principles. Design, build, test, and debug medium -size software systems and learn to use relevant tools. Use object-oriented methods to create effective and efficient problem solutions. Use and implement application programming interfaces (APIs). Programming done in Java.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:17.530Z"
+  },
+  {
+    "id": "CMSC133",
+    "title": "Object Oriented Programming I Beyond Fundamentals",
+    "credits": 2,
+    "departmentId": "CMSC",
+    "description": "An introduction to computer science and object-oriented programming for students with prior Java programming knowledge (conditionals, loops, methods). Program design, implementation, and testing using object-oriented techniques. All programming will be done in Java using a graphical IDE.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:17.530Z"
+  },
+  {
+    "id": "CMSC216",
+    "title": "Introduction to Computer Systems",
+    "credits": 4,
+    "departmentId": "CMSC",
+    "description": "Introduction to the interaction between user programs and the operating system/hardware. Major topics include C programming, introductory systems programming, and assembly language. Other concepts covered include UNIX, machine data representation, thread management, optimization, and virtual memory. Programming is done in the Linux Environment.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:17.530Z"
+  },
+  {
+    "id": "CMSC250",
+    "title": "Discrete Structures",
+    "credits": 4,
+    "departmentId": "CMSC",
+    "description": "Fundamental mathematical concepts related to computer science, including finite and infinite sets, relations, functions, and propositional logic. Introduction to other techniques, modeling and solving problems in computer science. Introduction to permutations, combinations, graphs, and trees with selected applications.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:17.530Z"
+  },
+  {
+    "id": "CMSC298A",
+    "title": "Special Topics in Computer Science",
+    "credits": 1,
+    "departmentId": "CMSC",
+    "description": "",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:17.530Z"
+  },
+  {
+    "id": "CMSC320",
+    "title": "Introduction to Data Science",
+    "credits": 3,
+    "departmentId": "CMSC",
+    "description": "An introduction to the data science pipeline, i.e., the end-to-end process of going from unstructured, messy data to knowledge and actionable insights. Provides a broad overview of several topics including statistical data analysis, basic data mining and machine learning algorithms, large-scale data management, cloud computing, and information visualization.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:17.530Z"
+  },
+  {
+    "id": "CMSC330",
+    "title": "Organization of Programming Languages",
+    "credits": 3,
+    "departmentId": "CMSC",
+    "description": "A study of programming languages, including their syntax, semantics, and implementation. Several different models of languages are discussed, including dynamic, scripting (e.g., Ruby, Python) functional (e.g., OCaml, Haskell, Scheme), and memory safe systems programming (e.g., Rust). Explores language features such as formal syntax, scoping and binding of variables, higher-order programming, typing, and type polymorphism. Introduces finite automata, context free grammar, parsing, lambda calculus, and basics of security attacks and software security.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:17.530Z"
+  },
+  {
+    "id": "CMSC335",
+    "title": "Web Application Development with JavaScript",
+    "credits": 3,
+    "departmentId": "CMSC",
+    "description": "Provides an introduction to modern ways of developing Web Applications/Services using JavaScript for both front-end and back-end. The course covers topics on fundamental JavaScript language constructs, server-side JavaScript, back-end data persistence, and client-side JavaScript to build Web Applications that interact with Web services and back-end databases.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:17.530Z"
+  },
+  {
+    "id": "CMSC351",
+    "title": "Algorithms",
+    "credits": 3,
+    "departmentId": "CMSC",
+    "description": "A systematic study of the complexity of some elementary algorithms related to sorting, graphs and trees, and combinatorics. Algorithms are analyzed using mathematical techniques to solve recurrences and summations.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:17.530Z"
+  },
+  {
+    "id": "CMSC389A",
+    "title": "Special Topics in Computer Science",
+    "credits": 3,
+    "departmentId": "CMSC",
+    "description": "",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:17.530Z"
+  },
+  {
+    "id": "CMSC396H",
+    "title": "Computer Science Honors Seminar",
+    "credits": 1,
+    "departmentId": "CMSC",
+    "description": "Overview of computer science research activities, techniques, and tools. Diverse research areas will be covered, including systems, networks, artificial intelligence, human-computer interaction, software engineering, graphics, vision, and theory.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:17.530Z"
+  },
+  {
+    "id": "CMSC411",
+    "title": "Computer Systems Architecture",
+    "credits": 3,
+    "departmentId": "CMSC",
+    "description": "Input/output processors and techniques. Intra-system communication, buses, caches. Addressing and memory hierarchies. Microprogramming, parallelism, and pipelining.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:17.530Z"
+  },
+  {
+    "id": "CMSC414",
+    "title": "Computer and Network Security",
+    "credits": 3,
+    "departmentId": "CMSC",
+    "description": "An introduction to the topic of security in the context of computer systems and networks. Identify, analyze, and solve network-related security problems in computer systems. Fundamentals of number theory, authentication, and encryption technologies, as well as the practical problems that have to be solved in order to make those technologies workable in a networked environment, particularly in the wide-area Internet environment.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:17.530Z"
+  },
+  {
+    "id": "CMSC417",
+    "title": "Computer Networks",
+    "credits": 3,
+    "departmentId": "CMSC",
+    "description": "Computer networks and architectures. The OSI model including discussion and examples of various network layers. A general introduction to existing network protocols. Communication protocol specification, analysis, and testing.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:17.530Z"
+  },
+  {
+    "id": "CMSC420",
+    "title": "Advanced Data Structures",
+    "credits": 3,
+    "departmentId": "CMSC",
+    "description": "Description, properties, and storage allocation functions of data structures including balanced binary trees, B-Trees, hash tables, skiplists, tries, KD-Trees and Quadtrees. Algorithms for manipulating structures. Applications from areas such as String Processing, Computer Graphics, Information Retrieval, Computer Networks, Computer Vision, and Operating Systems.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:17.530Z"
+  },
+  {
+    "id": "CMSC421",
+    "title": "Introduction to Artificial Intelligence",
+    "credits": 3,
+    "departmentId": "CMSC",
+    "description": "Introduces a range of ideas and methods in AI, varying semester to semester but chosen largely from: automated heuristic search, planning, games, knowledge representation, logical and statistical inference, learning, natural language processing, vision, robotics, cognitive modeling, and intelligent agents. Programming projects will help students obtain a hands-on feel for various topics.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:17.530Z"
+  },
+  {
+    "id": "CMSC422",
+    "title": "Introduction to Machine Learning",
+    "credits": 3,
+    "departmentId": "CMSC",
+    "description": "Machine Learning studies representations and algorithms that allow machines to improve their performance on a task from experience. This is a broad overview of existing methods for machine learning and an introduction to adaptive systems in general. Emphasis is given to practical aspects of machine learning and data mining.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:17.530Z"
+  },
+  {
+    "id": "CMSC423",
+    "title": "Computational Genomics",
+    "credits": 3,
+    "departmentId": "CMSC",
+    "description": "Computers have revolutionized modern biological research by enabling the management and analysis of the large amounts of data generated through high-throughput experiments. This course provides insight into some of the biological problems that can be addressed using computational methods and introduces the main data structures and algorithms used to solve problems related to biological sequences such as DNA, RNA, and proteins.  Many of the techniques taught in this course are applicable beyond the bioinformatics domain, as they are relevant to and commonly used in other areas of computer science. No knowledge of biology is required for this course.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:17.530Z"
+  },
+  {
+    "id": "CMSC424",
+    "title": "Database Design",
+    "credits": 3,
+    "departmentId": "CMSC",
+    "description": "Students are introduced to database systems and motivates the database approach as a mechanism for modeling the real world. An in-depth coverage of the relational model, logical database design, query languages, and other database concepts including query optimization, concurrency control; transaction management, and log based crash recovery. Distributed and Web database architectures are also discussed.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:17.530Z"
+  },
+  {
+    "id": "CMSC425",
+    "title": "Game Programming",
+    "credits": 3,
+    "departmentId": "CMSC",
+    "description": "An introduction to the principles and practice of computer game programming and design. This includes an introduction to game hardware and systems, the principles of game design, object and terrain modeling, game physics, artificial intelligence for games, networking for games, rendering and animation, and aural rendering. Course topics are reinforced through the design and implementation of a working computer game.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:17.530Z"
+  },
+  {
+    "id": "CMSC426",
+    "title": "Computer Vision",
+    "credits": 3,
+    "departmentId": "CMSC",
+    "description": "An introduction to basic concepts and techniques in computervision. This includes low-level operations such as image filtering and edge detection, 3D reconstruction of scenes using stereo and structure from motion, and object detection, recognition and classification.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:17.530Z"
+  },
+  {
+    "id": "CMSC430",
+    "title": "Introduction to Compilers",
+    "credits": 3,
+    "departmentId": "CMSC",
+    "description": "Topics include lexical analysis, parsing, intermediate representations, program analysis, optimization, and code generation.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:17.530Z"
+  },
+  {
+    "id": "CMSC433",
+    "title": "Programming Language Technologies and Paradigms",
+    "credits": 3,
+    "departmentId": "CMSC",
+    "description": "Programming language technologies (e.g., object-oriented programming), their implementations and use in software design and implementation.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:17.530Z"
+  },
+  {
+    "id": "CMSC434",
+    "title": "Introduction to Human-Computer Interaction",
+    "credits": 3,
+    "departmentId": "CMSC",
+    "description": "Assess usability by quantitative and qualitative methods. Conduct task analyses, usability tests, expert reviews, and continuing assessments of working products by interviews, surveys, and logging. Apply design processes and guidelines to develop professional quality user interfaces. Build low-fidelity paper mockups, and a high-fidelity prototype using contemporary tools such as graphic editors and a graphical programming environment (eg: Visual Basic, Java).",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:17.530Z"
+  },
+  {
+    "id": "CMSC435",
+    "title": "Software Engineering",
+    "credits": 3,
+    "departmentId": "CMSC",
+    "description": "State-of-the-art techniques in software design and development. Laboratory experience in applying the techniques covered. Structured design, structured programming, top-down design and development, segmentation and modularization techniques, iterative enhancement, design and code inspection techniques, correctness, and chief-programmer teams. The development of a large software project.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:17.530Z"
+  },
+  {
+    "id": "ENEE101",
+    "title": "Introduction to Electrical & Computer Engineering",
+    "credits": 3,
+    "departmentId": "ENEE",
+    "description": "An exploration of topics within Electrical & Computer Engineering (ECE). Students will be introduced to key elements of both the Electrical Engineering and Computer Engineering curriculum, including: circuits, computing systems and software, communications and controls, electrodynamics and waves, microelectronics, signal processing, and power systems.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:22.665Z"
+  },
+  {
+    "id": "ENEE140",
+    "title": "Introduction to Programming Concepts for Engineers",
+    "credits": 2,
+    "departmentId": "ENEE",
+    "description": "Introduction to the programming environment: editing, compiling, UNIX, data types and variable scope; program selection, formatted/unformatted input/output, repetition, functions, arrays and strings.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:22.665Z"
+  },
+  {
+    "id": "ENEE150",
+    "title": "Intermediate Programming Concepts for Engineers",
+    "credits": 3,
+    "departmentId": "ENEE",
+    "description": "Advanced programming concepts: coding conventions and style; pointers; dynamic memory allocation and data structures; linked lists; graphs; abstract data types; object-oriented design. There will be team-based software projects and group presentations.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:22.665Z"
+  },
+  {
+    "id": "ENEE200",
+    "title": "Technology and Consequences: Engineering, Ethics, and Humanity",
+    "credits": 3,
+    "departmentId": "ENEE",
+    "description": "What makes a technology socially responsible? At UMD, the Fearless Ideas campaign asks us to aim our enthusiasm for technology at big real problems. At the same time, we are coming to appreciate the increasingly complex nature of technological systems as they become integrated into all forms of infrastructure, we realize they may be unpredictable, interdependent on social and biological systems, and have unintended consequences. In this midst of this complexity, people make decisions with far reaching impacts. How then do we follow our passion for technology and innovation but also stay skeptical in a way that allows us to consider the potential and shortcomings of technology? Designed for both engineering and non-engineering students wishing to explore and assess the impact of engineering technology on society and the role of society in generating that technology.",
+    "genEd": [
+      "DSHU",
+      "SCIS"
+    ],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:22.665Z"
+  },
+  {
+    "id": "ENEE205",
+    "title": "Electric Circuits",
+    "credits": 4,
+    "departmentId": "ENEE",
+    "description": "Design, analysis, simulation, construction and evaluation of electric circuits. Terminal Relationships. Kirchoff's laws. DC and AC steady state analysis. Node and mesh methods. Thevenin and Norton equivalent circuits. Transient behavior of first- and second-order circuits. Frequency response and transfer functions. Ideal op-amp circuits. Diode and transistor circuits.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:22.665Z"
+  },
+  {
+    "id": "ENEE222",
+    "title": "Elements of Discrete Signal Analysis",
+    "credits": 4,
+    "departmentId": "ENEE",
+    "description": "Discrete- and continuous-time signals, sampling of sinusoids.  Discrete Fourier transform: properties and applications. Periodic signals and Fourier series. Discrete-time linear filters in time and frequency domains. Numerical applications and implementation of algorithms (using MATLAB).",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:22.665Z"
+  },
+  {
+    "id": "ENEE244",
+    "title": "Digital Logic Design",
+    "credits": 3,
+    "departmentId": "ENEE",
+    "description": "The design and analysis of combinational and synchronous sequential systems comprising digital logic gates and flip-flop memory devices; underlying tools such as switching and Boolean algebras and Karnaugh map simplification of gate networks; design and use of decoders, multiplexers, encoders, adders, registers, counters, sequence recognizers, programmable logic arrays (PLAs), read-only memories (ROMS, PROMS), and similar devices. Arbitrary radix conversion.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:22.665Z"
+  },
+  {
+    "id": "ENEE245",
+    "title": "Digital Circuits and Systems Laboratory",
+    "credits": 2,
+    "departmentId": "ENEE",
+    "description": "Introduction to basic measurement techniques and electrical laboratory equipment (power supplies, oscilloscopes, voltmeters, etc.). Design, construction, and characterization of digital circuits containing logic gates, sequential elements, oscillators, and digital integrated circuits. Introduction to digital design and simulation with the Verilog Hardware Description Language (HDL).",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:22.665Z"
+  },
+  {
+    "id": "ENEE290",
+    "title": "Introduction to Differential Equations and Linear Algebra for Engineers",
+    "credits": 4,
+    "departmentId": "ENEE",
+    "description": "First-order differential equations, matrices and systems of linear equations, finite-dimensional vector spaces, inner product spaces, eigenvalues and eigenvectors, linear differential equations of higher order, and systems of differential equations. This course covers important topics in mathematics for Electrical and Computer Engineers. Specifically, several topics are covered, including first-order differential equations, matrices and systems of linear equations, finite-dimensional vector spaces, inner product spaces, eigenvalues and eigenvectors, linear differential equations of higher order, and systems of differential equations.  Theoretical topics presented in the lectures will be reinforced by laboratory exercises.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:22.665Z"
+  },
+  {
+    "id": "ENEE301",
+    "title": "Current Trends in Electrical and Computer Engineering",
+    "credits": 3,
+    "departmentId": "ENEE",
+    "description": "A survey course on the current trends in Electrical and Computer Engineering (ECE). Students will be introduced to foundational knowledge of key technologies, providing them with technical information and a broad principled understanding of the relevance of these technologies to society. Students will acquire these knowledge bases through high-level lectures and hands-on experiential learning involving key technologies, including: energy generation and utilization, communication, advanced computing, information processing and machine intelligence, and autonomy.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:22.665Z"
+  },
+  {
+    "id": "ENEE304",
+    "title": "Introduction to Micro and Nanoelectronics",
+    "credits": 3,
+    "departmentId": "ENEE",
+    "description": "Introduction to semiconductor device physics: drift-diffusion model, pn junction properties, BJTs and FETs. Electronic circuits: diode circuits, BJT and MOSFET amplifiers, logic gates and multi-transistor circuits (such as differential amplifiers and current mirrors).",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:22.665Z"
+  },
+  {
+    "id": "ENEE305",
+    "title": "Introduction to Micro and Nanoelectronics Lab",
+    "credits": 2,
+    "departmentId": "ENEE",
+    "description": "Introductory laboratory in semiconductors and electronics. Characterization of diodes followed by design and testing of analog and digital circuits at the transistor (FET and BJT) level.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:22.665Z"
+  },
+  {
+    "id": "ENEE322",
+    "title": "Signal and System Theory",
+    "credits": 3,
+    "departmentId": "ENEE",
+    "description": "This is a course on signals and systems. The course lectures cover concepts in linear systems, and time and frequency domain analysis of signals and linear systems. Signal analysis topics: discrete- and continuous-time Fourier transforms, Laplace and z-transforms. Dynamical system properties: linearity, time-invariance, stability and invertibility. Analysis of linear time-invariant systems in the time domain (impulse response and convolution) and transform domain (transfer function and frequency response). Applications in signal processing, communications and control.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:22.665Z"
+  },
+  {
+    "id": "ENEE323",
+    "title": "Signals and Systems: Theory and Applications",
+    "credits": 4,
+    "departmentId": "ENEE",
+    "description": "This is a course and laboratory on signals and systems.  The course lectures cover concepts in linear systems, and time and frequency domain analysis of signals and linear systems.  Signal analysis topics: discrete- and continuous-time Fourier transforms, Laplace and z-transforms. Dynamical system properties: linearity, time-invariance, stability and invertibility.  Analysis of linear time-invariant systems in the time domain (impulse response and convolution) and transform domain (transfer function and frequency response).  Applications in signal processing, communications and control.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:22.665Z"
+  },
+  {
+    "id": "ENEE324",
+    "title": "Engineering Probability",
+    "credits": 3,
+    "departmentId": "ENEE",
+    "description": "Axioms of probability; conditional probability and Bayes' rules; random variables, probability distribution and densities: functions of random variables: weak law of large numbers and central limit theorem. Introduction to random processes; correlation functions, spectral densities, and linear systems. Applications to noise in electrical systems, filtering of signals from noise, estimation, and digital communications.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:22.665Z"
+  },
+  {
+    "id": "ENEE350",
+    "title": "Computer Organization",
+    "credits": 3,
+    "departmentId": "ENEE",
+    "description": "Structure and organization of digital computers. Registers, memory, control and I/O. Data and instruction formats, addressing modes, assembly language programming. Elements of system software, subroutines and their linkages.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:22.665Z"
+  },
+  {
+    "id": "ENEE382",
+    "title": "Electromagnetics",
+    "credits": 4,
+    "departmentId": "ENEE",
+    "description": "Theory and tools needed to solve electromagnetic problems and understand how electromagnetic waves propagate and interact with materials.  Fields and potentials. Maxwell's equations and wave propagation. Reflection and transmission. Transmission lines. Antennas and radiation.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:22.665Z"
+  },
+  {
+    "id": "ENEE408A",
+    "title": "Capstone Design Project:Microprocessor-Based Design",
+    "credits": 3,
+    "departmentId": "ENEE",
+    "description": "This course provides a team-based experience in the design and implementation of a microprocessor-based system to solve a real-world problem. A product specification or client requirement forms the basis for the student teams development of an initial technical design specification. The team then divides into smaller groups for the parallel development of hardware and software subsystems of the product device. Upon completion and test of the various subsystems, software and hardware components are integrated into the system prototype and the system is tested and documented.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:22.665Z"
+  },
+  {
+    "id": "ENEE408C",
+    "title": "Capstone Design Project: Modern Digital System Design",
+    "credits": 3,
+    "departmentId": "ENEE",
+    "description": "A real-world digital system design experience that prepares students for careers in FPGA and ASIC design. Student teams use the Verilog hardware description language together with industry-standard simulation and synthesis tools to design medium-complexity digital chips that are ultimately configured and tested on FPGAs with real-world applications. Results from these projects will be presented through in-class presentations and written reports.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:22.665Z"
+  },
+  {
+    "id": "ENEE408I",
+    "title": "Capstone Design Project: Autonomous Control of Interacting Robots",
+    "credits": 3,
+    "departmentId": "ENEE",
+    "description": "Co-requisite: ENEE460 is recommended. The course involves students in the design,development, and application of autonomous robotic systems.The robots are 4 wheeled vehicles with on-board sensors (cameras, acoustic sensors),computers and wireless communications capabilities. The students work in teams to program the the robots to accomplish a task individually and in teams of 2 or more robots. Applications vary from semester to semester, including racing with passing, soccer, search and identify.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:22.665Z"
+  },
+  {
+    "id": "ENEE408V",
+    "title": "Capstone Design Project; Smart Submersible Marine Vehicles",
+    "credits": 3,
+    "departmentId": "ENEE",
+    "description": "Students will design and build small marine crafts (baby submarines) capable of communication, autonomous navigation, computer vision and swarm formations. Students will learn the fundamentals of underwater depth control, propulsion and dynamics, localization and navigation, wireless above and underwater communication and others. Students will utilize skills in microprocessors hardware/software codesign, electromagnetics, acoustics, optics, power, BLM techniques, image/video processing and controls, including elements of mechanical design. Teams will work together to specialize in various subsystems; and following standards for compatibility and systems integration. As an authentic design process mimicking product development, strict deadlines and milestones will be imposed and students may be expected to do work outside the regular meeting times.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:22.665Z"
+  },
+  {
+    "id": "ENEE411",
+    "title": "Advanced Analog and Digital Electronics",
+    "credits": 3,
+    "departmentId": "ENEE",
+    "description": "Examination of analog and digital device models for analysis, design, and simulation of transistor level electronic circuits, emphasizing Metal Oxide Silicon Field Effect Transistors (MOSFETs); fundamental single transistor configurations; frequency response, feedback, and stability of multi-transistor circuits, such as current mirrors, differential amplifiers, voltage references, operational amplifiers and data converters; complementary Metal Oxide Silicon (CMOS) implementations of static and clocked digital as well as mixed signal circuits.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:22.665Z"
+  },
+  {
+    "id": "ENEE416",
+    "title": "Integrated Circuit Fabrication Laboratory",
+    "credits": 3,
+    "departmentId": "ENEE",
+    "description": "Characterization of wafers and fabrication steps. Oxide growth, lithography, dopant diffusion, and metal deposition and patterning will be discussed in the lectures and carried out in the lab in fabricating NMOS transistor circuits. The transistor characteristics will be measured and related to the fabrication parameters.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:22.665Z"
+  },
+  {
+    "id": "ENEE420",
+    "title": "Communication Systems",
+    "credits": 3,
+    "departmentId": "ENEE",
+    "description": "Fourier series, Fourier transforms and linear system analysis; random signals, autocorrelation functions and power spectral densities; analog communication systems: amplitude modulation, single-sideband modulation, frequency and phase modulation, sampling theorem and pulse-amplitude modulation; digital communication systems pulse-code modulation, phase-shift keying, differential phase shift keying, frequency shift keying; performance of analog and digital communication systems in the presence of noise.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:22.665Z"
+  },
+  {
+    "id": "ENEE425",
+    "title": "Digital Signal Processing",
+    "credits": 3,
+    "departmentId": "ENEE",
+    "description": "Sampling as a modulation process; aliasing; the sampling theorem; the Z-transform and discrete-time system analysis; direct and computer-aided design of recursive and nonrecursive digital filters; the Discrete Fourier Transform (DFT) and Fast Fourier Transform (FFT); digital filtering using the FFT; analog-to-digital and digital-to analog conversion; effects of quantization and finite-word-length arithmetic.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:22.665Z"
+  },
+  {
+    "id": "ENEE427",
+    "title": "Communications Design Laboratory",
+    "credits": 2,
+    "departmentId": "ENEE",
+    "description": "Advanced Laboratory course exploring signal processing and communication systems theoretical concepts and implementing them on actual DSP based hardware in real time.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:22.665Z"
+  },
+  {
+    "id": "ENEE429Z",
+    "title": "Topics in Communications; Introduction to Wireless Networking",
+    "credits": 3,
+    "departmentId": "ENEE",
+    "description": "Prerequisites: Minimum of C- or better ENEE324 or STAT400; and completion of all lower-division technical courses in the EE curriculum. An introduction to wireless networking technologies through an in-depth exploration of fundamental architectural and design principles. It covers key concepts, including ALOHA, CSMA, and 802.11, with a focus on their performance analysis using formal analytical methods and realistic simulations. The course leverages the industry and research-relevant NS-3 network simulator to develop and analyze real-world wireless network projects, providing hands-on practical experience.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:22.665Z"
+  },
+  {
+    "id": "ENEE436",
+    "title": "Foundations of Machine Learning",
+    "credits": 3,
+    "departmentId": "ENEE",
+    "description": "A broad introduction to the foundations of Machine Learning (ML), as well as hands-on experience in applying ML algorithms to real-world data sets. Topics include various techniques in supervised and unsupervised learning, as well as applications to computer vision, data mining, and speech recognition.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:22.665Z"
+  },
+  {
+    "id": "ENEE440",
+    "title": "Microprocessors",
+    "credits": 3,
+    "departmentId": "ENEE",
+    "description": "Microprocessor architectures, instruction sets, and applications. Bus structures, memory, I/O interfacing. Assembly language programming, LSI device configuration, and the embedding of microprocessors in systems.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:22.665Z"
+  },
+  {
+    "id": "ENEE445",
+    "title": "Computer Laboratory",
+    "credits": 2,
+    "departmentId": "ENEE",
+    "description": "This laboratory course focuses on the hardware/software interface in computer systems. Hands-on experiments are used to teach design, construction, analysis, and measurement of both hardware and software for embedded systems. Projects emphasize using microcontrollers for control, sensing, and communication through various I/O devices.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:22.665Z"
+  },
+  {
+    "id": "MATH003",
+    "title": "Developmental Mathematics",
+    "credits": 3,
+    "departmentId": "MATH",
+    "description": "A review of Intermediate High School Algebra intended for students preparing for one of the credit bearing Fundamental Studies Math Courses. It is taught in special computer labs using a self-paced computer program. The curriculum will be geared toward the student's level of algebra skills and eventual goals. There is a special fee for the course that may be applied in addition to the regular tuition charge. Students should refer to the schedule of classes for details on fees as they apply to a particular semester. The course does not carry any credit toward any degree at the University. The course is repeatable. Topics will be chosen from exponents, polynomials, linear equations, quadratic equations as well as polynomial, rational, exponential and logarithm functions and elementary probability or statistics, depending on the student.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:19.460Z"
+  },
+  {
+    "id": "MATH007",
+    "title": "Algebra for MATH 107",
+    "credits": 3,
+    "departmentId": "MATH",
+    "description": "A review of Intermediate High School Algebra intended for students preparing for MATH107. It is taught 3 days per week for the first 3 weeks, then leads directly into a special section of MATH107, the same semester, which also meets 3 days per week. Continuation in MATH107 is conditional on the student passing the MATHEMATICS PLACEMENT EXAM at the appropriate level. Topics include linear equations, linear inequalities, operations on polynomials, factoring, solutions of quadratic equations, as well as exponential and logarithm functions. MATH007 does not carry any credit toward any degree at the University, nor is it graded. It leads to either MATH107 or MATH003, both of which are graded.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:19.460Z"
+  },
+  {
+    "id": "MATH013",
+    "title": "Algebra for MATH 113",
+    "credits": 3,
+    "departmentId": "MATH",
+    "description": "A review of Intermediate High School Algebra intended for students preparing for MATH113. It is taught 3 days per week for the first 3 weeks, then leads directly into a special section of MATH113, the same semester, which also meets 3 days per week. Continuation in MATH113 is conditional on the student passing the MATHEMATICS PLACEMENT EXAM at the appropriate level. Topics include exponents, polynomials, linear equations, quadratic equations, as well as polynomial, rational, exponential, and logarithm functions, and trigonometry. MATH013 does not carry any credit toward any degree at the University, nor is it graded. It leads directly to MATH113 (or MATH107), or MATH003, all of which are graded.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:19.460Z"
+  },
+  {
+    "id": "MATH015",
+    "title": "Algebra for MATH 115",
+    "credits": 3,
+    "departmentId": "MATH",
+    "description": "A review of Intermediate High School Algebra intended for students preparing for MATH115. It is taught 3 days per week for the first 3 weeks, then leads directly into a special section of MATH115, the same semester, which also meets 3 days per week. Continuation in MATH115 is conditional on the student passing the MATHEMATICS PLACEMENT EXAM at the appropriate level. Topics include exponents, polynomials, linear equations in one and two variables, quadratic equations, as well as polynomial, rational, exponential, logarithm functions and trigonometry. MATH015 does not carry any credit toward any degree at the University, nor is it graded. It leads directly to MATH115 (or MATH107 or MATH113), or MATH003, all of which are graded.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:19.460Z"
+  },
+  {
+    "id": "MATH107",
+    "title": "Introduction to Math Modeling and Probability",
+    "credits": 3,
+    "departmentId": "MATH",
+    "description": "A goal is to convey the power of mathematics as shown by a variety of problems which can be modeled and solved by quantitative means. Also included is an introduction to probability. Topics include data analysis, equations, systems of equations, inequalities, elementary linear programming, Venn diagrams, counting, basic probability, permutations, combinations, tree diagrams, standard normal and normal distributions. The mathematics of finance is covered. The course includes problem solving and decision making in economics, management, and social sciences.",
+    "genEd": [
+      "FSMA"
+    ],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:19.460Z"
+  },
+  {
+    "id": "MATH113",
+    "title": "College Algebra and Trigonometry",
+    "credits": 3,
+    "departmentId": "MATH",
+    "description": "Topics include elementary functions including graphs and applications of: polynomial, rational, exponential, and logarithmic functions. Systems of equations and applications. Trigonometric functions: angle and radian measure, graphs and applications.",
+    "genEd": [
+      "FSMA"
+    ],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:19.460Z"
+  },
+  {
+    "id": "MATH115",
+    "title": "Precalculus",
+    "credits": 3,
+    "departmentId": "MATH",
+    "description": "Preparation for MATH120, MATH135 or MATH140. Elementary functions and graphs: polynomials, rational functions, exponential and logarithmic functions, trigonometric functions. Algebraic techniques preparatory for calculus.",
+    "genEd": [
+      "FSMA"
+    ],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:19.460Z"
+  },
+  {
+    "id": "MATH120",
+    "title": "Elementary Calculus I",
+    "credits": 3,
+    "departmentId": "MATH",
+    "description": "Basic ideas of differential and integral calculus, with emphasis on elementary techniques of differentiation and applications.",
+    "genEd": [
+      "FSAR",
+      "FSMA"
+    ],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:19.460Z"
+  },
+  {
+    "id": "MATH121",
+    "title": "Elementary Calculus II",
+    "credits": 3,
+    "departmentId": "MATH",
+    "description": "Trigonometric functions, techniques of integration, infinite series, differential equations, probability.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:19.460Z"
+  },
+  {
+    "id": "MATH135",
+    "title": "Discrete Mathematics for Life Sciences",
+    "credits": 4,
+    "departmentId": "MATH",
+    "description": "Basic discrete mathematics, with emphasis on relevant models and techniques to the life sciences.",
+    "genEd": [
+      "FSAR",
+      "FSMA"
+    ],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:19.460Z"
+  },
+  {
+    "id": "MATH136",
+    "title": "Calculus for Life Sciences",
+    "credits": 4,
+    "departmentId": "MATH",
+    "description": "Continuation of MATH135, including basic ideas of differential and integral calculus, with emphasis on elementary techniques and applications to the life sciences.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:19.460Z"
+  },
+  {
+    "id": "MATH140",
+    "title": "Calculus I",
+    "credits": 4,
+    "departmentId": "MATH",
+    "description": "Introduction to calculus, including functions, limits, continuity, derivatives and applications of the derivative, sketching of graphs of functions, definite and indefinite integrals, and calculation of area. The course is especially recommended for science, engineering and mathematics majors.",
+    "genEd": [
+      "FSAR",
+      "FSMA"
+    ],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:19.460Z"
+  },
+  {
+    "id": "MATH141",
+    "title": "Calculus II",
+    "credits": 4,
+    "departmentId": "MATH",
+    "description": "Continuation of MATH140, including techniques of integration, improper integrals, applications of integration (such as volumes, work, arc length, moments), inverse functions, exponential and logarithmic functions, sequences and series.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:19.460Z"
+  },
+  {
+    "id": "MATH206",
+    "title": "Introduction to Matlab",
+    "credits": 1,
+    "departmentId": "MATH",
+    "description": "This course is intended to prepare students for subsequent courses requiring computation with MATLAB. Covers basics of MATLAB including simple commands, variables, solving equations, graphing differentiation and integration, matrices and vectors, functions, M-files and fundamentals of programming in the MATLAB environment. When offered in Winter and Summer terms, the course is offered in a format suitable for online distance learning.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:19.460Z"
+  },
+  {
+    "id": "MATH212",
+    "title": "Elements of Numbers and Operations",
+    "credits": 3,
+    "departmentId": "MATH",
+    "description": "Reviews and extends topics of arithmetic and number theory related to the elementary school curriculum, particularly number systems and operations with natural numbers, integers, and rationals.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:19.460Z"
+  },
+  {
+    "id": "MATH213",
+    "title": "Elements of Geometry and Measurement",
+    "credits": 3,
+    "departmentId": "MATH",
+    "description": "Properties of geometric objects in two and three dimensions; parallel lines, curves and polygons; ratio, proportion, similarity; transformational geometry and measurement, constructions, justifications and proofs.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:19.460Z"
+  },
+  {
+    "id": "MATH214",
+    "title": "Elements of Probability and Statistics",
+    "credits": 3,
+    "departmentId": "MATH",
+    "description": "Permutations and combinations; probability; collecting and representing data; using statistics to analyze and interpret data.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:19.460Z"
+  },
+  {
+    "id": "MATH240",
+    "title": "Introduction to Linear Algebra",
+    "credits": 4,
+    "departmentId": "MATH",
+    "description": "Basic concepts of linear algebra: vector spaces, applications to line and plane geometry, linear equations and matrices, similar matrices, linear transformations, eigenvalues, determinants and quadratic forms.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:19.460Z"
+  },
+  {
+    "id": "MATH241",
+    "title": "Calculus III",
+    "credits": 4,
+    "departmentId": "MATH",
+    "description": "Introduction to multivariable calculus, including vectors and vector-valued functions, partial derivatives and applications of partial derivatives (such as tangent planes and Lagrange multipliers), multiple integrals, volume, surface area, and the classical theorems of Green, Stokes and Gauss.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:19.460Z"
+  },
+  {
+    "id": "MATH243",
+    "title": "Introduction to Linear Algebra and Differential Equations",
+    "credits": 4,
+    "departmentId": "MATH",
+    "description": "The basics of linear algebra and differential equations, with an emphasis on general physical and engineering applications. Aimed at students who need the material for future coursework but do not need as much depth and rigor as provided by MATH240 and MATH246.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:19.460Z"
+  },
+  {
+    "id": "MATH246",
+    "title": "Differential Equations for Scientists and Engineers",
+    "credits": 3,
+    "departmentId": "MATH",
+    "description": "An introduction to the basic methods of solving ordinary differential equations. Equations of first and second order, linear differential equations, Laplace transforms, numerical methods and the qualitative theory of differential equations.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:19.460Z"
+  },
+  {
+    "id": "MATH274",
+    "title": "History of Mathematics",
+    "credits": 3,
+    "departmentId": "MATH",
+    "description": "An overview of aspects in the history of mathematics from its beginning in the concrete problem solving of ancient times through the development of abstraction in the 19th and 20th centuries. The course considers both mathematical ideas and the context in which they developed in various civilizations around the world.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:19.460Z"
+  },
+  {
+    "id": "MATH299B",
+    "title": "Selected Topics in Mathematics; Putnam Express",
+    "credits": 1,
+    "departmentId": "MATH",
+    "description": "A discussion with the instructor before registering for this class is highly recommended.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:19.460Z"
+  },
+  {
+    "id": "MATH310",
+    "title": "Introduction to Mathematical Proof",
+    "credits": 3,
+    "departmentId": "MATH",
+    "description": "To develop the students' ability to construct a rigorous proof of a mathematical claim. Students will also be made aware of mathematical results that are of interest to those wishing to analyze a particular mathematical model. Topics will be drawn from logic, set theory, structure of the number line, elementary topology, metric spaces, functions, sequences and continuity.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:19.460Z"
+  },
+  {
+    "id": "MATH314",
+    "title": "Introduction to Probability, Data, Analysis and Statistics for Preservice Middle School Teachers",
+    "credits": 3,
+    "departmentId": "MATH",
+    "description": "Analysis of bivariate data, probability and randomness, law of large numbers, central limit theorem, probabilities for independent and dependent events, counting techniques, random variables and probability distributions, expected values, sampling distributions, and confidence intervals.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:19.460Z"
+  },
+  {
+    "id": "MATH340",
+    "title": "Multivariable Calculus, Linear Algebra and Differential Equations I (Honors)",
+    "credits": 4,
+    "departmentId": "MATH",
+    "description": "First semester of the MATH340-341 sequence which gives a unified and enriched treatment of multivariable calculus, linear algebra and ordinary differential equations, with supplementary material from subjects such as differential geometry, Fourier series and calculus of variations. Students completing MATH340-341 will have covered the material of MATH240, MATH241, and MATH246, and may not also receive credit for MATH240, MATH241 or MATH246.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:19.460Z"
+  },
+  {
+    "id": "MATH386",
+    "title": "Experiential Learning",
+    "credits": 3,
+    "departmentId": "MATH",
+    "description": "Prerequisite: Must have learning proposal approved by the CMNS Mathematics Department.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:19.460Z"
+  },
+  {
+    "id": "MATH401",
+    "title": "Applications of Linear Algebra",
+    "credits": 3,
+    "departmentId": "MATH",
+    "description": "Various applications of linear algebra: theory of finite games, linear programming, matrix methods as applied to finite Markov chains, random walk, incidence matrices, graphs and directed graphs, networks and transportation problems.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:19.460Z"
+  },
+  {
+    "id": "MATH402",
+    "title": "Algebraic Structures",
+    "credits": 3,
+    "departmentId": "MATH",
+    "description": "For students having only limited experience with rigorous mathematical proofs. Parallels MATH403. Students planning graduate work in mathematics should take MATH403. Groups, rings, integral domains and fields, detailed study of several groups; properties of integers and polynomials. Emphasis is on the origin of the mathematical ideas studied and the logical structure of the subject.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:19.460Z"
+  },
+  {
+    "id": "MATH403",
+    "title": "Introduction to Abstract Algebra",
+    "credits": 3,
+    "departmentId": "MATH",
+    "description": "Integers; groups, rings, integral domains, fields.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:19.460Z"
+  },
+  {
+    "id": "PHYS102",
+    "title": "Physics of Music",
+    "credits": 3,
+    "departmentId": "PHYS",
+    "description": "A study of the physical basis of sound, acoustical properties of sound, the human ear and voice, reproduction of sound, electronic music, acoustical properties of auditoriums, and other selected topics.",
+    "genEd": [
+      "DSNL(fkwhPHYS103)"
+    ],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:31.358Z"
+  },
+  {
+    "id": "PHYS103",
+    "title": "Physics of Music Laboratory",
+    "credits": 1,
+    "departmentId": "PHYS",
+    "description": "Optional laboratory to accompany PHYS 102. Laboratory experiments, including the velocity of sound, sound quality and wave shape, traveling and standing waves, fourier synthesis and analysis, musical synthesizer, psychoacoustics, and audio equipment.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:31.358Z"
+  },
+  {
+    "id": "PHYS105",
+    "title": "A Global Challenge: Energy and Climate Change",
+    "credits": 3,
+    "departmentId": "PHYS",
+    "description": "How will the world address the energy needs of a growing population and its impact on climate change? This class will explore potential solutions to mitigate our atmospheric impact, including technological innovations and policy measures. Additionally, we will analyze the roles of economics, government, and industry in shaping our responses within the context of modern science.",
+    "genEd": [
+      "DSNS",
+      "SCIS"
+    ],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:31.358Z"
+  },
+  {
+    "id": "PHYS115",
+    "title": "Inquiry into Physics",
+    "credits": 4,
+    "departmentId": "PHYS",
+    "description": "Intended for students majoring in neither the physical nor the biological sciences. Use of laboratory-based and inquiry-based methods to study some of the basic ideas of physical sciences.",
+    "genEd": [
+      "DSNL"
+    ],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:31.358Z"
+  },
+  {
+    "id": "PHYS121",
+    "title": "Fundamentals of Physics I",
+    "credits": 4,
+    "departmentId": "PHYS",
+    "description": "The first part of a two-semester course in general physics treating the fields of mechanics, heat, sound, electricity, magnetism, optics, and modern physics. Together with PHYS122, this generally satisfies the minimum requirement of medical and dental schools.",
+    "genEd": [
+      "DSNL"
+    ],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:31.358Z"
+  },
+  {
+    "id": "PHYS122",
+    "title": "Fundamentals of Physics II",
+    "credits": 4,
+    "departmentId": "PHYS",
+    "description": "A continuation of PHYS121, which together with it, generally satisfies the minimum requirement of medical and dental schools.",
+    "genEd": [
+      "DSNL"
+    ],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:31.358Z"
+  },
+  {
+    "id": "PHYS131",
+    "title": "Fundamentals of Physics for Life Sciences I",
+    "credits": 4,
+    "departmentId": "PHYS",
+    "description": "The first part of a two-semester course in general physics specifically oriented towards applications relevant for students in biology and pre-medical programs. The course covers basic mechanics including forces and energy, properties of matter, and thermodynamics done in authentic biological contexts.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:31.358Z"
+  },
+  {
+    "id": "PHYS132",
+    "title": "Fundamentals of Physics for Life Sciences II",
+    "credits": 4,
+    "departmentId": "PHYS",
+    "description": "The second part of a two-semester course in general physics specifically oriented towards applications relevant for students in biology and pre-medical programs. The course covers basic statistical physics, electricity and magnetism, and optics done in authentic biological contexts.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:31.358Z"
+  },
+  {
+    "id": "PHYS161",
+    "title": "General Physics: Mechanics and Particle Dynamics",
+    "credits": 3,
+    "departmentId": "PHYS",
+    "description": "First semester of a three-semester calculus-based general physics course. Laws of motion, force, and energy; principles of mechanics, collisions, linear momentum, rotation, and gravitation.",
+    "genEd": [
+      "DSNL(fkwhPHYS275)orDSNS"
+    ],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:31.358Z"
+  },
+  {
+    "id": "PHYS170",
+    "title": "Professional Physics Seminar",
+    "credits": 1,
+    "departmentId": "PHYS",
+    "description": "Provides a look at some of the major developments of current interest in physics research and discusses the activities physicists undertake in research, education, industry, government, and other areas of the economy.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:31.358Z"
+  },
+  {
+    "id": "PHYS171",
+    "title": "Introductory Physics: Mechanics",
+    "credits": 3,
+    "departmentId": "PHYS",
+    "description": "First semester of calculus-based physics. Kinematics, Newton's laws, energy and work, linear and angular momenta, rotational motion, universal gravitation, and mechanical applications.",
+    "genEd": [
+      "DSNL(fkwhPHYS275)orDSNS"
+    ],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:31.358Z"
+  },
+  {
+    "id": "PHYS171H",
+    "title": "Introductory Physics: Mechanics",
+    "credits": 3,
+    "departmentId": "PHYS",
+    "description": "First semester of calculus-based physics. Kinematics, Newton's laws, energy and work, linear and angular momenta, rotational motion, universal gravitation, and mechanical applications.",
+    "genEd": [
+      "DSNL(fkwhPHYS275)orDSNS"
+    ],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:31.358Z"
+  },
+  {
+    "id": "PHYS172",
+    "title": "Succeeding in Physics: Applications, Resources and Concepts",
+    "credits": 1,
+    "departmentId": "PHYS",
+    "description": "Supplemental instruction and support for students taking PHYS171, especially for students with limited high school physics preparation, or who will benefit from extra review and practice of relevant mathematics and physics concepts and skills.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:31.358Z"
+  },
+  {
+    "id": "PHYS174",
+    "title": "Physics Laboratory Introduction",
+    "credits": 1,
+    "departmentId": "PHYS",
+    "description": "Introduces students to the techniques of data gathering and analysis. This course will lay a foundation for higher-level labs in physics and the physical sciences. Students will learn to use laboratory equipment such as calipers, meters, oscilloscopes, and computer interfaces. Techniques of measurement and error analysis will be presented. Students will be taught to use the computer for data analysis with an emphasis on using spreadsheets.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:31.358Z"
+  },
+  {
+    "id": "PHYS235",
+    "title": "The Manhattan Project",
+    "credits": 3,
+    "departmentId": "PHYS",
+    "description": "Introduction to some critical ideas of nuclear physics and a review of some key historical developments starting at the end of the 19th century.  Chronological development of nuclear physics from the discovery of radioactivity by Becquerel in 1896 through to the discovery of fission in Germany in 1938 followed by an examination of the programs to develop nuclear weapons in the United States, Britain and Germany.  Extensive study of political, ethical, scientific, military, social, and economic issues surrounding the Manhattan Project.",
+    "genEd": [
+      "DSHSorDSNS",
+      "SCIS"
+    ],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:31.358Z"
+  },
+  {
+    "id": "PHYS260",
+    "title": "General Physics: Electricity, Magnetism and Thermodynamics",
+    "credits": 3,
+    "departmentId": "PHYS",
+    "description": "Second semester of a three-semester calculus-based general physics course. Electrostatics, magnetism, induction, DC and AC circuits; Maxwell's Equations, heat, and thermodynamics.",
+    "genEd": [
+      "DSNL(fkwhPHYS261)"
+    ],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:31.358Z"
+  },
+  {
+    "id": "PHYS260H",
+    "title": "General Physics: Electricity, Magnetism and Thermodynamics",
+    "credits": 3,
+    "departmentId": "PHYS",
+    "description": "Second semester of a three-semester calculus-based general physics course. Electrostatics, magnetism, induction, DC and AC circuits; Maxwell's Equations, heat, and thermodynamics.",
+    "genEd": [
+      "DSNL(fkwhPHYS261)"
+    ],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:31.358Z"
+  },
+  {
+    "id": "PHYS261",
+    "title": "General Physics: Mechanics, Vibrations, Waves, Heat (Laboratory)",
+    "credits": 1,
+    "departmentId": "PHYS",
+    "description": "Lab includes experiments on mechanics, vibrations, waves, and heat. Engineering majors are expected to take PHYS260 and PHYS261 in the same semester.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:31.358Z"
+  },
+  {
+    "id": "PHYS265",
+    "title": "Introduction to Scientific Programming",
+    "credits": 3,
+    "departmentId": "PHYS",
+    "description": "Introduction to scientific programming with python. Basic data types, sequences, input/output, and program control flow structures. Evaluation and plotting of mathematical functions and data. Statistical interpretation of data, and fitting of data to models. Introduction to numerical methods including integration, solutions of ordinary differential equations, and linear algebra. Extensive use of the numpy, matplotlib, and scipy packages.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:31.358Z"
+  },
+  {
+    "id": "PHYS270",
+    "title": "General Physics: Waves, Optics, Relativity and Modern Physics",
+    "credits": 3,
+    "departmentId": "PHYS",
+    "description": "Third semester of a three-semester calculus-based general physics course. Waves, sound, electromagnetic waves, optics, special theory of relativity, and modern physics.",
+    "genEd": [
+      "DSNL(fkwhPHYS271)"
+    ],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:31.358Z"
+  },
+  {
+    "id": "PHYS271",
+    "title": "General Physics: Electrodynamics, Light, Relativity and Modern Physics (Laboratory)",
+    "credits": 1,
+    "departmentId": "PHYS",
+    "description": "Lab includes experiments on ac circuits, magnetism, light and modern physics. PHYS270 and PHYS271 (lab) must be taken in the same semester.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:31.358Z"
+  },
+  {
+    "id": "PHYS272",
+    "title": "Introductory Physics: Electricity and Magnetism",
+    "credits": 3,
+    "departmentId": "PHYS",
+    "description": "Second semester of calculus-based introductory physics. Electric and magnetic fields and potentials; simple circuits; Maxwell's equations in integral form. Continues the application of mathematics to conceptual models, now with more abstract components.",
+    "genEd": [
+      "DSNS"
+    ],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:31.358Z"
+  },
+  {
+    "id": "PHYS272H",
+    "title": "Introductory Physics: Electricity and Magnetism",
+    "credits": 3,
+    "departmentId": "PHYS",
+    "description": "Second semester of calculus-based introductory physics. Electric and magnetic fields and potentials; simple circuits; Maxwell's equations in integral form. Continues the application of mathematics to conceptual models, now with more abstract components.",
+    "genEd": [
+      "DSNS"
+    ],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:31.358Z"
+  },
+  {
+    "id": "PHYS273",
+    "title": "Intermediate Oscillations and Waves",
+    "credits": 3,
+    "departmentId": "PHYS",
+    "description": "Classical physics at an intermediate level, introducing mathematical tools such as complex variables, linear differential equations, and Fourier series and transforms. Physics of mechanical and electrical oscillators, including damped and driven systems; coupled oscillators and normal modes; the classical wave equation and its Fourier solutions; wave reflection and transmission at boundaries; Maxwell's equations in differential form; electromagnetic waves, and physical optics.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:31.358Z"
+  },
+  {
+    "id": "PHYS273H",
+    "title": "Intermediate Oscillations and Waves",
+    "credits": 3,
+    "departmentId": "PHYS",
+    "description": "Classical physics at an intermediate level, introducing mathematical tools such as complex variables, linear differential equations, and Fourier series and transforms. Physics of mechanical and electrical oscillators, including damped and driven systems; coupled oscillators and normal modes; the classical wave equation and its Fourier solutions; wave reflection and transmission at boundaries; Maxwell's equations in differential form; electromagnetic waves, and physical optics.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:31.358Z"
+  },
+  {
+    "id": "PHYS275",
+    "title": "Experimental Physics I: Mechanics and Waves",
+    "credits": 2,
+    "departmentId": "PHYS",
+    "description": "A first course for physics majors and interested engineering students introducing the methods of experimental science. Students learn to identify various statistical data distributions, carry out rigorous uncertainty analysis, and test whether a given theoretical model adequately describes the observed phenomena. These concepts are applied to sophisticated physical systems that exhibit complex behavior and can yield remarkably precise and accurate results.  Experiments are chosen from the areas of mechanics and waves.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:31.358Z"
+  },
+  {
+    "id": "PHYS276",
+    "title": "Experimental Physics II:  Analog Circuits",
+    "credits": 2,
+    "departmentId": "PHYS",
+    "description": "A second course in experimental physics. Investigation of the behavior of analog circuits through applications in AM radio technology.  The course includes an introduction to electronic test instrumentation and associated measurement uncertainties",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:31.358Z"
+  },
+  {
+    "id": "PHYS299",
+    "title": "Special Problems in Physics",
+    "credits": 1,
+    "departmentId": "PHYS",
+    "description": "",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:31.358Z"
+  },
+  {
+    "id": "PHYS313",
+    "title": "Electricity and Magnetism I",
+    "credits": 4,
+    "departmentId": "PHYS",
+    "description": "A first course in electricity and magnetism at an advanced level. Electrostatics; solutions to the Laplace and Poisson equations in cartesian and spherical coordinates; electric fields in matter; and magnetostatics. Study of boundary value problems and extensive use of vector calculus.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:31.358Z"
+  },
+  {
+    "id": "PHYS331",
+    "title": "Physics for Life Sciences I",
+    "credits": 4,
+    "departmentId": "PHYS",
+    "description": "The first part of a two-semester course in general physics specifically oriented towards applications relevant for students in biology and pre-medical programs. The course covers basic mechanics including forces and energy, properties of matter, and thermodynamics done in authentic biological contexts.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:31.358Z"
+  },
+  {
+    "id": "STAT100",
+    "title": "Elementary Statistics and Probability",
+    "credits": 3,
+    "departmentId": "STAT",
+    "description": "Simplest tests of statistical hypotheses; applications to before-and-after and matched pair studies. Events, probability, combinations, independence. Binomial probabilities, confidence limits. Random variables, expected values, median, variance. Tests based on ranks. Law of large numbers, normal approximation. Estimates of mean and variance.",
+    "genEd": [
+      "FSAR",
+      "FSMA"
+    ],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:21.032Z"
+  },
+  {
+    "id": "STAT110",
+    "title": "Applications of R for Data Science",
+    "credits": 1,
+    "departmentId": "STAT",
+    "description": "Intended to prepare students for subsequent courses requiring computation with R, providing powerful and easy to use tools for statistical data analysis. Covers basics of R and R Studio including file handling, data simulation, graphical displays, vector and function operations, probability distributions, and inferential techniques for data analysis.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:21.032Z"
+  },
+  {
+    "id": "STAT386",
+    "title": "Experiential Learning",
+    "credits": 3,
+    "departmentId": "STAT",
+    "description": "Prerequisite: Must have learning proposal approved by the CMNS-Mathematics Department.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:21.032Z"
+  },
+  {
+    "id": "STAT400",
+    "title": "Applied Probability and Statistics I",
+    "credits": 3,
+    "departmentId": "STAT",
+    "description": "Random variables, standard distributions, moments, law of large numbers and central limit theorem. Sampling methods, estimation of parameters, testing of hypotheses.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:21.032Z"
+  },
+  {
+    "id": "STAT401",
+    "title": "Applied Probability and Statistics II",
+    "credits": 3,
+    "departmentId": "STAT",
+    "description": "Point estimation - unbiased and consistent estimators. Interval estimation. Minimum variance and maximum likelihood estimators. Testing of hypotheses. Regression, correlation and analysis of variance. Sampling distributions. Elements of non-parametric methods.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:21.032Z"
+  },
+  {
+    "id": "STAT410",
+    "title": "Introduction to Probability Theory",
+    "credits": 3,
+    "departmentId": "STAT",
+    "description": "Probability and its properties. Random variables and distribution functions in one and several dimensions. Moments. Characteristic functions. Limit theorems.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:21.032Z"
+  },
+  {
+    "id": "STAT420",
+    "title": "Theory and Methods of Statistics",
+    "credits": 3,
+    "departmentId": "STAT",
+    "description": "Point estimation, sufficiency, completeness, Cramer-Rao inequality, maximum likelihood. Confidence intervals for parameters of normal distribution. Hypothesis testing, most powerful tests, likelihood ratio tests. Chi-square tests, analysis of variance, regression, correlation. Nonparametric methods.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:21.032Z"
+  },
+  {
+    "id": "STAT426",
+    "title": "Introduction to Data Science and Machine Learning",
+    "credits": 3,
+    "departmentId": "STAT",
+    "description": "An introductory course to the recent developments in the fields of data science and machine learning. Emphasis will be given to mathematical and statistical understanding of commonly used methods and processes.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:21.032Z"
+  },
+  {
+    "id": "STAT430",
+    "title": "Introduction to Statistical Computing with SAS",
+    "credits": 3,
+    "departmentId": "STAT",
+    "description": "Descriptive and inferential statistics. SAS software: numerical and graphical data summaries; merging, sorting and splitting data sets. Least squares, regression, graphics and informal diagnostics, interpreting results. Categorical data, lifetime data, time series. Applications to engineering, life science, business and social science.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:21.032Z"
+  },
+  {
+    "id": "STAT440",
+    "title": "Sampling Theory",
+    "credits": 3,
+    "departmentId": "STAT",
+    "description": "Simple random sampling. Sampling for proportions. Estimation of sample size. Sampling with varying probabilities. Sampling: stratified, systematic, cluster, double, sequential, incomplete.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:21.032Z"
+  },
+  {
+    "id": "STAT464",
+    "title": "Introduction to Biostatistics",
+    "credits": 3,
+    "departmentId": "STAT",
+    "description": "Probabilistic models. Sampling. Some applications of probability in genetics. Experimental designs. Estimation of effects of treatments. Comparative experiments. Fisher-Irwin test. Wilcoxon tests for paired comparisons.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:21.032Z"
+  },
+  {
+    "id": "STAT470",
+    "title": "Actuarial Mathematics",
+    "credits": 3,
+    "departmentId": "STAT",
+    "description": "Major mathematical ideas involved in calculation of life insurance premiums, including compound interest and present valuation of future income streams; probability distribution and expected values derived from life tables; the interpolation of probability distributions from values estimated at one-year multiples; the 'Law of Large Numbers' describing the regular probabilistic behavior of large populations of independent individuals; and the detailed calculation of expected present values arising in insurance problems.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:21.032Z"
+  },
+  {
+    "id": "STAT498A",
+    "title": "Selected Topics in Statistics",
+    "credits": 1,
+    "departmentId": "STAT",
+    "description": "",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:21.032Z"
+  },
+  {
+    "id": "STAT600",
+    "title": "Probability Theory I",
+    "credits": 3,
+    "departmentId": "STAT",
+    "description": "Probability space; distribution functions and densities; Poissson limit theoreom; de Moivre-Laplace theorem; measure-theoretic definition of expectation; classification of measures on R; convergence of random variables; Radon-Nikodym theorem;LP spaces; conditional probabilities; independence of events, sigma-algebras and random variables; Bayes' theo rem; pi-systems and Dynkin systems; discrete Markov chains; random walks; gambler's ruin problem; Markov chains on a general phase space; Borel-cantelli lemmas; Kolmogorov inequality; three series theorem; laws of large numbers.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:21.032Z"
+  },
+  {
+    "id": "STAT610",
+    "title": "Stochastic Calculus",
+    "credits": 3,
+    "departmentId": "STAT",
+    "description": "A course on Brownian motion and stochastic calculus. Topics include Gaussian processes and Brownian motion; continuous martingales and semimartingales; stochastic integration, Ito's formula, and Girsanov's theorem; connections between Brownian motion and partial differential equations; forward and backward Kolmogorov equations; stochastic differential equations; and local time.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:21.032Z"
+  },
+  {
+    "id": "STAT689",
+    "title": "Research Interactions in Statistics",
+    "credits": 1,
+    "departmentId": "STAT",
+    "description": "",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:21.032Z"
+  },
+  {
+    "id": "STAT700",
+    "title": "Mathematical Statistics I",
+    "credits": 3,
+    "departmentId": "STAT",
+    "description": "Sampling distributions including noncentral chi-squared, t, F. Exponential families, completeness. Sufficiency, factorization, likelihood ratio. Decision theory, Bayesian methods, minimax principle. Point estimation. Lehmann-Scheffe and Cramer-Rao theorems. Set estimation.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:21.032Z"
+  },
+  {
+    "id": "STAT705",
+    "title": "Computational Statistics",
+    "credits": 3,
+    "departmentId": "STAT",
+    "description": "Modern methods of computational statistics and their application to both practical problems and research. S-Plus and SAS programming with emphasis on S-Plus. S-Plus objects and functions, and SAS procedures. Topics include data management and graphics, Monte Carlo and simulation, bootstrapping, numerical optimization in statistics, linear and generalized linear models, nonparametric regression, time series analysis.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:21.032Z"
+  },
+  {
+    "id": "STAT712",
+    "title": "Statistical Learning Theory",
+    "credits": 3,
+    "departmentId": "STAT",
+    "description": "Covers statistical machine learning and empirical process theory. The topics to be covered include: basics of statistical decision theory; concentration inequalities; supervised and unsupervised learning; empirical risk minimization; complexity-regularized estimation; generalization bounds for learning algorithms; VC dimension and Rademacher complexities; minimax lower bounds; online learning and optimization. Additionally, we will explore applications of these theories in areas like variational Bayes, high-dimensional statistics, generative model estimation, and various machine learning problems.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:21.032Z"
+  },
+  {
+    "id": "STAT740",
+    "title": "Linear Statistical Models I",
+    "credits": 3,
+    "departmentId": "STAT",
+    "description": "Least squares, general linear models, estimability and Gauss-Markov theorem. Simple and multiple linear regression, analysis of residuals and diagnostics, polynomial models, variable selection. Qualitative predictors, one and two way analysis of variance, multiple comparisons, analysis of covariance. Nonlinear least squares. High-level statistical computer software will be used for data analysis throughout the course.",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:21.032Z"
+  },
+  {
+    "id": "STAT799",
+    "title": "Master's Thesis Research",
+    "credits": 1,
+    "departmentId": "STAT",
+    "description": "",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:21.032Z"
+  },
+  {
+    "id": "STAT808A",
+    "title": "Selected Topics in Probability",
+    "credits": 1,
+    "departmentId": "STAT",
+    "description": "",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:21.032Z"
+  },
+  {
+    "id": "STAT818A",
+    "title": "Selected Topics in Statistics",
+    "credits": 1,
+    "departmentId": "STAT",
+    "description": "",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:21.032Z"
+  },
+  {
+    "id": "STAT818R",
+    "title": "Selected Topics in Statistics",
+    "credits": 1,
+    "departmentId": "STAT",
+    "description": "",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:21.032Z"
+  },
+  {
+    "id": "STAT898",
+    "title": "Pre-Candidacy Research",
+    "credits": 1,
+    "departmentId": "STAT",
+    "description": "",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:21.032Z"
+  },
+  {
+    "id": "STAT899",
+    "title": "Doctoral Dissertation Research",
+    "credits": 6,
+    "departmentId": "STAT",
+    "description": "",
+    "genEd": [],
+    "also_offered_as": [],
+    "lastSyncedAt": "2026-03-12T08:58:21.032Z"
+  }
+]
