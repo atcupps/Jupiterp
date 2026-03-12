@@ -19,7 +19,7 @@ Before working on Jupiterp, make sure your computer has installed [Node.js](http
 
 #### Site
 
-To test the site, navigate to the `site` folder. Use `npm run dev` to run the site locally, then use a browser to navigate to http://localhost:5173/.
+To test the site, navigate to the `site` folder. Use `npm run dev` to run the site locally, then use a browser to navigate to http://localhost:5173/. Use `npx eslint --fix .` to format the code.
 
 ## Contributing
 
