@@ -1,19 +1,21 @@
 import type {
-    CourseArea,
+    BaseCourseArea,
     RequirementEvaluation,
     RequirementRule,
 } from "./umdTypes";
-import { COURSE_AREAS } from "./umdRequirements";
+import { BASE_COURSE_AREA_MAPPING } from "./umdRequirements";
+import type { TabCtxType } from "flowbite-svelte/Tabs.svelte";
 
-export function courseHasArea(courseId: string, area: CourseArea): boolean {
-    return COURSE_AREAS[courseId]?.includes(area) ?? false;
+export function courseHasArea(courseId: string, area: BaseCourseArea[]): boolean {
+    return BASE_COURSE_AREA_MAPPING[courseId]?.some((BaseCourseArea) => area.includes(BaseCourseArea)) ?? false;
 }
 
 
-export function evaluateRequirement(
-    rule: RequirementRule,
+
+export function evaluateRequirement<TArea extends BaseCourseArea>(
+    rule: RequirementRule<TArea>,
     completedCourseIds: string[]
-): RequirementEvaluation {
+): RequirementEvaluation<TArea> {
     if (rule.type === "required-course") {
         const satisfied = completedCourseIds.includes(rule.courseId);
 
@@ -83,15 +85,15 @@ export function evaluateRequirement(
     };
 }
 
-export function evaluateRequirements(
-    rules: RequirementRule[],
+export function evaluateRequirements<TArea extends BaseCourseArea>(
+    rules: RequirementRule<TArea>[],
     completedCourseIds: string[]
-): RequirementEvaluation[] {
+): RequirementEvaluation<TArea>[] {
     return rules.map((rule) => evaluateRequirement(rule, completedCourseIds));
 }
 
-export function areRequirementsSatisfied(
-    rules: RequirementRule[],
+export function areRequirementsSatisfied<TArea extends BaseCourseArea>(
+    rules: RequirementRule<TArea>[],
     completedCourseIds: string[]
 ): boolean {
     return evaluateRequirements(rules, completedCourseIds).every(

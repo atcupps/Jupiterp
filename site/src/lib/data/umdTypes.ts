@@ -6,21 +6,21 @@ export type Course = {
     description?: string;
     genEd?: string[];
     prerequisites?: string;
+    also_offered_as?: string[],
     lastSyncedAt: string;
 };
 
-export type CourseArea =
-    | "core"
-    | "systems"
-    | "theory"
-    | "ai"
-    | "data"
-    | "math"
-    | "security"
-    | "science"
-    | "elective";
+export type BaseCourseArea = string;
 
-export type RequirementRule =
+export type CSCourseArea =
+    | "core"
+    | "Area 1: Systems"
+    | "Area 2: Info Processing"
+    | "Area 3: Software Engineering and Programming Languages"
+    | "Area 4: Theory"
+    | "Area 5: Numerical Analysis";
+
+export type RequirementRule<TArea extends BaseCourseArea> =
     | {
           type: "required-course";
           courseId: string;
@@ -33,9 +33,15 @@ export type RequirementRule =
           label?: string;
       }
     | {
+          type: "choose-n-courses-from-x-areas";
+          count: number;
+          area: TArea[];
+          label?: string;
+      }
+    | {
           type: "choose-n-areas";
           count: number;
-          area: CourseArea;
+          area: TArea[];
           label?: string;
       }
     | {
@@ -50,14 +56,14 @@ export type RequirementRule =
           label?: string;
       };
 
-export type RequirementEvaluation =
+export type RequirementEvaluation<TArea extends BaseCourseArea>  =
     | {
-          rule: RequirementRule;
+          rule: RequirementRule<TArea>;
           satisfied: true;
           matchedCourses: string[];
       }
     | {
-          rule: RequirementRule;
+          rule: RequirementRule<TArea>;
           satisfied: false;
           matchedCourses: string[];
           missingCount?: number;

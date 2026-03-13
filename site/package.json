@@ -13,7 +13,10 @@
     "lint": "eslint .",
     "format-check": "node scripts/format-check.js",
     "test": "jest",
-    "sync:umd-courses": "tsx scripts/syncUmdCourses.ts"
+    "sync:courses": "tsx scripts/syncUmdCourses.ts",
+    "sync:majors": "tsx scripts/syncUmdMajors.ts",
+    "sync": "npm run sync:majors & npm run sync:courses"
+
   },
   "devDependencies": {
     "@sveltejs/adapter-node": "^5.4.0",
