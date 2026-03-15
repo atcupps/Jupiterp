@@ -30,3 +30,5 @@ rust-project.json
 *.vscode
 
 __pycache__/
+
+# Note that node_modules is not included, we want to check in that for source control
