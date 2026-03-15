@@ -4,87 +4,97 @@ called LICENSE at the top level of the Jupiterp source tree (online at
 https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2026 Andrew Cupps
 -->
-<script lang='ts'>
-    import type { Instructor } from "@jupiterp/jupiterp";
-    import { ptLinkFromSlug } from "$lib/course-planner/Professors";
-    import { ProfsLookupStore } from "../../stores/CoursePlannerStores";
+<script lang="ts">
+	import type { Instructor } from '@jupiterp/jupiterp';
+	import { ptLinkFromSlug } from '$lib/course-planner/Professors';
+	import { ProfsLookupStore } from '../../stores/CoursePlannerStores';
 
-    export let instructor: string = 'No instructor';
+	export let instructor: string = 'No instructor';
 
-    let profs: Record<string, Instructor> = {};
-    ProfsLookupStore.subscribe((lookup: Record<string, Instructor>) => {
-        profs = lookup;
-    });
+	let profs: Record<string, Instructor> = {};
+	ProfsLookupStore.subscribe((lookup: Record<string, Instructor>) => {
+		profs = lookup;
+	});
 
-    function convertRating(rating: string | null): number {
-        if (rating == null) {
-            throw Error(
-                'Rating was null in `convertRating`; this should never happen!'
-            );
-        }
-        return parseFloat(rating) * 20;
-    }
+	function convertRating(rating: string | null): number {
+		if (rating == null) {
+			throw Error('Rating was null in `convertRating`; this should never happen!');
+		}
+		return parseFloat(rating) * 20;
+	}
 
-    function handleLinkClick(event: MouseEvent) {
-        event.stopPropagation();
-    }
+	function handleLinkClick(event: MouseEvent) {
+		event.stopPropagation();
+	}
 
-    export let profsHover: boolean;
-    export let removeHoverSection: () => void;
+	export let profsHover: boolean;
+	export let removeHoverSection: () => void;
 </script>
 
-<div class='text-sm xl:text-base'>
-    {#if (instructor in profs && profs[instructor].average_rating != null)}
-        <a href={ptLinkFromSlug(profs[instructor].slug)}
-                    target='_blank'
-                    class='text-orange underline transition
-                            inline-flex flex-wrap rounded-md
-                            hover:bg-hoverLight hover:dark:bg-hoverDark'
-                    on:mouseenter={() => {
-                        profsHover = true;
-                        removeHoverSection();
-                    }}
-                    on:mouseleave={() => {
-                        profsHover = false;
-                        removeHoverSection();
-                    }}
-                    on:click={handleLinkClick}
-            title='View Instructor on PlanetTerp'>
-            {instructor} 
-            <!-- format-check exempt 3 -->
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-3 h-3 mt-[0.25rem]">
-                <path d="M6.22 8.72a.75.75 0 0 0 1.06 1.06l5.22-5.22v1.69a.75.75 0 0 0 1.5 0v-3.5a.75.75 0 0 0-.75-.75h-3.5a.75.75 0 0 0 0 1.5h1.69L6.22 8.72Z" />
-                <path d="M3.5 6.75c0-.69.56-1.25 1.25-1.25H7A.75.75 0 0 0 7 4H4.75A2.75 2.75 0 0 0 2 6.75v4.5A2.75 2.75 0 0 0 4.75 14h4.5A2.75 2.75 0 0 0 12 11.25V9a.75.75 0 0 0-1.5 0v2.25c0 .69-.56 1.25-1.25 1.25h-4.5c-.69 0-1.25-.56-1.25-1.25v-4.5Z" />
-            </svg>
-        </a>
-        <span 
-            style='--rating: {
-                        convertRating(profs[instructor].average_rating) + '%'
-                    }'
-                class='text-[8px] xl:text-[10px] 2xl:text-base align-[2px] 
-                            text-orange font-bold stars'>
-            ★★★★★
-        </span>
-    {:else}
-        {instructor}
-    {/if}
+<div class="text-sm xl:text-base">
+	{#if instructor in profs && profs[instructor].average_rating != null}
+		<a
+			href={ptLinkFromSlug(profs[instructor].slug)}
+			target="_blank"
+			class="inline-flex flex-wrap rounded-md
+                            text-orange underline transition
+                            hover:bg-hoverLight hover:dark:bg-hoverDark"
+			on:mouseenter={() => {
+				profsHover = true;
+				removeHoverSection();
+			}}
+			on:mouseleave={() => {
+				profsHover = false;
+				removeHoverSection();
+			}}
+			on:click={handleLinkClick}
+			title="View Instructor on PlanetTerp"
+		>
+			{instructor}
+			<!-- format-check exempt 3 -->
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 16 16"
+				fill="currentColor"
+				class="mt-[0.25rem] h-3 w-3"
+			>
+				<path
+					d="M6.22 8.72a.75.75 0 0 0 1.06 1.06l5.22-5.22v1.69a.75.75 0 0 0 1.5 0v-3.5a.75.75 0 0 0-.75-.75h-3.5a.75.75 0 0 0 0 1.5h1.69L6.22 8.72Z"
+				/>
+				<path
+					d="M3.5 6.75c0-.69.56-1.25 1.25-1.25H7A.75.75 0 0 0 7 4H4.75A2.75 2.75 0 0 0 2 6.75v4.5A2.75 2.75 0 0 0 4.75 14h4.5A2.75 2.75 0 0 0 12 11.25V9a.75.75 0 0 0-1.5 0v2.25c0 .69-.56 1.25-1.25 1.25h-4.5c-.69 0-1.25-.56-1.25-1.25v-4.5Z"
+				/>
+			</svg>
+		</a>
+		<span
+			style="--rating: {convertRating(profs[instructor].average_rating) + '%'}"
+			class="stars align-[2px] text-[8px] font-bold
+                            text-orange xl:text-[10px] 2xl:text-base"
+		>
+			★★★★★
+		</span>
+	{:else}
+		{instructor}
+	{/if}
 </div>
 
 <style>
-    .stars {
-        background: rgb(246,116,60);
-        background: linear-gradient(90deg, 
-                            rgba(246,116,60,1) 0%, 
-                            rgba(246,116,60,1) var(--rating), 
-                            rgba(115, 53, 26, 1) var(--rating), 
-                            rgba(115, 53, 26, 1) 100%);
-        
-        background-size: 100%;
-        background-repeat: repeat;
+	.stars {
+		background: rgb(246, 116, 60);
+		background: linear-gradient(
+			90deg,
+			rgba(246, 116, 60, 1) 0%,
+			rgba(246, 116, 60, 1) var(--rating),
+			rgba(115, 53, 26, 1) var(--rating),
+			rgba(115, 53, 26, 1) 100%
+		);
 
-        background-clip: text;
-        -webkit-text-fill-color: transparent; 
-        -moz-background-clip: text;
-        -moz-text-fill-color: transparent;
-    }
+		background-size: 100%;
+		background-repeat: repeat;
+
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+		-moz-background-clip: text;
+		-moz-text-fill-color: transparent;
+	}
 </style>

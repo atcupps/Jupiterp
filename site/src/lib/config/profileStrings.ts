@@ -6,10 +6,9 @@
  */
 
 export const PROFILE_STRINGS = {
-    subtitleFallback: "Your Jupiterp profile keeps track of your majors, Gen Eds, and degree progress.",
-    connectionsTitle: "Connections & Sharing",
-    connectionsDescription:
-        "Share this with friends to let them view your course plans.",
-    funFact:
-        "Tip: Use your friend code so your study buddies can align schedules with you.",
+	subtitleFallback:
+		'Your Jupiterp profile keeps track of your majors, Gen Eds, and degree progress.',
+	connectionsTitle: 'Connections & Sharing',
+	connectionsDescription: 'Share this with friends to let them view your course plans.',
+	funFact: 'Tip: Use your friend code so your study buddies can align schedules with you.'
 } as const;

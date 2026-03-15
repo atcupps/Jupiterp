@@ -5,37 +5,28 @@
  * Copyright (C) 2026 Andrew Cupps
  */
 
-export type DegreeType =
-    | "Undergraduate"
-    | "Dual-Degree"
-    | "Double Major"
-    | "Masters"
-    | "P.H.D.";
+export type DegreeType = 'Undergraduate' | 'Dual-Degree' | 'Double Major' | 'Masters' | 'P.H.D.';
 
-export type ProfilePrivacyLevel =
-    | "public"
-    | "friends_only"
-    | "umd_only"
-    | "private";
+export type ProfilePrivacyLevel = 'public' | 'friends_only' | 'umd_only' | 'private';
 
 export interface ProfilePreferences {
-    degreeType: DegreeType;
-    majors: string[];
-    minors: string[];
-    graduationYear: number | null;
+	degreeType: DegreeType;
+	majors: string[];
+	minors: string[];
+	graduationYear: number | null;
 }
 
 export interface EditableProfileFields {
-    displayName: string;
-    degreeType: DegreeType;
-    majors: string[];
-    minors: string[];
-    graduationYear: number | null;
-    profilePrivacy: ProfilePrivacyLevel;
-    avatarUrl: string | null;
-    avatarColor: string;
+	displayName: string;
+	degreeType: DegreeType;
+	majors: string[];
+	minors: string[];
+	graduationYear: number | null;
+	profilePrivacy: ProfilePrivacyLevel;
+	avatarUrl: string | null;
+	avatarColor: string;
 }
 
-export const DEFAULT_DEGREE_TYPE: DegreeType = "Undergraduate";
-export const DEFAULT_PROFILE_PRIVACY: ProfilePrivacyLevel = "friends_only";
-export const DEFAULT_AVATAR_COLOR = "#b90e25";
+export const DEFAULT_DEGREE_TYPE: DegreeType = 'Undergraduate';
+export const DEFAULT_PROFILE_PRIVACY: ProfilePrivacyLevel = 'friends_only';
+export const DEFAULT_AVATAR_COLOR = '#b90e25';

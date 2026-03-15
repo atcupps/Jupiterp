@@ -5,9 +5,9 @@ https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2026 Andrew Cupps
 -->
 <script lang="ts">
-    export let text: string = ""; // Text to display
-    export let tooltipText: string = ""; // Tooltip message
-    let tooltipVisible = false;
+	export let text: string = ''; // Text to display
+	export let tooltipText: string = ''; // Tooltip message
+	let tooltipVisible = false;
 </script>
 
 <!-- Ignoring a11y features in Tooltips for now because they are not
@@ -15,15 +15,18 @@ Copyright (C) 2026 Andrew Cupps
     improved in the future with TODO(#29): Ensure accessibility features -->
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <span
-    class="tooltip-trigger underline decoration-dotted cursor-help"
-    on:mouseenter={() => tooltipVisible = true}
-    on:mouseleave={() => tooltipVisible = false}>
-    {text}
+	class="tooltip-trigger cursor-help underline decoration-dotted"
+	on:mouseenter={() => (tooltipVisible = true)}
+	on:mouseleave={() => (tooltipVisible = false)}
+>
+	{text}
 </span>
 {#if tooltipVisible}
-    <div class="absolute bg-black text-white p-2 text-center rounded-md
-                left-[50%] translate-x-[-50%] text-wrap w-[128px] z-30 top-0 
-                pointer-events-none">
-        {tooltipText}
-    </div>
+	<div
+		class="pointer-events-none absolute left-[50%] top-0 z-30 w-[128px]
+                translate-x-[-50%] text-wrap rounded-md bg-black p-2 text-center
+                text-white"
+	>
+		{tooltipText}
+	</div>
 {/if}

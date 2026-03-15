@@ -1,346 +1,302 @@
 [
-  {
-    "id": "AAAS100",
-    "title": "Introduction to African American and Africana Studies",
-    "credits": 3,
-    "departmentId": "AAAS",
-    "description": "Significant aspects of the history of African Americans with particular emphasis on the evolution and development of black communities from slavery to the present. Interdisciplinary introduction to social, political, legal and economic roots of contemporary problems faced by blacks in the United States with applications to the lives of other racial and ethnic minorities in the Americas and in other societies.",
-    "genEd": [
-      "DSHS",
-      "DVUP"
-    ],
-    "also_offered_as": [],
-    "lastSyncedAt": "2026-03-13T20:01:03.956Z"
-  },
-  {
-    "id": "AAAS101",
-    "title": "Public Policy and the Black Community",
-    "credits": 3,
-    "departmentId": "AAAS",
-    "description": "The impact of public policies on the Black community and the role of the policy process in affecting the social, economic and political well-being of minorities. Particular attention given to the post-1960 to present era.",
-    "genEd": [
-      "DSHS"
-    ],
-    "also_offered_as": [],
-    "lastSyncedAt": "2026-03-13T20:01:03.956Z"
-  },
-  {
-    "id": "AAAS187",
-    "title": "The New Jim Crow: African-Americans, Mass Incarceration and the Prison Industrial Complex",
-    "credits": 3,
-    "departmentId": "AAAS",
-    "description": "Students will examine the birth of the racial caste system following the abolition of slavery, the parallels between the racial hierarchy of the Jim Crow system and contemporary mass incarceration, and the rise of the prison industrial complex as a multi-billon business which thrives on the oppression of low-income populations and poor communities of color.",
-    "genEd": [
-      "DSHS",
-      "DVUP",
-      "SCIS"
-    ],
-    "also_offered_as": [],
-    "lastSyncedAt": "2026-03-13T20:01:03.956Z"
-  },
-  {
-    "id": "AAAS200",
-    "title": "African Civilization",
-    "credits": 3,
-    "departmentId": "AAAS",
-    "description": "A survey of African civilizations from 4500 B.C. to present. Analysis of traditional social systems. Discussion of the impact of European colonization on these civilizations. Analysis of the influence of traditional African social systems on modern African institutions as well as discussion of contemporary processes of Africanization.",
-    "genEd": [
-      "DSHU"
-    ],
-    "also_offered_as": [],
-    "lastSyncedAt": "2026-03-13T20:01:03.956Z"
-  },
-  {
-    "id": "AAAS202",
-    "title": "Black Culture in the United States",
-    "credits": 3,
-    "departmentId": "AAAS",
-    "description": "The course examines important aspects of African American life and thought which are reflected in African American literature, drama, music and art. Beginning with the cultural heritage of slavery, the course surveys the changing modes of Black creative expression from the 19th-century to the present.",
-    "genEd": [
-      "DSHS",
-      "DVUP"
-    ],
-    "also_offered_as": [],
-    "lastSyncedAt": "2026-03-13T20:01:03.956Z"
-  },
-  {
-    "id": "AAAS211",
-    "title": "Get Out: The Sunken Place of Race Relations in the Post-Racial Era",
-    "credits": 3,
-    "departmentId": "AAAS",
-    "description": "Prevailing thought suggests that we live in an era that is post-racial, particularly after the election of Barack Obama. Media often serves to drive our assessment of where our nation stands on issues like race, gender and sexuality. This course uses the film Get Out to delve into the production, evolution and significance of race in present day America. The course will engage multiple forms of media to investigate life in \"Post-Racial\" America, including but not limited to the role of stereotypes, interracial relationships, police-community relations, etc.",
-    "genEd": [
-      "DSHS",
-      "DVUP",
-      "SCIS"
-    ],
-    "also_offered_as": [],
-    "lastSyncedAt": "2026-03-13T20:01:03.956Z"
-  },
-  {
-    "id": "AAAS230",
-    "title": "Social (In)Justice and African-American Health and Well-Being",
-    "credits": 3,
-    "departmentId": "AAAS",
-    "description": "African Americans suffer worse outcomes than non-Hispanic whites on nearly every health measure and outcomes that link to overall well-being like depressive symptoms or homicides. Health disparities are experienced by other underrepresented minority groups, but because of the unique historic and current experiences of African Americans, the determinants and solutions to African American health disparities are unique. The premise of this course is that African American health disparities are due to social injustices perpetuated on the institutional level that have permeated the lived experiences of African Americans leading to racial disparities in health and well-being. As such, the solutions on the both policy, and community, level must have a social justice approach.",
-    "genEd": [
-      "DSHS",
-      "DVUP",
-      "SCIS"
-    ],
-    "also_offered_as": [],
-    "lastSyncedAt": "2026-03-13T20:01:03.956Z"
-  },
-  {
-    "id": "AAAS234",
-    "title": "African-American Literature and Culture",
-    "credits": 3,
-    "departmentId": "AAAS",
-    "description": "An exploration of the stories black authors tell about themselves, their communities, and the nation as informed by time and place, gender, sexuality, and class. African American perspective themes such as art, childhood, sexuality, marriage, alienation and mortality, as well as representations of slavery, Reconstruction, racial violence and the Nadir, legalized racism and segregation, black patriotism and black ex-patriots, the optimism of integration, and the prospects of a post-racial America.",
-    "genEd": [
-      "DSHU",
-      "DVUP"
-    ],
-    "also_offered_as": [],
-    "lastSyncedAt": "2026-03-13T20:01:03.956Z"
-  },
-  {
-    "id": "AAAS254",
-    "title": "African-American History to 1865",
-    "credits": 3,
-    "departmentId": "AAAS",
-    "description": "Survey of the principal developments in the history and culture of the peoples of African descent in colonial North America and the United States to 1865. Examines the African past, the Atlantic slave trade, variation in slavery, the growth of free black communities, the transformations of families and cultural forms, and patterns of resistance.",
-    "genEd": [
-      "DVUP"
-    ],
-    "also_offered_as": [],
-    "lastSyncedAt": "2026-03-13T20:01:03.956Z"
-  },
-  {
-    "id": "AAAS263",
-    "title": "Introduction to Black Women's Studies",
-    "credits": 3,
-    "departmentId": "AAAS",
-    "description": "Interdisciplinary exploration of Black women, culture and society in the United States. Drawn primarily from the social sciences and history with complementary material from literature and the arts.",
-    "genEd": [],
-    "also_offered_as": [],
-    "lastSyncedAt": "2026-03-13T20:01:03.956Z"
-  },
-  {
-    "id": "AAAS310",
-    "title": "African Slave Trade",
-    "credits": 3,
-    "departmentId": "AAAS",
-    "description": "The relationship of the slave trade of Africans to the development of British capitalism and its industrial revolution; and to the economic and social development of the Americas.",
-    "genEd": [],
-    "also_offered_as": [],
-    "lastSyncedAt": "2026-03-13T20:01:03.956Z"
-  },
-  {
-    "id": "AAAS320",
-    "title": "Poverty and African American Children",
-    "credits": 3,
-    "departmentId": "AAAS",
-    "description": "The United States has high levels of child poverty compared to other industrialized nations. Poverty rates are particularly high among African American children. This course focuses on how poverty and race intersect to influence the development of children and youth. Specific topics that we will consider include definitions of poverty, theories about the causes of poverty, racial disparities in child poverty, family functioning in the context of poverty, neighborhood influences, risk and protective processes, and social policies and programs designed to mitigate the impact of poverty.",
-    "genEd": [],
-    "also_offered_as": [],
-    "lastSyncedAt": "2026-03-13T20:01:03.956Z"
-  },
-  {
-    "id": "AAAS386",
-    "title": "Experiential Learning",
-    "credits": 3,
-    "departmentId": "AAAS",
-    "description": "Updating course code to align with department name change",
-    "genEd": [],
-    "also_offered_as": [],
-    "lastSyncedAt": "2026-03-13T20:01:03.956Z"
-  },
-  {
-    "id": "AAAS397",
-    "title": "Senior Thesis",
-    "credits": 3,
-    "departmentId": "AAAS",
-    "description": "Directed research in African American Studies resulting in the completion and defense of a senior thesis.",
-    "genEd": [],
-    "also_offered_as": [],
-    "lastSyncedAt": "2026-03-13T20:01:03.956Z"
-  },
-  {
-    "id": "AAAS398B",
-    "title": "Selected Topics in the African Diaspora; Black Immigrants: Challenges and Impacts",
-    "credits": 3,
-    "departmentId": "AAAS",
-    "description": "How does immigration affect Black communities in the United States? How are foreign Blacks affected by living in the United States? Students will learn about: US history of immigration policy; pull and push factors driving Black migration; comparisons in socioeconomic outcomes between foreign and native Blacks; and differences between 1st and 2nd generation Black immigrants.",
-    "genEd": [],
-    "also_offered_as": [],
-    "lastSyncedAt": "2026-03-13T20:01:03.956Z"
-  },
-  {
-    "id": "AAAS398W",
-    "title": "Selected Topics in the African Diaspora; Menace 2 Society: Structural Racism in Nihilistic Urban and Brown Films",
-    "credits": 3,
-    "departmentId": "AAAS",
-    "description": "Cross-listed with: AMST328V and USLT398B.",
-    "genEd": [],
-    "also_offered_as": [],
-    "lastSyncedAt": "2026-03-13T20:01:03.956Z"
-  },
-  {
-    "id": "AAAS399",
-    "title": "Research in African-American and Africana Studies",
-    "credits": 1,
-    "departmentId": "AAAS",
-    "description": "",
-    "genEd": [],
-    "also_offered_as": [],
-    "lastSyncedAt": "2026-03-13T20:01:03.956Z"
-  },
-  {
-    "id": "AAAS400",
-    "title": "Directed Readings in African American and Africana Studies",
-    "credits": 3,
-    "departmentId": "AAAS",
-    "description": "The readings will be directed by the faculty of African American Studies. Topics to be covered will be chosen to meet the needs and interests of individual students.",
-    "genEd": [
-      "DSHS",
-      "DVUP"
-    ],
-    "also_offered_as": [],
-    "lastSyncedAt": "2026-03-13T20:01:03.956Z"
-  },
-  {
-    "id": "AAAS498Y",
-    "title": "Special Topics in Black Culture; Black Queer Studies",
-    "credits": 3,
-    "departmentId": "AAAS",
-    "description": "Cross-listsed with LGBT448L.   Black Queer Studies is an intersectional and interdisciplinary approach  to LGBTQ+ Studies and Black Studies. In this course, we will center  Blackness to meditate upon the overlapping and interwoven categories of  race, gender, and sexuality with the goal of decoupling whiteness from  LGBTQ+ studies and decoupling heterosexuality from Black studies. We  will look at texts from the humanities and social sciences as well  literature and film in order to trace topical trajectories of Black  queer thought. We will explore the meaning of queerness in relation to  blackness, touchupon moments in black queer history, analyze questions  of black queer representation and erasure, and press upon hot button  topics such as queer identity and the black church, African and global  queer and trans identities, Blackness and homophobia, white LGBTQ+  racism, and Black queer pleasure. Throughout we will consider how Black  queer liberation can andhas provided tools and a guide for our  collective liberation.",
-    "genEd": [],
-    "also_offered_as": [],
-    "lastSyncedAt": "2026-03-13T20:01:03.956Z"
-  },
-  {
-    "id": "AAAS499L",
-    "title": "Advanced Topics in Public Policy and the Black Community",
-    "credits": 3,
-    "departmentId": "AAAS",
-    "description": "",
-    "genEd": [],
-    "also_offered_as": [],
-    "lastSyncedAt": "2026-03-13T20:01:03.956Z"
-  },
-  {
-    "id": "AAAS499N",
-    "title": "Advanced Topics in Public Policy and the Black Community; Media Coverage of Diversity",
-    "credits": 3,
-    "departmentId": "AAAS",
-    "description": "Cross-listed with JOUR453.  Analysis of media coverage of issues relating to diversity in the United States, with special attention to race, ethnicity, class, gender, sexual orientation and religious affiliation.",
-    "genEd": [],
-    "also_offered_as": [],
-    "lastSyncedAt": "2026-03-13T20:01:03.956Z"
-  },
-  {
-    "id": "AAST200",
-    "title": "Introduction to Asian American Studies",
-    "credits": 3,
-    "departmentId": "AAST",
-    "description": "The aggregate experience of Asian Pacific Americans, from developments in the countries of origin to their contemporary issues. The histories of Asian Pacific American groups as well as culture, politics, the media, and stereotypes, viewed from an interdisciplinary perspective.",
-    "genEd": [
-      "DSHS",
-      "DVUP"
-    ],
-    "also_offered_as": [],
-    "lastSyncedAt": "2026-03-13T20:01:03.956Z"
-  },
-  {
-    "id": "AAST322",
-    "title": "Immigration and Ethnicity in the US",
-    "credits": 3,
-    "departmentId": "AAST",
-    "description": "Explores historical and contemporary Asian immigration to the US in comparison to and in the context of other immigrant groups. From low-skilled laborers to highly-skilled professionals, Asian and other immigrants have been an integral part of the shifting US economy and society since its inception. The course includes theories on why immigration occurs, determinants of its continuation, the uses of migrant labor, and immigrant adaptation and settlement. The second part of the course focuses on theories of ethnicity and racial formation and how immigrants develop and challenge the definitions of race, ethnicity, the \"other\", and ultimately, who is American. Students will also have the opportunity to gain first-hand knowledge of the immigrant experience through a life history interview project.",
-    "genEd": [
-      "DSHS",
-      "DVUP"
-    ],
-    "also_offered_as": [],
-    "lastSyncedAt": "2026-03-13T20:01:03.956Z"
-  },
-  {
-    "id": "AAST351",
-    "title": "Asian Americans and Media",
-    "credits": 3,
-    "departmentId": "AAST",
-    "description": "From yellow peril invaders to model minority allies, Asian Americans have crafted their own dynamic cultural expressions in a number of media from film, television, and music to fashion, sports, and food that reveal and contest the contradictions of the U.S. nation-state. Asian American culture also uniquely sits at the nexus of immigration flows and digital technologies, providing a transnational lens to view the US place in the world. This advanced course, then, will introduce students to the study and practice of Asian American culture as multiple , hybrid, and heterogeneous. It will do so through three sections: section one will introduce students to classical, cultural, and media concepts as well as relevant keywords outlined by Asian American Studies scholars; section two will review the work of Asian American cultural theorists; section three will focus on analyses of particular Asian American cultural productions. In doing so, students will gain an understanding of the shifting and interlocking tensions among the local, the national, and the global that form the cultural geographies of Asian America.",
-    "genEd": [
-      "DSSP",
-      "DVUP"
-    ],
-    "also_offered_as": [],
-    "lastSyncedAt": "2026-03-13T20:01:03.956Z"
-  },
-  {
-    "id": "AAST355",
-    "title": "Asian Americans in Film",
-    "credits": 3,
-    "departmentId": "AAST",
-    "description": "Explores how Asian Americans have historically been represented in the U.S. by Hollywood, and in turn, how independent and Hollywood Asian American filmmakers have represented themselves. It covers the history of racial, gendered, and sexualized representations of Asian Americans in Hollywood, as well as Asian American filmic responses within and outside Hollywood. It also introduces how four basic tools of film analysis mise-en-scene, cinematography, editing and sound work together to create meaning in moving images. It examines how these elements are put together in three different types of films by Asian American filmmakers: narrative, documentary, and experimental. How films function in society to circulate ideas that reproduce and challenge stereotypes about Asian Americans.",
-    "genEd": [
-      "DSHU",
-      "DVUP"
-    ],
-    "also_offered_as": [],
-    "lastSyncedAt": "2026-03-13T20:01:03.956Z"
-  },
-  {
-    "id": "AAST378",
-    "title": "Experiential Learning",
-    "credits": 3,
-    "departmentId": "AAST",
-    "description": "",
-    "genEd": [],
-    "also_offered_as": [],
-    "lastSyncedAt": "2026-03-13T20:01:03.956Z"
-  },
-  {
-    "id": "AAST388",
-    "title": "Independent Research",
-    "credits": 1,
-    "departmentId": "AAST",
-    "description": "Repeatable to 6 credits if content differs.",
-    "genEd": [],
-    "also_offered_as": [],
-    "lastSyncedAt": "2026-03-13T20:01:03.956Z"
-  },
-  {
-    "id": "AAST394",
-    "title": "Growing Up Asian American: The Asian Immigrant Family and the Second Generation",
-    "credits": 3,
-    "departmentId": "AAST",
-    "description": "An interdisciplinary course examines the experiences of children of Asian immigrants in the U.S., focusing on intergenerational dynamics in the Asian immigrant family, their intersections with race, gender, class, sexuality, and religion, and how these shape second-generation Asian American life. Topics include identity and personhood, the model minority myth and education, work and leisure, language and communication, filiality and disownment, mental health and suicide.",
-    "genEd": [
-      "DVCC"
-    ],
-    "also_offered_as": [],
-    "lastSyncedAt": "2026-03-13T20:01:03.956Z"
-  },
-  {
-    "id": "AAST398I",
-    "title": "Selected Topics in Asian American Studies; Preserving Asian American Histories",
-    "credits": 3,
-    "departmentId": "AAST",
-    "description": "This course introduces students to historic preservation and the ways in which Asian Americans have been interpreted through narratives of archival research of the built environment and landmark designation. Students will gain a greater understanding of the role of Asian Americans in US historic preservation practice, the preservation of Asian Americans historic sites (people, places, historical moments) and how to conduct research on Asian American historic preservation. Though the class will concentrate on Asian Americans, issues related to Asian American represented in historic preservation (including historic sites) will be examined within the larger context of America's multicultural preservation landscape. Cross-listed with HISP319K.",
-    "genEd": [],
-    "also_offered_as": [],
-    "lastSyncedAt": "2026-03-13T20:01:03.956Z"
-  },
-  {
-    "id": "AAST422",
-    "title": "Asian American Women and Gender",
-    "credits": 3,
-    "departmentId": "AAST",
-    "description": "Examines Asian/American cultural production along with theories of gender and sexuality in the field of Asian American Studies. We consider how Asian American femininities/masculinities are conceived and circulated, drawing from a diverse selection of twentieth-century and contemporary texts, films and images that connect Asian American bodies to ideas of absence, danger, inscrutability, hyper- or hypo-sexuality, and virulence. Beginning with early to mid-twentieth century representations, the course attends to theories that clarify the contested relationship between the East/West and Asia/U.S. Also examined are the methods through which bodies differentiated by sex, gender, and race are managed, surveilled, and rehabilitated, with close attention to the enduring legacies of American expansionism and conquest, anti-immigration policies in the U.S., and twentieth-century wars and occupations in Asia. The course engages Women of Color feminisms, queer theory, and disability studies.",
-    "genEd": [],
-    "also_offered_as": [],
-    "lastSyncedAt": "2026-03-13T20:01:03.956Z"
-  }
+	{
+		"id": "AAAS100",
+		"title": "Introduction to African American and Africana Studies",
+		"credits": 3,
+		"departmentId": "AAAS",
+		"description": "Significant aspects of the history of African Americans with particular emphasis on the evolution and development of black communities from slavery to the present. Interdisciplinary introduction to social, political, legal and economic roots of contemporary problems faced by blacks in the United States with applications to the lives of other racial and ethnic minorities in the Americas and in other societies.",
+		"genEd": ["DSHS", "DVUP"],
+		"also_offered_as": [],
+		"lastSyncedAt": "2026-03-13T20:01:03.956Z"
+	},
+	{
+		"id": "AAAS101",
+		"title": "Public Policy and the Black Community",
+		"credits": 3,
+		"departmentId": "AAAS",
+		"description": "The impact of public policies on the Black community and the role of the policy process in affecting the social, economic and political well-being of minorities. Particular attention given to the post-1960 to present era.",
+		"genEd": ["DSHS"],
+		"also_offered_as": [],
+		"lastSyncedAt": "2026-03-13T20:01:03.956Z"
+	},
+	{
+		"id": "AAAS187",
+		"title": "The New Jim Crow: African-Americans, Mass Incarceration and the Prison Industrial Complex",
+		"credits": 3,
+		"departmentId": "AAAS",
+		"description": "Students will examine the birth of the racial caste system following the abolition of slavery, the parallels between the racial hierarchy of the Jim Crow system and contemporary mass incarceration, and the rise of the prison industrial complex as a multi-billon business which thrives on the oppression of low-income populations and poor communities of color.",
+		"genEd": ["DSHS", "DVUP", "SCIS"],
+		"also_offered_as": [],
+		"lastSyncedAt": "2026-03-13T20:01:03.956Z"
+	},
+	{
+		"id": "AAAS200",
+		"title": "African Civilization",
+		"credits": 3,
+		"departmentId": "AAAS",
+		"description": "A survey of African civilizations from 4500 B.C. to present. Analysis of traditional social systems. Discussion of the impact of European colonization on these civilizations. Analysis of the influence of traditional African social systems on modern African institutions as well as discussion of contemporary processes of Africanization.",
+		"genEd": ["DSHU"],
+		"also_offered_as": [],
+		"lastSyncedAt": "2026-03-13T20:01:03.956Z"
+	},
+	{
+		"id": "AAAS202",
+		"title": "Black Culture in the United States",
+		"credits": 3,
+		"departmentId": "AAAS",
+		"description": "The course examines important aspects of African American life and thought which are reflected in African American literature, drama, music and art. Beginning with the cultural heritage of slavery, the course surveys the changing modes of Black creative expression from the 19th-century to the present.",
+		"genEd": ["DSHS", "DVUP"],
+		"also_offered_as": [],
+		"lastSyncedAt": "2026-03-13T20:01:03.956Z"
+	},
+	{
+		"id": "AAAS211",
+		"title": "Get Out: The Sunken Place of Race Relations in the Post-Racial Era",
+		"credits": 3,
+		"departmentId": "AAAS",
+		"description": "Prevailing thought suggests that we live in an era that is post-racial, particularly after the election of Barack Obama. Media often serves to drive our assessment of where our nation stands on issues like race, gender and sexuality. This course uses the film Get Out to delve into the production, evolution and significance of race in present day America. The course will engage multiple forms of media to investigate life in \"Post-Racial\" America, including but not limited to the role of stereotypes, interracial relationships, police-community relations, etc.",
+		"genEd": ["DSHS", "DVUP", "SCIS"],
+		"also_offered_as": [],
+		"lastSyncedAt": "2026-03-13T20:01:03.956Z"
+	},
+	{
+		"id": "AAAS230",
+		"title": "Social (In)Justice and African-American Health and Well-Being",
+		"credits": 3,
+		"departmentId": "AAAS",
+		"description": "African Americans suffer worse outcomes than non-Hispanic whites on nearly every health measure and outcomes that link to overall well-being like depressive symptoms or homicides. Health disparities are experienced by other underrepresented minority groups, but because of the unique historic and current experiences of African Americans, the determinants and solutions to African American health disparities are unique. The premise of this course is that African American health disparities are due to social injustices perpetuated on the institutional level that have permeated the lived experiences of African Americans leading to racial disparities in health and well-being. As such, the solutions on the both policy, and community, level must have a social justice approach.",
+		"genEd": ["DSHS", "DVUP", "SCIS"],
+		"also_offered_as": [],
+		"lastSyncedAt": "2026-03-13T20:01:03.956Z"
+	},
+	{
+		"id": "AAAS234",
+		"title": "African-American Literature and Culture",
+		"credits": 3,
+		"departmentId": "AAAS",
+		"description": "An exploration of the stories black authors tell about themselves, their communities, and the nation as informed by time and place, gender, sexuality, and class. African American perspective themes such as art, childhood, sexuality, marriage, alienation and mortality, as well as representations of slavery, Reconstruction, racial violence and the Nadir, legalized racism and segregation, black patriotism and black ex-patriots, the optimism of integration, and the prospects of a post-racial America.",
+		"genEd": ["DSHU", "DVUP"],
+		"also_offered_as": [],
+		"lastSyncedAt": "2026-03-13T20:01:03.956Z"
+	},
+	{
+		"id": "AAAS254",
+		"title": "African-American History to 1865",
+		"credits": 3,
+		"departmentId": "AAAS",
+		"description": "Survey of the principal developments in the history and culture of the peoples of African descent in colonial North America and the United States to 1865. Examines the African past, the Atlantic slave trade, variation in slavery, the growth of free black communities, the transformations of families and cultural forms, and patterns of resistance.",
+		"genEd": ["DVUP"],
+		"also_offered_as": [],
+		"lastSyncedAt": "2026-03-13T20:01:03.956Z"
+	},
+	{
+		"id": "AAAS263",
+		"title": "Introduction to Black Women's Studies",
+		"credits": 3,
+		"departmentId": "AAAS",
+		"description": "Interdisciplinary exploration of Black women, culture and society in the United States. Drawn primarily from the social sciences and history with complementary material from literature and the arts.",
+		"genEd": [],
+		"also_offered_as": [],
+		"lastSyncedAt": "2026-03-13T20:01:03.956Z"
+	},
+	{
+		"id": "AAAS310",
+		"title": "African Slave Trade",
+		"credits": 3,
+		"departmentId": "AAAS",
+		"description": "The relationship of the slave trade of Africans to the development of British capitalism and its industrial revolution; and to the economic and social development of the Americas.",
+		"genEd": [],
+		"also_offered_as": [],
+		"lastSyncedAt": "2026-03-13T20:01:03.956Z"
+	},
+	{
+		"id": "AAAS320",
+		"title": "Poverty and African American Children",
+		"credits": 3,
+		"departmentId": "AAAS",
+		"description": "The United States has high levels of child poverty compared to other industrialized nations. Poverty rates are particularly high among African American children. This course focuses on how poverty and race intersect to influence the development of children and youth. Specific topics that we will consider include definitions of poverty, theories about the causes of poverty, racial disparities in child poverty, family functioning in the context of poverty, neighborhood influences, risk and protective processes, and social policies and programs designed to mitigate the impact of poverty.",
+		"genEd": [],
+		"also_offered_as": [],
+		"lastSyncedAt": "2026-03-13T20:01:03.956Z"
+	},
+	{
+		"id": "AAAS386",
+		"title": "Experiential Learning",
+		"credits": 3,
+		"departmentId": "AAAS",
+		"description": "Updating course code to align with department name change",
+		"genEd": [],
+		"also_offered_as": [],
+		"lastSyncedAt": "2026-03-13T20:01:03.956Z"
+	},
+	{
+		"id": "AAAS397",
+		"title": "Senior Thesis",
+		"credits": 3,
+		"departmentId": "AAAS",
+		"description": "Directed research in African American Studies resulting in the completion and defense of a senior thesis.",
+		"genEd": [],
+		"also_offered_as": [],
+		"lastSyncedAt": "2026-03-13T20:01:03.956Z"
+	},
+	{
+		"id": "AAAS398B",
+		"title": "Selected Topics in the African Diaspora; Black Immigrants: Challenges and Impacts",
+		"credits": 3,
+		"departmentId": "AAAS",
+		"description": "How does immigration affect Black communities in the United States? How are foreign Blacks affected by living in the United States? Students will learn about: US history of immigration policy; pull and push factors driving Black migration; comparisons in socioeconomic outcomes between foreign and native Blacks; and differences between 1st and 2nd generation Black immigrants.",
+		"genEd": [],
+		"also_offered_as": [],
+		"lastSyncedAt": "2026-03-13T20:01:03.956Z"
+	},
+	{
+		"id": "AAAS398W",
+		"title": "Selected Topics in the African Diaspora; Menace 2 Society: Structural Racism in Nihilistic Urban and Brown Films",
+		"credits": 3,
+		"departmentId": "AAAS",
+		"description": "Cross-listed with: AMST328V and USLT398B.",
+		"genEd": [],
+		"also_offered_as": [],
+		"lastSyncedAt": "2026-03-13T20:01:03.956Z"
+	},
+	{
+		"id": "AAAS399",
+		"title": "Research in African-American and Africana Studies",
+		"credits": 1,
+		"departmentId": "AAAS",
+		"description": "",
+		"genEd": [],
+		"also_offered_as": [],
+		"lastSyncedAt": "2026-03-13T20:01:03.956Z"
+	},
+	{
+		"id": "AAAS400",
+		"title": "Directed Readings in African American and Africana Studies",
+		"credits": 3,
+		"departmentId": "AAAS",
+		"description": "The readings will be directed by the faculty of African American Studies. Topics to be covered will be chosen to meet the needs and interests of individual students.",
+		"genEd": ["DSHS", "DVUP"],
+		"also_offered_as": [],
+		"lastSyncedAt": "2026-03-13T20:01:03.956Z"
+	},
+	{
+		"id": "AAAS498Y",
+		"title": "Special Topics in Black Culture; Black Queer Studies",
+		"credits": 3,
+		"departmentId": "AAAS",
+		"description": "Cross-listsed with LGBT448L.   Black Queer Studies is an intersectional and interdisciplinary approach  to LGBTQ+ Studies and Black Studies. In this course, we will center  Blackness to meditate upon the overlapping and interwoven categories of  race, gender, and sexuality with the goal of decoupling whiteness from  LGBTQ+ studies and decoupling heterosexuality from Black studies. We  will look at texts from the humanities and social sciences as well  literature and film in order to trace topical trajectories of Black  queer thought. We will explore the meaning of queerness in relation to  blackness, touchupon moments in black queer history, analyze questions  of black queer representation and erasure, and press upon hot button  topics such as queer identity and the black church, African and global  queer and trans identities, Blackness and homophobia, white LGBTQ+  racism, and Black queer pleasure. Throughout we will consider how Black  queer liberation can andhas provided tools and a guide for our  collective liberation.",
+		"genEd": [],
+		"also_offered_as": [],
+		"lastSyncedAt": "2026-03-13T20:01:03.956Z"
+	},
+	{
+		"id": "AAAS499L",
+		"title": "Advanced Topics in Public Policy and the Black Community",
+		"credits": 3,
+		"departmentId": "AAAS",
+		"description": "",
+		"genEd": [],
+		"also_offered_as": [],
+		"lastSyncedAt": "2026-03-13T20:01:03.956Z"
+	},
+	{
+		"id": "AAAS499N",
+		"title": "Advanced Topics in Public Policy and the Black Community; Media Coverage of Diversity",
+		"credits": 3,
+		"departmentId": "AAAS",
+		"description": "Cross-listed with JOUR453.  Analysis of media coverage of issues relating to diversity in the United States, with special attention to race, ethnicity, class, gender, sexual orientation and religious affiliation.",
+		"genEd": [],
+		"also_offered_as": [],
+		"lastSyncedAt": "2026-03-13T20:01:03.956Z"
+	},
+	{
+		"id": "AAST200",
+		"title": "Introduction to Asian American Studies",
+		"credits": 3,
+		"departmentId": "AAST",
+		"description": "The aggregate experience of Asian Pacific Americans, from developments in the countries of origin to their contemporary issues. The histories of Asian Pacific American groups as well as culture, politics, the media, and stereotypes, viewed from an interdisciplinary perspective.",
+		"genEd": ["DSHS", "DVUP"],
+		"also_offered_as": [],
+		"lastSyncedAt": "2026-03-13T20:01:03.956Z"
+	},
+	{
+		"id": "AAST322",
+		"title": "Immigration and Ethnicity in the US",
+		"credits": 3,
+		"departmentId": "AAST",
+		"description": "Explores historical and contemporary Asian immigration to the US in comparison to and in the context of other immigrant groups. From low-skilled laborers to highly-skilled professionals, Asian and other immigrants have been an integral part of the shifting US economy and society since its inception. The course includes theories on why immigration occurs, determinants of its continuation, the uses of migrant labor, and immigrant adaptation and settlement. The second part of the course focuses on theories of ethnicity and racial formation and how immigrants develop and challenge the definitions of race, ethnicity, the \"other\", and ultimately, who is American. Students will also have the opportunity to gain first-hand knowledge of the immigrant experience through a life history interview project.",
+		"genEd": ["DSHS", "DVUP"],
+		"also_offered_as": [],
+		"lastSyncedAt": "2026-03-13T20:01:03.956Z"
+	},
+	{
+		"id": "AAST351",
+		"title": "Asian Americans and Media",
+		"credits": 3,
+		"departmentId": "AAST",
+		"description": "From yellow peril invaders to model minority allies, Asian Americans have crafted their own dynamic cultural expressions in a number of media from film, television, and music to fashion, sports, and food that reveal and contest the contradictions of the U.S. nation-state. Asian American culture also uniquely sits at the nexus of immigration flows and digital technologies, providing a transnational lens to view the US place in the world. This advanced course, then, will introduce students to the study and practice of Asian American culture as multiple , hybrid, and heterogeneous. It will do so through three sections: section one will introduce students to classical, cultural, and media concepts as well as relevant keywords outlined by Asian American Studies scholars; section two will review the work of Asian American cultural theorists; section three will focus on analyses of particular Asian American cultural productions. In doing so, students will gain an understanding of the shifting and interlocking tensions among the local, the national, and the global that form the cultural geographies of Asian America.",
+		"genEd": ["DSSP", "DVUP"],
+		"also_offered_as": [],
+		"lastSyncedAt": "2026-03-13T20:01:03.956Z"
+	},
+	{
+		"id": "AAST355",
+		"title": "Asian Americans in Film",
+		"credits": 3,
+		"departmentId": "AAST",
+		"description": "Explores how Asian Americans have historically been represented in the U.S. by Hollywood, and in turn, how independent and Hollywood Asian American filmmakers have represented themselves. It covers the history of racial, gendered, and sexualized representations of Asian Americans in Hollywood, as well as Asian American filmic responses within and outside Hollywood. It also introduces how four basic tools of film analysis mise-en-scene, cinematography, editing and sound work together to create meaning in moving images. It examines how these elements are put together in three different types of films by Asian American filmmakers: narrative, documentary, and experimental. How films function in society to circulate ideas that reproduce and challenge stereotypes about Asian Americans.",
+		"genEd": ["DSHU", "DVUP"],
+		"also_offered_as": [],
+		"lastSyncedAt": "2026-03-13T20:01:03.956Z"
+	},
+	{
+		"id": "AAST378",
+		"title": "Experiential Learning",
+		"credits": 3,
+		"departmentId": "AAST",
+		"description": "",
+		"genEd": [],
+		"also_offered_as": [],
+		"lastSyncedAt": "2026-03-13T20:01:03.956Z"
+	},
+	{
+		"id": "AAST388",
+		"title": "Independent Research",
+		"credits": 1,
+		"departmentId": "AAST",
+		"description": "Repeatable to 6 credits if content differs.",
+		"genEd": [],
+		"also_offered_as": [],
+		"lastSyncedAt": "2026-03-13T20:01:03.956Z"
+	},
+	{
+		"id": "AAST394",
+		"title": "Growing Up Asian American: The Asian Immigrant Family and the Second Generation",
+		"credits": 3,
+		"departmentId": "AAST",
+		"description": "An interdisciplinary course examines the experiences of children of Asian immigrants in the U.S., focusing on intergenerational dynamics in the Asian immigrant family, their intersections with race, gender, class, sexuality, and religion, and how these shape second-generation Asian American life. Topics include identity and personhood, the model minority myth and education, work and leisure, language and communication, filiality and disownment, mental health and suicide.",
+		"genEd": ["DVCC"],
+		"also_offered_as": [],
+		"lastSyncedAt": "2026-03-13T20:01:03.956Z"
+	},
+	{
+		"id": "AAST398I",
+		"title": "Selected Topics in Asian American Studies; Preserving Asian American Histories",
+		"credits": 3,
+		"departmentId": "AAST",
+		"description": "This course introduces students to historic preservation and the ways in which Asian Americans have been interpreted through narratives of archival research of the built environment and landmark designation. Students will gain a greater understanding of the role of Asian Americans in US historic preservation practice, the preservation of Asian Americans historic sites (people, places, historical moments) and how to conduct research on Asian American historic preservation. Though the class will concentrate on Asian Americans, issues related to Asian American represented in historic preservation (including historic sites) will be examined within the larger context of America's multicultural preservation landscape. Cross-listed with HISP319K.",
+		"genEd": [],
+		"also_offered_as": [],
+		"lastSyncedAt": "2026-03-13T20:01:03.956Z"
+	},
+	{
+		"id": "AAST422",
+		"title": "Asian American Women and Gender",
+		"credits": 3,
+		"departmentId": "AAST",
+		"description": "Examines Asian/American cultural production along with theories of gender and sexuality in the field of Asian American Studies. We consider how Asian American femininities/masculinities are conceived and circulated, drawing from a diverse selection of twentieth-century and contemporary texts, films and images that connect Asian American bodies to ideas of absence, danger, inscrutability, hyper- or hypo-sexuality, and virulence. Beginning with early to mid-twentieth century representations, the course attends to theories that clarify the contested relationship between the East/West and Asia/U.S. Also examined are the methods through which bodies differentiated by sex, gender, and race are managed, surveilled, and rehabilitated, with close attention to the enduring legacies of American expansionism and conquest, anti-immigration policies in the U.S., and twentieth-century wars and occupations in Asia. The course engages Women of Color feminisms, queer theory, and disability studies.",
+		"genEd": [],
+		"also_offered_as": [],
+		"lastSyncedAt": "2026-03-13T20:01:03.956Z"
+	}
 ]

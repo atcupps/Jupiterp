@@ -3,39 +3,39 @@
  * called LICENSE at the top level of the Jupiterp source tree (online at
  * https://github.com/atcupps/Jupiterp/LICENSE).
  * Copyright (C) 2026 Andrew Cupps
- * 
+ *
  * @fileoverview Functions relating to searching for courses in Jupiterp.
  */
 
-import type { Course, Instructor } from "@jupiterp/jupiterp";
-import { CourseDataCache, type RequestInput } from "./CourseDataCache";
+import type { Course, Instructor } from '@jupiterp/jupiterp';
+import { CourseDataCache, type RequestInput } from './CourseDataCache';
 import {
-    DepartmentsStore,
-    DeptSuggestionsStore,
-    SearchResultsStore,
-    ProfsLookupStore,
-    CourseSearchFilterStore,
-    CurrentScheduleStore,
-    ResolvedSearchTermYearStore,
-} from "../../stores/CoursePlannerStores";
-import type { FilterParams } from "../../types";
-import type { AcademicTerm } from "./Terms";
-import { resolveMostRecentTermYear } from "./UmdIoGatherer";
+	DepartmentsStore,
+	DeptSuggestionsStore,
+	SearchResultsStore,
+	ProfsLookupStore,
+	CourseSearchFilterStore,
+	CurrentScheduleStore,
+	ResolvedSearchTermYearStore
+} from '../../stores/CoursePlannerStores';
+import type { FilterParams } from '../../types';
+import type { AcademicTerm } from './Terms';
+import { resolveMostRecentTermYear } from './UmdIoGatherer';
 
 function semesterFromTermYear(term: AcademicTerm, year: number): string {
-    if (term === 'Spring') {
-        return `${year}01`;
-    }
+	if (term === 'Spring') {
+		return `${year}01`;
+	}
 
-    if (term === 'Summer') {
-        return `${year}05`;
-    }
+	if (term === 'Summer') {
+		return `${year}05`;
+	}
 
-    if (term === 'Fall') {
-        return `${year}08`;
-    }
+	if (term === 'Fall') {
+		return `${year}08`;
+	}
 
-    return `${year}12`;
+	return `${year}12`;
 }
 
 const cache = new CourseDataCache();
@@ -44,292 +44,289 @@ const cache = new CourseDataCache();
 let deptCodes: string[];
 export let deptCodeToName: Record<string, string> = {};
 DepartmentsStore.subscribe((depts) => {
-    deptCodes = depts.map(dept => dept.deptCode);
-    deptCodeToName = {};
-    depts.forEach(dept => {
-        deptCodeToName[dept.deptCode] = dept.name;
-    });
+	deptCodes = depts.map((dept) => dept.deptCode);
+	deptCodeToName = {};
+	depts.forEach((dept) => {
+		deptCodeToName[dept.deptCode] = dept.name;
+	});
 });
 
 // Load professor name data
 let profNames: string[] = [];
 let profNamesReverse: string[] = [];
 ProfsLookupStore.subscribe((profs) => {
-    profNames = Object.keys(profs);
-    profNames.sort();
+	profNames = Object.keys(profs);
+	profNames.sort();
 
-    profNamesReverse = profNames.map((name) => {
-        const parts = name.split(' ');
-        if (parts.length < 2) {
-            return name;
-        }
+	profNamesReverse = profNames.map((name) => {
+		const parts = name.split(' ');
+		if (parts.length < 2) {
+			return name;
+		}
 
-        const lastName = parts.pop();
-        const firstNames = parts.join(' ');
-        return `${lastName}, ${firstNames}`;
-    });
-    profNamesReverse.sort();
+		const lastName = parts.pop();
+		const firstNames = parts.join(' ');
+		return `${lastName}, ${firstNames}`;
+	});
+	profNamesReverse.sort();
 });
 
-let mostRecentInput: string = "";
+let mostRecentInput: string = '';
 
 // Current schedule term/year, used to scope course searches.
 let activeTerm: string = 'Fall';
 let activeYear: number = new Date().getFullYear();
 CurrentScheduleStore.subscribe((stored) => {
-    const nextTerm = stored.term;
-    const nextYear = stored.year;
-    const changed = nextTerm !== activeTerm || nextYear !== activeYear;
-    activeTerm = nextTerm;
-    activeYear = nextYear;
-    if (changed) {
-        setSearchResults(mostRecentInput);
-    }
+	const nextTerm = stored.term;
+	const nextYear = stored.year;
+	const changed = nextTerm !== activeTerm || nextYear !== activeYear;
+	activeTerm = nextTerm;
+	activeYear = nextYear;
+	if (changed) {
+		setSearchResults(mostRecentInput);
+	}
 });
 
 // Filtering data
 let filters: FilterParams = {
-    serverSideFilters: {},
-    clientSideFilters: {}
+	serverSideFilters: {},
+	clientSideFilters: {}
 };
 CourseSearchFilterStore.subscribe((newFilters) => {
-    filters = newFilters;
-    setSearchResults(mostRecentInput);
+	filters = newFilters;
+	setSearchResults(mostRecentInput);
 });
 
 async function getRequestTermYear(): Promise<{
-    term: 'Fall' | 'Winter' | 'Spring' | 'Summer',
-    year: number,
-    semester?: string,
+	term: 'Fall' | 'Winter' | 'Spring' | 'Summer';
+	year: number;
+	semester?: string;
 }> {
-    const selectedTerm = filters.clientSideFilters.searchTerm;
-    if (selectedTerm) {
-        try {
-            const resolved = await resolveMostRecentTermYear(selectedTerm as AcademicTerm);
-            if (resolved) {
-                ResolvedSearchTermYearStore.set({
-                    term: resolved.term,
-                    year: resolved.year,
-                    semester: resolved.semester,
-                });
-                return {
-                    term: resolved.term,
-                    year: resolved.year,
-                    semester: resolved.semester,
-                };
-            }
+	const selectedTerm = filters.clientSideFilters.searchTerm;
+	if (selectedTerm) {
+		try {
+			const resolved = await resolveMostRecentTermYear(selectedTerm as AcademicTerm);
+			if (resolved) {
+				ResolvedSearchTermYearStore.set({
+					term: resolved.term,
+					year: resolved.year,
+					semester: resolved.semester
+				});
+				return {
+					term: resolved.term,
+					year: resolved.year,
+					semester: resolved.semester
+				};
+			}
 
-            ResolvedSearchTermYearStore.set(null);
-            const semester = semesterFromTermYear(
-                selectedTerm as AcademicTerm,
-                activeYear
-            );
-            ResolvedSearchTermYearStore.set({
-                term: selectedTerm,
-                year: activeYear,
-                semester,
-            });
-            return {
-                term: selectedTerm,
-                year: activeYear,
-                semester,
-            };
-        } catch (error) {
-            console.error('Unable to resolve available term-year list:', error);
-            const semester = semesterFromTermYear(
-                selectedTerm as AcademicTerm,
-                activeYear
-            );
-            ResolvedSearchTermYearStore.set({
-                term: selectedTerm,
-                year: activeYear,
-                semester,
-            });
-            return {
-                term: selectedTerm,
-                year: activeYear,
-                semester,
-            };
-        }
-    }
+			ResolvedSearchTermYearStore.set(null);
+			const semester = semesterFromTermYear(selectedTerm as AcademicTerm, activeYear);
+			ResolvedSearchTermYearStore.set({
+				term: selectedTerm,
+				year: activeYear,
+				semester
+			});
+			return {
+				term: selectedTerm,
+				year: activeYear,
+				semester
+			};
+		} catch (error) {
+			console.error('Unable to resolve available term-year list:', error);
+			const semester = semesterFromTermYear(selectedTerm as AcademicTerm, activeYear);
+			ResolvedSearchTermYearStore.set({
+				term: selectedTerm,
+				year: activeYear,
+				semester
+			});
+			return {
+				term: selectedTerm,
+				year: activeYear,
+				semester
+			};
+		}
+	}
 
-    ResolvedSearchTermYearStore.set(null);
-    return {
-        term: activeTerm as 'Fall' | 'Winter' | 'Spring' | 'Summer',
-        year: activeYear,
-    };
+	ResolvedSearchTermYearStore.set(null);
+	return {
+		term: activeTerm as 'Fall' | 'Winter' | 'Spring' | 'Summer',
+		year: activeYear
+	};
 }
 
 /**
  * Given an `input` (which should already be simplified to remove whitespace
  * and convert to uppercase), returns a list of department codes that match the
  * input.
- * @param input 
+ * @param input
  */
 function resolveInputToDepartment(input: string): string[] {
-    if (!deptCodes || input.length < 1) {
-        return [];
-    }
+	if (!deptCodes || input.length < 1) {
+		return [];
+	}
 
-    // You may think that if the input length is 4 or longer, we should just
-    // use that as the input to get from the cache. But consider that we need
-    // to check that the input is a valid department code, which is an O(n)
-    // operation anyway. So there's no point in adding additional logic for the
-    // case where the input length is a full department code.
-    const deptInput = input.length > 4 ? input.substring(0, 4) : input;
-    const possibleDepts: string[] =
-        deptCodes.filter((dept) => dept.startsWith(deptInput));
+	// You may think that if the input length is 4 or longer, we should just
+	// use that as the input to get from the cache. But consider that we need
+	// to check that the input is a valid department code, which is an O(n)
+	// operation anyway. So there's no point in adding additional logic for the
+	// case where the input length is a full department code.
+	const deptInput = input.length > 4 ? input.substring(0, 4) : input;
+	const possibleDepts: string[] = deptCodes.filter((dept) => dept.startsWith(deptInput));
 
-    return possibleDepts;
+	return possibleDepts;
 }
 
 function filterCoursesBySearchInput(
-    courses: Course[],
-    simpleInput: string,
-    matchingDepts: string[]
+	courses: Course[],
+	simpleInput: string,
+	matchingDepts: string[]
 ): Course[] {
-    if (simpleInput.length === 0) {
-        return courses;
-    }
+	if (simpleInput.length === 0) {
+		return courses;
+	}
 
-    if (/^[A-Z]{4}[0-9]{3}[A-Z]{0,2}$/.test(simpleInput)) {
-        return courses.filter((course) => {
-            return course.courseCode.toUpperCase() === simpleInput;
-        });
-    }
+	if (/^[A-Z]{4}[0-9]{3}[A-Z]{0,2}$/.test(simpleInput)) {
+		return courses.filter((course) => {
+			return course.courseCode.toUpperCase() === simpleInput;
+		});
+	}
 
-    if (matchingDepts.length > 0) {
-        return courses.filter((course) => {
-            return course.courseCode.toUpperCase().startsWith(simpleInput);
-        });
-    }
+	if (matchingDepts.length > 0) {
+		return courses.filter((course) => {
+			return course.courseCode.toUpperCase().startsWith(simpleInput);
+		});
+	}
 
-    if (simpleInput.length >= 3 && /^[0-9]{3}[A-Z]?$/i.test(simpleInput)) {
-        return courses.filter((course) => {
-            return course.courseCode.substring(4).toUpperCase().startsWith(simpleInput);
-        });
-    }
+	if (simpleInput.length >= 3 && /^[0-9]{3}[A-Z]?$/i.test(simpleInput)) {
+		return courses.filter((course) => {
+			return course.courseCode.substring(4).toUpperCase().startsWith(simpleInput);
+		});
+	}
 
-    return courses.filter((course) => {
-        return course.courseCode.toUpperCase().includes(simpleInput) ||
-            course.name.toUpperCase().includes(simpleInput);
-    });
+	return courses.filter((course) => {
+		return (
+			course.courseCode.toUpperCase().includes(simpleInput) ||
+			course.name.toUpperCase().includes(simpleInput)
+		);
+	});
 }
 
 function filterAndSortCourseArray(courses: Course[]): Course[] {
-    const sorted = courses.sort((a, b) => {
-        return a.courseCode.localeCompare(b.courseCode);
-    });
+	const sorted = courses.sort((a, b) => {
+		return a.courseCode.localeCompare(b.courseCode);
+	});
 
-    const fs = filters.clientSideFilters;
+	const fs = filters.clientSideFilters;
 
-    const filtered = fs.onlyOpen !== true ? sorted :
-        sorted.map((course) => {
-            if (course.sections === null || course.sections.length === 0) {
-                return course;
-            }
+	const filtered =
+		fs.onlyOpen !== true
+			? sorted
+			: sorted.map((course) => {
+					if (course.sections === null || course.sections.length === 0) {
+						return course;
+					}
 
-            const openSections = course.sections.filter((section) => {
-                return section.openSeats > 0;
-            });
+					const openSections = course.sections.filter((section) => {
+						return section.openSeats > 0;
+					});
 
-            return {
-                ...course,
-                sections: openSections,
-            };
-        });
+					return {
+						...course,
+						sections: openSections
+					};
+				});
 
-    if (fs.maxCredits === undefined && fs.minCredits === undefined && 
-        (fs.onlyOpen === undefined || fs.onlyOpen === false)) {
-        return sorted;
-    }
+	if (
+		fs.maxCredits === undefined &&
+		fs.minCredits === undefined &&
+		(fs.onlyOpen === undefined || fs.onlyOpen === false)
+	) {
+		return sorted;
+	}
 
-    return filtered.filter((course) => {
-        if (fs.onlyOpen === true && 
-            (course.sections === null || course.sections.length === 0)) {
-            return false;
-        }
+	return filtered.filter((course) => {
+		if (fs.onlyOpen === true && (course.sections === null || course.sections.length === 0)) {
+			return false;
+		}
 
-        const maxCredits = fs.maxCredits ?? Number.MAX_SAFE_INTEGER;
-        const minCredits = fs.minCredits ?? 0;
-        
-        if (course.maxCredits === null) {
-            return course.minCredits >= minCredits && 
-                    course.minCredits <= maxCredits;
-        } else {
-            return course.minCredits <= maxCredits && 
-                    course.maxCredits >= minCredits;
-        }
-    });
+		const maxCredits = fs.maxCredits ?? Number.MAX_SAFE_INTEGER;
+		const minCredits = fs.minCredits ?? 0;
+
+		if (course.maxCredits === null) {
+			return course.minCredits >= minCredits && course.minCredits <= maxCredits;
+		} else {
+			return course.minCredits <= maxCredits && course.maxCredits >= minCredits;
+		}
+	});
 }
 
 function applyServerFiltersLocally(
-    courses: Course[],
-    serverFilters: FilterParams['serverSideFilters']
+	courses: Course[],
+	serverFilters: FilterParams['serverSideFilters']
 ): Course[] {
-    return courses.filter((course) => {
-        if (serverFilters.genEds && serverFilters.genEds.length > 0) {
-            const presentCodes = new Set(
-                (course.genEds ?? []).map((genEd) => genEd.code.toUpperCase())
-            );
-            for (const required of serverFilters.genEds) {
-                if (!presentCodes.has(required.code.toUpperCase())) {
-                    return false;
-                }
-            }
-        }
+	return courses.filter((course) => {
+		if (serverFilters.genEds && serverFilters.genEds.length > 0) {
+			const presentCodes = new Set((course.genEds ?? []).map((genEd) => genEd.code.toUpperCase()));
+			for (const required of serverFilters.genEds) {
+				if (!presentCodes.has(required.code.toUpperCase())) {
+					return false;
+				}
+			}
+		}
 
-        if (serverFilters.instructor && serverFilters.instructor.length > 0) {
-            const normalizedInstructor = serverFilters.instructor.trim().toLowerCase();
-            const hasInstructor = (course.sections ?? []).some((section) => {
-                return section.instructors.some((name) => {
-                    return name.trim().toLowerCase() === normalizedInstructor;
-                });
-            });
-            if (!hasInstructor) {
-                return false;
-            }
-        }
+		if (serverFilters.instructor && serverFilters.instructor.length > 0) {
+			const normalizedInstructor = serverFilters.instructor.trim().toLowerCase();
+			const hasInstructor = (course.sections ?? []).some((section) => {
+				return section.instructors.some((name) => {
+					return name.trim().toLowerCase() === normalizedInstructor;
+				});
+			});
+			if (!hasInstructor) {
+				return false;
+			}
+		}
 
-        return true;
-    });
+		return true;
+	});
 }
 
 async function hydrateSectionsForMatchedCourses(
-    courses: Course[],
-    requestTermYear: {
-        term: 'Fall' | 'Winter' | 'Spring' | 'Summer',
-        year: number,
-        semester?: string,
-    }
+	courses: Course[],
+	requestTermYear: {
+		term: 'Fall' | 'Winter' | 'Spring' | 'Summer';
+		year: number;
+		semester?: string;
+	}
 ): Promise<Course[]> {
-    const hydrated = await Promise.all(courses.map(async (course) => {
-        const requestInput: RequestInput = {
-            type: 'courseCode',
-            value: course.courseCode,
-            filters: {},
-            includeSections: true,
-            semester: requestTermYear.semester,
-            term: requestTermYear.term,
-            year: requestTermYear.year,
-        };
+	const hydrated = await Promise.all(
+		courses.map(async (course) => {
+			const requestInput: RequestInput = {
+				type: 'courseCode',
+				value: course.courseCode,
+				filters: {},
+				includeSections: true,
+				semester: requestTermYear.semester,
+				term: requestTermYear.term,
+				year: requestTermYear.year
+			};
 
-        const results = await cache.getCoursesAndSections(requestInput);
-        const fetchedCourse = results.find((row) => {
-            return row.courseCode === course.courseCode;
-        });
+			const results = await cache.getCoursesAndSections(requestInput);
+			const fetchedCourse = results.find((row) => {
+				return row.courseCode === course.courseCode;
+			});
 
-        if (!fetchedCourse) {
-            return course;
-        }
+			if (!fetchedCourse) {
+				return course;
+			}
 
-        return {
-            ...course,
-            sections: fetchedCourse.sections,
-        };
-    }));
+			return {
+				...course,
+				sections: fetchedCourse.sections
+			};
+		})
+	);
 
-    return hydrated;
+	return hydrated;
 }
 
 /**
@@ -339,221 +336,208 @@ async function hydrateSectionsForMatchedCourses(
  * @param input A search input string
  */
 export async function setSearchResults(input: string) {
-    mostRecentInput = input;
-    let requestTermYear: {
-        term: 'Fall' | 'Winter' | 'Spring' | 'Summer',
-        year: number,
-        semester?: string,
-    };
-    try {
-        requestTermYear = await getRequestTermYear();
-    } catch (error) {
-        console.error('Unable to resolve search term/year. Using active schedule term/year.', error);
-        requestTermYear = {
-            term: activeTerm as 'Fall' | 'Winter' | 'Spring' | 'Summer',
-            year: activeYear,
-        };
-    }
+	mostRecentInput = input;
+	let requestTermYear: {
+		term: 'Fall' | 'Winter' | 'Spring' | 'Summer';
+		year: number;
+		semester?: string;
+	};
+	try {
+		requestTermYear = await getRequestTermYear();
+	} catch (error) {
+		console.error('Unable to resolve search term/year. Using active schedule term/year.', error);
+		requestTermYear = {
+			term: activeTerm as 'Fall' | 'Winter' | 'Spring' | 'Summer',
+			year: activeYear
+		};
+	}
 
-    // Don't care about case or whitespace in searches
-    const simpleInput: string = input.toUpperCase().replace(/\s/g, '');
+	// Don't care about case or whitespace in searches
+	const simpleInput: string = input.toUpperCase().replace(/\s/g, '');
 
-    // If the search input matches a department code, get the courses for that
-    // department and then filter by course number.
-    const matchingDepts = resolveInputToDepartment(simpleInput);
-    const shouldShowSuggestions =
-        simpleInput.length > 0 && matchingDepts.length > 1;
-    DeptSuggestionsStore.set(shouldShowSuggestions ? matchingDepts : []);
+	// If the search input matches a department code, get the courses for that
+	// department and then filter by course number.
+	const matchingDepts = resolveInputToDepartment(simpleInput);
+	const shouldShowSuggestions = simpleInput.length > 0 && matchingDepts.length > 1;
+	DeptSuggestionsStore.set(shouldShowSuggestions ? matchingDepts : []);
 
-    const hasSelectedTermOverride =
-        filters.clientSideFilters.searchTerm !== undefined;
+	const hasSelectedTermOverride = filters.clientSideFilters.searchTerm !== undefined;
 
-    if (hasSelectedTermOverride) {
-        const needsSectionData =
-            (filters.serverSideFilters.instructor !== undefined &&
-                filters.serverSideFilters.instructor.trim().length > 0) ||
-            filters.clientSideFilters.onlyOpen === true;
+	if (hasSelectedTermOverride) {
+		const needsSectionData =
+			(filters.serverSideFilters.instructor !== undefined &&
+				filters.serverSideFilters.instructor.trim().length > 0) ||
+			filters.clientSideFilters.onlyOpen === true;
 
-        const requestInput: RequestInput = {
-            type: "deptCode",
-            value: "",
-            filters: {},
-            includeSections: needsSectionData,
-            semester: requestTermYear.semester,
-            term: requestTermYear.term,
-            year: requestTermYear.year,
-        };
+		const requestInput: RequestInput = {
+			type: 'deptCode',
+			value: '',
+			filters: {},
+			includeSections: needsSectionData,
+			semester: requestTermYear.semester,
+			term: requestTermYear.term,
+			year: requestTermYear.year
+		};
 
-        const semesterCourses = filterAndSortCourseArray(
-            applyServerFiltersLocally(
-                await cache.getCoursesAndSections(requestInput),
-                filters.serverSideFilters
-            )
-        );
+		const semesterCourses = filterAndSortCourseArray(
+			applyServerFiltersLocally(
+				await cache.getCoursesAndSections(requestInput),
+				filters.serverSideFilters
+			)
+		);
 
-        if (cache.getMostRecentAccess() !== requestInput) {
-            return;
-        }
+		if (cache.getMostRecentAccess() !== requestInput) {
+			return;
+		}
 
-        const matchingCourses = filterCoursesBySearchInput(
-            semesterCourses,
-            simpleInput,
-            matchingDepts
-        );
+		const matchingCourses = filterCoursesBySearchInput(semesterCourses, simpleInput, matchingDepts);
 
-        let coursesToDisplay = matchingCourses;
-        if (!needsSectionData && simpleInput.length > 0 && matchingCourses.length > 0) {
-            coursesToDisplay = await hydrateSectionsForMatchedCourses(
-                matchingCourses,
-                requestTermYear
-            );
-        }
+		let coursesToDisplay = matchingCourses;
+		if (!needsSectionData && simpleInput.length > 0 && matchingCourses.length > 0) {
+			coursesToDisplay = await hydrateSectionsForMatchedCourses(matchingCourses, requestTermYear);
+		}
 
-        if (mostRecentInput !== input) {
-            return;
-        }
+		if (mostRecentInput !== input) {
+			return;
+		}
 
-        SearchResultsStore.set(coursesToDisplay);
-        return;
-    }
+		SearchResultsStore.set(coursesToDisplay);
+		return;
+	}
 
-    if (/^[A-Z]{4}[0-9]{3}[A-Z]{0,2}$/.test(simpleInput)) {
-        DeptSuggestionsStore.set([]);
+	if (/^[A-Z]{4}[0-9]{3}[A-Z]{0,2}$/.test(simpleInput)) {
+		DeptSuggestionsStore.set([]);
 
-        const requestInput: RequestInput = {
-            type: "courseCode",
-            value: simpleInput,
-            filters: filters.serverSideFilters,
-            semester: requestTermYear.semester,
-            term: requestTermYear.term,
-            year: requestTermYear.year,
-        };
+		const requestInput: RequestInput = {
+			type: 'courseCode',
+			value: simpleInput,
+			filters: filters.serverSideFilters,
+			semester: requestTermYear.semester,
+			term: requestTermYear.term,
+			year: requestTermYear.year
+		};
 
-        const courses = filterAndSortCourseArray(
-            await cache.getCoursesAndSections(requestInput)
-        );
+		const courses = filterAndSortCourseArray(await cache.getCoursesAndSections(requestInput));
 
-        if (cache.getMostRecentAccess() !== requestInput) {
-            return;
-        }
+		if (cache.getMostRecentAccess() !== requestInput) {
+			return;
+		}
 
-        SearchResultsStore.set(courses);
-        return;
-    }
+		SearchResultsStore.set(courses);
+		return;
+	}
 
-    if (matchingDepts.length === 1) {
-        DeptSuggestionsStore.set([]);
-        console.log(`Searching for dept: ${matchingDepts[0]}`);
+	if (matchingDepts.length === 1) {
+		DeptSuggestionsStore.set([]);
+		console.log(`Searching for dept: ${matchingDepts[0]}`);
 
-        // Generate cache request input
-        const requestInput: RequestInput = {
-            type: "deptCode",
-            value: matchingDepts[0],
-            filters: filters.serverSideFilters,
-            semester: requestTermYear.semester,
-            term: requestTermYear.term,
-            year: requestTermYear.year,
-        }
+		// Generate cache request input
+		const requestInput: RequestInput = {
+			type: 'deptCode',
+			value: matchingDepts[0],
+			filters: filters.serverSideFilters,
+			semester: requestTermYear.semester,
+			term: requestTermYear.term,
+			year: requestTermYear.year
+		};
 
-        // Get from cache/API
-        const deptCourses: Course[] = 
-            filterAndSortCourseArray(
-                await cache.getCoursesAndSections(requestInput));
+		// Get from cache/API
+		const deptCourses: Course[] = filterAndSortCourseArray(
+			await cache.getCoursesAndSections(requestInput)
+		);
 
-        // Ensure that the department for this search is still the most recent
-        // search. If not, abort to avoid displaying outdated results.
-        if (cache.getMostRecentAccess() !== requestInput) {
-            return;
-        }
+		// Ensure that the department for this search is still the most recent
+		// search. If not, abort to avoid displaying outdated results.
+		if (cache.getMostRecentAccess() !== requestInput) {
+			return;
+		}
 
-        // If the input contains no numbers, all dept courses are matching.
-        if (simpleInput.length <= 4) {
-            SearchResultsStore.set(deptCourses);
-            return;
-        }
+		// If the input contains no numbers, all dept courses are matching.
+		if (simpleInput.length <= 4) {
+			SearchResultsStore.set(deptCourses);
+			return;
+		}
 
-        // Otherwise, filter by course number
-        const inputCode = simpleInput.substring(4);
-        const matchingCourses = deptCourses.filter((course) => {
-            return course.courseCode.startsWith(inputCode, 4);
-        });
-        SearchResultsStore.set(matchingCourses);
-        return;
-    }
+		// Otherwise, filter by course number
+		const inputCode = simpleInput.substring(4);
+		const matchingCourses = deptCourses.filter((course) => {
+			return course.courseCode.startsWith(inputCode, 4);
+		});
+		SearchResultsStore.set(matchingCourses);
+		return;
+	}
 
-    // If we reach here, the input does not match a single department code.
-    // This could be because the input is just numbers, or because it is
-    // not a valid department code.
+	// If we reach here, the input does not match a single department code.
+	// This could be because the input is just numbers, or because it is
+	// not a valid department code.
 
-    // If the search is 3 numbers and optionally a letter,
-    // match courses with the number (+ letter).
-    if (simpleInput.length >= 3 && /^[0-9]{3}[A-Z]?$/i.test(simpleInput)) {
-        const numberInput = simpleInput.substring(0, 3);
+	// If the search is 3 numbers and optionally a letter,
+	// match courses with the number (+ letter).
+	if (simpleInput.length >= 3 && /^[0-9]{3}[A-Z]?$/i.test(simpleInput)) {
+		const numberInput = simpleInput.substring(0, 3);
 
-        const requestInput: RequestInput = {
-            type: "courseNumber",
-            value: numberInput,
-            filters: filters.serverSideFilters,
-            semester: requestTermYear.semester,
-            term: requestTermYear.term,
-            year: requestTermYear.year,
-        }
+		const requestInput: RequestInput = {
+			type: 'courseNumber',
+			value: numberInput,
+			filters: filters.serverSideFilters,
+			semester: requestTermYear.semester,
+			term: requestTermYear.term,
+			year: requestTermYear.year
+		};
 
-        const courses: Course[] =
-            filterAndSortCourseArray(
-                (await cache.getCoursesAndSections(requestInput))
-                .filter((course) => {
-                    // API only matches the number, but the input may
-                    // include a letter suffix as well. Filter that here.
-                    return course.courseCode
-                            .substring(4)
-                            .toUpperCase()
-                            .startsWith(simpleInput);
-                }));
-        
-        // Ensure that the course number for this search is still the most
-        // recent search. If not, abort to avoid displaying outdated results.
-        if (cache.getMostRecentAccess() !== requestInput) {
-            return;
-        }
+		const courses: Course[] = filterAndSortCourseArray(
+			(await cache.getCoursesAndSections(requestInput)).filter((course) => {
+				// API only matches the number, but the input may
+				// include a letter suffix as well. Filter that here.
+				return course.courseCode.substring(4).toUpperCase().startsWith(simpleInput);
+			})
+		);
 
-        SearchResultsStore.set(courses);
-        return;
-    }
+		// Ensure that the course number for this search is still the most
+		// recent search. If not, abort to avoid displaying outdated results.
+		if (cache.getMostRecentAccess() !== requestInput) {
+			return;
+		}
 
-    // If we reach here, the input is not a valid department code or a course
-    // number. If there is an instructor or GenEd filter applied, we can search
-    // all courses for matches. Only do this if search is empty.
-    const fs = filters.serverSideFilters;
-    if (simpleInput.length === 0 
-            && ((fs.genEds !== undefined && fs.genEds.length > 0) || 
-                (fs.instructor !== undefined && fs.instructor.length > 0))) {
-        const requestInput: RequestInput = {
-            type: "deptCode",
-            value: "", // Empty prefix to get all courses
-            filters: filters.serverSideFilters,
-            semester: requestTermYear.semester,
-            term: requestTermYear.term,
-            year: requestTermYear.year,
-        }
+		SearchResultsStore.set(courses);
+		return;
+	}
 
-        const courses: Course[] =
-            filterAndSortCourseArray(
-                await cache.getCoursesAndSections(requestInput));
+	// If we reach here, the input is not a valid department code or a course
+	// number. If there is an instructor or GenEd filter applied, we can search
+	// all courses for matches. Only do this if search is empty.
+	const fs = filters.serverSideFilters;
+	if (
+		simpleInput.length === 0 &&
+		((fs.genEds !== undefined && fs.genEds.length > 0) ||
+			(fs.instructor !== undefined && fs.instructor.length > 0))
+	) {
+		const requestInput: RequestInput = {
+			type: 'deptCode',
+			value: '', // Empty prefix to get all courses
+			filters: filters.serverSideFilters,
+			semester: requestTermYear.semester,
+			term: requestTermYear.term,
+			year: requestTermYear.year
+		};
 
-        // Ensure that the course number for this search is still the most
-        // recent search. If not, abort to avoid displaying outdated results.
-        if (cache.getMostRecentAccess() !== requestInput) {
-            return;
-        }
+		const courses: Course[] = filterAndSortCourseArray(
+			await cache.getCoursesAndSections(requestInput)
+		);
 
-        SearchResultsStore.set(courses);
-        return;
-    }
+		// Ensure that the course number for this search is still the most
+		// recent search. If not, abort to avoid displaying outdated results.
+		if (cache.getMostRecentAccess() !== requestInput) {
+			return;
+		}
 
-    // If these filters aren't applied, clear results.
-    SearchResultsStore.set([]);
-    return;
+		SearchResultsStore.set(courses);
+		return;
+	}
+
+	// If these filters aren't applied, clear results.
+	SearchResultsStore.set([]);
+	return;
 }
 
 /**
@@ -566,27 +550,26 @@ export async function setSearchResults(input: string) {
  * @returns A `Record<string, Instructor>` where instructor names as `string`s
  *              are mapped to `Instructor` objects.
  */
-export function getProfsLookup(
-                    profs: Instructor[]): Record<string, Instructor> {
-    const result: Record<string, Instructor> = {};
-    const names: Set<string> = new Set<string>();
-    for (const prof of profs) {
-        const { name } = prof;
-        if (names.has(name)) {
-            delete result[name];
-        } else {
-            result[name] = prof;
-            names.add(name);
-        }
-    }
-    return result;
+export function getProfsLookup(profs: Instructor[]): Record<string, Instructor> {
+	const result: Record<string, Instructor> = {};
+	const names: Set<string> = new Set<string>();
+	for (const prof of profs) {
+		const { name } = prof;
+		if (names.has(name)) {
+			delete result[name];
+		} else {
+			result[name] = prof;
+			names.add(name);
+		}
+	}
+	return result;
 }
 
 /**
  * Returns true if the most recent request is still awaiting results.
  */
 export function pendingResults(): boolean {
-    return cache.isPending();
+	return cache.isPending();
 }
 
 /**
@@ -595,31 +578,29 @@ export function pendingResults(): boolean {
  * @param partial A partial or un-formatted professor name
  */
 export function matchingStandardizedProfessorNames(partial: string): string[] {
-    const simpleInput: string = partial.toUpperCase().replace(/\s/g, '');
-    const matches: string[] = [];
-    for (const profName of profNames) {
-        const simpleProfName: string =
-            profName.toUpperCase().replace(/\s/g, '');
-        if (simpleProfName.startsWith(simpleInput)) {
-            matches.push(profName);
-        }
-    }
-    for (const profName of profNamesReverse) {
-        const simpleProfName: string =
-            profName.toUpperCase().replace(/\s/g, '');
-        if (simpleProfName.startsWith(simpleInput)) {
-            // Convert back to normal name order
-            const parts = profName.split(', ');
-            if (parts.length < 2) {
-                continue;
-            }
-            const firstNames = parts[1];
-            const lastName = parts[0];
-            const normalName = `${firstNames} ${lastName}`;
-            if (!matches.includes(normalName)) {
-                matches.push(normalName);
-            }
-        }
-    }
-    return matches;
+	const simpleInput: string = partial.toUpperCase().replace(/\s/g, '');
+	const matches: string[] = [];
+	for (const profName of profNames) {
+		const simpleProfName: string = profName.toUpperCase().replace(/\s/g, '');
+		if (simpleProfName.startsWith(simpleInput)) {
+			matches.push(profName);
+		}
+	}
+	for (const profName of profNamesReverse) {
+		const simpleProfName: string = profName.toUpperCase().replace(/\s/g, '');
+		if (simpleProfName.startsWith(simpleInput)) {
+			// Convert back to normal name order
+			const parts = profName.split(', ');
+			if (parts.length < 2) {
+				continue;
+			}
+			const firstNames = parts[1];
+			const lastName = parts[0];
+			const normalName = `${firstNames} ${lastName}`;
+			if (!matches.includes(normalName)) {
+				matches.push(normalName);
+			}
+		}
+	}
+	return matches;
 }

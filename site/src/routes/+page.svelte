@@ -5,545 +5,536 @@ https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2026 Andrew Cupps
  -->
 <script lang="ts">
-    import CourseSearch from '../components/course-planner/course-search/CourseSearch.svelte';
-    import CurrentSchedulePanel from '../components/course-planner/schedule/CurrentSchedulePanel.svelte';
-    import { onDestroy, onMount } from 'svelte';
-    import {
-        ensureUpToDateAndSetStores,
-        resolveSelections,
-        resolveStoredSchedules
-    } from '../lib/course-planner/CourseLoad';
-    import { getProfsLookup } from '$lib/course-planner/CourseSearch';
-    import {
-        ActiveViewerStore,
-        ScheduleReadOnlyStore,
-        ScheduleVisibilityStore,
-        ProfsLookupStore,
-        CurrentScheduleStore,
-        NonselectedScheduleStore,
-        DepartmentsStore,
-        ViewerNoticeStore,
-        ViewerOptionsStore,
-    } from '../stores/CoursePlannerStores';
-    import { client } from '$lib/client';
-    import {
-        getAccessToken,
-        getAuthUser,
-        isSupabaseConfigured,
-        loadUserSchedules,
-        onAuthStateChanged,
-        saveUserSchedules,
-    } from '$lib/supabase';
-    import {
-        getFriendSchedule,
-        getViewerOptions,
-    } from '$lib/api/friendsClient';
-    import {
-        getDefaultTermYear,
-        getMaxScheduleYear,
-        MIN_SCHEDULE_YEAR,
-        normalizeStoredSchedule,
-    } from '$lib/course-planner/Terms';
-    import {
-        hasLocalScheduleSnapshot,
-        readLocalScheduleSnapshot,
-        writeLocalScheduleSnapshot,
-    } from '$lib/course-planner/ScheduleStorage';
-    import {
-        type Instructor,
-        type InstructorsConfig, 
-        type InstructorsResponse
-    } from '@jupiterp/jupiterp';
-    import type { FriendVisibility } from '$lib/friends/types';
-    import type { ScheduleSelection, StoredSchedule } from '../types';
-
-    // Function to retreive professor data; called in `onMount`.
-    async function fetchProfessorData() {
-        try {
-            let limit = 500;
-            let offset = 0;
-            let allInstructors: Instructor[] = [];
-            let config: InstructorsConfig = {
-                limit: limit,
-                offset: offset,
-            };
-            let complete = false;
-            while (!complete) {
-                const response: InstructorsResponse =
-                    await client.activeInstructors(config);
-                if (response.ok() && response.data != null) {
-                    allInstructors = [...allInstructors, ...response.data];
-                    if (response.data.length < limit) {
-                        complete = true;
-                        break;
-                    }
-                    offset += limit;
-                    config.offset = offset;
-                } else {
-                    // format-check exempt 1
-                    throw new Error(`Failed to fetch data: ${response.statusCode} ${response.statusMessage} ${response.errorBody}`);
-                }
-            }
-
-            // Update the ProfsLookupStore with the fetched data
-            ProfsLookupStore.set(getProfsLookup(allInstructors));
-        }
-        catch (error) {
-            console.error('Error fetching professor data:', error);
-        }
-    }
-
-    // Function to get list of department codes as an array of strings
-    // and set the DepartmentsStore.
-    async function fetchDeptCodes() {
-        const res = await client.deptList();
-        if (res.ok() && res.data != null) {
-            const depts = res.data;
-            DepartmentsStore.set(depts);
-        } else {
-            console.error('Error fetching department codes:', res.errorBody);
-        }
-    }
-
-    // Keep track of chosen sections
-    let currentSchedule: StoredSchedule;
-    let activeViewerId = 'self';
-    let isViewingSelf = true;
-    let lastHandledViewerId: string | null = null;
-    let accessToken: string | null = null;
-    let ownCurrentSchedule: StoredSchedule | null = null;
-    let ownNonselectedSchedules: StoredSchedule[] = [];
-    let hasCapturedOwnState = false;
-
-    let hasReadLocalStorage: boolean = false;
-    let authUserId: string | null = null;
-    let authUnsubscribe: (() => void) | null = null;
-    let cloudSyncTimeout: ReturnType<typeof setTimeout> | null = null;
-
-    ActiveViewerStore.subscribe((stored) => {
-        activeViewerId = stored;
-    });
-
-    CurrentScheduleStore.subscribe((stored) => {
-        currentSchedule = stored;
-
-        if (hasReadLocalStorage && isViewingSelf) {
-            persistLocalSchedules();
-
-            queueCloudSync();
-        }
-    });
-
-    let nonselectedSchedules: StoredSchedule[] = [];
-    // Save non-selected schedules to local storage
-    NonselectedScheduleStore.subscribe((stored) => {
-        nonselectedSchedules = stored;
-
-        if (hasReadLocalStorage && isViewingSelf) {
-            persistLocalSchedules();
-
-            queueCloudSync();
-        }
-    })
-
-    function persistLocalSchedules() {
-        if (typeof window === 'undefined' || !currentSchedule) {
-            return;
-        }
-
-        writeLocalScheduleSnapshot(authUserId, {
-            selectedSections: jsonifySections(currentSchedule.selections),
-            scheduleName: currentSchedule.scheduleName,
-            scheduleTerm: currentSchedule.term,
-            scheduleYear: currentSchedule.year.toString(),
-            nonselectedSchedules: JSON.stringify(nonselectedSchedules),
-        });
-    }
-
-    function readScopedLocalSchedules(userId: string | null): {
-        current: StoredSchedule,
-        nonselected: StoredSchedule[],
-    } {
-        const defaultTermYear = getDefaultTermYear();
-        const snapshot = readLocalScheduleSnapshot(userId);
-
-        const scheduleTerm = (
-            snapshot.scheduleTermRaw === 'Winter'
-            || snapshot.scheduleTermRaw === 'Spring'
-            || snapshot.scheduleTermRaw === 'Summer'
-            || snapshot.scheduleTermRaw === 'Fall'
-        ) ? snapshot.scheduleTermRaw : defaultTermYear.term;
-
-        const parsedStoredYear = Number(snapshot.scheduleYearRaw);
-        const maxScheduleYear = getMaxScheduleYear();
-        const scheduleYear = Number.isInteger(parsedStoredYear)
-            && parsedStoredYear >= MIN_SCHEDULE_YEAR
-            && parsedStoredYear <= maxScheduleYear
-            ? parsedStoredYear
-            : defaultTermYear.year;
-
-        const currentFromStorage: StoredSchedule = {
-            scheduleName: snapshot.scheduleNameRaw ?? 'Schedule 1',
-            selections: snapshot.selectedSectionsRaw
-                ? resolveSelections(snapshot.selectedSectionsRaw)
-                : [],
-            term: scheduleTerm,
-            year: scheduleYear,
-        };
-
-        const nonselectedFromStorage = snapshot.nonselectedSchedulesRaw
-            ? resolveStoredSchedules(snapshot.nonselectedSchedulesRaw)
-            : [];
-
-        return {
-            current: currentFromStorage,
-            nonselected: nonselectedFromStorage,
-        };
-    }
-
-    function applyScopedLocalSchedules(userId: string | null) {
-        const fallback = getDefaultTermYear();
-        const hasScopedSnapshot = hasLocalScheduleSnapshot(userId);
-        const scoped = readScopedLocalSchedules(userId);
-
-        const currentForStores = hasScopedSnapshot
-            ? scoped.current
-            : {
-                scheduleName: 'Schedule 1',
-                selections: [],
-                term: fallback.term,
-                year: fallback.year,
-            };
-        const nonselectedForStores = hasScopedSnapshot
-            ? scoped.nonselected
-            : [];
-
-        ensureUpToDateAndSetStores(currentForStores, nonselectedForStores);
-        currentSchedule = currentForStores;
-        nonselectedSchedules = nonselectedForStores;
-        hasReadLocalStorage = true;
-    }
-
-    async function hydrateFromCloud(userId: string) {
-        try {
-            const cloudValue = await loadUserSchedules(userId);
-            if (!cloudValue) {
-                applyScopedLocalSchedules(userId);
-                return;
-            }
-
-            const defaultTermYear = getDefaultTermYear();
-            const cloudCurrent = normalizeStoredSchedule(
-                cloudValue.currentSchedule,
-                defaultTermYear
-            );
-            const cloudNonselected =
-                cloudValue.nonselectedSchedules.map((schedule) => {
-                    return normalizeStoredSchedule(schedule, defaultTermYear);
-                });
-
-            ensureUpToDateAndSetStores(cloudCurrent, cloudNonselected);
-            currentSchedule = cloudCurrent;
-            nonselectedSchedules = cloudNonselected;
-            hasReadLocalStorage = true;
-        } catch (error) {
-            console.error('Failed loading cloud schedules:', error);
-            applyScopedLocalSchedules(userId);
-        }
-    }
-
-    function queueCloudSync() {
-        if (!hasReadLocalStorage || !authUserId || !currentSchedule || !isViewingSelf) {
-            return;
-        }
-
-        if (!isSupabaseConfigured()) {
-            return;
-        }
-
-        if (cloudSyncTimeout !== null) {
-            clearTimeout(cloudSyncTimeout);
-        }
-
-        cloudSyncTimeout = setTimeout(async () => {
-            if (!authUserId) {
-                return;
-            }
-
-            try {
-                await saveUserSchedules(authUserId, {
-                    currentSchedule,
-                    nonselectedSchedules,
-                });
-            } catch (error) {
-                console.error('Failed saving cloud schedules:', error);
-            }
-        }, 400);
-    }
-
-    function cloneSchedule(schedule: StoredSchedule): StoredSchedule {
-        return {
-            scheduleName: schedule.scheduleName,
-            selections: schedule.selections,
-            term: schedule.term,
-            year: schedule.year,
-        };
-    }
-
-    async function loadViewerOptions() {
-        accessToken = await getAccessToken();
-        if (!accessToken) {
-            ViewerOptionsStore.set([
-                { id: 'self', label: 'You', type: 'self' },
-            ]);
-            return;
-        }
-
-        try {
-            const payload = await getViewerOptions(accessToken);
-
-            ViewerOptionsStore.set([
-                {
-                    id: 'self',
-                    label: `You (${payload.selfName})`,
-                    type: 'self',
-                },
-                ...payload.friends.map((friend) => {
-                    return {
-                        id: friend.id,
-                        label: friend.label,
-                        type: 'friend' as const,
-                    };
-                }),
-            ]);
-        } catch (error) {
-            console.error('Unable to load viewer options:', error);
-            ViewerOptionsStore.set([
-                { id: 'self', label: 'You', type: 'self' },
-            ]);
-        }
-    }
-
-    async function handleViewerSelection(viewerId: string) {
-        if (viewerId === 'self') {
-            isViewingSelf = true;
-            ScheduleReadOnlyStore.set(false);
-            ScheduleVisibilityStore.set('full');
-            ViewerNoticeStore.set(null);
-
-            if (hasCapturedOwnState && ownCurrentSchedule) {
-                CurrentScheduleStore.set(cloneSchedule(ownCurrentSchedule));
-                NonselectedScheduleStore.set([...ownNonselectedSchedules]);
-            }
-            return;
-        }
-
-        accessToken = await getAccessToken();
-        if (!accessToken || !currentSchedule) {
-            ViewerNoticeStore.set('Sign in to view friend schedules.');
-            ActiveViewerStore.set('self');
-            return;
-        }
-
-        ownCurrentSchedule = cloneSchedule(currentSchedule);
-        ownNonselectedSchedules = [...nonselectedSchedules];
-        hasCapturedOwnState = true;
-
-        isViewingSelf = false;
-        ScheduleReadOnlyStore.set(true);
-
-        try {
-            const payload = await getFriendSchedule(accessToken, {
-                friendId: viewerId,
-                term: currentSchedule.term,
-                year: currentSchedule.year,
-            });
-
-            ScheduleVisibilityStore.set(payload.visibility);
-
-            if (payload.visibility === 'off' || !payload.schedule) {
-                ViewerNoticeStore.set(
-                    payload.message ?? `${payload.friendName}'s schedule is unavailable.`
-                );
-                CurrentScheduleStore.set({
-                    scheduleName: `${payload.friendName}`,
-                    selections: [],
-                    term: currentSchedule.term,
-                    year: currentSchedule.year,
-                });
-                NonselectedScheduleStore.set([]);
-                return;
-            }
-
-            CurrentScheduleStore.set(payload.schedule as StoredSchedule);
-            NonselectedScheduleStore.set([]);
-            const suffix = payload.visibility === 'busy_free'
-                ? ' (busy/free view)'
-                : '';
-            ViewerNoticeStore.set(`Viewing ${payload.friendName}'s schedule${suffix}.`);
-        } catch (error) {
-            console.error('Unable to load friend schedule:', error);
-            ViewerNoticeStore.set('Unable to load this friend schedule right now.');
-        }
-    }
-
-    onMount(() => {
-        ScheduleReadOnlyStore.set(false);
-        ScheduleVisibilityStore.set('full');
-        ViewerNoticeStore.set(null);
-
-        // Fetch instructor data from API
-        fetchProfessorData();
-
-        // Fetch department codes from API
-        fetchDeptCodes();
-
-        // Retrieve data from client local storage
-        try {
-            if (typeof window !== 'undefined') {
-                applyScopedLocalSchedules(null);
-
-                accessToken = null;
-                getAccessToken().then((token) => {
-                    accessToken = token;
-                    loadViewerOptions();
-
-                    if (typeof window !== 'undefined') {
-                        const requestedViewer =
-                            new URLSearchParams(window.location.search).get('view');
-                        if (requestedViewer && requestedViewer.length > 0) {
-                            ActiveViewerStore.set(requestedViewer);
-                        }
-                    }
-                });
-
-                if (isSupabaseConfigured()) {
-                    getAuthUser().then((user) => {
-                        authUserId = user?.id ?? null;
-                        if (authUserId) {
-                            hydrateFromCloud(authUserId);
-                        }
-
-                        getAccessToken().then((token) => {
-                            accessToken = token;
-                            loadViewerOptions();
-                        });
-                    });
-
-                    authUnsubscribe = onAuthStateChanged((user) => {
-                        const nextAuthId = user?.id ?? null;
-                        if (nextAuthId === authUserId) {
-                            return;
-                        }
-
-                        if (cloudSyncTimeout !== null) {
-                            clearTimeout(cloudSyncTimeout);
-                            cloudSyncTimeout = null;
-                        }
-
-                        authUserId = nextAuthId;
-                        getAccessToken().then((token) => {
-                            accessToken = token;
-                            loadViewerOptions();
-                        });
-
-                        if (authUserId) {
-                            hydrateFromCloud(authUserId);
-                        } else {
-                            applyScopedLocalSchedules(null);
-                            ActiveViewerStore.set('self');
-                        }
-                    });
-                }
-            }
-        } catch (e) {
-            console.log('Unable to retrieve courses: ' + e);
-            const defaultTermYear = getDefaultTermYear();
-            CurrentScheduleStore.set({
-                scheduleName: "Schedule 1",
-                selections: [],
-                term: defaultTermYear.term,
-                year: defaultTermYear.year,
-            });
-            NonselectedScheduleStore.set([]);
-        }
-    });
-
-    $: if (hasReadLocalStorage && activeViewerId !== lastHandledViewerId) {
-        lastHandledViewerId = activeViewerId;
-        void handleViewerSelection(activeViewerId);
-    }
-
-    onDestroy(() => {
-        if (authUnsubscribe) {
-            authUnsubscribe();
-        }
-
-        if (cloudSyncTimeout !== null) {
-            clearTimeout(cloudSyncTimeout);
-        }
-    });
-
-    function jsonifySections(sections: ScheduleSelection[]): string {
-        let finalSelections: ScheduleSelection[] = [];
-        for (let section of sections) {
-            if (!section.hover) {
-                finalSelections.push(section);
-            }
-        }
-        return JSON.stringify(finalSelections);
-    }
-
-    let sidebarWidth = 260;
-    let addClassesLayoutContainer: HTMLDivElement;
-    let resizingAddClassesSidebar = false;
-
-    function startAddClassesResize(event: MouseEvent) {
-        event.preventDefault();
-        resizingAddClassesSidebar = true;
-    }
-
-    function stopAddClassesResize() {
-        resizingAddClassesSidebar = false;
-    }
-
-    function onAddClassesResize(event: MouseEvent) {
-        if (!resizingAddClassesSidebar || !addClassesLayoutContainer) {
-            return;
-        }
-
-        const bounds = addClassesLayoutContainer.getBoundingClientRect();
-        const minSidebar = 180;
-        const maxSidebar = Math.max(minSidebar, bounds.width - 320);
-        const proposed = event.clientX - bounds.left;
-        sidebarWidth = Math.max(minSidebar, Math.min(560, Math.min(maxSidebar, proposed)));
-    }
-
+	import CourseSearch from '../components/course-planner/course-search/CourseSearch.svelte';
+	import CurrentSchedulePanel from '../components/course-planner/schedule/CurrentSchedulePanel.svelte';
+	import { onDestroy, onMount } from 'svelte';
+	import {
+		ensureUpToDateAndSetStores,
+		resolveSelections,
+		resolveStoredSchedules
+	} from '../lib/course-planner/CourseLoad';
+	import { getProfsLookup } from '$lib/course-planner/CourseSearch';
+	import {
+		ActiveViewerStore,
+		ScheduleReadOnlyStore,
+		ScheduleVisibilityStore,
+		ProfsLookupStore,
+		CurrentScheduleStore,
+		NonselectedScheduleStore,
+		DepartmentsStore,
+		ViewerNoticeStore,
+		ViewerOptionsStore
+	} from '../stores/CoursePlannerStores';
+	import { client } from '$lib/client';
+	import {
+		getAccessToken,
+		getAuthUser,
+		isSupabaseConfigured,
+		loadUserSchedules,
+		onAuthStateChanged,
+		saveUserSchedules
+	} from '$lib/supabase';
+	import { getFriendSchedule, getViewerOptions } from '$lib/api/friendsClient';
+	import {
+		getDefaultTermYear,
+		getMaxScheduleYear,
+		MIN_SCHEDULE_YEAR,
+		normalizeStoredSchedule
+	} from '$lib/course-planner/Terms';
+	import {
+		hasLocalScheduleSnapshot,
+		readLocalScheduleSnapshot,
+		writeLocalScheduleSnapshot
+	} from '$lib/course-planner/ScheduleStorage';
+	import {
+		type Instructor,
+		type InstructorsConfig,
+		type InstructorsResponse
+	} from '@jupiterp/jupiterp';
+	import type { FriendVisibility } from '$lib/friends/types';
+	import type { ScheduleSelection, StoredSchedule } from '../types';
+
+	// Function to retreive professor data; called in `onMount`.
+	async function fetchProfessorData() {
+		try {
+			let limit = 500;
+			let offset = 0;
+			let allInstructors: Instructor[] = [];
+			let config: InstructorsConfig = {
+				limit: limit,
+				offset: offset
+			};
+			let complete = false;
+			while (!complete) {
+				const response: InstructorsResponse = await client.activeInstructors(config);
+				if (response.ok() && response.data != null) {
+					allInstructors = [...allInstructors, ...response.data];
+					if (response.data.length < limit) {
+						complete = true;
+						break;
+					}
+					offset += limit;
+					config.offset = offset;
+				} else {
+					// format-check exempt 1
+					throw new Error(
+						`Failed to fetch data: ${response.statusCode} ${response.statusMessage} ${response.errorBody}`
+					);
+				}
+			}
+
+			// Update the ProfsLookupStore with the fetched data
+			ProfsLookupStore.set(getProfsLookup(allInstructors));
+		} catch (error) {
+			console.error('Error fetching professor data:', error);
+		}
+	}
+
+	// Function to get list of department codes as an array of strings
+	// and set the DepartmentsStore.
+	async function fetchDeptCodes() {
+		const res = await client.deptList();
+		if (res.ok() && res.data != null) {
+			const depts = res.data;
+			DepartmentsStore.set(depts);
+		} else {
+			console.error('Error fetching department codes:', res.errorBody);
+		}
+	}
+
+	// Keep track of chosen sections
+	let currentSchedule: StoredSchedule;
+	let activeViewerId = 'self';
+	let isViewingSelf = true;
+	let lastHandledViewerId: string | null = null;
+	let accessToken: string | null = null;
+	let ownCurrentSchedule: StoredSchedule | null = null;
+	let ownNonselectedSchedules: StoredSchedule[] = [];
+	let hasCapturedOwnState = false;
+
+	let hasReadLocalStorage: boolean = false;
+	let authUserId: string | null = null;
+	let authUnsubscribe: (() => void) | null = null;
+	let cloudSyncTimeout: ReturnType<typeof setTimeout> | null = null;
+
+	ActiveViewerStore.subscribe((stored) => {
+		activeViewerId = stored;
+	});
+
+	CurrentScheduleStore.subscribe((stored) => {
+		currentSchedule = stored;
+
+		if (hasReadLocalStorage && isViewingSelf) {
+			persistLocalSchedules();
+
+			queueCloudSync();
+		}
+	});
+
+	let nonselectedSchedules: StoredSchedule[] = [];
+	// Save non-selected schedules to local storage
+	NonselectedScheduleStore.subscribe((stored) => {
+		nonselectedSchedules = stored;
+
+		if (hasReadLocalStorage && isViewingSelf) {
+			persistLocalSchedules();
+
+			queueCloudSync();
+		}
+	});
+
+	function persistLocalSchedules() {
+		if (typeof window === 'undefined' || !currentSchedule) {
+			return;
+		}
+
+		writeLocalScheduleSnapshot(authUserId, {
+			selectedSections: jsonifySections(currentSchedule.selections),
+			scheduleName: currentSchedule.scheduleName,
+			scheduleTerm: currentSchedule.term,
+			scheduleYear: currentSchedule.year.toString(),
+			nonselectedSchedules: JSON.stringify(nonselectedSchedules)
+		});
+	}
+
+	function readScopedLocalSchedules(userId: string | null): {
+		current: StoredSchedule;
+		nonselected: StoredSchedule[];
+	} {
+		const defaultTermYear = getDefaultTermYear();
+		const snapshot = readLocalScheduleSnapshot(userId);
+
+		const scheduleTerm =
+			snapshot.scheduleTermRaw === 'Winter' ||
+			snapshot.scheduleTermRaw === 'Spring' ||
+			snapshot.scheduleTermRaw === 'Summer' ||
+			snapshot.scheduleTermRaw === 'Fall'
+				? snapshot.scheduleTermRaw
+				: defaultTermYear.term;
+
+		const parsedStoredYear = Number(snapshot.scheduleYearRaw);
+		const maxScheduleYear = getMaxScheduleYear();
+		const scheduleYear =
+			Number.isInteger(parsedStoredYear) &&
+			parsedStoredYear >= MIN_SCHEDULE_YEAR &&
+			parsedStoredYear <= maxScheduleYear
+				? parsedStoredYear
+				: defaultTermYear.year;
+
+		const currentFromStorage: StoredSchedule = {
+			scheduleName: snapshot.scheduleNameRaw ?? 'Schedule 1',
+			selections: snapshot.selectedSectionsRaw
+				? resolveSelections(snapshot.selectedSectionsRaw)
+				: [],
+			term: scheduleTerm,
+			year: scheduleYear
+		};
+
+		const nonselectedFromStorage = snapshot.nonselectedSchedulesRaw
+			? resolveStoredSchedules(snapshot.nonselectedSchedulesRaw)
+			: [];
+
+		return {
+			current: currentFromStorage,
+			nonselected: nonselectedFromStorage
+		};
+	}
+
+	function applyScopedLocalSchedules(userId: string | null) {
+		const fallback = getDefaultTermYear();
+		const hasScopedSnapshot = hasLocalScheduleSnapshot(userId);
+		const scoped = readScopedLocalSchedules(userId);
+
+		const currentForStores = hasScopedSnapshot
+			? scoped.current
+			: {
+					scheduleName: 'Schedule 1',
+					selections: [],
+					term: fallback.term,
+					year: fallback.year
+				};
+		const nonselectedForStores = hasScopedSnapshot ? scoped.nonselected : [];
+
+		ensureUpToDateAndSetStores(currentForStores, nonselectedForStores);
+		currentSchedule = currentForStores;
+		nonselectedSchedules = nonselectedForStores;
+		hasReadLocalStorage = true;
+	}
+
+	async function hydrateFromCloud(userId: string) {
+		try {
+			const cloudValue = await loadUserSchedules(userId);
+			if (!cloudValue) {
+				applyScopedLocalSchedules(userId);
+				return;
+			}
+
+			const defaultTermYear = getDefaultTermYear();
+			const cloudCurrent = normalizeStoredSchedule(cloudValue.currentSchedule, defaultTermYear);
+			const cloudNonselected = cloudValue.nonselectedSchedules.map((schedule) => {
+				return normalizeStoredSchedule(schedule, defaultTermYear);
+			});
+
+			ensureUpToDateAndSetStores(cloudCurrent, cloudNonselected);
+			currentSchedule = cloudCurrent;
+			nonselectedSchedules = cloudNonselected;
+			hasReadLocalStorage = true;
+		} catch (error) {
+			console.error('Failed loading cloud schedules:', error);
+			applyScopedLocalSchedules(userId);
+		}
+	}
+
+	function queueCloudSync() {
+		if (!hasReadLocalStorage || !authUserId || !currentSchedule || !isViewingSelf) {
+			return;
+		}
+
+		if (!isSupabaseConfigured()) {
+			return;
+		}
+
+		if (cloudSyncTimeout !== null) {
+			clearTimeout(cloudSyncTimeout);
+		}
+
+		cloudSyncTimeout = setTimeout(async () => {
+			if (!authUserId) {
+				return;
+			}
+
+			try {
+				await saveUserSchedules(authUserId, {
+					currentSchedule,
+					nonselectedSchedules
+				});
+			} catch (error) {
+				console.error('Failed saving cloud schedules:', error);
+			}
+		}, 400);
+	}
+
+	function cloneSchedule(schedule: StoredSchedule): StoredSchedule {
+		return {
+			scheduleName: schedule.scheduleName,
+			selections: schedule.selections,
+			term: schedule.term,
+			year: schedule.year
+		};
+	}
+
+	async function loadViewerOptions() {
+		accessToken = await getAccessToken();
+		if (!accessToken) {
+			ViewerOptionsStore.set([{ id: 'self', label: 'You', type: 'self' }]);
+			return;
+		}
+
+		try {
+			const payload = await getViewerOptions(accessToken);
+
+			ViewerOptionsStore.set([
+				{
+					id: 'self',
+					label: `You (${payload.selfName})`,
+					type: 'self'
+				},
+				...payload.friends.map((friend) => {
+					return {
+						id: friend.id,
+						label: friend.label,
+						type: 'friend' as const
+					};
+				})
+			]);
+		} catch (error) {
+			console.error('Unable to load viewer options:', error);
+			ViewerOptionsStore.set([{ id: 'self', label: 'You', type: 'self' }]);
+		}
+	}
+
+	async function handleViewerSelection(viewerId: string) {
+		if (viewerId === 'self') {
+			isViewingSelf = true;
+			ScheduleReadOnlyStore.set(false);
+			ScheduleVisibilityStore.set('full');
+			ViewerNoticeStore.set(null);
+
+			if (hasCapturedOwnState && ownCurrentSchedule) {
+				CurrentScheduleStore.set(cloneSchedule(ownCurrentSchedule));
+				NonselectedScheduleStore.set([...ownNonselectedSchedules]);
+			}
+			return;
+		}
+
+		accessToken = await getAccessToken();
+		if (!accessToken || !currentSchedule) {
+			ViewerNoticeStore.set('Sign in to view friend schedules.');
+			ActiveViewerStore.set('self');
+			return;
+		}
+
+		ownCurrentSchedule = cloneSchedule(currentSchedule);
+		ownNonselectedSchedules = [...nonselectedSchedules];
+		hasCapturedOwnState = true;
+
+		isViewingSelf = false;
+		ScheduleReadOnlyStore.set(true);
+
+		try {
+			const payload = await getFriendSchedule(accessToken, {
+				friendId: viewerId,
+				term: currentSchedule.term,
+				year: currentSchedule.year
+			});
+
+			ScheduleVisibilityStore.set(payload.visibility);
+
+			if (payload.visibility === 'off' || !payload.schedule) {
+				ViewerNoticeStore.set(
+					payload.message ?? `${payload.friendName}'s schedule is unavailable.`
+				);
+				CurrentScheduleStore.set({
+					scheduleName: `${payload.friendName}`,
+					selections: [],
+					term: currentSchedule.term,
+					year: currentSchedule.year
+				});
+				NonselectedScheduleStore.set([]);
+				return;
+			}
+
+			CurrentScheduleStore.set(payload.schedule as StoredSchedule);
+			NonselectedScheduleStore.set([]);
+			const suffix = payload.visibility === 'busy_free' ? ' (busy/free view)' : '';
+			ViewerNoticeStore.set(`Viewing ${payload.friendName}'s schedule${suffix}.`);
+		} catch (error) {
+			console.error('Unable to load friend schedule:', error);
+			ViewerNoticeStore.set('Unable to load this friend schedule right now.');
+		}
+	}
+
+	onMount(() => {
+		ScheduleReadOnlyStore.set(false);
+		ScheduleVisibilityStore.set('full');
+		ViewerNoticeStore.set(null);
+
+		// Fetch instructor data from API
+		fetchProfessorData();
+
+		// Fetch department codes from API
+		fetchDeptCodes();
+
+		// Retrieve data from client local storage
+		try {
+			if (typeof window !== 'undefined') {
+				applyScopedLocalSchedules(null);
+
+				accessToken = null;
+				getAccessToken().then((token) => {
+					accessToken = token;
+					loadViewerOptions();
+
+					if (typeof window !== 'undefined') {
+						const requestedViewer = new URLSearchParams(window.location.search).get('view');
+						if (requestedViewer && requestedViewer.length > 0) {
+							ActiveViewerStore.set(requestedViewer);
+						}
+					}
+				});
+
+				if (isSupabaseConfigured()) {
+					getAuthUser().then((user) => {
+						authUserId = user?.id ?? null;
+						if (authUserId) {
+							hydrateFromCloud(authUserId);
+						}
+
+						getAccessToken().then((token) => {
+							accessToken = token;
+							loadViewerOptions();
+						});
+					});
+
+					authUnsubscribe = onAuthStateChanged((user) => {
+						const nextAuthId = user?.id ?? null;
+						if (nextAuthId === authUserId) {
+							return;
+						}
+
+						if (cloudSyncTimeout !== null) {
+							clearTimeout(cloudSyncTimeout);
+							cloudSyncTimeout = null;
+						}
+
+						authUserId = nextAuthId;
+						getAccessToken().then((token) => {
+							accessToken = token;
+							loadViewerOptions();
+						});
+
+						if (authUserId) {
+							hydrateFromCloud(authUserId);
+						} else {
+							applyScopedLocalSchedules(null);
+							ActiveViewerStore.set('self');
+						}
+					});
+				}
+			}
+		} catch (e) {
+			console.log('Unable to retrieve courses: ' + e);
+			const defaultTermYear = getDefaultTermYear();
+			CurrentScheduleStore.set({
+				scheduleName: 'Schedule 1',
+				selections: [],
+				term: defaultTermYear.term,
+				year: defaultTermYear.year
+			});
+			NonselectedScheduleStore.set([]);
+		}
+	});
+
+	$: if (hasReadLocalStorage && activeViewerId !== lastHandledViewerId) {
+		lastHandledViewerId = activeViewerId;
+		void handleViewerSelection(activeViewerId);
+	}
+
+	onDestroy(() => {
+		if (authUnsubscribe) {
+			authUnsubscribe();
+		}
+
+		if (cloudSyncTimeout !== null) {
+			clearTimeout(cloudSyncTimeout);
+		}
+	});
+
+	function jsonifySections(sections: ScheduleSelection[]): string {
+		let finalSelections: ScheduleSelection[] = [];
+		for (let section of sections) {
+			if (!section.hover) {
+				finalSelections.push(section);
+			}
+		}
+		return JSON.stringify(finalSelections);
+	}
+
+	let sidebarWidth = 260;
+	let addClassesLayoutContainer: HTMLDivElement;
+	let resizingAddClassesSidebar = false;
+
+	function startAddClassesResize(event: MouseEvent) {
+		event.preventDefault();
+		resizingAddClassesSidebar = true;
+	}
+
+	function stopAddClassesResize() {
+		resizingAddClassesSidebar = false;
+	}
+
+	function onAddClassesResize(event: MouseEvent) {
+		if (!resizingAddClassesSidebar || !addClassesLayoutContainer) {
+			return;
+		}
+
+		const bounds = addClassesLayoutContainer.getBoundingClientRect();
+		const minSidebar = 180;
+		const maxSidebar = Math.max(minSidebar, bounds.width - 320);
+		const proposed = event.clientX - bounds.left;
+		sidebarWidth = Math.max(minSidebar, Math.min(560, Math.min(maxSidebar, proposed)));
+	}
 </script>
 
-<svelte:window on:mousemove={onAddClassesResize}
-    on:mouseup={stopAddClassesResize} />
+<svelte:window on:mousemove={onAddClassesResize} on:mouseup={stopAddClassesResize} />
 
-<div class='planner-root fixed flex flex-col w-full px-2 lg:px-3
-            text-textLight dark:text-textDark
-            top-[3rem] lg:top-[3.5rem] xl:top-[4rem] bottom-0'>
-    <div class='grow min-h-0 flex flex-row pt-2'
-        bind:this={addClassesLayoutContainer}
-        class:select-none={resizingAddClassesSidebar}>
-        {#if isViewingSelf}
-            <CourseSearch
-                {sidebarWidth} />
+<div
+	class="planner-root fixed bottom-0 top-[3rem] flex w-full flex-col
+            px-2 text-textLight
+            lg:top-[3.5rem] lg:px-3 xl:top-[4rem] dark:text-textDark"
+>
+	<div
+		class="flex min-h-0 grow flex-row pt-2"
+		bind:this={addClassesLayoutContainer}
+		class:select-none={resizingAddClassesSidebar}
+	>
+		{#if isViewingSelf}
+			<CourseSearch {sidebarWidth} />
 
-            <button class='flex w-2 cursor-col-resize items-center justify-center
-                            hover:bg-hoverLight dark:hover:bg-hoverDark rounded-sm transition-colors'
-                    type='button'
-                    aria-label='Resize schedule list sidebar'
-                    on:mousedown={startAddClassesResize}>
-                <div class='h-full w-px bg-divBorderLight dark:bg-divBorderDark
-                            hover:bg-textLight dark:hover:bg-textDark transition-colors' />
-            </button>
-        {/if}
+			<button
+				class="flex w-2 cursor-col-resize items-center justify-center
+                            rounded-sm transition-colors hover:bg-hoverLight dark:hover:bg-hoverDark"
+				type="button"
+				aria-label="Resize schedule list sidebar"
+				on:mousedown={startAddClassesResize}
+			>
+				<div
+					class="h-full w-px bg-divBorderLight transition-colors
+                            hover:bg-textLight dark:bg-divBorderDark dark:hover:bg-textDark"
+				/>
+			</button>
+		{/if}
 
-        <CurrentSchedulePanel />
-    </div>
+		<CurrentSchedulePanel />
+	</div>
 </div>

@@ -10,18 +10,13 @@
 export const prerender = true;
 
 export async function GET() {
-    const siteUrl = (process.env.PUBLIC_SITE_URL ?? 'https://www.jupiterp.com')
-        .replace(/\/+$/, '');
+	const siteUrl = (process.env.PUBLIC_SITE_URL ?? 'https://www.jupiterp.com').replace(/\/+$/, '');
 
-    const body = [
-        'User-agent: *',
-        'Allow: /',
-        `Sitemap: ${siteUrl}/sitemap.xml`,
-    ].join('\n') + '\n';
+	const body = ['User-agent: *', 'Allow: /', `Sitemap: ${siteUrl}/sitemap.xml`].join('\n') + '\n';
 
-    return new Response(body, {
-        headers: {
-            'Content-Type': 'text/plain; charset=utf-8',
-        },
-    });
+	return new Response(body, {
+		headers: {
+			'Content-Type': 'text/plain; charset=utf-8'
+		}
+	});
 }

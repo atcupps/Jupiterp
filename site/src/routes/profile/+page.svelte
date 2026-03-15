@@ -4,584 +4,620 @@ called LICENSE at the top level of the Jupiterp source tree (online at
 https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2026 Andrew Cupps
 -->
-<script lang='ts'>
-    import { get } from 'svelte/store';
-    import { onMount } from 'svelte';
-    import { base } from '$app/paths';
-    import ProfileOverviewCard from '../../components/profile/ProfileOverviewCard.svelte';
-    import { PROFILE_STRINGS } from '$lib/config/profileStrings';
-    import {
-        ensureUserProfile,
-        getAuthUser,
-        isSupabaseConfigured,
-        loadUserSchedules,
-        onAuthStateChanged,
-        signInWithApple,
-        signInWithEmail,
-        signInWithGoogle,
-        signOutUser,
-        uploadProfileAvatar,
-    } from '$lib/supabase';
-    import {
-        chooseSchedulesForProfile,
-        readSchedulesFromLocalStorage,
-        totalTakenCreditsAcrossSchedules,
-    } from '$lib/gened/schedules';
-    import {
-        loadProfileState,
-        ProfileStateStore,
-        saveProfileStatePatch,
-        selectedProgramPathFromState,
-    } from '$lib/profile/store';
-    import type {
-        DegreeType,
-        EditableProfileFields,
-        ProfilePrivacyLevel,
-    } from '$lib/profile/types';
+<script lang="ts">
+	import { get } from 'svelte/store';
+	import { onMount } from 'svelte';
+	import { base } from '$app/paths';
+	import ProfileOverviewCard from '../../components/profile/ProfileOverviewCard.svelte';
+	import { PROFILE_STRINGS } from '$lib/config/profileStrings';
+	import {
+		ensureUserProfile,
+		getAuthUser,
+		isSupabaseConfigured,
+		loadUserSchedules,
+		onAuthStateChanged,
+		signInWithApple,
+		signInWithEmail,
+		signInWithGoogle,
+		signOutUser,
+		uploadProfileAvatar
+	} from '$lib/supabase';
+	import {
+		chooseSchedulesForProfile,
+		readSchedulesFromLocalStorage,
+		totalTakenCreditsAcrossSchedules
+	} from '$lib/gened/schedules';
+	import {
+		loadProfileState,
+		ProfileStateStore,
+		saveProfileStatePatch,
+		selectedProgramPathFromState
+	} from '$lib/profile/store';
+	import type { DegreeType, EditableProfileFields, ProfilePrivacyLevel } from '$lib/profile/types';
 
-    const authEnabled = isSupabaseConfigured();
+	const authEnabled = isSupabaseConfigured();
 
-    const degreeTypes: DegreeType[] = [
-        'Undergraduate',
-        'Dual-Degree',
-        'Double Major',
-        'Masters',
-        'P.H.D.',
-    ];
+	const degreeTypes: DegreeType[] = [
+		'Undergraduate',
+		'Dual-Degree',
+		'Double Major',
+		'Masters',
+		'P.H.D.'
+	];
 
-    const privacyOptions: Array<{ value: ProfilePrivacyLevel, label: string }> = [
-        { value: 'public', label: 'Public' },
-        { value: 'friends_only', label: 'Friends only' },
-        { value: 'umd_only', label: 'UMD only' },
-        { value: 'private', label: 'Private' },
-    ];
+	const privacyOptions: Array<{ value: ProfilePrivacyLevel; label: string }> = [
+		{ value: 'public', label: 'Public' },
+		{ value: 'friends_only', label: 'Friends only' },
+		{ value: 'umd_only', label: 'UMD only' },
+		{ value: 'private', label: 'Private' }
+	];
 
-    let authReady = false;
-    let authUserId: string | null = null;
-    let userEmail: string | null = null;
-    let authEmail = '';
-    let authStatusMessage: string | null = null;
-    let authErrorMessage: string | null = null;
+	let authReady = false;
+	let authUserId: string | null = null;
+	let userEmail: string | null = null;
+	let authEmail = '';
+	let authStatusMessage: string | null = null;
+	let authErrorMessage: string | null = null;
 
-    let isSubmittingEmail = false;
-    let isSubmittingGoogle = false;
-    let isSubmittingApple = false;
+	let isSubmittingEmail = false;
+	let isSubmittingGoogle = false;
+	let isSubmittingApple = false;
 
-    let generatedFriendCode = '';
-    let totalCreditsTaken = 0;
+	let generatedFriendCode = '';
+	let totalCreditsTaken = 0;
 
-    let isEditing = true;
-    let editError: string | null = null;
-    let editMessage: string | null = null;
-    let draftDisplayName = '';
-    let draftDegreeType: DegreeType = 'Undergraduate';
-    let draftMajors = '';
-    let draftPrivacy: ProfilePrivacyLevel = 'friends_only';
-    let draftGraduationYear = '';
-    let draftAvatarColor = '#b90e25';
-    let avatarUploading = false;
+	let isEditing = true;
+	let editError: string | null = null;
+	let editMessage: string | null = null;
+	let draftDisplayName = '';
+	let draftDegreeType: DegreeType = 'Undergraduate';
+	let draftMajors = '';
+	let draftPrivacy: ProfilePrivacyLevel = 'friends_only';
+	let draftGraduationYear = '';
+	let draftAvatarColor = '#b90e25';
+	let avatarUploading = false;
 
-    let profileState = get(ProfileStateStore);
-    const unsubscribeProfileState = ProfileStateStore.subscribe((value) => {
-        profileState = value;
-    });
+	let profileState = get(ProfileStateStore);
+	const unsubscribeProfileState = ProfileStateStore.subscribe((value) => {
+		profileState = value;
+	});
 
-    function parseMajorsInput(raw: string): string[] {
-        return raw
-            .split(',')
-            .map((major) => major.trim())
-            .filter((major) => major.length > 0);
-    }
+	function parseMajorsInput(raw: string): string[] {
+		return raw
+			.split(',')
+			.map((major) => major.trim())
+			.filter((major) => major.length > 0);
+	}
 
-    function profileNameFromData(): string {
-        if (profileState.displayName.trim().length > 0) {
-            return profileState.displayName.trim();
-        }
+	function profileNameFromData(): string {
+		if (profileState.displayName.trim().length > 0) {
+			return profileState.displayName.trim();
+		}
 
-        if (!userEmail) {
-            return 'Student';
-        }
+		if (!userEmail) {
+			return 'Student';
+		}
 
-        return userEmail
-            .split('@')[0]
-            .split(/[._-]/)
-            .filter((part) => part.length > 0)
-            .map((part) => `${part[0].toUpperCase()}${part.slice(1)}`)
-            .join(' ');
-    }
+		return userEmail
+			.split('@')[0]
+			.split(/[._-]/)
+			.filter((part) => part.length > 0)
+			.map((part) => `${part[0].toUpperCase()}${part.slice(1)}`)
+			.join(' ');
+	}
 
-    function privacyLabel(value: ProfilePrivacyLevel): string {
-        return privacyOptions.find((option) => option.value === value)?.label ?? 'Friends only';
-    }
+	function privacyLabel(value: ProfilePrivacyLevel): string {
+		return privacyOptions.find((option) => option.value === value)?.label ?? 'Friends only';
+	}
 
-    function getAuthRedirectTo(): string {
-        const url = new URL(window.location.href);
-        if (url.hostname === '127.0.0.1') {
-            url.hostname = 'localhost';
-        }
+	function getAuthRedirectTo(): string {
+		const url = new URL(window.location.href);
+		if (url.hostname === '127.0.0.1') {
+			url.hostname = 'localhost';
+		}
 
-        const profilePath = `${base}/profile`;
-        url.pathname = profilePath.startsWith('/') ? profilePath : `/${profilePath}`;
-        url.search = '';
-        url.hash = '';
-        return url.toString();
-    }
+		const profilePath = `${base}/profile`;
+		url.pathname = profilePath.startsWith('/') ? profilePath : `/${profilePath}`;
+		url.search = '';
+		url.hash = '';
+		return url.toString();
+	}
 
-    function refreshGeneratedFriendCode() {
-        if (generatedFriendCode) {
-            return;
-        }
+	function refreshGeneratedFriendCode() {
+		if (generatedFriendCode) {
+			return;
+		}
 
-        const fallback = localStorage.getItem('profileFriendCode');
-        if (fallback) {
-            generatedFriendCode = fallback;
-            return;
-        }
+		const fallback = localStorage.getItem('profileFriendCode');
+		if (fallback) {
+			generatedFriendCode = fallback;
+			return;
+		}
 
-        const randomCode = Math.random()
-            .toString(36)
-            .replace(/[^A-Z0-9]/gi, '')
-            .toUpperCase()
-            .substring(0, 8)
-            .padEnd(8, '0');
-        generatedFriendCode = randomCode;
-        localStorage.setItem('profileFriendCode', randomCode);
-    }
+		const randomCode = Math.random()
+			.toString(36)
+			.replace(/[^A-Z0-9]/gi, '')
+			.toUpperCase()
+			.substring(0, 8)
+			.padEnd(8, '0');
+		generatedFriendCode = randomCode;
+		localStorage.setItem('profileFriendCode', randomCode);
+	}
 
-    async function recomputeTotalCredits() {
-        const localSchedules = readSchedulesFromLocalStorage(authUserId);
-        const cloudSchedules = authUserId ? await loadUserSchedules(authUserId) : null;
-        const chosen = chooseSchedulesForProfile(cloudSchedules, localSchedules);
-        totalCreditsTaken = totalTakenCreditsAcrossSchedules(chosen);
-    }
+	async function recomputeTotalCredits() {
+		const localSchedules = readSchedulesFromLocalStorage(authUserId);
+		const cloudSchedules = authUserId ? await loadUserSchedules(authUserId) : null;
+		const chosen = chooseSchedulesForProfile(cloudSchedules, localSchedules);
+		totalCreditsTaken = totalTakenCreditsAcrossSchedules(chosen);
+	}
 
-    async function hydrateProfile() {
-        const cloudRow = authUserId ? await ensureUserProfile() : null;
-        generatedFriendCode = cloudRow?.friend_code ?? generatedFriendCode;
-        await loadProfileState(cloudRow);
-        await recomputeTotalCredits();
-        if (isEditing) {
-            startEditing();
-        }
-    }
+	async function hydrateProfile() {
+		const cloudRow = authUserId ? await ensureUserProfile() : null;
+		generatedFriendCode = cloudRow?.friend_code ?? generatedFriendCode;
+		await loadProfileState(cloudRow);
+		await recomputeTotalCredits();
+		if (isEditing) {
+			startEditing();
+		}
+	}
 
-    function startEditing() {
-        editError = null;
-        editMessage = null;
-        isEditing = true;
+	function startEditing() {
+		editError = null;
+		editMessage = null;
+		isEditing = true;
 
-        draftDisplayName = profileState.displayName;
-        draftDegreeType = profileState.degreeType;
-        draftMajors = profileState.majors.join(', ');
-        draftPrivacy = profileState.profilePrivacy;
-        draftGraduationYear = profileState.graduationYear?.toString() ?? '';
-        draftAvatarColor = profileState.avatarColor;
-    }
+		draftDisplayName = profileState.displayName;
+		draftDegreeType = profileState.degreeType;
+		draftMajors = profileState.majors.join(', ');
+		draftPrivacy = profileState.profilePrivacy;
+		draftGraduationYear = profileState.graduationYear?.toString() ?? '';
+		draftAvatarColor = profileState.avatarColor;
+	}
 
-    function cancelEditing() {
-        isEditing = false;
-        editError = null;
-    }
+	function cancelEditing() {
+		isEditing = false;
+		editError = null;
+	}
 
-    async function saveEdits() {
-        editError = null;
-        editMessage = null;
+	async function saveEdits() {
+		editError = null;
+		editMessage = null;
 
-        const parsedMajors = parseMajorsInput(draftMajors);
+		const parsedMajors = parseMajorsInput(draftMajors);
 
-        if (
-            (draftDegreeType === 'Double Major' || draftDegreeType === 'Dual-Degree')
-            && parsedMajors.length !== 2
-        ) {
-            editError = 'Double Major and Dual-Degree require exactly 2 majors.';
-            return;
-        }
+		if (
+			(draftDegreeType === 'Double Major' || draftDegreeType === 'Dual-Degree') &&
+			parsedMajors.length !== 2
+		) {
+			editError = 'Double Major and Dual-Degree require exactly 2 majors.';
+			return;
+		}
 
-        if (
-            draftDegreeType !== 'Double Major'
-            && draftDegreeType !== 'Dual-Degree'
-            && parsedMajors.length > 1
-        ) {
-            editError = 'Select a single major for this degree type.';
-            return;
-        }
+		if (
+			draftDegreeType !== 'Double Major' &&
+			draftDegreeType !== 'Dual-Degree' &&
+			parsedMajors.length > 1
+		) {
+			editError = 'Select a single major for this degree type.';
+			return;
+		}
 
-        const graduationYear = draftGraduationYear.trim().length === 0
-            ? null
-            : Number(draftGraduationYear);
+		const graduationYear =
+			draftGraduationYear.trim().length === 0 ? null : Number(draftGraduationYear);
 
-        if (graduationYear !== null && !Number.isInteger(graduationYear)) {
-            editError = 'Graduation year must be a valid year.';
-            return;
-        }
+		if (graduationYear !== null && !Number.isInteger(graduationYear)) {
+			editError = 'Graduation year must be a valid year.';
+			return;
+		}
 
-        const patch: Partial<EditableProfileFields> = {
-            displayName: draftDisplayName.trim(),
-            degreeType: draftDegreeType,
-            majors: parsedMajors,
-            profilePrivacy: draftPrivacy,
-            graduationYear,
-            avatarColor: draftAvatarColor,
-        };
+		const patch: Partial<EditableProfileFields> = {
+			displayName: draftDisplayName.trim(),
+			degreeType: draftDegreeType,
+			majors: parsedMajors,
+			profilePrivacy: draftPrivacy,
+			graduationYear,
+			avatarColor: draftAvatarColor
+		};
 
-        const result = await saveProfileStatePatch(patch);
-        if (!result.ok) {
-            editError = result.message ?? 'Unable to save profile updates.';
-            return;
-        }
+		const result = await saveProfileStatePatch(patch);
+		if (!result.ok) {
+			editError = result.message ?? 'Unable to save profile updates.';
+			return;
+		}
 
-        isEditing = false;
-        editMessage = 'Profile updated.';
-    }
+		isEditing = false;
+		editMessage = 'Profile updated.';
+	}
 
-    async function onAvatarFileChanged(event: Event) {
-        const target = event.currentTarget as HTMLInputElement;
-        const file = target.files?.[0];
-        if (!file) {
-            return;
-        }
+	async function onAvatarFileChanged(event: Event) {
+		const target = event.currentTarget as HTMLInputElement;
+		const file = target.files?.[0];
+		if (!file) {
+			return;
+		}
 
-        if (!file.type.startsWith('image/')) {
-            editError = 'Please upload a valid image file.';
-            return;
-        }
+		if (!file.type.startsWith('image/')) {
+			editError = 'Please upload a valid image file.';
+			return;
+		}
 
-        avatarUploading = true;
-        editError = null;
-        editMessage = null;
+		avatarUploading = true;
+		editError = null;
+		editMessage = null;
 
-        try {
-            const avatarUrl = await uploadProfileAvatar(file);
-            const result = await saveProfileStatePatch({ avatarUrl });
-            if (!result.ok) {
-                editError = result.message ?? 'Unable to save avatar.';
-                return;
-            }
-            editMessage = 'Avatar updated.';
-        } catch (error) {
-            editError = error instanceof Error
-                ? error.message
-                : 'Unable to upload avatar right now.';
-        } finally {
-            avatarUploading = false;
-            target.value = '';
-        }
-    }
+		try {
+			const avatarUrl = await uploadProfileAvatar(file);
+			const result = await saveProfileStatePatch({ avatarUrl });
+			if (!result.ok) {
+				editError = result.message ?? 'Unable to save avatar.';
+				return;
+			}
+			editMessage = 'Avatar updated.';
+		} catch (error) {
+			editError = error instanceof Error ? error.message : 'Unable to upload avatar right now.';
+		} finally {
+			avatarUploading = false;
+			target.value = '';
+		}
+	}
 
-    async function onAvatarColorChanged(event: Event) {
-        const target = event.currentTarget as HTMLInputElement;
-        draftAvatarColor = target.value;
+	async function onAvatarColorChanged(event: Event) {
+		const target = event.currentTarget as HTMLInputElement;
+		draftAvatarColor = target.value;
 
-        const result = await saveProfileStatePatch({
-            avatarColor: draftAvatarColor,
-            avatarUrl: null,
-        });
-        if (!result.ok) {
-            editError = result.message ?? 'Unable to update avatar color.';
-            return;
-        }
+		const result = await saveProfileStatePatch({
+			avatarColor: draftAvatarColor,
+			avatarUrl: null
+		});
+		if (!result.ok) {
+			editError = result.message ?? 'Unable to update avatar color.';
+			return;
+		}
 
-        editMessage = 'Avatar color updated.';
-    }
+		editMessage = 'Avatar color updated.';
+	}
 
-    async function emailSignIn() {
-        if (isSubmittingEmail || isSubmittingGoogle || isSubmittingApple) {
-            return;
-        }
+	async function emailSignIn() {
+		if (isSubmittingEmail || isSubmittingGoogle || isSubmittingApple) {
+			return;
+		}
 
-        authStatusMessage = null;
-        authErrorMessage = null;
-        const email = authEmail.trim();
-        if (email.length === 0) {
-            authErrorMessage = 'Enter your email address to continue.';
-            return;
-        }
+		authStatusMessage = null;
+		authErrorMessage = null;
+		const email = authEmail.trim();
+		if (email.length === 0) {
+			authErrorMessage = 'Enter your email address to continue.';
+			return;
+		}
 
-        try {
-            isSubmittingEmail = true;
-            await signInWithEmail(email, getAuthRedirectTo());
-            authEmail = '';
-            authStatusMessage = 'Check your inbox for a secure sign-in link.';
-        } catch (error) {
-            console.error('Email sign-in failed:', error);
-            authErrorMessage = 'Could not send sign-in email.';
-        } finally {
-            isSubmittingEmail = false;
-        }
-    }
+		try {
+			isSubmittingEmail = true;
+			await signInWithEmail(email, getAuthRedirectTo());
+			authEmail = '';
+			authStatusMessage = 'Check your inbox for a secure sign-in link.';
+		} catch (error) {
+			console.error('Email sign-in failed:', error);
+			authErrorMessage = 'Could not send sign-in email.';
+		} finally {
+			isSubmittingEmail = false;
+		}
+	}
 
-    async function appleSignIn() {
-        if (isSubmittingApple || isSubmittingEmail || isSubmittingGoogle) {
-            return;
-        }
+	async function appleSignIn() {
+		if (isSubmittingApple || isSubmittingEmail || isSubmittingGoogle) {
+			return;
+		}
 
-        authStatusMessage = null;
-        authErrorMessage = null;
-        try {
-            isSubmittingApple = true;
-            await signInWithApple(getAuthRedirectTo());
-        } catch (error) {
-            console.error('Apple sign-in failed:', error);
-            authErrorMessage = 'Could not start Apple sign-in.';
-            isSubmittingApple = false;
-        }
-    }
+		authStatusMessage = null;
+		authErrorMessage = null;
+		try {
+			isSubmittingApple = true;
+			await signInWithApple(getAuthRedirectTo());
+		} catch (error) {
+			console.error('Apple sign-in failed:', error);
+			authErrorMessage = 'Could not start Apple sign-in.';
+			isSubmittingApple = false;
+		}
+	}
 
-    async function googleSignIn() {
-        if (isSubmittingGoogle || isSubmittingEmail || isSubmittingApple) {
-            return;
-        }
+	async function googleSignIn() {
+		if (isSubmittingGoogle || isSubmittingEmail || isSubmittingApple) {
+			return;
+		}
 
-        authStatusMessage = null;
-        authErrorMessage = null;
-        try {
-            isSubmittingGoogle = true;
-            await signInWithGoogle(getAuthRedirectTo());
-        } catch (error) {
-            console.error('Google sign-in failed:', error);
-            authErrorMessage = 'Could not start Google sign-in.';
-            isSubmittingGoogle = false;
-        }
-    }
+		authStatusMessage = null;
+		authErrorMessage = null;
+		try {
+			isSubmittingGoogle = true;
+			await signInWithGoogle(getAuthRedirectTo());
+		} catch (error) {
+			console.error('Google sign-in failed:', error);
+			authErrorMessage = 'Could not start Google sign-in.';
+			isSubmittingGoogle = false;
+		}
+	}
 
-    async function signOut() {
-        authStatusMessage = null;
-        authErrorMessage = null;
-        try {
-            await signOutUser();
-            authStatusMessage = 'You have been signed out.';
-        } catch (error) {
-            console.error('Sign-out failed:', error);
-            authErrorMessage = 'Could not sign out right now.';
-        }
-    }
+	async function signOut() {
+		authStatusMessage = null;
+		authErrorMessage = null;
+		try {
+			await signOutUser();
+			authStatusMessage = 'You have been signed out.';
+		} catch (error) {
+			console.error('Sign-out failed:', error);
+			authErrorMessage = 'Could not sign out right now.';
+		}
+	}
 
-    onMount(() => {
-        refreshGeneratedFriendCode();
+	onMount(() => {
+		refreshGeneratedFriendCode();
 
-        if (!authEnabled) {
-            authReady = true;
-            void hydrateProfile();
-            return () => unsubscribeProfileState();
-        }
+		if (!authEnabled) {
+			authReady = true;
+			void hydrateProfile();
+			return () => unsubscribeProfileState();
+		}
 
-        const unsubscribeAuth = onAuthStateChanged((user) => {
-            authReady = true;
-            authUserId = user?.id ?? null;
-            userEmail = user?.email ?? null;
-            void hydrateProfile();
-        });
+		const unsubscribeAuth = onAuthStateChanged((user) => {
+			authReady = true;
+			authUserId = user?.id ?? null;
+			userEmail = user?.email ?? null;
+			void hydrateProfile();
+		});
 
-        getAuthUser().then((user) => {
-            authReady = true;
-            authUserId = user?.id ?? null;
-            userEmail = user?.email ?? null;
-            return hydrateProfile();
-        });
+		getAuthUser().then((user) => {
+			authReady = true;
+			authUserId = user?.id ?? null;
+			userEmail = user?.email ?? null;
+			return hydrateProfile();
+		});
 
-        return () => {
-            unsubscribeAuth();
-            unsubscribeProfileState();
-        };
-    });
+		return () => {
+			unsubscribeAuth();
+			unsubscribeProfileState();
+		};
+	});
 
-    $: majorsLabel = profileState.majors.length > 0 ? profileState.majors.join(', ') : 'Not set';
-    $: greetingName = profileNameFromData();
-    $: termBlurb = `Degree plan: ${profileState.degreeType} | Path: ${selectedProgramPathFromState(profileState)}`;
+	$: majorsLabel = profileState.majors.length > 0 ? profileState.majors.join(', ') : 'Not set';
+	$: greetingName = profileNameFromData();
+	$: termBlurb = `Degree plan: ${profileState.degreeType} | Path: ${selectedProgramPathFromState(profileState)}`;
 </script>
 
-<div class='fixed left-0 right-0 top-[3rem] lg:top-[3.5rem] xl:top-[4rem]
-            bottom-0 px-8 py-6 overflow-y-auto text-textLight dark:text-textDark'>
-    <div class='max-w-5xl mx-auto flex flex-col gap-4'>
-        <h1 class='text-2xl font-semibold'>Profile</h1>
+<div
+	class="fixed bottom-0 left-0 right-0 top-[3rem] overflow-y-auto
+            px-8 py-6 text-textLight lg:top-[3.5rem] xl:top-[4rem] dark:text-textDark"
+>
+	<div class="mx-auto flex max-w-5xl flex-col gap-4">
+		<h1 class="text-2xl font-semibold">Profile</h1>
 
-        {#if !authEnabled}
-            <div class='rounded-md border border-outlineLight dark:border-outlineDark p-3 text-sm'>
-                Supabase auth is not configured. Sign-in and cloud sync features are disabled.
-            </div>
-        {:else if !authReady}
-            <div class='rounded-md border border-outlineLight dark:border-outlineDark p-3 text-sm'>
-                Loading profile...
-            </div>
-        {:else if !userEmail}
-            <div class='rounded-md border border-outlineLight dark:border-outlineDark p-3 flex flex-col gap-2'>
-                <div class='text-xs opacity-70'>Sign in to sync schedules and profile preferences across devices.</div>
-                <input class='bg-bgLight dark:bg-bgDark text-sm rounded px-2 py-1
-                             border border-outlineLight dark:border-outlineDark outline-none'
-                       type='email'
-                       autocomplete='email'
-                       placeholder='name@school.edu'
-                       bind:value={authEmail}
-                       on:keydown={(event) => {
-                           if (event.key === 'Enter') {
-                               emailSignIn();
-                           }
-                       }}>
-                <div class='flex flex-row gap-2 flex-wrap'>
-                    <button class='px-3 py-1 rounded-md hover:bg-hoverLight dark:hover:bg-hoverDark
-                                   border border-outlineLight dark:border-outlineDark text-sm'
-                            disabled={isSubmittingEmail || isSubmittingGoogle || isSubmittingApple}
-                            on:click={emailSignIn}>
-                        {isSubmittingEmail ? 'Sending Link...' : 'Continue with Email'}
-                    </button>
-                    <button class='px-3 py-1 rounded-md hover:bg-hoverLight dark:hover:bg-hoverDark
-                                   border border-outlineLight dark:border-outlineDark text-sm'
-                            disabled={isSubmittingApple || isSubmittingEmail || isSubmittingGoogle}
-                            on:click={appleSignIn}>
-                        {isSubmittingApple ? 'Opening Apple...' : 'Continue with Apple'}
-                    </button>
-                    <button class='px-3 py-1 rounded-md hover:bg-hoverLight dark:hover:bg-hoverDark
-                                   border border-outlineLight dark:border-outlineDark text-sm'
-                            disabled={isSubmittingGoogle || isSubmittingEmail || isSubmittingApple}
-                            on:click={googleSignIn}>
-                        {isSubmittingGoogle ? 'Opening Google...' : 'Continue with Google'}
-                    </button>
-                </div>
-            </div>
-        {/if}
+		{#if !authEnabled}
+			<div class="rounded-md border border-outlineLight p-3 text-sm dark:border-outlineDark">
+				Supabase auth is not configured. Sign-in and cloud sync features are disabled.
+			</div>
+		{:else if !authReady}
+			<div class="rounded-md border border-outlineLight p-3 text-sm dark:border-outlineDark">
+				Loading profile...
+			</div>
+		{:else if !userEmail}
+			<div
+				class="flex flex-col gap-2 rounded-md border border-outlineLight p-3 dark:border-outlineDark"
+			>
+				<div class="text-xs opacity-70">
+					Sign in to sync schedules and profile preferences across devices.
+				</div>
+				<input
+					class="rounded border border-outlineLight bg-bgLight px-2 py-1
+                             text-sm outline-none dark:border-outlineDark dark:bg-bgDark"
+					type="email"
+					autocomplete="email"
+					placeholder="name@school.edu"
+					bind:value={authEmail}
+					on:keydown={(event) => {
+						if (event.key === 'Enter') {
+							emailSignIn();
+						}
+					}}
+				/>
+				<div class="flex flex-row flex-wrap gap-2">
+					<button
+						class="rounded-md border border-outlineLight px-3 py-1
+                                   text-sm hover:bg-hoverLight dark:border-outlineDark dark:hover:bg-hoverDark"
+						disabled={isSubmittingEmail || isSubmittingGoogle || isSubmittingApple}
+						on:click={emailSignIn}
+					>
+						{isSubmittingEmail ? 'Sending Link...' : 'Continue with Email'}
+					</button>
+					<button
+						class="rounded-md border border-outlineLight px-3 py-1
+                                   text-sm hover:bg-hoverLight dark:border-outlineDark dark:hover:bg-hoverDark"
+						disabled={isSubmittingApple || isSubmittingEmail || isSubmittingGoogle}
+						on:click={appleSignIn}
+					>
+						{isSubmittingApple ? 'Opening Apple...' : 'Continue with Apple'}
+					</button>
+					<button
+						class="rounded-md border border-outlineLight px-3 py-1
+                                   text-sm hover:bg-hoverLight dark:border-outlineDark dark:hover:bg-hoverDark"
+						disabled={isSubmittingGoogle || isSubmittingEmail || isSubmittingApple}
+						on:click={googleSignIn}
+					>
+						{isSubmittingGoogle ? 'Opening Google...' : 'Continue with Google'}
+					</button>
+				</div>
+			</div>
+		{/if}
 
-        {#if authStatusMessage}
-            <div class='rounded-md border border-outlineLight dark:border-outlineDark p-3 text-sm'>
-                {authStatusMessage}
-            </div>
-        {/if}
+		{#if authStatusMessage}
+			<div class="rounded-md border border-outlineLight p-3 text-sm dark:border-outlineDark">
+				{authStatusMessage}
+			</div>
+		{/if}
 
-        {#if authErrorMessage}
-            <div class='rounded-md border border-outlineLight dark:border-outlineDark p-3 text-sm'>
-                {authErrorMessage}
-            </div>
-        {/if}
+		{#if authErrorMessage}
+			<div class="rounded-md border border-outlineLight p-3 text-sm dark:border-outlineDark">
+				{authErrorMessage}
+			</div>
+		{/if}
 
-        <ProfileOverviewCard
-            email={userEmail}
-            greetingName={greetingName}
-            academicLine={PROFILE_STRINGS.subtitleFallback}
-            termBlurb={termBlurb}
-            majorsLabel={majorsLabel}
-            degreeType={profileState.degreeType}
-            friendCode={generatedFriendCode}
-            visibility={privacyLabel(profileState.profilePrivacy)}
-            graduationYear={profileState.graduationYear}
-            totalCreditsTaken={totalCreditsTaken}
-            avatarUrl={profileState.avatarUrl}
-            avatarColor={profileState.avatarColor}
-            onSignOut={signOut}
-            onEdit={startEditing} />
+		<ProfileOverviewCard
+			email={userEmail}
+			{greetingName}
+			academicLine={PROFILE_STRINGS.subtitleFallback}
+			{termBlurb}
+			{majorsLabel}
+			degreeType={profileState.degreeType}
+			friendCode={generatedFriendCode}
+			visibility={privacyLabel(profileState.profilePrivacy)}
+			graduationYear={profileState.graduationYear}
+			{totalCreditsTaken}
+			avatarUrl={profileState.avatarUrl}
+			avatarColor={profileState.avatarColor}
+			onSignOut={signOut}
+			onEdit={startEditing}
+		/>
 
-        {#if isEditing}
-            <section class='rounded-xl border border-outlineLight dark:border-outlineDark p-4 md:p-5 bg-bgSecondaryLight/60 dark:bg-bgSecondaryDark/60'>
-                <h2 class='text-lg font-semibold'>Edit Profile</h2>
-                <div class='grid grid-cols-1 md:grid-cols-2 gap-3 mt-3 mb-1'>
-                    <label class='flex flex-col gap-1'>
-                        <span class='text-xs opacity-70'>Avatar image</span>
-                        <input type='file'
-                               accept='image/*'
-                               class='rounded-md border border-outlineLight dark:border-outlineDark bg-bgLight dark:bg-bgDark px-2 py-1 text-sm'
-                               disabled={avatarUploading}
-                               on:change={onAvatarFileChanged}>
-                        <span class='text-xs opacity-70'>
-                            {avatarUploading ? 'Uploading avatar...' : 'Upload an image to replace initials.'}
-                        </span>
-                    </label>
+		{#if isEditing}
+			<section
+				class="rounded-xl border border-outlineLight bg-bgSecondaryLight/60 p-4 md:p-5 dark:border-outlineDark dark:bg-bgSecondaryDark/60"
+			>
+				<h2 class="text-lg font-semibold">Edit Profile</h2>
+				<div class="mb-1 mt-3 grid grid-cols-1 gap-3 md:grid-cols-2">
+					<label class="flex flex-col gap-1">
+						<span class="text-xs opacity-70">Avatar image</span>
+						<input
+							type="file"
+							accept="image/*"
+							class="rounded-md border border-outlineLight bg-bgLight px-2 py-1 text-sm dark:border-outlineDark dark:bg-bgDark"
+							disabled={avatarUploading}
+							on:change={onAvatarFileChanged}
+						/>
+						<span class="text-xs opacity-70">
+							{avatarUploading ? 'Uploading avatar...' : 'Upload an image to replace initials.'}
+						</span>
+					</label>
 
-                    <label class='flex flex-col gap-1'>
-                        <span class='text-xs opacity-70'>Initials background color</span>
-                        <input type='color'
-                               class='h-9 w-20 rounded-md border border-outlineLight dark:border-outlineDark'
-                               bind:value={draftAvatarColor}
-                               on:change={onAvatarColorChanged}>
-                        <span class='text-xs opacity-70'>Choosing a color switches back to initials avatar.</span>
-                    </label>
-                </div>
+					<label class="flex flex-col gap-1">
+						<span class="text-xs opacity-70">Initials background color</span>
+						<input
+							type="color"
+							class="h-9 w-20 rounded-md border border-outlineLight dark:border-outlineDark"
+							bind:value={draftAvatarColor}
+							on:change={onAvatarColorChanged}
+						/>
+						<span class="text-xs opacity-70"
+							>Choosing a color switches back to initials avatar.</span
+						>
+					</label>
+				</div>
 
-                <div class='grid grid-cols-1 md:grid-cols-2 gap-3 mt-3'>
-                    <label class='flex flex-col gap-1'>
-                        <span class='text-xs opacity-70'>Name</span>
-                        <input class='rounded-md border border-outlineLight dark:border-outlineDark bg-bgLight dark:bg-bgDark px-2 py-1 text-sm'
-                               bind:value={draftDisplayName}
-                               placeholder='Your display name'>
-                    </label>
+				<div class="mt-3 grid grid-cols-1 gap-3 md:grid-cols-2">
+					<label class="flex flex-col gap-1">
+						<span class="text-xs opacity-70">Name</span>
+						<input
+							class="rounded-md border border-outlineLight bg-bgLight px-2 py-1 text-sm dark:border-outlineDark dark:bg-bgDark"
+							bind:value={draftDisplayName}
+							placeholder="Your display name"
+						/>
+					</label>
 
-                    <label class='flex flex-col gap-1'>
-                        <span class='text-xs opacity-70'>Degree type</span>
-                        <select class='rounded-md border border-outlineLight dark:border-outlineDark bg-bgLight dark:bg-bgDark px-2 py-1 text-sm'
-                                bind:value={draftDegreeType}>
-                            {#each degreeTypes as degree}
-                                <option value={degree}>{degree}</option>
-                            {/each}
-                        </select>
-                    </label>
+					<label class="flex flex-col gap-1">
+						<span class="text-xs opacity-70">Degree type</span>
+						<select
+							class="rounded-md border border-outlineLight bg-bgLight px-2 py-1 text-sm dark:border-outlineDark dark:bg-bgDark"
+							bind:value={draftDegreeType}
+						>
+							{#each degreeTypes as degree}
+								<option value={degree}>{degree}</option>
+							{/each}
+						</select>
+					</label>
 
-                    <label class='flex flex-col gap-1 md:col-span-2'>
-                        <span class='text-xs opacity-70'>Major(s)</span>
-                        <input class='rounded-md border border-outlineLight dark:border-outlineDark bg-bgLight dark:bg-bgDark px-2 py-1 text-sm'
-                               bind:value={draftMajors}
-                               placeholder='Computer Science, Mathematics'>
-                    </label>
+					<label class="flex flex-col gap-1 md:col-span-2">
+						<span class="text-xs opacity-70">Major(s)</span>
+						<input
+							class="rounded-md border border-outlineLight bg-bgLight px-2 py-1 text-sm dark:border-outlineDark dark:bg-bgDark"
+							bind:value={draftMajors}
+							placeholder="Computer Science, Mathematics"
+						/>
+					</label>
 
-                    <label class='flex flex-col gap-1'>
-                        <span class='text-xs opacity-70'>Profile privacy</span>
-                        <select class='rounded-md border border-outlineLight dark:border-outlineDark bg-bgLight dark:bg-bgDark px-2 py-1 text-sm'
-                                bind:value={draftPrivacy}>
-                            {#each privacyOptions as option}
-                                <option value={option.value}>{option.label}</option>
-                            {/each}
-                        </select>
-                    </label>
+					<label class="flex flex-col gap-1">
+						<span class="text-xs opacity-70">Profile privacy</span>
+						<select
+							class="rounded-md border border-outlineLight bg-bgLight px-2 py-1 text-sm dark:border-outlineDark dark:bg-bgDark"
+							bind:value={draftPrivacy}
+						>
+							{#each privacyOptions as option}
+								<option value={option.value}>{option.label}</option>
+							{/each}
+						</select>
+					</label>
 
-                    <label class='flex flex-col gap-1'>
-                        <span class='text-xs opacity-70'>Graduation year</span>
-                        <input class='rounded-md border border-outlineLight dark:border-outlineDark bg-bgLight dark:bg-bgDark px-2 py-1 text-sm'
-                               bind:value={draftGraduationYear}
-                               placeholder='2028'>
-                    </label>
-                </div>
+					<label class="flex flex-col gap-1">
+						<span class="text-xs opacity-70">Graduation year</span>
+						<input
+							class="rounded-md border border-outlineLight bg-bgLight px-2 py-1 text-sm dark:border-outlineDark dark:bg-bgDark"
+							bind:value={draftGraduationYear}
+							placeholder="2028"
+						/>
+					</label>
+				</div>
 
-                {#if editError}
-                    <div class='mt-3 text-sm text-red-500'>{editError}</div>
-                {/if}
+				{#if editError}
+					<div class="text-red-500 mt-3 text-sm">{editError}</div>
+				{/if}
 
-                <div class='mt-4 flex gap-2'>
-                    <button class='rounded-md px-3 py-1 text-sm border border-outlineLight dark:border-outlineDark hover:bg-hoverLight dark:hover:bg-hoverDark'
-                            disabled={profileState.syncing}
-                            on:click={saveEdits}>
-                        {profileState.syncing ? 'Saving...' : 'Save changes'}
-                    </button>
-                    <button class='rounded-md px-3 py-1 text-sm border border-outlineLight dark:border-outlineDark hover:bg-hoverLight dark:hover:bg-hoverDark'
-                            disabled={profileState.syncing}
-                            on:click={cancelEditing}>
-                        Cancel
-                    </button>
-                </div>
-            </section>
-        {/if}
+				<div class="mt-4 flex gap-2">
+					<button
+						class="rounded-md border border-outlineLight px-3 py-1 text-sm hover:bg-hoverLight dark:border-outlineDark dark:hover:bg-hoverDark"
+						disabled={profileState.syncing}
+						on:click={saveEdits}
+					>
+						{profileState.syncing ? 'Saving...' : 'Save changes'}
+					</button>
+					<button
+						class="rounded-md border border-outlineLight px-3 py-1 text-sm hover:bg-hoverLight dark:border-outlineDark dark:hover:bg-hoverDark"
+						disabled={profileState.syncing}
+						on:click={cancelEditing}
+					>
+						Cancel
+					</button>
+				</div>
+			</section>
+		{/if}
 
-        {#if editMessage}
-            <div class='rounded-md border border-outlineLight dark:border-outlineDark p-3 text-sm'>
-                {editMessage}
-            </div>
-        {/if}
+		{#if editMessage}
+			<div class="rounded-md border border-outlineLight p-3 text-sm dark:border-outlineDark">
+				{editMessage}
+			</div>
+		{/if}
 
-        <div class='rounded-xl border border-outlineLight dark:border-outlineDark
-                    bg-bgSecondaryLight/60 dark:bg-bgSecondaryDark/60 p-4 md:p-5'>
-            <h2 class='text-lg font-semibold'>{PROFILE_STRINGS.connectionsTitle}</h2>
-            <p class='text-sm opacity-80 mt-1'>{PROFILE_STRINGS.connectionsDescription}</p>
-            <p class='text-xs opacity-70 mt-2'>{PROFILE_STRINGS.funFact}</p>
+		<div
+			class="rounded-xl border border-outlineLight bg-bgSecondaryLight/60
+                    p-4 md:p-5 dark:border-outlineDark dark:bg-bgSecondaryDark/60"
+		>
+			<h2 class="text-lg font-semibold">{PROFILE_STRINGS.connectionsTitle}</h2>
+			<p class="mt-1 text-sm opacity-80">{PROFILE_STRINGS.connectionsDescription}</p>
+			<p class="mt-2 text-xs opacity-70">{PROFILE_STRINGS.funFact}</p>
 
-            <div class='mt-3 flex flex-wrap gap-2'>
-                <a class='inline-flex px-3 py-1 rounded-md border border-outlineLight
-                         dark:border-outlineDark text-sm hover:bg-hoverLight dark:hover:bg-hoverDark
-                         focus:outline-none focus:ring'
-                    href={`${base}/friends`}>
-                    Open Friends
-                </a>
-                <a class='inline-flex px-3 py-1 rounded-md border border-outlineLight
-                         dark:border-outlineDark text-sm hover:bg-hoverLight dark:hover:bg-hoverDark
-                         focus:outline-none focus:ring'
-                    href={`${base}/settings#privacy`}>
-                    Privacy & Settings
-                </a>
-            </div>
-        </div>
-    </div>
+			<div class="mt-3 flex flex-wrap gap-2">
+				<a
+					class="inline-flex rounded-md border border-outlineLight px-3 py-1
+                         text-sm hover:bg-hoverLight focus:outline-none focus:ring
+                         dark:border-outlineDark dark:hover:bg-hoverDark"
+					href={`${base}/friends`}
+				>
+					Open Friends
+				</a>
+				<a
+					class="inline-flex rounded-md border border-outlineLight px-3 py-1
+                         text-sm hover:bg-hoverLight focus:outline-none focus:ring
+                         dark:border-outlineDark dark:hover:bg-hoverDark"
+					href={`${base}/settings#privacy`}
+				>
+					Privacy & Settings
+				</a>
+			</div>
+		</div>
+	</div>
 </div>

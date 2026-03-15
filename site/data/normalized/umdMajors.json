@@ -1,863 +1,863 @@
 [
-  {
-    "id": 238,
-    "name": "Accounting",
-    "college": "Robert H. Smith School of Business",
-    "url": "https://www.rhsmith.umd.edu/programs/undergraduate/academics/academic-majors",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 239,
-    "name": "Aerospace Engineering",
-    "college": "A. James Clark School of Engineering",
-    "url": "http://www.aero.umd.edu/",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 240,
-    "name": "African American Studies",
-    "college": "College of Behavioral and Social Sciences",
-    "url": "https://aasd.umd.edu/",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 241,
-    "name": "Agricultural and Resource Economics",
-    "college": "College of Agriculture and Natural Resources",
-    "url": "http://www.arec.umd.edu/undergraduate/major-requirements/agricultural-and-resource-economics",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 242,
-    "name": "Agricultural and Resource Economics: Agribusiness",
-    "college": "College of Agriculture and Natural Resources",
-    "url": "http://www.arec.umd.edu/undergraduate/major-requirements/agribusiness",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 243,
-    "name": "Agricultural and Resource Economics: Environmental Economics",
-    "college": "College of Agriculture and Natural Resources",
-    "url": "http://www.arec.umd.edu/undergraduate/major-requirements/environmental-and-resource-economics-new",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 244,
-    "name": "Agricultural Science and Technology: Agricultural and Extension Education",
-    "college": "College of Agriculture and Natural Resources",
-    "url": "http://psla.umd.edu/academic-programs/sustainable-agricultural-production-programs/agricultural-education",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 245,
-    "name": "Agricultural Science and Technology: Agronomy",
-    "college": "College of Agriculture and Natural Resources",
-    "url": "http://psla.umd.edu/academic-programs/undergraduate-programs/agronomy",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 246,
-    "name": "Agricultural Science and Technology: Environmental Horticulture",
-    "college": "College of Agriculture and Natural Resources",
-    "url": "http://go.umd.edu/wLx",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 247,
-    "name": "American Studies",
-    "college": "College of Arts and Humanities",
-    "url": "http://amst.umd.edu/",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 248,
-    "name": "Animal Sciences: Animal Care and Management",
-    "college": "College of Agriculture and Natural Resources",
-    "url": "https://ansc.umd.edu/undergraduate/prospective-students",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 249,
-    "name": "Animal Sciences: Combined Ag/Veterinary Medicine",
-    "college": "College of Agriculture and Natural Resources",
-    "url": "https://ansc.umd.edu/undergraduate/prospective-students",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 250,
-    "name": "Animal Sciences: Science/Pre-Professional",
-    "college": "College of Agriculture and Natural Resources",
-    "url": "https://ansc.umd.edu/undergraduate/prospective-students",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 251,
-    "name": "Anthropology",
-    "college": "College of Behavioral and Social Sciences",
-    "url": "http://www.anth.umd.edu/",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 252,
-    "name": "Arabic Studies",
-    "college": "College of Arts and Humanities",
-    "url": "http://sllc.umd.edu/arabic",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 253,
-    "name": "Architecture",
-    "college": "School of Architecture, Planning and Preservation",
-    "url": "http://www.arch.umd.edu/",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 254,
-    "name": "Art Education",
-    "college": "College of Education",
-    "url": "https://education.umd.edu/admissions/undergraduate/undergraduate-art-education",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 255,
-    "name": "Art History and Archaeology",
-    "college": "College of Arts and Humanities",
-    "url": "http://arthistory.umd.edu/",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 256,
-    "name": "Astronomy",
-    "college": "College of Computer, Mathematical, and Natural Sciences",
-    "url": "http://www.astro.umd.edu/undergrad/major.html",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 257,
-    "name": "Atmospheric and Oceanic Science",
-    "college": "College of Computer, Mathematical, and Natural Sciences",
-    "url": "https://aosc.umd.edu/education/undergrad-major",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 258,
-    "name": "Biochemistry",
-    "college": "College of Computer, Mathematical, and Natural Sciences",
-    "url": "http://www.chem.umd.edu/undergraduateprogram/prospective-students",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 259,
-    "name": "Biocomputational Engineering",
-    "college": "A. James Clark School of Engineering (Universities at Shady Grove location only)",
-    "url": "https://biocomp.umd.edu/",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 260,
-    "name": "Bioengineering",
-    "college": "A. James Clark School of Engineering",
-    "url": "http://www.bioe.umd.edu/",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 261,
-    "name": "Biological Sciences: Cell Biology and Genetics",
-    "college": "College of Computer, Mathematical, and Natural Sciences",
-    "url": "http://bsci.umd.edu/details-on-the-biological-sciences-major",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 262,
-    "name": "Biological Sciences: Ecology and Evolution",
-    "college": "College of Computer, Mathematical, and Natural Sciences",
-    "url": "http://bsci.umd.edu/details-on-the-biological-sciences-major",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 263,
-    "name": "Biological Sciences: General Biology",
-    "college": "College of Computer, Mathematical, and Natural Sciences",
-    "url": "http://bsci.umd.edu/details-on-the-biological-sciences-major",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 264,
-    "name": "Biological Sciences: Microbiology",
-    "college": "College of Computer, Mathematical, and Natural Sciences",
-    "url": "http://bsci.umd.edu/details-on-the-biological-sciences-major",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 265,
-    "name": "Biological Sciences: Physiology and Neurobiology",
-    "college": "College of Computer, Mathematical, and Natural Sciences",
-    "url": "http://bsci.umd.edu/details-on-the-biological-sciences-major",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 266,
-    "name": "Central European, Russian and Eurasian Studies",
-    "college": "College of Arts and Humanities",
-    "url": "http://www.ceres.umd.edu/",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 267,
-    "name": "Chemical and Biomolecular Engineering",
-    "college": "A. James Clark School of Engineering",
-    "url": "http://www.chbe.umd.edu",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 268,
-    "name": "Chemistry",
-    "college": "College of Computer, Mathematical, and Natural Sciences",
-    "url": "http://www.chem.umd.edu/undergraduateprogram/prospective-students",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 269,
-    "name": "Chinese",
-    "college": "College of Arts and Humanities",
-    "url": "http://sllc.umd.edu/chinese",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 270,
-    "name": "Cinema & Media Studies",
-    "college": "College of Arts and Humanities",
-    "url": "https://www.film.umd.edu/",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 271,
-    "name": "Civil and Environmental Engineering",
-    "college": "A. James Clark School of Engineering",
-    "url": "http://www.civil.umd.edu/",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 272,
-    "name": "Classics",
-    "college": "College of Arts and Humanities",
-    "url": "http://www.classics.umd.edu/",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 273,
-    "name": "Communication",
-    "college": "College of Arts and Humanities",
-    "url": "http://www.comm.umd.edu/",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 274,
-    "name": "Community Health",
-    "college": "School of Public Health",
-    "url": "https://sph.umd.edu/department/bch/",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 275,
-    "name": "Computer Engineering",
-    "college": "A. James Clark School of Engineering",
-    "url": "http://www.ece.umd.edu/",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 276,
-    "name": "Computer Science",
-    "college": "College of Computer, Mathematical, and Natural Sciences",
-    "url": "https://undergrad.cs.umd.edu/degree-requirements-cs-major",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 277,
-    "name": "Computer Science: Cybersecurity",
-    "college": "College of Computer, Mathematical, and Natural Sciences",
-    "url": "https://undergrad.cs.umd.edu/degree-requirements-cs-major",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 278,
-    "name": "Computer Science: Data Science",
-    "college": "College of Computer, Mathematical, and Natural Sciences",
-    "url": "https://undergrad.cs.umd.edu/degree-requirements-cs-major",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 279,
-    "name": "Computer Science: Machine Learning",
-    "college": "College of Computer, Mathematical, and Natural Sciences",
-    "url": "https://undergrad.cs.umd.edu/degree-requirements-cs-major",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 280,
-    "name": "Criminology and Criminal Justice",
-    "college": "College of Behavioral and Social Sciences",
-    "url": "http://www.ccjs.umd.edu/",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 281,
-    "name": "Dance",
-    "college": "College of Arts and Humanities",
-    "url": "http://tdps.umd.edu/programs/ba-dance",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 282,
-    "name": "Early Childhood and Early Childhood Special Education",
-    "college": "College of Education",
-    "url": "https://education.umd.edu/admissions/undergraduate/early-childhood-early-childhood-special-education-bachelor-science-bs",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 283,
-    "name": "Economics",
-    "college": "College of Behavioral and Social Sciences",
-    "url": "http://www.econ.umd.edu/",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 284,
-    "name": "Electrical Engineering",
-    "college": "A. James Clark School of Engineering",
-    "url": "http://www.ece.umd.edu/",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 285,
-    "name": "Elementary Education",
-    "college": "College of Education",
-    "url": "https://education.umd.edu/admissions/undergraduate/elementary-education-bachelor-science-bs",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 286,
-    "name": "Elementary/Middle Special Education",
-    "college": "College of Education",
-    "url": "https://education.umd.edu/admissions/undergraduate/undergraduate-elementarymiddle-special-education",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 287,
-    "name": "Embedded Systems and Internet of Things",
-    "college": "A. James Clark School of Engineering (Universities at Shady Grove location only)",
-    "url": "https://shadygrove.ece.umd.edu/",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 288,
-    "name": "English",
-    "college": "College of Arts and Humanities",
-    "url": "http://www.english.umd.edu/academics/undergraduate/2018EnglishMajor",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 289,
-    "name": "Environmental Science and Policy",
-    "college": "College of Agriculture and Natural Resources; College of Behavioral and Social Sciences; and College of Computer, Mathematical, and Natural Sciences",
-    "url": "http://ensp.umd.edu/about/one-major-three-colleges",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 290,
-    "name": "Environmental Science and Technology: Ecological Technology Design",
-    "college": "College of Agriculture and Natural Resources",
-    "url": "http://enst.umd.edu/undergraduate/programs",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 291,
-    "name": "Environmental Science and Technology: Environmental Health",
-    "college": "College of Agriculture and Natural Resources",
-    "url": "http://enst.umd.edu/undergraduate/programs",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 292,
-    "name": "Environmental Science and Technology: Natural Resources Management",
-    "college": "College of Agriculture and Natural Resources",
-    "url": "http://enst.umd.edu/undergraduate/programs",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 293,
-    "name": "Environmental Science and Technology: Soil and Watershed Science",
-    "college": "College of Agriculture and Natural Resources",
-    "url": "http://enst.umd.edu/undergraduate/programs",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 294,
-    "name": "Family Science",
-    "college": "School of Public Health",
-    "url": "http://sph.umd.edu/department/fmsc/",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 295,
-    "name": "Fermentation Science",
-    "college": "College of Agriculture and Natural Resources",
-    "url": "https://nfsc.umd.edu/undergraduate/programs/fermentation-science",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 296,
-    "name": "Finance",
-    "college": "Robert H. Smith School of Business",
-    "url": "https://www.rhsmith.umd.edu/programs/undergraduate/academics/academic-majors",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 297,
-    "name": "Fire Protection Engineering",
-    "college": "A. James Clark School of Engineering",
-    "url": "http://www.enfp.umd.edu/",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 298,
-    "name": "French",
-    "college": "College of Arts and Humanities",
-    "url": "https://sllc.umd.edu/french",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 299,
-    "name": "Geographical Sciences and GIS",
-    "college": "College of Behavioral and Social Sciences",
-    "url": "https://geog.umd.edu/",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 300,
-    "name": "Geology",
-    "college": "College of Computer, Mathematical, and Natural Sciences",
-    "url": "https://www.geol.umd.edu/undergraduate/whygeology.php",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 301,
-    "name": "Germanic Studies",
-    "college": "College of Arts and Humanities",
-    "url": "http://sllc.umd.edu/german",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 302,
-    "name": "Government and Politics",
-    "college": "College of Behavioral and Social Sciences",
-    "url": "https://gvpt.umd.edu/",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 303,
-    "name": "Hearing and Speech Sciences",
-    "college": "College of Behavioral and Social Sciences",
-    "url": "https://hesp.umd.edu/",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 304,
-    "name": "History",
-    "college": "College of Arts and Humanities",
-    "url": "http://www.history.umd.edu/",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 305,
-    "name": "Human Development",
-    "college": "College of Education",
-    "url": "https://education.umd.edu/admissions/undergraduate/human-development-bachelor-science-bs",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 306,
-    "name": "Immersive Media Design",
-    "college": "College of Arts and Humanities; College of Computer, Mathematical, and Natural Sciences",
-    "url": "https://imd.umd.edu/",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 307,
-    "name": "Information Science",
-    "college": "College of Information Studies",
-    "url": "https://ischool.umd.edu/academics/bachelor-of-science-in-information-science-college-park/prospective-students",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 308,
-    "name": "Information Systems",
-    "college": "Robert H. Smith School of Business",
-    "url": "https://www.rhsmith.umd.edu/programs/undergraduate/academics/academic-majors",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 309,
-    "name": "International Business",
-    "college": "Robert H. Smith School of Business",
-    "url": "https://www.rhsmith.umd.edu/programs/undergraduate/academics/academic-majors",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 310,
-    "name": "International Relations",
-    "college": "College of Behavioral and Social Sciences",
-    "url": "https://bsosundergrad.umd.edu/international-relations/study-international",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 311,
-    "name": "Italian Studies",
-    "college": "College of Arts and Humanities",
-    "url": "http://sllc.umd.edu/italian",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 312,
-    "name": "Japanese",
-    "college": "College of Arts and Humanities",
-    "url": "http://sllc.umd.edu/japanese",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 313,
-    "name": "Jewish Studies",
-    "college": "College of Arts and Humanities",
-    "url": "http://www.jewishstudies.umd.edu/",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 314,
-    "name": "Journalism",
-    "college": "Philip Merrill College of Journalism",
-    "url": "https://merrill.umd.edu/academics/undergraduate-programs/",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 315,
-    "name": "Kinesiology",
-    "college": "School of Public Health",
-    "url": "http://sph.umd.edu/department/knes",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 316,
-    "name": "Landscape Architecture",
-    "college": "College of Agriculture and Natural Resources",
-    "url": "https://larch.umd.edu/undergraduate/prospective-undergraduate-students",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 317,
-    "name": "Linguistics",
-    "college": "College of Arts and Humanities",
-    "url": "http://ling.umd.edu",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 318,
-    "name": "Management",
-    "college": "Robert H. Smith School of Business",
-    "url": "https://www.rhsmith.umd.edu/programs/undergraduate/academics/academic-majors",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 319,
-    "name": "Marketing",
-    "college": "Robert H. Smith School of Business",
-    "url": "https://www.rhsmith.umd.edu/programs/undergraduate/academics/academic-majors",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 320,
-    "name": "Materials Science and Engineering",
-    "college": "A. James Clark School of Engineering",
-    "url": "http://www.mse.umd.edu/",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 321,
-    "name": "Mathematics",
-    "college": "College of Computer, Mathematical, and Natural Sciences",
-    "url": "https://www-math.umd.edu/undergraduate/math-majors.html",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 322,
-    "name": "Mathematics: Applied Math",
-    "college": "College of Computer, Mathematical, and Natural Sciences",
-    "url": "https://www-math.umd.edu/undergraduate/math-majors.html",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 323,
-    "name": "Mathematics: Education",
-    "college": "College of Computer, Mathematical, and Natural Sciences",
-    "url": "https://www-math.umd.edu/undergraduate/math-majors.html",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 324,
-    "name": "Mathematics: Statistics",
-    "college": "College of Computer, Mathematical, and Natural Sciences",
-    "url": "https://www-math.umd.edu/undergraduate/math-majors.html",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 325,
-    "name": "Mechanical Engineering",
-    "college": "A. James Clark School of Engineering",
-    "url": "http://www.enme.umd.edu/",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 326,
-    "name": "Middle School Math and Science Education",
-    "college": "College of Education",
-    "url": "https://education.umd.edu/admissions/undergraduate/middle-school-mathematics-and-science-bachelor-science-bs",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 327,
-    "name": "Music: Education",
-    "college": "College of Arts and Humanities",
-    "url": "https://music.umd.edu/academic-programs/bachelor-of-music-education",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 328,
-    "name": "Music: Liberal Arts Program",
-    "college": "College of Arts and Humanities",
-    "url": "https://music.umd.edu/academic-programs/bachelor-of-arts",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 329,
-    "name": "Music: Professional Program",
-    "college": "College of Arts and Humanities",
-    "url": "https://music.umd.edu/academic-programs/bachelor-of-music",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 330,
-    "name": "Neuroscience",
-    "college": "College of Behavioral and Social Sciences; College of Computer, Mathematical, and Natural Sciences)",
-    "url": "https://neur.umd.edu/",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 331,
-    "name": "Nutrition and Food Science: Dietetics",
-    "college": "College of Agriculture and Natural Resources",
-    "url": "http://nfsc.umd.edu/undergraduate/undergraduate-admissions/dietetics",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 332,
-    "name": "Nutrition and Food Science: Food Science",
-    "college": "College of Agriculture and Natural Resources",
-    "url": "http://nfsc.umd.edu/undergraduate/undergraduate-admissions/food-science",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 333,
-    "name": "Nutrition and Food Sciences: Nutritional Science",
-    "college": "College of Agriculture and Natural Resources",
-    "url": "http://go.umd.edu/w63",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 334,
-    "name": "Operations Management and Business Analytics",
-    "college": "Robert H. Smith School of Business",
-    "url": "https://www.rhsmith.umd.edu/programs/undergraduate/academics/academic-majors",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 335,
-    "name": "Persian Studies",
-    "college": "College of Arts and Humanities",
-    "url": "http://sllc.umd.edu/persian",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 336,
-    "name": "Philosophy",
-    "college": "College of Arts and Humanities",
-    "url": "http://www.philosophy.umd.edu/",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 337,
-    "name": "Philosophy, Politics and Economics",
-    "college": "College of Arts and Humanities",
-    "url": "http://philosophy.umd.edu/ppe",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 338,
-    "name": "Physics",
-    "college": "College of Computer, Mathematical, and Natural Sciences",
-    "url": "https://umdphysics.umd.edu/academics/undergraduate/ugrad-prospective-students.html",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 339,
-    "name": "Plant Sciences: Plant Biology",
-    "college": "College of Agriculture and Natural Resources",
-    "url": "http://psla.umd.edu/academic-programs/undergraduate-programs/plant-biology",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 340,
-    "name": "Plant Sciences: Turf and Golf Course Management",
-    "college": "College of Agriculture and Natural Resources",
-    "url": "http://psla.umd.edu/academic-programs/landscape-architecture-management-programs/turfgrass-management",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 341,
-    "name": "Plant Sciences: Urban Forestry",
-    "college": "College of Agriculture and Natural Resources",
-    "url": "http://psla.umd.edu/academic-programs/plant-biology-biotechnology-programs/urban-forestry",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 342,
-    "name": "Psychology",
-    "college": "College of Behavioral and Social Sciences",
-    "url": "https://psyc.umd.edu/",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 343,
-    "name": "Public Health Science",
-    "college": "School of Public Health",
-    "url": "https://sph.umd.edu/department/phs",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 344,
-    "name": "Public Policy",
-    "college": "School of Public Policy",
-    "url": "https://spp.umd.edu/your-education/undergraduate/public-policy-major",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 345,
-    "name": "Religions of the Ancient Middle East",
-    "college": "College of Arts and Humanities",
-    "url": "http://jewishstudies.umd.edu/religions-and-cultures-ancient-middle-east-rame-major",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 346,
-    "name": "Romance Languages",
-    "college": "College of Arts and Humanities",
-    "url": "http://sllc.umd.edu/roml",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 347,
-    "name": "Russian Language and Literature",
-    "college": "College of Arts and Humanities",
-    "url": "https://sllc.umd.edu/russian/undergraduate/major",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 348,
-    "name": "Secondary Education: English Area of Concentration",
-    "college": "College of Education",
-    "url": "https://education.umd.edu/admissions/undergraduate/english-education-bachelor-arts-ba",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 349,
-    "name": "Secondary Education: Mathematics (Terrapin Teachers) Area of Concentration",
-    "college": "College of Education",
-    "url": "https://education.umd.edu/admissions/undergraduate/math-education-terrapin-teachers-bachelor-science-bs",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 350,
-    "name": "Secondary Education: Science (Terrapin Teachers) Area of Concentration",
-    "college": "College of Education",
-    "url": "https://education.umd.edu/admissions/undergraduate/science-education-terrapin-teachers-bachelor-science-bs",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 351,
-    "name": "Secondary Education: Social Studies Area of Concentration",
-    "college": "College of Education",
-    "url": "https://education.umd.edu/admissions/undergraduate/social-studies-education-bachelor-arts-ba",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 352,
-    "name": "Secondary Education: World Languages Area of Concentration",
-    "college": "College of Education",
-    "url": "https://education.umd.edu/admissions/undergraduate/secondary-education-bachelor-arts-ba-world-language-area-concentration",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 353,
-    "name": "Social Data Science",
-    "college": "College of Behavioral and Social Sciences; College of Information Studies",
-    "url": "https://sdsc.umd.edu/about-us/overview",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 354,
-    "name": "Sociology",
-    "college": "College of Behavioral and Social Sciences",
-    "url": "https://socy.umd.edu/",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 355,
-    "name": "Spanish Language, Literature and Cultures",
-    "college": "College of Arts and Humanities",
-    "url": "https://sllc.umd.edu/spanish/undergraduate/major",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 356,
-    "name": "Studio Art",
-    "college": "College of Arts and Humanities",
-    "url": "http://www.art.umd.edu/",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 357,
-    "name": "Supply Chain Management",
-    "college": "Robert H. Smith School of Business",
-    "url": "https://www.rhsmith.umd.edu/programs/undergraduate/academics/academic-majors",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 358,
-    "name": "Theatre",
-    "college": "College of Arts and Humanities",
-    "url": "http://tdps.umd.edu/programs/ba-theatre",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 359,
-    "name": "Undecided/Undeclared",
-    "college": "Letters and Sciences",
-    "url": "http://www.ltsc.umd.edu/",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  },
-  {
-    "id": 360,
-    "name": "Women, Gender, and Sexuality Studies",
-    "college": "College of Arts and Humanities",
-    "url": "https://wgss.umd.edu/",
-    "syncedAt": "2026-03-13T19:44:38.933Z"
-  }
+	{
+		"id": 238,
+		"name": "Accounting",
+		"college": "Robert H. Smith School of Business",
+		"url": "https://www.rhsmith.umd.edu/programs/undergraduate/academics/academic-majors",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 239,
+		"name": "Aerospace Engineering",
+		"college": "A. James Clark School of Engineering",
+		"url": "http://www.aero.umd.edu/",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 240,
+		"name": "African American Studies",
+		"college": "College of Behavioral and Social Sciences",
+		"url": "https://aasd.umd.edu/",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 241,
+		"name": "Agricultural and Resource Economics",
+		"college": "College of Agriculture and Natural Resources",
+		"url": "http://www.arec.umd.edu/undergraduate/major-requirements/agricultural-and-resource-economics",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 242,
+		"name": "Agricultural and Resource Economics: Agribusiness",
+		"college": "College of Agriculture and Natural Resources",
+		"url": "http://www.arec.umd.edu/undergraduate/major-requirements/agribusiness",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 243,
+		"name": "Agricultural and Resource Economics: Environmental Economics",
+		"college": "College of Agriculture and Natural Resources",
+		"url": "http://www.arec.umd.edu/undergraduate/major-requirements/environmental-and-resource-economics-new",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 244,
+		"name": "Agricultural Science and Technology: Agricultural and Extension Education",
+		"college": "College of Agriculture and Natural Resources",
+		"url": "http://psla.umd.edu/academic-programs/sustainable-agricultural-production-programs/agricultural-education",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 245,
+		"name": "Agricultural Science and Technology: Agronomy",
+		"college": "College of Agriculture and Natural Resources",
+		"url": "http://psla.umd.edu/academic-programs/undergraduate-programs/agronomy",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 246,
+		"name": "Agricultural Science and Technology: Environmental Horticulture",
+		"college": "College of Agriculture and Natural Resources",
+		"url": "http://go.umd.edu/wLx",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 247,
+		"name": "American Studies",
+		"college": "College of Arts and Humanities",
+		"url": "http://amst.umd.edu/",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 248,
+		"name": "Animal Sciences: Animal Care and Management",
+		"college": "College of Agriculture and Natural Resources",
+		"url": "https://ansc.umd.edu/undergraduate/prospective-students",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 249,
+		"name": "Animal Sciences: Combined Ag/Veterinary Medicine",
+		"college": "College of Agriculture and Natural Resources",
+		"url": "https://ansc.umd.edu/undergraduate/prospective-students",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 250,
+		"name": "Animal Sciences: Science/Pre-Professional",
+		"college": "College of Agriculture and Natural Resources",
+		"url": "https://ansc.umd.edu/undergraduate/prospective-students",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 251,
+		"name": "Anthropology",
+		"college": "College of Behavioral and Social Sciences",
+		"url": "http://www.anth.umd.edu/",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 252,
+		"name": "Arabic Studies",
+		"college": "College of Arts and Humanities",
+		"url": "http://sllc.umd.edu/arabic",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 253,
+		"name": "Architecture",
+		"college": "School of Architecture, Planning and Preservation",
+		"url": "http://www.arch.umd.edu/",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 254,
+		"name": "Art Education",
+		"college": "College of Education",
+		"url": "https://education.umd.edu/admissions/undergraduate/undergraduate-art-education",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 255,
+		"name": "Art History and Archaeology",
+		"college": "College of Arts and Humanities",
+		"url": "http://arthistory.umd.edu/",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 256,
+		"name": "Astronomy",
+		"college": "College of Computer, Mathematical, and Natural Sciences",
+		"url": "http://www.astro.umd.edu/undergrad/major.html",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 257,
+		"name": "Atmospheric and Oceanic Science",
+		"college": "College of Computer, Mathematical, and Natural Sciences",
+		"url": "https://aosc.umd.edu/education/undergrad-major",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 258,
+		"name": "Biochemistry",
+		"college": "College of Computer, Mathematical, and Natural Sciences",
+		"url": "http://www.chem.umd.edu/undergraduateprogram/prospective-students",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 259,
+		"name": "Biocomputational Engineering",
+		"college": "A. James Clark School of Engineering (Universities at Shady Grove location only)",
+		"url": "https://biocomp.umd.edu/",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 260,
+		"name": "Bioengineering",
+		"college": "A. James Clark School of Engineering",
+		"url": "http://www.bioe.umd.edu/",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 261,
+		"name": "Biological Sciences: Cell Biology and Genetics",
+		"college": "College of Computer, Mathematical, and Natural Sciences",
+		"url": "http://bsci.umd.edu/details-on-the-biological-sciences-major",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 262,
+		"name": "Biological Sciences: Ecology and Evolution",
+		"college": "College of Computer, Mathematical, and Natural Sciences",
+		"url": "http://bsci.umd.edu/details-on-the-biological-sciences-major",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 263,
+		"name": "Biological Sciences: General Biology",
+		"college": "College of Computer, Mathematical, and Natural Sciences",
+		"url": "http://bsci.umd.edu/details-on-the-biological-sciences-major",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 264,
+		"name": "Biological Sciences: Microbiology",
+		"college": "College of Computer, Mathematical, and Natural Sciences",
+		"url": "http://bsci.umd.edu/details-on-the-biological-sciences-major",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 265,
+		"name": "Biological Sciences: Physiology and Neurobiology",
+		"college": "College of Computer, Mathematical, and Natural Sciences",
+		"url": "http://bsci.umd.edu/details-on-the-biological-sciences-major",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 266,
+		"name": "Central European, Russian and Eurasian Studies",
+		"college": "College of Arts and Humanities",
+		"url": "http://www.ceres.umd.edu/",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 267,
+		"name": "Chemical and Biomolecular Engineering",
+		"college": "A. James Clark School of Engineering",
+		"url": "http://www.chbe.umd.edu",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 268,
+		"name": "Chemistry",
+		"college": "College of Computer, Mathematical, and Natural Sciences",
+		"url": "http://www.chem.umd.edu/undergraduateprogram/prospective-students",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 269,
+		"name": "Chinese",
+		"college": "College of Arts and Humanities",
+		"url": "http://sllc.umd.edu/chinese",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 270,
+		"name": "Cinema & Media Studies",
+		"college": "College of Arts and Humanities",
+		"url": "https://www.film.umd.edu/",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 271,
+		"name": "Civil and Environmental Engineering",
+		"college": "A. James Clark School of Engineering",
+		"url": "http://www.civil.umd.edu/",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 272,
+		"name": "Classics",
+		"college": "College of Arts and Humanities",
+		"url": "http://www.classics.umd.edu/",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 273,
+		"name": "Communication",
+		"college": "College of Arts and Humanities",
+		"url": "http://www.comm.umd.edu/",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 274,
+		"name": "Community Health",
+		"college": "School of Public Health",
+		"url": "https://sph.umd.edu/department/bch/",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 275,
+		"name": "Computer Engineering",
+		"college": "A. James Clark School of Engineering",
+		"url": "http://www.ece.umd.edu/",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 276,
+		"name": "Computer Science",
+		"college": "College of Computer, Mathematical, and Natural Sciences",
+		"url": "https://undergrad.cs.umd.edu/degree-requirements-cs-major",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 277,
+		"name": "Computer Science: Cybersecurity",
+		"college": "College of Computer, Mathematical, and Natural Sciences",
+		"url": "https://undergrad.cs.umd.edu/degree-requirements-cs-major",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 278,
+		"name": "Computer Science: Data Science",
+		"college": "College of Computer, Mathematical, and Natural Sciences",
+		"url": "https://undergrad.cs.umd.edu/degree-requirements-cs-major",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 279,
+		"name": "Computer Science: Machine Learning",
+		"college": "College of Computer, Mathematical, and Natural Sciences",
+		"url": "https://undergrad.cs.umd.edu/degree-requirements-cs-major",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 280,
+		"name": "Criminology and Criminal Justice",
+		"college": "College of Behavioral and Social Sciences",
+		"url": "http://www.ccjs.umd.edu/",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 281,
+		"name": "Dance",
+		"college": "College of Arts and Humanities",
+		"url": "http://tdps.umd.edu/programs/ba-dance",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 282,
+		"name": "Early Childhood and Early Childhood Special Education",
+		"college": "College of Education",
+		"url": "https://education.umd.edu/admissions/undergraduate/early-childhood-early-childhood-special-education-bachelor-science-bs",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 283,
+		"name": "Economics",
+		"college": "College of Behavioral and Social Sciences",
+		"url": "http://www.econ.umd.edu/",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 284,
+		"name": "Electrical Engineering",
+		"college": "A. James Clark School of Engineering",
+		"url": "http://www.ece.umd.edu/",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 285,
+		"name": "Elementary Education",
+		"college": "College of Education",
+		"url": "https://education.umd.edu/admissions/undergraduate/elementary-education-bachelor-science-bs",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 286,
+		"name": "Elementary/Middle Special Education",
+		"college": "College of Education",
+		"url": "https://education.umd.edu/admissions/undergraduate/undergraduate-elementarymiddle-special-education",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 287,
+		"name": "Embedded Systems and Internet of Things",
+		"college": "A. James Clark School of Engineering (Universities at Shady Grove location only)",
+		"url": "https://shadygrove.ece.umd.edu/",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 288,
+		"name": "English",
+		"college": "College of Arts and Humanities",
+		"url": "http://www.english.umd.edu/academics/undergraduate/2018EnglishMajor",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 289,
+		"name": "Environmental Science and Policy",
+		"college": "College of Agriculture and Natural Resources; College of Behavioral and Social Sciences; and College of Computer, Mathematical, and Natural Sciences",
+		"url": "http://ensp.umd.edu/about/one-major-three-colleges",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 290,
+		"name": "Environmental Science and Technology: Ecological Technology Design",
+		"college": "College of Agriculture and Natural Resources",
+		"url": "http://enst.umd.edu/undergraduate/programs",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 291,
+		"name": "Environmental Science and Technology: Environmental Health",
+		"college": "College of Agriculture and Natural Resources",
+		"url": "http://enst.umd.edu/undergraduate/programs",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 292,
+		"name": "Environmental Science and Technology: Natural Resources Management",
+		"college": "College of Agriculture and Natural Resources",
+		"url": "http://enst.umd.edu/undergraduate/programs",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 293,
+		"name": "Environmental Science and Technology: Soil and Watershed Science",
+		"college": "College of Agriculture and Natural Resources",
+		"url": "http://enst.umd.edu/undergraduate/programs",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 294,
+		"name": "Family Science",
+		"college": "School of Public Health",
+		"url": "http://sph.umd.edu/department/fmsc/",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 295,
+		"name": "Fermentation Science",
+		"college": "College of Agriculture and Natural Resources",
+		"url": "https://nfsc.umd.edu/undergraduate/programs/fermentation-science",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 296,
+		"name": "Finance",
+		"college": "Robert H. Smith School of Business",
+		"url": "https://www.rhsmith.umd.edu/programs/undergraduate/academics/academic-majors",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 297,
+		"name": "Fire Protection Engineering",
+		"college": "A. James Clark School of Engineering",
+		"url": "http://www.enfp.umd.edu/",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 298,
+		"name": "French",
+		"college": "College of Arts and Humanities",
+		"url": "https://sllc.umd.edu/french",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 299,
+		"name": "Geographical Sciences and GIS",
+		"college": "College of Behavioral and Social Sciences",
+		"url": "https://geog.umd.edu/",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 300,
+		"name": "Geology",
+		"college": "College of Computer, Mathematical, and Natural Sciences",
+		"url": "https://www.geol.umd.edu/undergraduate/whygeology.php",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 301,
+		"name": "Germanic Studies",
+		"college": "College of Arts and Humanities",
+		"url": "http://sllc.umd.edu/german",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 302,
+		"name": "Government and Politics",
+		"college": "College of Behavioral and Social Sciences",
+		"url": "https://gvpt.umd.edu/",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 303,
+		"name": "Hearing and Speech Sciences",
+		"college": "College of Behavioral and Social Sciences",
+		"url": "https://hesp.umd.edu/",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 304,
+		"name": "History",
+		"college": "College of Arts and Humanities",
+		"url": "http://www.history.umd.edu/",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 305,
+		"name": "Human Development",
+		"college": "College of Education",
+		"url": "https://education.umd.edu/admissions/undergraduate/human-development-bachelor-science-bs",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 306,
+		"name": "Immersive Media Design",
+		"college": "College of Arts and Humanities; College of Computer, Mathematical, and Natural Sciences",
+		"url": "https://imd.umd.edu/",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 307,
+		"name": "Information Science",
+		"college": "College of Information Studies",
+		"url": "https://ischool.umd.edu/academics/bachelor-of-science-in-information-science-college-park/prospective-students",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 308,
+		"name": "Information Systems",
+		"college": "Robert H. Smith School of Business",
+		"url": "https://www.rhsmith.umd.edu/programs/undergraduate/academics/academic-majors",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 309,
+		"name": "International Business",
+		"college": "Robert H. Smith School of Business",
+		"url": "https://www.rhsmith.umd.edu/programs/undergraduate/academics/academic-majors",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 310,
+		"name": "International Relations",
+		"college": "College of Behavioral and Social Sciences",
+		"url": "https://bsosundergrad.umd.edu/international-relations/study-international",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 311,
+		"name": "Italian Studies",
+		"college": "College of Arts and Humanities",
+		"url": "http://sllc.umd.edu/italian",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 312,
+		"name": "Japanese",
+		"college": "College of Arts and Humanities",
+		"url": "http://sllc.umd.edu/japanese",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 313,
+		"name": "Jewish Studies",
+		"college": "College of Arts and Humanities",
+		"url": "http://www.jewishstudies.umd.edu/",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 314,
+		"name": "Journalism",
+		"college": "Philip Merrill College of Journalism",
+		"url": "https://merrill.umd.edu/academics/undergraduate-programs/",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 315,
+		"name": "Kinesiology",
+		"college": "School of Public Health",
+		"url": "http://sph.umd.edu/department/knes",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 316,
+		"name": "Landscape Architecture",
+		"college": "College of Agriculture and Natural Resources",
+		"url": "https://larch.umd.edu/undergraduate/prospective-undergraduate-students",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 317,
+		"name": "Linguistics",
+		"college": "College of Arts and Humanities",
+		"url": "http://ling.umd.edu",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 318,
+		"name": "Management",
+		"college": "Robert H. Smith School of Business",
+		"url": "https://www.rhsmith.umd.edu/programs/undergraduate/academics/academic-majors",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 319,
+		"name": "Marketing",
+		"college": "Robert H. Smith School of Business",
+		"url": "https://www.rhsmith.umd.edu/programs/undergraduate/academics/academic-majors",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 320,
+		"name": "Materials Science and Engineering",
+		"college": "A. James Clark School of Engineering",
+		"url": "http://www.mse.umd.edu/",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 321,
+		"name": "Mathematics",
+		"college": "College of Computer, Mathematical, and Natural Sciences",
+		"url": "https://www-math.umd.edu/undergraduate/math-majors.html",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 322,
+		"name": "Mathematics: Applied Math",
+		"college": "College of Computer, Mathematical, and Natural Sciences",
+		"url": "https://www-math.umd.edu/undergraduate/math-majors.html",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 323,
+		"name": "Mathematics: Education",
+		"college": "College of Computer, Mathematical, and Natural Sciences",
+		"url": "https://www-math.umd.edu/undergraduate/math-majors.html",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 324,
+		"name": "Mathematics: Statistics",
+		"college": "College of Computer, Mathematical, and Natural Sciences",
+		"url": "https://www-math.umd.edu/undergraduate/math-majors.html",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 325,
+		"name": "Mechanical Engineering",
+		"college": "A. James Clark School of Engineering",
+		"url": "http://www.enme.umd.edu/",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 326,
+		"name": "Middle School Math and Science Education",
+		"college": "College of Education",
+		"url": "https://education.umd.edu/admissions/undergraduate/middle-school-mathematics-and-science-bachelor-science-bs",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 327,
+		"name": "Music: Education",
+		"college": "College of Arts and Humanities",
+		"url": "https://music.umd.edu/academic-programs/bachelor-of-music-education",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 328,
+		"name": "Music: Liberal Arts Program",
+		"college": "College of Arts and Humanities",
+		"url": "https://music.umd.edu/academic-programs/bachelor-of-arts",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 329,
+		"name": "Music: Professional Program",
+		"college": "College of Arts and Humanities",
+		"url": "https://music.umd.edu/academic-programs/bachelor-of-music",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 330,
+		"name": "Neuroscience",
+		"college": "College of Behavioral and Social Sciences; College of Computer, Mathematical, and Natural Sciences)",
+		"url": "https://neur.umd.edu/",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 331,
+		"name": "Nutrition and Food Science: Dietetics",
+		"college": "College of Agriculture and Natural Resources",
+		"url": "http://nfsc.umd.edu/undergraduate/undergraduate-admissions/dietetics",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 332,
+		"name": "Nutrition and Food Science: Food Science",
+		"college": "College of Agriculture and Natural Resources",
+		"url": "http://nfsc.umd.edu/undergraduate/undergraduate-admissions/food-science",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 333,
+		"name": "Nutrition and Food Sciences: Nutritional Science",
+		"college": "College of Agriculture and Natural Resources",
+		"url": "http://go.umd.edu/w63",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 334,
+		"name": "Operations Management and Business Analytics",
+		"college": "Robert H. Smith School of Business",
+		"url": "https://www.rhsmith.umd.edu/programs/undergraduate/academics/academic-majors",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 335,
+		"name": "Persian Studies",
+		"college": "College of Arts and Humanities",
+		"url": "http://sllc.umd.edu/persian",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 336,
+		"name": "Philosophy",
+		"college": "College of Arts and Humanities",
+		"url": "http://www.philosophy.umd.edu/",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 337,
+		"name": "Philosophy, Politics and Economics",
+		"college": "College of Arts and Humanities",
+		"url": "http://philosophy.umd.edu/ppe",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 338,
+		"name": "Physics",
+		"college": "College of Computer, Mathematical, and Natural Sciences",
+		"url": "https://umdphysics.umd.edu/academics/undergraduate/ugrad-prospective-students.html",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 339,
+		"name": "Plant Sciences: Plant Biology",
+		"college": "College of Agriculture and Natural Resources",
+		"url": "http://psla.umd.edu/academic-programs/undergraduate-programs/plant-biology",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 340,
+		"name": "Plant Sciences: Turf and Golf Course Management",
+		"college": "College of Agriculture and Natural Resources",
+		"url": "http://psla.umd.edu/academic-programs/landscape-architecture-management-programs/turfgrass-management",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 341,
+		"name": "Plant Sciences: Urban Forestry",
+		"college": "College of Agriculture and Natural Resources",
+		"url": "http://psla.umd.edu/academic-programs/plant-biology-biotechnology-programs/urban-forestry",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 342,
+		"name": "Psychology",
+		"college": "College of Behavioral and Social Sciences",
+		"url": "https://psyc.umd.edu/",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 343,
+		"name": "Public Health Science",
+		"college": "School of Public Health",
+		"url": "https://sph.umd.edu/department/phs",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 344,
+		"name": "Public Policy",
+		"college": "School of Public Policy",
+		"url": "https://spp.umd.edu/your-education/undergraduate/public-policy-major",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 345,
+		"name": "Religions of the Ancient Middle East",
+		"college": "College of Arts and Humanities",
+		"url": "http://jewishstudies.umd.edu/religions-and-cultures-ancient-middle-east-rame-major",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 346,
+		"name": "Romance Languages",
+		"college": "College of Arts and Humanities",
+		"url": "http://sllc.umd.edu/roml",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 347,
+		"name": "Russian Language and Literature",
+		"college": "College of Arts and Humanities",
+		"url": "https://sllc.umd.edu/russian/undergraduate/major",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 348,
+		"name": "Secondary Education: English Area of Concentration",
+		"college": "College of Education",
+		"url": "https://education.umd.edu/admissions/undergraduate/english-education-bachelor-arts-ba",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 349,
+		"name": "Secondary Education: Mathematics (Terrapin Teachers) Area of Concentration",
+		"college": "College of Education",
+		"url": "https://education.umd.edu/admissions/undergraduate/math-education-terrapin-teachers-bachelor-science-bs",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 350,
+		"name": "Secondary Education: Science (Terrapin Teachers) Area of Concentration",
+		"college": "College of Education",
+		"url": "https://education.umd.edu/admissions/undergraduate/science-education-terrapin-teachers-bachelor-science-bs",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 351,
+		"name": "Secondary Education: Social Studies Area of Concentration",
+		"college": "College of Education",
+		"url": "https://education.umd.edu/admissions/undergraduate/social-studies-education-bachelor-arts-ba",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 352,
+		"name": "Secondary Education: World Languages Area of Concentration",
+		"college": "College of Education",
+		"url": "https://education.umd.edu/admissions/undergraduate/secondary-education-bachelor-arts-ba-world-language-area-concentration",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 353,
+		"name": "Social Data Science",
+		"college": "College of Behavioral and Social Sciences; College of Information Studies",
+		"url": "https://sdsc.umd.edu/about-us/overview",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 354,
+		"name": "Sociology",
+		"college": "College of Behavioral and Social Sciences",
+		"url": "https://socy.umd.edu/",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 355,
+		"name": "Spanish Language, Literature and Cultures",
+		"college": "College of Arts and Humanities",
+		"url": "https://sllc.umd.edu/spanish/undergraduate/major",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 356,
+		"name": "Studio Art",
+		"college": "College of Arts and Humanities",
+		"url": "http://www.art.umd.edu/",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 357,
+		"name": "Supply Chain Management",
+		"college": "Robert H. Smith School of Business",
+		"url": "https://www.rhsmith.umd.edu/programs/undergraduate/academics/academic-majors",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 358,
+		"name": "Theatre",
+		"college": "College of Arts and Humanities",
+		"url": "http://tdps.umd.edu/programs/ba-theatre",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 359,
+		"name": "Undecided/Undeclared",
+		"college": "Letters and Sciences",
+		"url": "http://www.ltsc.umd.edu/",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	},
+	{
+		"id": 360,
+		"name": "Women, Gender, and Sexuality Studies",
+		"college": "College of Arts and Humanities",
+		"url": "https://wgss.umd.edu/",
+		"syncedAt": "2026-03-13T19:44:38.933Z"
+	}
 ]

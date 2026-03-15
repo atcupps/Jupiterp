@@ -15,7 +15,7 @@ import path from 'path';
 
 const MAX_LINE_LENGTH = 80;
 
-// Skipped Directories 
+// Skipped Directories
 const FORBIDDEN_DIRECTORIES = ['node_modules', '.svelte-kit', 'build'];
 
 // Expected ownership comment patterns
@@ -32,16 +32,14 @@ const SVELTE_EXEMPT_PATTERN = /<!--\s*format-check\s+exempt\s+(\d+)(?:\s+(\d+))?
  * Checks that a .ts or .svelte file is exempt from checks based on its path.
  */
 function fileExempt(filePath) {
-    const exemptFiles = [
-        "vite.config.ts",
-    ];
+	const exemptFiles = ['vite.config.ts'];
 
-    for (const exemptFile of exemptFiles) {
-        if (filePath.endsWith(exemptFile)) {
-            return true;
-        }
-    }
-    return false;
+	for (const exemptFile of exemptFiles) {
+		if (filePath.endsWith(exemptFile)) {
+			return true;
+		}
+	}
+	return false;
 }
 
 /**
@@ -49,45 +47,45 @@ function fileExempt(filePath) {
  * excluding forbidden directories.
  */
 function findFiles(dir, files = []) {
-    const entries = fs.readdirSync(dir, { withFileTypes: true });
+	const entries = fs.readdirSync(dir, { withFileTypes: true });
 
-    for (const entry of entries) {
-        const fullPath = path.join(dir, entry.name);
+	for (const entry of entries) {
+		const fullPath = path.join(dir, entry.name);
 
-        if (entry.isDirectory()) {
-            if (FORBIDDEN_DIRECTORIES.includes(entry.name)) {
-                continue;
-            }
-            findFiles(fullPath, files);
-        } else if (entry.isFile() && !fileExempt(fullPath)) {
-            if (entry.name.endsWith('.ts') || entry.name.endsWith('.svelte')) {
-                files.push(fullPath);
-            }
-        }
-    }
+		if (entry.isDirectory()) {
+			if (FORBIDDEN_DIRECTORIES.includes(entry.name)) {
+				continue;
+			}
+			findFiles(fullPath, files);
+		} else if (entry.isFile() && !fileExempt(fullPath)) {
+			if (entry.name.endsWith('.ts') || entry.name.endsWith('.svelte')) {
+				files.push(fullPath);
+			}
+		}
+	}
 
-    return files;
+	return files;
 }
 
 /**
  * Checks if a file has the required ownership comment at the top.
  */
 function checkOwnership(content, filePath) {
-    const isSvelte = filePath.endsWith('.svelte');
-    const pattern = isSvelte ? SVELTE_OWNERSHIP_PATTERN : TS_OWNERSHIP_PATTERN;
+	const isSvelte = filePath.endsWith('.svelte');
+	const pattern = isSvelte ? SVELTE_OWNERSHIP_PATTERN : TS_OWNERSHIP_PATTERN;
 
-    if (!pattern.test(content)) {
-        const expectedFormat = isSvelte
-            ? `<!--\nThis file is part of Jupiterp. For terms of use...`
-            : `/**\n * This file is part of Jupiterp. For terms of use...`;
-        return {
-            type: 'ownership',
-            message: `Missing or not formated correctly ownership comment at top of file`,
-            suggestion: `Expected format:\n${expectedFormat}`
-        };
-    }
+	if (!pattern.test(content)) {
+		const expectedFormat = isSvelte
+			? `<!--\nThis file is part of Jupiterp. For terms of use...`
+			: `/**\n * This file is part of Jupiterp. For terms of use...`;
+		return {
+			type: 'ownership',
+			message: `Missing or not formated correctly ownership comment at top of file`,
+			suggestion: `Expected format:\n${expectedFormat}`
+		};
+	}
 
-    return null;
+	return null;
 }
 
 /**
@@ -97,162 +95,151 @@ function checkOwnership(content, filePath) {
  *   <!-- format-check exempt <lines> [extra-chars] -->
  * <lines> is the number of following lines to exempt,
  *  [extra-chars] is optional and allows that many extra characters beyond 80.
- * Ex: 
+ * Ex:
  * // format-check exempt 5 does not check the next 5 lines
  * // format-check exempt 5 5 checks the next 5 lines for being below 85 chars
  */
 function checkLineLength(content) {
-    const lines = content.split('\n');
-    const violations = [];
+	const lines = content.split('\n');
+	const violations = [];
 
-    let exemptLinesRemaining = 0;
-    let extraCharsAllowed = 0;
+	let exemptLinesRemaining = 0;
+	let extraCharsAllowed = 0;
 
-    for (let i = 0; i < lines.length; i++) {
-        const line = lines[i];
+	for (let i = 0; i < lines.length; i++) {
+		const line = lines[i];
 
-        // Check for exemption comments
-        const tsMatch = line.match(TS_EXEMPT_PATTERN);
-        const svelteMatch = line.match(SVELTE_EXEMPT_PATTERN);
-        const match = tsMatch || svelteMatch;
+		// Check for exemption comments
+		const tsMatch = line.match(TS_EXEMPT_PATTERN);
+		const svelteMatch = line.match(SVELTE_EXEMPT_PATTERN);
+		const match = tsMatch || svelteMatch;
 
-        if (match) {
-            exemptLinesRemaining = parseInt(match[1], 10);
-            extraCharsAllowed = match[2] ? parseInt(match[2], 10) : Infinity;
-            continue;
-        }
+		if (match) {
+			exemptLinesRemaining = parseInt(match[1], 10);
+			extraCharsAllowed = match[2] ? parseInt(match[2], 10) : Infinity;
+			continue;
+		}
 
-        // Apply exemption if active
-        if (exemptLinesRemaining > 0) {
-            const effectiveLimit = extraCharsAllowed === Infinity
-                ? Infinity
-                : MAX_LINE_LENGTH + extraCharsAllowed;
+		// Apply exemption if active
+		if (exemptLinesRemaining > 0) {
+			const effectiveLimit =
+				extraCharsAllowed === Infinity ? Infinity : MAX_LINE_LENGTH + extraCharsAllowed;
 
-            if (line.length > effectiveLimit) {
-                violations.push({
-                    type: 'line-length',
-                    line: i + 1,
-                    length: line.length,
-                    message: `Line ${i + 1} exceeds ${effectiveLimit} columns`,
-                    preview: line.length > 60
-                        ? line.substring(0, 57) + '...'
-                        : line
-                });
-            }
-            exemptLinesRemaining--;
-            continue;
-        }
+			if (line.length > effectiveLimit) {
+				violations.push({
+					type: 'line-length',
+					line: i + 1,
+					length: line.length,
+					message: `Line ${i + 1} exceeds ${effectiveLimit} columns`,
+					preview: line.length > 60 ? line.substring(0, 57) + '...' : line
+				});
+			}
+			exemptLinesRemaining--;
+			continue;
+		}
 
-        // Normal check
-        if (line.length > MAX_LINE_LENGTH) {
-            violations.push({
-                type: 'line-length',
-                line: i + 1,
-                length: line.length,
-                message: `Line ${i + 1} exceeds ${MAX_LINE_LENGTH} columns`,
-                preview: line.length > 60
-                    ? line.substring(0, 57) + '...'
-                    : line
-            });
-        }
-    }
+		// Normal check
+		if (line.length > MAX_LINE_LENGTH) {
+			violations.push({
+				type: 'line-length',
+				line: i + 1,
+				length: line.length,
+				message: `Line ${i + 1} exceeds ${MAX_LINE_LENGTH} columns`,
+				preview: line.length > 60 ? line.substring(0, 57) + '...' : line
+			});
+		}
+	}
 
-    return violations;
+	return violations;
 }
 
 /**
  * Checks a file for all formatting issues.
  */
 function checkFile(filePath) {
-    const content = fs.readFileSync(filePath, 'utf-8');
-    const errors = [];
+	const content = fs.readFileSync(filePath, 'utf-8');
+	const errors = [];
 
-    // Check ownership comment
-    const ownershipError = checkOwnership(content, filePath);
-    if (ownershipError) {
-        errors.push(ownershipError);
-    }
+	// Check ownership comment
+	const ownershipError = checkOwnership(content, filePath);
+	if (ownershipError) {
+		errors.push(ownershipError);
+	}
 
-    // Check line lengths
-    const lineLengthErrors = checkLineLength(content, filePath);
-    errors.push(...lineLengthErrors);
+	// Check line lengths
+	const lineLengthErrors = checkLineLength(content, filePath);
+	errors.push(...lineLengthErrors);
 
-    return errors;
+	return errors;
 }
 
 /**
  * The actual format checker
  */
 function main() {
-    const args = process.argv.slice(2);
+	const args = process.argv.slice(2);
 
-    if (args.length === 0) {
-        console.error('Usage: format-check <directory>');
-        console.error('Example: format-check ./src');
-        process.exit(1);
-    }
+	if (args.length === 0) {
+		console.error('Usage: format-check <directory>');
+		console.error('Example: format-check ./src');
+		process.exit(1);
+	}
 
-    const targetDir = path.resolve(args[0]);
+	const targetDir = path.resolve(args[0]);
 
-    if (!fs.existsSync(targetDir)) {
-        console.error(`Error: Directory does not exist: ${targetDir}`);
-        process.exit(1);
-    }
+	if (!fs.existsSync(targetDir)) {
+		console.error(`Error: Directory does not exist: ${targetDir}`);
+		process.exit(1);
+	}
 
-    if (!fs.statSync(targetDir).isDirectory()) {
-        console.error(`Error: Path is not a directory: ${targetDir}`);
-        process.exit(1);
-    }
+	if (!fs.statSync(targetDir).isDirectory()) {
+		console.error(`Error: Path is not a directory: ${targetDir}`);
+		process.exit(1);
+	}
 
-    console.log(`Checking format in: ${targetDir}\n`);
+	console.log(`Checking format in: ${targetDir}\n`);
 
-    const files = findFiles(targetDir);
-    let totalErrors = 0;
-    let filesWithErrors = 0;
+	const files = findFiles(targetDir);
+	let totalErrors = 0;
+	let filesWithErrors = 0;
 
-    for (const file of files) {
-        const errors = checkFile(file);
+	for (const file of files) {
+		const errors = checkFile(file);
 
-        if (errors.length > 0) {
-            filesWithErrors++;
-            const relativePath = path.relative(process.cwd(), file);
-            console.log(`\x1b[31m✗\x1b[0m ${relativePath}`);
+		if (errors.length > 0) {
+			filesWithErrors++;
+			const relativePath = path.relative(process.cwd(), file);
+			console.log(`\x1b[31m✗\x1b[0m ${relativePath}`);
 
-            for (const error of errors) {
-                totalErrors++;
-                if (error.type === 'ownership') {
-                    console.log(`  \x1b[33m⚠ ${error.message}\x1b[0m`);
-                    const suggestionLines = error.suggestion.split('\n');
-                    for (const suggestionLine of suggestionLines) {
-                        console.log(`    ${suggestionLine}`);
-                    }
-                } else if (error.type === 'line-length') {
-                    console.log(
-                        `  \x1b[33m⚠ ${error.message}\x1b[0m ` +
-                        `(${error.length} chars)`
-                    );
-                    console.log(`    "${error.preview}"`);
-                }
-            }
-            console.log('');
-        }
-    }
+			for (const error of errors) {
+				totalErrors++;
+				if (error.type === 'ownership') {
+					console.log(`  \x1b[33m⚠ ${error.message}\x1b[0m`);
+					const suggestionLines = error.suggestion.split('\n');
+					for (const suggestionLine of suggestionLines) {
+						console.log(`    ${suggestionLine}`);
+					}
+				} else if (error.type === 'line-length') {
+					console.log(`  \x1b[33m⚠ ${error.message}\x1b[0m ` + `(${error.length} chars)`);
+					console.log(`    "${error.preview}"`);
+				}
+			}
+			console.log('');
+		}
+	}
 
-    // Summary
-    console.log('─'.repeat(50));
-    if (totalErrors === 0) {
-        console.log(
-            `\x1b[32m✓ All ${files.length} files passed format checks\x1b[0m`
-        );
-        process.exit(0);
-    } else {
-        console.log(
-            `\x1b[31m✗ Found ${totalErrors} error(s) in ` +
-            `${filesWithErrors} file(s)\x1b[0m`
-        );
-        console.log(`  Checked ${files.length} files total`);
-        process.exit(1);
-    }
+	// Summary
+	console.log('─'.repeat(50));
+	if (totalErrors === 0) {
+		console.log(`\x1b[32m✓ All ${files.length} files passed format checks\x1b[0m`);
+		process.exit(0);
+	} else {
+		console.log(
+			`\x1b[31m✗ Found ${totalErrors} error(s) in ` + `${filesWithErrors} file(s)\x1b[0m`
+		);
+		console.log(`  Checked ${files.length} files total`);
+		process.exit(1);
+	}
 }
 
 main();

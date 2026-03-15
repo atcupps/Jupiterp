@@ -3,53 +3,56 @@
  * called LICENSE at the top level of the Jupiterp source tree (online at
  * https://github.com/atcupps/Jupiterp/LICENSE).
  * Copyright (C) 2026 Andrew Cupps
- * 
+ *
  * @fileoverview Functions for switching between schedules. Many functions
  * are in `ScheduleSelector.svelte` or `ScheduleOptionsDropdown.svelte`,
  * but in this file there are some that are used by both.
  */
 
-import { NonselectedScheduleStore } from "../../stores/CoursePlannerStores";
-import type { StoredSchedule } from "../../types";
-import type { AcademicTerm } from "./Terms";
+import { NonselectedScheduleStore } from '../../stores/CoursePlannerStores';
+import type { StoredSchedule } from '../../types';
+import type { AcademicTerm } from './Terms';
 
 const TERM_SORT_ORDER: Record<AcademicTerm, number> = {
-    Summer: 1,
-    Winter: 2,
-    Spring: 3,
-    Fall: 4,
+	Summer: 1,
+	Winter: 2,
+	Spring: 3,
+	Fall: 4
 };
 
 export interface ScheduleGroup {
-    groupLabel: string,
-    term: AcademicTerm,
-    year: number,
-    schedules: StoredSchedule[],
+	groupLabel: string;
+	term: AcademicTerm;
+	year: number;
+	schedules: StoredSchedule[];
 }
 
 /**
  * Ensure that a schedule name is unique by appending another string if
  * necessary.
- * 
+ *
  * @param schedules The schedules to compare `defaultName` with
  * @param uniquifier The string to append to the beginning
  * @returns A unique schedule name based on `defaultname`
  */
 export function uniqueScheduleName(
-                    defaultName: string, 
-                    uniquifier: string,
-                    schedules: StoredSchedule[]): string {
-    const scheduleNames: Set<string> = new Set<string>();
-    schedules.forEach((elt) => { scheduleNames.add(elt.scheduleName) });
-    if (scheduleNames.has(defaultName)) {
-        let curName = defaultName;
-        while (scheduleNames.has(curName)) {
-            curName = uniquifier + curName;
-        }
-        return curName;
-    } else {
-        return defaultName;
-    }
+	defaultName: string,
+	uniquifier: string,
+	schedules: StoredSchedule[]
+): string {
+	const scheduleNames: Set<string> = new Set<string>();
+	schedules.forEach((elt) => {
+		scheduleNames.add(elt.scheduleName);
+	});
+	if (scheduleNames.has(defaultName)) {
+		let curName = defaultName;
+		while (scheduleNames.has(curName)) {
+			curName = uniquifier + curName;
+		}
+		return curName;
+	} else {
+		return defaultName;
+	}
 }
 
 /**
@@ -60,46 +63,46 @@ export function uniqueScheduleName(
  * array, this function will cause a side effect in the `nonselectedSchedules`
  * array used as an argument to this function.
  */
-export function deleteNonselectedSchedule(schedule: StoredSchedule,
-                                    nonselectedSchedules: StoredSchedule[]) {
-    const index = nonselectedSchedules.indexOf(schedule);
-    if (index === -1) {
-        // This should not be possible
-        console.log('Could not find schedule: ' + schedule.scheduleName);
-    }
-    else {
-        nonselectedSchedules.splice(index, 1);
-        NonselectedScheduleStore.set(nonselectedSchedules);
-    }
+export function deleteNonselectedSchedule(
+	schedule: StoredSchedule,
+	nonselectedSchedules: StoredSchedule[]
+) {
+	const index = nonselectedSchedules.indexOf(schedule);
+	if (index === -1) {
+		// This should not be possible
+		console.log('Could not find schedule: ' + schedule.scheduleName);
+	} else {
+		nonselectedSchedules.splice(index, 1);
+		NonselectedScheduleStore.set(nonselectedSchedules);
+	}
 }
 
-export function groupSchedulesByTerm(
-                            schedules: StoredSchedule[]): ScheduleGroup[] {
-    const grouped = new Map<string, ScheduleGroup>();
+export function groupSchedulesByTerm(schedules: StoredSchedule[]): ScheduleGroup[] {
+	const grouped = new Map<string, ScheduleGroup>();
 
-    for (const schedule of schedules) {
-        const key = `${schedule.year}-${schedule.term}`;
-        if (!grouped.has(key)) {
-            grouped.set(key, {
-                groupLabel: `${schedule.term} ${schedule.year}`,
-                term: schedule.term,
-                year: schedule.year,
-                schedules: [],
-            });
-        }
+	for (const schedule of schedules) {
+		const key = `${schedule.year}-${schedule.term}`;
+		if (!grouped.has(key)) {
+			grouped.set(key, {
+				groupLabel: `${schedule.term} ${schedule.year}`,
+				term: schedule.term,
+				year: schedule.year,
+				schedules: []
+			});
+		}
 
-        const existing = grouped.get(key);
-        if (!existing) {
-            continue;
-        }
-        existing.schedules.push(schedule);
-    }
+		const existing = grouped.get(key);
+		if (!existing) {
+			continue;
+		}
+		existing.schedules.push(schedule);
+	}
 
-    return Array.from(grouped.values()).sort((a, b) => {
-        if (a.year !== b.year) {
-            return b.year - a.year;
-        }
+	return Array.from(grouped.values()).sort((a, b) => {
+		if (a.year !== b.year) {
+			return b.year - a.year;
+		}
 
-        return TERM_SORT_ORDER[b.term] - TERM_SORT_ORDER[a.term];
-    });
+		return TERM_SORT_ORDER[b.term] - TERM_SORT_ORDER[a.term];
+	});
 }

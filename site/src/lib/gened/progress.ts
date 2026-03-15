@@ -6,93 +6,93 @@
  */
 
 import {
-    GEN_ED_REQUIREMENT_CODE_SET,
-    type GenEdRequirement,
-    type GenEdRequirementCode,
-} from "$lib/gened/requirements";
-import type { UserCourse } from "$lib/gened/userCourses";
+	GEN_ED_REQUIREMENT_CODE_SET,
+	type GenEdRequirement,
+	type GenEdRequirementCode
+} from '$lib/gened/requirements';
+import type { UserCourse } from '$lib/gened/userCourses';
 
-export type GenEdStatus = "not_started" | "in_progress" | "completed";
+export type GenEdStatus = 'not_started' | 'in_progress' | 'completed';
 
 export interface GenEdCourseInstance {
-    course_id: string;
-    course_title: string;
-    term_code: string;
-    grade: string | null;
-    completionState: "completed" | "in_progress";
-    otherMatchingGenEdCodes: GenEdRequirementCode[];
+	course_id: string;
+	course_title: string;
+	term_code: string;
+	grade: string | null;
+	completionState: 'completed' | 'in_progress';
+	otherMatchingGenEdCodes: GenEdRequirementCode[];
 }
 
 /**
  * Computed row shown in the Gen Ed progress table for one requirement.
  */
 export interface GenEdProgressRow {
-    requirement: GenEdRequirement;
-    completedCount: number;
-    inProgressCount: number;
-    countedCount: number;
-    remainingCount: number;
-    status: GenEdStatus;
-    courses: GenEdCourseInstance[];
-    earliestTermCode: string | null;
-    latestTermCode: string | null;
+	requirement: GenEdRequirement;
+	completedCount: number;
+	inProgressCount: number;
+	countedCount: number;
+	remainingCount: number;
+	status: GenEdStatus;
+	courses: GenEdCourseInstance[];
+	earliestTermCode: string | null;
+	latestTermCode: string | null;
 }
 
 function toKnownGenEdCodes(tags: string[]): GenEdRequirementCode[] {
-    return tags.filter((tag): tag is GenEdRequirementCode =>
-        GEN_ED_REQUIREMENT_CODE_SET.has(tag as GenEdRequirementCode)
-    );
+	return tags.filter((tag): tag is GenEdRequirementCode =>
+		GEN_ED_REQUIREMENT_CODE_SET.has(tag as GenEdRequirementCode)
+	);
 }
 
 function getTermExtents(termCodes: string[]): {
-    earliestTermCode: string | null,
-    latestTermCode: string | null,
+	earliestTermCode: string | null;
+	latestTermCode: string | null;
 } {
-    if (termCodes.length === 0) {
-        return {
-            earliestTermCode: null,
-            latestTermCode: null,
-        };
-    }
+	if (termCodes.length === 0) {
+		return {
+			earliestTermCode: null,
+			latestTermCode: null
+		};
+	}
 
-    const sorted = [...termCodes].sort(compareTermCodes);
-    return {
-        earliestTermCode: sorted[0],
-        latestTermCode: sorted[sorted.length - 1],
-    };
+	const sorted = [...termCodes].sort(compareTermCodes);
+	return {
+		earliestTermCode: sorted[0],
+		latestTermCode: sorted[sorted.length - 1]
+	};
 }
 
 const TERM_SUFFIX_ORDER: Record<string, number> = {
-    WI: 0,
-    SP: 1,
-    SU: 2,
-    FA: 3,
+	WI: 0,
+	SP: 1,
+	SU: 2,
+	FA: 3
 };
 
 /**
  * Parses and compares term codes like 2025SP / 2025FA.
  */
 export function compareTermCodes(a: string, b: string): number {
-    const aMatch = a.match(/^(\d{4})([A-Z]{2})$/);
-    const bMatch = b.match(/^(\d{4})([A-Z]{2})$/);
+	const aMatch = a.match(/^(\d{4})([A-Z]{2})$/);
+	const bMatch = b.match(/^(\d{4})([A-Z]{2})$/);
 
-    if (!aMatch || !bMatch) {
-        return a.localeCompare(b);
-    }
+	if (!aMatch || !bMatch) {
+		return a.localeCompare(b);
+	}
 
-    const aYear = Number(aMatch[1]);
-    const bYear = Number(bMatch[1]);
-    if (aYear !== bYear) {
-        return aYear - bYear;
-    }
+	const aYear = Number(aMatch[1]);
+	const bYear = Number(bMatch[1]);
+	if (aYear !== bYear) {
+		return aYear - bYear;
+	}
 
-    const aSuffix = TERM_SUFFIX_ORDER[aMatch[2]];
-    const bSuffix = TERM_SUFFIX_ORDER[bMatch[2]];
-    if (aSuffix !== undefined && bSuffix !== undefined) {
-        return aSuffix - bSuffix;
-    }
+	const aSuffix = TERM_SUFFIX_ORDER[aMatch[2]];
+	const bSuffix = TERM_SUFFIX_ORDER[bMatch[2]];
+	if (aSuffix !== undefined && bSuffix !== undefined) {
+		return aSuffix - bSuffix;
+	}
 
-    return aMatch[2].localeCompare(bMatch[2]);
+	return aMatch[2].localeCompare(bMatch[2]);
 }
 
 /**
@@ -100,64 +100,62 @@ export function compareTermCodes(a: string, b: string): number {
  * courses and term-based completion states.
  */
 export function computeGenEdProgress(
-    requirements: GenEdRequirement[],
-    courses: UserCourse[]
+	requirements: GenEdRequirement[],
+	courses: UserCourse[]
 ): GenEdProgressRow[] {
-    return requirements.map((requirement) => {
-        const matchingCourses: GenEdCourseInstance[] = courses
-            .map((course): GenEdCourseInstance | null => {
-                const tags = toKnownGenEdCodes(
-                    Array.isArray(course.gen_ed_tags)
-                        ? course.gen_ed_tags.map((value) => String(value).trim().toUpperCase())
-                        : []
-                );
+	return requirements.map((requirement) => {
+		const matchingCourses: GenEdCourseInstance[] = courses
+			.map((course): GenEdCourseInstance | null => {
+				const tags = toKnownGenEdCodes(
+					Array.isArray(course.gen_ed_tags)
+						? course.gen_ed_tags.map((value) => String(value).trim().toUpperCase())
+						: []
+				);
 
-                if (!tags.includes(requirement.code)) {
-                    return null;
-                }
+				if (!tags.includes(requirement.code)) {
+					return null;
+				}
 
-                return {
-                    course_id: course.course_id,
-                    course_title: course.course_title,
-                    term_code: course.term_code,
-                    grade: course.grade,
-                    completionState: course.is_completed ? "completed" : "in_progress",
-                    otherMatchingGenEdCodes: tags.filter(
-                        (tag) => tag !== requirement.code
-                    ),
-                };
-            })
-            .filter((course): course is GenEdCourseInstance => course !== null);
+				return {
+					course_id: course.course_id,
+					course_title: course.course_title,
+					term_code: course.term_code,
+					grade: course.grade,
+					completionState: course.is_completed ? 'completed' : 'in_progress',
+					otherMatchingGenEdCodes: tags.filter((tag) => tag !== requirement.code)
+				};
+			})
+			.filter((course): course is GenEdCourseInstance => course !== null);
 
-        const completedCount = matchingCourses.filter((course) => {
-            return course.completionState === "completed";
-        }).length;
-        const inProgressCount = matchingCourses.filter((course) => {
-            return course.completionState === "in_progress";
-        }).length;
-        const countedCount = completedCount + inProgressCount;
-        const remainingCount = Math.max(requirement.requiredCount - countedCount, 0);
-        const status: GenEdStatus =
-            completedCount >= requirement.requiredCount
-                ? "completed"
-                : countedCount === 0
-                ? "not_started"
-                : "in_progress";
+		const completedCount = matchingCourses.filter((course) => {
+			return course.completionState === 'completed';
+		}).length;
+		const inProgressCount = matchingCourses.filter((course) => {
+			return course.completionState === 'in_progress';
+		}).length;
+		const countedCount = completedCount + inProgressCount;
+		const remainingCount = Math.max(requirement.requiredCount - countedCount, 0);
+		const status: GenEdStatus =
+			completedCount >= requirement.requiredCount
+				? 'completed'
+				: countedCount === 0
+					? 'not_started'
+					: 'in_progress';
 
-        const { earliestTermCode, latestTermCode } = getTermExtents(
-            matchingCourses.map((course) => course.term_code)
-        );
+		const { earliestTermCode, latestTermCode } = getTermExtents(
+			matchingCourses.map((course) => course.term_code)
+		);
 
-        return {
-            requirement,
-            completedCount,
-            inProgressCount,
-            countedCount,
-            remainingCount,
-            status,
-            courses: matchingCourses,
-            earliestTermCode,
-            latestTermCode,
-        };
-    });
+		return {
+			requirement,
+			completedCount,
+			inProgressCount,
+			countedCount,
+			remainingCount,
+			status,
+			courses: matchingCourses,
+			earliestTermCode,
+			latestTermCode
+		};
+	});
 }

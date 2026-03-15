@@ -6,159 +6,144 @@
  */
 
 import {
-    DEFAULT_AVATAR_COLOR,
-    DEFAULT_PROFILE_PRIVACY,
-    DEFAULT_DEGREE_TYPE,
-    type DegreeType,
-    type ProfilePrivacyLevel,
-    type ProfilePreferences,
-} from "$lib/profile/types";
+	DEFAULT_AVATAR_COLOR,
+	DEFAULT_PROFILE_PRIVACY,
+	DEFAULT_DEGREE_TYPE,
+	type DegreeType,
+	type ProfilePrivacyLevel,
+	type ProfilePreferences
+} from '$lib/profile/types';
 
-const DEGREE_KEY = "profileDegreeType";
-const MAJORS_KEY = "profileMajors";
-const MINORS_KEY = "profileMinors";
-const GRAD_YEAR_KEY = "profileGraduationYear";
-const PRIVACY_KEY = "profilePrivacy";
-const DISPLAY_NAME_KEY = "profileDisplayName";
-const AVATAR_URL_KEY = "profileAvatarUrl";
-const AVATAR_COLOR_KEY = "profileAvatarColor";
+const DEGREE_KEY = 'profileDegreeType';
+const MAJORS_KEY = 'profileMajors';
+const MINORS_KEY = 'profileMinors';
+const GRAD_YEAR_KEY = 'profileGraduationYear';
+const PRIVACY_KEY = 'profilePrivacy';
+const DISPLAY_NAME_KEY = 'profileDisplayName';
+const AVATAR_URL_KEY = 'profileAvatarUrl';
+const AVATAR_COLOR_KEY = 'profileAvatarColor';
 
 const DEGREE_TYPES: DegreeType[] = [
-    "Undergraduate",
-    "Dual-Degree",
-    "Double Major",
-    "Masters",
-    "P.H.D.",
+	'Undergraduate',
+	'Dual-Degree',
+	'Double Major',
+	'Masters',
+	'P.H.D.'
 ];
 
-const PRIVACY_LEVELS: ProfilePrivacyLevel[] = [
-    "public",
-    "friends_only",
-    "umd_only",
-    "private",
-];
+const PRIVACY_LEVELS: ProfilePrivacyLevel[] = ['public', 'friends_only', 'umd_only', 'private'];
 
 export interface LocalProfileMetadata {
-    displayName: string;
-    profilePrivacy: ProfilePrivacyLevel;
-    avatarUrl: string | null;
-    avatarColor: string;
+	displayName: string;
+	profilePrivacy: ProfilePrivacyLevel;
+	avatarUrl: string | null;
+	avatarColor: string;
 }
 
 export function isDegreeType(value: string | null): value is DegreeType {
-    return !!value && DEGREE_TYPES.includes(value as DegreeType);
+	return !!value && DEGREE_TYPES.includes(value as DegreeType);
 }
 
-export function isProfilePrivacyLevel(
-    value: string | null
-): value is ProfilePrivacyLevel {
-    return !!value && PRIVACY_LEVELS.includes(value as ProfilePrivacyLevel);
+export function isProfilePrivacyLevel(value: string | null): value is ProfilePrivacyLevel {
+	return !!value && PRIVACY_LEVELS.includes(value as ProfilePrivacyLevel);
 }
 
 export function readProfilePreferencesFromLocalStorage(): ProfilePreferences {
-    if (typeof localStorage === "undefined") {
-        return {
-            degreeType: DEFAULT_DEGREE_TYPE,
-            majors: [],
-            minors: [],
-            graduationYear: null,
-        };
-    }
+	if (typeof localStorage === 'undefined') {
+		return {
+			degreeType: DEFAULT_DEGREE_TYPE,
+			majors: [],
+			minors: [],
+			graduationYear: null
+		};
+	}
 
-    const degreeRaw = localStorage.getItem(DEGREE_KEY);
-    const majorsRaw = localStorage.getItem(MAJORS_KEY);
-    const minorsRaw = localStorage.getItem(MINORS_KEY);
-    const gradRaw = localStorage.getItem(GRAD_YEAR_KEY);
+	const degreeRaw = localStorage.getItem(DEGREE_KEY);
+	const majorsRaw = localStorage.getItem(MAJORS_KEY);
+	const minorsRaw = localStorage.getItem(MINORS_KEY);
+	const gradRaw = localStorage.getItem(GRAD_YEAR_KEY);
 
-    const degreeType = isDegreeType(degreeRaw)
-        ? degreeRaw
-        : DEFAULT_DEGREE_TYPE;
+	const degreeType = isDegreeType(degreeRaw) ? degreeRaw : DEFAULT_DEGREE_TYPE;
 
-    let majors: string[] = [];
-    let minors: string[] = [];
+	let majors: string[] = [];
+	let minors: string[] = [];
 
-    try {
-        majors = majorsRaw ? JSON.parse(majorsRaw) as string[] : [];
-        if (!Array.isArray(majors)) {
-            majors = [];
-        }
-    } catch {
-        majors = [];
-    }
+	try {
+		majors = majorsRaw ? (JSON.parse(majorsRaw) as string[]) : [];
+		if (!Array.isArray(majors)) {
+			majors = [];
+		}
+	} catch {
+		majors = [];
+	}
 
-    try {
-        minors = minorsRaw ? JSON.parse(minorsRaw) as string[] : [];
-        if (!Array.isArray(minors)) {
-            minors = [];
-        }
-    } catch {
-        minors = [];
-    }
+	try {
+		minors = minorsRaw ? (JSON.parse(minorsRaw) as string[]) : [];
+		if (!Array.isArray(minors)) {
+			minors = [];
+		}
+	} catch {
+		minors = [];
+	}
 
-    const graduationYear = gradRaw ? Number(gradRaw) : null;
-    return {
-        degreeType,
-        majors,
-        minors,
-        graduationYear: Number.isFinite(graduationYear) ? graduationYear : null,
-    };
+	const graduationYear = gradRaw ? Number(gradRaw) : null;
+	return {
+		degreeType,
+		majors,
+		minors,
+		graduationYear: Number.isFinite(graduationYear) ? graduationYear : null
+	};
 }
 
-export function saveProfilePreferencesToLocalStorage(
-    preferences: ProfilePreferences
-): void {
-    if (typeof localStorage === "undefined") {
-        return;
-    }
+export function saveProfilePreferencesToLocalStorage(preferences: ProfilePreferences): void {
+	if (typeof localStorage === 'undefined') {
+		return;
+	}
 
-    localStorage.setItem(DEGREE_KEY, preferences.degreeType);
-    localStorage.setItem(MAJORS_KEY, JSON.stringify(preferences.majors));
-    localStorage.setItem(MINORS_KEY, JSON.stringify(preferences.minors));
-    if (preferences.graduationYear === null) {
-        localStorage.removeItem(GRAD_YEAR_KEY);
-    } else {
-        localStorage.setItem(GRAD_YEAR_KEY, preferences.graduationYear.toString());
-    }
+	localStorage.setItem(DEGREE_KEY, preferences.degreeType);
+	localStorage.setItem(MAJORS_KEY, JSON.stringify(preferences.majors));
+	localStorage.setItem(MINORS_KEY, JSON.stringify(preferences.minors));
+	if (preferences.graduationYear === null) {
+		localStorage.removeItem(GRAD_YEAR_KEY);
+	} else {
+		localStorage.setItem(GRAD_YEAR_KEY, preferences.graduationYear.toString());
+	}
 }
 
 export function readProfileMetadataFromLocalStorage(): LocalProfileMetadata {
-    if (typeof localStorage === "undefined") {
-        return {
-            displayName: "",
-            profilePrivacy: DEFAULT_PROFILE_PRIVACY,
-            avatarUrl: null,
-            avatarColor: DEFAULT_AVATAR_COLOR,
-        };
-    }
+	if (typeof localStorage === 'undefined') {
+		return {
+			displayName: '',
+			profilePrivacy: DEFAULT_PROFILE_PRIVACY,
+			avatarUrl: null,
+			avatarColor: DEFAULT_AVATAR_COLOR
+		};
+	}
 
-    const displayName = localStorage.getItem(DISPLAY_NAME_KEY) ?? "";
-    const privacyRaw = localStorage.getItem(PRIVACY_KEY);
-    const avatarUrlRaw = localStorage.getItem(AVATAR_URL_KEY);
-    const avatarColor = localStorage.getItem(AVATAR_COLOR_KEY) ?? DEFAULT_AVATAR_COLOR;
+	const displayName = localStorage.getItem(DISPLAY_NAME_KEY) ?? '';
+	const privacyRaw = localStorage.getItem(PRIVACY_KEY);
+	const avatarUrlRaw = localStorage.getItem(AVATAR_URL_KEY);
+	const avatarColor = localStorage.getItem(AVATAR_COLOR_KEY) ?? DEFAULT_AVATAR_COLOR;
 
-    return {
-        displayName,
-        profilePrivacy: isProfilePrivacyLevel(privacyRaw)
-            ? privacyRaw
-            : DEFAULT_PROFILE_PRIVACY,
-        avatarUrl: avatarUrlRaw && avatarUrlRaw.length > 0 ? avatarUrlRaw : null,
-        avatarColor,
-    };
+	return {
+		displayName,
+		profilePrivacy: isProfilePrivacyLevel(privacyRaw) ? privacyRaw : DEFAULT_PROFILE_PRIVACY,
+		avatarUrl: avatarUrlRaw && avatarUrlRaw.length > 0 ? avatarUrlRaw : null,
+		avatarColor
+	};
 }
 
-export function saveProfileMetadataToLocalStorage(
-    metadata: LocalProfileMetadata
-): void {
-    if (typeof localStorage === "undefined") {
-        return;
-    }
+export function saveProfileMetadataToLocalStorage(metadata: LocalProfileMetadata): void {
+	if (typeof localStorage === 'undefined') {
+		return;
+	}
 
-    localStorage.setItem(DISPLAY_NAME_KEY, metadata.displayName);
-    localStorage.setItem(PRIVACY_KEY, metadata.profilePrivacy);
-    if (metadata.avatarUrl) {
-        localStorage.setItem(AVATAR_URL_KEY, metadata.avatarUrl);
-    } else {
-        localStorage.removeItem(AVATAR_URL_KEY);
-    }
-    localStorage.setItem(AVATAR_COLOR_KEY, metadata.avatarColor);
+	localStorage.setItem(DISPLAY_NAME_KEY, metadata.displayName);
+	localStorage.setItem(PRIVACY_KEY, metadata.profilePrivacy);
+	if (metadata.avatarUrl) {
+		localStorage.setItem(AVATAR_URL_KEY, metadata.avatarUrl);
+	} else {
+		localStorage.removeItem(AVATAR_URL_KEY);
+	}
+	localStorage.setItem(AVATAR_COLOR_KEY, metadata.avatarColor);
 }
