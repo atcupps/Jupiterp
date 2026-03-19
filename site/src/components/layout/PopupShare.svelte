@@ -3,7 +3,6 @@
 	import { CurrentScheduleStore } from '../../stores/CoursePlannerStores';
 	import type { ScheduleSelection } from '../../types';
 	import { QuestionCircleOutline } from "flowbite-svelte-icons";
-  import { text } from 'stream/consumers';
 
     const dispatch = createEventDispatcher();
 	let selections: ScheduleSelection[] = [];
@@ -54,18 +53,38 @@
 		return `${y}${m}${d}`;
 	}
 
+	function getFirstOccurrence(startStr: string, daysStr: string): string {
+		const year = parseInt(startStr.substring(0, 4));
+		const month = parseInt(startStr.substring(4, 6)) - 1;
+		const day = parseInt(startStr.substring(6, 8));
+		let date = new Date(year, month, day);
+
+		const dayMap: Record<string, number> = { 'MO': 1, 'TU': 2, 'WE': 3, 'TH': 4, 'FR': 5 };
+		
+		const firstClassDay = daysStr.split(',')[0]; 
+		const targetDay = dayMap[firstClassDay];
+
+		for (let i = 0; i < 7; i++) {
+			if (date.getDay() === targetDay) break;
+			date.setDate(date.getDate() + 1);
+		}
+
+		return formatDate(date);
+	}
+
     function exportCalender() {
 		let icsData = "BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//Jupiterp//EN\n";
+		// hardcoded for now (dates are 0 indexed so jan is 0 and its yy, mm, dd)
+		const semesterStart = formatDate(new Date(2026, 8, 1));
+		const semesterEnd = formatDate(new Date(2026, 11, 18));
+
 		for (const currentClass of selections) {
 			const courseCode = currentClass.course.courseCode
 			const sectionNumber = currentClass.section.sectionCode
 			const courseName = currentClass.course.name
 			const instructorNames = currentClass.section.instructors.join(', ') || 'TBA';
 			const meetingDetails = []; 
-			// hardcoded for now (dates are 0 indexed so jan is 0 and its yy, mm, dd)
-			const semesterStart = formatDate(new Date(2026, 9, 1));
-			const semesterEnd = fomratDate(new Date(2026, 11, 18));
-
+			
 			for (const meeting of currentClass.section.meetings) {
 				let locationStr = "Online/Async";
 				let days = "";
@@ -90,11 +109,13 @@
 			}	
 
 			for (const packet of meetingDetails) {
+				const actualFirstDay = getFirstOccurrence(semesterStart, packet.days);
+
                 icsData += "BEGIN:VEVENT\n";
-                icsData += `SUMMARY:${courseCode} (${sectionNumber})\n`;
+                icsData += `SUMMARY:${courseCode} (${sectionNumber}) - ${packet.location}\n`;
                 
-                icsData += `DTSTART:${semesterStart}T${packet.start}\n`; 
-                icsData += `DTEND:${semesterStart}T${packet.end}\n`;
+                icsData += `DTSTART:${actualFirstDay}T${packet.start}\n`; 
+				icsData += `DTEND:${actualFirstDay}T${packet.end}\n`;
 
                 icsData += `RRULE:FREQ=WEEKLY;BYDAY=${packet.days};UNTIL=${semesterEnd}T235959Z\n`;
 
@@ -105,6 +126,17 @@
             }
 		}
 		icsData += "END:VCALENDAR";
+
+		const blob = new Blob([icsData], {type: 'text/calendar;charset=utf-8' });
+		const url = window.URL.createObjectURL(blob);
+		const a = document.createElement('a');
+		a.href = url;
+		a.download = "Jupiterp_Schedule.ics";
+		document.body.appendChild(a);
+		a.click();
+		document.body.removeChild(a);
+		window.URL.revokeObjectURL(url);
+
     }
 </script>
 
