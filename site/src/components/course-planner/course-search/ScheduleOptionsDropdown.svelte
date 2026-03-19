@@ -73,7 +73,7 @@ Copyright (C) 2024 Andrew Cupps
             selections: currentScheduleSelections
         });
     }
-</script>
+</script> 
 
 <button class='hover:bg-hoverLight dark:hover:bg-hoverDark rounded-md'
         title='Schedule options'>
@@ -96,12 +96,5 @@ Copyright (C) 2024 Andrew Cupps
                     on:click={duplicateSchedule}>
         <FileCopyOutline class="w-3 h-3 mr-1 z-50" /> Duplicate
     </DropdownItem>
-
-    <!-- TODO(@atcupps): Add share schedule feature -->
-    <!-- <DropdownItem class="hover:bg-hoverLight dark:hover:bg-hoverDark px-2
-                        flex justify-start items-center"
-                    on:click={() => (dropdownOpen = false)}>
-        <ForwardOutline class="w-3 h-3 mr-1" /> Share
-    </DropdownItem> -->
 
 </Dropdown>

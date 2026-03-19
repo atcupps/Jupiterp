@@ -6,7 +6,7 @@ Copyright (C) 2024 Andrew Cupps
 -->
 <script lang='ts'>
     import {
-        AngleRightOutline, PlusOutline, TrashBinOutline
+        AngleRightOutline, ForwardOutline, PlusOutline, TrashBinOutline
     } from "flowbite-svelte-icons";
     import {
         CurrentScheduleStore, NonselectedScheduleStore
@@ -18,8 +18,10 @@ Copyright (C) 2024 Andrew Cupps
         uniqueScheduleName
     } from "$lib/course-planner/ScheduleSelector";
     import type { ScheduleSelection, StoredSchedule } from "../../../types";
+  import PopupShare from "../../layout/PopupShare.svelte";
 
     let dropdownOpen: boolean = false;
+    let sharePopUpOpen: boolean = false;
 
     let currentScheduleName: string;
     let currentScheduleSelections: ScheduleSelection[];
@@ -107,6 +109,7 @@ Copyright (C) 2024 Andrew Cupps
             selections: currentScheduleSelections
         });
     }
+
 </script>
 
 <div class='flex w-full flex-col'>
@@ -137,6 +140,15 @@ Copyright (C) 2024 Andrew Cupps
                 on:click={createNewSchedule}>
             <PlusOutline class="w-5 h-5 px-0.5" />
         </button>
+
+        <button class="rounded-md hover:bg-hoverLight
+                        dark:hover:bg-hoverDark h-7"
+                title='Export schedule'
+                on:click={() => sharePopUpOpen = !sharePopUpOpen}
+                >
+            <ForwardOutline  class="w-5 h-5 px-0.5" />
+        </button>
+        
     </div>
 
     {#if dropdownOpen}
@@ -165,5 +177,9 @@ Copyright (C) 2024 Andrew Cupps
                 </div>
             {/each}
         </div>
+    {/if}
+
+    {#if sharePopUpOpen}
+        <PopupShare on:close-export={() => sharePopUpOpen = false}/>
     {/if}
 </div>
