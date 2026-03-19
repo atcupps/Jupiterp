@@ -47,13 +47,24 @@
 		return matches ? matches.map(m => DayMaps[m]).join(',') : '';
 	}
 
+	function formatDate(date: Date): string {
+		const y = date.getFullYear();
+		const m = (date.getMonth() + 1).toString().padStart(2, '0');
+		const d = date.getDate().toString().padStart(2, '0');
+		return `${y}${m}${d}`;
+	}
+
     function exportCalender() {
+		let icsData = "BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//Jupiterp//EN\n";
 		for (const currentClass of selections) {
 			const courseCode = currentClass.course.courseCode
 			const sectionNumber = currentClass.section.sectionCode
 			const courseName = currentClass.course.name
 			const instructorNames = currentClass.section.instructors.join(', ') || 'TBA';
 			const meetingDetails = []; 
+			// hardcoded for now (dates are 0 indexed so jan is 0 and its yy, mm, dd)
+			const semesterStart = formatDate(new Date(2026, 9, 1));
+			const semesterEnd = fomratDate(new Date(2026, 11, 18));
 
 			for (const meeting of currentClass.section.meetings) {
 				let locationStr = "Online/Async";
@@ -76,10 +87,24 @@
 				};
 
 				meetingDetails.push(meetingPacket);
-			}
+			}	
 
-			
+			for (const packet of meetingDetails) {
+                icsData += "BEGIN:VEVENT\n";
+                icsData += `SUMMARY:${courseCode} (${sectionNumber})\n`;
+                
+                icsData += `DTSTART:${semesterStart}T${packet.start}\n`; 
+                icsData += `DTEND:${semesterStart}T${packet.end}\n`;
+
+                icsData += `RRULE:FREQ=WEEKLY;BYDAY=${packet.days};UNTIL=${semesterEnd}T235959Z\n`;
+
+                icsData += `LOCATION:${packet.location}\n`;
+                icsData += `DESCRIPTION:Course: ${courseName}\\nInstructors: ${instructorNames}\n`;
+                icsData += `UID:${courseCode}-${sectionNumber}-${packet.start}@jupiterp\n`;
+                icsData += "END:VEVENT\n";
+            }
 		}
+		icsData += "END:VCALENDAR";
     }
 </script>
 
