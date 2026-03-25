@@ -26,7 +26,7 @@ Copyright (C) 2026 Andrew Cupps
                                             rounded-[50%] bg-orange"
 				/>
 			</div>
-			<span class="text-xl font-bold dark:text-white">
+			<span class="pl-4 text-xl font-bold dark:text-white">
 				{title}
 			</span>
 			<span class="font-light text-secCodesLight dark:text-secCodesDark">

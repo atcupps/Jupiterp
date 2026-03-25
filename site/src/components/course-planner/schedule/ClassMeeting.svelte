@@ -158,15 +158,12 @@ Copyright (C) 2026 Andrew Cupps
 	<!-- x button to remove course -->
 	{#if !meeting.hover}
 		<button
-			class="absolute right-0 top-0 h-4 w-6 items-center justify-center overflow-clip 2xl:right-1 2xl:top-1 hover:text-orange"
+			class="absolute right-0 top-0 h-4 w-6 items-center justify-center overflow-clip hover:text-orange 2xl:right-1 2xl:top-1"
 			on:click={removeCourseByClassMeeting}
 			title="Remove course from schedule"
 		>
 			<!-- BUG: Not display unless width is 24  -->
-			<svg
-				xmlns="http://www.w3.org/2000/svg"
-				viewBox="0 0 24 24"
-				class="absolute left-1 top-0"
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="absolute left-1 top-0"
 				><path
 					fill="currentColor"
 					d="m12 13.4l-2.917 2.925q-.277.275-.704.275t-.704-.275q-.275-.275-.275-.7t.275-.7L10.6 12L7.675 9.108Q7.4 8.831 7.4 8.404t.275-.704q.275-.275.7-.275t.7.275L12 10.625L14.892 7.7q.277-.275.704-.275t.704.275q.3.3.3.713t-.3.687L13.375 12l2.925 2.917q.275.277.275.704t-.275.704q-.3.3-.712.3t-.688-.3z"
@@ -190,9 +187,7 @@ Copyright (C) 2026 Andrew Cupps
 				<span>{meeting.courseCode}</span>
 			</div>
 		{/if}
-		<div
-			class="w-full grow px-2 font-sans text-xs font-thin 2xl:font-normal"
-		>
+		<div class="w-full grow px-2 font-sans text-xs font-thin 2xl:font-normal">
 			{#if h - 24 * fontSize > 64 * fontSize || isInOther}
 				<div
 					class="static truncate"

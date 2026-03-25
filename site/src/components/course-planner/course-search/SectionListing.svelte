@@ -5,7 +5,7 @@ https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2026 Andrew Cupps
 -->
 <script lang="ts">
-	import {onMount} from 'svelte';
+	import { onMount } from 'svelte';
 	import InstructorListing from './InstructorListing.svelte';
 	import MeetingListing from './MeetingListing.svelte';
 	import {

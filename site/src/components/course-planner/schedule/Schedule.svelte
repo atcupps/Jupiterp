@@ -13,7 +13,6 @@ Copyright (C) 2026 Andrew Cupps
 	import ScheduleDay from './ScheduleDay.svelte';
 	import ScheduleBackground from './ScheduleBackground.svelte';
 	import { formatCredits, testudoLink } from '../../../lib/course-planner/Formatting';
-	import { afterUpdate } from 'svelte';
 	import InstructorListing from '../course-search/InstructorListing.svelte';
 	import {
 		HoveredSectionStore,
