@@ -107,12 +107,16 @@ Copyright (C) 2026 Andrew Cupps
 
 	let elt: HTMLDivElement;
 	let innerWidth: number;
+	let scheduleContainerHeight: number = 0;
+	let courseInfoPanelHeight: number = 0;
+	$: infoPanelAtTop = courseInfoPanelHeight > scheduleContainerHeight;
 </script>
 
 <svelte:window bind:innerWidth />
 
 <div
 	class="-pl-3 relative order-1 flex h-[calc(100svh-11rem)] min-h-80 w-full flex-row overflow-auto text-center text-lg font-medium text-black lg:order-2 lg:mr-1 lg:h-full dark:text-white"
+	bind:clientHeight={scheduleContainerHeight}
 >
 	<div
 		class="relative grid grow pl-8"
@@ -180,9 +184,10 @@ Copyright (C) 2026 Andrew Cupps
 	<!-- Course info panel -->
 	{#if showCourseInfo !== null && courseInfoCourse !== null && courseInfoSection !== null}
 		<div
-			class="absolute bottom-0 z-10 w-full rounded-xl
-        border-2 border-outlineLight bg-bgSecondaryLight
-        px-2 py-1 text-left shadow-md dark:border-outlineDark dark:bg-bgSecondaryDark"
+			class={`absolute z-10 w-full rounded-xl border-2 border-outlineLight bg-bgSecondaryLight px-2 py-1 text-left shadow-md dark:border-outlineDark dark:bg-bgSecondaryDark ${
+				infoPanelAtTop ? 'top-0' : 'bottom-0'
+			}`}
+			bind:clientHeight={courseInfoPanelHeight}
 		>
 			<!-- X Button to get rid of course info -->
 			<button
