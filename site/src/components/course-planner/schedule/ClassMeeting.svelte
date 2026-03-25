@@ -165,8 +165,6 @@ Copyright (C) 2026 Andrew Cupps
 			<!-- BUG: Not display unless width is 24  -->
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
-				width="24"
-				height="auto"
 				viewBox="0 0 24 24"
 				class="absolute left-1 top-0"
 				><path

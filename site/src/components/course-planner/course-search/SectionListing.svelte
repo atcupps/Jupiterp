@@ -5,6 +5,7 @@ https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2026 Andrew Cupps
 -->
 <script lang="ts">
+	import {onMount} from 'svelte';
 	import InstructorListing from './InstructorListing.svelte';
 	import MeetingListing from './MeetingListing.svelte';
 	import {
@@ -63,8 +64,11 @@ Copyright (C) 2026 Andrew Cupps
 		colorNumber: -1
 	};
 
-	// Auto-scroll for not desktop screens: scroll up to schedule when adding/removing a section
-	const plannerContainer = document.getElementById('planner-container');
+	// Auto-scroll for non desktop screens: scroll up to schedule when adding a section
+	let plannerContainer: HTMLElement | null = null;
+	onMount(() => {
+		plannerContainer = document.getElementById('planner-container');
+	});
 	function scrollToTopPlannerTop() {
 		if (plannerContainer) {
 			plannerContainer.scrollTo({

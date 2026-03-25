@@ -5,7 +5,7 @@ https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2026 Andrew Cupps
 -->
 <script lang="ts">
-	import { fade } from 'svelte/transition';
+	import { onMount } from 'svelte';
 	import CourseListing from './CourseListing.svelte';
 	import {
 		deptCodeToName,
@@ -133,6 +133,21 @@ Copyright (C) 2026 Andrew Cupps
 			scrollAcc = 0;
 		}
 	}
+
+	// Auto-scroll for non desktop screens: scroll down to search
+	let plannerContainer: HTMLElement | null = null;
+	onMount(() => {
+		plannerContainer = document.getElementById('planner-container');
+	});
+	function scrollToBottomPlanner() {
+		if (plannerContainer) {
+			// scroll to bottom of planner
+			plannerContainer.scrollTo({
+				top: plannerContainer.scrollHeight,
+				behavior: 'smooth'
+			});
+		}
+	}
 </script>
 
 <!-- Course Search -->
@@ -157,6 +172,11 @@ Copyright (C) 2026 Andrew Cupps
 			<input
 				type="text"
 				bind:value={searchInput}
+				on:focus={() => {
+					if (typeof window !== 'undefined' && window.innerWidth < 1024) {
+						scrollToBottomPlanner();
+					}
+				}}
 				on:input={() => {
 					setSearchResults(searchInput);
 				}}
