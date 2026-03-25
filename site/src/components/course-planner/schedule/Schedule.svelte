@@ -125,7 +125,7 @@ Copyright (C) 2026 Andrew Cupps
 		<!-- format-check exempt 2 -->
 		<div
 			class="absolute bottom-0 left-[4px] top-6 z-0"
-			style="width: calc({schedule.other.length == 0 ? '100%' : '83.3%'} - 8px);"
+			style="width: {schedule.other.length == 0 ? 'calc(100% - 8px)' : '83.3%'};"
 		>
 			<ScheduleBackground
 				bind:earliest={earliestClassStart}

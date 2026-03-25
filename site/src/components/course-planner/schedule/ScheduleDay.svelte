@@ -17,7 +17,7 @@ Copyright (C) 2026 Andrew Cupps
 	$: bgHeight;
 </script>
 
-<div class="z-10 flex h-full w-full flex-col px-1.5">
+<div class="z-10 flex h-full w-full flex-col px-1">
 	<div>
 		{name}
 	</div>

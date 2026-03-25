@@ -139,6 +139,7 @@ Copyright (C) 2026 Andrew Cupps
 <div
 	class="order-2 min-h-80 w-full flex-col border-solid border-divBorderLight bg-bgLight pt-1 lg:order-1 dark:border-divBorderDark dark:bg-bgDark"
 >
+	<!-- Course search input and filters [height of 7.25rem] -->
 	<div class="px-1">
 		<div class="ml-1 flex flex-row pb-1 text-xs 2xl:text-sm">
 			<div>Fall 2026</div>
@@ -171,9 +172,9 @@ Copyright (C) 2026 Andrew Cupps
 			<CourseFilters bind:showGenEdMenu={genEdMenuOpen} />
 		</div>
 	</div>
-	<!-- Course search results & dept suggestions -->
+	<!-- Course search results & dept suggestions [min-height: 20rem - 7.25rem = 12.75rem]-->
 	<div
-		class="px-1 courses-list h-[calc(100svh-11rem)] overflow-y-scroll pb-2 lg:h-[100svh-3rem]"
+		class="courses-list h-[calc(100svh-10.25rem)] min-h-[12.75rem] overflow-y-scroll px-1 lg:h-[100svh-3rem]"
 		on:wheel={handleResultsScroll}
 	>
 		<!-- Department suggestions dropdown -->
