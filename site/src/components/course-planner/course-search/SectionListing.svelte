@@ -63,6 +63,17 @@ Copyright (C) 2026 Andrew Cupps
 		colorNumber: -1
 	};
 
+	// Auto-scroll for not desktop screens: scroll up to schedule when adding/removing a section
+	const plannerContainer = document.getElementById('planner-container');
+	function scrollToTopPlannerTop() {
+		if (plannerContainer) {
+			plannerContainer.scrollTo({
+				top: 0,
+				behavior: 'smooth'
+			});
+		}
+	}
+
 	let addAlertVisible: boolean = false;
 	let addAlertShouldFade: boolean = false;
 	let removeAlertVisible: boolean = false;
@@ -111,6 +122,9 @@ Copyright (C) 2026 Andrew Cupps
 							sectionCode: section.sectionCode
 						};
 			});
+			if (!isDesktop) {
+				scrollToTopPlannerTop();
+			}
 		} else {
 			showRemoveAlert();
 			const index = selectionsList.findIndex((obj) => selectionEquals(obj));

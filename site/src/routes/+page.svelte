@@ -179,6 +179,7 @@ Copyright (C) 2026 Andrew Cupps
 </script>
 
 <div
+	id="planner-container"
 	class="fixed bottom-0 top-12 w-full flex-col overflow-y-auto px-3 lg:grid lg:grid-cols-[22rem_1fr]"
 >
 	<Schedule />
