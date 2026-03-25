@@ -137,41 +137,45 @@ Copyright (C) 2026 Andrew Cupps
 
 <!-- Course Search -->
 <div
-	class="order-2 h-[calc(100svh-3rem)] min-h-80 w-full flex-col overflow-y-scroll border-solid border-divBorderLight bg-bgLight pt-1 lg:order-1 lg:pt-2 dark:border-divBorderDark dark:bg-bgDark"
+	class="order-2 min-h-80 w-full flex-col border-solid border-divBorderLight bg-bgLight pt-1 lg:order-1 dark:border-divBorderDark dark:bg-bgDark"
 >
-	<div class="ml-1 flex flex-row pb-1 text-xs 2xl:text-sm">
-		<div>Fall 2026</div>
-		<div class="grow text-right">
-			Credits: {totalCredits}
+	<div class="px-1">
+		<div class="ml-1 flex flex-row pb-1 text-xs 2xl:text-sm">
+			<div>Fall 2026</div>
+			<div class="grow text-right">
+				Credits: {totalCredits}
+			</div>
 		</div>
-	</div>
 
-	<ScheduleSelector />
+		<ScheduleSelector />
 
-	<div
-		class="relative flex w-full flex-col border-b-2 border-t-2 border-solid border-divBorderLight dark:border-divBorderDark"
-	>
-		<!-- Course search box -->
-		<input
-			type="text"
-			bind:value={searchInput}
-			on:input={() => {
-				setSearchResults(searchInput);
-			}}
-			on:keydown={handleSearchKeydown}
-			placeholder="Search course codes, ex: 'MATH140'"
-			class="w-full rounded-lg border-2
+		<div
+			class="relative flex w-full flex-col border-b-2 border-t-2 border-solid border-divBorderLight dark:border-divBorderDark"
+		>
+			<!-- Course search box -->
+			<input
+				type="text"
+				bind:value={searchInput}
+				on:input={() => {
+					setSearchResults(searchInput);
+				}}
+				on:keydown={handleSearchKeydown}
+				placeholder="Search course codes, ex: 'MATH140'"
+				class="w-full rounded-lg border-2
                             border-solid border-outlineLight
                             bg-transparent px-2 py-0 text-xl
                             placeholder:text-base lg:text-base
                             lg:placeholder:text-sm dark:border-outlineDark"
-		/>
+			/>
 
-		<CourseFilters bind:showGenEdMenu={genEdMenuOpen} />
+			<CourseFilters bind:showGenEdMenu={genEdMenuOpen} />
+		</div>
 	</div>
-
 	<!-- Course search results & dept suggestions -->
-	<div class="courses-list grow pb-2" on:wheel={handleResultsScroll}>
+	<div
+		class="px-1 courses-list h-[calc(100svh-11rem)] overflow-y-scroll pb-2 lg:h-[100svh-3rem]"
+		on:wheel={handleResultsScroll}
+	>
 		<!-- Department suggestions dropdown -->
 		{#if searchInput.length > 0 && deptSuggestions.length > 1}
 			<div

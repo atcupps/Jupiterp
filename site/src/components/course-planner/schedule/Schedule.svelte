@@ -112,7 +112,7 @@ Copyright (C) 2026 Andrew Cupps
 <svelte:window bind:innerWidth />
 
 <div
-	class="-pl-2 relative order-1 flex h-[calc(100svh-11rem)] min-h-80 w-full flex-row overflow-auto text-center text-lg font-medium text-black lg:order-2 lg:h-full dark:text-white"
+	class="-pl-3 relative order-1 flex h-[calc(100svh-11rem)] min-h-80 w-full flex-row overflow-auto text-center text-lg font-medium text-black lg:order-2 lg:mr-1 lg:h-full dark:text-white"
 >
 	<div
 		class="relative grid grow pl-8"
@@ -266,15 +266,3 @@ Copyright (C) 2026 Andrew Cupps
 		</div>
 	{/if}
 </div>
-
-<style>
-	/* Hide scrollbar but allow scrolling - works on WebKit and Firefox */
-	.no-scrollbar {
-		-ms-overflow-style: none;
-		scrollbar-width: none;
-
-		&::-webkit-scrollbar {
-			display: none;
-		}
-	}
-</style>

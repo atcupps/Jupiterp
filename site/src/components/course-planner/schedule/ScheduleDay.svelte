@@ -17,11 +17,11 @@ Copyright (C) 2026 Andrew Cupps
 	$: bgHeight;
 </script>
 
-<div class="z-10 flex h-full w-full flex-col px-2">
+<div class="z-10 flex h-full w-full flex-col px-1.5">
 	<div>
 		{name}
 	</div>
-	<div class="relative top-[14px]" style="height: {bgHeight}px;">
+	<div class="relative top-[10px]" style="height: {bgHeight}px;">
 		{#each classes as classMeeting, index (`${index}-${classMeeting.instructors}`)}
 			<ClassMeeting
 				meeting={classMeeting}

@@ -193,8 +193,7 @@ Copyright (C) 2026 Andrew Cupps
 			</div>
 		{/if}
 		<div
-			class="w-full grow px-2 font-sans
-                                                    text-xs font-thin 2xl:font-normal"
+			class="w-full grow px-2 font-sans text-xs font-thin 2xl:font-normal"
 		>
 			{#if h - 24 * fontSize > 64 * fontSize || isInOther}
 				<div
@@ -205,8 +204,7 @@ Copyright (C) 2026 Andrew Cupps
 					{#if instructorsChange}
 						<Tooltip
 							text={'⚠ ' + formattedInstructors}
-							tooltipText="Instructors have changed since 
-                                            you last visited Jupiterp."
+							tooltipText="Instructors have changed since you last visited Jupiterp."
 						/>
 					{:else}
 						{formattedInstructors}
@@ -222,14 +220,12 @@ Copyright (C) 2026 Andrew Cupps
 					{#if meetingTimeChange}
 						<Tooltip
 							text={'⚠ ' + formattedTime}
-							tooltipText="Class meeting time has changed since 
-                                                you last visited Jupiterp."
+							tooltipText="Class meeting time has changed since you last visited Jupiterp."
 						/>
 					{:else if meetingsTypeChange}
 						<Tooltip
 							text={'⚠ ' + formattedTime}
-							tooltipText="Meeting type has changed since you
-                                            last visited Jupiterp."
+							tooltipText="Meeting type has changed since you last visited Jupiterp."
 						/>
 					{:else}
 						{formattedTime}
@@ -250,8 +246,7 @@ Copyright (C) 2026 Andrew Cupps
 					{#if meetingLocChange}
 						<Tooltip
 							text={'⚠ ' + location}
-							tooltipText="Class location has changed since 
-                                                you last visited Jupiterp."
+							tooltipText="Class location has changed since you last visited Jupiterp."
 						/>
 					{:else}
 						{location}
@@ -261,8 +256,7 @@ Copyright (C) 2026 Andrew Cupps
 		</div>
 	{:else}
 		<div
-			class="ont-sans w-full text-wrap break-words
-                    rounded-t-lg font-sans text-xs font-semibold"
+			class="w-full text-wrap break-words rounded-t-lg font-sans text-xs font-semibold"
 			class:rounded-b-lg={h < 1.5 * fontSize}
 		>
 			{splitCourseCode(meeting.courseCode)}

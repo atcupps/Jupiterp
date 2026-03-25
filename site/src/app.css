@@ -41,8 +41,6 @@ body {
     * {
         scrollbar-width: thin;
         scrollbar-color: #3F475A #151922;
-        /* If element has a scrollbar, it will have padding of 4px on both sides */
-        scrollbar-gutter: stable both-edges;
     }
 
     /* Chrome, Edge, and Safari */

@@ -27,9 +27,9 @@ Copyright (C) 2026 Andrew Cupps
 		type InstructorsConfig,
 		type InstructorsResponse
 	} from '@jupiterp/jupiterp';
-	import type { ScheduleSelection, StoredSchedule } from '../../types';
+	import type { ScheduleSelection, StoredSchedule } from '../types';
 
-	// Function to retreive professor data; called in `onMount`.
+	// Function to retrieve professor data; called in `onMount`.
 	async function fetchProfessorData() {
 		try {
 			let limit = 500;
@@ -179,7 +179,7 @@ Copyright (C) 2026 Andrew Cupps
 </script>
 
 <div
-	class="fixed bottom-0 top-12 w-full flex-col gap-2 px-1 overflow-y-auto lg:grid lg:grid-cols-[22rem_1fr]"
+	class="fixed bottom-0 top-12 w-full flex-col overflow-y-auto px-3 lg:grid lg:grid-cols-[22rem_1fr]"
 >
 	<Schedule />
 	<CourseSearch />
