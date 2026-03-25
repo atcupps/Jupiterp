@@ -98,9 +98,6 @@ Copyright (C) 2026 Andrew Cupps
 		highlightedSuggestionIndex = -1;
 	}
 
-	// Boolean for toggling search menu on smaller screens
-	export let courseSearchSelected: boolean = false;
-
 	$: {
 		if (hoveredSection) {
 			let index = searchResults.findIndex((course) => {
@@ -138,31 +135,9 @@ Copyright (C) 2026 Andrew Cupps
 	}
 </script>
 
-<!-- Layer to exit course search if user taps on the Schedule -->
-<!-- Using this method to avoid having to listen to a variable on Schedule -->
-{#if courseSearchSelected}
-	<button
-		class="fixed z-[51] w-full bg-black bg-opacity-20
-                    lg:hidden"
-		style="height: calc(100% - 3rem);"
-		in:fade={{ duration: 150 }}
-		out:fade={{ duration: 150 }}
-		on:click={() => (courseSearchSelected = false)}
-	/>
-{/if}
-
 <!-- Course Search -->
 <div
-	class="course-search visible fixed left-0 z-[52]
-                            w-[300px] flex-col border-r-2 border-solid border-divBorderLight
-                            bg-bgLight py-1 pl-1
-                            pr-2 transition-transform
-                            duration-300 lg:static lg:ml-1.5 lg:flex
-                            lg:h-full lg:min-w-[260px] lg:bg-transparent lg:pl-0
-                            lg:shadow-none xl:min-w-[320px] 2xl:min-w-[400px] 2xl:text-lg
-                            dark:border-divBorderDark dark:bg-bgDark"
-	class:course-search-transition={!courseSearchSelected}
-	class:shadow-lg={courseSearchSelected}
+	class="order-2 h-[calc(100svh-3rem)] min-h-80 w-full flex-col overflow-y-scroll border-solid border-divBorderLight bg-bgLight pt-1 lg:order-1 lg:pt-2 dark:border-divBorderDark dark:bg-bgDark"
 >
 	<div class="ml-1 flex flex-row pb-1 text-xs 2xl:text-sm">
 		<div>Fall 2026</div>
@@ -174,9 +149,7 @@ Copyright (C) 2026 Andrew Cupps
 	<ScheduleSelector />
 
 	<div
-		class="relative flex w-full flex-col border-b-2
-                            border-t-2 border-solid border-divBorderLight p-1
-                            lg:px-0 dark:border-divBorderDark"
+		class="relative flex w-full flex-col border-b-2 border-t-2 border-solid border-divBorderLight dark:border-divBorderDark"
 	>
 		<!-- Course search box -->
 		<input
@@ -198,33 +171,17 @@ Copyright (C) 2026 Andrew Cupps
 	</div>
 
 	<!-- Course search results & dept suggestions -->
-	<div
-		class="courses-list overflow-x-none grow overflow-y-scroll
-                px-1 lg:pl-0 lg:pr-1"
-		on:wheel={handleResultsScroll}
-	>
+	<div class="courses-list grow pb-2" on:wheel={handleResultsScroll}>
 		<!-- Department suggestions dropdown -->
 		{#if searchInput.length > 0 && deptSuggestions.length > 1}
 			<div
-				class="mt-2 rounded-lg border
-                        border-outlineLight bg-bgLight
-                        shadow-lg dark:border-outlineDark dark:bg-bgDark"
+				class="mt-2 rounded-lg border border-outlineLight bg-bgLight shadow-lg dark:border-outlineDark dark:bg-bgDark"
 			>
 				{#each deptSuggestions as deptOption, index}
 					<button
 						type="button"
-						class={`flex w-full items-end px-3 py-1
-                                text-left text-base transition-colors
-                                hover:bg-outlineLight
-                                hover:bg-opacity-20 lg:text-sm
-                                dark:hover:bg-outlineDark
-                                dark:hover:bg-opacity-30 
-                                ${
-																	highlightedSuggestionIndex === index
-																		? `bg-outlineLight bg-opacity-20
-                                    dark:bg-outlineDark dark:bg-opacity-30`
-																		: ''
-																}`}
+						class={`flex w-full items-end px-3 py-1 text-left text-base transition-colors hover:bg-outlineLight hover:bg-opacity-20 lg:text-sm dark:hover:bg-outlineDark dark:hover:bg-opacity-30 
+							${highlightedSuggestionIndex === index ? `bg-outlineLight bg-opacity-20 dark:bg-outlineDark dark:bg-opacity-30` : ''}`}
 						on:mouseenter={() => {
 							highlightedSuggestionIndex = index;
 						}}
@@ -256,22 +213,3 @@ Copyright (C) 2026 Andrew Cupps
 		{/if}
 	</div>
 </div>
-
-<style>
-	@media screen and (max-width: 1023px) {
-		.course-search {
-			height: calc(100svh - 3rem);
-		}
-
-		.courses-list {
-			height: calc(100svh - 3rem - 2.54166667rem - 2px);
-		}
-
-		.course-search-transition {
-			transition-property: transform;
-			transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-			transition-duration: 150ms;
-			transform: translateX(calc(-100% - 2px));
-		}
-	}
-</style>

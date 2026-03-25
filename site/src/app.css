@@ -11,7 +11,7 @@ body {
     /* Firefox */
     * {
         scrollbar-width: auto;
-        scrollbar-color: #cccccc #ffffff;
+        scrollbar-color: #cccccc white;
     }
 
     /* Chrome, Edge, and Safari */
@@ -20,7 +20,7 @@ body {
     }
 
     *::-webkit-scrollbar-track {
-        background: #ffffff;
+        background: white;
     }
 
     *::-webkit-scrollbar-thumb {
@@ -39,13 +39,15 @@ body {
     /* ===== Scrollbar CSS ===== */
     /* Firefox */
     * {
-        scrollbar-width: auto;
+        scrollbar-width: thin;
         scrollbar-color: #3F475A #151922;
+        /* If element has a scrollbar, it will have padding of 4px on both sides */
+        scrollbar-gutter: stable both-edges;
     }
 
     /* Chrome, Edge, and Safari */
     *::-webkit-scrollbar {
-        width: 8px;
+        width: 4px;
     }
 
     *::-webkit-scrollbar-track {

@@ -187,7 +187,7 @@ Copyright (C) 2026 Andrew Cupps
                         font-sans text-base font-semibold"
 				class:text-sm={w < 120}
 				class:text-xs={w < 104}
-				class:rounded-b-lg={h < 1.75 * fontSize}
+				class:rounded-b-lg={h < 1.5 * fontSize}
 			>
 				<span>{meeting.courseCode}</span>
 			</div>
@@ -262,8 +262,8 @@ Copyright (C) 2026 Andrew Cupps
 	{:else}
 		<div
 			class="ont-sans w-full text-wrap break-words
-                    rounded-t-lg font-sans text-base font-semibold"
-			class:rounded-b-lg={h < 1.75 * fontSize}
+                    rounded-t-lg font-sans text-xs font-semibold"
+			class:rounded-b-lg={h < 1.5 * fontSize}
 		>
 			{splitCourseCode(meeting.courseCode)}
 		</div>

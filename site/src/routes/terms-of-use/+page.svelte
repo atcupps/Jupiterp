@@ -7,12 +7,11 @@ Copyright (C) 2026 Andrew Cupps
 <script lang="ts">
 	const h1Classes = 'text-2xl border-b-2 border-divBorderLight dark:border-divBorderDark';
 	const h2Classes = 'text-xl border-b-2 border-divBorderLight dark:border-divBorderDark';
-	const pClasses = 'my-2 text-normal leading-5 text-textLight dark:text-textDark';
+	const pClasses = 'my-2 text-normal leading-5';
 </script>
 
 <div
-	class="fixed bottom-0 top-[3rem] overflow-y-scroll px-8
-            py-2 text-textLight lg:top-[3.5rem] xl:top-[4rem] dark:text-white"
+	class="fixed bottom-0 top-12 overflow-y-auto px-4 py-2"
 >
 	<h1 class={h1Classes}>Terms of Use for Jupiterp</h1>
 
