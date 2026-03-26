@@ -8,14 +8,14 @@ body {
 }
 
 @layer utilities {
-    /* Please apply "custom-scrollbar" class for all scrollable elements 
-    (elements with classes of overflow-scroll pr overflow-auto) */
+    /* Please apply "custom-scrollbar" class for scrollable elements 
+    (elements with class of overflow-scroll or overflow-auto) */
     .custom-scrollbar {
-        scrollbar-width: auto;
+        scrollbar-width: thin;
         scrollbar-color: #cccccc white;
 
         &::-webkit-scrollbar {
-            width: 8px;
+            width: 4px;
         }
 
         &::-webkit-scrollbar-track {
