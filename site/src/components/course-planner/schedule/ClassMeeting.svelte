@@ -162,7 +162,6 @@ Copyright (C) 2026 Andrew Cupps
 			on:click={removeCourseByClassMeeting}
 			title="Remove course from schedule"
 		>
-			<!-- BUG: Not display unless width is 24  -->
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="absolute left-1 top-0"
 				><path
 					fill="currentColor"

@@ -21,7 +21,7 @@ Copyright (C) 2026 Andrew Cupps
 	function generateMapURL(location: string): string {
 		// format-check exempt 1
 		return (
-			'https://maps.umd.edu/map/index.html?Welcome=False&MapView=Detailed&LocationType=Building&LocationName=' +
+			'https://maps.umd.edu/map/index.html?defaultpopups=false&Nav=hide&hidemenu=true&MapView=Simple&LocationType=Building&LocationName=' +
 			location
 		);
 	}
