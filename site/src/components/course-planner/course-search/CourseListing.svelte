@@ -29,6 +29,15 @@ Copyright (C) 2026 Andrew Cupps
 
 	let showMoreInfo: boolean = false;
 
+	let isSticky: boolean = false;
+
+	function updateSticky() {
+		isSticky = window.innerHeight > 480;
+	}
+
+	window.addEventListener('resize', updateSticky);
+	updateSticky();
+
 	function scrollToCourseTop(event: MouseEvent) {
 		const button = event.currentTarget as HTMLElement | null;
 		const container = button?.closest('[id^="results-"]') as HTMLElement | null;
@@ -41,8 +50,9 @@ Copyright (C) 2026 Andrew Cupps
 	class="my-2 flex scroll-mt-2 flex-col rounded-lg border-2 border-solid border-outlineLight bg-bgSecondaryLight px-2 dark:border-outlineDark dark:bg-bgSecondaryDark"
 >
 	<div
-		class="sticky top-0 z-10 -mb-[2px] border-b-2 border-solid border-outlineLight bg-bgSecondaryLight px-2
+		class="top-0 z-10 -mb-[2px] border-b-2 border-solid border-outlineLight bg-bgSecondaryLight px-2
            dark:border-outlineDark dark:bg-bgSecondaryDark"
+		style="position: {isSticky ? 'sticky' : 'static'}"
 	>
 		<button
 			on:click={scrollToCourseTop}
