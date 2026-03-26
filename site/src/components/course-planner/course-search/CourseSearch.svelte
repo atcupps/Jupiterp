@@ -194,7 +194,7 @@ Copyright (C) 2026 Andrew Cupps
 	</div>
 	<!-- Course search results & dept suggestions [min-height: 20rem - 7.25rem = 12.75rem]-->
 	<div
-		class="courses-list h-[calc(100svh-10.25rem)] min-h-[12.75rem] overflow-y-scroll px-1 lg:h-[100svh-3rem]"
+		class="custom-scrollbar h-[calc(100svh-10.25rem)] min-h-[12.75rem] overflow-y-scroll px-1 lg:h-[100svh-3rem]"
 		on:wheel={handleResultsScroll}
 	>
 		<!-- Department suggestions dropdown -->

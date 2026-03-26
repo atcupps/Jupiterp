@@ -300,21 +300,11 @@ Copyright (C) 2026 Andrew Cupps
 					<!-- Matching instructors list -->
 					{#if matchingInstructors.length > 1 || (matchingInstructors.length == 1 && matchingInstructors[0] !== instructor)}
 						<div
-							class="z-[60] mt-1 flex max-h-40
-                                    w-full flex-col overflow-y-auto
-                                    rounded-md border
-                                    border-outlineLight
-                                    bg-bgLight shadow-lg
-                                    dark:border-outlineDark dark:bg-bgDark"
+							class="custom-scrollbar z-[60] mt-1 flex max-h-40 w-full flex-col overflow-y-auto rounded-md border border-outlineLight bg-bgLight shadow-lg dark:border-outlineDark dark:bg-bgDark"
 						>
 							{#each matchingInstructors as profName}
 								<button
-									class="cursor-pointer px-2 py-1
-                                            text-left
-                                            hover:bg-outlineLight
-                                            hover:bg-opacity-20
-                                            dark:hover:bg-outlineDark
-                                            dark:hover:bg-opacity-30"
+									class="cursor-pointer px-2 py-1 text-left hover:bg-outlineLight hover:bg-opacity-20 dark:hover:bg-outlineDark dark:hover:bg-opacity-30"
 									on:click={() => {
 										instructor = profName;
 									}}

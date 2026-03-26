@@ -114,7 +114,7 @@ Copyright (C) 2026 Andrew Cupps
 <svelte:window bind:innerWidth />
 
 <div
-	class="-pl-3 relative order-1 flex h-[calc(100svh-11rem)] min-h-80 w-full flex-row overflow-auto text-center text-lg font-medium text-black lg:order-2 lg:mr-1 lg:h-full dark:text-white"
+	class="custom-scrollbar -pl-3 relative order-1 flex h-[calc(100svh-11rem)] min-h-80 w-full flex-row overflow-auto text-center text-lg font-medium text-black lg:order-2 lg:mr-1 lg:h-full dark:text-white"
 	bind:clientHeight={scheduleContainerHeight}
 >
 	<div
