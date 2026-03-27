@@ -18,6 +18,7 @@ Copyright (C) 2026 Andrew Cupps
 	import type { Section, CourseBasic } from '@jupiterp/jupiterp';
 	import type { ScheduleSelection } from '../../../types';
 	import { noDifferences } from '$lib/course-planner/Schedule';
+	import { shouldEnableAutoScroll } from '$lib/course-planner/AutoScroll';
 
 	export let courseCode: string;
 	export let section: Section;
@@ -126,7 +127,7 @@ Copyright (C) 2026 Andrew Cupps
 							sectionCode: section.sectionCode
 						};
 			});
-			if (!isDesktop) {
+			if (shouldEnableAutoScroll()) {
 				scrollToTopPlannerTop();
 			}
 		} else {
@@ -193,10 +194,7 @@ Copyright (C) 2026 Andrew Cupps
 		isDesktop = innerWidth >= 1024;
 	}
 
-	const alertClasses: string = `  fixed left-[50%] translate-x-[-50%] z-5
-                                    w-[40%] top-[10%] min-w-72 h-8 rounded-lg
-                                    text-center text-white lg:hidden 
-                                    bg-orange shadow-lg content-center`;
+	const alertClasses: string = `fixed left-[50%] translate-x-[-50%] z-50 w-[40%] top-14 min-w-72 h-8 rounded-lg text-center text-white lg:hidden bg-orange shadow-lg content-center transition-opacity duration-500`;
 </script>
 
 <svelte:window bind:innerWidth />
@@ -243,13 +241,13 @@ Copyright (C) 2026 Andrew Cupps
 </button>
 
 {#if addAlertVisible}
-	<div class={(addAlertShouldFade ? 'animate-fadeOut' : '') + alertClasses}>
+	<div class={alertClasses} style="opacity: {addAlertShouldFade ? 0 : 1};">
 		<span class="h-full align-middle font-medium">Class Added</span>
 	</div>
 {/if}
 
 {#if removeAlertVisible}
-	<div class={(removeAlertShouldFade ? 'animate-fadeOut' : '') + alertClasses}>
+	<div class={alertClasses} style="opacity: {removeAlertShouldFade ? 0 : 1};">
 		<span class="h-full align-middle font-medium">Class Removed</span>
 	</div>
 {/if}

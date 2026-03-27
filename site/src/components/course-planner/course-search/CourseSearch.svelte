@@ -24,6 +24,7 @@ Copyright (C) 2026 Andrew Cupps
 	import type { ScheduleSelection } from '../../../types';
 	import CourseFilters from './CourseFilters.svelte';
 	import SolarSystemLoader from './SolarSystemLoader.svelte';
+	import { shouldEnableAutoScroll } from '../../../lib/course-planner/AutoScroll';
 
 	const FILTER_SCROLL_COLLAPSE_THRESHOLD = 100;
 
@@ -136,14 +137,16 @@ Copyright (C) 2026 Andrew Cupps
 
 	// Auto-scroll for non desktop screens: scroll down to search
 	let plannerContainer: HTMLElement | null = null;
+	let searchElement: HTMLElement | null = null;
 	onMount(() => {
 		plannerContainer = document.getElementById('planner-container');
+		searchElement = document.getElementById('course-search');
 	});
+
 	function scrollToBottomPlanner() {
-		if (plannerContainer) {
-			// scroll to bottom of planner
+		if (plannerContainer && searchElement) {
 			plannerContainer.scrollTo({
-				top: plannerContainer.scrollHeight,
+				top: searchElement.offsetTop,
 				behavior: 'smooth'
 			});
 		}
@@ -152,6 +155,7 @@ Copyright (C) 2026 Andrew Cupps
 
 <!-- Course Search -->
 <div
+	id="course-search"
 	class="order-2 min-h-80 w-full flex-col border-solid border-divBorderLight bg-bgLight pt-1 lg:order-1 dark:border-divBorderDark dark:bg-bgDark"
 >
 	<!-- Course search input and filters [height of 7.25rem] -->
@@ -173,7 +177,7 @@ Copyright (C) 2026 Andrew Cupps
 				type="text"
 				bind:value={searchInput}
 				on:focus={() => {
-					if (typeof window !== 'undefined' && window.innerWidth < 1024) {
+					if (shouldEnableAutoScroll()) {
 						scrollToBottomPlanner();
 					}
 				}}
@@ -182,11 +186,7 @@ Copyright (C) 2026 Andrew Cupps
 				}}
 				on:keydown={handleSearchKeydown}
 				placeholder="Search course codes, ex: 'MATH140'"
-				class="w-full rounded-lg border-2
-                            border-solid border-outlineLight
-                            bg-transparent px-2 py-0 text-xl
-                            placeholder:text-base lg:text-base
-                            lg:placeholder:text-sm dark:border-outlineDark"
+				class="w-full rounded-lg border-2 border-solid border-outlineLight bg-transparent px-2 py-0 text-xl placeholder:text-base lg:text-base lg:placeholder:text-sm dark:border-outlineDark"
 			/>
 
 			<CourseFilters bind:showGenEdMenu={genEdMenuOpen} />
@@ -215,10 +215,7 @@ Copyright (C) 2026 Andrew Cupps
 						<span class="min-w-[17%] shrink-0 font-black">
 							{deptOption}
 						</span>
-						<span
-							class="inline-block grow
-                                    truncate text-xs italic"
-						>
+						<span class="inline-block grow truncate text-xs italic">
 							{deptCodeToName[deptOption]}
 						</span>
 					</button>

@@ -28,6 +28,7 @@ Copyright (C) 2026 Andrew Cupps
 		type InstructorsResponse
 	} from '@jupiterp/jupiterp';
 	import type { ScheduleSelection, StoredSchedule } from '../types';
+	import { setupAutoScrollListener } from '$lib/course-planner/AutoScroll';
 
 	// Function to retrieve professor data; called in `onMount`.
 	async function fetchProfessorData() {
@@ -176,6 +177,9 @@ Copyright (C) 2026 Andrew Cupps
 		}
 		return JSON.stringify(finalSelections);
 	}
+
+	// set up resize listener for auto-scroll for course planner
+	setupAutoScrollListener();
 </script>
 
 <div
