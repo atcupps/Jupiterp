@@ -6,6 +6,7 @@ Copyright (C) 2026 Andrew Cupps
 -->
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { fade } from 'svelte/transition';
 	import InstructorListing from './InstructorListing.svelte';
 	import MeetingListing from './MeetingListing.svelte';
 	import {
@@ -80,32 +81,26 @@ Copyright (C) 2026 Andrew Cupps
 	}
 
 	let addAlertVisible: boolean = false;
-	let addAlertShouldFade: boolean = false;
 	let removeAlertVisible: boolean = false;
-	let removeAlertShouldFade: boolean = false;
 
 	// Function to show or fade
 	// format-check exempt 8
 	function showAddAlert() {
 		addAlertVisible = true; // Make the div visible
-		addAlertShouldFade = false; // Reset fading in case it's a subsequent click
 		setTimeout(() => {
-			addAlertShouldFade = true; // Start fading after 10 seconds
 			setTimeout(() => {
 				addAlertVisible = false;
-			}, 750); // Delay to make `addAlertVisible` false after fading
-		}, 300); // Delay before fade starts
+			}, 500); // Delay before making `addAlertVisible` false to start fade out
+		}, 0); // No delay after making visible
 	}
 
 	function showRemoveAlert() {
 		removeAlertVisible = true;
-		removeAlertShouldFade = false;
 		setTimeout(() => {
-			removeAlertShouldFade = true;
 			setTimeout(() => {
 				removeAlertVisible = false;
-			}, 750); // Delay to make `removeAlertVisible` false after fading
-		}, 300);
+			}, 500); // Delay before making `removeAlertVisible` false to start fade out
+		}, 0); // No delay after making visible
 	}
 
 	// In order for Svelte's reactivity to work properly, `selectionsList`
@@ -241,13 +236,13 @@ Copyright (C) 2026 Andrew Cupps
 </button>
 
 {#if addAlertVisible}
-	<div class={alertClasses} style="opacity: {addAlertShouldFade ? 0 : 1};">
+	<div class={alertClasses} out:fade={{ duration: 300 }}>
 		<span class="h-full align-middle font-medium">Class Added</span>
 	</div>
 {/if}
 
 {#if removeAlertVisible}
-	<div class={alertClasses} style="opacity: {removeAlertShouldFade ? 0 : 1};">
+	<div class={alertClasses} out:fade={{ duration: 300 }}>
 		<span class="h-full align-middle font-medium">Class Removed</span>
 	</div>
 {/if}
