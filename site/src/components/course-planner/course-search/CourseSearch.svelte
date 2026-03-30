@@ -24,7 +24,8 @@ Copyright (C) 2026 Andrew Cupps
 	import type { ScheduleSelection } from '../../../types';
 	import CourseFilters from './CourseFilters.svelte';
 	import SolarSystemLoader from './SolarSystemLoader.svelte';
-	import { isDesktopCheck } from '../../../lib/course-planner/isDesktopCheck';
+
+	export let isDesktop: boolean;
 
 	const FILTER_SCROLL_COLLAPSE_THRESHOLD = 100;
 
@@ -156,10 +157,10 @@ Copyright (C) 2026 Andrew Cupps
 <!-- Course Search -->
 <div
 	id="course-search"
-	class="order-2 min-h-80 w-full flex-col border-solid border-divBorderLight bg-bgLight pt-1 lg:order-1 dark:border-divBorderDark dark:bg-bgDark"
+	class="order-2 min-h-80 w-full flex-col border-solid border-divBorderLight bg-bgLight lg:order-1 dark:border-divBorderDark dark:bg-bgDark"
 >
-	<!-- Course search input and filters [height of 7.25rem] -->
-	<div class="px-1">
+	<!-- Course search input and filters [height of 7.5rem] -->
+	<div class="px-1 pt-1">
 		<div class="ml-1 flex flex-row pb-1 text-xs 2xl:text-sm">
 			<div>Fall 2026</div>
 			<div class="grow text-right">
@@ -177,7 +178,7 @@ Copyright (C) 2026 Andrew Cupps
 				type="text"
 				bind:value={searchInput}
 				on:focus={() => {
-					if (!isDesktopCheck()) {
+					if (!isDesktop) {
 						scrollToBottomPlanner();
 					}
 				}}
@@ -192,9 +193,9 @@ Copyright (C) 2026 Andrew Cupps
 			<CourseFilters bind:showGenEdMenu={genEdMenuOpen} />
 		</div>
 	</div>
-	<!-- Course search results & dept suggestions [min-height: 20rem - 7.25rem = 12.75rem]-->
+	<!-- Course search results & dept suggestions [min-height: 20rem - 7.5rem = 12.75rem]-->
 	<div
-		class="chain-scroll-only custom-scrollbar h-[calc(100svh-10.25rem)] min-h-[12.75rem] overflow-y-scroll px-1 lg:h-[100svh-3rem]"
+		class="chain-scroll-only custom-scrollbar h-[calc(100svh-10.5rem)] min-h-[12.75rem] overflow-y-scroll px-1 lg:h-[100svh-3rem]"
 		on:wheel={handleResultsScroll}
 	>
 		<!-- Department suggestions dropdown -->
@@ -225,7 +226,7 @@ Copyright (C) 2026 Andrew Cupps
 
 		<!-- Course search results -->
 		{#each searchResults as courseMatch (courseMatch.courseCode)}
-			<CourseListing course={courseMatch} />
+			<CourseListing course={courseMatch} {isDesktop} />
 		{/each}
 
 		{#if isPendingResults}

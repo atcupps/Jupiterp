@@ -13,6 +13,7 @@ Copyright (C) 2026 Andrew Cupps
 	import type { Course, Section } from '@jupiterp/jupiterp';
 
 	export let course: Course;
+	export let isDesktop: boolean;
 
 	function pseudoSection(): Section {
 		return {
@@ -136,9 +137,9 @@ Copyright (C) 2026 Andrew Cupps
 	<!-- Sections -->
 	{#if course.sections != null && course.sections.length > 0}
 		{#each course.sections as section}
-			<SectionListing courseCode={course.courseCode} {section} {course} />
+			<SectionListing courseCode={course.courseCode} {section} {course} {isDesktop} />
 		{/each}
 	{:else}
-		<SectionListing courseCode={course.courseCode} section={pseudoSection()} {course} />
+		<SectionListing courseCode={course.courseCode} section={pseudoSection()} {course} {isDesktop} />
 	{/if}
 </div>

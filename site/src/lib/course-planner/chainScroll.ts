@@ -8,7 +8,6 @@
  */
 
 import { onMount } from 'svelte';
-import { isDesktopCheck } from './isDesktopCheck';
 
 /**
  * Specifically for src/+page.svelte and its exclusive components found in
@@ -38,6 +37,9 @@ function chainScrollTarget(target: EventTarget | null): HTMLElement | null {
 }
 
 export function setupChainScrollListener() {
+	let enableChainScroll: boolean = true;
+	let syncChainScrollListener: () => void = () => {};
+
 	onMount(() => {
 		let active: HTMLElement | null = null;
 		let previousTouchY = 0;
@@ -52,7 +54,7 @@ export function setupChainScrollListener() {
 		}
 
 		const handleTouchStart = (event: TouchEvent) => {
-			if (isDesktopCheck()) {
+			if (!enableChainScroll) {
 				active = null;
 				return;
 			}
@@ -68,7 +70,7 @@ export function setupChainScrollListener() {
 		};
 
 		const handleTouchMove = (event: TouchEvent) => {
-			if (isDesktopCheck() || !active || event.touches.length !== 1) {
+			if (!enableChainScroll || !active || event.touches.length !== 1) {
 				return;
 			}
 
@@ -110,8 +112,8 @@ export function setupChainScrollListener() {
 			attached = false;
 		};
 
-		const syncChainScrollListener = () => {
-			if (window.innerWidth >= 1024) {
+		syncChainScrollListener = () => {
+			if (!enableChainScroll) {
 				active = null;
 				removeTouchListeners();
 				return;
@@ -121,11 +123,15 @@ export function setupChainScrollListener() {
 		};
 
 		syncChainScrollListener();
-		window.addEventListener('resize', syncChainScrollListener);
 
 		return () => {
-			window.removeEventListener('resize', syncChainScrollListener);
 			removeTouchListeners();
+			syncChainScrollListener = () => {};
 		};
 	});
+
+	return (nextEnableChainScroll: boolean) => {
+		enableChainScroll = nextEnableChainScroll;
+		syncChainScrollListener();
+	};
 }

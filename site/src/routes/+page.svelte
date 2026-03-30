@@ -29,7 +29,10 @@ Copyright (C) 2026 Andrew Cupps
 	} from '@jupiterp/jupiterp';
 	import type { ScheduleSelection, StoredSchedule } from '../types';
 	import { setupChainScrollListener } from '$lib/course-planner/chainScroll';
-	import { setupisDesktopCheckListener } from '$lib/course-planner/isDesktopCheck';
+	import IsDesktop from '../components/course-planner/IsDesktop.svelte';
+
+	let isDesktop: boolean = false;
+	const syncChainScrollListener = setupChainScrollListener();
 
 	// Function to retrieve professor data; called in `onMount`.
 	async function fetchProfessorData() {
@@ -179,15 +182,15 @@ Copyright (C) 2026 Andrew Cupps
 		return JSON.stringify(finalSelections);
 	}
 
-	// set up isDesktopCheck for auto-scroll and chain-scroll functionality
-	setupisDesktopCheckListener();
-	setupChainScrollListener();
+	$: syncChainScrollListener(!isDesktop);
 </script>
+
+<IsDesktop bind:isDesktop />
 
 <div
 	id="planner-container"
 	class="custom-scrollbar fixed bottom-0 top-12 w-full flex-col overflow-y-auto overscroll-y-contain px-3 lg:grid lg:grid-cols-[22rem_1fr]"
 >
 	<Schedule />
-	<CourseSearch />
+	<CourseSearch {isDesktop} />
 </div>

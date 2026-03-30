@@ -23,6 +23,7 @@ Copyright (C) 2026 Andrew Cupps
 	export let courseCode: string;
 	export let section: Section;
 	export let course: CourseBasic;
+	export let isDesktop: boolean;
 
 	let hoveredSection: ScheduleSelection | null;
 	HoveredSectionStore.subscribe((store) => {
@@ -179,16 +180,8 @@ Copyright (C) 2026 Andrew Cupps
 	let profsHover: boolean = false;
 	let locationHover: boolean = false;
 
-	let isDesktop: boolean = true; // dynamic variable so don't use isDesktopCheck() directly in the template
-	let innerWidth: number;
-	$: if (innerWidth) {
-		isDesktop = innerWidth >= 1024;
-	}
-
 	const alertClasses: string = `fixed left-[50%] translate-x-[-50%] z-50 w-[40%] top-14 min-w-72 h-8 rounded-lg text-center text-white lg:hidden bg-orange shadow-lg content-center transition-opacity duration-500`;
 </script>
-
-<svelte:window bind:innerWidth />
 
 <!-- Ignoring a11y for mouseover because it's a non-essential feature -->
 <!-- svelte-ignore a11y-mouse-events-have-key-events -->
