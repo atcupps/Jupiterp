@@ -19,7 +19,6 @@ Copyright (C) 2026 Andrew Cupps
 	import type { Section, CourseBasic } from '@jupiterp/jupiterp';
 	import type { ScheduleSelection } from '../../../types';
 	import { noDifferences } from '$lib/course-planner/Schedule';
-	import { shouldEnableAutoScroll } from '$lib/course-planner/AutoScroll';
 
 	export let courseCode: string;
 	export let section: Section;
@@ -122,9 +121,6 @@ Copyright (C) 2026 Andrew Cupps
 							sectionCode: section.sectionCode
 						};
 			});
-			if (shouldEnableAutoScroll()) {
-				scrollToTopPlannerTop();
-			}
 		} else {
 			showRemoveAlert();
 			const index = selectionsList.findIndex((obj) => selectionEquals(obj));
@@ -183,7 +179,7 @@ Copyright (C) 2026 Andrew Cupps
 	let profsHover: boolean = false;
 	let locationHover: boolean = false;
 
-	let isDesktop: boolean = true;
+	let isDesktop: boolean = true; // dynamic variable so don't use isDesktopCheck() directly in the template
 	let innerWidth: number;
 	$: if (innerWidth) {
 		isDesktop = innerWidth >= 1024;
@@ -210,13 +206,15 @@ Copyright (C) 2026 Andrew Cupps
 	class:lg:hover:dark:bg-hoverDark={!profsHover && !locationHover}
 	title="{sectionAdded ? 'Remove course from' : 'Add course to'} schedule"
 >
-	<!-- Section code -->
-	<div
-		class="w-12 text-sm font-semibold
-                text-secCodesLight xl:w-14 xl:text-base dark:text-secCodesDark"
+	<!-- Section code (click to view) -->
+	<button
+		on:click={isDesktop ? null : scrollToTopPlannerTop}
+		class="w-12 text-sm font-semibold text-secCodesLight xl:w-14 xl:text-base dark:text-secCodesDark"
 	>
-		{section.sectionCode}
-	</div>
+		<div class="h-full align-top">
+			{section.sectionCode}
+		</div>
+	</button>
 
 	<!-- Section info -->
 	<div class="w-full">

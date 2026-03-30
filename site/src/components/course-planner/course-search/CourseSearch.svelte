@@ -24,7 +24,7 @@ Copyright (C) 2026 Andrew Cupps
 	import type { ScheduleSelection } from '../../../types';
 	import CourseFilters from './CourseFilters.svelte';
 	import SolarSystemLoader from './SolarSystemLoader.svelte';
-	import { shouldEnableAutoScroll } from '../../../lib/course-planner/AutoScroll';
+	import { isDesktopCheck } from '../../../lib/course-planner/isDesktopCheck';
 
 	const FILTER_SCROLL_COLLAPSE_THRESHOLD = 100;
 
@@ -177,7 +177,7 @@ Copyright (C) 2026 Andrew Cupps
 				type="text"
 				bind:value={searchInput}
 				on:focus={() => {
-					if (shouldEnableAutoScroll()) {
+					if (!isDesktopCheck()) {
 						scrollToBottomPlanner();
 					}
 				}}
@@ -194,7 +194,7 @@ Copyright (C) 2026 Andrew Cupps
 	</div>
 	<!-- Course search results & dept suggestions [min-height: 20rem - 7.25rem = 12.75rem]-->
 	<div
-		class="custom-scrollbar h-[calc(100svh-10.25rem)] min-h-[12.75rem] overflow-y-scroll px-1 lg:h-[100svh-3rem]"
+		class="chain-scroll-only custom-scrollbar h-[calc(100svh-10.25rem)] min-h-[12.75rem] overflow-y-scroll px-1 lg:h-[100svh-3rem]"
 		on:wheel={handleResultsScroll}
 	>
 		<!-- Department suggestions dropdown -->
