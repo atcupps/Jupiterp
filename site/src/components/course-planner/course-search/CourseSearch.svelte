@@ -142,29 +142,16 @@ Copyright (C) 2026 Andrew Cupps
 	onMount(() => {
 		plannerContainer = document.getElementById('planner-container');
 		searchElement = document.getElementById('course-search');
+		// Disable mobile default scroll for input
+		searchElement?.focus({ preventScroll: true });
 	});
 
 	function scrollToSearch() {
 		if (plannerContainer && searchElement) {
-			// Let mobile browsers run their native focus auto-scroll first.
-			window.setTimeout(() => {
-				if (!plannerContainer || !searchElement) {
-					return;
-				}
-
-				const targetTop = searchElement.offsetTop;
-				const targetBottom = targetTop + searchElement.offsetHeight;
-				const viewportTop = plannerContainer.scrollTop;
-				const viewportBottom = viewportTop + plannerContainer.clientHeight;
-				const isAlreadyVisible = targetTop >= viewportTop && targetBottom <= viewportBottom;
-
-				if (!isAlreadyVisible) {
-					plannerContainer.scrollTo({
-						top: targetTop,
-						behavior: 'smooth'
-					});
-				}
-			}, 120);
+			plannerContainer.scrollTo({
+				top: searchElement.offsetTop,
+				behavior: 'smooth'
+			});
 		}
 	}
 </script>
@@ -210,7 +197,7 @@ Copyright (C) 2026 Andrew Cupps
 	</div>
 	<!-- Course search results & dept suggestions [min-height: 20rem - 7.5rem = 12.75rem]-->
 	<div
-		class="chain-scroll-only custom-scrollbar h-[calc(100svh-10.5rem)] min-h-[12.75rem] overflow-y-scroll overscroll-y-contain px-1 lg:h-[100svh-3rem]"
+		class="chain-scroll-only custom-scrollbar h-[calc(100svh-10.5rem)] min-h-[12.75rem] overflow-y-scroll px-1 lg:h-[100svh-3rem]"
 		on:wheel={handleResultsScroll}
 	>
 		<!-- Department suggestions dropdown -->

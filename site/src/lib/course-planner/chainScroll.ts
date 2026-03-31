@@ -16,23 +16,16 @@ import { onMount } from 'svelte';
 const ParentSelector = '#planner-container';
 const CHAIN_SCROLL_SELECTOR = '.chain-scroll-only';
 const LISTENER_OPTIONS = { passive: true, capture: true } as const;
-const PARENT_SCROLL_SMOOTHING = 0.6;
-const MIN_SCROLL_DELTA = 0.5;
-const MIN_PENDING_DELTA = 0.2;
 
-function getConsumedDelta(element: HTMLElement, deltaY: number): number {
+function getUnconsumedDelta(element: HTMLElement, deltaY: number): number {
 	const maxScrollTop = element.scrollHeight - element.clientHeight;
 	if (maxScrollTop <= 0) {
-		return 0;
+		return deltaY;
 	}
 
 	const start = element.scrollTop;
 	const clampedEnd = Math.min(maxScrollTop, Math.max(0, start + deltaY));
-	return clampedEnd - start;
-}
-
-function getUnconsumedDelta(element: HTMLElement, deltaY: number): number {
-	const consumedByElement = getConsumedDelta(element, deltaY);
+	const consumedByElement = clampedEnd - start;
 	return deltaY - consumedByElement;
 }
 
@@ -51,8 +44,6 @@ export function setupChainScrollListener() {
 		let active: HTMLElement | null = null;
 		let previousTouchY = 0;
 		let attached = false;
-		let pendingParentDelta = 0;
-		let parentAnimationFrame: number | null = null;
 
 		const parent = document.querySelector(ParentSelector) as HTMLElement | null;
 		if (!parent) {
@@ -62,53 +53,9 @@ export function setupChainScrollListener() {
 			return;
 		}
 
-		const stopParentAnimation = () => {
-			pendingParentDelta = 0;
-			if (parentAnimationFrame !== null) {
-				window.cancelAnimationFrame(parentAnimationFrame);
-				parentAnimationFrame = null;
-			}
-		};
-
-		const runParentScrollFrame = () => {
-			parentAnimationFrame = null;
-
-			if (Math.abs(pendingParentDelta) < MIN_PENDING_DELTA) {
-				pendingParentDelta = 0;
-				return;
-			}
-
-			const frameDelta = pendingParentDelta * PARENT_SCROLL_SMOOTHING;
-			const consumedByParent = getConsumedDelta(parent, frameDelta);
-
-			if (Math.abs(consumedByParent) < MIN_PENDING_DELTA) {
-				pendingParentDelta = 0;
-				return;
-			}
-
-			parent.scrollTop += consumedByParent;
-			pendingParentDelta -= consumedByParent;
-
-			if (Math.abs(pendingParentDelta) >= MIN_PENDING_DELTA) {
-				parentAnimationFrame = window.requestAnimationFrame(runParentScrollFrame);
-			}
-		};
-
-		const queueParentScroll = (deltaY: number) => {
-			if (Math.abs(deltaY) < MIN_SCROLL_DELTA) {
-				return;
-			}
-
-			pendingParentDelta += deltaY;
-			if (parentAnimationFrame === null) {
-				parentAnimationFrame = window.requestAnimationFrame(runParentScrollFrame);
-			}
-		};
-
 		const handleTouchStart = (event: TouchEvent) => {
 			if (!enableChainScroll) {
 				active = null;
-				stopParentAnimation();
 				return;
 			}
 
@@ -132,13 +79,29 @@ export function setupChainScrollListener() {
 			previousTouchY = currentTouchY;
 
 			const unconsumedDelta = getUnconsumedDelta(active, deltaY);
-			if (Math.abs(unconsumedDelta) > MIN_SCROLL_DELTA) {
-				queueParentScroll(unconsumedDelta);
+			if (Math.abs(unconsumedDelta) > 0.5) {
+				parent.scrollTop += unconsumedDelta;
 			}
 		};
 
 		const handleTouchEnd = () => {
 			active = null;
+		};
+
+		const handleWheel = (event: WheelEvent) => {
+			if (!enableChainScroll) {
+				return;
+			}
+
+			const target = chainScrollTarget(event.target);
+			if (!target) {
+				return;
+			}
+
+			const unconsumedDelta = getUnconsumedDelta(target, event.deltaY);
+			if (Math.abs(unconsumedDelta) > 0.5) {
+				parent.scrollTop += unconsumedDelta;
+			}
 		};
 
 		const addTouchListeners = () => {
@@ -150,6 +113,7 @@ export function setupChainScrollListener() {
 			parent.addEventListener('touchmove', handleTouchMove, LISTENER_OPTIONS);
 			parent.addEventListener('touchend', handleTouchEnd, LISTENER_OPTIONS);
 			parent.addEventListener('touchcancel', handleTouchEnd, LISTENER_OPTIONS);
+			parent.addEventListener('wheel', handleWheel, LISTENER_OPTIONS);
 			attached = true;
 		};
 
@@ -162,13 +126,13 @@ export function setupChainScrollListener() {
 			parent.removeEventListener('touchmove', handleTouchMove, { capture: true });
 			parent.removeEventListener('touchend', handleTouchEnd, { capture: true });
 			parent.removeEventListener('touchcancel', handleTouchEnd, { capture: true });
+			parent.removeEventListener('wheel', handleWheel, { capture: true });
 			attached = false;
 		};
 
 		syncChainScrollListener = () => {
 			if (!enableChainScroll) {
 				active = null;
-				stopParentAnimation();
 				removeTouchListeners();
 				return;
 			}
@@ -179,7 +143,6 @@ export function setupChainScrollListener() {
 		syncChainScrollListener();
 
 		return () => {
-			stopParentAnimation();
 			removeTouchListeners();
 			syncChainScrollListener = () => {};
 		};

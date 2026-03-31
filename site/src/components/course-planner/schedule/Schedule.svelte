@@ -114,7 +114,7 @@ Copyright (C) 2026 Andrew Cupps
 <svelte:window bind:innerWidth />
 
 <div
-	class="chain-scroll-only custom-scrollbar -pl-3 relative order-1 flex h-[calc(100svh-11rem)] min-h-80 w-full flex-row overflow-auto overscroll-y-contain text-center text-lg font-medium text-black lg:order-2 lg:mr-1 lg:h-[calc(100svh-3rem)] dark:text-white"
+	class="chain-scroll-only custom-scrollbar -pl-3 relative order-1 flex h-[calc(100svh-11rem)] min-h-80 w-full flex-row overflow-auto text-center text-lg font-medium text-black lg:order-2 lg:mr-1 lg:h-[calc(100svh-3rem)] dark:text-white"
 	bind:clientHeight={scheduleContainerHeight}
 >
 	<div
@@ -200,9 +200,7 @@ Copyright (C) 2026 Andrew Cupps
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					viewBox="0 0 384 512"
-					class="absolute left-[50%] top-[50%] h-5 w-5
-                    fill-black stroke-black 2xl:h-6 2xl:w-6
-                    dark:fill-white dark:stroke-white"
+					class="absolute left-[50%] top-[50%] h-5 w-5 fill-black stroke-black 2xl:h-6 2xl:w-6 dark:fill-white dark:stroke-white"
 					style="transform: translateX(-50%) translateY(-50%);"
 				>
 					<!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path
@@ -219,10 +217,7 @@ Copyright (C) 2026 Andrew Cupps
 				<span class="font-normal">
 					- {courseInfoCourse.name}
 				</span>
-				<span
-					class="mx-1 text-base font-normal text-orange
-                                    underline 2xl:text-lg"
-				>
+				<span class="mx-1 text-base font-normal text-orange underline 2xl:text-lg">
 					<a href={testudoLink(courseInfoCourse.courseCode)} target="_blank"> (view on Testudo) </a>
 				</span>
 			</div>

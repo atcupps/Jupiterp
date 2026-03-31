@@ -8,6 +8,10 @@ body {
 }
 
 @layer utilities {
+    .chain-scroll-only {
+        @apply max-lg:overscroll-none;
+    }
+
     /* Please apply "custom-scrollbar" class for scrollable elements 
     (elements with class of overflow-scroll or overflow-auto) */
     .custom-scrollbar {

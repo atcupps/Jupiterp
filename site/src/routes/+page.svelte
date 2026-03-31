@@ -189,7 +189,7 @@ Copyright (C) 2026 Andrew Cupps
 
 <div
 	id="planner-container"
-	class="custom-scrollbar fixed bottom-0 top-12 w-full flex-col overflow-y-auto overscroll-y-contain px-3 lg:grid lg:grid-cols-[22rem_1fr]"
+	class="custom-scrollbar fixed bottom-0 top-12 w-full flex-col overflow-y-auto px-3 lg:grid lg:grid-cols-[22rem_1fr]"
 >
 	<Schedule />
 	<CourseSearch {isDesktop} />
