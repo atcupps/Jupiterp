@@ -28,6 +28,8 @@ Copyright (C) 2026 Andrew Cupps
 	export let isDesktop: boolean;
 
 	const FILTER_SCROLL_COLLAPSE_THRESHOLD = 100;
+	const MOBILE_FOCUS_SCROLL_DELAY_MS = 120;
+	const MOBILE_FOCUS_TOP_THRESHOLD_PX = 48;
 
 	let hoveredSection: ScheduleSelection | null;
 	HoveredSectionStore.subscribe((hovered) => {
@@ -139,16 +141,54 @@ Copyright (C) 2026 Andrew Cupps
 	// Auto-scroll for non desktop screens: scroll down to search
 	let plannerContainer: HTMLElement | null = null;
 	let searchElement: HTMLElement | null = null;
+	let pendingMobileFocusScroll: ReturnType<typeof setTimeout> | null = null;
 	onMount(() => {
 		plannerContainer = document.getElementById('planner-container');
 		searchElement = document.getElementById('course-search');
 		// Disable mobile default scroll for input
 		searchElement?.focus({ preventScroll: true });
+
+		return () => {
+			if (pendingMobileFocusScroll) {
+				clearTimeout(pendingMobileFocusScroll);
+				pendingMobileFocusScroll = null;
+			}
+		};
 	});
+
+	function isSearchNearTopInContainer(container: HTMLElement, search: HTMLElement) {
+		const containerRect = container.getBoundingClientRect();
+		const searchRect = search.getBoundingClientRect();
+
+		const intersectionTop = Math.max(searchRect.top, containerRect.top);
+		const intersectionBottom = Math.min(searchRect.bottom, containerRect.bottom);
+		const intersectionHeight = Math.max(0, intersectionBottom - intersectionTop);
+		const requiredIntersection = Math.min(searchRect.height, containerRect.height) * 0.5;
+
+		const isIntersecting = intersectionHeight >= requiredIntersection;
+		const topOffset = searchRect.top - containerRect.top;
+		const isNearTop = topOffset >= 0 && topOffset <= MOBILE_FOCUS_TOP_THRESHOLD_PX;
+
+		return isIntersecting && isNearTop;
+	}
 
 	function scrollToSearch() {
 		if (plannerContainer && searchElement) {
-			searchElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+			if (pendingMobileFocusScroll) {
+				clearTimeout(pendingMobileFocusScroll);
+			}
+
+			pendingMobileFocusScroll = setTimeout(() => {
+				if (!plannerContainer || !searchElement) {
+					return;
+				}
+
+				if (!isSearchNearTopInContainer(plannerContainer, searchElement)) {
+					searchElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+				}
+
+				pendingMobileFocusScroll = null;
+			}, MOBILE_FOCUS_SCROLL_DELAY_MS);
 		}
 	}
 </script>
