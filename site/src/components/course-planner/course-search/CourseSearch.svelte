@@ -28,8 +28,6 @@ Copyright (C) 2026 Andrew Cupps
 	export let isDesktop: boolean;
 
 	const FILTER_SCROLL_COLLAPSE_THRESHOLD = 100;
-	const MOBILE_FOCUS_SCROLL_DELAY_MS = 120;
-	const MOBILE_FOCUS_TOP_THRESHOLD_PX = 48;
 
 	let hoveredSection: ScheduleSelection | null;
 	HoveredSectionStore.subscribe((hovered) => {
@@ -141,65 +139,26 @@ Copyright (C) 2026 Andrew Cupps
 	// Auto-scroll for non desktop screens: scroll down to search
 	let plannerContainer: HTMLElement | null = null;
 	let searchElement: HTMLElement | null = null;
-	let pendingMobileFocusScroll: ReturnType<typeof setTimeout> | null = null;
 	onMount(() => {
 		plannerContainer = document.getElementById('planner-container');
 		searchElement = document.getElementById('course-search');
 		// Disable mobile default scroll for input
 		searchElement?.focus({ preventScroll: true });
-
-		return () => {
-			if (pendingMobileFocusScroll) {
-				clearTimeout(pendingMobileFocusScroll);
-				pendingMobileFocusScroll = null;
-			}
-		};
 	});
-
-	function isSearchNearTopInContainer(container: HTMLElement, search: HTMLElement) {
-		const containerRect = container.getBoundingClientRect();
-		const searchRect = search.getBoundingClientRect();
-
-		const intersectionTop = Math.max(searchRect.top, containerRect.top);
-		const intersectionBottom = Math.min(searchRect.bottom, containerRect.bottom);
-		const intersectionHeight = Math.max(0, intersectionBottom - intersectionTop);
-		const requiredIntersection = Math.min(searchRect.height, containerRect.height) * 0.5;
-
-		const isIntersecting = intersectionHeight >= requiredIntersection;
-		const topOffset = searchRect.top - containerRect.top;
-		const isNearTop = topOffset >= 0 && topOffset <= MOBILE_FOCUS_TOP_THRESHOLD_PX;
-
-		return isIntersecting && isNearTop;
-	}
 
 	function scrollToSearch() {
 		if (plannerContainer && searchElement) {
-			if (pendingMobileFocusScroll) {
-				clearTimeout(pendingMobileFocusScroll);
-			}
-
-			pendingMobileFocusScroll = setTimeout(() => {
-				if (!plannerContainer || !searchElement) {
-					return;
-				}
-
-				if (!isSearchNearTopInContainer(plannerContainer, searchElement)) {
-					searchElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-				}
-
-				pendingMobileFocusScroll = null;
-			}, MOBILE_FOCUS_SCROLL_DELAY_MS);
+			searchElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
 		}
 	}
 </script>
 
 <!-- Course Search -->
 <div
-	id="course-search"
 	class="order-2 min-h-80 w-full flex-col border-solid border-divBorderLight bg-bgLight lg:order-1 dark:border-divBorderDark dark:bg-bgDark"
 >
 	<!-- Course search input and filters [height of 7.5rem] -->
-	<div class="px-1 pt-1">
+	<div id="course-search" class="px-1 pt-1">
 		<div class="ml-1 flex flex-row pb-1 text-xs 2xl:text-sm">
 			<div>Fall 2026</div>
 			<div class="grow text-right">
