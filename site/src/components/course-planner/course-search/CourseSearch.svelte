@@ -148,10 +148,7 @@ Copyright (C) 2026 Andrew Cupps
 
 	function scrollToSearch() {
 		if (plannerContainer && searchElement) {
-			plannerContainer.scrollTo({
-				top: searchElement.offsetTop,
-				behavior: 'smooth'
-			});
+			searchElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
 		}
 	}
 </script>
