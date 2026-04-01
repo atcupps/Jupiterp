@@ -106,6 +106,17 @@ Copyright (C) 2026 Andrew Cupps
 
 	// function to add user event from UserEventModal
 	function addUserEvent(event: UserEvent) {
+		const usedColors = [
+			...selections.map((s) => s.colorNumber),
+			...userEvents.map((e) => e.colorNumber)
+		].sort((a, b) => a - b);
+		let color = 0;
+		for (const c of usedColors) {
+			if (c === color) color++;
+			else break;
+		}
+		event.colorNumber = color;
+		
 		UserEventsStore.update((events) => [...events, event]);
 	}
 
