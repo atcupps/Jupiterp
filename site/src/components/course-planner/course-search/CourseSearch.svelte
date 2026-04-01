@@ -17,11 +17,12 @@ Copyright (C) 2026 Andrew Cupps
 		HoveredSectionStore,
 		CurrentScheduleStore,
 		SearchResultsStore,
-		DeptSuggestionsStore
+		DeptSuggestionsStore,
+		UserEventsStore
 	} from '../../../stores/CoursePlannerStores';
 	import ScheduleSelector from './ScheduleSelector.svelte';
 	import type { Course } from '@jupiterp/jupiterp';
-	import type { ScheduleSelection } from '../../../types';
+	import type { ScheduleSelection, UserEvent } from '../../../types';
 	import CourseFilters from './CourseFilters.svelte';
 	import SolarSystemLoader from './SolarSystemLoader.svelte';
 	import UserEventModal from './UserEventModal.svelte';
@@ -36,6 +37,12 @@ Copyright (C) 2026 Andrew Cupps
 	let selections: ScheduleSelection[] = [];
 	CurrentScheduleStore.subscribe((stored) => {
 		selections = stored.selections;
+	});
+
+	// subscribe to user events store
+	let userEvents: UserEvent[] = [];
+	UserEventsStore.subscribe((stored) => {
+		userEvents = stored;
 	});
 
 	// Variable and function for handling course search input
@@ -95,6 +102,13 @@ Copyright (C) 2026 Andrew Cupps
 				selectDepartment(deptSuggestions[highlightedSuggestionIndex]);
 			}
 		}
+	}
+
+	// function to add user event from UserEventModal
+	function addUserEvent(event: UserEvent) {
+		UserEventsStore.update((events) => {
+			return [...events, event];
+		});
 	}
 
 	$: if (searchInput.length <= 1 || deptSuggestions.length <= 1) {
@@ -283,7 +297,7 @@ Copyright (C) 2026 Andrew Cupps
 {#if showCustomEventModal}
 	<UserEventModal 
 		onClose={() => showCustomEventModal = false} 
-		onSubmit={(event) => {console.log('event: ', event)}}
+		onSubmit={(event) => addUserEvent(event)}
 	/>
 {/if}
 

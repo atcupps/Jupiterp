@@ -19,7 +19,10 @@ Copyright (C) 2026 Andrew Cupps
 		ProfsLookupStore,
 		CurrentScheduleStore,
 		NonselectedScheduleStore,
-		DepartmentsStore
+		DepartmentsStore,
+
+		UserEventsStore
+
 	} from '../stores/CoursePlannerStores';
 	import { client } from '$lib/client';
 	import {
@@ -27,7 +30,7 @@ Copyright (C) 2026 Andrew Cupps
 		type InstructorsConfig,
 		type InstructorsResponse
 	} from '@jupiterp/jupiterp';
-	import type { ScheduleSelection, StoredSchedule } from '../../types';
+	import type { ScheduleSelection, StoredSchedule, UserEvent } from '../../types';
 
 	// Function to retreive professor data; called in `onMount`.
 	async function fetchProfessorData() {
@@ -109,6 +112,18 @@ Copyright (C) 2026 Andrew Cupps
 		}
 	});
 
+
+	UserEventsStore.subscribe((stored) => {
+		if (hasReadLocalStorage) {
+			// Save to local storage
+			if (stored) {
+				if (typeof window !== 'undefined') {
+					localStorage.setItem('userEvents', JSON.stringify(stored));
+				}
+			}
+		}
+	});
+
 	onMount(() => {
 		// Fetch instructor data from API
 		fetchProfessorData();
@@ -154,6 +169,12 @@ Copyright (C) 2026 Andrew Cupps
 				// Find differences between stored selections and
 				// most up-to-date course data, and update accordingly.
 				ensureUpToDateAndSetStores(currentSchedule, storedNonselectedSchedules);
+				
+				const storedUserEventsOption = localStorage.getItem('userEvents');
+				if (storedUserEventsOption) {
+					const storedUserEvents = JSON.parse(storedUserEventsOption);
+					UserEventsStore.set(storedUserEvents);
+				}
 
 				hasReadLocalStorage = true;
 			}
@@ -164,6 +185,7 @@ Copyright (C) 2026 Andrew Cupps
 				selections: []
 			});
 			NonselectedScheduleStore.set([]);
+			UserEventsStore.set([]);
 		}
 	});
 
