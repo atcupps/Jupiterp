@@ -139,15 +139,63 @@ Copyright (C) 2026 Andrew Cupps
 	// Auto-scroll for non desktop screens: scroll down to search
 	let plannerContainer: HTMLElement | null = null;
 	let searchElement: HTMLElement | null = null;
+	let isMobileSite = false;
+	type NavigatorWithUAData = Navigator & {
+		userAgentData?: {
+			getHighEntropyValues?: (hints: string[]) => Promise<{ platform?: string }>;
+		};
+	};
+
+	async function getDevicePlatform() {
+		const nav = navigator as NavigatorWithUAData;
+		if (nav.userAgentData?.getHighEntropyValues) {
+			try {
+				const ua = await nav.userAgentData.getHighEntropyValues(['platform']);
+				if (ua.platform) {
+					return ua.platform;
+				}
+			} catch {
+				// Fall through to legacy platform detection.
+			}
+		}
+
+		return navigator.platform;
+	}
+
+	async function isPhoneOrTabletDevice() {
+		const userAgent = navigator.userAgent || '';
+		const mobileUserAgent =
+			/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile/i.test(userAgent);
+		const platform = await getDevicePlatform();
+		const isIPadDesktopMode = platform === 'MacIntel' && navigator.maxTouchPoints > 1;
+
+		return mobileUserAgent || isIPadDesktopMode;
+	}
+
 	onMount(() => {
 		plannerContainer = document.getElementById('planner-container');
 		searchElement = document.getElementById('course-search');
+
+		void (async () => {
+			isMobileSite = await isPhoneOrTabletDevice();
+		})();
+
 		// Disable mobile default scroll for input
 		searchElement?.focus({ preventScroll: true });
 	});
 
 	function scrollToSearch() {
 		if (plannerContainer && searchElement) {
+			if (isMobileSite && window.visualViewport) {
+				const visualViewportTop = window.visualViewport.offsetTop;
+				const searchElementTop = searchElement.getBoundingClientRect().top + window.scrollY;
+				window.scrollTo({
+					top: Math.max(0, searchElementTop - visualViewportTop),
+					behavior: 'smooth'
+				});
+				return;
+			}
+
 			searchElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
 		}
 	}
