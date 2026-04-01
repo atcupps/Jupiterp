@@ -18,12 +18,13 @@ Copyright (C) 2026 Andrew Cupps
 	import {
 		HoveredSectionStore,
 		CurrentScheduleStore,
-		CourseInfoPairStore
+		CourseInfoPairStore,
+		UserEventsStore
 	} from '../../../stores/CoursePlannerStores';
 	import MeetingListing from '../course-search/MeetingListing.svelte';
 	import SeatData from '../course-search/SeatData.svelte';
 	import CourseCondition from '../course-search/CourseCondition.svelte';
-	import type { Schedule, ScheduleSelection } from '../../../types';
+	import type { Schedule, ScheduleSelection, UserEvent } from '../../../types';
 	import type { CourseBasic, Section } from '@jupiterp/jupiterp';
 
 	let hoveredSection: ScheduleSelection | null = null;
@@ -40,6 +41,12 @@ Copyright (C) 2026 Andrew Cupps
 		selections = stored.selections;
 		schedule = schedulify(appendHoveredSection(selections, hoveredSection));
 	});
+
+	let userEvents: UserEvent[] = [];
+	UserEventsStore.subscribe((stored) => {
+		userEvents = stored;
+	});
+
 
 	let bgHeight: number;
 
@@ -147,6 +154,7 @@ Copyright (C) 2026 Andrew Cupps
 		<ScheduleDay
 			name="Mon"
 			classes={schedule.monday}
+			userEvents={userEvents.filter((e) => e.days.includes('M'))}
 			bind:earliestClassStart
 			bind:latestClassEnd
 			bind:bgHeight
@@ -154,6 +162,7 @@ Copyright (C) 2026 Andrew Cupps
 		<ScheduleDay
 			name="Tue"
 			classes={schedule.tuesday}
+			userEvents={userEvents.filter((e) => e.days.includes('Tu'))}
 			bind:earliestClassStart
 			bind:latestClassEnd
 			bind:bgHeight
@@ -161,6 +170,7 @@ Copyright (C) 2026 Andrew Cupps
 		<ScheduleDay
 			name="Wed"
 			classes={schedule.wednesday}
+			userEvents={userEvents.filter((e) => e.days.includes('W'))}
 			bind:earliestClassStart
 			bind:latestClassEnd
 			bind:bgHeight
@@ -168,6 +178,7 @@ Copyright (C) 2026 Andrew Cupps
 		<ScheduleDay
 			name="Thu"
 			classes={schedule.thursday}
+			userEvents={userEvents.filter((e) => e.days.includes('Th'))}
 			bind:earliestClassStart
 			bind:latestClassEnd
 			bind:bgHeight
@@ -175,6 +186,7 @@ Copyright (C) 2026 Andrew Cupps
 		<ScheduleDay
 			name="Fri"
 			classes={schedule.friday}
+			userEvents={userEvents.filter((e) => e.days.includes('F'))}
 			bind:earliestClassStart
 			bind:latestClassEnd
 			bind:bgHeight
