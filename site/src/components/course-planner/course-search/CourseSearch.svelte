@@ -159,7 +159,7 @@ Copyright (C) 2026 Andrew Cupps
                             w-[300px] flex-col border-r-2 border-solid border-divBorderLight
                             bg-bgLight py-1 pl-1
                             pr-2 transition-transform
-                            duration-300 lg:static lg:ml-1.5 lg:flex
+                            duration-300 flex lg:static lg:ml-1.5
                             lg:h-full lg:min-w-[260px] lg:bg-transparent lg:pl-0
                             lg:shadow-none xl:min-w-[320px] 2xl:min-w-[400px] 2xl:text-lg
                             dark:border-divBorderDark dark:bg-bgDark"
@@ -261,7 +261,7 @@ Copyright (C) 2026 Andrew Cupps
 	<!-- custom event adding -->
 	<div
 		class="mt-2 flex items-center justify-center rounded-lg
-				border border-outlineLight bg-bgLight mb-2 mr-2
+				border border-outlineLight bg-bgLight mb-2 mx-2
 				shadow-lg dark:border-outlineDark dark:bg-bgDark"
 	>
 		<button 
@@ -286,11 +286,7 @@ Copyright (C) 2026 Andrew Cupps
 			height: calc(100svh - 3rem);
 		}
 
-		.courses-list {
-			height: calc(100svh - 3rem - 2.54166667rem - 2px);
-		}
-
-		.course-search-transition {
+.course-search-transition {
 			transition-property: transform;
 			transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 			transition-duration: 150ms;
