@@ -24,6 +24,7 @@ Copyright (C) 2026 Andrew Cupps
 	import type { ScheduleSelection } from '../../../types';
 	import CourseFilters from './CourseFilters.svelte';
 	import SolarSystemLoader from './SolarSystemLoader.svelte';
+	import UserEventModal from './UserEventModal.svelte';
 
 	const FILTER_SCROLL_COLLAPSE_THRESHOLD = 100;
 
@@ -278,6 +279,13 @@ Copyright (C) 2026 Andrew Cupps
 
 
 </div>
+
+{#if showCustomEventModal}
+	<UserEventModal 
+		onClose={() => showCustomEventModal = false} 
+		onSubmit={(event) => {console.log('event: ', event)}}
+	/>
+{/if}
 
 
 <style>

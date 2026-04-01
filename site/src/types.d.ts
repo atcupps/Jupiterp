@@ -222,6 +222,17 @@ interface LegacyClasstime {
  */
 type TimeComponent = number | string;
 
+interface UserEvent {
+	id: string;
+	name: string;
+	days: string[];
+	startTime: number;
+	endTime: number;
+	location: string;
+	notes: string;
+	colorNumber: number;
+}
+
 export interface CourseSectionPair {
 	courseCode: string;
 	sectionCode: string;
