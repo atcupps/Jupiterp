@@ -61,10 +61,7 @@ Copyright (C) 2026 Andrew Cupps
 </script>
 
 <!-- Backdrop -->
-<button
-	class="fixed inset-0 z-[59] bg-black bg-opacity-40"
-	on:click={onClose}
-/>
+<button class="fixed inset-0 z-[59] bg-black bg-opacity-40" on:click={onClose} />
 
 <!-- Modal -->
 <div
@@ -90,7 +87,7 @@ Copyright (C) 2026 Andrew Cupps
 
 	<!-- Days -->
 	<div class="mb-2">
-		<label class="mb-0.5 block text-sm">Days</label>
+		<p class="mb-0.5 text-sm">Days</p>
 		<div class="flex gap-1.5">
 			{#each DAYS as day}
 				<button
@@ -159,7 +156,7 @@ Copyright (C) 2026 Andrew Cupps
 
 	<!-- Validation errors -->
 	{#if errors.length > 0}
-		<div class="mb-2 text-xs text-red-500">
+		<div class="text-red-500 mb-2 text-xs">
 			{#each errors as error}
 				<div>{error}</div>
 			{/each}
@@ -178,7 +175,7 @@ Copyright (C) 2026 Andrew Cupps
 		<button
 			type="button"
 			on:click={handleSubmit}
-			class="rounded bg-primary px-3 py-1.5 text-sm text-white hover:bg-primaryHover"
+			class="bg-primary hover:bg-primaryHover rounded px-3 py-1.5 text-sm text-white"
 		>
 			Add Event
 		</button>

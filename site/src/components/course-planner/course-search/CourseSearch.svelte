@@ -106,9 +106,7 @@ Copyright (C) 2026 Andrew Cupps
 
 	// function to add user event from UserEventModal
 	function addUserEvent(event: UserEvent) {
-		UserEventsStore.update((events) => {
-			return [...events, event];
-		});
+		UserEventsStore.update((events) => [...events, event]);
 	}
 
 	$: if (searchInput.length <= 1 || deptSuggestions.length <= 1) {
@@ -171,10 +169,10 @@ Copyright (C) 2026 Andrew Cupps
 <!-- Course Search -->
 <div
 	class="course-search visible fixed left-0 z-[52]
-                            w-[300px] flex-col border-r-2 border-solid border-divBorderLight
-                            bg-bgLight py-1 pl-1
-                            pr-2 transition-transform
-                            duration-300 flex lg:static lg:ml-1.5
+                            flex w-[300px] flex-col border-r-2 border-solid
+                            border-divBorderLight bg-bgLight py-1
+                            pl-1 pr-2
+                            transition-transform duration-300 lg:static lg:ml-1.5
                             lg:h-full lg:min-w-[260px] lg:bg-transparent lg:pl-0
                             lg:shadow-none xl:min-w-[320px] 2xl:min-w-[400px] 2xl:text-lg
                             dark:border-divBorderDark dark:bg-bgDark"
@@ -275,32 +273,28 @@ Copyright (C) 2026 Andrew Cupps
 
 	<!-- custom event adding -->
 	<div
-		class="mt-2 flex items-center justify-center rounded-lg
-				border border-outlineLight bg-bgLight mb-2 mx-2
+		class="mx-2 mb-2 mt-2 flex items-center
+				justify-center rounded-lg border border-outlineLight bg-bgLight
 				shadow-lg dark:border-outlineDark dark:bg-bgDark"
 	>
-		<button 
-		class="rounded bg-primary px-2 py-2 text-white hover:bg-primaryHover"
-		type="button" on:click={() => {
-			showCustomEventModal = true;
-		}}>
+		<button
+			class="bg-primary hover:bg-primaryHover rounded px-2 py-2 text-white"
+			type="button"
+			on:click={() => {
+				showCustomEventModal = true;
+			}}
+		>
 			Add custom event...
 		</button>
-
-
 	</div>
-
-
-
 </div>
 
 {#if showCustomEventModal}
-	<UserEventModal 
-		onClose={() => showCustomEventModal = false} 
+	<UserEventModal
+		onClose={() => (showCustomEventModal = false)}
 		onSubmit={(event) => addUserEvent(event)}
 	/>
 {/if}
-
 
 <style>
 	@media screen and (max-width: 1023px) {
@@ -308,7 +302,7 @@ Copyright (C) 2026 Andrew Cupps
 			height: calc(100svh - 3rem);
 		}
 
-.course-search-transition {
+		.course-search-transition {
 			transition-property: transform;
 			transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 			transition-duration: 150ms;

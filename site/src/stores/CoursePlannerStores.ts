@@ -7,7 +7,13 @@
 
 import type { Course, Department, Instructor } from '@jupiterp/jupiterp';
 import { writable, type Writable } from 'svelte/store';
-import type { CourseSectionPair, FilterParams, ScheduleSelection, StoredSchedule, UserEvent } from '../types';
+import type {
+	CourseSectionPair,
+	FilterParams,
+	ScheduleSelection,
+	StoredSchedule,
+	UserEvent
+} from '../types';
 
 /** `Record<string, Instructor>` for getting instructor data from names
 /* Initially set to an empty record since the data used here is

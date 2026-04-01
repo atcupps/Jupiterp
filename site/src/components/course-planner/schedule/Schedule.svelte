@@ -47,7 +47,6 @@ Copyright (C) 2026 Andrew Cupps
 		userEvents = stored;
 	});
 
-
 	let bgHeight: number;
 
 	// Keep track of the range of times to display on the Schedule
