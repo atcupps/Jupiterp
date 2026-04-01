@@ -14,7 +14,6 @@ Copyright (C) 2026 Andrew Cupps
 	export let latestClassEnd: number = 0;
 	export let bgHeight: number;
 	export let type: string = 'Day';
-	$: bgHeight;
 </script>
 
 <div class="z-10 flex h-full w-full flex-col px-1">
