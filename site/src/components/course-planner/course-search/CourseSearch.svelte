@@ -188,9 +188,12 @@ Copyright (C) 2026 Andrew Cupps
 		if (plannerContainer && searchElement) {
 			if (isMobileSite && window.visualViewport) {
 				const visualViewportTop = window.visualViewport.offsetTop;
-				const searchElementTop = searchElement.getBoundingClientRect().top + window.scrollY;
+				const visualViewportHeight = window.visualViewport.height;
+				const searchElementRect = searchElement.getBoundingClientRect();
+				const searchElementCenter =
+					searchElementRect.top + window.scrollY + searchElementRect.height / 2;
 				window.scrollTo({
-					top: Math.max(0, searchElementTop - visualViewportTop),
+					top: Math.max(0, searchElementCenter - visualViewportTop - visualViewportHeight / 2),
 					behavior: 'smooth'
 				});
 				return;
