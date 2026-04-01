@@ -91,6 +91,9 @@ Copyright (C) 2026 Andrew Cupps
 			{#if h - 24 * fontSize > 32 * fontSize && event.location}
 				<div class="truncate">{event.location}</div>
 			{/if}
+			{#if h - 24 * fontSize > 32 * fontSize && event.notes}
+				<div class="truncate">{event.notes}</div>
+			{/if}
 		</div>
 	{:else}
 		<div class="w-full text-wrap break-words rounded-t-lg font-sans text-base font-semibold">
