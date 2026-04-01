@@ -187,19 +187,25 @@ Copyright (C) 2026 Andrew Cupps
 	function scrollToSearch() {
 		if (plannerContainer && searchElement) {
 			if (isMobileSite && window.visualViewport) {
-				const visualViewportTop = window.visualViewport.offsetTop;
-				const visualViewportHeight = window.visualViewport.height;
-				const searchElementRect = searchElement.getBoundingClientRect();
-				const searchElementCenter =
-					searchElementRect.top + window.scrollY + searchElementRect.height / 2;
-				window.scrollTo({
-					top: Math.max(0, searchElementCenter - visualViewportTop - visualViewportHeight / 2),
-					behavior: 'smooth'
-				});
-				return;
+				// Correct layout viewport drift by resetting page scroll to the top.
+				if (window.scrollY > 1) {
+					window.scrollTo({
+						top: 0,
+						behavior: 'auto'
+					});
+				}
 			}
 
-			searchElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+			try {
+				searchElement.scrollIntoView({
+					behavior: 'smooth',
+					block: 'start',
+					inline: 'nearest',
+					container: 'nearest'
+				} as ScrollIntoViewOptions & { container: 'nearest' });
+			} catch {
+				searchElement.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
+			}
 		}
 	}
 </script>
