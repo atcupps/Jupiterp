@@ -63,6 +63,8 @@ Copyright (C) 2026 Andrew Cupps
 
 	let genEdMenuOpen = false;
 
+	let showCustomEventModal = false;
+
 	function selectDepartment(dept: string) {
 		searchInput = dept;
 		highlightedSuggestionIndex = -1;
@@ -255,7 +257,28 @@ Copyright (C) 2026 Andrew Cupps
 			</div>
 		{/if}
 	</div>
+
+	<!-- custom event adding -->
+	<div
+		class="mt-2 flex items-center justify-center rounded-lg
+				border border-outlineLight bg-bgLight mb-2 mr-2
+				shadow-lg dark:border-outlineDark dark:bg-bgDark"
+	>
+		<button 
+		class="rounded bg-primary px-2 py-2 text-white hover:bg-primaryHover"
+		type="button" on:click={() => {
+			showCustomEventModal = true;
+		}}>
+			Add custom event...
+		</button>
+
+
+	</div>
+
+
+
 </div>
+
 
 <style>
 	@media screen and (max-width: 1023px) {
