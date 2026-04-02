@@ -116,8 +116,21 @@ Copyright (C) 2026 Andrew Cupps
 			else break;
 		}
 		event.colorNumber = color;
-		
-		UserEventsStore.update((events) => [...events, event]);
+
+		const updatedCurrentSelections = [...selections];
+		CurrentScheduleStore.update((current) => {
+			return {
+				scheduleName: current.scheduleName,
+				selections: [...current.selections, event]
+			};
+		});
+
+		// CurrentScheduleStore.set({
+		// 	scheduleName: scheduleName,
+		// 	selections: updatedCurrentSelections
+		// });
+
+		// UserEventsStore.update((events) => [...events, event]);
 	}
 
 	$: if (searchInput.length <= 1 || deptSuggestions.length <= 1) {

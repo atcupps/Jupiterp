@@ -8,6 +8,7 @@
  */
 
 import type { ClassMeeting, CourseBasic, GenEd, Section } from '@jupiterp/jupiterp';
+import type { User } from '@sentry/sveltekit';
 
 /**
  * A section of a class selected by the user, along with metadata used for
@@ -58,7 +59,7 @@ interface SelectionDifferences {
  */
 interface StoredSchedule {
 	scheduleName: string;
-	selections: ScheduleSelection[];
+	selections: ScheduleBlock[];
 }
 
 /**
@@ -118,6 +119,15 @@ interface ClassMeetingExtended {
 	 * their schedule.
 	 */
 	differences: SelectionDifferences;
+
+	/**
+	 * Notes added by the user for this event block, which are displayed on the schedule.
+	 * 
+	 * This is only really used for user-created events (`UserEvent`) but is
+	 * included here so that this type can be used for both course and user events
+	 * to simplify rendering logic.
+	 */
+	notes?: string;
 }
 
 /**
@@ -232,6 +242,8 @@ interface UserEvent {
 	notes: string;
 	colorNumber: number;
 }
+
+type ScheduleBlock = UserEvent | ScheduleSelection;
 
 export interface CourseSectionPair {
 	courseCode: string;
