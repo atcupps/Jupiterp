@@ -154,6 +154,7 @@ Copyright (C) 2026 Andrew Cupps
 			await waitForScrollToFinish();
 			await tick();
 			searchInputReadonly = false;
+			await tick(); // Wait for the input to become editable before focusing
 			searchInputElement?.focus({ preventScroll: true });
 		}
 	}

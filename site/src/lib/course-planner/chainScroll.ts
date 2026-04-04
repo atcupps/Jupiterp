@@ -29,6 +29,16 @@ function getUnconsumedDelta(element: HTMLElement, deltaY: number): number {
 	return deltaY - consumedByElement;
 }
 
+function applyClampedScrollDelta(element: HTMLElement, deltaY: number) {
+	const maxScrollTop = element.scrollHeight - element.clientHeight;
+	if (maxScrollTop <= 0) {
+		return;
+	}
+
+	const clampedEnd = Math.min(maxScrollTop, Math.max(0, element.scrollTop + deltaY));
+	element.scrollTop = clampedEnd;
+}
+
 function chainScrollTarget(target: EventTarget | null): HTMLElement | null {
 	if (!(target instanceof Element)) {
 		return null;
@@ -80,7 +90,7 @@ export function setupChainScrollListener() {
 
 			const unconsumedDelta = getUnconsumedDelta(active, deltaY);
 			if (Math.abs(unconsumedDelta) > 0.5) {
-				parent.scrollTop += unconsumedDelta;
+				applyClampedScrollDelta(parent, unconsumedDelta);
 			}
 		};
 
@@ -100,7 +110,7 @@ export function setupChainScrollListener() {
 
 			const unconsumedDelta = getUnconsumedDelta(target, event.deltaY);
 			if (Math.abs(unconsumedDelta) > 0.5) {
-				parent.scrollTop += unconsumedDelta;
+				applyClampedScrollDelta(parent, unconsumedDelta);
 			}
 		};
 
