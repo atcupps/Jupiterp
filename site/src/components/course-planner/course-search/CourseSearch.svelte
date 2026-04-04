@@ -142,12 +142,25 @@ Copyright (C) 2026 Andrew Cupps
 		}
 	}
 
-	async function handleSearchFocus() {
+	function waitForScrollToFinish(delayMs = 250) {
+		return new Promise<void>((resolve) => {
+			setTimeout(() => resolve(), delayMs);
+		});
+	}
+
+	async function activateSearchInput() {
 		if (!isDesktop && searchInputReadonly) {
 			scrollToSearch();
-			searchInputReadonly = false;
+			await waitForScrollToFinish();
 			await tick();
-			searchInputElement?.focus();
+			searchInputReadonly = false;
+			searchInputElement?.focus({ preventScroll: true });
+		}
+	}
+
+	async function handleSearchFocus() {
+		if (!isDesktop && searchInputReadonly) {
+			await activateSearchInput();
 		}
 	}
 
@@ -163,16 +176,7 @@ Copyright (C) 2026 Andrew Cupps
 			return;
 		}
 
-		try {
-			searchElement.scrollIntoView({
-				behavior: 'smooth',
-				block: 'start',
-				inline: 'nearest',
-				container: 'nearest'
-			} as ScrollIntoViewOptions & { container: 'nearest' });
-		} catch {
-			searchElement.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
-		}
+		searchElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
 	}
 </script>
 
@@ -195,20 +199,39 @@ Copyright (C) 2026 Andrew Cupps
 			class="relative flex w-full flex-col border-b-2 border-t-2 border-solid border-divBorderLight dark:border-divBorderDark"
 		>
 			<!-- Course search box -->
-			<input
-				type="text"
-				bind:this={searchInputElement}
-				bind:value={searchInput}
-				readonly={searchInputReadonly}
-				on:focus={handleSearchFocus}
-				on:blur={handleSearchBlur}
-				on:input={() => {
-					setSearchResults(searchInput);
-				}}
-				on:keydown={handleSearchKeydown}
-				placeholder="Search course codes, ex: 'MATH140'"
-				class="w-full rounded-lg border-2 border-solid border-outlineLight bg-transparent px-2 py-0 text-xl placeholder:text-base lg:text-base lg:placeholder:text-sm dark:border-outlineDark"
-			/>
+			<div class="relative">
+				{#if !isDesktop && searchInputReadonly}
+					<div
+						class="absolute inset-0 z-10"
+						role="button"
+						tabindex="0"
+						aria-label="Activate course search"
+						on:click|preventDefault={() => {
+							void activateSearchInput();
+						}}
+						on:keydown={(event) => {
+							if (event.key === 'Enter' || event.key === ' ') {
+								event.preventDefault();
+								void activateSearchInput();
+							}
+						}}
+					></div>
+				{/if}
+				<input
+					type="text"
+					bind:this={searchInputElement}
+					bind:value={searchInput}
+					readonly={searchInputReadonly}
+					on:focus={handleSearchFocus}
+					on:blur={handleSearchBlur}
+					on:input={() => {
+						setSearchResults(searchInput);
+					}}
+					on:keydown={handleSearchKeydown}
+					placeholder="Search course codes, ex: 'MATH140'"
+					class="w-full rounded-lg border-2 border-solid border-outlineLight bg-transparent px-2 py-0 text-xl placeholder:text-base lg:text-base lg:placeholder:text-sm dark:border-outlineDark"
+				/>
+			</div>
 
 			<CourseFilters bind:showGenEdMenu={genEdMenuOpen} />
 		</div>
