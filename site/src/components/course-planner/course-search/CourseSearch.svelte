@@ -5,7 +5,7 @@ https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2026 Andrew Cupps
 -->
 <script lang="ts">
-	import { onMount } from 'svelte';
+	import { tick } from 'svelte';
 	import CourseListing from './CourseListing.svelte';
 	import {
 		deptCodeToName,
@@ -64,6 +64,12 @@ Copyright (C) 2026 Andrew Cupps
 	}
 
 	let genEdMenuOpen = false;
+	let searchInputElement: HTMLInputElement | null = null;
+	let searchInputReadonly = !isDesktop;
+
+	$: if (isDesktop) {
+		searchInputReadonly = false;
+	}
 
 	function selectDepartment(dept: string) {
 		searchInput = dept;
@@ -136,76 +142,36 @@ Copyright (C) 2026 Andrew Cupps
 		}
 	}
 
-	// Auto-scroll for non desktop screens: scroll down to search
-	let plannerContainer: HTMLElement | null = null;
-	let searchElement: HTMLElement | null = null;
-	let isMobileSite = false;
-	type NavigatorWithUAData = Navigator & {
-		userAgentData?: {
-			getHighEntropyValues?: (hints: string[]) => Promise<{ platform?: string }>;
-		};
-	};
-
-	async function getDevicePlatform() {
-		const nav = navigator as NavigatorWithUAData;
-		if (nav.userAgentData?.getHighEntropyValues) {
-			try {
-				const ua = await nav.userAgentData.getHighEntropyValues(['platform']);
-				if (ua.platform) {
-					return ua.platform;
-				}
-			} catch {
-				// Fall through to legacy platform detection.
-			}
+	async function handleSearchFocus() {
+		if (!isDesktop && searchInputReadonly) {
+			scrollToSearch();
+			searchInputReadonly = false;
+			await tick();
+			searchInputElement?.focus();
 		}
-
-		return navigator.platform;
 	}
 
-	async function isPhoneOrTabletDevice() {
-		const userAgent = navigator.userAgent || '';
-		const mobileUserAgent =
-			/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile/i.test(userAgent);
-		const platform = await getDevicePlatform();
-		const isIPadDesktopMode = platform === 'MacIntel' && navigator.maxTouchPoints > 1;
-
-		return mobileUserAgent || isIPadDesktopMode;
+	function handleSearchBlur() {
+		if (!isDesktop) {
+			searchInputReadonly = true;
+		}
 	}
-
-	onMount(() => {
-		plannerContainer = document.getElementById('planner-container');
-		searchElement = document.getElementById('course-search');
-
-		void (async () => {
-			isMobileSite = await isPhoneOrTabletDevice();
-		})();
-
-		// Disable mobile default scroll for input
-		searchElement?.focus({ preventScroll: true });
-	});
 
 	function scrollToSearch() {
-		if (plannerContainer && searchElement) {
-			if (isMobileSite && window.visualViewport) {
-				// Correct layout viewport drift by resetting page scroll to the top.
-				if (window.scrollY > 1) {
-					window.scrollTo({
-						top: 0,
-						behavior: 'auto'
-					});
-				}
-			}
+		const searchElement = document.getElementById('course-search');
+		if (!searchElement) {
+			return;
+		}
 
-			try {
-				searchElement.scrollIntoView({
-					behavior: 'smooth',
-					block: 'start',
-					inline: 'nearest',
-					container: 'nearest'
-				} as ScrollIntoViewOptions & { container: 'nearest' });
-			} catch {
-				searchElement.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
-			}
+		try {
+			searchElement.scrollIntoView({
+				behavior: 'smooth',
+				block: 'start',
+				inline: 'nearest',
+				container: 'nearest'
+			} as ScrollIntoViewOptions & { container: 'nearest' });
+		} catch {
+			searchElement.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
 		}
 	}
 </script>
@@ -231,12 +197,11 @@ Copyright (C) 2026 Andrew Cupps
 			<!-- Course search box -->
 			<input
 				type="text"
+				bind:this={searchInputElement}
 				bind:value={searchInput}
-				on:focus={() => {
-					if (!isDesktop) {
-						scrollToSearch();
-					}
-				}}
+				readonly={searchInputReadonly}
+				on:focus={handleSearchFocus}
+				on:blur={handleSearchBlur}
 				on:input={() => {
 					setSearchResults(searchInput);
 				}}
