@@ -30,15 +30,6 @@ Copyright (C) 2026 Andrew Cupps
 
 	let showMoreInfo: boolean = false;
 
-	let isSticky: boolean = false;
-
-	function updateSticky() {
-		isSticky = window.innerHeight > 480;
-	}
-
-	window.addEventListener('resize', updateSticky);
-	updateSticky();
-
 	function scrollToCourseTop(event: MouseEvent) {
 		const button = event.currentTarget as HTMLElement | null;
 		const container = button?.closest('[id^="results-"]') as HTMLElement | null;
@@ -50,50 +41,43 @@ Copyright (C) 2026 Andrew Cupps
 	id="results-{course.courseCode}"
 	class="my-2 flex scroll-mt-2 flex-col rounded-lg border-2 border-solid border-outlineLight bg-bgSecondaryLight px-2 dark:border-outlineDark dark:bg-bgSecondaryDark"
 >
-	<div
-		class="top-0 z-10 -mb-[2px] border-b-2 border-solid border-outlineLight bg-bgSecondaryLight px-2
-           dark:border-outlineDark dark:bg-bgSecondaryDark"
-		style="position: {isSticky ? 'sticky' : 'static'}"
+	<button
+		on:click={scrollToCourseTop}
+		class="top-0 z-10 -mb-[2px] border-b-2 border-solid border-outlineLight bg-bgSecondaryLight px-2 text-left dark:border-outlineDark dark:bg-bgSecondaryDark"
 	>
-		<button
-			on:click={scrollToCourseTop}
-			class="w-full text-left"
-			title="Scroll to top of course listing"
-		>
-			<!-- Course code and credit count -->
-			<div class="flex flex-row align-middle">
-				<div class="grow text-left align-middle">
-					<b>{course.courseCode}</b>
-				</div>
-				<div class="grow text-right align-middle text-sm 2xl:text-base">
-					Credits: {formatCredits(course.minCredits, course.maxCredits)}
-				</div>
+		<!-- Course code and credit count -->
+		<div class="flex flex-row align-middle">
+			<div class="grow text-left align-middle">
+				<b>{course.courseCode}</b>
 			</div>
-
-			<!-- Course title -->
-			<div class="wrap max-w-[254px] text-sm xl:max-w-[314px] 2xl:max-w-[394px] 2xl:text-base">
-				{course.name}
+			<div class="grow text-right align-middle text-sm 2xl:text-base">
+				Credits: {formatCredits(course.minCredits, course.maxCredits)}
 			</div>
+		</div>
 
-			{#if course.genEds != null && course.genEds.length > 0}
-				<div class="align-center my-1 flex w-full flex-row justify-start">
-					{#each course.genEds as genEd}
-						<!-- format-check exempt 5 -->
-						<a
-							class="mr-1 rounded-xl border border-orange
+		<!-- Course title -->
+		<div class="wrap max-w-[254px] text-sm xl:max-w-[314px] 2xl:max-w-[394px] 2xl:text-base">
+			{course.name}
+		</div>
+
+		{#if course.genEds != null && course.genEds.length > 0}
+			<div class="align-center my-1 flex w-full flex-row justify-start">
+				{#each course.genEds as genEd}
+					<!-- format-check exempt 5 -->
+					<a
+						class="mr-1 rounded-xl border border-orange
                             px-1 text-[0.625rem] font-bold leading-tight text-orange transition
                             hover:bg-orange hover:text-bgSecondaryLight
                             2xl:text-xs hover:dark:text-bgSecondaryDark"
-							href={`https://app.testudo.umd.edu/soc/gen-ed/202608/` + genEd.code}
-							target="_blank"
-							title={'GenEd: ' + genEd.name}
-						>
-							{genEd.code}
-						</a>
-					{/each}
-				</div>
-			{/if}
-		</button>
+						href={`https://app.testudo.umd.edu/soc/gen-ed/202608/` + genEd.code}
+						target="_blank"
+						title={'GenEd: ' + genEd.name}
+					>
+						{genEd.code}
+					</a>
+				{/each}
+			</div>
+		{/if}
 
 		<button
 			class="flex w-full flex-row content-center text-left text-sm text-secCodesLight hover:text-secCodesDark 2xl:text-base dark:text-[#8892a8]"
@@ -133,7 +117,7 @@ Copyright (C) 2026 Andrew Cupps
 				{/if}
 			</div>
 		{/if}
-	</div>
+	</button>
 	<!-- Sections -->
 	{#if course.sections != null && course.sections.length > 0}
 		{#each course.sections as section}
