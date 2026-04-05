@@ -65,6 +65,7 @@ Copyright (C) 2026 Andrew Cupps
 
 	let genEdMenuOpen = false;
 	let searchInputElement: HTMLInputElement | null = null;
+	let keyboardPrimeElement: HTMLInputElement | null = null;
 	let blockSearchInputPointer = !isDesktop;
 
 	$: if (isDesktop) {
@@ -148,13 +149,17 @@ Copyright (C) 2026 Andrew Cupps
 		});
 	}
 
+	function primeMobileKeyboard() {
+		keyboardPrimeElement?.focus({ preventScroll: true });
+	}
+
 	async function activateSearchInput() {
 		if (!isDesktop && blockSearchInputPointer) {
 			scrollToSearch();
+			primeMobileKeyboard();
 			await waitForScrollToFinish();
-			await tick();
 			blockSearchInputPointer = false;
-			await tick(); // Wait for the input to become editable before focusing
+			await tick();
 			searchInputElement?.focus({ preventScroll: true });
 		}
 	}
@@ -201,6 +206,16 @@ Copyright (C) 2026 Andrew Cupps
 		>
 			<!-- Course search box -->
 			<div class="relative">
+				<!-- Mobile keyboard prime input: used to make the mobile keyboard appear -->
+				<input
+					type="text"
+					id="mobile-keyboard-prime"
+					bind:this={keyboardPrimeElement}
+					tabindex="-1"
+					aria-hidden="true"
+					autocomplete="off"
+					class="pointer-events-none fixed left-0 top-0 h-0 w-0 opacity-0"
+				/>
 				{#if !isDesktop && blockSearchInputPointer}
 					<div
 						class="pointer-events-auto absolute inset-0 z-10"
@@ -220,6 +235,7 @@ Copyright (C) 2026 Andrew Cupps
 				{/if}
 				<input
 					type="text"
+					id="course-search-input"
 					bind:this={searchInputElement}
 					bind:value={searchInput}
 					on:focus={handleSearchFocus}
