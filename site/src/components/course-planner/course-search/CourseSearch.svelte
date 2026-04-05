@@ -65,10 +65,10 @@ Copyright (C) 2026 Andrew Cupps
 
 	let genEdMenuOpen = false;
 	let searchInputElement: HTMLInputElement | null = null;
-	let searchInputReadonly = !isDesktop;
+	let blockSearchInputPointer = !isDesktop;
 
 	$: if (isDesktop) {
-		searchInputReadonly = false;
+		blockSearchInputPointer = false;
 	}
 
 	function selectDepartment(dept: string) {
@@ -149,25 +149,25 @@ Copyright (C) 2026 Andrew Cupps
 	}
 
 	async function activateSearchInput() {
-		if (!isDesktop && searchInputReadonly) {
+		if (!isDesktop && blockSearchInputPointer) {
 			scrollToSearch();
 			await waitForScrollToFinish();
 			await tick();
-			searchInputReadonly = false;
+			blockSearchInputPointer = false;
 			await tick(); // Wait for the input to become editable before focusing
 			searchInputElement?.focus({ preventScroll: true });
 		}
 	}
 
 	async function handleSearchFocus() {
-		if (!isDesktop && searchInputReadonly) {
+		if (!isDesktop && blockSearchInputPointer) {
 			await activateSearchInput();
 		}
 	}
 
 	function handleSearchBlur() {
 		if (!isDesktop) {
-			searchInputReadonly = true;
+			blockSearchInputPointer = true;
 		}
 	}
 
@@ -201,9 +201,9 @@ Copyright (C) 2026 Andrew Cupps
 		>
 			<!-- Course search box -->
 			<div class="relative">
-				{#if !isDesktop && searchInputReadonly}
+				{#if !isDesktop && blockSearchInputPointer}
 					<div
-						class="absolute inset-0 z-10"
+						class="pointer-events-auto absolute inset-0 z-10"
 						role="button"
 						tabindex="0"
 						aria-label="Activate course search"
@@ -222,7 +222,6 @@ Copyright (C) 2026 Andrew Cupps
 					type="text"
 					bind:this={searchInputElement}
 					bind:value={searchInput}
-					readonly={searchInputReadonly}
 					on:focus={handleSearchFocus}
 					on:blur={handleSearchBlur}
 					on:input={() => {
@@ -231,6 +230,7 @@ Copyright (C) 2026 Andrew Cupps
 					on:keydown={handleSearchKeydown}
 					placeholder="Search course codes, ex: 'MATH140'"
 					class="w-full rounded-lg border-2 border-solid border-outlineLight bg-transparent px-2 py-0 text-xl placeholder:text-base lg:text-base lg:placeholder:text-sm dark:border-outlineDark"
+					style="pointer-events: {!isDesktop && blockSearchInputPointer ? 'none' : 'auto'}"
 				/>
 			</div>
 
