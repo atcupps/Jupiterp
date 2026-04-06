@@ -15,6 +15,7 @@ Copyright (C) 2026 Andrew Cupps
 		resolveStoredSchedules
 	} from '../lib/course-planner/CourseLoad';
 	import { getProfsLookup } from '$lib/course-planner/CourseSearch';
+	import { handlePlannerShortcutKeydown } from '../lib/course-planner/PlannerShortcuts';
 	import {
 		ProfsLookupStore,
 		CurrentScheduleStore,
@@ -28,7 +29,7 @@ Copyright (C) 2026 Andrew Cupps
 		type InstructorsResponse
 	} from '@jupiterp/jupiterp';
 	import type { ScheduleSelection, StoredSchedule } from '../types';
-	import { setupChainScrollListener } from '$lib/course-planner/chainScroll';
+	import { setupChainScrollListener } from '$lib/course-planner/ChainScroll';
 	import IsDesktop from '../components/course-planner/IsDesktop.svelte';
 
 	let isDesktop: boolean = false;
@@ -186,6 +187,8 @@ Copyright (C) 2026 Andrew Cupps
 </script>
 
 <IsDesktop bind:isDesktop />
+
+<svelte:window on:keydown={handlePlannerShortcutKeydown} />
 
 <div
 	id="planner-container"

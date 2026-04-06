@@ -5,7 +5,6 @@ https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2026 Andrew Cupps
 -->
 <script lang="ts">
-	import { tick } from 'svelte';
 	import CourseListing from './CourseListing.svelte';
 	import {
 		deptCodeToName,
@@ -24,6 +23,7 @@ Copyright (C) 2026 Andrew Cupps
 	import type { ScheduleSelection } from '../../../types';
 	import CourseFilters from './CourseFilters.svelte';
 	import SolarSystemLoader from './SolarSystemLoader.svelte';
+	import { createCourseSearchActivationController } from '../../../lib/course-planner/CourseSearchActivation';
 
 	export let isDesktop: boolean;
 
@@ -67,10 +67,31 @@ Copyright (C) 2026 Andrew Cupps
 	let searchInputElement: HTMLInputElement | null = null;
 	let keyboardPrimeElement: HTMLInputElement | null = null;
 	let blockSearchInputPointer = !isDesktop;
+	let searchActivationInProgress = false;
+	let suppressSearchBlurReset = false;
 
 	$: if (isDesktop) {
 		blockSearchInputPointer = false;
 	}
+
+	const searchActivation = createCourseSearchActivationController({
+		isDesktop: () => isDesktop,
+		blockSearchInputPointer: () => blockSearchInputPointer,
+		setBlockSearchInputPointer: (value: boolean) => {
+			blockSearchInputPointer = value;
+		},
+		searchActivationInProgress: () => searchActivationInProgress,
+		setSearchActivationInProgress: (value: boolean) => {
+			searchActivationInProgress = value;
+		},
+		suppressSearchBlurReset: () => suppressSearchBlurReset,
+		setSuppressSearchBlurReset: (value: boolean) => {
+			suppressSearchBlurReset = value;
+		},
+		searchInputElement: () => searchInputElement,
+		keyboardPrimeElement: () => keyboardPrimeElement,
+		scrollToSearch
+	});
 
 	function selectDepartment(dept: string) {
 		searchInput = dept;
@@ -143,39 +164,6 @@ Copyright (C) 2026 Andrew Cupps
 		}
 	}
 
-	function waitForScrollToFinish(delayMs = 250) {
-		return new Promise<void>((resolve) => {
-			setTimeout(() => resolve(), delayMs);
-		});
-	}
-
-	function primeMobileKeyboard() {
-		keyboardPrimeElement?.focus({ preventScroll: true });
-	}
-
-	async function activateSearchInput() {
-		if (!isDesktop && blockSearchInputPointer) {
-			scrollToSearch();
-			primeMobileKeyboard();
-			await waitForScrollToFinish();
-			blockSearchInputPointer = false;
-			await tick();
-			searchInputElement?.focus({ preventScroll: true });
-		}
-	}
-
-	async function handleSearchFocus() {
-		if (!isDesktop && blockSearchInputPointer) {
-			await activateSearchInput();
-		}
-	}
-
-	function handleSearchBlur() {
-		if (!isDesktop) {
-			blockSearchInputPointer = true;
-		}
-	}
-
 	function scrollToSearch() {
 		const searchElement = document.getElementById('course-search');
 		if (!searchElement) {
@@ -212,41 +200,22 @@ Copyright (C) 2026 Andrew Cupps
 					id="mobile-keyboard-prime"
 					bind:this={keyboardPrimeElement}
 					tabindex="-1"
-					aria-hidden="true"
 					autocomplete="off"
 					class="pointer-events-none fixed left-0 top-0 h-0 w-0 opacity-0"
 				/>
-				{#if !isDesktop && blockSearchInputPointer}
-					<div
-						class="pointer-events-auto absolute inset-0 z-10"
-						role="button"
-						tabindex="0"
-						aria-label="Activate course search"
-						on:click|preventDefault={() => {
-							void activateSearchInput();
-						}}
-						on:keydown={(event) => {
-							if (event.key === 'Enter' || event.key === ' ') {
-								event.preventDefault();
-								void activateSearchInput();
-							}
-						}}
-					></div>
-				{/if}
 				<input
 					type="text"
 					id="course-search-input"
 					bind:this={searchInputElement}
 					bind:value={searchInput}
-					on:focus={handleSearchFocus}
-					on:blur={handleSearchBlur}
+					on:focus={searchActivation.handleSearchFocus}
+					on:blur={searchActivation.handleSearchBlur}
 					on:input={() => {
 						setSearchResults(searchInput);
 					}}
 					on:keydown={handleSearchKeydown}
 					placeholder="Search course codes, ex: 'MATH140'"
 					class="w-full rounded-lg border-2 border-solid border-outlineLight bg-transparent px-2 py-0 text-xl placeholder:text-base lg:text-base lg:placeholder:text-sm dark:border-outlineDark"
-					style="pointer-events: {!isDesktop && blockSearchInputPointer ? 'none' : 'auto'}"
 				/>
 			</div>
 
