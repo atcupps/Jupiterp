@@ -39,11 +39,13 @@ Copyright (C) 2026 Andrew Cupps
 
 <div
 	id="results-{course.courseCode}"
+	data-planner-course-card
 	class="my-2 flex scroll-mt-2 flex-col rounded-lg border-2 border-solid border-outlineLight bg-bgSecondaryLight px-2 dark:border-outlineDark dark:bg-bgSecondaryDark"
 >
 	<button
-		on:focus={scrollToCourseTop}
-		class="top-0 z-10 -mb-[2px] border-b-2 border-solid border-outlineLight bg-bgSecondaryLight px-2 text-left dark:border-outlineDark dark:bg-bgSecondaryDark"
+		data-planner-course-header
+		on:click={scrollToCourseTop}
+		class="top-0 border-outlineLight bg-bgSecondaryLight px-2 text-left dark:border-outlineDark dark:bg-bgSecondaryDark"
 	>
 		<!-- Course code and credit count -->
 		<div class="flex flex-row align-middle">
