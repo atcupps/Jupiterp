@@ -29,11 +29,19 @@ Copyright (C) 2026 Andrew Cupps
 		type InstructorsResponse
 	} from '@jupiterp/jupiterp';
 	import type { ScheduleSelection, StoredSchedule } from '../types';
-	import { setupChainScrollListener } from '$lib/course-planner/ChainScroll';
 	import IsDesktop from '../components/course-planner/IsDesktop.svelte';
+	import { PlannerState } from '../stores/CoursePlannerStores';
 
 	let isDesktop: boolean = false;
-	const syncChainScrollListener = setupChainScrollListener();
+	let plannerContainer: HTMLDivElement | null = null;
+
+	$: PlannerState.update(
+		(state: { isDesktop: boolean; chainScrollParent: HTMLElement | null }) => ({
+			...state,
+			isDesktop,
+			chainScrollParent: plannerContainer
+		})
+	);
 
 	// Function to retrieve professor data; called in `onMount`.
 	async function fetchProfessorData() {
@@ -183,17 +191,20 @@ Copyright (C) 2026 Andrew Cupps
 		return JSON.stringify(finalSelections);
 	}
 
-	$: syncChainScrollListener(!isDesktop);
+	function handlePlannerKeydown(event: KeyboardEvent) {
+		handlePlannerShortcutKeydown(event, isDesktop);
+	}
 </script>
 
 <IsDesktop bind:isDesktop />
 
-<svelte:window on:keydown={handlePlannerShortcutKeydown} />
+<svelte:window on:keydown={handlePlannerKeydown} />
 
 <div
 	id="planner-container"
+	bind:this={plannerContainer}
 	class="custom-scrollbar fixed bottom-0 top-12 w-full flex-col overflow-y-auto px-3 lg:grid lg:grid-cols-[22rem_1fr]"
 >
 	<Schedule />
-	<CourseSearch {isDesktop} />
+	<CourseSearch />
 </div>

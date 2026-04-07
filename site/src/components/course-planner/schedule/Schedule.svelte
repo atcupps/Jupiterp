@@ -24,6 +24,16 @@ Copyright (C) 2026 Andrew Cupps
 	import CourseCondition from '../course-search/CourseCondition.svelte';
 	import type { Schedule, ScheduleSelection } from '../../../types';
 	import type { CourseBasic, Section } from '@jupiterp/jupiterp';
+	import { chainScroll } from '../../../lib/course-planner/ChainScroll';
+	import { PlannerState } from '../../../stores/CoursePlannerStores';
+
+	let plannerState: { isDesktop: boolean; chainScrollParent: HTMLElement | null } = {
+		isDesktop: false,
+		chainScrollParent: null
+	};
+	PlannerState.subscribe((state: { isDesktop: boolean; chainScrollParent: HTMLElement | null }) => {
+		plannerState = state;
+	});
 
 	let hoveredSection: ScheduleSelection | null = null;
 	let selections: ScheduleSelection[] = [];
@@ -108,13 +118,21 @@ Copyright (C) 2026 Andrew Cupps
 	let innerWidth: number;
 	let scheduleContainerHeight: number = 0;
 	let courseInfoPanelHeight: number = 0;
+	let scheduleElement: HTMLDivElement;
 	$: infoPanelAtTop = courseInfoPanelHeight > scheduleContainerHeight;
 </script>
 
 <svelte:window bind:innerWidth />
 
 <div
+	id="planner-schedule"
 	class="chain-scroll-only custom-scrollbar -pl-3 relative order-1 flex h-[calc(100svh-11rem)] min-h-80 w-full flex-row overflow-auto text-center text-lg font-medium text-black lg:order-2 lg:mr-1 lg:h-[calc(100svh-3rem)] dark:text-white"
+	bind:this={scheduleElement}
+	use:chainScroll={{
+		parent: plannerState.chainScrollParent,
+		enabled: !plannerState.isDesktop,
+		element: scheduleElement
+	}}
 	bind:clientHeight={scheduleContainerHeight}
 >
 	<div

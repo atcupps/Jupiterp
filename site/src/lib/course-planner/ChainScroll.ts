@@ -7,15 +7,41 @@
  * @fileoverview Mobile chain-scroll helper for scrollable planner elements.
  */
 
-import { onMount } from 'svelte';
-
 /**
- * Specifically for src/+page.svelte and its exclusive components found in
- * site/src/components/course-planner/course-search and site/src/components/course-planner/schedule
+ * This Svelte action enables "chain scrolling" without over-scrolling on mobile devices.
+ * @requirement
+ * - must have `overflow-y: auto` or `overflow-y: scroll` with `chain-scroll` applied to the scrollable element.
+ * - recommend importing "PlannerState" from "CoursePlannerStores" and passing `chainScrollParent` and `isDesktop` to the `use:action` parameters.
+ *
+ * @example for src/routes/+page.svelte
+ * ```svelte
+ * <script lang="ts">
+ *   import { chainScroll } from '../lib/course-planner/ChainScroll';
+ *   import { PlannerState } from '../stores/CoursePlannerStores';
+ *   let plannerState = { isDesktop: false, chainScrollParent: null };
+ *   PlannerState.subscribe((state) => {
+ *      plannerState = state;
+ *   });
+ * </script>
+ *
+ * <div use:chainScroll={{ parent: plannerState.chainScrollParent, enabled: plannerState.isDesktop }}>
+ *   <!-- scrollable content -->
+ * </div>
+ * ```
  */
-const ParentSelector = '#planner-container';
-const CHAIN_SCROLL_SELECTOR = '.chain-scroll-only';
-const LISTENER_OPTIONS = { passive: true, capture: true } as const;
+
+const LISTENER_OPTIONS = { passive: true } as const;
+
+export type ChainScrollProps = {
+	isDesktop: boolean;
+	chainScrollParent?: HTMLElement | null;
+};
+
+export type ChainScrollParams = {
+	parent: HTMLElement | null;
+	enabled: boolean;
+	element: HTMLElement;
+};
 
 function getUnconsumedDelta(element: HTMLElement, deltaY: number): number {
 	const maxScrollTop = element.scrollHeight - element.clientHeight;
@@ -39,127 +65,77 @@ function applyClampedScrollDelta(element: HTMLElement, deltaY: number) {
 	element.scrollTop = clampedEnd;
 }
 
-function chainScrollTarget(target: EventTarget | null): HTMLElement | null {
-	if (!(target instanceof Element)) {
-		return null;
+function isAtScrollBoundary(element: HTMLElement, deltaY: number): boolean {
+	const maxScrollTop = element.scrollHeight - element.clientHeight;
+	if (maxScrollTop <= 0) {
+		return true;
 	}
-	return target.closest<HTMLElement>(CHAIN_SCROLL_SELECTOR);
+
+	if (deltaY < 0 && element.scrollTop <= 0.5) {
+		return true;
+	}
+	if (deltaY > 0 && element.scrollTop >= maxScrollTop - 0.5) {
+		return true;
+	}
+	return false;
 }
 
-export function setupChainScrollListener() {
-	let enableChainScroll: boolean = true;
-	let syncChainScrollListener: () => void = () => {};
+export function chainScroll(node: HTMLElement, params: ChainScrollParams) {
+	let current = params;
+	let previousTouchY = 0;
 
-	onMount(() => {
-		let active: HTMLElement | null = null;
-		let previousTouchY = 0;
-		let attached = false;
-
-		const parent = document.querySelector(ParentSelector) as HTMLElement | null;
-		if (!parent) {
-			console.warn(
-				`Chain scroll listener could not find parent element with selector "${ParentSelector}".`
-			);
+	const applyToParent = (deltaY: number) => {
+		if (!current.enabled || !current.parent) {
 			return;
 		}
 
-		const handleTouchStart = (event: TouchEvent) => {
-			if (!enableChainScroll) {
-				active = null;
-				return;
-			}
+		if (!isAtScrollBoundary(current.element, deltaY)) {
+			return;
+		}
 
-			if (event.touches.length !== 1) {
-				active = null;
-				return;
-			}
-			active = chainScrollTarget(event.target);
-			if (active) {
-				previousTouchY = event.touches[0].clientY;
-			}
-		};
+		const unconsumedDelta = getUnconsumedDelta(current.element, deltaY);
+		if (Math.abs(unconsumedDelta) <= 0.5) {
+			return;
+		}
 
-		const handleTouchMove = (event: TouchEvent) => {
-			if (!enableChainScroll || !active || event.touches.length !== 1) {
-				return;
-			}
+		applyClampedScrollDelta(current.parent, unconsumedDelta);
+	};
 
-			const currentTouchY = event.touches[0].clientY;
-			const deltaY = previousTouchY - currentTouchY;
-			previousTouchY = currentTouchY;
+	const handleWheel = (event: WheelEvent) => {
+		applyToParent(event.deltaY);
+	};
 
-			const unconsumedDelta = getUnconsumedDelta(active, deltaY);
-			if (Math.abs(unconsumedDelta) > 0.5) {
-				applyClampedScrollDelta(parent, unconsumedDelta);
-			}
-		};
+	const handleTouchStart = (event: TouchEvent) => {
+		if (event.touches.length !== 1) {
+			return;
+		}
 
-		const handleTouchEnd = () => {
-			active = null;
-		};
+		previousTouchY = event.touches[0].clientY;
+	};
 
-		const handleWheel = (event: WheelEvent) => {
-			if (!enableChainScroll) {
-				return;
-			}
+	const handleTouchMove = (event: TouchEvent) => {
+		if (event.touches.length !== 1) {
+			return;
+		}
 
-			const target = chainScrollTarget(event.target);
-			if (!target) {
-				return;
-			}
+		const currentTouchY = event.touches[0].clientY;
+		const deltaY = previousTouchY - currentTouchY;
+		previousTouchY = currentTouchY;
+		applyToParent(deltaY);
+	};
 
-			const unconsumedDelta = getUnconsumedDelta(target, event.deltaY);
-			if (Math.abs(unconsumedDelta) > 0.5) {
-				applyClampedScrollDelta(parent, unconsumedDelta);
-			}
-		};
+	node.addEventListener('wheel', handleWheel, LISTENER_OPTIONS);
+	node.addEventListener('touchstart', handleTouchStart, LISTENER_OPTIONS);
+	node.addEventListener('touchmove', handleTouchMove, LISTENER_OPTIONS);
 
-		const addTouchListeners = () => {
-			if (attached) {
-				return;
-			}
-
-			parent.addEventListener('touchstart', handleTouchStart, LISTENER_OPTIONS);
-			parent.addEventListener('touchmove', handleTouchMove, LISTENER_OPTIONS);
-			parent.addEventListener('touchend', handleTouchEnd, LISTENER_OPTIONS);
-			parent.addEventListener('touchcancel', handleTouchEnd, LISTENER_OPTIONS);
-			parent.addEventListener('wheel', handleWheel, LISTENER_OPTIONS);
-			attached = true;
-		};
-
-		const removeTouchListeners = () => {
-			if (!attached) {
-				return;
-			}
-
-			parent.removeEventListener('touchstart', handleTouchStart, { capture: true });
-			parent.removeEventListener('touchmove', handleTouchMove, { capture: true });
-			parent.removeEventListener('touchend', handleTouchEnd, { capture: true });
-			parent.removeEventListener('touchcancel', handleTouchEnd, { capture: true });
-			parent.removeEventListener('wheel', handleWheel, { capture: true });
-			attached = false;
-		};
-
-		syncChainScrollListener = () => {
-			if (!enableChainScroll) {
-				active = null;
-				removeTouchListeners();
-				return;
-			}
-
-			addTouchListeners();
-		};
-
-		syncChainScrollListener();
-
-		return () => {
-			removeTouchListeners();
-			syncChainScrollListener = () => {};
-		};
-	});
-
-	return (nextEnableChainScroll: boolean) => {
-		enableChainScroll = nextEnableChainScroll;
-		syncChainScrollListener();
+	return {
+		update(nextParams: ChainScrollParams) {
+			current = nextParams;
+		},
+		destroy() {
+			node.removeEventListener('wheel', handleWheel);
+			node.removeEventListener('touchstart', handleTouchStart);
+			node.removeEventListener('touchmove', handleTouchMove);
+		}
 	};
 }

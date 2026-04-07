@@ -24,10 +24,20 @@ Copyright (C) 2026 Andrew Cupps
 	import CourseFilters from './CourseFilters.svelte';
 	import SolarSystemLoader from './SolarSystemLoader.svelte';
 	import { createCourseSearchActivationController } from '../../../lib/course-planner/CourseSearchActivation';
+	import { chainScroll } from '../../../lib/course-planner/ChainScroll';
+	import { PlannerState } from '../../../stores/CoursePlannerStores';
 
-	export let isDesktop: boolean;
+	let plannerState: { isDesktop: boolean; chainScrollParent: HTMLElement | null } = {
+		isDesktop: false,
+		chainScrollParent: null
+	};
+	PlannerState.subscribe((state: { isDesktop: boolean; chainScrollParent: HTMLElement | null }) => {
+		plannerState = state;
+	});
 
 	const FILTER_SCROLL_COLLAPSE_THRESHOLD = 100;
+	let searchResultsElement: HTMLDivElement;
+	let blockSearchInputPointer = !plannerState.isDesktop;
 
 	let hoveredSection: ScheduleSelection | null;
 	HoveredSectionStore.subscribe((hovered) => {
@@ -66,16 +76,14 @@ Copyright (C) 2026 Andrew Cupps
 	let genEdMenuOpen = false;
 	let searchInputElement: HTMLInputElement | null = null;
 	let keyboardPrimeElement: HTMLInputElement | null = null;
-	let blockSearchInputPointer = !isDesktop;
 	let searchActivationInProgress = false;
 	let suppressSearchBlurReset = false;
-
-	$: if (isDesktop) {
+	$: if (plannerState.isDesktop) {
 		blockSearchInputPointer = false;
 	}
 
 	const searchActivation = createCourseSearchActivationController({
-		isDesktop: () => isDesktop,
+		isDesktop: () => plannerState.isDesktop,
 		blockSearchInputPointer: () => blockSearchInputPointer,
 		setBlockSearchInputPointer: (value: boolean) => {
 			blockSearchInputPointer = value;
@@ -149,6 +157,7 @@ Copyright (C) 2026 Andrew Cupps
 	}
 
 	let scrollAcc = 0;
+
 	function handleResultsScroll(event: WheelEvent) {
 		if (!genEdMenuOpen) {
 			return;
@@ -165,7 +174,7 @@ Copyright (C) 2026 Andrew Cupps
 	}
 
 	function scrollToSearch() {
-		const searchElement = document.getElementById('course-search');
+		const searchElement = document.getElementById('planner-course-search');
 		if (!searchElement) {
 			return;
 		}
@@ -179,7 +188,7 @@ Copyright (C) 2026 Andrew Cupps
 	class="order-2 min-h-80 w-full flex-col border-solid border-divBorderLight bg-bgLight lg:order-1 dark:border-divBorderDark dark:bg-bgDark"
 >
 	<!-- Course search input and filters [height of 7.5rem] -->
-	<div id="course-search" class="px-1 pt-1">
+	<div id="planner-course-search" class="px-1 pt-1">
 		<div class="ml-1 flex flex-row pb-1 text-xs 2xl:text-sm">
 			<div>Fall 2026</div>
 			<div class="grow text-right">
@@ -205,7 +214,7 @@ Copyright (C) 2026 Andrew Cupps
 				/>
 				<input
 					type="text"
-					id="course-search-input"
+					id="planner-course-search-input"
 					bind:this={searchInputElement}
 					bind:value={searchInput}
 					on:focus={searchActivation.handleSearchFocus}
@@ -224,7 +233,14 @@ Copyright (C) 2026 Andrew Cupps
 	</div>
 	<!-- Course search results & dept suggestions [min-height: 20rem - 7.5rem = 12.75rem]-->
 	<div
-		class="chain-scroll-only custom-scrollbar h-[calc(100svh-10.5rem)] min-h-[12.75rem] overflow-y-scroll px-1 lg:h-[100svh-3rem]"
+		id="planner-search-results"
+		class="chain-scroll-only custom-scrollbar h-[calc(100svh-10.5rem)] min-h-[12.75rem] overflow-y-scroll px-1 focus:outline-none lg:h-[100svh-3rem]"
+		bind:this={searchResultsElement}
+		use:chainScroll={{
+			parent: plannerState.chainScrollParent,
+			enabled: !plannerState.isDesktop,
+			element: searchResultsElement
+		}}
 		on:wheel={handleResultsScroll}
 	>
 		<!-- Department suggestions dropdown -->
@@ -255,7 +271,7 @@ Copyright (C) 2026 Andrew Cupps
 
 		<!-- Course search results -->
 		{#each searchResults as courseMatch (courseMatch.courseCode)}
-			<CourseListing course={courseMatch} {isDesktop} />
+			<CourseListing course={courseMatch} isDesktop={plannerState.isDesktop} />
 		{/each}
 
 		{#if isPendingResults}
