@@ -9,11 +9,14 @@ Copyright (C) 2026 Andrew Cupps
 	import { page } from '$app/stores';
 
 	$: {
-		if (typeof gtag !== 'undefined') {
-			gtag('config', 'MEASUREMENT_ID', {
-				page_title: document.title,
-				page_path: $page.url.pathname
-			});
+		if (typeof window !== 'undefined') {
+			const gtagMaybe = (window as Window & { gtag?: (...args: unknown[]) => void }).gtag;
+			if (typeof gtagMaybe !== 'undefined') {
+				gtagMaybe('config', 'MEASUREMENT_ID', {
+					page_title: document.title,
+					page_path: $page.url.pathname
+				});
+			}
 		}
 	}
 </script>

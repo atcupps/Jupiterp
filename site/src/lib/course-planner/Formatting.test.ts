@@ -8,6 +8,7 @@
  */
 
 import { splitCourseCode, formatInstructors } from './Formatting';
+import { describe, expect, test } from '@jest/globals';
 
 describe('splitCourseCode', () => {
 	test('splits four-letter department code from course number', () => {
