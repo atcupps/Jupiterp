@@ -109,6 +109,7 @@ Copyright (C) 2026 Andrew Cupps
 			</button>
 
 			<input
+				id="schedule-name-input"
 				contenteditable="true"
 				bind:this={scheduleNameElement}
 				on:blur={changeScheduleName}
