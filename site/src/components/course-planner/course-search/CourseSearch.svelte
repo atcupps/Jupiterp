@@ -5,7 +5,7 @@ https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2026 Andrew Cupps
 -->
 <script lang="ts">
-	import { fade } from 'svelte/transition';
+	import { tick } from 'svelte';
 	import CourseListing from './CourseListing.svelte';
 	import {
 		deptCodeToName,
@@ -24,6 +24,8 @@ Copyright (C) 2026 Andrew Cupps
 	import type { ScheduleSelection } from '../../../types';
 	import CourseFilters from './CourseFilters.svelte';
 	import SolarSystemLoader from './SolarSystemLoader.svelte';
+
+	export let isDesktop: boolean;
 
 	const FILTER_SCROLL_COLLAPSE_THRESHOLD = 100;
 
@@ -62,6 +64,13 @@ Copyright (C) 2026 Andrew Cupps
 	}
 
 	let genEdMenuOpen = false;
+	let searchInputElement: HTMLInputElement | null = null;
+	let keyboardPrimeElement: HTMLInputElement | null = null;
+	let blockSearchInputPointer = !isDesktop;
+
+	$: if (isDesktop) {
+		blockSearchInputPointer = false;
+	}
 
 	function selectDepartment(dept: string) {
 		searchInput = dept;
@@ -98,9 +107,6 @@ Copyright (C) 2026 Andrew Cupps
 		highlightedSuggestionIndex = -1;
 	}
 
-	// Boolean for toggling search menu on smaller screens
-	export let courseSearchSelected: boolean = false;
-
 	$: {
 		if (hoveredSection) {
 			let index = searchResults.findIndex((course) => {
@@ -136,95 +142,132 @@ Copyright (C) 2026 Andrew Cupps
 			scrollAcc = 0;
 		}
 	}
-</script>
 
-<!-- Layer to exit course search if user taps on the Schedule -->
-<!-- Using this method to avoid having to listen to a variable on Schedule -->
-{#if courseSearchSelected}
-	<button
-		class="fixed z-[51] w-full bg-black bg-opacity-20
-                    lg:hidden"
-		style="height: calc(100% - 3rem);"
-		in:fade={{ duration: 150 }}
-		out:fade={{ duration: 150 }}
-		on:click={() => (courseSearchSelected = false)}
-	/>
-{/if}
+	function waitForScrollToFinish(delayMs = 250) {
+		return new Promise<void>((resolve) => {
+			setTimeout(() => resolve(), delayMs);
+		});
+	}
+
+	function primeMobileKeyboard() {
+		keyboardPrimeElement?.focus({ preventScroll: true });
+	}
+
+	async function activateSearchInput() {
+		if (!isDesktop && blockSearchInputPointer) {
+			scrollToSearch();
+			primeMobileKeyboard();
+			await waitForScrollToFinish();
+			blockSearchInputPointer = false;
+			await tick();
+			searchInputElement?.focus({ preventScroll: true });
+		}
+	}
+
+	async function handleSearchFocus() {
+		if (!isDesktop && blockSearchInputPointer) {
+			await activateSearchInput();
+		}
+	}
+
+	function handleSearchBlur() {
+		if (!isDesktop) {
+			blockSearchInputPointer = true;
+		}
+	}
+
+	function scrollToSearch() {
+		const searchElement = document.getElementById('course-search');
+		if (!searchElement) {
+			return;
+		}
+
+		searchElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+	}
+</script>
 
 <!-- Course Search -->
 <div
-	class="course-search visible fixed left-0 z-[52]
-                            w-[300px] flex-col border-r-2 border-solid border-divBorderLight
-                            bg-bgLight py-1 pl-1
-                            pr-2 transition-transform
-                            duration-300 lg:static lg:ml-1.5 lg:flex
-                            lg:h-full lg:min-w-[260px] lg:bg-transparent lg:pl-0
-                            lg:shadow-none xl:min-w-[320px] 2xl:min-w-[400px] 2xl:text-lg
-                            dark:border-divBorderDark dark:bg-bgDark"
-	class:course-search-transition={!courseSearchSelected}
-	class:shadow-lg={courseSearchSelected}
+	class="order-2 min-h-80 w-full flex-col border-solid border-divBorderLight bg-bgLight lg:order-1 dark:border-divBorderDark dark:bg-bgDark"
 >
-	<div class="ml-1 flex flex-row pb-1 text-xs 2xl:text-sm">
-		<div>Fall 2026</div>
-		<div class="grow text-right">
-			Credits: {totalCredits}
+	<!-- Course search input and filters [height of 7.5rem] -->
+	<div id="course-search" class="px-1 pt-1">
+		<div class="ml-1 flex flex-row pb-1 text-xs 2xl:text-sm">
+			<div>Fall 2026</div>
+			<div class="grow text-right">
+				Credits: {totalCredits}
+			</div>
+		</div>
+
+		<ScheduleSelector />
+
+		<div
+			class="relative flex w-full flex-col border-b-2 border-t-2 border-solid border-divBorderLight dark:border-divBorderDark"
+		>
+			<!-- Course search box -->
+			<div class="relative">
+				<!-- Mobile keyboard prime input: used to make the mobile keyboard appear -->
+				<input
+					type="text"
+					id="mobile-keyboard-prime"
+					bind:this={keyboardPrimeElement}
+					tabindex="-1"
+					aria-hidden="true"
+					autocomplete="off"
+					class="pointer-events-none fixed left-0 top-0 h-0 w-0 opacity-0"
+				/>
+				{#if !isDesktop && blockSearchInputPointer}
+					<div
+						class="pointer-events-auto absolute inset-0 z-10"
+						role="button"
+						tabindex="0"
+						aria-label="Activate course search"
+						on:click|preventDefault={() => {
+							void activateSearchInput();
+						}}
+						on:keydown={(event) => {
+							if (event.key === 'Enter' || event.key === ' ') {
+								event.preventDefault();
+								void activateSearchInput();
+							}
+						}}
+					></div>
+				{/if}
+				<input
+					type="text"
+					id="course-search-input"
+					bind:this={searchInputElement}
+					bind:value={searchInput}
+					on:focus={handleSearchFocus}
+					on:blur={handleSearchBlur}
+					on:input={() => {
+						setSearchResults(searchInput);
+					}}
+					on:keydown={handleSearchKeydown}
+					placeholder="Search course codes, ex: 'MATH140'"
+					class="w-full rounded-lg border-2 border-solid border-outlineLight bg-transparent px-2 py-0 text-xl placeholder:text-base lg:text-base lg:placeholder:text-sm dark:border-outlineDark"
+					style="pointer-events: {!isDesktop && blockSearchInputPointer ? 'none' : 'auto'}"
+				/>
+			</div>
+
+			<CourseFilters bind:showGenEdMenu={genEdMenuOpen} />
 		</div>
 	</div>
-
-	<ScheduleSelector />
-
+	<!-- Course search results & dept suggestions [min-height: 20rem - 7.5rem = 12.75rem]-->
 	<div
-		class="relative flex w-full flex-col border-b-2
-                            border-t-2 border-solid border-divBorderLight p-1
-                            lg:px-0 dark:border-divBorderDark"
-	>
-		<!-- Course search box -->
-		<input
-			type="text"
-			bind:value={searchInput}
-			on:input={() => {
-				setSearchResults(searchInput);
-			}}
-			on:keydown={handleSearchKeydown}
-			placeholder="Search course codes, ex: 'MATH140'"
-			class="w-full rounded-lg border-2
-                            border-solid border-outlineLight
-                            bg-transparent px-2 py-0 text-xl
-                            placeholder:text-base lg:text-base
-                            lg:placeholder:text-sm dark:border-outlineDark"
-		/>
-
-		<CourseFilters bind:showGenEdMenu={genEdMenuOpen} />
-	</div>
-
-	<!-- Course search results & dept suggestions -->
-	<div
-		class="courses-list overflow-x-none grow overflow-y-scroll
-                px-1 lg:pl-0 lg:pr-1"
+		class="chain-scroll-only custom-scrollbar h-[calc(100svh-10.5rem)] min-h-[12.75rem] overflow-y-scroll px-1 lg:h-[100svh-3rem]"
 		on:wheel={handleResultsScroll}
 	>
 		<!-- Department suggestions dropdown -->
 		{#if searchInput.length > 0 && deptSuggestions.length > 1}
 			<div
-				class="mt-2 rounded-lg border
-                        border-outlineLight bg-bgLight
-                        shadow-lg dark:border-outlineDark dark:bg-bgDark"
+				class="mt-2 rounded-lg border border-outlineLight bg-bgLight shadow-lg dark:border-outlineDark dark:bg-bgDark"
 			>
 				{#each deptSuggestions as deptOption, index}
 					<button
 						type="button"
-						class={`flex w-full items-end px-3 py-1
-                                text-left text-base transition-colors
-                                hover:bg-outlineLight
-                                hover:bg-opacity-20 lg:text-sm
-                                dark:hover:bg-outlineDark
-                                dark:hover:bg-opacity-30 
-                                ${
-																	highlightedSuggestionIndex === index
-																		? `bg-outlineLight bg-opacity-20
-                                    dark:bg-outlineDark dark:bg-opacity-30`
-																		: ''
-																}`}
+						class={`flex w-full items-end px-3 py-1 text-left text-base transition-colors hover:bg-outlineLight hover:bg-opacity-20 lg:text-sm dark:hover:bg-outlineDark dark:hover:bg-opacity-30 
+							${highlightedSuggestionIndex === index ? `bg-outlineLight bg-opacity-20 dark:bg-outlineDark dark:bg-opacity-30` : ''}`}
 						on:mouseenter={() => {
 							highlightedSuggestionIndex = index;
 						}}
@@ -233,10 +276,7 @@ Copyright (C) 2026 Andrew Cupps
 						<span class="min-w-[17%] shrink-0 font-black">
 							{deptOption}
 						</span>
-						<span
-							class="inline-block grow
-                                    truncate text-xs italic"
-						>
+						<span class="inline-block grow truncate text-xs italic">
 							{deptCodeToName[deptOption]}
 						</span>
 					</button>
@@ -246,7 +286,7 @@ Copyright (C) 2026 Andrew Cupps
 
 		<!-- Course search results -->
 		{#each searchResults as courseMatch (courseMatch.courseCode)}
-			<CourseListing course={courseMatch} />
+			<CourseListing course={courseMatch} {isDesktop} />
 		{/each}
 
 		{#if isPendingResults}
@@ -256,22 +296,3 @@ Copyright (C) 2026 Andrew Cupps
 		{/if}
 	</div>
 </div>
-
-<style>
-	@media screen and (max-width: 1023px) {
-		.course-search {
-			height: calc(100svh - 3rem);
-		}
-
-		.courses-list {
-			height: calc(100svh - 3rem - 2.54166667rem - 2px);
-		}
-
-		.course-search-transition {
-			transition-property: transform;
-			transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-			transition-duration: 150ms;
-			transform: translateX(calc(-100% - 2px));
-		}
-	}
-</style>

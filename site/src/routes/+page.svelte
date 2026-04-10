@@ -27,9 +27,14 @@ Copyright (C) 2026 Andrew Cupps
 		type InstructorsConfig,
 		type InstructorsResponse
 	} from '@jupiterp/jupiterp';
-	import type { ScheduleSelection, StoredSchedule } from '../../types';
+	import type { ScheduleSelection, StoredSchedule } from '../types';
+	import { setupChainScrollListener } from '$lib/course-planner/chainScroll';
+	import IsDesktop from '../components/course-planner/IsDesktop.svelte';
 
-	// Function to retreive professor data; called in `onMount`.
+	let isDesktop: boolean = false;
+	const syncChainScrollListener = setupChainScrollListener();
+
+	// Function to retrieve professor data; called in `onMount`.
 	async function fetchProfessorData() {
 		try {
 			let limit = 500;
@@ -177,47 +182,15 @@ Copyright (C) 2026 Andrew Cupps
 		return JSON.stringify(finalSelections);
 	}
 
-	let courseSearchSelected: boolean = false;
+	$: syncChainScrollListener(!isDesktop);
 </script>
 
-<!-- Button to toggle course search on mobile -->
-<button
-	class="visible fixed left-5 top-[0.9rem] z-[52] h-5 w-5 lg:hidden"
-	on:click={() => {
-		courseSearchSelected = !courseSearchSelected;
-	}}
->
-	<svg
-		xmlns="http://www.w3.org/2000/svg"
-		viewBox="0 0 512 512"
-		class="visible h-full w-full fill-textLight
-                    transition dark:fill-textDark"
-		class:hidden={courseSearchSelected}
-	>
-		<!-- format-check exempt 1 -->
-		<!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path
-			d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"
-		/></svg
-	>
-	<svg
-		xmlns="http://www.w3.org/2000/svg"
-		viewBox="0 0 384 512"
-		class="visible h-full w-full fill-textLight
-                    transition dark:fill-textDark"
-		class:hidden={!courseSearchSelected}
-	>
-		<!-- format-check exempt 1 -->
-		<!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path
-			d="M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206 56.6 43.5C45.3 29.9 25.1 28.1 11.5 39.4S-3.9 70.9 7.4 84.5L150.3 256 7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306 327.4 468.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256 376.6 84.5z"
-		/></svg
-	>
-</button>
+<IsDesktop bind:isDesktop />
 
 <div
-	class="fixed bottom-0 top-[3rem] flex w-full
-            flex-row px-8 text-textLight
-            lg:top-[3.5rem] lg:px-8 xl:top-[4rem] dark:text-textDark"
+	id="planner-container"
+	class="custom-scrollbar fixed bottom-0 top-12 w-full flex-col overflow-y-auto px-3 lg:grid lg:grid-cols-[22rem_1fr]"
 >
-	<CourseSearch bind:courseSearchSelected />
 	<Schedule />
+	<CourseSearch {isDesktop} />
 </div>

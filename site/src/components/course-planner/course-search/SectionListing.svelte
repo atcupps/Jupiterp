@@ -5,6 +5,8 @@ https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2026 Andrew Cupps
 -->
 <script lang="ts">
+	import { onMount } from 'svelte';
+	import { fade } from 'svelte/transition';
 	import InstructorListing from './InstructorListing.svelte';
 	import MeetingListing from './MeetingListing.svelte';
 	import {
@@ -21,6 +23,7 @@ Copyright (C) 2026 Andrew Cupps
 	export let courseCode: string;
 	export let section: Section;
 	export let course: CourseBasic;
+	export let isDesktop: boolean;
 
 	let hoveredSection: ScheduleSelection | null;
 	HoveredSectionStore.subscribe((store) => {
@@ -63,33 +66,41 @@ Copyright (C) 2026 Andrew Cupps
 		colorNumber: -1
 	};
 
+	// Auto-scroll for non desktop screens: scroll up to schedule when adding a section
+	let plannerContainer: HTMLElement | null = null;
+	onMount(() => {
+		plannerContainer = document.getElementById('planner-container');
+	});
+	function scrollToTopPlannerTop() {
+		if (plannerContainer) {
+			plannerContainer.scrollTo({
+				top: 0,
+				behavior: 'smooth'
+			});
+		}
+	}
+
 	let addAlertVisible: boolean = false;
-	let addAlertShouldFade: boolean = false;
 	let removeAlertVisible: boolean = false;
-	let removeAlertShouldFade: boolean = false;
 
 	// Function to show or fade
 	// format-check exempt 8
 	function showAddAlert() {
 		addAlertVisible = true; // Make the div visible
-		addAlertShouldFade = false; // Reset fading in case it's a subsequent click
 		setTimeout(() => {
-			addAlertShouldFade = true; // Start fading after 10 seconds
 			setTimeout(() => {
 				addAlertVisible = false;
-			}, 750); // Delay to make `addAlertVisible` false after fading
-		}, 300); // Delay before fade starts
+			}, 500); // Delay before making `addAlertVisible` false to start fade out
+		}, 0); // No delay after making visible
 	}
 
 	function showRemoveAlert() {
 		removeAlertVisible = true;
-		removeAlertShouldFade = false;
 		setTimeout(() => {
-			removeAlertShouldFade = true;
 			setTimeout(() => {
 				removeAlertVisible = false;
-			}, 750); // Delay to make `removeAlertVisible` false after fading
-		}, 300);
+			}, 500); // Delay before making `removeAlertVisible` false to start fade out
+		}, 0); // No delay after making visible
 	}
 
 	// In order for Svelte's reactivity to work properly, `selectionsList`
@@ -169,19 +180,8 @@ Copyright (C) 2026 Andrew Cupps
 	let profsHover: boolean = false;
 	let locationHover: boolean = false;
 
-	let isDesktop: boolean = true;
-	let innerWidth: number;
-	$: if (innerWidth) {
-		isDesktop = innerWidth >= 1024;
-	}
-
-	const alertClasses: string = `  fixed left-[50%] translate-x-[-50%] z-5
-                                    w-[40%] top-[10%] min-w-72 h-8 rounded-lg
-                                    text-center text-white lg:hidden 
-                                    bg-orange shadow-lg content-center`;
+	const alertClasses: string = `fixed left-[50%] translate-x-[-50%] z-50 w-[40%] top-14 min-w-72 h-8 rounded-lg text-center text-white lg:hidden bg-orange shadow-lg content-center transition-opacity duration-500`;
 </script>
-
-<svelte:window bind:innerWidth />
 
 <!-- Ignoring a11y for mouseover because it's a non-essential feature -->
 <!-- svelte-ignore a11y-mouse-events-have-key-events -->
@@ -199,13 +199,15 @@ Copyright (C) 2026 Andrew Cupps
 	class:lg:hover:dark:bg-hoverDark={!profsHover && !locationHover}
 	title="{sectionAdded ? 'Remove course from' : 'Add course to'} schedule"
 >
-	<!-- Section code -->
-	<div
-		class="w-12 text-sm font-semibold
-                text-secCodesLight xl:w-14 xl:text-base dark:text-secCodesDark"
+	<!-- Section code (click to view) -->
+	<button
+		on:click={isDesktop ? null : scrollToTopPlannerTop}
+		class="w-12 text-sm font-semibold text-secCodesLight xl:w-14 xl:text-base dark:text-secCodesDark"
 	>
-		{section.sectionCode}
-	</div>
+		<div class="h-full align-top">
+			{section.sectionCode}
+		</div>
+	</button>
 
 	<!-- Section info -->
 	<div class="w-full">
@@ -225,13 +227,13 @@ Copyright (C) 2026 Andrew Cupps
 </button>
 
 {#if addAlertVisible}
-	<div class={(addAlertShouldFade ? 'animate-fadeOut' : '') + alertClasses}>
+	<div class={alertClasses} out:fade={{ duration: 300 }}>
 		<span class="h-full align-middle font-medium">Class Added</span>
 	</div>
 {/if}
 
 {#if removeAlertVisible}
-	<div class={(removeAlertShouldFade ? 'animate-fadeOut' : '') + alertClasses}>
+	<div class={alertClasses} out:fade={{ duration: 300 }}>
 		<span class="h-full align-middle font-medium">Class Removed</span>
 	</div>
 {/if}

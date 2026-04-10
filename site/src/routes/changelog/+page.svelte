@@ -8,11 +8,7 @@ Copyright (C) 2026 Andrew Cupps
 	import ChangelogItem from '../../components/changelog/ChangelogItem.svelte';
 </script>
 
-<div
-	class="fixed bottom-0 top-[3rem] flex w-full flex-col overflow-y-scroll
-            px-8 py-2 text-textLight
-            lg:top-[3.5rem] lg:px-8 xl:top-[4rem] dark:text-textDark"
->
+<div class="custom-scrollbar fixed bottom-0 top-12 overflow-y-auto px-4 py-2">
 	<ChangelogItem title="Jupiterp 2 (SQL)" version="v1.1.2: Enceladus" date="Oct 8, 2025">
 		Major backend overhaul to use SQL-powered Jupiterp API for fetching course and instruction data.
 		Paves the way for some future great improvements! Also some minor UI changes: course info panel

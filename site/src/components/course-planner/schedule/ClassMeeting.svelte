@@ -158,20 +158,14 @@ Copyright (C) 2026 Andrew Cupps
 	<!-- x button to remove course -->
 	{#if !meeting.hover}
 		<button
-			class="absolute right-0 top-0 h-4 w-4
-                        justify-center 2xl:right-1 2xl:top-1"
+			class="absolute right-0 top-0 h-4 w-6 items-center justify-center overflow-clip hover:text-orange 2xl:right-1 2xl:top-1"
 			on:click={removeCourseByClassMeeting}
 			title="Remove course from schedule"
 		>
-			<!-- format-check exempt 4 -->
-			<svg
-				xmlns="http://www.w3.org/2000/svg"
-				viewBox="0 0 384 512"
-				class="absolute left-[50%] top-[50%] h-2 w-2 2xl:h-3 2xl:w-3"
-				style="transform: translateX(-50%) translateY(-50%);"
-			>
-				<!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path
-					d="M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206 56.6 43.5C45.3 29.9 25.1 28.1 11.5 39.4S-3.9 70.9 7.4 84.5L150.3 256 7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306 327.4 468.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256 376.6 84.5z"
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="absolute left-1 top-0"
+				><path
+					fill="currentColor"
+					d="m12 13.4l-2.917 2.925q-.277.275-.704.275t-.704-.275q-.275-.275-.275-.7t.275-.7L10.6 12L7.675 9.108Q7.4 8.831 7.4 8.404t.275-.704q.275-.275.7-.275t.7.275L12 10.625L14.892 7.7q.277-.275.704-.275t.704.275q.3.3.3.713t-.3.687L13.375 12l2.925 2.917q.275.277.275.704t-.275.704q-.3.3-.712.3t-.688-.3z"
 				/></svg
 			>
 		</button>
@@ -187,15 +181,12 @@ Copyright (C) 2026 Andrew Cupps
                         font-sans text-base font-semibold"
 				class:text-sm={w < 120}
 				class:text-xs={w < 104}
-				class:rounded-b-lg={h < 1.75 * fontSize}
+				class:rounded-b-lg={h < 1.5 * fontSize}
 			>
 				<span>{meeting.courseCode}</span>
 			</div>
 		{/if}
-		<div
-			class="w-full grow px-2 font-sans
-                                                    text-xs font-thin 2xl:font-normal"
-		>
+		<div class="w-full grow px-2 font-sans text-xs font-thin 2xl:font-normal">
 			{#if h - 24 * fontSize > 64 * fontSize || isInOther}
 				<div
 					class="static truncate"
@@ -205,8 +196,7 @@ Copyright (C) 2026 Andrew Cupps
 					{#if instructorsChange}
 						<Tooltip
 							text={'⚠ ' + formattedInstructors}
-							tooltipText="Instructors have changed since 
-                                            you last visited Jupiterp."
+							tooltipText="Instructors have changed since you last visited Jupiterp."
 						/>
 					{:else}
 						{formattedInstructors}
@@ -222,14 +212,12 @@ Copyright (C) 2026 Andrew Cupps
 					{#if meetingTimeChange}
 						<Tooltip
 							text={'⚠ ' + formattedTime}
-							tooltipText="Class meeting time has changed since 
-                                                you last visited Jupiterp."
+							tooltipText="Class meeting time has changed since you last visited Jupiterp."
 						/>
 					{:else if meetingsTypeChange}
 						<Tooltip
 							text={'⚠ ' + formattedTime}
-							tooltipText="Meeting type has changed since you
-                                            last visited Jupiterp."
+							tooltipText="Meeting type has changed since you last visited Jupiterp."
 						/>
 					{:else}
 						{formattedTime}
@@ -250,8 +238,7 @@ Copyright (C) 2026 Andrew Cupps
 					{#if meetingLocChange}
 						<Tooltip
 							text={'⚠ ' + location}
-							tooltipText="Class location has changed since 
-                                                you last visited Jupiterp."
+							tooltipText="Class location has changed since you last visited Jupiterp."
 						/>
 					{:else}
 						{location}
@@ -261,9 +248,8 @@ Copyright (C) 2026 Andrew Cupps
 		</div>
 	{:else}
 		<div
-			class="ont-sans w-full text-wrap break-words
-                    rounded-t-lg font-sans text-base font-semibold"
-			class:rounded-b-lg={h < 1.75 * fontSize}
+			class="w-full text-wrap break-words rounded-t-lg font-sans text-xs font-semibold"
+			class:rounded-b-lg={h < 1.5 * fontSize}
 		>
 			{splitCourseCode(meeting.courseCode)}
 		</div>

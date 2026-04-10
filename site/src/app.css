@@ -2,58 +2,61 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-    background-color: white;
-    height: 100svh;
-    font-family: 'Cabin', Arial, sans-serif;
-
-    /* ===== Scrollbar CSS ===== */
-    /* Firefox */
-    * {
-        scrollbar-width: auto;
-        scrollbar-color: #cccccc #ffffff;
-    }
-
-    /* Chrome, Edge, and Safari */
-    *::-webkit-scrollbar {
-        width: 8px;
-    }
-
-    *::-webkit-scrollbar-track {
-        background: #ffffff;
-    }
-
-    *::-webkit-scrollbar-thumb {
-        background-color: #cccccc;
-        border-radius: 8px;
-    }
-    
-    ::-webkit-scrollbar-corner {
-        background: rgba(0,0,0,0);
-    }
+html {
+	/* prevents pull-to-refresh */
+	overscroll-behavior: none;
 }
 
-.dark body {
-    background-color: #151922;
+body {
+	height: 100svh;
+	overscroll-behavior: none;
+	font-family: 'Cabin', Arial, sans-serif;
+}
 
-    /* ===== Scrollbar CSS ===== */
-    /* Firefox */
-    * {
-        scrollbar-width: auto;
-        scrollbar-color: #3F475A #151922;
-    }
+@layer utilities {
+	.chain-scroll-only {
+		@apply max-lg:overscroll-none;
+	}
 
-    /* Chrome, Edge, and Safari */
-    *::-webkit-scrollbar {
-        width: 8px;
-    }
+	/* Please apply "custom-scrollbar" class for scrollable elements 
+    (elements with class of overflow-scroll or overflow-auto) */
+	.custom-scrollbar {
+		scrollbar-width: thin;
+		scrollbar-color: #cccccc white;
 
-    *::-webkit-scrollbar-track {
-        background: #151922;
-    }
+		&::-webkit-scrollbar {
+			width: 4px;
+		}
 
-    *::-webkit-scrollbar-thumb {
-        background-color: #3F475A;
-        border-radius: 8px;
-    }
+		&::-webkit-scrollbar-track {
+			background: white;
+		}
+
+		&::-webkit-scrollbar-thumb {
+			background-color: #cccccc;
+			border-radius: 8px;
+		}
+
+		&::-webkit-scrollbar-corner {
+			background: rgba(0, 0, 0, 0);
+		}
+	}
+
+	html.dark .custom-scrollbar {
+		scrollbar-width: thin;
+		scrollbar-color: #3f475a #151922;
+
+		&::-webkit-scrollbar {
+			width: 4px;
+		}
+
+		&::-webkit-scrollbar-track {
+			background: #151922;
+		}
+
+		&::-webkit-scrollbar-thumb {
+			background-color: #3f475a;
+			border-radius: 8px;
+		}
+	}
 }
