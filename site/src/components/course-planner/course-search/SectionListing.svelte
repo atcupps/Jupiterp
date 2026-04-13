@@ -187,7 +187,6 @@ Copyright (C) 2026 Andrew Cupps
 <!-- svelte-ignore a11y-mouse-events-have-key-events -->
 <!-- format-check exempt 17 5 -->
 <button
-	data-planner-course-section
 	on:click={addSectionToSchedule}
 	on:mouseover={isDesktop ? addHoverSection : null}
 	on:mouseout={isDesktop ? removeHoverSection : null}
