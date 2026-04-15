@@ -10,34 +10,26 @@ Copyright (C) 2026 Andrew Cupps
 	export let date: string;
 </script>
 
-<div
-	class="mx-2 border-l-2 border-divBorderLight py-2
-                                dark:border-divBorderDark"
->
-	<div class="flex flex-col px-2">
-		<div class="static flex flex-row items-end space-x-1.5">
+<div class="mx-2 border-l-2 border-divBorderLight py-2 dark:border-divBorderDark">
+	<div class="flex flex-col px-4">
+		<div class="static flex flex-row items-end">
 			<div
-				class="absolute left-9 h-5
-                            w-5 translate-y-[-4px] bg-bgLight dark:bg-bgDark"
+				class="absolute h-5 w-5 translate-x-[-27px] translate-y-[-6px] bg-bgLight p-1.5 dark:bg-bgDark"
 			>
-				<div
-					class="absolute top-[50%] h-2
-                            w-2 translate-x-[10%] translate-y-[-50%]
-                                            rounded-[50%] bg-orange"
-				/>
+				<div class="h-full w-full rounded-full bg-orange"></div>
 			</div>
-			<span class="pl-4 text-xl font-bold dark:text-white">
+			<span class="mr-2 text-xl font-bold dark:text-white">
 				{title}
 			</span>
 			<span class="font-light text-secCodesLight dark:text-secCodesDark">
 				{version}
 			</span>
 		</div>
-		<span class="pl-1.5 align-top text-sm italic">
+		<span class="align-top text-sm italic">
 			{date}
 		</span>
 
-		<div class="pl-1.5">
+		<div>
 			<slot />
 		</div>
 	</div>
