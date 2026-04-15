@@ -185,7 +185,7 @@ Copyright (C) 2026 Andrew Cupps
 
 <!-- Course Search -->
 <div
-	class="order-2 min-h-80 w-full flex-col border-solid border-divBorderLight bg-bgLight lg:order-1 dark:border-divBorderDark dark:bg-bgDark"
+	class="order-2 min-h-80 w-full flex-col border-solid border-divBorderLight bg-bgLight lg:order-1 lg:grid lg:h-[100svh-3rem] lg:grid-cols-1 lg:grid-rows-[auto_minmax(0,1fr)] dark:border-divBorderDark dark:bg-bgDark"
 >
 	<!-- Course search input and filters [height of 7.5rem] -->
 	<div id="planner-course-search" class="px-1 pt-1">
@@ -234,7 +234,7 @@ Copyright (C) 2026 Andrew Cupps
 	<!-- Course search results & dept suggestions [min-height: 20rem - 7.5rem = 12.75rem]-->
 	<div
 		id="planner-search-results"
-		class="chain-scroll-only custom-scrollbar h-[calc(100svh-10.5rem)] min-h-[12.75rem] overflow-y-scroll px-1 focus:outline-none lg:h-[100svh-3rem]"
+		class="chain-scroll-only custom-scrollbar h-[calc(100svh-10.5rem)] min-h-[12.75rem] overflow-y-scroll px-1 focus:outline-none lg:h-auto lg:min-h-0"
 		bind:this={searchResultsElement}
 		use:chainScroll={{
 			parent: plannerState.chainScrollParent,

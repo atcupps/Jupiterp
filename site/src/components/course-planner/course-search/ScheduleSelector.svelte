@@ -114,17 +114,14 @@ Copyright (C) 2026 Andrew Cupps
 				bind:this={scheduleNameElement}
 				on:blur={changeScheduleName}
 				title="Schedule name"
-				class="2xl:text-md mr-1 grow cursor-text
-                            rounded border-none bg-bgLight px-0.5 py-0
-                            text-sm outline-none dark:bg-bgDark"
+				class="2xl:text-md mr-1 grow cursor-text rounded border-none bg-bgLight px-0.5 py-0 text-sm outline-none dark:bg-bgDark"
 			/>
 		</div>
 
 		<ScheduleOptionsDropdown />
 
 		<button
-			class="h-7 rounded-md
-                        hover:bg-hoverLight dark:hover:bg-hoverDark"
+			class="h-7 rounded-md hover:bg-hoverLight dark:hover:bg-hoverDark"
 			title="Create new schedule"
 			on:click={createNewSchedule}
 		>
@@ -137,19 +134,17 @@ Copyright (C) 2026 Andrew Cupps
 			{#each nonselectedSchedules as schedule}
 				<div class="flex h-6 w-full flex-row">
 					<button
-						class="h-6 grow items-center
-                                    rounded-md pl-1.5 text-left
-                                    text-sm hover:bg-hoverLight dark:hover:bg-hoverDark"
+						class="h-6 min-w-0 grow items-center rounded-md pl-1.5 text-left text-sm hover:bg-hoverLight dark:hover:bg-hoverDark"
 						title={'Switch to ' + schedule.scheduleName}
 						on:click={() => changeSchedule(schedule)}
 					>
-						<div>{schedule.scheduleName}</div>
+						<span class="no-scrollbar block w-full min-w-0 overflow-x-auto whitespace-nowrap">
+							{schedule.scheduleName}
+						</span>
 					</button>
 
 					<button
-						class="flex h-6
-                                    w-6 items-center justify-center
-                                    rounded-md hover:bg-hoverLight dark:hover:bg-hoverDark"
+						class="flex h-6 w-6 shrink-0 items-center justify-center rounded-md hover:bg-hoverLight dark:hover:bg-hoverDark"
 						title={'Delete ' + schedule.scheduleName}
 						on:click={() => deleteNonselectedSchedule(schedule, nonselectedSchedules)}
 					>

@@ -14,7 +14,7 @@ Copyright (C) 2026 Andrew Cupps
 	<div class="flex flex-col px-4">
 		<div class="static flex flex-row items-end">
 			<div
-				class="absolute h-5 w-5 translate-x-[-27px] translate-y-[-6px] bg-bgLight p-1.5 dark:bg-bgDark"
+				class="absolute h-5 w-5 translate-x-[-27px] translate-y-[-4px] bg-bgLight p-1.5 dark:bg-bgDark"
 			>
 				<div class="h-full w-full rounded-full bg-orange"></div>
 			</div>
