@@ -192,9 +192,8 @@ Copyright (C) 2026 Andrew Cupps
 	on:mouseout={isDesktop ? removeHoverSection : null}
 	on:focusin={isDesktop ? addHoverSection : null}
 	on:focusout={isDesktop ? removeHoverSection : null}
-	class="flex w-full flex-row border-t-2 border-outlineLight pb-1
-                    text-left transition dark:border-outlineDark
-                {sectionAdded ? 'bg-hoverLight dark:bg-hoverDark' : ''}"
+	class="flex w-full flex-row border-t-2 border-outlineLight pb-1 text-left transition dark:border-outlineDark
+	{sectionAdded ? 'bg-hoverLight dark:bg-hoverDark' : ''}"
 	class:lg:hover:bg-hoverLight={!profsHover && !locationHover}
 	class:lg:hover:dark:bg-hoverDark={!profsHover && !locationHover}
 	title="{sectionAdded ? 'Remove course from' : 'Add course to'} schedule"
