@@ -15,7 +15,7 @@ Copyright (C) 2026 Andrew Cupps
 	} from '../../../stores/CoursePlannerStores';
 	import SeatData from './SeatData.svelte';
 	import type { Section, CourseBasic } from '@jupiterp/jupiterp';
-	import type { ScheduleSelection } from '../../../types';
+	import type { ScheduleBlock, ScheduleSelection } from '../../../types';
 	import { noDifferences } from '$lib/course-planner/Schedule';
 
 	export let courseCode: string;
@@ -27,7 +27,7 @@ Copyright (C) 2026 Andrew Cupps
 		hoveredSection = store;
 	});
 
-	let selectionsList: ScheduleSelection[];
+	let selectionsList: ScheduleBlock[];
 	let scheduleName: string;
 	CurrentScheduleStore.subscribe((stored) => {
 		selectionsList = stored.selections;
@@ -145,7 +145,7 @@ Copyright (C) 2026 Andrew Cupps
 		HoveredSectionStore.set(null);
 	}
 
-	function selectionEquals(s: ScheduleSelection): boolean {
+	function selectionEquals(s: ScheduleBlock): boolean {
 		return (
 			'course' in s &&
 			s.course.courseCode === courseCode &&
@@ -154,7 +154,7 @@ Copyright (C) 2026 Andrew Cupps
 		);
 	}
 
-	function firstAvailableColor(selections: ScheduleSelection[]): number {
+	function firstAvailableColor(selections: ScheduleBlock[]): number {
 		let unavailableColors: number[] = [];
 		selections.forEach((selection) => {
 			unavailableColors.push(selection.colorNumber);
