@@ -78,7 +78,10 @@ export function schedulify(selections: ScheduleBlock[]): Schedule {
 						start: selection.startTime,
 						end: selection.endTime
 					},
-					location: selection.location
+					location: {
+						building: selection.location,
+						room: null
+					}
 				};
 
 				const newMeeting: ClassMeetingExtended = {

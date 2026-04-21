@@ -60,8 +60,8 @@ Copyright (C) 2026 Andrew Cupps
 			decStartTime = meeting.meeting.classtime.start;
 			decEndTime = meeting.meeting.classtime.end;
 			if (meeting.userEvent) {
-				// user-created events -- location is always a string
-				location = "📍" + meeting.meeting.location;
+				// user-created events -- location.building is the user event location
+				location = "📍" + meeting.meeting.location.building;
 			} else if (meeting.meeting.location.room != null) {
 				location = formatLocation(meeting.meeting.location);
 			} else if (meeting.meeting.location.building === 'OnlineSync') {
@@ -173,7 +173,7 @@ Copyright (C) 2026 Andrew Cupps
                 width: {(1 / meeting.conflictTotal) * 100}%;
                 left: {((meeting.conflictIndex - 1) / meeting.conflictTotal) * 100}%;"
 	class:otherCategoryClassMeeting={isInOther}
-	title={meeting.userEvent ? "Click to show more event info" : "Click to show more course info"}
+	title={meeting.userEvent ? "" : "Click to show more course info"}
 >
 	<!-- x button to remove course -->
 	{#if !meeting.hover}
