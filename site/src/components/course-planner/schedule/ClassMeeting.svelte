@@ -14,7 +14,7 @@ Copyright (C) 2026 Andrew Cupps
 	import { getColorFromNumber } from '../../../lib/course-planner/ClassMeetingUtils';
 	import { afterUpdate } from 'svelte';
 	import Tooltip from './Tooltip.svelte';
-	import { CourseInfoPairStore, CurrentScheduleStore } from '../../../stores/CoursePlannerStores';
+	import { CourseInfoPairStore, CurrentScheduleStore, EventEditStore } from '../../../stores/CoursePlannerStores';
 	import type {
 		ClassMeetingExtended,
 		CourseSectionPair,
@@ -143,8 +143,20 @@ Copyright (C) 2026 Andrew Cupps
 		courseInfoPair = val;
 	});
 
-	function toggleCourseInfo() {
-		if (
+	let eventEditVal: { eventId: string } | null;
+	EventEditStore.subscribe((val) => {
+		eventEditVal = val;
+	});
+
+	function toggleEventInfo() {
+		if (meeting.userEvent) {
+			// user event -- toggle event edit modal
+			if (eventEditVal?.eventId === meeting.id) {
+				EventEditStore.set(null);
+			} else {
+				EventEditStore.set({ eventId: meeting.id as string });
+			}
+		} else if (
 			courseInfoPair !== null &&
 			courseInfoPair.courseCode === meeting.courseCode &&
 			courseInfoPair.sectionCode === meeting.sectionCode
@@ -165,7 +177,7 @@ Copyright (C) 2026 Andrew Cupps
 	class="absolute flex w-full flex-col
                 justify-center justify-items-center rounded-lg pb-1 text-black"
 	bind:this={elt}
-	on:click={toggleCourseInfo}
+	on:click={toggleEventInfo}
 	style=" top: {((decStartTime - earliestClassStart) / boundDiff) * 100}%;
                 height: {((decEndTime - decStartTime) / boundDiff) * 100}%;
                 background-color: {getColorFromNumber(meeting.colorNumber)};  
@@ -173,7 +185,7 @@ Copyright (C) 2026 Andrew Cupps
                 width: {(1 / meeting.conflictTotal) * 100}%;
                 left: {((meeting.conflictIndex - 1) / meeting.conflictTotal) * 100}%;"
 	class:otherCategoryClassMeeting={isInOther}
-	title={meeting.userEvent ? "" : "Click to show more course info"}
+	title={meeting.userEvent ? "Click to edit event" : "Click to show more course info"}
 >
 	<!-- x button to remove course -->
 	{#if !meeting.hover}

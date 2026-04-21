@@ -9,6 +9,7 @@ Copyright (C) 2026 Andrew Cupps
 
 	export let onClose: () => void;
 	export let onSubmit: (event: UserEvent) => void;
+	export let initialEventData: UserEvent | null = null;
 
 	const DAYS = ['M', 'Tu', 'W', 'Th', 'F'];
 
@@ -20,9 +21,24 @@ Copyright (C) 2026 Andrew Cupps
 	let notes = '';
 	let errors: string[] = [];
 
+	if (initialEventData) {
+		name = initialEventData.name;
+		selectedDays = initialEventData.days;
+		startTime = decimalToTimeString(initialEventData.startTime);
+		endTime = decimalToTimeString(initialEventData.endTime);
+		location = initialEventData.location;
+		notes = initialEventData.notes;
+	}
+
 	function timeStringToDecimal(timeStr: string): number {
 		const [hours, minutes] = timeStr.split(':').map(Number);
 		return hours + minutes / 60;
+	}
+
+	function decimalToTimeString(decimal: number): string {
+		const hours = Math.floor(decimal);
+		const minutes = Math.round((decimal - hours) * 60);
+		return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
 	}
 
 	function toggleDay(day: string) {
@@ -45,7 +61,7 @@ Copyright (C) 2026 Andrew Cupps
 		if (errors.length > 0) return;
 
 		const event: UserEvent = {
-			id: Date.now().toString(),
+			id: initialEventData ? initialEventData.id : Date.now().toString(),
 			name: name.trim(),
 			days: selectedDays,
 			startTime: timeStringToDecimal(startTime),
@@ -70,7 +86,7 @@ Copyright (C) 2026 Andrew Cupps
 			border-outlineLight bg-bgLight p-4 shadow-xl
 			dark:border-outlineDark dark:bg-bgDark"
 >
-	<h2 class="mb-3 text-base font-semibold">Add Custom Event</h2>
+	<h2 class="mb-3 text-base font-semibold">{initialEventData ? 'Edit Event' : 'Add Custom Event'}</h2>
 
 	<!-- Name -->
 	<div class="mb-2">
@@ -177,7 +193,7 @@ Copyright (C) 2026 Andrew Cupps
 			on:click={handleSubmit}
 			class="bg-primary hover:bg-primaryHover rounded px-3 py-1.5 text-sm text-white"
 		>
-			Add Event
+			{initialEventData ? 'Save Event' : 'Add Event'}
 		</button>
 	</div>
 </div>

@@ -45,6 +45,10 @@ export const NonselectedScheduleStore: Writable<StoredSchedule[]> = writable([])
 
 // Track current course displayed in course info section
 export const CourseInfoPairStore: Writable<CourseSectionPair | null> = writable(null);
+
+// Track current event displayed in edit event modal
+export const EventEditStore: Writable<{ eventId: string } | null> = writable(null);
+
 /** List of departments */
 export const DepartmentsStore: Writable<Department[]> = writable([]);
 

@@ -6,7 +6,7 @@ Copyright (C) 2026 Andrew Cupps
 -->
 
 <script lang="ts">
-    import { CurrentScheduleStore } from '../../../stores/CoursePlannerStores';
+    import { CurrentScheduleStore, EventEditStore } from '../../../stores/CoursePlannerStores';
     import type { ScheduleBlock, UserEvent } from '../../../types';
     import UserEventModal from './UserEventModal.svelte';
     import { firstAvailableColor } from '$lib/course-planner/ColorSelector';
@@ -29,28 +29,30 @@ Copyright (C) 2026 Andrew Cupps
 		scheduleName = stored.scheduleName;
 	});
 
+    let eventEditVal: { eventId: string } | null;
+	EventEditStore.subscribe((val) => {
+		eventEditVal = val;
+	});
 
     // function to add user event from UserEventModal
 	function addUserEvent(event: UserEvent) {
-		// firstAvailableColor() thing
-		// const usedColors = [
-		// 	...selectionsList.map((s) => s.colorNumber),
-		// 	...userEvents.map((e) => e.colorNumber)
-		// ].sort((a, b) => a - b);
-		// let color = 0;
-		// for (const c of usedColors) {
-		// 	if (c === color) color++;
-		// 	else break;
-		// }
-		// event.colorNumber = 0;
-        event.colorNumber = firstAvailableColor(selectionsList);
-
-		CurrentScheduleStore.set({
-			scheduleName,
-			selections: [...selectionsList, event]
-		});
-        showCustomEventModal = false;
-
+		const existingIndex = selectionsList.findIndex(
+			(s) => !('course' in s) && s.id === event.id
+		);
+		let updatedSelections: ScheduleBlock[];
+		if (existingIndex !== -1) {
+			// Edit: preserve color and replace in-place
+			event.colorNumber = selectionsList[existingIndex].colorNumber;
+			updatedSelections = [...selectionsList];
+			updatedSelections[existingIndex] = event;
+		} else {
+			// New: assign next available color and append
+			event.colorNumber = firstAvailableColor(selectionsList);
+			updatedSelections = [...selectionsList, event];
+		}
+		CurrentScheduleStore.set({ scheduleName, selections: updatedSelections });
+		showCustomEventModal = false;
+		EventEditStore.set(null);
 	}
 </script>
 
@@ -78,5 +80,13 @@ Copyright (C) 2026 Andrew Cupps
 	<UserEventModal
 		onClose={() => (showCustomEventModal = false)}
 		onSubmit={(event) => addUserEvent(event)}
+	/>
+{/if}
+
+{#if eventEditVal !== null}
+	<UserEventModal
+		onClose={() => EventEditStore.set(null)}
+		onSubmit={(event) => addUserEvent(event)}
+		initialEventData={(selectionsList.find((s) => !('course' in s) && s.id === eventEditVal?.eventId) as UserEvent) || null}
 	/>
 {/if}
