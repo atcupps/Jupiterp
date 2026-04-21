@@ -12,6 +12,7 @@ import type { Course, CoursesConfig, CoursesResponse } from '@jupiterp/jupiterp'
 import type {
 	LegacyScheduleSelection,
 	LegacyStoredSchedule,
+	ScheduleBlock,
 	ScheduleSelection,
 	SelectionDifferences,
 	StoredSchedule
@@ -188,12 +189,12 @@ function getCoursesToRetrieve(current: StoredSchedule, nonselected: StoredSchedu
 	const result: Set<string> = new Set<string>();
 
 	current.selections.forEach((selection) => {
-		result.add(selection.course.courseCode);
+		if ('course' in selection) result.add(selection.course.courseCode);
 	});
 
 	nonselected.forEach((stored) => {
 		stored.selections.forEach((selection) => {
-			result.add(selection.course.courseCode);
+			if ('course' in selection) result.add(selection.course.courseCode);
 		});
 	});
 
@@ -236,8 +237,13 @@ export async function ensureUpToDateAndSetStores(
 		return;
 	}
 
-	const updatedCurrentSelections: ScheduleSelection[] = [];
+	const updatedCurrentSelections: ScheduleBlock[] = [];
 	current.selections.forEach((selection) => {
+		// Push UserEvents through without updates
+		if (!('course' in selection)) {
+			updatedCurrentSelections.push(selection);
+			return;
+		}
 		const upToDate: Course = upToDateCourses[selection.course.courseCode];
 		if (!upToDate) {
 			// Course no longer exists, skip
@@ -251,8 +257,13 @@ export async function ensureUpToDateAndSetStores(
 
 	const updatedNonSelectedSchedules: StoredSchedule[] = [];
 	nonselected.forEach((stored) => {
-		const updatedSelections: ScheduleSelection[] = [];
+		const updatedSelections: ScheduleBlock[] = [];
 		stored.selections.forEach((selection) => {
+			// Push UserEvents through without updates
+			if (!('course' in selection)) {
+				updatedSelections.push(selection);
+				return;
+			}
 			const upToDate: Course = upToDateCourses[selection.course.courseCode];
 			if (!upToDate) {
 				// Course no longer exists, skip

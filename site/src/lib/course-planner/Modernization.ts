@@ -22,6 +22,7 @@ import type {
 	LegacyCourse,
 	LegacyScheduleSelection,
 	LegacySection,
+	ScheduleBlock,
 	ScheduleSelection,
 	TimeComponent
 } from '../../types';
@@ -152,7 +153,7 @@ function modernizeSelection(selection: LegacyScheduleSelection): ScheduleSelecti
 	};
 }
 
-export function assignColorNumbers(selections: ScheduleSelection[]): ScheduleSelection[] {
+export function assignColorNumbers(selections: ScheduleBlock[]): ScheduleBlock[] {
 	for (let i = 0; i < selections.length; i++) {
 		selections[i].colorNumber = i;
 	}
