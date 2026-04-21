@@ -17,7 +17,10 @@ Copyright (C) 2026 Andrew Cupps
     let wasWide = false;
     $: {
         const isWide = innerWidth >= 1024;
-        if (wasWide && !isWide) showCustomEventModal = false;
+        if (wasWide && !isWide) {
+            showCustomEventModal = false;
+            EventEditStore.set(null);
+        }
         wasWide = isWide;
     }
 
@@ -33,6 +36,13 @@ Copyright (C) 2026 Andrew Cupps
 	EventEditStore.subscribe((val) => {
 		eventEditVal = val;
 	});
+
+    // resolved UserEvent for the edit modal — computed here because Svelte
+    // template expressions don't support TypeScript type assertions
+    let editEventData: UserEvent | null = null;
+    $: editEventData = eventEditVal
+        ? (selectionsList.find((s) => !('course' in s) && s.id === eventEditVal!.eventId) as UserEvent) || null
+        : null;
 
     // function to add user event from UserEventModal
 	function addUserEvent(event: UserEvent) {
@@ -87,6 +97,6 @@ Copyright (C) 2026 Andrew Cupps
 	<UserEventModal
 		onClose={() => EventEditStore.set(null)}
 		onSubmit={(event) => addUserEvent(event)}
-		initialEventData={(selectionsList.find((s) => !('course' in s) && s.id === eventEditVal?.eventId) as UserEvent) || null}
+		initialEventData={editEventData}
 	/>
 {/if}
