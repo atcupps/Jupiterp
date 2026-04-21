@@ -109,6 +109,17 @@ Copyright (C) 2026 Andrew Cupps
 		fontSize = parseInt(getComputedStyle(document.documentElement).fontSize.substring(0, 2)) / 16;
 	}
 
+	// calculate meeting block space for # available lines for notes (user events only)
+	let notesLines = 0;
+	$: if (h && fontSize && meeting.userEvent) {
+		const bodySpace = h - 24 * fontSize;
+		const totalLines = Math.floor(bodySpace / (16 * fontSize));
+		let linesUsed = 0;
+		if (bodySpace > 48 * fontSize) linesUsed++; // time
+		if (bodySpace > 16 * fontSize && hasLocation) linesUsed++; // location
+		notesLines = Math.max(0, totalLines - linesUsed);
+	}
+
 	function removeCourseByClassMeeting() {
 		const index = selections.findIndex((obj) => selectionEqualsByCode(obj));
 		if (index !== -1) {
@@ -268,11 +279,12 @@ Copyright (C) 2026 Andrew Cupps
 					{/if}
 				</div>
 			{/if}
-			{#if meeting.userEvent && meeting.notes && h - 24 * fontSize > 0}
-				<div class="static truncate italic">
-					{meeting.notes.length > 40 && h - 24 * fontSize < 24 * fontSize
-						? meeting.notes.slice(0, 40) + '…'
-						: meeting.notes}
+			{#if meeting.userEvent && meeting.notes && notesLines > 0}
+				<div
+					class="static overflow-hidden italic"
+					style="display: -webkit-box; -webkit-line-clamp: {notesLines}; -webkit-box-orient: vertical;"
+				>
+					{meeting.notes}
 				</div>
 			{/if}
 
