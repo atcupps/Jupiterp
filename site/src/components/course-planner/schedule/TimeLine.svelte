@@ -13,7 +13,7 @@ Copyright (C) 2026 Andrew Cupps
 	<div
 		class="absolute w-[34px] text-right
                     text-xs font-light 2xl:w-[40px] 2xl:text-sm"
-		style="left: -8px; top: 50%; transform: translateY(-50%);"
+		style="left: -4px; top: 50%; transform: translateY(-50%);"
 	>
 		{number}
 	</div>

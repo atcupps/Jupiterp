@@ -73,7 +73,7 @@ Copyright (C) 2026 Andrew Cupps
 <!-- Using this method to avoid having to listen to a variable on Schedule -->
 {#if siteLinksSelected}
 	<button
-		class="visible fixed top-[3rem] z-[55] w-full bg-black
+		class="visible fixed top-12 z-[55] -mx-4 w-full bg-black
                     bg-opacity-20 lg:hidden"
 		style="height: calc(100% - 3rem);"
 		in:fade={{ duration: 150 }}
@@ -84,7 +84,7 @@ Copyright (C) 2026 Andrew Cupps
 
 <!-- Mobile site links -->
 <div
-	class="site-links visible fixed right-0 top-[3rem] z-[61] flex
+	class="site-links visible fixed right-0 top-12 z-[61] flex
             w-[300px] flex-col
             border-l-2 border-solid border-divBorderLight bg-bgLight p-2 transition-transform
             duration-300 lg:hidden dark:border-divBorderDark dark:bg-bgDark"

@@ -5,7 +5,6 @@ https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2026 Andrew Cupps
 -->
 <script lang="ts">
-	import { fade } from 'svelte/transition';
 	import CourseListing from './CourseListing.svelte';
 	import {
 		deptCodeToName,
@@ -24,9 +23,22 @@ Copyright (C) 2026 Andrew Cupps
 	import type { ScheduleBlock, ScheduleSelection } from '../../../types';
 	import CourseFilters from './CourseFilters.svelte';
 	import SolarSystemLoader from './SolarSystemLoader.svelte';
+	import { createCourseSearchActivationController } from '../../../lib/course-planner/CourseSearchActivation';
+	import { chainScroll } from '../../../lib/course-planner/ChainScroll';
+	import { PlannerState } from '../../../stores/CoursePlannerStores';
+
+	let plannerState: { isDesktop: boolean; chainScrollParent: HTMLElement | null } = {
+		isDesktop: false,
+		chainScrollParent: null
+	};
+	PlannerState.subscribe((state: { isDesktop: boolean; chainScrollParent: HTMLElement | null }) => {
+		plannerState = state;
+	});
 	import CustomUserEvents from './CustomUserEvents.svelte';
 
 	const FILTER_SCROLL_COLLAPSE_THRESHOLD = 100;
+	let searchResultsElement: HTMLDivElement;
+	let blockSearchInputPointer = !plannerState.isDesktop;
 
 	let hoveredSection: ScheduleSelection | null;
 	HoveredSectionStore.subscribe((hovered) => {
@@ -63,6 +75,32 @@ Copyright (C) 2026 Andrew Cupps
 	}
 
 	let genEdMenuOpen = false;
+	let searchInputElement: HTMLInputElement | null = null;
+	let keyboardPrimeElement: HTMLInputElement | null = null;
+	let searchActivationInProgress = false;
+	let suppressSearchBlurReset = false;
+	$: if (plannerState.isDesktop) {
+		blockSearchInputPointer = false;
+	}
+
+	const searchActivation = createCourseSearchActivationController({
+		isDesktop: () => plannerState.isDesktop,
+		blockSearchInputPointer: () => blockSearchInputPointer,
+		setBlockSearchInputPointer: (value: boolean) => {
+			blockSearchInputPointer = value;
+		},
+		searchActivationInProgress: () => searchActivationInProgress,
+		setSearchActivationInProgress: (value: boolean) => {
+			searchActivationInProgress = value;
+		},
+		suppressSearchBlurReset: () => suppressSearchBlurReset,
+		setSuppressSearchBlurReset: (value: boolean) => {
+			suppressSearchBlurReset = value;
+		},
+		searchInputElement: () => searchInputElement,
+		keyboardPrimeElement: () => keyboardPrimeElement,
+		scrollToSearch
+	});
 
 	function selectDepartment(dept: string) {
 		searchInput = dept;
@@ -99,9 +137,6 @@ Copyright (C) 2026 Andrew Cupps
 		highlightedSuggestionIndex = -1;
 	}
 
-	// Boolean for toggling search menu on smaller screens
-	export let courseSearchSelected: boolean = false;
-
 	$: {
 		if (hoveredSection) {
 			let index = searchResults.findIndex((course) => {
@@ -125,6 +160,7 @@ Copyright (C) 2026 Andrew Cupps
 	}
 
 	let scrollAcc = 0;
+
 	function handleResultsScroll(event: WheelEvent) {
 		if (!genEdMenuOpen) {
 			return;
@@ -139,95 +175,87 @@ Copyright (C) 2026 Andrew Cupps
 			scrollAcc = 0;
 		}
 	}
-</script>
 
-<!-- Layer to exit course search if user taps on the Schedule -->
-<!-- Using this method to avoid having to listen to a variable on Schedule -->
-{#if courseSearchSelected}
-	<button
-		class="fixed z-[51] w-full bg-black bg-opacity-20
-                    lg:hidden"
-		style="height: calc(100% - 3rem);"
-		in:fade={{ duration: 150 }}
-		out:fade={{ duration: 150 }}
-		on:click={() => (courseSearchSelected = false)}
-	/>
-{/if}
+	function scrollToSearch() {
+		const searchElement = document.getElementById('planner-course-search');
+		if (!searchElement) {
+			return;
+		}
+
+		searchElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+	}
+</script>
 
 <!-- Course Search -->
 <div
-	class="course-search visible fixed left-0 z-[52]
-                            flex w-[300px] flex-col border-r-2 border-solid
-                            border-divBorderLight bg-bgLight py-1
-                            pl-1 pr-2
-                            transition-transform duration-300 lg:static lg:ml-1.5
-                            lg:h-full lg:min-w-[260px] lg:bg-transparent lg:pl-0
-                            lg:shadow-none xl:min-w-[320px] 2xl:min-w-[400px] 2xl:text-lg
-                            dark:border-divBorderDark dark:bg-bgDark"
-	class:course-search-transition={!courseSearchSelected}
-	class:shadow-lg={courseSearchSelected}
+	class="order-2 min-h-80 w-full flex-col border-solid border-divBorderLight bg-bgLight lg:order-1 lg:grid lg:h-[100svh-3rem] lg:grid-cols-1 lg:grid-rows-[auto_minmax(0,1fr)] dark:border-divBorderDark dark:bg-bgDark"
 >
-	<div class="ml-1 flex flex-row pb-1 text-xs 2xl:text-sm">
-		<div>Fall 2026</div>
-		<div class="grow text-right">
-			Credits: {totalCredits}
+	<!-- Course search input and filters [height of 7.5rem] -->
+	<div id="planner-course-search" class="px-1 pt-1">
+		<div class="ml-1 flex flex-row pb-1 text-xs 2xl:text-sm">
+			<div>Fall 2026</div>
+			<div class="grow text-right">
+				Credits: {totalCredits}
+			</div>
+		</div>
+
+		<ScheduleSelector />
+
+		<div
+			class="relative flex w-full flex-col border-b-2 border-t-2 border-solid border-divBorderLight dark:border-divBorderDark"
+		>
+			<!-- Course search box -->
+			<div class="relative">
+				<!-- Mobile keyboard prime input: used to make the mobile keyboard appear -->
+				<input
+					type="text"
+					id="mobile-keyboard-prime"
+					bind:this={keyboardPrimeElement}
+					tabindex="-1"
+					autocomplete="off"
+					class="pointer-events-none fixed left-0 top-0 h-0 w-0 opacity-0"
+				/>
+				<input
+					type="text"
+					id="planner-course-search-input"
+					bind:this={searchInputElement}
+					bind:value={searchInput}
+					on:focus={searchActivation.handleSearchFocus}
+					on:blur={searchActivation.handleSearchBlur}
+					on:input={() => {
+						setSearchResults(searchInput);
+					}}
+					on:keydown={handleSearchKeydown}
+					placeholder="Search course codes, ex: 'MATH140'"
+					class="w-full rounded-lg border-2 border-solid border-outlineLight bg-transparent px-2 py-0 text-xl placeholder:text-base lg:text-base lg:placeholder:text-sm dark:border-outlineDark"
+				/>
+			</div>
+
+			<CourseFilters bind:showGenEdMenu={genEdMenuOpen} />
 		</div>
 	</div>
-
-	<ScheduleSelector />
-
+	<!-- Course search results & dept suggestions [min-height: 20rem - 7.5rem = 12.75rem]-->
 	<div
-		class="relative flex w-full flex-col border-b-2
-                            border-t-2 border-solid border-divBorderLight p-1
-                            lg:px-0 dark:border-divBorderDark"
-	>
-		<!-- Course search box -->
-		<input
-			type="text"
-			bind:value={searchInput}
-			on:input={() => {
-				setSearchResults(searchInput);
-			}}
-			on:keydown={handleSearchKeydown}
-			placeholder="Search course codes, ex: 'MATH140'"
-			class="w-full rounded-lg border-2
-                            border-solid border-outlineLight
-                            bg-transparent px-2 py-0 text-xl
-                            placeholder:text-base lg:text-base
-                            lg:placeholder:text-sm dark:border-outlineDark"
-		/>
-
-		<CourseFilters bind:showGenEdMenu={genEdMenuOpen} />
-	</div>
-
-	<!-- Course search results & dept suggestions -->
-	<div
-		class="courses-list overflow-x-none grow overflow-y-scroll
-                px-1 lg:pl-0 lg:pr-1"
+		id="planner-search-results"
+		class="chain-scroll-only custom-scrollbar h-[calc(100svh-10.5rem)] min-h-[12.75rem] overflow-y-scroll px-1 focus:outline-none lg:h-auto lg:min-h-0"
+		bind:this={searchResultsElement}
+		use:chainScroll={{
+			parent: plannerState.chainScrollParent,
+			enabled: !plannerState.isDesktop,
+			element: searchResultsElement
+		}}
 		on:wheel={handleResultsScroll}
 	>
 		<!-- Department suggestions dropdown -->
 		{#if searchInput.length > 0 && deptSuggestions.length > 1}
 			<div
-				class="mt-2 rounded-lg border
-                        border-outlineLight bg-bgLight
-                        shadow-lg dark:border-outlineDark dark:bg-bgDark"
+				class="mt-2 rounded-lg border border-outlineLight bg-bgLight shadow-lg dark:border-outlineDark dark:bg-bgDark"
 			>
 				{#each deptSuggestions as deptOption, index}
 					<button
 						type="button"
-						class={`flex w-full items-end px-3 py-1
-                                text-left text-base transition-colors
-                                hover:bg-outlineLight
-                                hover:bg-opacity-20 lg:text-sm
-                                dark:hover:bg-outlineDark
-                                dark:hover:bg-opacity-30 
-                                ${
-																	highlightedSuggestionIndex === index
-																		? `bg-outlineLight bg-opacity-20
-                                    dark:bg-outlineDark dark:bg-opacity-30`
-																		: ''
-																}`}
+						class={`flex w-full items-end px-3 py-1 text-left text-base transition-colors hover:bg-outlineLight hover:bg-opacity-20 lg:text-sm dark:hover:bg-outlineDark dark:hover:bg-opacity-30 
+							${highlightedSuggestionIndex === index ? `bg-outlineLight bg-opacity-20 dark:bg-outlineDark dark:bg-opacity-30` : ''}`}
 						on:mouseenter={() => {
 							highlightedSuggestionIndex = index;
 						}}
@@ -236,10 +264,7 @@ Copyright (C) 2026 Andrew Cupps
 						<span class="min-w-[17%] shrink-0 font-black">
 							{deptOption}
 						</span>
-						<span
-							class="inline-block grow
-                                    truncate text-xs italic"
-						>
+						<span class="inline-block grow truncate text-xs italic">
 							{deptCodeToName[deptOption]}
 						</span>
 					</button>
@@ -249,7 +274,7 @@ Copyright (C) 2026 Andrew Cupps
 
 		<!-- Course search results -->
 		{#each searchResults as courseMatch (courseMatch.courseCode)}
-			<CourseListing course={courseMatch} />
+			<CourseListing course={courseMatch} isDesktop={plannerState.isDesktop} />
 		{/each}
 
 		{#if isPendingResults}
@@ -261,18 +286,3 @@ Copyright (C) 2026 Andrew Cupps
 
 	<CustomUserEvents />
 </div>
-
-<style>
-	@media screen and (max-width: 1023px) {
-		.course-search {
-			height: calc(100svh - 3rem);
-		}
-
-		.course-search-transition {
-			transition-property: transform;
-			transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-			transition-duration: 150ms;
-			transform: translateX(calc(-100% - 2px));
-		}
-	}
-</style>

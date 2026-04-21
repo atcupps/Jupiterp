@@ -70,8 +70,8 @@ Copyright (C) 2026 Andrew Cupps
 		</a>
 		<span
 			style="--rating: {convertRating(profs[instructor].average_rating) + '%'}"
-			class="stars align-[2px] text-[8px] font-bold
-                            text-orange xl:text-[10px] 2xl:text-base"
+			class="stars align-[2px] text-[8px] font-bold text-orange xl:text-[10px] 2xl:text-base"
+			title="{profs[instructor].average_rating} out of 5"
 		>
 			★★★★★
 		</span>

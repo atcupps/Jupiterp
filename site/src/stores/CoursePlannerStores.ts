@@ -14,6 +14,17 @@ import type {
 	StoredSchedule
 } from '../types';
 
+/**
+ * Shared planner state for components.
+ */
+export const PlannerState: Writable<{
+	isDesktop: boolean;
+	chainScrollParent: HTMLElement | null;
+}> = writable({
+	isDesktop: false,
+	chainScrollParent: null
+});
+
 /** `Record<string, Instructor>` for getting instructor data from names
 /* Initially set to an empty record since the data used here is
 /* loaded in `+page.svelte`.

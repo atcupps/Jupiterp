@@ -19,7 +19,8 @@ Copyright (C) 2026 Andrew Cupps
 	let currentScheduleName: string;
 	let currentScheduleSelections: ScheduleSelection[];
 	CurrentScheduleStore.subscribe((stored) => {
-		((currentScheduleName = stored.scheduleName), (currentScheduleSelections = stored.selections));
+		currentScheduleName = stored.scheduleName;
+		currentScheduleSelections = stored.selections;
 	});
 
 	let nonselectedSchedules: StoredSchedule[];

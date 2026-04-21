@@ -11,7 +11,7 @@ Copyright (C) 2026 Andrew Cupps
 <div class="error">
 	<h1 class="error-message text-black dark:text-white">
 		Error {$page.status}:
-		{$page.error.message}
+		{$page.error?.message}
 	</h1>
 </div>
 
