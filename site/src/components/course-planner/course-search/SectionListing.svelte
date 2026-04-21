@@ -17,6 +17,7 @@ Copyright (C) 2026 Andrew Cupps
 	import type { Section, CourseBasic } from '@jupiterp/jupiterp';
 	import type { ScheduleBlock, ScheduleSelection } from '../../../types';
 	import { noDifferences } from '$lib/course-planner/Schedule';
+	import { firstAvailableColor } from '$lib/course-planner/ColorSelector';
 
 	export let courseCode: string;
 	export let section: Section;
@@ -152,19 +153,6 @@ Copyright (C) 2026 Andrew Cupps
 			s.section.sectionCode === section.sectionCode &&
 			!s.hover
 		);
-	}
-
-	function firstAvailableColor(selections: ScheduleBlock[]): number {
-		let unavailableColors: number[] = [];
-		selections.forEach((selection) => {
-			unavailableColors.push(selection.colorNumber);
-		});
-		unavailableColors.sort((a, b) => a - b);
-		let result: number = 0;
-		while (result < unavailableColors.length && unavailableColors[result] === result) {
-			result += 1;
-		}
-		return result;
 	}
 
 	let profsHover: boolean = false;

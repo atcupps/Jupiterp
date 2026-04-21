@@ -7,8 +7,9 @@ Copyright (C) 2026 Andrew Cupps
 
 <script lang="ts">
     import { CurrentScheduleStore } from '../../../stores/CoursePlannerStores';
-    import type { ScheduleBlock, ScheduleSelection, UserEvent } from '../../../types';
+    import type { ScheduleBlock, UserEvent } from '../../../types';
     import UserEventModal from './UserEventModal.svelte';
+    import { firstAvailableColor } from '$lib/course-planner/ColorSelector';
 
     let showCustomEventModal = false;
 
@@ -41,7 +42,8 @@ Copyright (C) 2026 Andrew Cupps
 		// 	if (c === color) color++;
 		// 	else break;
 		// }
-		event.colorNumber = 0;
+		// event.colorNumber = 0;
+        event.colorNumber = firstAvailableColor(selectionsList);
 
 		CurrentScheduleStore.set({
 			scheduleName,
