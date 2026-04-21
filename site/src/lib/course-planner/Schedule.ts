@@ -357,14 +357,14 @@ function classesConflict(aStart: number, aEnd: number, bStart: number, bEnd: num
 
 /**
  * Append a `hoveredSection` to `selections` if it is not `null`.
- * @param selections An array of `ScheduleSelection`s
+ * @param selections An array of `ScheduleBlock`s
  * @param hoveredSection A `ScheduleSelection` or `null`
  * @returns `selections`, with `hoveredSection` appended if it is not `null`.
  */
 export function appendHoveredSection(
-	selections: ScheduleSelection[],
+	selections: ScheduleBlock[],
 	hoveredSection: ScheduleSelection | null
-): ScheduleSelection[] {
+): ScheduleBlock[] {
 	if (hoveredSection) {
 		return [...selections, hoveredSection];
 	} else {

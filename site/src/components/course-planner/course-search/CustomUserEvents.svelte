@@ -39,6 +39,7 @@ Copyright (C) 2026 Andrew Cupps
 			scheduleName,
 			selections: [...selectionsList, event]
 		});
+        showCustomEventModal = false;
 
 		// const updatedCurrentSelections = [...selections];
 		// CurrentScheduleStore.update((current) => {

@@ -147,6 +147,7 @@ Copyright (C) 2026 Andrew Cupps
 
 	function selectionEquals(s: ScheduleSelection): boolean {
 		return (
+			'course' in s &&
 			s.course.courseCode === courseCode &&
 			s.section.sectionCode === section.sectionCode &&
 			!s.hover

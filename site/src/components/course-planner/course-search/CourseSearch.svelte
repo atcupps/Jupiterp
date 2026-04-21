@@ -21,7 +21,7 @@ Copyright (C) 2026 Andrew Cupps
 	} from '../../../stores/CoursePlannerStores';
 	import ScheduleSelector from './ScheduleSelector.svelte';
 	import type { Course } from '@jupiterp/jupiterp';
-	import type { ScheduleSelection } from '../../../types';
+	import type { ScheduleBlock, ScheduleSelection } from '../../../types';
 	import CourseFilters from './CourseFilters.svelte';
 	import SolarSystemLoader from './SolarSystemLoader.svelte';
 	import CustomUserEvents from './CustomUserEvents.svelte';
@@ -33,7 +33,7 @@ Copyright (C) 2026 Andrew Cupps
 		hoveredSection = hovered;
 	});
 
-	let selections: ScheduleSelection[] = [];
+	let selections: ScheduleBlock[] = [];
 	CurrentScheduleStore.subscribe((stored) => {
 		selections = stored.selections;
 	});
@@ -116,9 +116,11 @@ Copyright (C) 2026 Andrew Cupps
 	let totalCredits: number = 0;
 	$: if (selections || hoveredSection) {
 		totalCredits = 0;
-		let selectionsWithHovered = appendHoveredSection(selections, hoveredSection);
+		let selectionsWithHovered: ScheduleBlock[] = appendHoveredSection(selections, hoveredSection);
 		selectionsWithHovered.forEach((selection) => {
-			totalCredits += selection.course.minCredits;
+			if ('course' in selection) {
+				totalCredits += selection.course.minCredits;
+			}
 		});
 	}
 
