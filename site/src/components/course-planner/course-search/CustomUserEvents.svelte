@@ -12,6 +12,14 @@ Copyright (C) 2026 Andrew Cupps
 
     let showCustomEventModal = false;
 
+    let innerWidth = 0;
+    let wasWide = false;
+    $: {
+        const isWide = innerWidth >= 1024;
+        if (wasWide && !isWide) showCustomEventModal = false;
+        wasWide = isWide;
+    }
+
     // get selections and user events from store
     let selectionsList: ScheduleBlock[];
 	let scheduleName: string;
@@ -44,6 +52,8 @@ Copyright (C) 2026 Andrew Cupps
 	}
 </script>
 
+
+<svelte:window bind:innerWidth />
 
 <!-- custom event adding -->
 <div
