@@ -134,6 +134,12 @@ interface ClassMeetingExtended {
 	 * Used to match a rendered block back to its store entry for removal.
 	 */
 	id?: string;
+
+	/**
+	 * If this is a user-created event block
+	 * Helps differentiate between standard course meetings and user-created events when rendering
+	 */
+	userEvent?: boolean;
 }
 
 /**

@@ -44,7 +44,7 @@ export function schedulify(selections: ScheduleBlock[]): Schedule {
 		other: []
 	};
 	selections.forEach((selection) => {
-		if (!("notes" in selection)) {
+		if ("course" in selection) {
 			// this is a normal ScheduleSelection
 			selection.section.meetings.forEach((meeting) => {
 				const newMeeting: ClassMeetingExtended = {
@@ -56,7 +56,8 @@ export function schedulify(selections: ScheduleBlock[]): Schedule {
 					instructors: selection.section.instructors,
 					hover: selection.hover,
 					colorNumber: selection.colorNumber,
-					differences: selection.differences
+					differences: selection.differences,
+					userEvent: false
 				};
 
 				if (typeof meeting === 'string') {
@@ -96,7 +97,9 @@ export function schedulify(selections: ScheduleBlock[]): Schedule {
 						meetingTime: false,
 						meetingLocation: false
 					},
-					id: selection.id
+					notes: selection.notes,
+					id: selection.id,
+					userEvent: true
 				};
 				addMeetings(schedule, newMeeting, meeting.classtime);
 			});

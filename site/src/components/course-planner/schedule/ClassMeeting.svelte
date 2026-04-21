@@ -44,6 +44,7 @@ Copyright (C) 2026 Andrew Cupps
 	const meetingTimeChange = differences.meetingTime;
 	const meetingLocChange = differences.meetingLocation;
 
+
 	let formattedInstructors: string = formatInstructors(meeting.instructors);
 	let formattedTime: string;
 	let secCode: string;
@@ -58,7 +59,10 @@ Copyright (C) 2026 Andrew Cupps
 			formattedTime = formatClasstime(meeting.meeting.classtime);
 			decStartTime = meeting.meeting.classtime.start;
 			decEndTime = meeting.meeting.classtime.end;
-			if (meeting.meeting.location.room != null) {
+			if (meeting.userEvent) {
+				// user-created events -- location is always a string
+				location = "📍" + meeting.meeting.location;
+			} else if (meeting.meeting.location.room != null) {
 				location = formatLocation(meeting.meeting.location);
 			} else if (meeting.meeting.location.building === 'OnlineSync') {
 				location = 'ONLINE';
@@ -158,7 +162,7 @@ Copyright (C) 2026 Andrew Cupps
                 width: {(1 / meeting.conflictTotal) * 100}%;
                 left: {((meeting.conflictIndex - 1) / meeting.conflictTotal) * 100}%;"
 	class:otherCategoryClassMeeting={isInOther}
-	title="Click to show more course info"
+	title={meeting.userEvent ? "Click to show more event info" : "Click to show more course info"}
 >
 	<!-- x button to remove course -->
 	{#if !meeting.hover}
@@ -166,7 +170,7 @@ Copyright (C) 2026 Andrew Cupps
 			class="absolute right-0 top-0 h-4 w-4
                         justify-center 2xl:right-1 2xl:top-1"
 			on:click={removeCourseByClassMeeting}
-			title="Remove course from schedule"
+			title={meeting.userEvent ? "Remove event from schedule" : "Remove course from schedule"}
 		>
 			<!-- format-check exempt 4 -->
 			<svg
@@ -194,6 +198,7 @@ Copyright (C) 2026 Andrew Cupps
 				class:text-xs={w < 104}
 				class:rounded-b-lg={h < 1.75 * fontSize}
 			>
+				<!-- Course code / Event name -->
 				<span>{meeting.courseCode}</span>
 			</div>
 		{/if}
@@ -241,7 +246,7 @@ Copyright (C) 2026 Andrew Cupps
 					{/if}
 				</div>
 			{/if}
-			{#if h - 24 * fontSize > 32 * fontSize || isInOther}
+			{#if !(meeting.userEvent) && (h - 24 * fontSize > 32 * fontSize || isInOther)}
 				<div class="static truncate">
 					Section {secCode}
 				</div>
@@ -263,6 +268,14 @@ Copyright (C) 2026 Andrew Cupps
 					{/if}
 				</div>
 			{/if}
+			{#if meeting.userEvent && meeting.notes && h - 24 * fontSize > 0}
+				<div class="static truncate italic">
+					{meeting.notes.length > 40 && h - 24 * fontSize < 24 * fontSize
+						? meeting.notes.slice(0, 40) + '…'
+						: meeting.notes}
+				</div>
+			{/if}
+
 		</div>
 	{:else}
 		<div
