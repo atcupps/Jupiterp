@@ -11,8 +11,7 @@ import type {
 	CourseSectionPair,
 	FilterParams,
 	ScheduleSelection,
-	StoredSchedule,
-	UserEvent
+	StoredSchedule
 } from '../types';
 
 /** `Record<string, Instructor>` for getting instructor data from names
@@ -50,4 +49,3 @@ export const CourseSearchFilterStore: Writable<FilterParams> = writable({
 	clientSideFilters: {}
 });
 
-export const UserEventsStore: Writable<UserEvent[]> = writable([]);

@@ -5,13 +5,11 @@ https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2026 Andrew Cupps
 -->
 <script lang="ts">
-	import type { ClassMeetingExtended, UserEvent } from '../../../types';
+	import type { ClassMeetingExtended } from '../../../types';
 	import ClassMeeting from './ClassMeeting.svelte';
-	import UserEventBlock from './UserEventBlock.svelte';
 
 	export let name: string;
 	export let classes: ClassMeetingExtended[];
-	export let userEvents: UserEvent[] = [];
 	export let earliestClassStart: number = 0;
 	export let latestClassEnd: number = 0;
 	export let bgHeight: number;
@@ -31,9 +29,6 @@ Copyright (C) 2026 Andrew Cupps
 				bind:earliestClassStart
 				bind:latestClassEnd
 			/>
-		{/each}
-		{#each userEvents as event (event.id)}
-			<UserEventBlock {event} bind:earliestClassStart bind:latestClassEnd />
 		{/each}
 	</div>
 </div>

@@ -19,8 +19,7 @@ Copyright (C) 2026 Andrew Cupps
 		ProfsLookupStore,
 		CurrentScheduleStore,
 		NonselectedScheduleStore,
-		DepartmentsStore,
-		UserEventsStore
+		DepartmentsStore
 	} from '../stores/CoursePlannerStores';
 	import { client } from '$lib/client';
 	import {
@@ -110,16 +109,6 @@ Copyright (C) 2026 Andrew Cupps
 		}
 	});
 
-	UserEventsStore.subscribe((stored) => {
-		if (hasReadLocalStorage) {
-			// Save to local storage
-			if (stored) {
-				if (typeof window !== 'undefined') {
-					localStorage.setItem('userEvents', JSON.stringify(stored));
-				}
-			}
-		}
-	});
 
 	onMount(() => {
 		// Fetch instructor data from API
@@ -167,12 +156,6 @@ Copyright (C) 2026 Andrew Cupps
 				// most up-to-date course data, and update accordingly.
 				ensureUpToDateAndSetStores(currentSchedule, storedNonselectedSchedules);
 
-				const storedUserEventsOption = localStorage.getItem('userEvents');
-				if (storedUserEventsOption) {
-					const storedUserEvents = JSON.parse(storedUserEventsOption);
-					UserEventsStore.set(storedUserEvents);
-				}
-
 				hasReadLocalStorage = true;
 			}
 		} catch (e) {
@@ -182,7 +165,6 @@ Copyright (C) 2026 Andrew Cupps
 				selections: []
 			});
 			NonselectedScheduleStore.set([]);
-			UserEventsStore.set([]);
 		}
 	});
 
