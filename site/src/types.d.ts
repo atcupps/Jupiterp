@@ -122,12 +122,18 @@ interface ClassMeetingExtended {
 
 	/**
 	 * Notes added by the user for this event block, which are displayed on the schedule.
-	 * 
+	 *
 	 * This is only really used for user-created events (`UserEvent`) but is
 	 * included here so that this type can be used for both course and user events
 	 * to simplify rendering logic.
 	 */
 	notes?: string;
+
+	/**
+	 * For user-created events, the ID of the originating `UserEvent`.
+	 * Used to match a rendered block back to its store entry for removal.
+	 */
+	id?: string;
 }
 
 /**

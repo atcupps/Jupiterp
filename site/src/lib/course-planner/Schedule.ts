@@ -95,7 +95,8 @@ export function schedulify(selections: ScheduleBlock[]): Schedule {
 						meetingType: false,
 						meetingTime: false,
 						meetingLocation: false
-					}
+					},
+					id: selection.id
 				};
 				addMeetings(schedule, newMeeting, meeting.classtime);
 			});

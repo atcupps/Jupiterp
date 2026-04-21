@@ -18,6 +18,7 @@ Copyright (C) 2026 Andrew Cupps
 	import type {
 		ClassMeetingExtended,
 		CourseSectionPair,
+		ScheduleBlock,
 		ScheduleSelection,
 		SelectionDifferences
 	} from '../../../types';
@@ -30,7 +31,7 @@ Copyright (C) 2026 Andrew Cupps
 
 	export let isInOther: boolean;
 
-	let selections: ScheduleSelection[];
+	let selections: ScheduleBlock[];
 	let scheduleName: string;
 	CurrentScheduleStore.subscribe((stored) => {
 		selections = stored.selections;
@@ -114,8 +115,12 @@ Copyright (C) 2026 Andrew Cupps
 		}
 	}
 
-	function selectionEqualsByCode(s: ScheduleSelection): boolean {
-		return s.course.courseCode === meeting.courseCode && s.section.sectionCode === secCode;
+	function selectionEqualsByCode(s: ScheduleBlock): boolean {
+		if ('course' in s) {
+			return s.course.courseCode === meeting.courseCode && s.section.sectionCode === secCode;
+		} else {
+			return s.id === meeting.id;
+		}
 	}
 
 	let courseInfoPair: CourseSectionPair | null;
