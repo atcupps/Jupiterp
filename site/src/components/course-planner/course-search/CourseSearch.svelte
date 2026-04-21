@@ -17,15 +17,14 @@ Copyright (C) 2026 Andrew Cupps
 		HoveredSectionStore,
 		CurrentScheduleStore,
 		SearchResultsStore,
-		DeptSuggestionsStore,
-		UserEventsStore
+		DeptSuggestionsStore
 	} from '../../../stores/CoursePlannerStores';
 	import ScheduleSelector from './ScheduleSelector.svelte';
 	import type { Course } from '@jupiterp/jupiterp';
-	import type { ScheduleSelection, UserEvent } from '../../../types';
+	import type { ScheduleSelection } from '../../../types';
 	import CourseFilters from './CourseFilters.svelte';
 	import SolarSystemLoader from './SolarSystemLoader.svelte';
-	import UserEventModal from './UserEventModal.svelte';
+	import CustomUserEvents from './CustomUserEvents.svelte';
 
 	const FILTER_SCROLL_COLLAPSE_THRESHOLD = 100;
 
@@ -37,12 +36,6 @@ Copyright (C) 2026 Andrew Cupps
 	let selections: ScheduleSelection[] = [];
 	CurrentScheduleStore.subscribe((stored) => {
 		selections = stored.selections;
-	});
-
-	// subscribe to user events store
-	let userEvents: UserEvent[] = [];
-	UserEventsStore.subscribe((stored) => {
-		userEvents = stored;
 	});
 
 	// Variable and function for handling course search input
@@ -70,8 +63,6 @@ Copyright (C) 2026 Andrew Cupps
 	}
 
 	let genEdMenuOpen = false;
-
-	let showCustomEventModal = false;
 
 	function selectDepartment(dept: string) {
 		searchInput = dept;
@@ -102,35 +93,6 @@ Copyright (C) 2026 Andrew Cupps
 				selectDepartment(deptSuggestions[highlightedSuggestionIndex]);
 			}
 		}
-	}
-
-	// function to add user event from UserEventModal
-	function addUserEvent(event: UserEvent) {
-		const usedColors = [
-			...selections.map((s) => s.colorNumber),
-			...userEvents.map((e) => e.colorNumber)
-		].sort((a, b) => a - b);
-		let color = 0;
-		for (const c of usedColors) {
-			if (c === color) color++;
-			else break;
-		}
-		event.colorNumber = color;
-
-		const updatedCurrentSelections = [...selections];
-		CurrentScheduleStore.update((current) => {
-			return {
-				scheduleName: current.scheduleName,
-				selections: [...current.selections, event]
-			};
-		});
-
-		// CurrentScheduleStore.set({
-		// 	scheduleName: scheduleName,
-		// 	selections: updatedCurrentSelections
-		// });
-
-		// UserEventsStore.update((events) => [...events, event]);
 	}
 
 	$: if (searchInput.length <= 1 || deptSuggestions.length <= 1) {
@@ -295,30 +257,8 @@ Copyright (C) 2026 Andrew Cupps
 		{/if}
 	</div>
 
-	<!-- custom event adding -->
-	<div
-		class="mx-2 mb-2 mt-2 flex items-center
-				justify-center rounded-lg border border-outlineLight bg-bgLight
-				shadow-lg dark:border-outlineDark dark:bg-bgDark"
-	>
-		<button
-			class="bg-primary hover:bg-primaryHover rounded px-2 py-2 text-white"
-			type="button"
-			on:click={() => {
-				showCustomEventModal = true;
-			}}
-		>
-			Add custom event...
-		</button>
-	</div>
+	<CustomUserEvents />
 </div>
-
-{#if showCustomEventModal}
-	<UserEventModal
-		onClose={() => (showCustomEventModal = false)}
-		onSubmit={(event) => addUserEvent(event)}
-	/>
-{/if}
 
 <style>
 	@media screen and (max-width: 1023px) {
