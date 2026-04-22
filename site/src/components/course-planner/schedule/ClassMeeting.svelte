@@ -63,7 +63,7 @@ Copyright (C) 2026 Andrew Cupps
 			decEndTime = meeting.meeting.classtime.end;
 			if (meeting.userEvent) {
 				// user-created events -- location.building is the user event location
-				if (meeting.meeting.location.building.trim() != "") {
+				if (meeting.meeting.location.building.trim() != '') {
 					location = '📍' + meeting.meeting.location.building;
 				} else {
 					location = '';
