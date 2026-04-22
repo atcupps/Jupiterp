@@ -86,7 +86,9 @@ Copyright (C) 2026 Andrew Cupps
 			border-outlineLight bg-bgLight p-4 shadow-xl
 			dark:border-outlineDark dark:bg-bgDark"
 >
-	<h2 class="mb-3 text-base font-semibold">{initialEventData ? 'Edit Event' : 'Add Custom Event'}</h2>
+	<h2 class="mb-3 text-base font-semibold">
+		{initialEventData ? 'Edit Event' : 'Add Custom Event'}
+	</h2>
 
 	<!-- Name -->
 	<div class="mb-2">

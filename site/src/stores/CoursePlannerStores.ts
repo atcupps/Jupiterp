@@ -7,12 +7,7 @@
 
 import type { Course, Department, Instructor } from '@jupiterp/jupiterp';
 import { writable, type Writable } from 'svelte/store';
-import type {
-	CourseSectionPair,
-	FilterParams,
-	ScheduleSelection,
-	StoredSchedule
-} from '../types';
+import type { CourseSectionPair, FilterParams, ScheduleSelection, StoredSchedule } from '../types';
 
 /**
  * Shared planner state for components.
@@ -63,4 +58,3 @@ export const CourseSearchFilterStore: Writable<FilterParams> = writable({
 	serverSideFilters: {},
 	clientSideFilters: {}
 });
-

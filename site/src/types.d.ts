@@ -8,7 +8,6 @@
  */
 
 import type { ClassMeeting, CourseBasic, GenEd, Section } from '@jupiterp/jupiterp';
-import type { User } from '@sentry/sveltekit';
 
 /**
  * A section of a class selected by the user, along with metadata used for

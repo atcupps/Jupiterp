@@ -44,7 +44,7 @@ export function schedulify(selections: ScheduleBlock[]): Schedule {
 		other: []
 	};
 	selections.forEach((selection) => {
-		if ("course" in selection) {
+		if ('course' in selection) {
 			// this is a normal ScheduleSelection
 			selection.section.meetings.forEach((meeting) => {
 				const newMeeting: ClassMeetingExtended = {

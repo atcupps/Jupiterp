@@ -123,7 +123,6 @@ Copyright (C) 2026 Andrew Cupps
 		}
 	});
 
-
 	onMount(() => {
 		// Fetch instructor data from API
 		fetchProfessorData();

@@ -14,12 +14,15 @@ Copyright (C) 2026 Andrew Cupps
 	import { getColorFromNumber } from '../../../lib/course-planner/ClassMeetingUtils';
 	import { afterUpdate } from 'svelte';
 	import Tooltip from './Tooltip.svelte';
-	import { CourseInfoPairStore, CurrentScheduleStore, EventEditStore } from '../../../stores/CoursePlannerStores';
+	import {
+		CourseInfoPairStore,
+		CurrentScheduleStore,
+		EventEditStore
+	} from '../../../stores/CoursePlannerStores';
 	import type {
 		ClassMeetingExtended,
 		CourseSectionPair,
 		ScheduleBlock,
-		ScheduleSelection,
 		SelectionDifferences
 	} from '../../../types';
 
@@ -44,7 +47,6 @@ Copyright (C) 2026 Andrew Cupps
 	const meetingTimeChange = differences.meetingTime;
 	const meetingLocChange = differences.meetingLocation;
 
-
 	let formattedInstructors: string = formatInstructors(meeting.instructors);
 	let formattedTime: string;
 	let secCode: string;
@@ -61,7 +63,7 @@ Copyright (C) 2026 Andrew Cupps
 			decEndTime = meeting.meeting.classtime.end;
 			if (meeting.userEvent) {
 				// user-created events -- location.building is the user event location
-				location = "📍" + meeting.meeting.location.building;
+				location = '📍' + meeting.meeting.location.building;
 			} else if (meeting.meeting.location.room != null) {
 				location = formatLocation(meeting.meeting.location);
 			} else if (meeting.meeting.location.building === 'OnlineSync') {
@@ -185,14 +187,14 @@ Copyright (C) 2026 Andrew Cupps
                 width: {(1 / meeting.conflictTotal) * 100}%;
                 left: {((meeting.conflictIndex - 1) / meeting.conflictTotal) * 100}%;"
 	class:otherCategoryClassMeeting={isInOther}
-	title={meeting.userEvent ? "Click to edit event" : "Click to show more course info"}
+	title={meeting.userEvent ? 'Click to edit event' : 'Click to show more course info'}
 >
 	<!-- x button to remove course -->
 	{#if !meeting.hover}
 		<button
 			class="absolute right-0 top-0 h-4 w-6 items-center justify-center overflow-clip hover:text-orange 2xl:right-1 2xl:top-1"
 			on:click={removeCourseByClassMeeting}
-			title={meeting.userEvent ? "Remove event from schedule" : "Remove course from schedule"}
+			title={meeting.userEvent ? 'Remove event from schedule' : 'Remove course from schedule'}
 		>
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="absolute left-1 top-0"
 				><path
@@ -257,7 +259,7 @@ Copyright (C) 2026 Andrew Cupps
 					{/if}
 				</div>
 			{/if}
-			{#if !(meeting.userEvent) && (h - 24 * fontSize > 32 * fontSize || isInOther)}
+			{#if !meeting.userEvent && (h - 24 * fontSize > 32 * fontSize || isInOther)}
 				<div class="static truncate">
 					Section {secCode}
 				</div>
@@ -286,7 +288,6 @@ Copyright (C) 2026 Andrew Cupps
 					{meeting.notes}
 				</div>
 			{/if}
-
 		</div>
 	{:else}
 		<div

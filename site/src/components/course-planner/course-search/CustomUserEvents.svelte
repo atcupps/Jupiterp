@@ -6,49 +6,49 @@ Copyright (C) 2026 Andrew Cupps
 -->
 
 <script lang="ts">
-    import { CurrentScheduleStore, EventEditStore } from '../../../stores/CoursePlannerStores';
-    import type { ScheduleBlock, UserEvent } from '../../../types';
-    import UserEventModal from './UserEventModal.svelte';
-    import { firstAvailableColor } from '$lib/course-planner/ColorSelector';
+	import { CurrentScheduleStore, EventEditStore } from '../../../stores/CoursePlannerStores';
+	import type { ScheduleBlock, UserEvent } from '../../../types';
+	import UserEventModal from './UserEventModal.svelte';
+	import { firstAvailableColor } from '$lib/course-planner/ColorSelector';
 
-    let showCustomEventModal = false;
+	let showCustomEventModal = false;
 
-    let innerWidth = 0;
-    let wasWide = false;
-    $: {
-        const isWide = innerWidth >= 1024;
-        if (wasWide && !isWide) {
-            showCustomEventModal = false;
-            EventEditStore.set(null);
-        }
-        wasWide = isWide;
-    }
+	let innerWidth = 0;
+	let wasWide = false;
+	$: {
+		const isWide = innerWidth >= 1024;
+		if (wasWide && !isWide) {
+			showCustomEventModal = false;
+			EventEditStore.set(null);
+		}
+		wasWide = isWide;
+	}
 
-    // get selections and user events from store
-    let selectionsList: ScheduleBlock[];
+	// get selections and user events from store
+	let selectionsList: ScheduleBlock[];
 	let scheduleName: string;
 	CurrentScheduleStore.subscribe((stored) => {
 		selectionsList = stored.selections;
 		scheduleName = stored.scheduleName;
 	});
 
-    let eventEditVal: { eventId: string } | null;
+	let eventEditVal: { eventId: string } | null;
 	EventEditStore.subscribe((val) => {
 		eventEditVal = val;
 	});
 
-    // resolved UserEvent for the edit modal — computed here because Svelte
-    // template expressions don't support TypeScript type assertions
-    let editEventData: UserEvent | null = null;
-    $: editEventData = eventEditVal
-        ? (selectionsList.find((s) => !('course' in s) && s.id === eventEditVal!.eventId) as UserEvent) || null
-        : null;
+	// resolved UserEvent for the edit modal — computed here because Svelte
+	// template expressions don't support TypeScript type assertions
+	let editEventData: UserEvent | null = null;
+	$: editEventData = eventEditVal
+		? (selectionsList.find(
+				(s) => !('course' in s) && s.id === eventEditVal!.eventId
+			) as UserEvent) || null
+		: null;
 
-    // function to add user event from UserEventModal
+	// function to add user event from UserEventModal
 	function addUserEvent(event: UserEvent) {
-		const existingIndex = selectionsList.findIndex(
-			(s) => !('course' in s) && s.id === event.id
-		);
+		const existingIndex = selectionsList.findIndex((s) => !('course' in s) && s.id === event.id);
 		let updatedSelections: ScheduleBlock[];
 		if (existingIndex !== -1) {
 			// Edit: preserve color and replace in-place
@@ -66,19 +66,18 @@ Copyright (C) 2026 Andrew Cupps
 	}
 </script>
 
-
 <svelte:window bind:innerWidth />
 
 <!-- custom event adding -->
 <button
-    class="mx-2 mb-2 mt-2 w-[calc(100%-1rem)] rounded-lg border border-outlineLight bg-transparent py-2 text-black
+	class="mx-2 mb-2 mt-2 w-[calc(100%-1rem)] rounded-lg border border-outlineLight bg-transparent py-2 text-black
             shadow-lg hover:bg-hoverLight dark:border-outlineDark dark:text-textDark dark:hover:bg-hoverDark"
-    type="button"
-    on:click={() => {
-        showCustomEventModal = true;
-    }}
+	type="button"
+	on:click={() => {
+		showCustomEventModal = true;
+	}}
 >
-    Add custom event...
+	Add custom event...
 </button>
 
 {#if showCustomEventModal}
