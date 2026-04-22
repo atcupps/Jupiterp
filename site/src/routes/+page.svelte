@@ -28,7 +28,7 @@ Copyright (C) 2026 Andrew Cupps
 		type InstructorsConfig,
 		type InstructorsResponse
 	} from '@jupiterp/jupiterp';
-	import type { ScheduleBlock, ScheduleSelection, StoredSchedule } from '../types';
+	import type { ScheduleBlock, StoredSchedule } from '../types';
 	import IsDesktop from '../components/course-planner/IsDesktop.svelte';
 	import { PlannerState } from '../stores/CoursePlannerStores';
 
@@ -136,7 +136,7 @@ Copyright (C) 2026 Andrew Cupps
 			if (typeof window !== 'undefined') {
 				// Get stored selections from local storage
 				const storedSelectionsOption = localStorage.getItem('selectedSections');
-				let storedSelections: ScheduleSelection[];
+				let storedSelections: ScheduleBlock[];
 				if (storedSelectionsOption) {
 					storedSelections = resolveSelections(storedSelectionsOption);
 				} else {

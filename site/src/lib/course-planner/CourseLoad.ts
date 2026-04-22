@@ -27,7 +27,7 @@ import { CurrentScheduleStore, NonselectedScheduleStore } from '../../stores/Cou
  * @param selectionsRaw A string from local storage
  * @returns The parsed and modernized `ScheduleSelection[]`
  */
-export function resolveSelections(selectionsRaw: string): ScheduleSelection[] {
+export function resolveSelections(selectionsRaw: string): ScheduleBlock[] {
 	const parsed = JSON.parse(selectionsRaw);
 	if (!Array.isArray(parsed)) {
 		return [];
@@ -42,7 +42,7 @@ export function resolveSelections(selectionsRaw: string): ScheduleSelection[] {
 		return modernizeSelections(parsed as LegacyScheduleSelection[]);
 	}
 
-	return parsed as ScheduleSelection[];
+	return parsed as ScheduleBlock[];
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
