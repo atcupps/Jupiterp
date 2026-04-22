@@ -102,11 +102,7 @@ Copyright (C) 2026 Andrew Cupps
 	}
 </script>
 
-<div
-    bind:this={selectorRootElement}
-    class="flex w-full flex-col"
-    on:focusout={handleRootFocusOut}
->
+<div bind:this={selectorRootElement} class="flex w-full flex-col" on:focusout={handleRootFocusOut}>
 	<div class="2xl:text-md flex w-full flex-row pb-1 text-sm" title="Toggle schedule dropdown">
 		<div
 			class="flex grow flex-row justify-start rounded-md px-0.5 py-1

@@ -8,7 +8,6 @@ Copyright (C) 2026 Andrew Cupps
 	export let link: string;
 	export let text: string;
 	export let target: string = '_self';
-	export let fullWidth: boolean = false;
 	export let isOnPage: boolean = false;
 	export let reduceXMargin: boolean = false;
 </script>
@@ -18,7 +17,6 @@ Copyright (C) 2026 Andrew Cupps
 		href={link}
 		{target}
 		class="text-nowrap transition"
-		class:w-[90%]={fullWidth}
 		class:siteLinkUnderline={isOnPage}
 		class:text-orange={isOnPage}
 		class:hover:text-orange={!isOnPage}
