@@ -110,7 +110,7 @@ Copyright (C) 2026 Andrew Cupps
 					type="button"
 					class="rounded border px-2.5 py-1 text-sm transition-colors
 							{selectedDays.includes(day)
-						? 'border-primary bg-primary text-white'
+						? 'border-outlineLight bg-outlineLight text-black dark:border-outlineDark dark:bg-outlineDark dark:text-textDark'
 						: 'border-outlineLight hover:bg-hoverLight dark:border-outlineDark dark:hover:bg-hoverDark'}"
 					on:click={() => toggleDay(day)}
 				>
@@ -129,7 +129,7 @@ Copyright (C) 2026 Andrew Cupps
 				type="time"
 				bind:value={startTime}
 				class="w-full rounded-lg border-2 border-solid border-outlineLight
-						bg-transparent px-2 py-1 text-sm dark:border-outlineDark"
+						bg-transparent px-2 py-1 text-sm dark:border-outlineDark dark:[color-scheme:dark]"
 			/>
 		</div>
 		<div class="flex-1">
@@ -139,7 +139,7 @@ Copyright (C) 2026 Andrew Cupps
 				type="time"
 				bind:value={endTime}
 				class="w-full rounded-lg border-2 border-solid border-outlineLight
-						bg-transparent px-2 py-1 text-sm dark:border-outlineDark"
+						bg-transparent px-2 py-1 text-sm dark:border-outlineDark dark:[color-scheme:dark]"
 			/>
 		</div>
 	</div>
@@ -172,7 +172,7 @@ Copyright (C) 2026 Andrew Cupps
 
 	<!-- Validation errors -->
 	{#if errors.length > 0}
-		<div class="text-red-500 mb-2 text-xs">
+		<div class="mb-2 text-xs" style="color: #ef4444;">
 			{#each errors as error}
 				<div>{error}</div>
 			{/each}
@@ -191,7 +191,7 @@ Copyright (C) 2026 Andrew Cupps
 		<button
 			type="button"
 			on:click={handleSubmit}
-			class="bg-primary hover:bg-primaryHover rounded px-3 py-1.5 text-sm text-white"
+			class="rounded bg-outlineLight px-3 py-1.5 text-sm text-black hover:bg-hoverLight dark:bg-outlineDark dark:text-textDark dark:hover:bg-hoverDark"
 		>
 			{initialEventData ? 'Save Event' : 'Add Event'}
 		</button>

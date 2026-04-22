@@ -70,21 +70,16 @@ Copyright (C) 2026 Andrew Cupps
 <svelte:window bind:innerWidth />
 
 <!-- custom event adding -->
-<div
-    class="mx-2 mb-2 mt-2 flex items-center
-            justify-center rounded-lg border border-outlineLight bg-bgLight
-            shadow-lg dark:border-outlineDark dark:bg-bgDark"
+<button
+    class="mx-2 mb-2 mt-2 w-[calc(100%-1rem)] rounded-lg border border-outlineLight bg-transparent py-2 text-black
+            shadow-lg hover:bg-hoverLight dark:border-outlineDark dark:text-textDark dark:hover:bg-hoverDark"
+    type="button"
+    on:click={() => {
+        showCustomEventModal = true;
+    }}
 >
-    <button
-        class="bg-primary hover:bg-primaryHover rounded px-2 py-2 text-white"
-        type="button"
-        on:click={() => {
-            showCustomEventModal = true;
-        }}
-    >
-        Add custom event...
-    </button>
-</div>
+    Add custom event...
+</button>
 
 {#if showCustomEventModal}
 	<UserEventModal
