@@ -10,6 +10,7 @@ Copyright (C) 2026 Andrew Cupps
 		CurrentScheduleStore,
 		NonselectedScheduleStore
 	} from '../../../stores/CoursePlannerStores';
+	import { clickoutside } from '@svelte-put/clickoutside';
 	import ScheduleOptionsDropdown from './ScheduleOptionsDropdown.svelte';
 	import { slide } from 'svelte/transition';
 	import {
@@ -19,14 +20,6 @@ Copyright (C) 2026 Andrew Cupps
 	import type { ScheduleSelection, StoredSchedule } from '../../../types';
 
 	let dropdownOpen: boolean = false;
-	let selectorRootElement: HTMLDivElement;
-
-	function handleRootFocusOut(event: FocusEvent) {
-		const nextTarget = event.relatedTarget as Node | null;
-		if (!nextTarget || !selectorRootElement.contains(nextTarget)) {
-			dropdownOpen = false;
-		}
-	}
 
 	let currentScheduleName: string;
 	let currentScheduleSelections: ScheduleSelection[];
@@ -102,7 +95,7 @@ Copyright (C) 2026 Andrew Cupps
 	}
 </script>
 
-<div bind:this={selectorRootElement} class="flex w-full flex-col" on:focusout={handleRootFocusOut}>
+<div class="flex w-full flex-col" use:clickoutside on:clickoutside={() => (dropdownOpen = false)}>
 	<div class="2xl:text-md flex w-full flex-row pb-1 text-sm" title="Toggle schedule dropdown">
 		<div
 			class="flex grow flex-row justify-start rounded-md px-0.5 py-1
