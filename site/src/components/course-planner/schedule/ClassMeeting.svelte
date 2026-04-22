@@ -63,7 +63,11 @@ Copyright (C) 2026 Andrew Cupps
 			decEndTime = meeting.meeting.classtime.end;
 			if (meeting.userEvent) {
 				// user-created events -- location.building is the user event location
-				location = '📍' + meeting.meeting.location.building;
+				if (meeting.meeting.location.building != "") {
+					location = '📍' + meeting.meeting.location.building;
+				} else {
+					location = '';
+				}
 			} else if (meeting.meeting.location.room != null) {
 				location = formatLocation(meeting.meeting.location);
 			} else if (meeting.meeting.location.building === 'OnlineSync') {
