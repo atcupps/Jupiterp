@@ -49,6 +49,23 @@ Copyright (C) 2026 Andrew Cupps
 		}
 	}
 
+	function expandDayString(day: string): string {
+		switch (day) {
+			case 'M':
+				return 'Monday';
+			case 'Tu':
+				return 'Tuesday';
+			case 'W':
+				return 'Wednesday';
+			case 'Th':
+				return 'Thursday';
+			case 'F':
+				return 'Friday';
+			default:
+				return day;
+		}
+	}
+
 	function handleSubmit() {
 		errors = [];
 		if (!name.trim()) errors.push('Name is required');
@@ -98,7 +115,7 @@ Copyright (C) 2026 Andrew Cupps
 			type="text"
 			bind:value={name}
 			placeholder="Event name"
-			class="w-full rounded-lg border-2 border-solid border-outlineLight
+			class="w-full rounded-lg border border-solid border-outlineLight
 					bg-transparent px-2 py-1 text-sm dark:border-outlineDark"
 		/>
 	</div>
@@ -110,6 +127,7 @@ Copyright (C) 2026 Andrew Cupps
 			{#each DAYS as day}
 				<button
 					type="button"
+					title={expandDayString(day)}
 					class="rounded border px-2.5 py-1 text-sm transition-colors
 							{selectedDays.includes(day)
 						? 'border-outlineLight bg-outlineLight text-black dark:border-outlineDark dark:bg-outlineDark dark:text-textDark'
@@ -130,7 +148,7 @@ Copyright (C) 2026 Andrew Cupps
 				id="user-event-start"
 				type="time"
 				bind:value={startTime}
-				class="w-full rounded-lg border-2 border-solid border-outlineLight
+				class="w-full rounded-lg border border-solid border-outlineLight
 						bg-transparent px-2 py-1 text-sm dark:border-outlineDark dark:[color-scheme:dark]"
 			/>
 		</div>
@@ -140,7 +158,7 @@ Copyright (C) 2026 Andrew Cupps
 				id="user-event-end"
 				type="time"
 				bind:value={endTime}
-				class="w-full rounded-lg border-2 border-solid border-outlineLight
+				class="w-full rounded-lg border border-solid border-outlineLight
 						bg-transparent px-2 py-1 text-sm dark:border-outlineDark dark:[color-scheme:dark]"
 			/>
 		</div>
@@ -154,7 +172,7 @@ Copyright (C) 2026 Andrew Cupps
 			type="text"
 			bind:value={location}
 			placeholder="Optional"
-			class="w-full rounded-lg border-2 border-solid border-outlineLight
+			class="w-full rounded-lg border border-solid border-outlineLight
 					bg-transparent px-2 py-1 text-sm dark:border-outlineDark"
 		/>
 	</div>
@@ -167,7 +185,7 @@ Copyright (C) 2026 Andrew Cupps
 			bind:value={notes}
 			placeholder="Optional"
 			rows="2"
-			class="w-full rounded-lg border-2 border-solid border-outlineLight
+			class="w-full rounded-lg border border-solid border-outlineLight
 					bg-transparent px-2 py-1 text-sm dark:border-outlineDark"
 		/>
 	</div>
