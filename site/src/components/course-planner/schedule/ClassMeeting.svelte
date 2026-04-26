@@ -14,11 +14,15 @@ Copyright (C) 2026 Andrew Cupps
 	import { getColorFromNumber } from '../../../lib/course-planner/ClassMeetingUtils';
 	import { afterUpdate } from 'svelte';
 	import Tooltip from './Tooltip.svelte';
-	import { CourseInfoPairStore, CurrentScheduleStore } from '../../../stores/CoursePlannerStores';
+	import {
+		CourseInfoPairStore,
+		CurrentScheduleStore,
+		EventEditStore
+	} from '../../../stores/CoursePlannerStores';
 	import type {
 		ClassMeetingExtended,
 		CourseSectionPair,
-		ScheduleSelection,
+		ScheduleBlock,
 		SelectionDifferences
 	} from '../../../types';
 
@@ -30,7 +34,7 @@ Copyright (C) 2026 Andrew Cupps
 
 	export let isInOther: boolean;
 
-	let selections: ScheduleSelection[];
+	let selections: ScheduleBlock[];
 	let scheduleName: string;
 	CurrentScheduleStore.subscribe((stored) => {
 		selections = stored.selections;
@@ -57,7 +61,14 @@ Copyright (C) 2026 Andrew Cupps
 			formattedTime = formatClasstime(meeting.meeting.classtime);
 			decStartTime = meeting.meeting.classtime.start;
 			decEndTime = meeting.meeting.classtime.end;
-			if (meeting.meeting.location.room != null) {
+			if (meeting.userEvent) {
+				// user-created events -- location.building is the user event location
+				if (meeting.meeting.location.building.trim() != '') {
+					location = '📍' + meeting.meeting.location.building;
+				} else {
+					location = '';
+				}
+			} else if (meeting.meeting.location.room != null) {
 				location = formatLocation(meeting.meeting.location);
 			} else if (meeting.meeting.location.building === 'OnlineSync') {
 				location = 'ONLINE';
@@ -104,6 +115,17 @@ Copyright (C) 2026 Andrew Cupps
 		fontSize = parseInt(getComputedStyle(document.documentElement).fontSize.substring(0, 2)) / 16;
 	}
 
+	// calculate meeting block space for # available lines for notes (user events only)
+	let notesLines = 0;
+	$: if (h && fontSize && meeting.userEvent) {
+		const bodySpace = h - 24 * fontSize;
+		const totalLines = Math.floor(bodySpace / (16 * fontSize));
+		let linesUsed = 0;
+		if (bodySpace > 48 * fontSize) linesUsed++; // time
+		if (bodySpace > 16 * fontSize && hasLocation) linesUsed++; // location
+		notesLines = Math.max(0, totalLines - linesUsed);
+	}
+
 	function removeCourseByClassMeeting() {
 		const index = selections.findIndex((obj) => selectionEqualsByCode(obj));
 		if (index !== -1) {
@@ -114,8 +136,12 @@ Copyright (C) 2026 Andrew Cupps
 		}
 	}
 
-	function selectionEqualsByCode(s: ScheduleSelection): boolean {
-		return s.course.courseCode === meeting.courseCode && s.section.sectionCode === secCode;
+	function selectionEqualsByCode(s: ScheduleBlock): boolean {
+		if ('course' in s) {
+			return s.course.courseCode === meeting.courseCode && s.section.sectionCode === secCode;
+		} else {
+			return s.id === meeting.id;
+		}
 	}
 
 	let courseInfoPair: CourseSectionPair | null;
@@ -123,8 +149,20 @@ Copyright (C) 2026 Andrew Cupps
 		courseInfoPair = val;
 	});
 
-	function toggleCourseInfo() {
-		if (
+	let eventEditVal: { eventId: string } | null;
+	EventEditStore.subscribe((val) => {
+		eventEditVal = val;
+	});
+
+	function toggleEventInfo() {
+		if (meeting.userEvent) {
+			// user event -- toggle event edit modal
+			if (eventEditVal?.eventId === meeting.id) {
+				EventEditStore.set(null);
+			} else {
+				EventEditStore.set({ eventId: meeting.id as string });
+			}
+		} else if (
 			courseInfoPair !== null &&
 			courseInfoPair.courseCode === meeting.courseCode &&
 			courseInfoPair.sectionCode === meeting.sectionCode
@@ -145,7 +183,7 @@ Copyright (C) 2026 Andrew Cupps
 	class="absolute flex w-full flex-col
                 justify-center justify-items-center rounded-lg pb-1 text-black"
 	bind:this={elt}
-	on:click={toggleCourseInfo}
+	on:click={toggleEventInfo}
 	style=" top: {((decStartTime - earliestClassStart) / boundDiff) * 100}%;
                 height: {((decEndTime - decStartTime) / boundDiff) * 100}%;
                 background-color: {getColorFromNumber(meeting.colorNumber)};  
@@ -153,14 +191,14 @@ Copyright (C) 2026 Andrew Cupps
                 width: {(1 / meeting.conflictTotal) * 100}%;
                 left: {((meeting.conflictIndex - 1) / meeting.conflictTotal) * 100}%;"
 	class:otherCategoryClassMeeting={isInOther}
-	title="Click to show more course info"
+	title={meeting.userEvent ? 'Click to edit event' : 'Click to show more course info'}
 >
 	<!-- x button to remove course -->
 	{#if !meeting.hover}
 		<button
 			class="absolute right-0 top-0 h-4 w-6 items-center justify-center overflow-clip hover:text-orange 2xl:right-1 2xl:top-1"
 			on:click={removeCourseByClassMeeting}
-			title="Remove course from schedule"
+			title={meeting.userEvent ? 'Remove event from schedule' : 'Remove course from schedule'}
 		>
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="absolute left-1 top-0"
 				><path
@@ -183,6 +221,7 @@ Copyright (C) 2026 Andrew Cupps
 				class:text-xs={w < 104}
 				class:rounded-b-lg={h < 1.5 * fontSize}
 			>
+				<!-- Course code / Event name -->
 				<span>{meeting.courseCode}</span>
 			</div>
 		{/if}
@@ -224,7 +263,7 @@ Copyright (C) 2026 Andrew Cupps
 					{/if}
 				</div>
 			{/if}
-			{#if h - 24 * fontSize > 32 * fontSize || isInOther}
+			{#if !meeting.userEvent && (h - 24 * fontSize > 32 * fontSize || isInOther)}
 				<div class="static truncate">
 					Section {secCode}
 				</div>
@@ -243,6 +282,14 @@ Copyright (C) 2026 Andrew Cupps
 					{:else}
 						{location}
 					{/if}
+				</div>
+			{/if}
+			{#if meeting.userEvent && meeting.notes && notesLines > 0}
+				<div
+					class="static overflow-hidden italic"
+					style="display: -webkit-box; -webkit-line-clamp: {notesLines}; -webkit-box-orient: vertical;"
+				>
+					{meeting.notes}
 				</div>
 			{/if}
 		</div>

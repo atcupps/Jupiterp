@@ -15,7 +15,8 @@ import type {
 	ClasstimeBound,
 	Schedule,
 	ScheduleSelection,
-	SelectionDifferences
+	SelectionDifferences,
+	ScheduleBlock
 } from '../../types';
 
 enum Day {
@@ -33,7 +34,7 @@ enum Day {
  *                      of a `ScheduleSelection[]`.
  * @returns A `Schedule` built from `selections`
  */
-export function schedulify(selections: ScheduleSelection[]): Schedule {
+export function schedulify(selections: ScheduleBlock[]): Schedule {
 	const schedule: Schedule = {
 		monday: [],
 		tuesday: [],
@@ -43,27 +44,69 @@ export function schedulify(selections: ScheduleSelection[]): Schedule {
 		other: []
 	};
 	selections.forEach((selection) => {
-		selection.section.meetings.forEach((meeting) => {
-			const newMeeting: ClassMeetingExtended = {
-				courseCode: selection.course.courseCode,
-				sectionCode: selection.section.sectionCode,
-				meeting: meeting,
-				conflictIndex: 1,
-				conflictTotal: 1,
-				instructors: selection.section.instructors,
-				hover: selection.hover,
-				colorNumber: selection.colorNumber,
-				differences: selection.differences
-			};
+		if ('course' in selection) {
+			// this is a normal ScheduleSelection
+			selection.section.meetings.forEach((meeting) => {
+				const newMeeting: ClassMeetingExtended = {
+					courseCode: selection.course.courseCode,
+					sectionCode: selection.section.sectionCode,
+					meeting: meeting,
+					conflictIndex: 1,
+					conflictTotal: 1,
+					instructors: selection.section.instructors,
+					hover: selection.hover,
+					colorNumber: selection.colorNumber,
+					differences: selection.differences,
+					userEvent: false
+				};
 
-			if (typeof meeting === 'string') {
-				// Put in the "other" column if there is no real meeting time
-				// (e.g. TBA, OnlineAsync, etc.)
-				schedule.other = [...schedule.other, newMeeting];
-			} else {
+				if (typeof meeting === 'string') {
+					// Put in the "other" column if there is no real meeting time
+					// (e.g. TBA, OnlineAsync, etc.)
+					schedule.other = [...schedule.other, newMeeting];
+				} else {
+					addMeetings(schedule, newMeeting, meeting.classtime);
+				}
+			});
+		} else {
+			// this is a UserEvent, so we stuff it into a ClassMeetingExtended
+
+			selection.days.forEach((day) => {
+				const meeting: ClassMeeting = {
+					classtime: {
+						days: day,
+						start: selection.startTime,
+						end: selection.endTime
+					},
+					location: {
+						building: selection.location,
+						room: null
+					}
+				};
+
+				const newMeeting: ClassMeetingExtended = {
+					courseCode: selection.name,
+					sectionCode: '',
+					meeting: meeting,
+					conflictIndex: 1,
+					conflictTotal: 1,
+					instructors: [],
+					hover: false,
+					colorNumber: selection.colorNumber,
+					differences: {
+						instructors: false,
+						numMeetings: false,
+						meetingType: false,
+						meetingTime: false,
+						meetingLocation: false
+					},
+					notes: selection.notes,
+					id: selection.id,
+					userEvent: true
+				};
 				addMeetings(schedule, newMeeting, meeting.classtime);
-			}
-		});
+			});
+		}
 	});
 	labelConflictingClasstimes(schedule);
 	return schedule;
@@ -321,14 +364,14 @@ function classesConflict(aStart: number, aEnd: number, bStart: number, bEnd: num
 
 /**
  * Append a `hoveredSection` to `selections` if it is not `null`.
- * @param selections An array of `ScheduleSelection`s
+ * @param selections An array of `ScheduleBlock`s
  * @param hoveredSection A `ScheduleSelection` or `null`
  * @returns `selections`, with `hoveredSection` appended if it is not `null`.
  */
 export function appendHoveredSection(
-	selections: ScheduleSelection[],
+	selections: ScheduleBlock[],
 	hoveredSection: ScheduleSelection | null
-): ScheduleSelection[] {
+): ScheduleBlock[] {
 	if (hoveredSection) {
 		return [...selections, hoveredSection];
 	} else {
