@@ -94,7 +94,10 @@ Copyright (C) 2026 Andrew Cupps
 </script>
 
 <!-- Backdrop -->
-<button class="fixed inset-0 z-[59] bg-black bg-opacity-40" on:click|stopPropagation={onClose} />
+<button
+	class="fixed inset-0 z-[50] mt-12 bg-black bg-opacity-40"
+	on:click|stopPropagation={onClose}
+/>
 
 <!-- Modal -->
 <div

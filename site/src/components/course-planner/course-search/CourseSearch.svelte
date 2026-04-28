@@ -205,7 +205,7 @@ Copyright (C) 2026 Andrew Cupps
 			class="relative flex w-full flex-col border-b-2 border-t-2 border-solid border-divBorderLight dark:border-divBorderDark"
 		>
 			<!-- Course search box -->
-			<div class="relative">
+			<div class="relative pt-1">
 				<!-- Mobile keyboard prime input: used to make the mobile keyboard appear -->
 				<input
 					type="text"
