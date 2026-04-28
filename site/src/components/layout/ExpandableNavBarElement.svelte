@@ -50,7 +50,7 @@ Copyright (C) 2026 Andrew Cupps
 	<div
 		class="visible absolute top-full flex min-w-12 translate-x-[-12%]
                 flex-col rounded-lg border-2 border-divBorderLight bg-bgLight
-                p-2 dark:border-divBorderDark dark:bg-bgDark"
+                p-2 dark:border-divBorderDark dark:bg-bgDark z-[90]"
 		class:hidden={!showExpandedLinks}
 	>
 		<slot />
