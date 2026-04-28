@@ -298,7 +298,7 @@ Copyright (C) 2026 Andrew Cupps
 			class="w-full text-wrap break-words rounded-t-lg font-sans text-xs font-semibold"
 			class:rounded-b-lg={h < 1.5 * fontSize}
 		>
-			{splitCourseCode(meeting.courseCode)}
+			{meeting.userEvent ? meeting.courseCode : splitCourseCode(meeting.courseCode)}
 		</div>
 	{/if}
 </button>
