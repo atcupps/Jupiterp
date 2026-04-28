@@ -205,7 +205,7 @@ Copyright (C) 2026 Andrew Cupps
 	<!-- Course info panel -->
 	{#if showCourseInfo !== null && courseInfoCourse !== null && courseInfoSection !== null}
 		<div
-			class={`absolute z-10 w-full rounded-xl border-2 border-outlineLight bg-bgSecondaryLight px-2 py-1 text-left shadow-md dark:border-outlineDark dark:bg-bgSecondaryDark ${
+			class={`absolute z-10 w-full rounded-xl border-2 border-outlineLight bg-bgSecondaryLight px-2 py-1 mb-2 text-left shadow-md dark:border-outlineDark dark:bg-bgSecondaryDark ${
 				infoPanelAtTop ? 'top-0' : 'bottom-0'
 			}`}
 			bind:clientHeight={courseInfoPanelHeight}
