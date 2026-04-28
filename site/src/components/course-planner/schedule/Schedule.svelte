@@ -22,7 +22,7 @@ Copyright (C) 2026 Andrew Cupps
 	import MeetingListing from '../course-search/MeetingListing.svelte';
 	import SeatData from '../course-search/SeatData.svelte';
 	import CourseCondition from '../course-search/CourseCondition.svelte';
-	import type { Schedule, ScheduleSelection } from '../../../types';
+	import type { Schedule, ScheduleBlock, ScheduleSelection } from '../../../types';
 	import type { CourseBasic, Section } from '@jupiterp/jupiterp';
 	import { chainScroll } from '../../../lib/course-planner/ChainScroll';
 	import { PlannerState } from '../../../stores/CoursePlannerStores';
@@ -36,7 +36,7 @@ Copyright (C) 2026 Andrew Cupps
 	});
 
 	let hoveredSection: ScheduleSelection | null = null;
-	let selections: ScheduleSelection[] = [];
+	let selections: ScheduleBlock[] = [];
 
 	let schedule: Schedule = schedulify(appendHoveredSection(selections, hoveredSection));
 
@@ -99,6 +99,7 @@ Copyright (C) 2026 Andrew Cupps
 	$: if (showCourseInfo !== null) {
 		let index = selections.findIndex((selection) => {
 			return (
+				'course' in selection &&
 				selection.course.courseCode === showCourseInfo &&
 				selection.section.sectionCode === showSectionInfo
 			);
@@ -109,8 +110,11 @@ Copyright (C) 2026 Andrew Cupps
 			courseInfoCourse = null;
 			courseInfoSection = null;
 		} else {
-			courseInfoCourse = selections[index].course;
-			courseInfoSection = selections[index].section;
+			const found = selections[index];
+			if ('course' in found) {
+				courseInfoCourse = found.course;
+				courseInfoSection = found.section;
+			}
 		}
 	}
 
