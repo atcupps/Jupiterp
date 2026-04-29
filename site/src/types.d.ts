@@ -58,7 +58,7 @@ interface SelectionDifferences {
  */
 interface StoredSchedule {
 	scheduleName: string;
-	selections: ScheduleSelection[];
+	selections: ScheduleBlock[];
 }
 
 /**
@@ -118,6 +118,27 @@ interface ClassMeetingExtended {
 	 * their schedule.
 	 */
 	differences: SelectionDifferences;
+
+	/**
+	 * Notes added by the user for this event block, which are displayed on the schedule.
+	 *
+	 * This is only really used for user-created events (`UserEvent`) but is
+	 * included here so that this type can be used for both course and user events
+	 * to simplify rendering logic.
+	 */
+	notes?: string;
+
+	/**
+	 * For user-created events, the ID of the originating `UserEvent`.
+	 * Used to match a rendered block back to its store entry for removal.
+	 */
+	id?: string;
+
+	/**
+	 * If this is a user-created event block
+	 * Helps differentiate between standard course meetings and user-created events when rendering
+	 */
+	userEvent?: boolean;
 }
 
 /**
@@ -221,6 +242,19 @@ interface LegacyClasstime {
  * @deprecated Use `Classtime` from @jupiterp/jupiterp instead.
  */
 type TimeComponent = number | string;
+
+interface UserEvent {
+	id: string;
+	name: string;
+	days: string[];
+	startTime: number;
+	endTime: number;
+	location: string;
+	notes: string;
+	colorNumber: number;
+}
+
+type ScheduleBlock = UserEvent | ScheduleSelection;
 
 export interface CourseSectionPair {
 	courseCode: string;

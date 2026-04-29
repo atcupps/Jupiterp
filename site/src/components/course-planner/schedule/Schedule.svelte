@@ -22,7 +22,7 @@ Copyright (C) 2026 Andrew Cupps
 	import MeetingListing from '../course-search/MeetingListing.svelte';
 	import SeatData from '../course-search/SeatData.svelte';
 	import CourseCondition from '../course-search/CourseCondition.svelte';
-	import type { Schedule, ScheduleSelection } from '../../../types';
+	import type { Schedule, ScheduleBlock, ScheduleSelection } from '../../../types';
 	import type { CourseBasic, Section } from '@jupiterp/jupiterp';
 	import { chainScroll } from '../../../lib/course-planner/ChainScroll';
 	import { PlannerState } from '../../../stores/CoursePlannerStores';
@@ -36,7 +36,7 @@ Copyright (C) 2026 Andrew Cupps
 	});
 
 	let hoveredSection: ScheduleSelection | null = null;
-	let selections: ScheduleSelection[] = [];
+	let selections: ScheduleBlock[] = [];
 
 	let schedule: Schedule = schedulify(appendHoveredSection(selections, hoveredSection));
 
@@ -99,6 +99,7 @@ Copyright (C) 2026 Andrew Cupps
 	$: if (showCourseInfo !== null) {
 		let index = selections.findIndex((selection) => {
 			return (
+				'course' in selection &&
 				selection.course.courseCode === showCourseInfo &&
 				selection.section.sectionCode === showSectionInfo
 			);
@@ -109,8 +110,11 @@ Copyright (C) 2026 Andrew Cupps
 			courseInfoCourse = null;
 			courseInfoSection = null;
 		} else {
-			courseInfoCourse = selections[index].course;
-			courseInfoSection = selections[index].section;
+			const found = selections[index];
+			if ('course' in found) {
+				courseInfoCourse = found.course;
+				courseInfoSection = found.section;
+			}
 		}
 	}
 
@@ -201,7 +205,7 @@ Copyright (C) 2026 Andrew Cupps
 	<!-- Course info panel -->
 	{#if showCourseInfo !== null && courseInfoCourse !== null && courseInfoSection !== null}
 		<div
-			class={`absolute z-10 w-full rounded-xl border-2 border-outlineLight bg-bgSecondaryLight px-2 py-1 text-left shadow-md dark:border-outlineDark dark:bg-bgSecondaryDark ${
+			class={`absolute z-10 mb-2 w-full rounded-xl border-2 border-outlineLight bg-bgSecondaryLight px-2 py-1 text-left shadow-md dark:border-outlineDark dark:bg-bgSecondaryDark ${
 				infoPanelAtTop ? 'top-0' : 'bottom-0'
 			}`}
 			bind:clientHeight={courseInfoPanelHeight}

@@ -17,12 +17,12 @@ Copyright (C) 2026 Andrew Cupps
 		deleteNonselectedSchedule,
 		uniqueScheduleName
 	} from '$lib/course-planner/ScheduleSelector';
-	import type { ScheduleSelection, StoredSchedule } from '../../../types';
+	import type { ScheduleBlock, StoredSchedule } from '../../../types';
 
 	let dropdownOpen: boolean = false;
 
 	let currentScheduleName: string;
-	let currentScheduleSelections: ScheduleSelection[];
+	let currentScheduleSelections: ScheduleBlock[];
 	CurrentScheduleStore.subscribe((stored) => {
 		currentScheduleName = stored.scheduleName;
 		currentScheduleSelections = stored.selections;
