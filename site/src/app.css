@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* using https://github.com/IdreesInc/Minecraft-Font for minecraft font */
 @font-face {
 	font-family: 'Minecraft';
 	src: url('https://cdn.jsdelivr.net/gh/IdreesInc/Minecraft-Font@master/Minecraft.otf')
