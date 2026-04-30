@@ -22,8 +22,8 @@ body {
 	font-family: 'Cabin', Arial, sans-serif;
 }
 
-html.monocraft body,
-html.monocraft * {
+html.minecraft body,
+html.minecraft * {
 	font-family: 'Minecraft', sans-serif;
 }
 
