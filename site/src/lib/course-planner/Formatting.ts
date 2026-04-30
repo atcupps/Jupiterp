@@ -2,12 +2,12 @@
  * This file is part of Jupiterp. For terms of use, please see the file
  * called LICENSE at the top level of the Jupiterp source tree (online at
  * https://github.com/atcupps/Jupiterp/LICENSE).
- * Copyright (C) 2024 Andrew Cupps
- * 
+ * Copyright (C) 2026 Andrew Cupps
+ *
  * @fileoverview Functions for formatting various Jupiterp objects as strings.
  */
 
-import type { Classtime, Location } from "@jupiterp/jupiterp";
+import type { Classtime, Location } from '@jupiterp/jupiterp';
 
 /**
  * Format a `Classtime` as a `string`, including the days
@@ -15,7 +15,7 @@ import type { Classtime, Location } from "@jupiterp/jupiterp";
  * @returns A `string` representation of `time`, including days
  */
 export function formatClassDayTime(time: Classtime): string {
-    return time.days + ' ' + formatClasstime(time);
+	return time.days + ' ' + formatClasstime(time);
 }
 
 /**
@@ -23,20 +23,22 @@ export function formatClassDayTime(time: Classtime): string {
  * @returns A `string` representation of the time portion of a `Classtime`
  */
 export function formatClasstime(time: Classtime): string {
-    const startTimeNumber = time.start;
-    const endTimeNumber = time.end;
+	const startTimeNumber = time.start;
+	const endTimeNumber = time.end;
 
-    let startHours = Math.floor(startTimeNumber) % 12;
-    if (startHours === 0) startHours = 12; // handle midnight and noon
-    const startMinutes = Math.round((startTimeNumber - Math.floor(startTimeNumber)) * 60);
-    let endHours = Math.floor(endTimeNumber) % 12;
-    if (endHours === 0) endHours = 12; // handle midnight and noon
-    const endMinutes = Math.round((endTimeNumber - Math.floor(endTimeNumber)) * 60);
+	let startHours = Math.floor(startTimeNumber) % 12;
+	if (startHours === 0) startHours = 12; // handle midnight and noon
+	const startMinutes = Math.round((startTimeNumber - Math.floor(startTimeNumber)) * 60);
 
-    const startAmPm = startTimeNumber >= 12 ? 'pm' : 'am';
-    const endAmPm = endTimeNumber >= 12 ? 'pm' : 'am';
+	let endHours = Math.floor(endTimeNumber) % 12;
+	if (endHours === 0) endHours = 12; // handle midnight and noon
+	const endMinutes = Math.round((endTimeNumber - Math.floor(endTimeNumber)) * 60);
 
-    return `${startHours}:${("0" + startMinutes).slice(-2)}${startAmPm} - ${endHours}:${("0" + endMinutes).slice(-2)}${endAmPm}`;
+	const startAmPm = startTimeNumber >= 12 ? 'pm' : 'am';
+	const endAmPm = endTimeNumber >= 12 ? 'pm' : 'am';
+
+	// format-check exempt 1
+	return `${startHours}:${('0' + startMinutes).slice(-2)}${startAmPm} - ${endHours}:${('0' + endMinutes).slice(-2)}${endAmPm}`;
 }
 
 /**
@@ -46,11 +48,11 @@ export function formatClasstime(time: Classtime): string {
  * @returns A string representation of the credit range
  */
 export function formatCredits(minCredits: number, maxCredits: number | null): string {
-    if (maxCredits !== null) {
-        return minCredits + ' - ' + maxCredits;
-    } else {
-        return minCredits.toString();
-    }
+	if (maxCredits !== null) {
+		return minCredits + ' - ' + maxCredits;
+	} else {
+		return minCredits.toString();
+	}
 }
 
 /**
@@ -59,11 +61,11 @@ export function formatCredits(minCredits: number, maxCredits: number | null): st
  * @returns A formatted building name
  */
 function formatPossibleOnlineSync(building: string): string {
-    if (building === 'OnlineSync') {
-        return 'Online';
-    }
-    
-    return building;
+	if (building === 'OnlineSync') {
+		return 'Online';
+	}
+
+	return building;
 }
 
 /**
@@ -72,9 +74,9 @@ function formatPossibleOnlineSync(building: string): string {
  * @returns A `string` representation of the `Location`
  */
 export function formatLocation(location: Location): string {
-    return location.room ? 
-        formatPossibleOnlineSync(location.building) + ' ' + location.room 
-        : formatPossibleOnlineSync(location.building);
+	return location.room
+		? formatPossibleOnlineSync(location.building) + ' ' + location.room
+		: formatPossibleOnlineSync(location.building);
 }
 
 /**
@@ -83,7 +85,7 @@ export function formatLocation(location: Location): string {
  * @returns Instructors formatted as a single `string`
  */
 export function formatInstructors(instructors: string[]): string {
-    return instructors.join(', ');
+	return instructors.join(', ');
 }
 
 /**
@@ -91,7 +93,12 @@ export function formatInstructors(instructors: string[]): string {
  * @param courseCode The course code for which to generate a link
  */
 export function testudoLink(courseCode: string): string {
-    return 'https://app.testudo.umd.edu/soc/search?courseId=' + courseCode + '&sectionId=&termId=202601&_openSectionsOnly=on&creditCompare=%3E%3D&credits=0.0&courseLevelFilter=ALL&instructor=&_facetoface=on&_blended=on&_online=on&courseStartCompare=&courseStartHour=&courseStartMin=&courseStartAM=&courseEndHour=&courseEndMin=&courseEndAM=&teachingCenter=ALL&_classDay1=on&_classDay2=on&_classDay3=on&_classDay4=on&_classDay5=on'
+	// format-check exempt 1
+	return (
+		'https://app.testudo.umd.edu/soc/search?courseId=' +
+		courseCode +
+		'&sectionId=&termId=202608&_openSectionsOnly=on&creditCompare=%3E%3D&credits=0.0&courseLevelFilter=ALL&instructor=&_facetoface=on&_blended=on&_online=on&courseStartCompare=&courseStartHour=&courseStartMin=&courseStartAM=&courseEndHour=&courseEndMin=&courseEndAM=&teachingCenter=ALL&_classDay1=on&_classDay2=on&_classDay3=on&_classDay4=on&_classDay5=on'
+	);
 }
 
 /**
@@ -99,8 +106,8 @@ export function testudoLink(courseCode: string): string {
  * as a single string, space delimited.
  * Example: `splitCourseCode('CMSC424') --> 'CMSC 424'
  * @param code A `string` code to split apart
- * @returns `code` split into 
+ * @returns `code` split into
  */
 export function splitCourseCode(code: string): string {
-    return code.slice(0, 4) + ' ' + code.slice(4);
+	return code.slice(0, 4) + ' ' + code.slice(4);
 }

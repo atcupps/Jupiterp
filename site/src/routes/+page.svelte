@@ -2,211 +2,203 @@
 This file is part of Jupiterp. For terms of use, please see the file
 called LICENSE at the top level of the Jupiterp source tree (online at
 https://github.com/atcupps/Jupiterp/LICENSE).
-Copyright (C) 2025 Andrew Cupps
+Copyright (C) 2026 Andrew Cupps
  -->
 <script lang="ts">
-    import Schedule from '../components/course-planner/schedule/Schedule.svelte';
-    import CourseSearch from '../components/course-planner/course-search/CourseSearch.svelte';
-    import { onMount } from 'svelte';
-    import {
-        ensureUpToDateAndSetStores,
-        resolveSelections,
-        resolveStoredSchedules
-    } from '../lib/course-planner/CourseLoad';
-    import { getProfsLookup } from '$lib/course-planner/CourseSearch';
-    import {
-        ProfsLookupStore,
-        CurrentScheduleStore,
-        NonselectedScheduleStore,
-        DepartmentsStore
-    } from '../stores/CoursePlannerStores';
-    import { client } from '$lib/client';
-    import {
-        type Instructor,
-        type InstructorsConfig, 
-        type InstructorsResponse
-    } from '@jupiterp/jupiterp';
-    import type { ScheduleSelection, StoredSchedule } from '../../types';
+	// format-check exempt 2
+	import Schedule from '../components/course-planner/schedule/Schedule.svelte';
+	import CourseSearch from '../components/course-planner/course-search/CourseSearch.svelte';
+	import { onMount } from 'svelte';
+	import {
+		ensureUpToDateAndSetStores,
+		resolveSelections,
+		resolveStoredSchedules
+	} from '../lib/course-planner/CourseLoad';
+	import { getProfsLookup } from '$lib/course-planner/CourseSearch';
+	import { handlePlannerShortcutKeydown } from '../lib/course-planner/PlannerShortcuts';
+	import {
+		ProfsLookupStore,
+		CurrentScheduleStore,
+		NonselectedScheduleStore,
+		DepartmentsStore
+	} from '../stores/CoursePlannerStores';
+	import { client } from '$lib/client';
+	import {
+		type Instructor,
+		type InstructorsConfig,
+		type InstructorsResponse
+	} from '@jupiterp/jupiterp';
+	import type { ScheduleBlock, StoredSchedule } from '../types';
+	import IsDesktop from '../components/course-planner/IsDesktop.svelte';
+	import { PlannerState } from '../stores/CoursePlannerStores';
 
-    // Function to retreive professor data; called in `onMount`.
-    async function fetchProfessorData() {
-        try {
-            let limit = 500;
-            let offset = 0;
-            let allInstructors: Instructor[] = [];
-            let config: InstructorsConfig = {
-                limit: limit,
-                offset: offset,
-            };
-            let complete = false;
-            while (!complete) {
-                const response: InstructorsResponse = await client.activeInstructors(config);
-                if (response.ok() && response.data != null) {
-                    allInstructors = [...allInstructors, ...response.data];
-                    if (response.data.length < limit) {
-                        complete = true;
-                        break;
-                    }
-                    offset += limit;
-                    config.offset = offset;
-                } else {
-                    throw new Error(`Failed to fetch data: ${response.statusCode} ${response.statusMessage} ${response.errorBody}`);
-                }
-            }
+	let isDesktop: boolean = false;
+	let plannerContainer: HTMLDivElement | null = null;
 
-            // Update the ProfsLookupStore with the fetched data
-            ProfsLookupStore.set(getProfsLookup(allInstructors));
-        }
-        catch (error) {
-            console.error('Error fetching professor data:', error);
-        }
-    }
+	$: PlannerState.update(
+		(state: { isDesktop: boolean; chainScrollParent: HTMLElement | null }) => ({
+			...state,
+			isDesktop,
+			chainScrollParent: plannerContainer
+		})
+	);
 
-    // Function to get list of department codes as an array of strings
-    // and set the DepartmentsStore.
-    async function fetchDeptCodes() {
-        const res = await client.deptList();
-        if (res.ok() && res.data != null) {
-            const depts = res.data;
-            DepartmentsStore.set(depts);
-        } else {
-            console.error('Error fetching department codes:', res.errorBody);
-        }
-    }
+	// Function to retrieve professor data; called in `onMount`.
+	async function fetchProfessorData() {
+		try {
+			let limit = 500;
+			let offset = 0;
+			let allInstructors: Instructor[] = [];
+			let config: InstructorsConfig = {
+				limit: limit,
+				offset: offset
+			};
+			let complete = false;
+			while (!complete) {
+				const response: InstructorsResponse = await client.activeInstructors(config);
+				if (response.ok() && response.data != null) {
+					allInstructors = [...allInstructors, ...response.data];
+					if (response.data.length < limit) {
+						complete = true;
+						break;
+					}
+					offset += limit;
+					config.offset = offset;
+				} else {
+					// format-check exempt 1
+					throw new Error(
+						`Failed to fetch data: ${response.statusCode} ${response.statusMessage} ${response.errorBody}`
+					);
+				}
+			}
 
-    // Keep track of chosen sections
-    let currentSchedule: StoredSchedule;
-    let hasReadLocalStorage: boolean = false;
-    CurrentScheduleStore.subscribe((stored) => {
-        if (hasReadLocalStorage) {
-            currentSchedule = stored;
+			// Update the ProfsLookupStore with the fetched data
+			ProfsLookupStore.set(getProfsLookup(allInstructors));
+		} catch (error) {
+			console.error('Error fetching professor data:', error);
+		}
+	}
 
-            // Save to local storage
-            if (currentSchedule) {
-                if (typeof window !== 'undefined') {
-                    localStorage.setItem('selectedSections', 
-                                jsonifySections(currentSchedule.selections));
-                    localStorage.setItem(
-                        'scheduleName', currentSchedule.scheduleName
-                    );
-                }
-            }
-        }
-    });
+	// Function to get list of department codes as an array of strings
+	// and set the DepartmentsStore.
+	async function fetchDeptCodes() {
+		const res = await client.deptList();
+		if (res.ok() && res.data != null) {
+			const depts = res.data;
+			DepartmentsStore.set(depts);
+		} else {
+			console.error('Error fetching department codes:', res.errorBody);
+		}
+	}
 
-    let nonselectedSchedules: StoredSchedule[];
-    // Save non-selected schedules to local storage
-    NonselectedScheduleStore.subscribe((stored) => {
-        if (hasReadLocalStorage) {
-            nonselectedSchedules = stored;
+	// Keep track of chosen sections
+	let currentSchedule: StoredSchedule;
+	let hasReadLocalStorage: boolean = false;
+	CurrentScheduleStore.subscribe((stored) => {
+		if (hasReadLocalStorage) {
+			currentSchedule = stored;
 
-            // Save to local storage
-            if (nonselectedSchedules) {
-                if (typeof window !== 'undefined') {
-                    localStorage.setItem(
-                        'nonselectedSchedules', 
-                        JSON.stringify(nonselectedSchedules)
-                    );
-                }
-            }
-        }
-    })
+			// Save to local storage
+			if (currentSchedule) {
+				if (typeof window !== 'undefined') {
+					localStorage.setItem('selectedSections', jsonifySections(currentSchedule.selections));
+					localStorage.setItem('scheduleName', currentSchedule.scheduleName);
+				}
+			}
+		}
+	});
 
-    onMount(() => {
-        // Fetch instructor data from API
-        fetchProfessorData();
+	let nonselectedSchedules: StoredSchedule[];
+	// Save non-selected schedules to local storage
+	NonselectedScheduleStore.subscribe((stored) => {
+		if (hasReadLocalStorage) {
+			nonselectedSchedules = stored;
 
-        // Fetch department codes from API
-        fetchDeptCodes();
+			// Save to local storage
+			if (nonselectedSchedules) {
+				if (typeof window !== 'undefined') {
+					localStorage.setItem('nonselectedSchedules', JSON.stringify(nonselectedSchedules));
+				}
+			}
+		}
+	});
 
-        // Retrieve data from client local storage
-        try {
-            if (typeof window !== 'undefined') {
-                // Get stored selections from local storage
-                const storedSelectionsOption = 
-                                localStorage.getItem('selectedSections');
-                let storedSelections: ScheduleSelection[];
-                if (storedSelectionsOption) {
-                    storedSelections = 
-                        resolveSelections(storedSelectionsOption);
-                } else {
-                    storedSelections = [];
-                }
+	onMount(() => {
+		// Fetch instructor data from API
+		fetchProfessorData();
 
-                // Get stored current schedule name from local storage
-                const storedScheduleNameOption = 
-                                localStorage.getItem('scheduleName');
-                let storedScheduleName: string;
-                if (storedScheduleNameOption) {
-                    storedScheduleName = storedScheduleNameOption;
-                } else {
-                    storedScheduleName = "Schedule 1";
-                }
+		// Fetch department codes from API
+		fetchDeptCodes();
 
-                const currentSchedule: StoredSchedule = {
-                    scheduleName: storedScheduleName,
-                    selections: storedSelections
-                };
+		// Retrieve data from client local storage
+		try {
+			if (typeof window !== 'undefined') {
+				// Get stored selections from local storage
+				const storedSelectionsOption = localStorage.getItem('selectedSections');
+				let storedSelections: ScheduleBlock[];
+				if (storedSelectionsOption) {
+					storedSelections = resolveSelections(storedSelectionsOption);
+				} else {
+					storedSelections = [];
+				}
 
-                // Get stored non-selected schedules from local storage
-                const storedNonselectedSchedulesOption = 
-                                localStorage.getItem('nonselectedSchedules');
-                let storedNonselectedSchedules: StoredSchedule[];
-                if (storedNonselectedSchedulesOption) {
-                    storedNonselectedSchedules = 
-                        resolveStoredSchedules(
-                            storedNonselectedSchedulesOption);
-                } else {
-                    storedNonselectedSchedules = [];
-                }
+				// Get stored current schedule name from local storage
+				const storedScheduleNameOption = localStorage.getItem('scheduleName');
+				let storedScheduleName: string;
+				if (storedScheduleNameOption) {
+					storedScheduleName = storedScheduleNameOption;
+				} else {
+					storedScheduleName = 'Schedule 1';
+				}
 
-                // Find differences between stored selections and
-                // most up-to-date course data, and update accordingly.
-                ensureUpToDateAndSetStores(currentSchedule, storedNonselectedSchedules);
+				const currentSchedule: StoredSchedule = {
+					scheduleName: storedScheduleName,
+					selections: storedSelections
+				};
 
-                hasReadLocalStorage = true;
-            }
-        } catch (e) {
-            console.log('Unable to retrieve courses: ' + e);
-            CurrentScheduleStore.set({
-                scheduleName: "Schedule 1",
-                selections: []
-            });
-            NonselectedScheduleStore.set([]);
-        }
-    });
+				// Get stored non-selected schedules from local storage
+				const storedNonselectedSchedulesOption = localStorage.getItem('nonselectedSchedules');
+				let storedNonselectedSchedules: StoredSchedule[];
+				if (storedNonselectedSchedulesOption) {
+					storedNonselectedSchedules = resolveStoredSchedules(storedNonselectedSchedulesOption);
+				} else {
+					storedNonselectedSchedules = [];
+				}
 
-    function jsonifySections(sections: ScheduleSelection[]): string {
-        let finalSelections: ScheduleSelection[] = [];
-        for (let section of sections) {
-            if (!section.hover) {
-                finalSelections.push(section);
-            }
-        }
-        return JSON.stringify(finalSelections);
-    }
+				// Find differences between stored selections and
+				// most up-to-date course data, and update accordingly.
+				ensureUpToDateAndSetStores(currentSchedule, storedNonselectedSchedules);
 
-    let courseSearchSelected: boolean = false;
+				hasReadLocalStorage = true;
+			}
+		} catch (e) {
+			console.log('Unable to retrieve courses: ' + e);
+			CurrentScheduleStore.set({
+				scheduleName: 'Schedule 1',
+				selections: []
+			});
+			NonselectedScheduleStore.set([]);
+		}
+	});
+
+	function jsonifySections(sections: ScheduleBlock[]): string {
+		return JSON.stringify(sections.filter((s) => !('course' in s) || !s.hover));
+	}
+
+	function handlePlannerKeydown(event: KeyboardEvent) {
+		handlePlannerShortcutKeydown(event, isDesktop);
+	}
 </script>
 
-<!-- Button to toggle course search on mobile -->
-<button class='fixed h-5 w-5 top-[0.9rem] left-5 visible lg:hidden z-[52]'
-        on:click={() => {courseSearchSelected = !courseSearchSelected}}>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
-            class='visible h-full w-full transition 
-                    fill-textLight dark:fill-textDark'
-            class:hidden={courseSearchSelected}>
-                <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"
-            class='visible h-full w-full transition 
-                    fill-textLight dark:fill-textDark'
-            class:hidden={!courseSearchSelected}>
-                <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206 56.6 43.5C45.3 29.9 25.1 28.1 11.5 39.4S-3.9 70.9 7.4 84.5L150.3 256 7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306 327.4 468.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256 376.6 84.5z"/></svg>
-</button>
+<IsDesktop bind:isDesktop />
 
-<div class='fixed flex flex-row w-full px-8
-            text-textLight dark:text-textDark lg:px-8
-            top-[3rem] lg:top-[3.5rem] xl:top-[4rem] bottom-0'>
-    <CourseSearch bind:courseSearchSelected />
-    <Schedule />
+<svelte:window on:keydown={handlePlannerKeydown} />
+
+<div
+	id="planner-container"
+	bind:this={plannerContainer}
+	class="custom-scrollbar fixed bottom-0 top-12 w-full flex-col overflow-y-auto px-3 lg:grid lg:grid-cols-[22rem_1fr]"
+>
+	<Schedule />
+	<CourseSearch />
 </div>

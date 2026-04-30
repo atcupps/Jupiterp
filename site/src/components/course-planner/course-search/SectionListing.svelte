@@ -2,232 +2,226 @@
 This file is part of Jupiterp. For terms of use, please see the file
 called LICENSE at the top level of the Jupiterp source tree (online at
 https://github.com/atcupps/Jupiterp/LICENSE).
-Copyright (C) 2024 Andrew Cupps
+Copyright (C) 2026 Andrew Cupps
 -->
 <script lang="ts">
-    import InstructorListing from "./InstructorListing.svelte";
-    import MeetingListing from "./MeetingListing.svelte";
-    import { 
-        HoveredSectionStore,
-        CurrentScheduleStore,
-        CourseInfoPairStore,
-        CourseSearchFilterStore,
-    } from "../../../stores/CoursePlannerStores";
-    import SeatData from "./SeatData.svelte";
-    import type { Section, CourseBasic } from "@jupiterp/jupiterp";
-    import type { ScheduleSelection } from "../../../types";
-    import { noDifferences } from "$lib/course-planner/Schedule";
+	import { onMount } from 'svelte';
+	import { fade } from 'svelte/transition';
+	import InstructorListing from './InstructorListing.svelte';
+	import MeetingListing from './MeetingListing.svelte';
+	import {
+		HoveredSectionStore,
+		CurrentScheduleStore,
+		CourseInfoPairStore,
+		CourseSearchFilterStore
+	} from '../../../stores/CoursePlannerStores';
+	import SeatData from './SeatData.svelte';
+	import type { Section, CourseBasic } from '@jupiterp/jupiterp';
+	import type { ScheduleBlock, ScheduleSelection } from '../../../types';
+	import { noDifferences } from '$lib/course-planner/Schedule';
+	import { firstAvailableColor } from '$lib/course-planner/ColorSelector';
 
-    export let courseCode: string;
-    export let section: Section;
-    export let course: CourseBasic;
+	export let courseCode: string;
+	export let section: Section;
+	export let course: CourseBasic;
+	export let isDesktop: boolean;
 
-    let hoveredSection: ScheduleSelection | null;
-    HoveredSectionStore.subscribe((store) => { hoveredSection = store });
+	let hoveredSection: ScheduleSelection | null;
+	HoveredSectionStore.subscribe((store) => {
+		hoveredSection = store;
+	});
 
-    let selectionsList: ScheduleSelection[];
-    let scheduleName: string;
-    CurrentScheduleStore.subscribe((stored) => {
-        selectionsList = stored.selections;
-        scheduleName = stored.scheduleName;
-    });
+	let selectionsList: ScheduleBlock[];
+	let scheduleName: string;
+	CurrentScheduleStore.subscribe((stored) => {
+		selectionsList = stored.selections;
+		scheduleName = stored.scheduleName;
+	});
 
-    let onlyShowingOpen = false;
-    CourseSearchFilterStore.subscribe((store) => {
-        onlyShowingOpen = store.clientSideFilters.onlyOpen === true;
-    });
+	let onlyShowingOpen = false;
+	CourseSearchFilterStore.subscribe((store) => {
+		onlyShowingOpen = store.clientSideFilters.onlyOpen === true;
+	});
 
-    let newSelection: ScheduleSelection = {
-        course,
-        section,
-        hover: false,
-        differences: noDifferences(),
-        colorNumber: -1,
-    }
-    let sectionAdded: boolean;
-    $: if (selectionsList || hoveredSection || (onlyShowingOpen || false)) {
-        if (onlyShowingOpen && section.openSeats === 0) {
-            sectionAdded = false;
-        } else {
-            sectionAdded = selectionsList.some(obj => selectionEquals(obj));
-        }
-    }
-    
-    let hoverSection: ScheduleSelection = {
-        course,
-        section,
-        hover: true,
-        differences: noDifferences(),
-        colorNumber: -1,
-    }
+	let newSelection: ScheduleSelection = {
+		course,
+		section,
+		hover: false,
+		differences: noDifferences(),
+		colorNumber: -1
+	};
+	let sectionAdded: boolean;
+	$: if (selectionsList || hoveredSection || onlyShowingOpen || false) {
+		if (onlyShowingOpen && section.openSeats === 0) {
+			sectionAdded = false;
+		} else {
+			sectionAdded = selectionsList.some((obj) => selectionEquals(obj));
+		}
+	}
 
-    let addAlertVisible: boolean = false;
-    let addAlertShouldFade: boolean = false;
-    let removeAlertVisible: boolean = false;
-    let removeAlertShouldFade: boolean = false;
+	let hoverSection: ScheduleSelection = {
+		course,
+		section,
+		hover: true,
+		differences: noDifferences(),
+		colorNumber: -1
+	};
 
-    // Function to show or fade 
-    function showAddAlert() {
-        addAlertVisible = true;    // Make the div visible
-        addAlertShouldFade = false; // Reset fading in case it's a subsequent click
-        setTimeout(() => {
-            addAlertShouldFade = true; // Start fading after 10 seconds
-            setTimeout(() => {
-                addAlertVisible = false;
-            }, 750); // Delay to make `addAlertVisible` false after fading
-        }, 300);  // Delay before fade starts
-    }
+	// Auto-scroll for non desktop screens: scroll up to schedule when adding a section
+	let plannerContainer: HTMLElement | null = null;
+	onMount(() => {
+		plannerContainer = document.getElementById('planner-container');
+	});
+	function scrollToTopPlannerTop() {
+		if (plannerContainer) {
+			plannerContainer.scrollTo({
+				top: 0,
+				behavior: 'smooth'
+			});
+		}
+	}
 
-    function showRemoveAlert() {
-        removeAlertVisible = true;
-        removeAlertShouldFade = false;
-        setTimeout(() => {
-            removeAlertShouldFade = true;
-            setTimeout(() => {
-                removeAlertVisible = false;
-            }, 750); // Delay to make `removeAlertVisible` false after fading
-        }, 300);
-    }
+	let addAlertVisible: boolean = false;
+	let removeAlertVisible: boolean = false;
 
-    // In order for Svelte's reactivity to work properly, `selectionsList`
-    // needs to be reassigned instead of using `.push` or `.splice`.
-    function addSectionToSchedule() {
-        if (!sectionAdded) {
-            showAddAlert();
-            removeHoverSection();
-            newSelection.colorNumber = firstAvailableColor(selectionsList);
-            CurrentScheduleStore.set({
-                scheduleName,
-                selections: [...selectionsList, newSelection]
-            });
-            CourseInfoPairStore.update(value => {
-                return value === null ? null : {
-                    courseCode: courseCode,
-                    sectionCode: section.sectionCode
-                };
-            });
-        } else {
-            showRemoveAlert();
-            const index = selectionsList.findIndex(obj => 
-                        selectionEquals(obj));
-            if (index !== -1) {
-                CurrentScheduleStore.set({
-                    scheduleName,
-                    selections: [
-                        ...selectionsList.slice(0, index),
-                        ...selectionsList.slice(index + 1)
-                    ]
-                });
-            }
-            CourseInfoPairStore.update(value => {
-                return value !== null 
-                        && value.courseCode === courseCode
-                        && value.sectionCode === section.sectionCode 
-                    ? null : value;
-            })
-        }
-        sectionAdded = !sectionAdded;
-        if (isDesktop) {
-            addHoverSection();
-        }
-    }
+	// Function to show or fade
+	// format-check exempt 8
+	function showAddAlert() {
+		addAlertVisible = true; // Make the div visible
+		setTimeout(() => {
+			setTimeout(() => {
+				addAlertVisible = false;
+			}, 500); // Delay before making `addAlertVisible` false to start fade out
+		}, 0); // No delay after making visible
+	}
 
-    function addHoverSection() {
-        if (!sectionAdded) {
-            hoverSection.colorNumber = firstAvailableColor(selectionsList);
-            HoveredSectionStore.set(hoverSection);
-        }
-    }
+	function showRemoveAlert() {
+		removeAlertVisible = true;
+		setTimeout(() => {
+			setTimeout(() => {
+				removeAlertVisible = false;
+			}, 500); // Delay before making `removeAlertVisible` false to start fade out
+		}, 0); // No delay after making visible
+	}
 
-    function removeHoverSection() {
-        HoveredSectionStore.set(null);
-    }
+	// In order for Svelte's reactivity to work properly, `selectionsList`
+	// needs to be reassigned instead of using `.push` or `.splice`.
+	function addSectionToSchedule() {
+		if (!sectionAdded) {
+			showAddAlert();
+			removeHoverSection();
+			newSelection.colorNumber = firstAvailableColor(selectionsList);
+			CurrentScheduleStore.set({
+				scheduleName,
+				selections: [...selectionsList, newSelection]
+			});
+			CourseInfoPairStore.update((value) => {
+				return value === null
+					? null
+					: {
+							courseCode: courseCode,
+							sectionCode: section.sectionCode
+						};
+			});
+		} else {
+			showRemoveAlert();
+			const index = selectionsList.findIndex((obj) => selectionEquals(obj));
+			if (index !== -1) {
+				CurrentScheduleStore.set({
+					scheduleName,
+					selections: [...selectionsList.slice(0, index), ...selectionsList.slice(index + 1)]
+				});
+			}
+			CourseInfoPairStore.update((value) => {
+				return value !== null &&
+					value.courseCode === courseCode &&
+					value.sectionCode === section.sectionCode
+					? null
+					: value;
+			});
+		}
+		sectionAdded = !sectionAdded;
+		if (isDesktop) {
+			addHoverSection();
+		}
+	}
 
-    function selectionEquals(s: ScheduleSelection): boolean {
-        return s.course.courseCode === courseCode && 
-            s.section.sectionCode === section.sectionCode && !s.hover;
-    }
+	function addHoverSection() {
+		if (!sectionAdded) {
+			hoverSection.colorNumber = firstAvailableColor(selectionsList);
+			HoveredSectionStore.set(hoverSection);
+		}
+	}
 
-    function firstAvailableColor(selections: ScheduleSelection[]): number {
-        let unavailableColors: number[] = [];
-        selections.forEach((selection) => {
-            unavailableColors.push(selection.colorNumber);
-        });
-        unavailableColors.sort((a, b) => a - b);
-        let result: number = 0;
-        while (result < unavailableColors.length && 
-                    unavailableColors[result] === result) {
-            result += 1;
-        }
-        return result;
-    }
+	function removeHoverSection() {
+		HoveredSectionStore.set(null);
+	}
 
-    let profsHover: boolean = false;
-    let locationHover: boolean = false;
+	function selectionEquals(s: ScheduleBlock): boolean {
+		return (
+			'course' in s &&
+			s.course.courseCode === courseCode &&
+			s.section.sectionCode === section.sectionCode &&
+			!s.hover
+		);
+	}
 
-    let isDesktop: boolean = true;
-    let innerWidth: number;
-    $: if (innerWidth) {
-        isDesktop = innerWidth >= 1024;
-    }
+	let profsHover: boolean = false;
+	let locationHover: boolean = false;
 
-    const alertClasses: string = `  fixed left-[50%] translate-x-[-50%] z-5
-                                    w-[40%] top-[10%] min-w-72 h-8 rounded-lg
-                                    text-center text-white lg:hidden 
-                                    bg-orange shadow-lg content-center`;
+	const alertClasses: string = `fixed left-[50%] translate-x-[-50%] z-50 w-[40%] top-14 min-w-72 h-8 rounded-lg text-center text-white lg:hidden bg-orange shadow-lg content-center transition-opacity duration-500`;
 </script>
-
-<svelte:window bind:innerWidth />
 
 <!-- Ignoring a11y for mouseover because it's a non-essential feature -->
 <!-- svelte-ignore a11y-mouse-events-have-key-events -->
-<button on:click={addSectionToSchedule}
-        on:mouseover={isDesktop ? addHoverSection : null}
-        on:mouseout={isDesktop ? removeHoverSection : null}
-        on:focusin={isDesktop ? addHoverSection : null}
-        on:focusout={isDesktop ? removeHoverSection : null}
-            class='flex flex-row w-full text-left border-t-2 pb-1
-                    border-outlineLight dark:border-outlineDark transition
-                {sectionAdded ? 'bg-hoverLight dark:bg-hoverDark' : ''}'
-            class:lg:hover:bg-hoverLight={!profsHover && !locationHover}
-            class:lg:hover:dark:bg-hoverDark={!profsHover && !locationHover}
-        title='{ sectionAdded ? 'Remove course from' : 'Add course to'} schedule'
-                >
-    <!-- Section code -->
-    <div class='text-secCodesLight dark:text-secCodesDark font-semibold 
-                text-sm xl:text-base w-12 xl:w-14'>
-        {section.sectionCode}
-    </div>
+<!-- format-check exempt 17 5 -->
+<button
+	on:click={addSectionToSchedule}
+	on:mouseover={isDesktop ? addHoverSection : null}
+	on:mouseout={isDesktop ? removeHoverSection : null}
+	on:focusin={isDesktop ? addHoverSection : null}
+	on:focusout={isDesktop ? removeHoverSection : null}
+	class="flex w-full flex-row border-t-2 border-outlineLight pb-1 text-left transition dark:border-outlineDark
+	{sectionAdded ? 'bg-hoverLight dark:bg-hoverDark' : ''}"
+	class:lg:hover:bg-hoverLight={!profsHover && !locationHover}
+	class:lg:hover:dark:bg-hoverDark={!profsHover && !locationHover}
+	title="{sectionAdded ? 'Remove course from' : 'Add course to'} schedule"
+>
+	<!-- Section code (click to view) -->
+	<button
+		on:click={isDesktop ? null : scrollToTopPlannerTop}
+		class="w-12 text-sm font-semibold text-secCodesLight xl:w-14 xl:text-base dark:text-secCodesDark"
+	>
+		<div class="h-full align-top">
+			{section.sectionCode}
+		</div>
+	</button>
 
-    <!-- Section info -->
-    <div class='w-full'>
-        <!-- Instructors -->
-        {#each section.instructors as instructor}
-            <InstructorListing {instructor} 
-                                bind:profsHover {removeHoverSection}/>
-        {/each}
+	<!-- Section info -->
+	<div class="w-full">
+		<!-- Instructors -->
+		{#each section.instructors as instructor}
+			<InstructorListing {instructor} bind:profsHover {removeHoverSection} />
+		{/each}
 
-        <!-- Seats info -->
-        <SeatData section={section} />
-        
-        <!-- Class meetings -->
-        {#each section.meetings as meeting}
-            <MeetingListing meeting={meeting} 
-                bind:locationHover {removeHoverSection} />
-        {/each}
-    </div>
+		<!-- Seats info -->
+		<SeatData {section} />
+
+		<!-- Class meetings -->
+		{#each section.meetings as meeting}
+			<MeetingListing {meeting} bind:locationHover {removeHoverSection} />
+		{/each}
+	</div>
 </button>
 
 {#if addAlertVisible}
-    <div class={(addAlertShouldFade ? 'animate-fadeOut' : '') + 
-                    alertClasses}>
-        <span class="font-medium h-full align-middle">Class Added</span>
-    </div>
+	<div class={alertClasses} out:fade={{ duration: 300 }}>
+		<span class="h-full align-middle font-medium">Class Added</span>
+	</div>
 {/if}
 
 {#if removeAlertVisible}
-    <div class={(removeAlertShouldFade ? 'animate-fadeOut' : '') + 
-                    alertClasses}>
-        <span class="font-medium h-full align-middle">Class Removed</span>
-    </div>
+	<div class={alertClasses} out:fade={{ duration: 300 }}>
+		<span class="h-full align-middle font-medium">Class Removed</span>
+	</div>
 {/if}
