@@ -143,6 +143,12 @@ function filterAndSortCourseArray(courses: Course[]): Course[] {
 export async function setSearchResults(input: string) {
 	mostRecentInput = input;
 
+	if (input.toLowerCase() === 'minecraft') {
+		const isMono = localStorage.font === 'minecraft';
+		localStorage.setItem('font', isMono ? 'default' : 'minecraft');
+		document.documentElement.classList.toggle('minecraft');
+	}
+
 	// Don't care about case or whitespace in searches
 	const simpleInput: string = input.toUpperCase().replace(/\s/g, '');
 

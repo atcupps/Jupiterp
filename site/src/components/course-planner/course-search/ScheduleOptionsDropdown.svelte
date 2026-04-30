@@ -6,18 +6,24 @@ Copyright (C) 2026 Andrew Cupps
  -->
 <script lang="ts">
 	import { Dropdown, DropdownItem } from 'flowbite-svelte';
-	import { DotsVerticalOutline, TrashBinOutline, FileCopyOutline } from 'flowbite-svelte-icons';
 	import {
+		DotsVerticalOutline,
+		TrashBinOutline,
+		FileCopyOutline,
+		PlusOutline
+	} from 'flowbite-svelte-icons';
+	import {
+		AddCustomEventStore,
 		CurrentScheduleStore,
 		NonselectedScheduleStore
 	} from '../../../stores/CoursePlannerStores';
 	import { uniqueScheduleName } from '$lib/course-planner/ScheduleSelector';
-	import type { ScheduleSelection, StoredSchedule } from '../../../types';
+	import type { ScheduleBlock, StoredSchedule } from '../../../types';
 
 	let dropdownOpen = false;
 
 	let currentScheduleName: string;
-	let currentScheduleSelections: ScheduleSelection[];
+	let currentScheduleSelections: ScheduleBlock[];
 	CurrentScheduleStore.subscribe((stored) => {
 		currentScheduleName = stored.scheduleName;
 		currentScheduleSelections = stored.selections;
@@ -71,13 +77,29 @@ Copyright (C) 2026 Andrew Cupps
 			selections: currentScheduleSelections
 		});
 	}
-</script> 
 
-<button class="rounded-md hover:bg-hoverLight dark:hover:bg-hoverDark" title="Schedule options">
+	function addCustomEvent() {
+		dropdownOpen = false;
+		AddCustomEventStore.set(true);
+	}
+</script>
+
+<button
+	class="rounded-md px-0.5 hover:bg-hoverLight dark:hover:bg-hoverDark"
+	title="Schedule options"
+>
 	<DotsVerticalOutline class="h-5 w-5" />
 </button>
 
-<Dropdown class="w-24 rounded-b-md bg-bgLight dark:bg-divBorderDark" bind:open={dropdownOpen}>
+<Dropdown class="w-24 rounded-md bg-bgLight dark:bg-divBorderDark" bind:open={dropdownOpen}>
+	<DropdownItem
+		class="flex items-center justify-start px-2 hover:bg-hoverLight dark:hover:bg-hoverDark"
+		title="Add custom event to schedule"
+		on:click={addCustomEvent}
+	>
+		<PlusOutline class="z-50 mr-1 h-3 w-3" /> Add Event
+	</DropdownItem>
+
 	<DropdownItem
 		class="flex items-center justify-start
                             px-2 hover:bg-hoverLight dark:hover:bg-hoverDark"

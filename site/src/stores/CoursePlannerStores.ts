@@ -44,6 +44,9 @@ export const CourseInfoPairStore: Writable<CourseSectionPair | null> = writable(
 // Track current event displayed in edit event modal
 export const EventEditStore: Writable<{ eventId: string } | null> = writable(null);
 
+// Track whether the add custom event modal is open
+export const AddCustomEventStore: Writable<boolean> = writable(false);
+
 /** List of departments */
 export const DepartmentsStore: Writable<Department[]> = writable([]);
 

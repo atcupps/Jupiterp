@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+/* using https://github.com/IdreesInc/Minecraft-Font for minecraft font */
+@font-face {
+	font-family: 'Minecraft';
+	src: url('https://cdn.jsdelivr.net/gh/IdreesInc/Minecraft-Font@master/Minecraft.otf')
+		format('opentype');
+	font-weight: normal;
+	font-style: normal;
+}
+
 html {
 	/* prevents pull-to-refresh */
 	overscroll-behavior: none;
@@ -11,6 +20,11 @@ body {
 	height: 100svh;
 	overscroll-behavior: none;
 	font-family: 'Cabin', Arial, sans-serif;
+}
+
+html.minecraft body,
+html.minecraft * {
+	font-family: 'Minecraft', sans-serif;
 }
 
 @layer utilities {
@@ -63,6 +77,7 @@ body {
 	.no-scrollbar {
 		scrollbar-width: none;
 		-ms-overflow-style: none;
+
 		&::-webkit-scrollbar {
 			display: none;
 		}
