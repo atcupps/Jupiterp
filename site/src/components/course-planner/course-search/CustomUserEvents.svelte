@@ -6,23 +6,19 @@ Copyright (C) 2026 Andrew Cupps
 -->
 
 <script lang="ts">
-	import { CurrentScheduleStore, EventEditStore } from '../../../stores/CoursePlannerStores';
+	import {
+		AddCustomEventStore,
+		CurrentScheduleStore,
+		EventEditStore
+	} from '../../../stores/CoursePlannerStores';
 	import type { ScheduleBlock, UserEvent } from '../../../types';
 	import UserEventModal from './UserEventModal.svelte';
 	import { firstAvailableColor } from '$lib/course-planner/ColorSelector';
 
 	let showCustomEventModal = false;
-
-	let innerWidth = 0;
-	let wasWide = false;
-	$: {
-		const isWide = innerWidth >= 1024;
-		if (wasWide && !isWide) {
-			showCustomEventModal = false;
-			EventEditStore.set(null);
-		}
-		wasWide = isWide;
-	}
+	AddCustomEventStore.subscribe((val) => {
+		showCustomEventModal = val;
+	});
 
 	// get selections and user events from store
 	let selectionsList: ScheduleBlock[];
@@ -62,28 +58,17 @@ Copyright (C) 2026 Andrew Cupps
 		}
 		CurrentScheduleStore.set({ scheduleName, selections: updatedSelections });
 		showCustomEventModal = false;
+		AddCustomEventStore.set(false);
 		EventEditStore.set(null);
 	}
 </script>
 
-<svelte:window bind:innerWidth />
-
-<!-- custom event adding -->
-<button
-	class="mx-2 mb-2 mt-2 w-[calc(100%-1rem)] rounded-lg border-2 border-outlineLight bg-transparent py-2 text-black
-            shadow-lg hover:bg-hoverLight dark:border-outlineDark dark:text-textDark dark:hover:bg-hoverDark"
-	type="button"
-	title="Add custom event to schedule..."
-	on:click={() => {
-		showCustomEventModal = true;
-	}}
->
-	Add Custom Event
-</button>
-
 {#if showCustomEventModal}
 	<UserEventModal
-		onClose={() => (showCustomEventModal = false)}
+		onClose={() => {
+			showCustomEventModal = false;
+			AddCustomEventStore.set(false);
+		}}
 		onSubmit={(event) => addUserEvent(event)}
 	/>
 {/if}
