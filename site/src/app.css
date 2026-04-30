@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+	font-family: 'Monocraft';
+	src: url('https://cdn.jsdelivr.net/gh/IdreesInc/Monocraft@main/dist/Monocraft-ttf/Monocraft.ttf')
+		format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
 html {
 	/* prevents pull-to-refresh */
 	overscroll-behavior: none;
@@ -11,6 +19,10 @@ body {
 	height: 100svh;
 	overscroll-behavior: none;
 	font-family: 'Cabin', Arial, sans-serif;
+}
+
+html.monocraft body {
+	font-family: 'Monocraft', monospace;
 }
 
 @layer utilities {
