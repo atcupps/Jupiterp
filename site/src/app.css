@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 @font-face {
-	font-family: 'Monocraft';
-	src: url('https://cdn.jsdelivr.net/gh/IdreesInc/Monocraft@main/dist/Monocraft-ttf/Monocraft.ttf')
-		format('truetype');
+	font-family: 'Minecraft';
+	src: url('https://cdn.jsdelivr.net/gh/IdreesInc/Minecraft-Font@master/Minecraft.otf')
+		format('opentype');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -23,7 +23,7 @@ body {
 
 html.monocraft body,
 html.monocraft * {
-	font-family: 'Monocraft', monospace;
+	font-family: 'Minecraft', sans-serif;
 }
 
 @layer utilities {
