@@ -28,6 +28,12 @@ Copyright (C) 2026 Andrew Cupps
 			isOnPage={currentPage == '/terms-of-use'}
 		/>
 		<NavBarElement
+			link="./privacy-policy"
+			text="Privacy Policy"
+			reduceXMargin={true}
+			fullWidth={true}
+		/>
+		<NavBarElement
 			link="./changelog"
 			text="Changelog"
 			reduceXMargin={true}
@@ -102,6 +108,9 @@ Copyright (C) 2026 Andrew Cupps
 	</div>
 	<div class="my-2 w-full text-lg">
 		<NavBarElement link="./terms-of-use" text="Terms of Use" />
+	</div>
+	<div class="my-2 w-full text-lg">
+		<NavBarElement link="./privacy-policy" text="Privacy Policy" />
 	</div>
 	<div class="my-2 w-full text-lg">
 		<NavBarElement link="https://github.com/atcupps/Jupiterp" text="GitHub" target="_blank" />

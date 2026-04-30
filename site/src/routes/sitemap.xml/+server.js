@@ -13,7 +13,8 @@ export async function GET() {
 		{ url: '/about', changefreq: 'monthly', priority: 0.3 },
 		{ url: '/bugs', changefreq: 'monthly', priority: 0.2 },
 		{ url: '/terms-of-use', changefreq: 'monthly', priority: 0.1 },
-		{ url: '/changelog', changefreq: 'monthly', priority: 0.1 }
+		{ url: '/changelog', changefreq: 'monthly', priority: 0.1 },
+		{ url: '/privacy-policy', changefreq: 'monthly', priority: 0.1 }
 	];
 
 	const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
