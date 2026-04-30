@@ -9,7 +9,7 @@ Copyright (C) 2026 Andrew Cupps
 	import { page } from '$app/stores';
 	import NavBarElement from './NavBarElement.svelte';
 	import DarkModeToggle from './DarkModeToggle.svelte';
-import ExpandableNavBarElement from './ExpandableNavBarElement.svelte';
+	import ExpandableNavBarElement from './ExpandableNavBarElement.svelte';
 
 	let siteLinksSelected: boolean = false;
 
