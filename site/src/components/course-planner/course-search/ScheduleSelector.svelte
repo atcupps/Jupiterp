@@ -122,7 +122,7 @@ Copyright (C) 2026 Andrew Cupps
 		<ScheduleOptionsDropdown />
 
 		<button
-			class="h-7 rounded-md hover:bg-hoverLight dark:hover:bg-hoverDark"
+			class="h-7 rounded-md px-0.5 hover:bg-hoverLight dark:hover:bg-hoverDark"
 			title="Create new schedule"
 			on:click={createNewSchedule}
 		>
@@ -132,7 +132,7 @@ Copyright (C) 2026 Andrew Cupps
 
 	{#if dropdownOpen}
 		<!-- in: and out: instead of transition: due to lag when closing dropdown if some schedule are deleted -->
-		<div class="w-full pb-0.5 pl-4 pr-5" in:slide out:slide>
+		<div class="w-full pb-0.5 pl-4 pr-6" in:slide out:slide>
 			{#each nonselectedSchedules as schedule}
 				<div class="flex h-6 w-full flex-row">
 					<button
