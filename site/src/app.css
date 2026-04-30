@@ -21,7 +21,8 @@ body {
 	font-family: 'Cabin', Arial, sans-serif;
 }
 
-html.monocraft body {
+html.monocraft body,
+html.monocraft * {
 	font-family: 'Monocraft', monospace;
 }
 
