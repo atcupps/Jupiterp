@@ -140,7 +140,7 @@ Copyright (C) 2026 Andrew Cupps
 	bind:clientHeight={scheduleContainerHeight}
 >
 	<div
-		class="relative grid grow pl-8"
+		class="relative grid grow pl-9 2xl:pl-11"
 		style="height:calc(100% - 1.5rem)"
 		class:grid-cols-5={schedule.other.length == 0}
 		class:grid-cols-6={schedule.other.length > 0}
