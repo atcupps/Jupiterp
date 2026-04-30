@@ -2,6 +2,7 @@
 	import { createEventDispatcher } from 'svelte';
 	import { CurrentScheduleStore } from '../../stores/CoursePlannerStores';
 	import type { ScheduleSelection } from '../../types';
+	import Tooltip from '../course-planner/schedule/Tooltip.svelte';
 	import { QuestionCircleOutline } from 'flowbite-svelte-icons';
 
 	const dispatch = createEventDispatcher();
@@ -13,12 +14,9 @@
 			(s) => 'course' in s && 'section' in s
 		) as ScheduleSelection[];
 		selectionsCustom = stored.selections.filter((s) => !('course' in s)) as any[];
-		console.log('Selections:', selections);
-		console.log('Selections Custom:', selectionsCustom);
 	});
 
 	function closePopup() {
-		console.log('Wait');
 		dispatch('close-export');
 	}
 
@@ -39,7 +37,9 @@
 			Tu: 'TU',
 			M: 'MO',
 			W: 'WE',
-			F: 'FR'
+			F: 'FR',
+			Sa: 'SA',
+			Su: 'SU'
 		};
 
 		const regex = new RegExp(Object.keys(DayMaps).join('|'), 'g');
@@ -62,10 +62,11 @@
 		const day = parseInt(startStr.substring(6, 8));
 		let date = new Date(year, month, day);
 
-		const dayMap: Record<string, number> = { MO: 1, TU: 2, WE: 3, TH: 4, FR: 5 };
+		const dayMap: Record<string, number> = { MO: 1, TU: 2, WE: 3, TH: 4, FR: 5, SA: 6, SU: 0 };
 
 		const firstClassDay = daysStr.split(',')[0];
 		const targetDay = dayMap[firstClassDay];
+		if (targetDay === undefined) return formatDate(date);
 
 		for (let i = 0; i < 7; i++) {
 			if (date.getDay() === targetDay) break;
@@ -168,17 +169,15 @@
 
 <div class="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
 	<div
-		class="border-gray-500 flex w-96 flex-col gap-4 rounded-lg border bg-bgLight p-6 shadow-lg dark:bg-bgDark"
+		class="flex w-96 flex-col gap-4 rounded-lg border-2 border-divBorderLight bg-bgLight p-6 shadow-lg dark:border-divBorderDark dark:bg-bgDark"
 	>
 		<div class="flex items-center justify-between">
 			<h2 class="text-xl font-bold">Export Schedule</h2>
 
-			<button
-				class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 transition"
-				title="This will download a universal .ics file containing your schedule."
-			>
-				<QuestionCircleOutline class="h-5 w-5" />
-			</button>
+			<Tooltip
+				text="?"
+				tooltipText="This will download a universal .ics file containing your schedule."
+			/>
 		</div>
 
 		<p class="mb-2 text-center text-sm">
@@ -186,7 +185,7 @@
 		</p>
 
 		<button
-			class="border-gray-500 mt-2 w-full rounded-md border bg-hoverLight px-4 py-3 text-lg font-medium transition dark:bg-hoverDark"
+			class=" mt-2 w-full rounded-md bg-hoverLight px-4 py-3 text-lg font-medium transition dark:bg-hoverDark"
 			on:click={exportCalender}
 		>
 			Export
