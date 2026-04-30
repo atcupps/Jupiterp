@@ -13,20 +13,21 @@ export async function GET() {
 		{ url: '/about', changefreq: 'monthly', priority: 0.3 },
 		{ url: '/bugs', changefreq: 'monthly', priority: 0.2 },
 		{ url: '/terms-of-use', changefreq: 'monthly', priority: 0.1 },
-		{ url: '/changelog', changefreq: 'monthly', priority: 0.1 }
+		{ url: '/changelog', changefreq: 'monthly', priority: 0.1 },
+		{ url: '/privacy-policy', changefreq: 'monthly', priority: 0.1 }
 	];
 
 	const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
                     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
                         ${pages
-													.map((page) => {
-														return `<url>
+			.map((page) => {
+				return `<url>
                             <loc>https://www.jupiterp.com${page.url}</loc>
                             <changefreq>${page.changefreq}</changefreq>
                             <priority>${page.priority}</priority>
                         </url>`;
-													})
-													.join('\n')}
+			})
+			.join('\n')}
                     </urlset>
                     `;
 

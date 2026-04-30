@@ -30,6 +30,14 @@ Copyright (C) 2026 Andrew Cupps
 			/>
 		</div>
 		<div class="my-1 w-full">
+			<NavBarElement
+				link="./privacy-policy"
+				text="Privacy Policy"
+				reduceXMargin={true}
+				fullWidth={true}
+			/>
+		</div>
+		<div class="my-1 w-full">
 			<NavBarElement link="./changelog" text="Changelog" reduceXMargin={true} fullWidth={true} />
 		</div>
 	</ExpandableNavBarElement>
@@ -102,6 +110,9 @@ Copyright (C) 2026 Andrew Cupps
 	</div>
 	<div class="my-2 w-full text-lg">
 		<NavBarElement link="./terms-of-use" text="Terms of Use" fullWidth={true} />
+	</div>
+	<div class="my-2 w-full text-lg">
+		<NavBarElement link="./privacy-policy" text="Privacy Policy" fullWidth={true} />
 	</div>
 	<div class="my-2 w-full text-lg">
 		<NavBarElement
