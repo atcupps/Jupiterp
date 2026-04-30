@@ -21,25 +21,24 @@ Copyright (C) 2026 Andrew Cupps
 	<NavBarElement link="./" text="Course Planner" isOnPage={currentPage == '/'} />
 	<NavBarElement link="./bugs" text="Report an Issue" isOnPage={currentPage == '/bugs'} />
 	<ExpandableNavBarElement link="./about" text="About" isOnPage={currentPage == '/about'}>
-		<div class="my-1 w-full">
-			<NavBarElement
-				link="./terms-of-use"
-				text="Terms of Use"
-				reduceXMargin={true}
-				fullWidth={true}
-			/>
-		</div>
-		<div class="my-1 w-full">
-			<NavBarElement
+		<NavBarElement
+			link="./terms-of-use"
+			text="Terms of Use"
+			reduceXMargin={true}
+			isOnPage={currentPage == '/terms-of-use'}
+		/>
+    <NavBarElement
 				link="./privacy-policy"
 				text="Privacy Policy"
 				reduceXMargin={true}
 				fullWidth={true}
-			/>
-		</div>
-		<div class="my-1 w-full">
-			<NavBarElement link="./changelog" text="Changelog" reduceXMargin={true} fullWidth={true} />
-		</div>
+		/>
+		<NavBarElement
+			link="./changelog"
+			text="Changelog"
+			reduceXMargin={true}
+			isOnPage={currentPage == '/changelog'}
+		/>
 	</ExpandableNavBarElement>
 	<NavBarElement link="https://github.com/atcupps/Jupiterp" text="GitHub" target="_blank" />
 	<DarkModeToggle />
@@ -77,7 +76,6 @@ Copyright (C) 2026 Andrew Cupps
 	>
 </button>
 
-<!-- Layer to exit course search if user taps on the Schedule -->
 <!-- Using this method to avoid having to listen to a variable on Schedule -->
 {#if siteLinksSelected}
 	<button
@@ -100,27 +98,22 @@ Copyright (C) 2026 Andrew Cupps
 	class:shadow-lg={siteLinksSelected}
 >
 	<div class="my-2 w-full text-lg">
-		<NavBarElement link="./" text="Course Planner" fullWidth={true} />
+		<NavBarElement link="./" text="Course Planner" />
 	</div>
 	<div class="my-2 w-full text-lg">
-		<NavBarElement link="./bugs" text="Report an Issue" fullWidth={true} />
+		<NavBarElement link="./bugs" text="Report an Issue" />
 	</div>
 	<div class="my-2 w-full text-lg">
-		<NavBarElement link="./about" text="About" fullWidth={true} />
+		<NavBarElement link="./about" text="About" />
 	</div>
 	<div class="my-2 w-full text-lg">
-		<NavBarElement link="./terms-of-use" text="Terms of Use" fullWidth={true} />
+		<NavBarElement link="./terms-of-use" text="Terms of Use" />
 	</div>
+  <div class="my-2 w-full text-lg">
+    <NavBarElement link="./privacy-policy" text="Privacy Policy" />
+  </div>
 	<div class="my-2 w-full text-lg">
-		<NavBarElement link="./privacy-policy" text="Privacy Policy" fullWidth={true} />
-	</div>
-	<div class="my-2 w-full text-lg">
-		<NavBarElement
-			link="https://github.com/atcupps/Jupiterp"
-			text="GitHub"
-			target="_blank"
-			fullWidth={true}
-		/>
+		<NavBarElement link="https://github.com/atcupps/Jupiterp" text="GitHub" target="_blank" />
 	</div>
 </div>
 

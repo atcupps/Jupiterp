@@ -10,6 +10,7 @@ Copyright (C) 2026 Andrew Cupps
 		CurrentScheduleStore,
 		NonselectedScheduleStore
 	} from '../../../stores/CoursePlannerStores';
+	import { clickoutside } from '@svelte-put/clickoutside';
 	import ScheduleOptionsDropdown from './ScheduleOptionsDropdown.svelte';
 	import { slide } from 'svelte/transition';
 	import {
@@ -94,7 +95,7 @@ Copyright (C) 2026 Andrew Cupps
 	}
 </script>
 
-<div class="flex w-full flex-col">
+<div class="flex w-full flex-col" use:clickoutside on:clickoutside={() => (dropdownOpen = false)}>
 	<div class="2xl:text-md flex w-full flex-row pb-1 text-sm" title="Toggle schedule dropdown">
 		<div
 			class="flex grow flex-row justify-start rounded-md px-0.5 py-1
@@ -121,7 +122,7 @@ Copyright (C) 2026 Andrew Cupps
 		<ScheduleOptionsDropdown />
 
 		<button
-			class="h-7 rounded-md hover:bg-hoverLight dark:hover:bg-hoverDark"
+			class="h-7 rounded-md px-0.5 hover:bg-hoverLight dark:hover:bg-hoverDark"
 			title="Create new schedule"
 			on:click={createNewSchedule}
 		>
@@ -130,7 +131,8 @@ Copyright (C) 2026 Andrew Cupps
 	</div>
 
 	{#if dropdownOpen}
-		<div class="w-full pb-0.5 pl-4 pr-5" transition:slide>
+		<!-- in: and out: instead of transition: due to lag when closing dropdown if some schedule are deleted -->
+		<div class="w-full pb-0.5 pl-4 pr-6" in:slide out:slide>
 			{#each nonselectedSchedules as schedule}
 				<div class="flex h-6 w-full flex-row">
 					<button

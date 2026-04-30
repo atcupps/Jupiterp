@@ -18,8 +18,8 @@ Copyright (C) 2026 Andrew Cupps
 		{number}
 	</div>
 	<div
-		class="absolute left-8
-        h-[1px] bg-divBorderLight 2xl:left-10 dark:bg-divBorderDark"
-		style="top: 50%; width: calc(100% - 32px);"
+		class="absolute left-9
+	        h-[1px] w-[calc(100%-36px)] bg-divBorderLight 2xl:left-11 2xl:w-[calc(100%-44px)] dark:bg-divBorderDark"
+		style="top: 50%;"
 	/>
 </div>
