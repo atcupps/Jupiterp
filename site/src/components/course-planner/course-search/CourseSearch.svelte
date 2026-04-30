@@ -234,10 +234,11 @@ Copyright (C) 2026 Andrew Cupps
 			<CourseFilters bind:showGenEdMenu={genEdMenuOpen} />
 		</div>
 	</div>
-	<!-- Course search results & dept suggestions [min-height: 20rem - 7.5rem = 12.75rem]-->
+	<!-- Course search results & dept suggestions [min-height: 20rem - 7.75rem = 12.25rem]-->
+	<!-- IDK what but [height: min-height (12.25rem) - 1.5rem = 10.75rem] -->
 	<div
 		id="planner-search-results"
-		class="chain-scroll-only custom-scrollbar h-[calc(100svh-10.5rem)] min-h-[12.75rem] overflow-y-scroll px-1 focus:outline-none lg:h-auto lg:min-h-0"
+		class="chain-scroll-only custom-scrollbar h-[calc(100svh-10.75rem)] min-h-[12.25rem] overflow-y-scroll px-1 focus:outline-none lg:h-auto lg:min-h-0"
 		bind:this={searchResultsElement}
 		use:chainScroll={{
 			parent: plannerState.chainScrollParent,
