@@ -8,6 +8,7 @@ Copyright (C) 2026 Andrew Cupps
 	import CourseListing from './CourseListing.svelte';
 	import {
 		deptCodeToName,
+		matchingStandardizedProfessorNames,
 		pendingResults,
 		setSearchResults
 	} from '../../../lib/course-planner/CourseSearch';
@@ -108,7 +109,78 @@ Copyright (C) 2026 Andrew Cupps
 		setSearchResults(dept);
 	}
 
+	// Professor suggestions shown when the user types @partial in the search box
+	let profSuggestions: string[] = [];
+	let highlightedProfSuggestionIndex = -1;
+
+	/**
+	 * Returns the partial professor name from an unquoted @word token in
+	 * `input`, or null if no such token is present. Complete @"..." tokens
+	 * are ignored since they are already resolved.
+	 * @param input Raw search input string
+	 */
+	function getProfPartial(input: string): string | null {
+		const withoutQuoted = input.replace(/@"[^"]*"/g, '');
+		const match = /@(\S*)/.exec(withoutQuoted);
+		return match && match[1].length >= 1 ? match[1] : null;
+	}
+
+	$: {
+		const partial = getProfPartial(searchInput);
+		if (partial) {
+			profSuggestions = matchingStandardizedProfessorNames(partial);
+			if (profSuggestions.length === 0) {
+				highlightedProfSuggestionIndex = -1;
+			} else if (highlightedProfSuggestionIndex >= profSuggestions.length) {
+				highlightedProfSuggestionIndex = profSuggestions.length - 1;
+			}
+		} else {
+			profSuggestions = [];
+			highlightedProfSuggestionIndex = -1;
+		}
+	}
+
+	/**
+	 * Selects a professor from the suggestions list, replacing the @partial
+	 * token in the search input with @"Full Name" (multi-word) or @Name
+	 * (single-word), then triggers a new search.
+	 * @param name The standardized professor name to insert
+	 */
+	function selectProfessor(name: string) {
+		const partial = getProfPartial(searchInput);
+		if (partial === null) return;
+
+		const token = `@${partial}`;
+		const replacement = name.includes(' ') ? `@"${name}"` : `@${name}`;
+		searchInput = searchInput.replace(token, replacement);
+		highlightedProfSuggestionIndex = -1;
+		setSearchResults(searchInput);
+	}
+
 	function handleSearchKeydown(event: KeyboardEvent) {
+		// Professor suggestions take priority when visible
+		if (profSuggestions.length > 0) {
+			if (event.key === 'ArrowDown') {
+				event.preventDefault();
+				highlightedProfSuggestionIndex =
+					highlightedProfSuggestionIndex + 1 < profSuggestions.length
+						? highlightedProfSuggestionIndex + 1
+						: 0;
+			} else if (event.key === 'ArrowUp') {
+				event.preventDefault();
+				highlightedProfSuggestionIndex =
+					highlightedProfSuggestionIndex > 0
+						? highlightedProfSuggestionIndex - 1
+						: profSuggestions.length - 1;
+			} else if (event.key === 'Enter') {
+				if (highlightedProfSuggestionIndex >= 0) {
+					event.preventDefault();
+					selectProfessor(profSuggestions[highlightedProfSuggestionIndex]);
+				}
+			}
+			return;
+		}
+
 		if (deptSuggestions.length <= 1 || searchInput.length <= 1) {
 			return;
 		}
@@ -226,7 +298,7 @@ Copyright (C) 2026 Andrew Cupps
 						setSearchResults(searchInput);
 					}}
 					on:keydown={handleSearchKeydown}
-					placeholder="Search course codes, ex: 'MATH140'"
+					placeholder="Search courses (e.g. 'MATH140') or @professor"
 					class="w-full rounded-lg border-2 border-solid border-outlineLight bg-transparent px-2 py-0 text-xl placeholder:text-base lg:text-base lg:placeholder:text-sm dark:border-outlineDark"
 				/>
 			</div>
@@ -247,15 +319,34 @@ Copyright (C) 2026 Andrew Cupps
 		}}
 		on:wheel={handleResultsScroll}
 	>
-		<!-- Department suggestions dropdown -->
-		{#if searchInput.length > 0 && deptSuggestions.length > 1}
+		<!-- Professor suggestions dropdown (shown when @partial is detected) -->
+		{#if profSuggestions.length > 0}
+			<div
+				class="mt-2 rounded-lg border border-outlineLight bg-bgLight shadow-lg dark:border-outlineDark dark:bg-bgDark"
+			>
+				{#each profSuggestions as profName, index}
+					<button
+						type="button"
+						class={`flex w-full items-center px-3 py-1 text-left text-base transition-colors hover:bg-outlineLight hover:bg-opacity-20 lg:text-sm dark:hover:bg-outlineDark dark:hover:bg-opacity-30
+							${highlightedProfSuggestionIndex === index ? `bg-outlineLight bg-opacity-20 dark:bg-outlineDark dark:bg-opacity-30` : ''}`}
+						on:mouseenter={() => {
+							highlightedProfSuggestionIndex = index;
+						}}
+						on:click={() => selectProfessor(profName)}
+					>
+						<span class="grow truncate font-black">@{profName}</span>
+					</button>
+				{/each}
+			</div>
+			<!-- Department suggestions dropdown -->
+		{:else if searchInput.length > 0 && deptSuggestions.length > 1}
 			<div
 				class="mt-2 rounded-lg border border-outlineLight bg-bgLight shadow-lg dark:border-outlineDark dark:bg-bgDark"
 			>
 				{#each deptSuggestions as deptOption, index}
 					<button
 						type="button"
-						class={`flex w-full items-end px-3 py-1 text-left text-base transition-colors hover:bg-outlineLight hover:bg-opacity-20 lg:text-sm dark:hover:bg-outlineDark dark:hover:bg-opacity-30 
+						class={`flex w-full items-end px-3 py-1 text-left text-base transition-colors hover:bg-outlineLight hover:bg-opacity-20 lg:text-sm dark:hover:bg-outlineDark dark:hover:bg-opacity-30
 							${highlightedSuggestionIndex === index ? `bg-outlineLight bg-opacity-20 dark:bg-outlineDark dark:bg-opacity-30` : ''}`}
 						on:mouseenter={() => {
 							highlightedSuggestionIndex = index;
