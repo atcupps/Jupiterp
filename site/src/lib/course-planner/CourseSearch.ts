@@ -53,6 +53,40 @@ ProfsLookupStore.subscribe((profs) => {
 
 let mostRecentInput: string = '';
 
+/**
+ * Parses a raw search input for an @-prefix professor token, returning the
+ * course-only query and any professor name extracted from `@"Full Name"` or
+ * `@Word` tokens.
+ * @param input Raw search input from the user
+ */
+function parseSearchInput(input: string): {
+	courseQuery: string;
+	professorQuery: string | null;
+	isQuotedProfessor: boolean;
+} {
+	// @"Full Name" — quoted, complete professor name
+	const quotedMatch = /@"([^"]+)"/.exec(input);
+	if (quotedMatch) {
+		return {
+			courseQuery: input.replace(quotedMatch[0], '').trim(),
+			professorQuery: quotedMatch[1],
+			isQuotedProfessor: true
+		};
+	}
+
+	// @Word — unquoted, partial or single-word professor name
+	const unquotedMatch = /@(\S+)/.exec(input);
+	if (unquotedMatch) {
+		return {
+			courseQuery: input.replace(unquotedMatch[0], '').trim(),
+			professorQuery: unquotedMatch[1],
+			isQuotedProfessor: false
+		};
+	}
+
+	return { courseQuery: input, professorQuery: null, isQuotedProfessor: false };
+}
+
 // Filtering data
 let filters: FilterParams = {
 	serverSideFilters: {},
@@ -149,8 +183,30 @@ export async function setSearchResults(input: string) {
 		document.documentElement.classList.toggle('minecraft');
 	}
 
-	// Don't care about case or whitespace in searches
-	const simpleInput: string = input.toUpperCase().replace(/\s/g, '');
+	const { courseQuery, professorQuery, isQuotedProfessor } = parseSearchInput(input);
+
+	// Resolve the effective instructor from the @-prefix token.
+	// A quoted @"Name" is used directly; an unquoted @Word is applied only
+	// when it narrows down to exactly one professor match.
+	let effectiveInstructor: string | undefined = undefined;
+	if (isQuotedProfessor && professorQuery) {
+		effectiveInstructor = professorQuery;
+	} else if (professorQuery) {
+		const matches = matchingStandardizedProfessorNames(professorQuery);
+		if (matches.length === 1) {
+			effectiveInstructor = matches[0];
+		}
+	}
+
+	// Merge the @-prefix instructor with any other active server-side filters
+	// (e.g. GenEd selections from the filters panel).
+	const serverSideFilters = {
+		...filters.serverSideFilters,
+		instructor: effectiveInstructor
+	};
+
+	// Don't care about case or whitespace in course code searches
+	const simpleInput: string = courseQuery.toUpperCase().replace(/\s/g, '');
 
 	// If the search input matches a department code, get the courses for that
 	// department and then filter by course number.
@@ -166,7 +222,7 @@ export async function setSearchResults(input: string) {
 		const requestInput: RequestInput = {
 			type: 'deptCode',
 			value: matchingDepts[0],
-			filters: filters.serverSideFilters
+			filters: serverSideFilters
 		};
 
 		// Get from cache/API
@@ -207,7 +263,7 @@ export async function setSearchResults(input: string) {
 		const requestInput: RequestInput = {
 			type: 'courseNumber',
 			value: numberInput,
-			filters: filters.serverSideFilters
+			filters: serverSideFilters
 		};
 
 		const courses: Course[] = filterAndSortCourseArray(
@@ -229,18 +285,17 @@ export async function setSearchResults(input: string) {
 	}
 
 	// If we reach here, the input is not a valid department code or a course
-	// number. If there is an instructor or GenEd filter applied, we can search
-	// all courses for matches. Only do this if search is empty.
-	const fs = filters.serverSideFilters;
+	// number. If a professor or GenEd filter is active, search all courses.
+	// Only trigger this broad search when the course query portion is empty.
 	if (
 		simpleInput.length === 0 &&
-		((fs.genEds !== undefined && fs.genEds.length > 0) ||
-			(fs.instructor !== undefined && fs.instructor.length > 0))
+		((serverSideFilters.genEds !== undefined && serverSideFilters.genEds.length > 0) ||
+			effectiveInstructor !== undefined)
 	) {
 		const requestInput: RequestInput = {
 			type: 'deptCode',
 			value: '', // Empty prefix to get all courses
-			filters: filters.serverSideFilters
+			filters: serverSideFilters
 		};
 
 		const courses: Course[] = filterAndSortCourseArray(
@@ -257,7 +312,7 @@ export async function setSearchResults(input: string) {
 		return;
 	}
 
-	// If these filters aren't applied, clear results.
+	// No matching search pattern and no active filters — clear results.
 	SearchResultsStore.set([]);
 	return;
 }

@@ -14,15 +14,12 @@ Copyright (C) 2026 Andrew Cupps
 	import { slide } from 'svelte/transition';
 	import type { FilterParams } from '../../../types';
 	import { CourseSearchFilterStore } from '../../../stores/CoursePlannerStores';
-	import { matchingStandardizedProfessorNames } from '$lib/course-planner/CourseSearch';
 
 	let appliedFiltersCount = 0;
 	let showFiltersMenu = false;
 	export let showGenEdMenu = false;
 	let genEdSelections: GenEd[] = [];
 	let onlyOpenSections = false;
-	let instructor: string = '';
-	let matchingInstructors: string[] = [];
 
 	const defaultMinCredits = 0;
 	const defaultMaxCredits = 20;
@@ -54,18 +51,6 @@ Copyright (C) 2026 Andrew Cupps
 			appliedFiltersCount += 1;
 			params.clientSideFilters.onlyOpen = onlyOpenSections;
 		}
-		if (instructor.trim().length > 0) {
-			appliedFiltersCount += 1;
-			matchingInstructors = matchingStandardizedProfessorNames(instructor);
-			if (matchingInstructors.length == 1) {
-				console.log(matchingInstructors[0]);
-				params.serverSideFilters.instructor = matchingInstructors[0];
-			} else {
-				params.serverSideFilters.instructor = undefined;
-			}
-		} else {
-			matchingInstructors = [];
-		}
 
 		if (appliedFiltersCount > 0) {
 			CourseSearchFilterStore.set({
@@ -84,7 +69,6 @@ Copyright (C) 2026 Andrew Cupps
 		minCredits = defaultMinCredits;
 		maxCredits = defaultMaxCredits;
 		onlyOpenSections = false;
-		instructor = '';
 	}
 </script>
 
@@ -258,67 +242,6 @@ Copyright (C) 2026 Andrew Cupps
 					/>
 				</div>
 			</div>
-
-			<!-- Instructor -->
-			<div class="flex flex-row text-xs">
-				<span class="min-w-16"> Instructor: </span>
-				<div class="flex grow flex-col">
-					<!-- Instructor input box -->
-					<div class="flex grow flex-row">
-						<div
-							class="grow rounded-l-md border-b
-                                    border-l border-t
-                                    border-secCodesDark dark:border-divBorderDark"
-						>
-							<input
-								class="w-full rounded-l-md
-                                            border-none bg-bgLight px-2 py-0
-                                            text-xs focus:outline-none
-                                            focus:ring dark:bg-bgDark"
-								type="text"
-								placeholder="Instructor name"
-								bind:value={instructor}
-							/>
-						</div>
-
-						<button
-							class="border-1 h-full self-end
-                                        rounded-r-md border border-secCodesDark
-                                        px-0.5
-                                        hover:bg-hoverLight
-                                        dark:border-divBorderDark
-                                        hover:dark:bg-hoverDark"
-							title="Clear Gen Ed filters"
-							on:click={() => {
-								instructor = '';
-							}}
-						>
-							<CloseOutline class="h-4 w-4" />
-						</button>
-					</div>
-
-					<!-- Matching instructors list -->
-					{#if matchingInstructors.length > 1 || (matchingInstructors.length == 1 && matchingInstructors[0] !== instructor)}
-						<div
-							class="custom-scrollbar z-[60] mt-1 flex max-h-40 w-full flex-col overflow-y-auto rounded-md border border-outlineLight bg-bgLight shadow-lg dark:border-outlineDark dark:bg-bgDark"
-						>
-							{#each matchingInstructors as profName}
-								<button
-									class="cursor-pointer px-2 py-1 text-left hover:bg-outlineLight hover:bg-opacity-20 dark:hover:bg-outlineDark dark:hover:bg-opacity-30"
-									on:click={() => {
-										instructor = profName;
-									}}
-								>
-									{profName}
-								</button>
-							{/each}
-						</div>
-					{/if}
-				</div>
-			</div>
-
-			<!-- Total class size -->
-			<!-- Considering this, add later potentially -->
 
 			<!-- Only open sections -->
 			<div class="flex flex-row items-center text-xs">
