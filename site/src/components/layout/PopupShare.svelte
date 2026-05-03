@@ -113,7 +113,6 @@
 		}
 
 		for (const currentClass of selections) {
-			console.log(currentClass);
 			const courseCode = currentClass.course.courseCode;
 			const sectionNumber = currentClass.section.sectionCode;
 			const courseName = currentClass.course.name;
