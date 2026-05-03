@@ -137,6 +137,8 @@ Copyright (C) 2026 Andrew Cupps
 		highlightedSuggestionIndex = -1;
 	}
 
+	export let courseSearchSelected: boolean = false;
+
 	$: {
 		if (hoveredSection) {
 			let index = searchResults.findIndex((course) => {
@@ -198,6 +200,24 @@ Copyright (C) 2026 Andrew Cupps
 				Credits: {totalCredits}
 			</div>
 		</div>
+		<!-- <div
+		class="course-search visible fixed left-0 z-[52]
+                            w-[340px] flex-col border-r-2 border-solid border-divBorderLight
+                            bg-bgLight py-1 pl-1
+                            pr-2 transition-transform
+                            duration-300 lg:static lg:ml-1.5 lg:flex
+                            lg:h-full lg:min-w-[300px] lg:bg-transparent lg:pl-0
+                            lg:shadow-none xl:min-w-[360px] 2xl:min-w-[440px] 2xl:text-lg
+                            dark:border-divBorderDark dark:bg-bgDark"
+		class:course-search-transition={!courseSearchSelected}
+		class:shadow-lg={courseSearchSelected}
+	>
+		<div class="ml-1 flex flex-row pb-1 text-xs 2xl:text-sm">
+			<div>Spring 2026</div>
+			<div class="grow text-right">
+				Credits: {totalCredits}
+			</div>
+		</div> -->
 
 		<ScheduleSelector />
 
