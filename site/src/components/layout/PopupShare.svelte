@@ -79,18 +79,24 @@
 	function exportCalender() {
 		let icsData = 'BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//Jupiterp//EN\n';
 		// hardcoded for now (dates are 0 indexed so jan is 0 and its yy, mm, dd)
-		const semesterStart = formatDate(new Date(2026, 8, 1));
-		const semesterEnd = formatDate(new Date(2026, 11, 18));
+		const semesterStart = formatDate(new Date(2026, 7, 31));
+		const semesterEnd = formatDate(new Date(2026, 11, 11));
 
 		for (const currentClass of selectionsCustom) {
 			const name = currentClass.name;
 			const id = currentClass.id;
-			const days = formatDay(currentClass.days.join());
-			const startTime = formatDecimalTime(currentClass.startTime);
-			const endTime = formatDecimalTime(currentClass.endTime);
+			const days = Array.isArray(currentClass.days) ? formatDay(currentClass.days.join()) : '';
+			const startTime =
+				typeof currentClass.startTime === 'number' ? formatDecimalTime(currentClass.startTime) : '';
+			const endTime =
+				typeof currentClass.endTime === 'number' ? formatDecimalTime(currentClass.endTime) : '';
 
-			const description = currentClass.notes;
-			const location = currentClass.location;
+			const description = currentClass.notes || '';
+			const location = currentClass.location || 'TBA';
+
+			if (!days || !startTime || !endTime) {
+				continue;
+			}
 
 			const actualFirstDay = getFirstOccurrence(semesterStart, days);
 
@@ -101,29 +107,51 @@
 			icsData += `DTEND:${actualFirstDay}T${endTime}\n`;
 			icsData += `RRULE:FREQ=WEEKLY;BYDAY=${days};UNTIL=${semesterEnd}T235959Z\n`;
 			icsData += `LOCATION:${location}\n`;
-			icsData += `DESCRIPTION:${description}}\n`;
+			icsData += `DESCRIPTION:${description}\n`;
 			icsData += `UID:${id}@jupiterp\n`;
 			icsData += 'END:VEVENT\n';
 		}
 
 		for (const currentClass of selections) {
+			console.log(currentClass);
 			const courseCode = currentClass.course.courseCode;
 			const sectionNumber = currentClass.section.sectionCode;
 			const courseName = currentClass.course.name;
-			const instructorNames = currentClass.section.instructors.join(', ') || 'TBA';
+			const instructorNames =
+				Array.isArray(currentClass.section.instructors) && currentClass.section.instructors.length
+					? currentClass.section.instructors.join(', ')
+					: 'TBA';
 			const meetingDetails = [];
 
 			for (const meeting of currentClass.section.meetings) {
+				if (typeof meeting !== 'object' || meeting === null || Array.isArray(meeting)) continue;
+
 				let locationStr = 'Online/Async';
 				let days = '';
 				let startTime = '';
 				let endTime = '';
 
 				if (typeof meeting === 'object' && meeting !== null) {
-					locationStr = `${meeting.location.building} ${meeting.location.room}`;
-					days = formatDay(meeting.classtime.days);
-					startTime = formatDecimalTime(meeting.classtime.start);
-					endTime = formatDecimalTime(meeting.classtime.end);
+					const loc = meeting.location || {};
+					const building = loc.building || '';
+					const room = loc.room || '';
+					locationStr = building || room ? `${building} ${room}`.trim() : 'Online/Async';
+
+					const buildingLower = (building || '').toLowerCase();
+					if (buildingLower.includes('online')) {
+						if (buildingLower.includes('sync')) {
+							locationStr = 'Online (Synchronous)';
+						} else if (buildingLower.includes('async')) {
+							locationStr = 'Online (Asynchronous)';
+						} else {
+							locationStr = 'Online';
+						}
+					}
+
+					const classtime = meeting.classtime || {};
+					days = classtime.days ? formatDay(classtime.days) : '';
+					startTime = typeof classtime.start === 'number' ? formatDecimalTime(classtime.start) : '';
+					endTime = typeof classtime.end === 'number' ? formatDecimalTime(classtime.end) : '';
 				}
 
 				const meetingPacket = {
@@ -137,6 +165,29 @@
 			}
 
 			for (const packet of meetingDetails) {
+				if (!packet.days || !packet.start || !packet.end) {
+					const locLower = (packet.location || '').toLowerCase();
+					if (locLower.includes('online') || locLower.includes('async')) {
+						const actualFirstDay = semesterStart;
+
+						icsData += 'BEGIN:VEVENT\n';
+						icsData += `SUMMARY:${courseCode} (${sectionNumber}) - ${packet.location}\n`;
+
+						icsData += `DTSTART:${actualFirstDay}T000000\n`;
+						icsData += `DTEND:${actualFirstDay}T235959\n`;
+						icsData += `LOCATION:${packet.location}\n`;
+						const onlineNote = locLower.includes('sync')
+							? 'Online (Synchronous)'
+							: locLower.includes('async')
+								? 'Online (Asynchronous)'
+								: 'Online';
+						icsData += `DESCRIPTION:Course: ${courseName}\\nInstructors: ${instructorNames} (${onlineNote})\\n`;
+						icsData += `UID:${courseCode}-${sectionNumber}-online@jupiterp\n`;
+						icsData += 'END:VEVENT\n';
+					}
+					continue;
+				}
+
 				const actualFirstDay = getFirstOccurrence(semesterStart, packet.days);
 
 				icsData += 'BEGIN:VEVENT\n';
@@ -148,8 +199,16 @@
 				icsData += `RRULE:FREQ=WEEKLY;BYDAY=${packet.days};UNTIL=${semesterEnd}T235959Z\n`;
 
 				icsData += `LOCATION:${packet.location}\n`;
-				icsData += `DESCRIPTION:Course: ${courseName}\\nInstructors: ${instructorNames}\n`;
-				icsData += `UID:${courseCode}-${sectionNumber}-${packet.start}@jupiterp\n`;
+				const packetLocLower = (packet.location || '').toLowerCase();
+				const onlineTag = packetLocLower.includes('online')
+					? packetLocLower.includes('sync')
+						? ' (Online - Synchronous)'
+						: packetLocLower.includes('async')
+							? ' (Online - Asynchronous)'
+							: ' (Online)'
+					: '';
+				icsData += `DESCRIPTION:Course: ${courseName}${onlineTag}\\nInstructors: ${instructorNames}\\n`;
+				icsData += `UID:${courseCode}-${sectionNumber}-${packet.start || ''}@jupiterp\n`;
 				icsData += 'END:VEVENT\n';
 			}
 		}
