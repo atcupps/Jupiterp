@@ -177,6 +177,12 @@ function filterAndSortCourseArray(courses: Course[]): Course[] {
 export async function setSearchResults(input: string) {
 	mostRecentInput = input;
 
+	if (input.toLowerCase() === 'minecraft') {
+		const isMono = localStorage.font === 'minecraft';
+		localStorage.setItem('font', isMono ? 'default' : 'minecraft');
+		document.documentElement.classList.toggle('minecraft');
+	}
+
 	const { courseQuery, professorQuery, isQuotedProfessor } = parseSearchInput(input);
 
 	// Resolve the effective instructor from the @-prefix token.
