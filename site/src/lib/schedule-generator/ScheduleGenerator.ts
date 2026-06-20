@@ -27,7 +27,7 @@ import type {
 } from './types';
 
 /** Default cap on the number of schedules returned. */
-export const DEFAULT_MAX_RESULTS = 200;
+export const DEFAULT_MAX_RESULTS = 1000;
 
 /** Hard cap on explored search nodes so degenerate inputs can't hang. */
 const MAX_NODES = 500_000;
