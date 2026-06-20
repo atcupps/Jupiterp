@@ -10,7 +10,9 @@ Copyright (C) 2026 Andrew Cupps
 	import { SearchResultsStore } from '../../stores/CoursePlannerStores';
 	import { GeneratorRequirementsStore } from '../../stores/GeneratorStores';
 	import { formatCredits, splitCourseCode } from '../../lib/course-planner/Formatting';
+	import CourseFilters from '../course-planner/course-search/CourseFilters.svelte';
 
+	let genEdMenuOpen = false;
 	let searchInput = '';
 	let searchResults: Course[] = [];
 	SearchResultsStore.subscribe((results) => {
@@ -50,6 +52,8 @@ Copyright (C) 2026 Andrew Cupps
 			bg-transparent px-2 py-1 text-base placeholder:text-sm
 			focus:outline-none dark:border-outlineDark"
 	/>
+
+	<CourseFilters bind:showGenEdMenu={genEdMenuOpen} />
 
 	{#if searchInput.length > 0}
 		<div class="custom-scrollbar mt-2 max-h-72 overflow-y-auto">

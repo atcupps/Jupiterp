@@ -8,13 +8,33 @@ Copyright (C) 2026 Andrew Cupps
 	import { schedulify } from '../../lib/course-planner/Schedule';
 	import { getColorFromNumber } from '../../lib/course-planner/ClassMeetingUtils';
 	import { splitCourseCode } from '../../lib/course-planner/Formatting';
-	import type { ScheduleSelection } from '../../types';
+	import type { Schedule, ScheduleSelection } from '../../types';
 
 	export let selections: ScheduleSelection[];
 
 	const DAY_LABELS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'];
 
-	$: schedule = schedulify(selections);
+	const EMPTY_SCHEDULE: Schedule = {
+		monday: [],
+		tuesday: [],
+		wednesday: [],
+		thursday: [],
+		friday: [],
+		other: []
+	};
+
+	// A single malformed section (e.g. an unexpected day code) must never
+	// take down the whole results gallery, so failures degrade to empty.
+	function safeSchedulify(sel: ScheduleSelection[]): Schedule {
+		try {
+			return schedulify(sel);
+		} catch (e) {
+			console.error('Failed to render generated schedule:', e);
+			return EMPTY_SCHEDULE;
+		}
+	}
+
+	$: schedule = safeSchedulify(selections);
 	$: days = [
 		schedule.monday,
 		schedule.tuesday,
@@ -25,11 +45,14 @@ Copyright (C) 2026 Andrew Cupps
 	$: hasOther = schedule.other.length > 0;
 
 	// Time window: fit all timed meetings, with a minimum 8-hour window.
-	$: bounds = computeBounds();
-	function computeBounds(): { start: number; end: number } {
+	$: bounds = computeBounds(days);
+	function computeBounds(weekdays: Schedule[keyof Schedule][]): {
+		start: number;
+		end: number;
+	} {
 		let earliest = Number.MAX_SAFE_INTEGER;
 		let latest = Number.MIN_SAFE_INTEGER;
-		for (const day of days) {
+		for (const day of weekdays) {
 			for (const cm of day) {
 				if (typeof cm.meeting !== 'string') {
 					earliest = Math.min(earliest, cm.meeting.classtime.start);

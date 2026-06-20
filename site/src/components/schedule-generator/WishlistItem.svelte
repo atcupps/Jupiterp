@@ -89,23 +89,46 @@ Copyright (C) 2026 Andrew Cupps
 	</div>
 
 	<!-- Pin control -->
-	<div class="flex flex-row items-center gap-2 text-xs">
-		<span class="opacity-70">Pin:</span>
-		<select
-			class="rounded-md border border-outlineLight bg-bgLight px-1
-				py-0.5 dark:border-outlineDark dark:bg-bgDark"
-			value={pinMode}
-			on:change={(e) => setPinMode(e.currentTarget.value)}
+	<div class="flex flex-row flex-wrap items-center gap-2 text-xs">
+		<span class="opacity-70">Pin to:</span>
+		<div
+			class="flex flex-row overflow-hidden rounded-md border
+				border-outlineLight dark:border-outlineDark"
 		>
-			<option value="none">Any section</option>
-			<option value="bySection">A section</option>
-			<option value="byInstructor">A professor</option>
-		</select>
+			<button
+				class="px-2 py-0.5"
+				class:bg-orange={pinMode === 'none'}
+				class:text-white={pinMode === 'none'}
+				on:click={() => setPinMode('none')}
+				title="Consider every section of this course"
+			>
+				Any
+			</button>
+			<button
+				class="border-l border-outlineLight px-2 py-0.5 dark:border-outlineDark"
+				class:bg-orange={pinMode === 'bySection'}
+				class:text-white={pinMode === 'bySection'}
+				on:click={() => setPinMode('bySection')}
+				title="Lock this course to a specific section"
+			>
+				Section
+			</button>
+			<button
+				class="border-l border-outlineLight px-2 py-0.5 dark:border-outlineDark"
+				class:bg-orange={pinMode === 'byInstructor'}
+				class:text-white={pinMode === 'byInstructor'}
+				on:click={() => setPinMode('byInstructor')}
+				title="Lock this course to a specific professor"
+			>
+				Professor
+			</button>
+		</div>
 
 		{#if requirement.pin.kind === 'bySection'}
 			<select
-				class="grow rounded-md border border-outlineLight bg-bgLight
-					px-1 py-0.5 dark:border-outlineDark dark:bg-bgDark"
+				class="grow cursor-pointer rounded-md border border-outlineLight
+					bg-transparent px-2 py-0.5 hover:border-orange
+					focus:outline-none dark:border-outlineDark"
 				value={requirement.pin.sectionCode}
 				on:change={(e) =>
 					patch({
@@ -123,8 +146,9 @@ Copyright (C) 2026 Andrew Cupps
 			</select>
 		{:else if requirement.pin.kind === 'byInstructor'}
 			<select
-				class="grow rounded-md border border-outlineLight bg-bgLight
-					px-1 py-0.5 dark:border-outlineDark dark:bg-bgDark"
+				class="grow cursor-pointer rounded-md border border-outlineLight
+					bg-transparent px-2 py-0.5 hover:border-orange
+					focus:outline-none dark:border-outlineDark"
 				value={requirement.pin.name}
 				on:change={(e) =>
 					patch({

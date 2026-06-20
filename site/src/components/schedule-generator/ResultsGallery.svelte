@@ -35,8 +35,18 @@ Copyright (C) 2026 Andrew Cupps
 		requirements = r;
 	});
 
+	// Render results in pages so a large result set (up to 200 schedules,
+	// each a small grid) never blocks the main thread on first paint.
+	const PAGE_SIZE = 12;
+	let visibleCount = PAGE_SIZE;
+	// Reset the visible window whenever a new generation completes.
+	$: if (state) {
+		visibleCount = PAGE_SIZE;
+	}
+
 	$: sortedSchedules =
 		state.kind === 'done' ? sortedByCriterion(state.schedules, sort) : ([] as GeneratedSchedule[]);
+	$: visibleSchedules = sortedSchedules.slice(0, visibleCount);
 </script>
 
 <div class="flex flex-col gap-3">
@@ -112,9 +122,20 @@ Copyright (C) 2026 Andrew Cupps
 		{/if}
 
 		<div class="grid grid-cols-1 gap-3 md:grid-cols-2 2xl:grid-cols-3">
-			{#each sortedSchedules as schedule, i}
+			{#each visibleSchedules as schedule, i}
 				<GeneratedScheduleCard {schedule} rank={i + 1} />
 			{/each}
 		</div>
+
+		{#if visibleCount < sortedSchedules.length}
+			<button
+				class="mx-auto mt-1 rounded-lg border border-outlineLight px-4
+					py-1.5 text-sm hover:border-orange hover:text-orange
+					dark:border-outlineDark"
+				on:click={() => (visibleCount += PAGE_SIZE)}
+			>
+				Show more ({sortedSchedules.length - visibleCount} more)
+			</button>
+		{/if}
 	{/if}
 </div>

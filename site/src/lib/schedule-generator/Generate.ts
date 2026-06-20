@@ -120,37 +120,45 @@ export async function runGeneration(): Promise<void> {
 	const requests = buildRequests(requirements, fullCourses);
 	const ratings = buildRatings(requests);
 
-	const result = generate(requests, constraints, ratings);
+	try {
+		const result = generate(requests, constraints, ratings);
 
-	if (result.schedules.length > 0) {
-		// With optional courses in play, lead with the fullest schedules.
-		if (requests.some((r) => !r.required)) {
-			GeneratorSortStore.set('mostClasses');
+		if (result.schedules.length > 0) {
+			// With optional courses in play, lead with the fullest schedules.
+			if (requests.some((r) => !r.required)) {
+				GeneratorSortStore.set('mostClasses');
+			}
+			GenerationStateStore.set({
+				kind: 'done',
+				schedules: result.schedules,
+				truncated: result.truncated,
+				pinNotices: result.pinNotices
+			});
+			return;
+		}
+
+		// Nothing fits: explain which single constraint to loosen.
+		const hints: RelaxationHint[] = [];
+		for (const relaxation of singleRelaxations(constraints)) {
+			const rerun = generate(requests, relaxation.constraints, ratings, 50);
+			if (rerun.schedules.length > 0) {
+				hints.push({
+					relaxation,
+					scheduleCount: rerun.schedules.length,
+					truncated: rerun.truncated
+				});
+			}
 		}
 		GenerationStateStore.set({
-			kind: 'done',
-			schedules: result.schedules,
-			truncated: result.truncated,
-			pinNotices: result.pinNotices
+			kind: 'noSchedules',
+			hints,
+			coursesWithNoValidSections: result.coursesWithNoValidSections
 		});
-		return;
+	} catch (error) {
+		console.error('Schedule generation failed:', error);
+		GenerationStateStore.set({
+			kind: 'failed',
+			message: 'Something went wrong while generating schedules.'
+		});
 	}
-
-	// Nothing fits: explain which single constraint to loosen.
-	const hints: RelaxationHint[] = [];
-	for (const relaxation of singleRelaxations(constraints)) {
-		const rerun = generate(requests, relaxation.constraints, ratings, 50);
-		if (rerun.schedules.length > 0) {
-			hints.push({
-				relaxation,
-				scheduleCount: rerun.schedules.length,
-				truncated: rerun.truncated
-			});
-		}
-	}
-	GenerationStateStore.set({
-		kind: 'noSchedules',
-		hints,
-		coursesWithNoValidSections: result.coursesWithNoValidSections
-	});
 }
