@@ -40,13 +40,5 @@ Copyright (C) 2026 Andrew Cupps
 	class="custom-scrollbar fixed bottom-0 top-12 w-full overflow-y-auto
 		px-4 py-3 text-textLight dark:text-textDark"
 >
-	<div class="mb-3">
-		<h1 class="text-2xl font-bold">Schedule Generator</h1>
-		<p class="text-sm opacity-70">
-			Pick your courses, set any constraints, and Jupiterp will find every conflict-free schedule —
-			ranked your way.
-		</p>
-	</div>
-
 	<GeneratorView />
 </div>
