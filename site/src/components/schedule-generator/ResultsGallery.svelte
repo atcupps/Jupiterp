@@ -6,6 +6,7 @@ Copyright (C) 2026 Andrew Cupps
 -->
 <script lang="ts">
 	import GeneratedScheduleCard from './GeneratedScheduleCard.svelte';
+	import GeneratorSelect from './GeneratorSelect.svelte';
 	import RelaxationHints from './RelaxationHints.svelte';
 	import { runGeneration } from '../../lib/schedule-generator/Generate';
 	import { sortedByCriterion } from '../../lib/schedule-generator/ScheduleSorter';
@@ -47,6 +48,15 @@ Copyright (C) 2026 Andrew Cupps
 	$: sortedSchedules =
 		state.kind === 'done' ? sortedByCriterion(state.schedules, sort) : ([] as GeneratedSchedule[]);
 	$: visibleSchedules = sortedSchedules.slice(0, visibleCount);
+
+	const sortOptions = SORT_CRITERIA.map((criterion) => ({
+		value: criterion,
+		label: SORT_CRITERION_LABELS[criterion]
+	}));
+
+	function setSort(value: string) {
+		GeneratorSortStore.set(value as SortCriterion);
+	}
 </script>
 
 <div class="flex flex-col gap-3">
@@ -62,21 +72,16 @@ Copyright (C) 2026 Andrew Cupps
 		</button>
 
 		{#if state.kind === 'done' && state.schedules.length > 0}
-			<label class="flex flex-row items-center gap-2 text-sm">
+			<div class="flex flex-row items-center gap-2 text-sm">
 				<span class="opacity-70">Sort by</span>
-				<select
-					class="rounded-md border border-outlineLight bg-bgLight
-						px-2 py-1 dark:border-outlineDark dark:bg-bgDark"
-					bind:value={sort}
-					on:change={() => GeneratorSortStore.set(sort)}
-				>
-					{#each SORT_CRITERIA as criterion}
-						<option value={criterion}>
-							{SORT_CRITERION_LABELS[criterion]}
-						</option>
-					{/each}
-				</select>
-			</label>
+				<GeneratorSelect
+					options={sortOptions}
+					value={sort}
+					onChange={setSort}
+					buttonClass="min-w-36"
+					title="Sort schedules by"
+				/>
+			</div>
 		{/if}
 	</div>
 

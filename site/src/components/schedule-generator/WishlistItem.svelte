@@ -7,6 +7,7 @@ Copyright (C) 2026 Andrew Cupps
 <script lang="ts">
 	import { CloseOutline } from 'flowbite-svelte-icons';
 	import { splitCourseCode } from '../../lib/course-planner/Formatting';
+	import GeneratorSelect from './GeneratorSelect.svelte';
 	import { GeneratorRequirementsStore } from '../../stores/GeneratorStores';
 	import type { GeneratorRequirement } from '../../stores/GeneratorStores';
 
@@ -16,6 +17,8 @@ Copyright (C) 2026 Andrew Cupps
 	$: sections = requirement.course.sections ?? [];
 	$: instructors = Array.from(new Set(sections.flatMap((s) => s.instructors))).sort();
 	$: pinMode = requirement.pin.kind;
+	$: sectionOptions = sections.map((s) => ({ value: s.sectionCode, label: s.sectionCode }));
+	$: instructorOptions = instructors.map((n) => ({ value: n, label: n }));
 
 	function patch(next: Partial<GeneratorRequirement>) {
 		GeneratorRequirementsStore.update((reqs) =>
@@ -45,7 +48,7 @@ Copyright (C) 2026 Andrew Cupps
 		dark:bg-bgSecondaryDark"
 >
 	<div class="flex flex-row items-center gap-2">
-		<div class="flex grow flex-col overflow-hidden">
+		<div class="flex min-w-0 grow flex-col overflow-hidden">
 			<span class="truncate text-sm font-bold">
 				{splitCourseCode(requirement.course.courseCode)}
 			</span>
@@ -56,7 +59,7 @@ Copyright (C) 2026 Andrew Cupps
 
 		<!-- Required / Optional toggle -->
 		<div
-			class="flex flex-row overflow-hidden rounded-md border
+			class="flex shrink-0 flex-row overflow-hidden rounded-md border
 				border-outlineLight text-xs dark:border-outlineDark"
 		>
 			<button
@@ -125,40 +128,21 @@ Copyright (C) 2026 Andrew Cupps
 		</div>
 
 		{#if requirement.pin.kind === 'bySection'}
-			<select
-				class="grow cursor-pointer rounded-md border border-outlineLight
-					bg-transparent px-2 py-0.5 hover:border-orange
-					focus:outline-none dark:border-outlineDark"
+			<GeneratorSelect
+				options={sectionOptions}
 				value={requirement.pin.sectionCode}
-				on:change={(e) =>
-					patch({
-						pin: {
-							kind: 'bySection',
-							sectionCode: e.currentTarget.value
-						}
-					})}
-			>
-				{#each sections as section}
-					<option value={section.sectionCode}>
-						{section.sectionCode}
-					</option>
-				{/each}
-			</select>
+				onChange={(v) => patch({ pin: { kind: 'bySection', sectionCode: v } })}
+				buttonClass="grow"
+				title="Pinned section"
+			/>
 		{:else if requirement.pin.kind === 'byInstructor'}
-			<select
-				class="grow cursor-pointer rounded-md border border-outlineLight
-					bg-transparent px-2 py-0.5 hover:border-orange
-					focus:outline-none dark:border-outlineDark"
+			<GeneratorSelect
+				options={instructorOptions}
 				value={requirement.pin.name}
-				on:change={(e) =>
-					patch({
-						pin: { kind: 'byInstructor', name: e.currentTarget.value }
-					})}
-			>
-				{#each instructors as name}
-					<option value={name}>{name}</option>
-				{/each}
-			</select>
+				onChange={(v) => patch({ pin: { kind: 'byInstructor', name: v } })}
+				buttonClass="grow"
+				title="Pinned professor"
+			/>
 		{/if}
 	</div>
 </div>
