@@ -14,20 +14,14 @@ Copyright (C) 2026 Andrew Cupps
 		resolveSelections,
 		resolveStoredSchedules
 	} from '../lib/course-planner/CourseLoad';
-	import { getProfsLookup } from '$lib/course-planner/CourseSearch';
+	import { loadInstructorLookup } from '$lib/course-planner/CourseSearch';
 	import { handlePlannerShortcutKeydown } from '../lib/course-planner/PlannerShortcuts';
 	import {
-		ProfsLookupStore,
 		CurrentScheduleStore,
 		NonselectedScheduleStore,
 		DepartmentsStore
 	} from '../stores/CoursePlannerStores';
 	import { client } from '$lib/client';
-	import {
-		type Instructor,
-		type InstructorsConfig,
-		type InstructorsResponse
-	} from '@jupiterp/jupiterp';
 	import type { ScheduleBlock, StoredSchedule } from '../types';
 	import IsDesktop from '../components/course-planner/IsDesktop.svelte';
 	import { PlannerState } from '../stores/CoursePlannerStores';
@@ -42,42 +36,6 @@ Copyright (C) 2026 Andrew Cupps
 			chainScrollParent: plannerContainer
 		})
 	);
-
-	// Function to retrieve professor data; called in `onMount`.
-	async function fetchProfessorData() {
-		try {
-			let limit = 500;
-			let offset = 0;
-			let allInstructors: Instructor[] = [];
-			let config: InstructorsConfig = {
-				limit: limit,
-				offset: offset
-			};
-			let complete = false;
-			while (!complete) {
-				const response: InstructorsResponse = await client.activeInstructors(config);
-				if (response.ok() && response.data != null) {
-					allInstructors = [...allInstructors, ...response.data];
-					if (response.data.length < limit) {
-						complete = true;
-						break;
-					}
-					offset += limit;
-					config.offset = offset;
-				} else {
-					// format-check exempt 1
-					throw new Error(
-						`Failed to fetch data: ${response.statusCode} ${response.statusMessage} ${response.errorBody}`
-					);
-				}
-			}
-
-			// Update the ProfsLookupStore with the fetched data
-			ProfsLookupStore.set(getProfsLookup(allInstructors));
-		} catch (error) {
-			console.error('Error fetching professor data:', error);
-		}
-	}
 
 	// Function to get list of department codes as an array of strings
 	// and set the DepartmentsStore.
@@ -125,7 +83,7 @@ Copyright (C) 2026 Andrew Cupps
 
 	onMount(() => {
 		// Fetch instructor data from API
-		fetchProfessorData();
+		loadInstructorLookup();
 
 		// Fetch department codes from API
 		fetchDeptCodes();

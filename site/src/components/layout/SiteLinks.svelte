@@ -19,6 +19,11 @@ Copyright (C) 2026 Andrew Cupps
 <!-- For larger screens -->
 <div class="hidden grow justify-end self-center lg:flex">
 	<NavBarElement link="./" text="Course Planner" isOnPage={currentPage == '/'} />
+	<NavBarElement
+		link="./generate"
+		text="Schedule Generator"
+		isOnPage={currentPage == '/generate'}
+	/>
 	<NavBarElement link="./bugs" text="Report an Issue" isOnPage={currentPage == '/bugs'} />
 	<ExpandableNavBarElement link="./about" text="About" isOnPage={currentPage == '/about'}>
 		<NavBarElement
@@ -99,6 +104,9 @@ Copyright (C) 2026 Andrew Cupps
 >
 	<div class="my-2 w-full text-lg">
 		<NavBarElement link="./" text="Course Planner" />
+	</div>
+	<div class="my-2 w-full text-lg">
+		<NavBarElement link="./generate" text="Schedule Generator" />
 	</div>
 	<div class="my-2 w-full text-lg">
 		<NavBarElement link="./bugs" text="Report an Issue" />
