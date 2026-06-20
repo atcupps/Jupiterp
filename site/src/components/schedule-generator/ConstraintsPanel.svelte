@@ -7,14 +7,22 @@ Copyright (C) 2026 Andrew Cupps
 <script lang="ts">
 	import { AdjustmentsHorizontalOutline } from 'flowbite-svelte-icons';
 	import { slide } from 'svelte/transition';
+	import GeneratorSelect from './GeneratorSelect.svelte';
 	import { GeneratorConstraintsStore } from '../../stores/GeneratorStores';
 	import type { HardConstraints } from '../../lib/schedule-generator/types';
 	import type { EngineDay } from '../../lib/schedule-generator/types';
-	import {
-		ENGINE_DAYS,
-		minutesToTimeInput,
-		timeInputToMinutes
-	} from '../../lib/schedule-generator/GeneratorFormat';
+	import { ENGINE_DAYS, timeSlotOptions } from '../../lib/schedule-generator/GeneratorFormat';
+
+	const ANY_TIME = { value: '', label: 'Any time' };
+	const timeOptions = [ANY_TIME, ...timeSlotOptions()];
+
+	function minutesToValue(minutes: number | null): string {
+		return minutes === null ? '' : String(minutes);
+	}
+
+	function valueToMinutes(value: string): number | null {
+		return value === '' ? null : parseInt(value, 10);
+	}
 
 	let showMenu = false;
 	let constraints: HardConstraints;
@@ -91,32 +99,26 @@ Copyright (C) 2026 Andrew Cupps
 		<div class="flex flex-col gap-3 px-1 py-2 text-sm" transition:slide>
 			<!-- Time window -->
 			<div class="flex flex-row flex-wrap items-center gap-3">
-				<label class="flex flex-row items-center gap-2">
+				<div class="flex flex-row items-center gap-2">
 					<span class="opacity-70">No class before</span>
-					<input
-						type="time"
-						value={minutesToTimeInput(constraints.earliestStartMinutes)}
-						on:change={(e) =>
-							patch({
-								earliestStartMinutes: timeInputToMinutes(e.currentTarget.value)
-							})}
-						class="rounded-md border border-outlineLight bg-bgLight
-							px-1 py-0.5 dark:border-outlineDark dark:bg-bgDark"
+					<GeneratorSelect
+						options={timeOptions}
+						value={minutesToValue(constraints.earliestStartMinutes)}
+						onChange={(v) => patch({ earliestStartMinutes: valueToMinutes(v) })}
+						buttonClass="w-28"
+						title="Earliest class start"
 					/>
-				</label>
-				<label class="flex flex-row items-center gap-2">
+				</div>
+				<div class="flex flex-row items-center gap-2">
 					<span class="opacity-70">No class after</span>
-					<input
-						type="time"
-						value={minutesToTimeInput(constraints.latestEndMinutes)}
-						on:change={(e) =>
-							patch({
-								latestEndMinutes: timeInputToMinutes(e.currentTarget.value)
-							})}
-						class="rounded-md border border-outlineLight bg-bgLight
-							px-1 py-0.5 dark:border-outlineDark dark:bg-bgDark"
+					<GeneratorSelect
+						options={timeOptions}
+						value={minutesToValue(constraints.latestEndMinutes)}
+						onChange={(v) => patch({ latestEndMinutes: valueToMinutes(v) })}
+						buttonClass="w-28"
+						title="Latest class end"
 					/>
-				</label>
+				</div>
 			</div>
 
 			<!-- Days off -->

@@ -42,6 +42,22 @@ export function minutesToLabel(minutes: number): string {
 	return `${hour12}:${mm} ${period}`;
 }
 
+/**
+ * Build dropdown options for a time-of-day selector, in minutes since
+ * midnight, from `startHour` to `endHour` inclusive at `stepMinutes` spacing.
+ */
+export function timeSlotOptions(
+	startHour = 7,
+	endHour = 22,
+	stepMinutes = 30
+): { value: string; label: string }[] {
+	const options: { value: string; label: string }[] = [];
+	for (let m = startHour * 60; m <= endHour * 60; m += stepMinutes) {
+		options.push({ value: String(m), label: minutesToLabel(m) });
+	}
+	return options;
+}
+
 /** Format minutes-since-midnight as a 24-hour `<input type="time">` value. */
 export function minutesToTimeInput(minutes: number | null): string {
 	if (minutes === null) {
