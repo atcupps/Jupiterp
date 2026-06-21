@@ -124,7 +124,8 @@ Copyright (C) 2026 Andrew Cupps
 					class="rounded-sm px-1 text-[9px] text-black"
 					style="background-color: {getColorFromNumber(cm.colorNumber)};"
 				>
-					{splitCourseCode(cm.courseCode)} (async)
+					{splitCourseCode(cm.courseCode)}
+					{typeof cm.meeting === 'string' ? '(async)' : `(${cm.meeting.classtime.days})`}
 				</span>
 			{/each}
 		</div>
