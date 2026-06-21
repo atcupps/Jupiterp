@@ -195,6 +195,18 @@ describe('bounds', () => {
 		expect(result.schedules).toHaveLength(3);
 		expect(result.truncated).toBe(true);
 	});
+
+	test('honors a custom max-nodes budget', () => {
+		const c = course('AAA101', [
+			section('AAA101', '0101', [meeting('M', 9, 10)]),
+			section('AAA101', '0201', [meeting('M', 11, 12)]),
+			section('AAA101', '0301', [meeting('M', 13, 14)])
+		]);
+		// maxNodes = 1: the second explored candidate trips the budget.
+		const result = generate([req(c, true)], defaultConstraints(), new Map(), 1000, 1);
+		expect(result.truncated).toBe(true);
+		expect(result.schedules.length).toBeLessThan(3);
+	});
 });
 
 // --- Optional courses ------------------------------------------------------

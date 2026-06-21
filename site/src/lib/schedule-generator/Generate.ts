@@ -26,6 +26,14 @@ import { generate } from './ScheduleGenerator';
 import { singleRelaxations } from './Relaxation';
 import type { CourseRequest } from './types';
 
+/**
+ * Node budget for relaxation probes. Each zero-result generation re-runs the
+ * engine once per active constraint; capping the search keeps that bounded and
+ * off the critical path. A probe that exceeds this budget may under-report or
+ * omit a hint — acceptable, since hints are advisory.
+ */
+const RELAXATION_MAX_NODES = 50_000;
+
 /** Fetch full, up-to-date courses (with all sections) by course code. */
 async function fetchFullCourses(courseCodes: Set<string>): Promise<Record<string, Course>> {
 	const config: CoursesConfig = { courseCodes };
@@ -140,7 +148,7 @@ export async function runGeneration(): Promise<void> {
 		// Nothing fits: explain which single constraint to loosen.
 		const hints: RelaxationHint[] = [];
 		for (const relaxation of singleRelaxations(constraints)) {
-			const rerun = generate(requests, relaxation.constraints, ratings, 50);
+			const rerun = generate(requests, relaxation.constraints, ratings, 50, RELAXATION_MAX_NODES);
 			if (rerun.schedules.length > 0) {
 				hints.push({
 					relaxation,

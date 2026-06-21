@@ -285,12 +285,16 @@ function dedupePinNotices(notices: PinNotice[]): PinNotice[] {
  * @param constraints Hard constraints every schedule must satisfy.
  * @param instructorRatings Instructor name -> average rating, for metrics.
  * @param maxResults Cap on returned schedules.
+ * @param maxNodes Hard cap on explored search nodes; defaults to MAX_NODES.
+ *   Pass a smaller value for lightweight probes (e.g. relaxation hints) to
+ *   bound their cost. The primary generation run should use the default.
  */
 export function generate(
 	requests: CourseRequest[],
 	constraints: HardConstraints,
 	instructorRatings: Map<string, number> = new Map(),
-	maxResults: number = DEFAULT_MAX_RESULTS
+	maxResults: number = DEFAULT_MAX_RESULTS,
+	maxNodes: number = MAX_NODES
 ): GenerationResult {
 	const pinNotices: PinNotice[] = [];
 
@@ -371,7 +375,7 @@ export function generate(
 		}
 		const courseCandidates = ordered[courseIndex];
 		for (const candidate of courseCandidates.candidates) {
-			if (++nodes > MAX_NODES) {
+			if (++nodes > maxNodes) {
 				truncated = true;
 				return;
 			}
