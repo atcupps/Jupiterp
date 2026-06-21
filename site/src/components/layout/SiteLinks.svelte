@@ -36,7 +36,7 @@ Copyright (C) 2026 Andrew Cupps
 			link="./privacy-policy"
 			text="Privacy Policy"
 			reduceXMargin={true}
-			fullWidth={true}
+			isOnPage={currentPage == '/privacy-policy'}
 		/>
 		<NavBarElement
 			link="./changelog"
