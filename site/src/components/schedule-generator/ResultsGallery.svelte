@@ -36,7 +36,7 @@ Copyright (C) 2026 Andrew Cupps
 		requirements = r;
 	});
 
-	// Render results in pages so a large result set (up to 200 schedules,
+	// Render results in pages so a large result set (up to 1000 schedules,
 	// each a small grid) never blocks the main thread on first paint.
 	const PAGE_SIZE = 12;
 	let visibleCount = PAGE_SIZE;
