@@ -10,7 +10,9 @@ Copyright (C) 2026 Andrew Cupps
 		DotsVerticalOutline,
 		TrashBinOutline,
 		FileCopyOutline,
-		PlusOutline
+		PlusOutline,
+		LinkOutline,
+		ClipboardCheckOutline
 	} from 'flowbite-svelte-icons';
 	import {
 		AddCustomEventStore,
@@ -18,9 +20,12 @@ Copyright (C) 2026 Andrew Cupps
 		NonselectedScheduleStore
 	} from '../../../stores/CoursePlannerStores';
 	import { uniqueScheduleName } from '$lib/course-planner/ScheduleSelector';
+	import { encodeSchedule, SHARE_PARAM } from '$lib/course-planner/ShareLink';
+	import { base } from '$app/paths';
 	import type { ScheduleBlock, StoredSchedule } from '../../../types';
 
 	let dropdownOpen = false;
+	let linkCopied = false;
 
 	let currentScheduleName: string;
 	let currentScheduleSelections: ScheduleBlock[];
@@ -82,6 +87,26 @@ Copyright (C) 2026 Andrew Cupps
 		dropdownOpen = false;
 		AddCustomEventStore.set(true);
 	}
+
+	async function copyShareLink() {
+		const token = encodeSchedule(currentScheduleSelections);
+		if (!token) {
+			// No course sections to share.
+			return;
+		}
+
+		const url = `${window.location.origin}${base}/?${SHARE_PARAM}=${token}`;
+		try {
+			await navigator.clipboard.writeText(url);
+			linkCopied = true;
+			setTimeout(() => {
+				linkCopied = false;
+				dropdownOpen = false;
+			}, 1200);
+		} catch (e) {
+			console.error('Failed to copy share link:', e);
+		}
+	}
 </script>
 
 <button
@@ -118,10 +143,16 @@ Copyright (C) 2026 Andrew Cupps
 		<FileCopyOutline class="z-50 mr-1 h-3 w-3" /> Duplicate
 	</DropdownItem>
 
-	<!-- TODO(@atcupps): Add share schedule feature -->
-	<!-- <DropdownItem class="hover:bg-hoverLight dark:hover:bg-hoverDark px-2
-                        flex justify-start items-center"
-                    on:click={() => (dropdownOpen = false)}>
-        <ForwardOutline class="w-3 h-3 mr-1" /> Share
-    </DropdownItem> -->
+	<DropdownItem
+		class="flex items-center justify-start
+                            px-2 hover:bg-hoverLight dark:hover:bg-hoverDark"
+		title="Copy a shareable link to this schedule"
+		on:click={copyShareLink}
+	>
+		{#if linkCopied}
+			<ClipboardCheckOutline class="z-50 mr-1 h-3 w-3" /> Copied!
+		{:else}
+			<LinkOutline class="z-50 mr-1 h-3 w-3" /> Copy Link
+		{/if}
+	</DropdownItem>
 </Dropdown>
