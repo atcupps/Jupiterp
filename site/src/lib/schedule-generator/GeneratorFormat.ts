@@ -58,35 +58,6 @@ export function timeSlotOptions(
 	return options;
 }
 
-/** Format minutes-since-midnight as a 24-hour `<input type="time">` value. */
-export function minutesToTimeInput(minutes: number | null): string {
-	if (minutes === null) {
-		return '';
-	}
-	const hh = Math.floor(minutes / 60)
-		.toString()
-		.padStart(2, '0');
-	const mm = (minutes % 60).toString().padStart(2, '0');
-	return `${hh}:${mm}`;
-}
-
-/** Parse an `<input type="time">` value ("HH:MM") to minutes, or null. */
-export function timeInputToMinutes(value: string): number | null {
-	if (!value) {
-		return null;
-	}
-	const parts = value.split(':');
-	if (parts.length !== 2) {
-		return null;
-	}
-	const hours = parseInt(parts[0], 10);
-	const minutes = parseInt(parts[1], 10);
-	if (Number.isNaN(hours) || Number.isNaN(minutes)) {
-		return null;
-	}
-	return hours * 60 + minutes;
-}
-
 /** A short, human-readable label for an overridden per-section filter. */
 export function overriddenFilterLabel(filter: OverriddenFilter): string {
 	switch (filter) {

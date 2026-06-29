@@ -297,30 +297,6 @@ export async function ensureUpToDateAndSetStores(
 }
 
 /**
- * Reconstruct the course selections encoded in a share token by fetching the
- * latest course data. Returns `[]` if the token is empty, unparseable, or the
- * course fetch fails — callers should treat that as "nothing to share".
- * @param param The raw `s` query parameter from a shared link.
- */
-async function loadSharedSelections(param: string): Promise<ScheduleSelection[]> {
-	const pairs = decodeSchedule(param);
-	if (pairs.length === 0) {
-		return [];
-	}
-
-	const courseCodes = new Set(pairs.map((p) => p.courseCode));
-	let courses: Record<string, Course>;
-	try {
-		courses = await getUpToDateCourses(courseCodes);
-	} catch (e) {
-		console.error('Failed to load shared schedule course data:', e);
-		return [];
-	}
-
-	return buildSharedSelections(pairs, courses);
-}
-
-/**
  * The first "Shared schedule" name not already taken, so opening multiple
  * shared links counts up (Shared schedule, Shared schedule 2, …).
  */
@@ -341,6 +317,10 @@ function uniqueSharedName(existing: StoredSchedule[]): string {
  * the user's existing schedules intact by demoting them to non-selected ones.
  * If the token yields no valid sections, falls back to the normal load so the
  * user's own schedules still appear.
+ *
+ * @returns `true` if the share param was consumed (the caller should strip it),
+ *          or `false` if a transient course-data fetch failed (the caller should
+ *          keep the param so a refresh can retry the import).
  * @param param The raw `s` query parameter from a shared link.
  * @param existingCurrent The active schedule read from local storage.
  * @param existingNonselected The saved schedules read from local storage.
@@ -349,12 +329,32 @@ export async function applySharedScheduleToStores(
 	param: string,
 	existingCurrent: StoredSchedule,
 	existingNonselected: StoredSchedule[]
-) {
-	const shared = await loadSharedSelections(param);
-	if (shared.length === 0) {
-		// Nothing valid to load; behave like a normal page load.
+): Promise<boolean> {
+	const pairs = decodeSchedule(param);
+	if (pairs.length === 0) {
+		// Empty or unparseable token: nothing to retry. Load the user's own
+		// schedules and let the caller drop the useless param.
 		await ensureUpToDateAndSetStores(existingCurrent, existingNonselected);
-		return;
+		return true;
+	}
+
+	let courses: Record<string, Course>;
+	try {
+		courses = await getUpToDateCourses(new Set(pairs.map((p) => p.courseCode)));
+	} catch (e) {
+		console.error('Failed to load shared schedule course data:', e);
+		// Transient failure: show the user's own schedules but keep the param so
+		// a refresh can retry the import.
+		await ensureUpToDateAndSetStores(existingCurrent, existingNonselected);
+		return false;
+	}
+
+	const shared = buildSharedSelections(pairs, courses);
+	if (shared.length === 0) {
+		// Decoded and fetched fine, but none of the sections still exist.
+		// Nothing to retry — drop the param.
+		await ensureUpToDateAndSetStores(existingCurrent, existingNonselected);
+		return true;
 	}
 
 	// Preserve the user's existing active schedule alongside their saved ones.
@@ -369,4 +369,5 @@ export async function applySharedScheduleToStores(
 	});
 
 	NonselectedScheduleStore.set(preserved);
+	return true;
 }

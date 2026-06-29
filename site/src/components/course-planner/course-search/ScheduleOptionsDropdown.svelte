@@ -26,6 +26,7 @@ Copyright (C) 2026 Andrew Cupps
 
 	let dropdownOpen = false;
 	let linkCopied = false;
+	let linkError = false;
 
 	let currentScheduleName: string;
 	let currentScheduleSelections: ScheduleBlock[];
@@ -88,6 +89,38 @@ Copyright (C) 2026 Andrew Cupps
 		AddCustomEventStore.set(true);
 	}
 
+	/**
+	 * Copy `text` to the clipboard, returning whether it succeeded. Prefers the
+	 * async Clipboard API (HTTPS / modern browsers) and falls back to a hidden
+	 * textarea + `execCommand('copy')` for insecure contexts and older mobile
+	 * browsers where `navigator.clipboard` is unavailable.
+	 */
+	async function copyToClipboard(text: string): Promise<boolean> {
+		if (typeof navigator !== 'undefined' && navigator.clipboard) {
+			try {
+				await navigator.clipboard.writeText(text);
+				return true;
+			} catch {
+				// Fall through to the legacy path.
+			}
+		}
+
+		try {
+			const textarea = document.createElement('textarea');
+			textarea.value = text;
+			textarea.setAttribute('readonly', '');
+			textarea.style.position = 'fixed';
+			textarea.style.opacity = '0';
+			document.body.appendChild(textarea);
+			textarea.select();
+			const ok = document.execCommand('copy');
+			document.body.removeChild(textarea);
+			return ok;
+		} catch {
+			return false;
+		}
+	}
+
 	async function copyShareLink() {
 		const token = encodeSchedule(currentScheduleSelections);
 		if (!token) {
@@ -96,15 +129,21 @@ Copyright (C) 2026 Andrew Cupps
 		}
 
 		const url = `${window.location.origin}${base}/?${SHARE_PARAM}=${token}`;
-		try {
-			await navigator.clipboard.writeText(url);
+		const copied = await copyToClipboard(url);
+		if (copied) {
+			linkError = false;
 			linkCopied = true;
 			setTimeout(() => {
 				linkCopied = false;
 				dropdownOpen = false;
 			}, 1200);
-		} catch (e) {
-			console.error('Failed to copy share link:', e);
+		} else {
+			linkCopied = false;
+			linkError = true;
+			console.error('Failed to copy share link to clipboard.');
+			setTimeout(() => {
+				linkError = false;
+			}, 1800);
 		}
 	}
 </script>
@@ -151,6 +190,8 @@ Copyright (C) 2026 Andrew Cupps
 	>
 		{#if linkCopied}
 			<ClipboardCheckOutline class="z-50 mr-1 h-3 w-3" /> Copied!
+		{:else if linkError}
+			<LinkOutline class="z-50 mr-1 h-3 w-3" /> Copy failed
 		{:else}
 			<LinkOutline class="z-50 mr-1 h-3 w-3" /> Copy Link
 		{/if}
