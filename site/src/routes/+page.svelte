@@ -133,9 +133,20 @@ Copyright (C) 2026 Andrew Cupps
 				// strip the param so a refresh doesn't re-import it.
 				const shareParam = new URLSearchParams(window.location.search).get(SHARE_PARAM);
 				if (shareParam) {
-					applySharedScheduleToStores(shareParam, currentSchedule, storedNonselectedSchedules);
-					const cleanUrl = window.location.pathname + window.location.hash;
-					window.history.replaceState(window.history.state, '', cleanUrl);
+					(async () => {
+						const consumed = await applySharedScheduleToStores(
+							shareParam,
+							currentSchedule,
+							storedNonselectedSchedules
+						);
+						if (consumed) {
+							// Strip the param so a refresh doesn't re-import; on a
+							// transient fetch failure (consumed === false) keep it so
+							// a refresh can retry.
+							const cleanUrl = window.location.pathname + window.location.hash;
+							window.history.replaceState(window.history.state, '', cleanUrl);
+						}
+					})().catch((e) => console.error('Failed to apply shared schedule:', e));
 				} else {
 					// Find differences between stored selections and
 					// most up-to-date course data, and update accordingly.
