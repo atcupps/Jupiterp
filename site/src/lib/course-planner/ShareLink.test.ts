@@ -70,9 +70,9 @@ function course(courseCode: string, sectionCodes: string[]): Course {
 }
 
 describe('encodeSchedule', () => {
-	test('encodes course sections with a version prefix', () => {
-		const token = encodeSchedule([selection('CMSC131', '0101'), selection('MATH140', '0501')]);
-		expect(token).toBe('1~CMSC131-0101.MATH140-0501');
+	test('emits the current schema version prefix', () => {
+		const token = encodeSchedule([selection('CMSC131', '0101')]);
+		expect(token.startsWith('2~')).toBe(true);
 	});
 
 	test('returns empty string when there are no course sections', () => {
@@ -86,35 +86,85 @@ describe('encodeSchedule', () => {
 			selection('ENGL101', '0301', true),
 			userEvent() as unknown as ScheduleBlock
 		];
-		expect(encodeSchedule(blocks)).toBe('1~CMSC131-0101');
+		expect(decodeSchedule(encodeSchedule(blocks))).toEqual([
+			{ courseCode: 'CMSC131', sectionCode: '0101' }
+		]);
 	});
 
 	test('output uses only URL-unreserved characters', () => {
-		const token = encodeSchedule([selection('CMSC351H', '9901')]);
+		const token = encodeSchedule([selection('CMSC351H', '9901'), selection('MATH140', '0501')]);
 		expect(token).toMatch(/^[A-Za-z0-9\-._~]+$/);
+	});
+
+	test('packs standard codes shorter than the literal form', () => {
+		const blocks = [
+			selection('CMSC131', '0101'),
+			selection('MATH140', '0501'),
+			selection('ENGL101', '0301'),
+			selection('HIST200', '0201')
+		];
+		const literalLength = `1~${blocks
+			.map((b) => `${b.course.courseCode}-${b.section.sectionCode}`)
+			.join('.')}`.length;
+		expect(encodeSchedule(blocks).length).toBeLessThan(literalLength);
+	});
+});
+
+describe('encode/decode round-trip (v2)', () => {
+	test.each([
+		['CMSC131', '0101'],
+		['MATH140', '0501'],
+		['CMSC351H', '9901'], // 1-letter suffix
+		['BMGT110', '0000'], // all-zero section
+		['PHYS161', '9999'] // max section
+	])('packs and unpacks %s-%s exactly', (courseCode, sectionCode) => {
+		const token = encodeSchedule([selection(courseCode, sectionCode)]);
+		expect(decodeSchedule(token)).toEqual([{ courseCode, sectionCode }]);
+	});
+
+	test('round-trips a multi-course schedule in order', () => {
+		const pairs: [string, string][] = [
+			['CMSC131', '0101'],
+			['MATH140', '0501'],
+			['ENGL101', '0301']
+		];
+		const token = encodeSchedule(pairs.map(([c, s]) => selection(c, s)));
+		expect(decodeSchedule(token)).toEqual(
+			pairs.map(([c, s]) => ({ courseCode: c, sectionCode: s }))
+		);
+	});
+
+	test('falls back to a literal segment for non-standard codes and round-trips', () => {
+		// 4-digit number, and a lettered section: neither is packable.
+		const token = encodeSchedule([selection('AASP1000', 'FC01'), selection('CMSC131', '0101')]);
+		expect(token).toContain('AASP1000-FC01');
+		expect(decodeSchedule(token)).toEqual([
+			{ courseCode: 'AASP1000', sectionCode: 'FC01' },
+			{ courseCode: 'CMSC131', sectionCode: '0101' }
+		]);
 	});
 });
 
 describe('decodeSchedule', () => {
-	test('round-trips with encodeSchedule', () => {
-		const blocks = [selection('CMSC131', '0101'), selection('MATH140', '0501')];
-		expect(decodeSchedule(encodeSchedule(blocks))).toEqual([
+	test('still decodes legacy v1 (literal) links', () => {
+		expect(decodeSchedule('1~CMSC131-0101.MATH140-0501')).toEqual([
 			{ courseCode: 'CMSC131', sectionCode: '0101' },
 			{ courseCode: 'MATH140', sectionCode: '0501' }
 		]);
 	});
 
 	test('rejects an unknown schema version', () => {
-		expect(decodeSchedule('2~CMSC131-0101')).toEqual([]);
+		expect(decodeSchedule('9~CMSC131-0101')).toEqual([]);
 	});
 
 	test('returns empty for empty or malformed input', () => {
 		expect(decodeSchedule('')).toEqual([]);
 		expect(decodeSchedule('CMSC131-0101')).toEqual([]);
 		expect(decodeSchedule('1~')).toEqual([]);
+		expect(decodeSchedule('2~')).toEqual([]);
 	});
 
-	test('skips unparseable pairs but keeps valid ones', () => {
+	test('skips unparseable v1 segments but keeps valid ones', () => {
 		expect(decodeSchedule('1~CMSC131-0101.garbage.MATH140-0501')).toEqual([
 			{ courseCode: 'CMSC131', sectionCode: '0101' },
 			{ courseCode: 'MATH140', sectionCode: '0501' }

@@ -9,7 +9,9 @@ Copyright (C) 2026 Andrew Cupps
 		AngleRightOutline,
 		PlusOutline,
 		ForwardOutline,
-		TrashBinOutline
+		TrashBinOutline,
+		LinkOutline,
+		ClipboardCheckOutline
 	} from 'flowbite-svelte-icons';
 	import {
 		CurrentScheduleStore,
@@ -22,11 +24,14 @@ Copyright (C) 2026 Andrew Cupps
 		deleteNonselectedSchedule,
 		uniqueScheduleName
 	} from '$lib/course-planner/ScheduleSelector';
+	import { encodeSchedule, SHARE_PARAM } from '$lib/course-planner/ShareLink';
+	import { base } from '$app/paths';
 	import type { ScheduleBlock, StoredSchedule } from '../../../types';
 	import PopupShare from '../../layout/PopupShare.svelte';
 
 	let dropdownOpen: boolean = false;
 	let sharePopUpOpen: boolean = false;
+	let linkCopied: boolean = false;
 
 	let currentScheduleName: string;
 	let currentScheduleSelections: ScheduleBlock[];
@@ -100,6 +105,23 @@ Copyright (C) 2026 Andrew Cupps
 			selections: currentScheduleSelections
 		});
 	}
+
+	async function copyShareLink() {
+		const token = encodeSchedule(currentScheduleSelections);
+		if (!token) {
+			// No course sections to share.
+			return;
+		}
+
+		const url = `${window.location.origin}${base}/?${SHARE_PARAM}=${token}`;
+		try {
+			await navigator.clipboard.writeText(url);
+			linkCopied = true;
+			setTimeout(() => (linkCopied = false), 1200);
+		} catch (e) {
+			console.error('Failed to copy share link:', e);
+		}
+	}
 </script>
 
 <div class="flex w-full flex-col" use:clickoutside on:clickoutside={() => (dropdownOpen = false)}>
@@ -134,6 +156,18 @@ Copyright (C) 2026 Andrew Cupps
 			on:click={createNewSchedule}
 		>
 			<PlusOutline class="h-5 w-5 px-0.5" />
+		</button>
+
+		<button
+			class="h-7 rounded-md hover:bg-hoverLight dark:hover:bg-hoverDark"
+			title={linkCopied ? 'Link copied!' : 'Copy shareable link'}
+			on:click={copyShareLink}
+		>
+			{#if linkCopied}
+				<ClipboardCheckOutline class="h-5 w-5 px-0.5" />
+			{:else}
+				<LinkOutline class="h-5 w-5 px-0.5" />
+			{/if}
 		</button>
 
 		<button
