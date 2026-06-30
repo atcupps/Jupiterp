@@ -63,8 +63,8 @@ Copyright (C) 2026 Andrew Cupps
 	<!-- Generate bar  -->
 	<div class="flex flex-row items-center gap-3">
 		<button
-			class="rounded-lg bg-orange px-4 py-1.5 font-semibold text-white
-				hover:opacity-90 disabled:opacity-40"
+			class="rounded-lg border border-orange px-4 py-1.5 font-semibold text-orange
+				enabled:hover:bg-orange enabled:hover:text-white disabled:opacity-40"
 			disabled={requirements.length === 0 || state.kind === 'loading'}
 			on:click={() => runGeneration()}
 		>
