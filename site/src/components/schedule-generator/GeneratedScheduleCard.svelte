@@ -41,8 +41,8 @@ Copyright (C) 2026 Andrew Cupps
 	<div class="flex flex-row items-center justify-between">
 		<span class="text-sm font-semibold opacity-60">#{rank}</span>
 		<button
-			class="rounded-md bg-orange px-3 py-1 text-sm font-semibold
-				text-white hover:opacity-90"
+			class="rounded-md border border-orange px-3 py-1 text-sm font-semibold
+				text-orange enabled:hover:bg-orange enabled:hover:text-white"
 			on:click={apply}
 			title="Open this schedule in the planner"
 		>
