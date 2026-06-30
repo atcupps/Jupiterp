@@ -29,3 +29,5 @@ rust-project.json
 *.vscode
 
 __pycache__/
+
+/plans
