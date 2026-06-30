@@ -39,7 +39,9 @@ Copyright (C) 2026 Andrew Cupps
 	let:isPending
 	let:profSuggestions
 >
-	{#if searchInput.length > 0}
+	<!-- Show results whenever there is a query OR an active filter has produced
+		results (e.g. selecting a gen-ed with an empty search bar). -->
+	{#if searchInput.length > 0 || searchResults.length > 0}
 		<div class="custom-scrollbar mt-2 max-h-72 overflow-y-auto">
 			{#each searchResults as course (course.courseCode)}
 				<div
