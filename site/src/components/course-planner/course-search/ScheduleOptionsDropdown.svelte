@@ -148,10 +148,7 @@ Copyright (C) 2026 Andrew Cupps
 	}
 </script>
 
-<button
-	class="rounded-md hover:bg-hoverLight dark:hover:bg-hoverDark"
-	title="Schedule options"
->
+<button class="rounded-md hover:bg-hoverLight dark:hover:bg-hoverDark" title="Schedule options">
 	<DotsVerticalOutline class="h-5 w-5" />
 </button>
 
