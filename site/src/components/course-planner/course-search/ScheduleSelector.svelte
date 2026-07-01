@@ -151,7 +151,7 @@ Copyright (C) 2026 Andrew Cupps
 		<ScheduleOptionsDropdown />
 
 		<button
-			class="h-7 rounded-md px-0.5 hover:bg-hoverLight dark:hover:bg-hoverDark"
+			class="h-7 rounded-md hover:bg-hoverLight dark:hover:bg-hoverDark"
 			title="Create new schedule"
 			on:click={createNewSchedule}
 		>
