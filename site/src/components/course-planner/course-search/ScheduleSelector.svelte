@@ -5,16 +5,9 @@ https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2026 Andrew Cupps
 -->
 <script lang="ts">
+	import { AngleRightOutline, TrashBinOutline } from 'flowbite-svelte-icons';
 	import {
-		AngleRightOutline,
-		PlusOutline,
-		ForwardOutline,
-		TrashBinOutline,
-		LinkOutline,
-		ClipboardCheckOutline
-	} from 'flowbite-svelte-icons';
-	import {
-	AddCustomEventStore,
+		AddCustomEventStore,
 		CurrentScheduleStore,
 		NonselectedScheduleStore
 	} from '../../../stores/CoursePlannerStores';
@@ -134,7 +127,6 @@ Copyright (C) 2026 Andrew Cupps
 
 <div class="flex w-full flex-col" use:clickoutside on:clickoutside={() => (dropdownOpen = false)}>
 	<div class="2xl:text-md flex w-full flex-row pb-1 text-sm" title="Toggle schedule dropdown">
-		
 		<!-- Schedule selection -->
 		<div
 			class="flex grow flex-row justify-start rounded-md px-0.5 py-1
@@ -159,7 +151,7 @@ Copyright (C) 2026 Andrew Cupps
 		</div>
 
 		<!-- Additional schedule option menu -->
-		
+
 		<ScheduleOptionsDropdown />
 
 		<ScheduleAddDropdown
@@ -170,7 +162,7 @@ Copyright (C) 2026 Andrew Cupps
 		<ScheduleShareDropdown
 			calendarExportFunction={() => (sharePopUpOpen = !sharePopUpOpen)}
 			copyShareLinkFunction={() => copyShareLink()}
-			linkCopied={linkCopied}
+			{linkCopied}
 		/>
 	</div>
 
