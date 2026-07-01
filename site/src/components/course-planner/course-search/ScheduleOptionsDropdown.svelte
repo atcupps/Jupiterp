@@ -10,12 +10,10 @@ Copyright (C) 2026 Andrew Cupps
 		DotsVerticalOutline,
 		TrashBinOutline,
 		FileCopyOutline,
-		PlusOutline,
 		LinkOutline,
 		ClipboardCheckOutline
 	} from 'flowbite-svelte-icons';
 	import {
-		AddCustomEventStore,
 		CurrentScheduleStore,
 		NonselectedScheduleStore
 	} from '../../../stores/CoursePlannerStores';
@@ -84,11 +82,6 @@ Copyright (C) 2026 Andrew Cupps
 		});
 	}
 
-	function addCustomEvent() {
-		dropdownOpen = false;
-		AddCustomEventStore.set(true);
-	}
-
 	/**
 	 * Copy `text` to the clipboard, returning whether it succeeded. Prefers the
 	 * async Clipboard API (HTTPS / modern browsers) and falls back to a hidden
@@ -149,20 +142,13 @@ Copyright (C) 2026 Andrew Cupps
 </script>
 
 <button
-	class="rounded-md px-0.5 hover:bg-hoverLight dark:hover:bg-hoverDark"
+	class="rounded-md hover:bg-hoverLight dark:hover:bg-hoverDark"
 	title="Schedule options"
 >
 	<DotsVerticalOutline class="h-5 w-5" />
 </button>
 
 <Dropdown class="w-24 rounded-md bg-bgLight dark:bg-divBorderDark" bind:open={dropdownOpen}>
-	<DropdownItem
-		class="flex items-center justify-start px-2 hover:bg-hoverLight dark:hover:bg-hoverDark"
-		title="Add custom event to schedule"
-		on:click={addCustomEvent}
-	>
-		<PlusOutline class="z-50 mr-1 h-3 w-3" /> Add Event
-	</DropdownItem>
 
 	<DropdownItem
 		class="flex items-center justify-start
