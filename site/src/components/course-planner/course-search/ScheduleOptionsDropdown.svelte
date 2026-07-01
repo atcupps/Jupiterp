@@ -167,19 +167,4 @@ Copyright (C) 2026 Andrew Cupps
 	>
 		<FileCopyOutline class="z-50 mr-1 h-3 w-3" /> Duplicate
 	</DropdownItem>
-
-	<DropdownItem
-		class="flex items-center justify-start
-                            px-2 hover:bg-hoverLight dark:hover:bg-hoverDark"
-		title="Copy a shareable link to this schedule"
-		on:click={copyShareLink}
-	>
-		{#if linkCopied}
-			<ClipboardCheckOutline class="z-50 mr-1 h-3 w-3" /> Copied!
-		{:else if linkError}
-			<LinkOutline class="z-50 mr-1 h-3 w-3" /> Copy failed
-		{:else}
-			<LinkOutline class="z-50 mr-1 h-3 w-3" /> Copy Link
-		{/if}
-	</DropdownItem>
 </Dropdown>
