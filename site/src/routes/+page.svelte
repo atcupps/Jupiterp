@@ -10,10 +10,12 @@ Copyright (C) 2026 Andrew Cupps
 	import CourseSearch from '../components/course-planner/course-search/CourseSearch.svelte';
 	import { onMount } from 'svelte';
 	import {
+		applySharedScheduleToStores,
 		ensureUpToDateAndSetStores,
 		resolveSelections,
 		resolveStoredSchedules
 	} from '../lib/course-planner/CourseLoad';
+	import { SHARE_PARAM } from '$lib/course-planner/ShareLink';
 	import { loadInstructorLookup } from '$lib/course-planner/CourseSearch';
 	import { handlePlannerShortcutKeydown } from '../lib/course-planner/PlannerShortcuts';
 	import {
@@ -123,11 +125,33 @@ Copyright (C) 2026 Andrew Cupps
 					storedNonselectedSchedules = [];
 				}
 
-				// Find differences between stored selections and
-				// most up-to-date course data, and update accordingly.
-				ensureUpToDateAndSetStores(currentSchedule, storedNonselectedSchedules);
-
+				// Allow store subscriptions to persist whatever we load below.
 				hasReadLocalStorage = true;
+
+				// If the page was opened from a shared link, load that schedule
+				// as a new named schedule (preserving the user's own), then
+				// strip the param so a refresh doesn't re-import it.
+				const shareParam = new URLSearchParams(window.location.search).get(SHARE_PARAM);
+				if (shareParam) {
+					(async () => {
+						const consumed = await applySharedScheduleToStores(
+							shareParam,
+							currentSchedule,
+							storedNonselectedSchedules
+						);
+						if (consumed) {
+							// Strip the param so a refresh doesn't re-import; on a
+							// transient fetch failure (consumed === false) keep it so
+							// a refresh can retry.
+							const cleanUrl = window.location.pathname + window.location.hash;
+							window.history.replaceState(window.history.state, '', cleanUrl);
+						}
+					})().catch((e) => console.error('Failed to apply shared schedule:', e));
+				} else {
+					// Find differences between stored selections and
+					// most up-to-date course data, and update accordingly.
+					ensureUpToDateAndSetStores(currentSchedule, storedNonselectedSchedules);
+				}
 			}
 		} catch (e) {
 			console.log('Unable to retrieve courses: ' + e);
