@@ -5,15 +5,9 @@ https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2026 Andrew Cupps
 -->
 <script lang="ts">
+	import { AngleRightOutline, TrashBinOutline } from 'flowbite-svelte-icons';
 	import {
-		AngleRightOutline,
-		PlusOutline,
-		ForwardOutline,
-		TrashBinOutline,
-		LinkOutline,
-		ClipboardCheckOutline
-	} from 'flowbite-svelte-icons';
-	import {
+		AddCustomEventStore,
 		CurrentScheduleStore,
 		NonselectedScheduleStore
 	} from '../../../stores/CoursePlannerStores';
@@ -28,6 +22,8 @@ Copyright (C) 2026 Andrew Cupps
 	import { base } from '$app/paths';
 	import type { ScheduleBlock, StoredSchedule } from '../../../types';
 	import PopupShare from '../../layout/PopupShare.svelte';
+	import ScheduleAddDropdown from './ScheduleAddDropdown.svelte';
+	import ScheduleShareDropdown from './ScheduleShareDropdown.svelte';
 
 	let dropdownOpen: boolean = false;
 	let sharePopUpOpen: boolean = false;
@@ -106,6 +102,11 @@ Copyright (C) 2026 Andrew Cupps
 		});
 	}
 
+	function addCustomEvent() {
+		dropdownOpen = false;
+		AddCustomEventStore.set(true);
+	}
+
 	async function copyShareLink() {
 		const token = encodeSchedule(currentScheduleSelections);
 		if (!token) {
@@ -126,6 +127,7 @@ Copyright (C) 2026 Andrew Cupps
 
 <div class="flex w-full flex-col" use:clickoutside on:clickoutside={() => (dropdownOpen = false)}>
 	<div class="2xl:text-md flex w-full flex-row pb-1 text-sm" title="Toggle schedule dropdown">
+		<!-- Schedule selection -->
 		<div
 			class="flex grow flex-row justify-start rounded-md px-0.5 py-1
                     text-left hover:bg-hoverLight hover:dark:bg-hoverDark"
@@ -148,36 +150,20 @@ Copyright (C) 2026 Andrew Cupps
 			/>
 		</div>
 
+		<!-- Additional schedule option menu -->
+
 		<ScheduleOptionsDropdown />
 
-		<button
-			class="h-7 rounded-md hover:bg-hoverLight dark:hover:bg-hoverDark"
-			title="Create new schedule"
-			on:click={createNewSchedule}
-		>
-			<PlusOutline class="h-5 w-5 px-0.5" />
-		</button>
+		<ScheduleAddDropdown
+			newCustomEventFunction={() => addCustomEvent()}
+			newScheduleFunction={() => createNewSchedule()}
+		/>
 
-		<button
-			class="h-7 rounded-md hover:bg-hoverLight dark:hover:bg-hoverDark"
-			title={linkCopied ? 'Link copied!' : 'Copy shareable link'}
-			on:click={copyShareLink}
-		>
-			{#if linkCopied}
-				<ClipboardCheckOutline class="h-5 w-5 px-0.5" />
-			{:else}
-				<LinkOutline class="h-5 w-5 px-0.5" />
-			{/if}
-		</button>
-
-		<button
-			class="h-7 rounded-md
-                        hover:bg-hoverLight dark:hover:bg-hoverDark"
-			title="Export schedule"
-			on:click={() => (sharePopUpOpen = !sharePopUpOpen)}
-		>
-			<ForwardOutline class="h-5 w-5 px-0.5" />
-		</button>
+		<ScheduleShareDropdown
+			calendarExportFunction={() => (sharePopUpOpen = !sharePopUpOpen)}
+			copyShareLinkFunction={() => copyShareLink()}
+			{linkCopied}
+		/>
 	</div>
 
 	{#if dropdownOpen}
