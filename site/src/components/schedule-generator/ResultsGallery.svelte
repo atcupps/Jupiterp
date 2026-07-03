@@ -16,6 +16,7 @@ Copyright (C) 2026 Andrew Cupps
 	import {
 		GenerationStateStore,
 		GeneratorRequirementsStore,
+		GeneratorSortChosenByUserStore,
 		GeneratorSortStore,
 		type GenerationState,
 		type GeneratorRequirement
@@ -55,6 +56,7 @@ Copyright (C) 2026 Andrew Cupps
 	}));
 
 	function setSort(value: string) {
+		GeneratorSortChosenByUserStore.set(true);
 		GeneratorSortStore.set(value as SortCriterion);
 	}
 </script>

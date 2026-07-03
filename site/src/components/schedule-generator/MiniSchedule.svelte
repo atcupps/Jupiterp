@@ -5,7 +5,7 @@ https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2026 Andrew Cupps
 -->
 <script lang="ts">
-	import { schedulify } from '../../lib/course-planner/Schedule';
+	import { getClasstimeBounds, schedulify } from '../../lib/course-planner/Schedule';
 	import { getColorFromNumber } from '../../lib/course-planner/ClassMeetingUtils';
 	import { splitCourseCode } from '../../lib/course-planner/Formatting';
 	import type { Schedule, ScheduleSelection } from '../../types';
@@ -45,26 +45,14 @@ Copyright (C) 2026 Andrew Cupps
 	$: hasOther = schedule.other.length > 0;
 
 	// Time window: fit all timed meetings, with a minimum 8-hour window.
-	$: bounds = computeBounds(days);
-	function computeBounds(weekdays: Schedule[keyof Schedule][]): {
-		start: number;
-		end: number;
-	} {
-		let earliest = Number.MAX_SAFE_INTEGER;
-		let latest = Number.MIN_SAFE_INTEGER;
-		for (const day of weekdays) {
-			for (const cm of day) {
-				if (typeof cm.meeting !== 'string') {
-					earliest = Math.min(earliest, cm.meeting.classtime.start);
-					latest = Math.max(latest, cm.meeting.classtime.end);
-				}
-			}
-		}
-		if (earliest === Number.MAX_SAFE_INTEGER) {
+	$: bounds = computeBounds(schedule);
+	function computeBounds(s: Schedule): { start: number; end: number } {
+		const { earliestStart, latestEnd } = getClasstimeBounds(s);
+		if (earliestStart === Number.MAX_SAFE_INTEGER) {
 			return { start: 8, end: 16 };
 		}
-		let start = Math.floor(earliest);
-		let end = Math.ceil(latest);
+		let start = earliestStart;
+		let end = latestEnd;
 		const diff = end - start;
 		if (diff < 8) {
 			start -= Math.floor((8 - diff) / 2);

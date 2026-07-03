@@ -11,10 +11,14 @@ Copyright (C) 2026 Andrew Cupps
 	import { onMount } from 'svelte';
 	import {
 		applySharedScheduleToStores,
-		ensureUpToDateAndSetStores,
-		resolveSelections,
-		resolveStoredSchedules
+		ensureUpToDateAndSetStores
 	} from '../lib/course-planner/CourseLoad';
+	import {
+		readStoredCurrentSchedule,
+		readStoredNonselectedSchedules,
+		saveCurrentSchedule,
+		saveNonselectedSchedules
+	} from '../lib/course-planner/SchedulePersistence';
 	import { SHARE_PARAM } from '$lib/course-planner/ShareLink';
 	import { loadInstructorLookup } from '$lib/course-planner/CourseSearch';
 	import { handlePlannerShortcutKeydown } from '../lib/course-planner/PlannerShortcuts';
@@ -24,7 +28,7 @@ Copyright (C) 2026 Andrew Cupps
 		DepartmentsStore
 	} from '../stores/CoursePlannerStores';
 	import { client } from '$lib/client';
-	import type { ScheduleBlock, StoredSchedule } from '../types';
+	import type { StoredSchedule } from '../types';
 	import IsDesktop from '../components/course-planner/IsDesktop.svelte';
 	import { PlannerState } from '../stores/CoursePlannerStores';
 
@@ -61,8 +65,7 @@ Copyright (C) 2026 Andrew Cupps
 			// Save to local storage
 			if (currentSchedule) {
 				if (typeof window !== 'undefined') {
-					localStorage.setItem('selectedSections', jsonifySections(currentSchedule.selections));
-					localStorage.setItem('scheduleName', currentSchedule.scheduleName);
+					saveCurrentSchedule(currentSchedule);
 				}
 			}
 		}
@@ -77,7 +80,7 @@ Copyright (C) 2026 Andrew Cupps
 			// Save to local storage
 			if (nonselectedSchedules) {
 				if (typeof window !== 'undefined') {
-					localStorage.setItem('nonselectedSchedules', JSON.stringify(nonselectedSchedules));
+					saveNonselectedSchedules(nonselectedSchedules);
 				}
 			}
 		}
@@ -93,37 +96,9 @@ Copyright (C) 2026 Andrew Cupps
 		// Retrieve data from client local storage
 		try {
 			if (typeof window !== 'undefined') {
-				// Get stored selections from local storage
-				const storedSelectionsOption = localStorage.getItem('selectedSections');
-				let storedSelections: ScheduleBlock[];
-				if (storedSelectionsOption) {
-					storedSelections = resolveSelections(storedSelectionsOption);
-				} else {
-					storedSelections = [];
-				}
-
-				// Get stored current schedule name from local storage
-				const storedScheduleNameOption = localStorage.getItem('scheduleName');
-				let storedScheduleName: string;
-				if (storedScheduleNameOption) {
-					storedScheduleName = storedScheduleNameOption;
-				} else {
-					storedScheduleName = 'Schedule 1';
-				}
-
-				const currentSchedule: StoredSchedule = {
-					scheduleName: storedScheduleName,
-					selections: storedSelections
-				};
-
-				// Get stored non-selected schedules from local storage
-				const storedNonselectedSchedulesOption = localStorage.getItem('nonselectedSchedules');
-				let storedNonselectedSchedules: StoredSchedule[];
-				if (storedNonselectedSchedulesOption) {
-					storedNonselectedSchedules = resolveStoredSchedules(storedNonselectedSchedulesOption);
-				} else {
-					storedNonselectedSchedules = [];
-				}
+				// Get the stored current and non-selected schedules
+				const currentSchedule: StoredSchedule = readStoredCurrentSchedule();
+				const storedNonselectedSchedules: StoredSchedule[] = readStoredNonselectedSchedules();
 
 				// Allow store subscriptions to persist whatever we load below.
 				hasReadLocalStorage = true;
@@ -162,10 +137,6 @@ Copyright (C) 2026 Andrew Cupps
 			NonselectedScheduleStore.set([]);
 		}
 	});
-
-	function jsonifySections(sections: ScheduleBlock[]): string {
-		return JSON.stringify(sections.filter((s) => !('course' in s) || !s.hover));
-	}
 
 	function handlePlannerKeydown(event: KeyboardEvent) {
 		handlePlannerShortcutKeydown(event, isDesktop);

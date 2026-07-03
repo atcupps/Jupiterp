@@ -352,7 +352,9 @@ export function generate(
 
 	const found: Candidate[][] = [];
 	const chosen: Candidate[] = [];
-	const placedSlots: MinuteSlot[] = [];
+	// Placed slots bucketed by day: slotsConflict requires matching days, so
+	// each candidate slot only needs to be checked against its own day.
+	const placedSlotsByDay = new Map<EngineDay, MinuteSlot[]>();
 	let nodes = 0;
 	let truncated = false;
 	const minCredits = constraints.minCredits;
@@ -379,20 +381,29 @@ export function generate(
 				truncated = true;
 				return;
 			}
-			const conflicts = candidate.slots.some((slot) =>
-				placedSlots.some((placed) => slotsConflict(slot, placed, constraints.minGapMinutes))
-			);
+			const conflicts = candidate.slots.some((slot) => {
+				const sameDay = placedSlotsByDay.get(slot.day);
+				return (
+					sameDay !== undefined &&
+					sameDay.some((placed) => slotsConflict(slot, placed, constraints.minGapMinutes))
+				);
+			});
 			if (conflicts) {
 				continue;
 			}
 			chosen.push(candidate);
 			for (const slot of candidate.slots) {
-				placedSlots.push(slot);
+				const bucket = placedSlotsByDay.get(slot.day);
+				if (bucket) {
+					bucket.push(slot);
+				} else {
+					placedSlotsByDay.set(slot.day, [slot]);
+				}
 			}
 			dfs(courseIndex + 1);
 			chosen.pop();
-			for (let k = 0; k < candidate.slots.length; k++) {
-				placedSlots.pop();
+			for (const slot of candidate.slots) {
+				placedSlotsByDay.get(slot.day)?.pop();
 			}
 			if (truncated) {
 				return;

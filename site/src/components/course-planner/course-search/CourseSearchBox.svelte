@@ -43,7 +43,8 @@ Copyright (C) 2026 Andrew Cupps
 	export let onBlur: (event: FocusEvent) => void = () => {};
 	/** Styling for the suggestion dropdown container. */
 	export let dropdownClass =
-		'mt-2 rounded-lg border border-outlineLight bg-bgLight shadow-lg ' +
+		'custom-scrollbar mt-2 max-h-72 overflow-y-auto rounded-lg border ' +
+		'border-outlineLight bg-bgLight shadow-lg ' +
 		'dark:border-outlineDark dark:bg-bgDark';
 
 	let searchResults: Course[] = [];
@@ -169,9 +170,9 @@ Copyright (C) 2026 Andrew Cupps
 			{#each profSuggestions as profName, index}
 				<button
 					type="button"
-					class="flex w-full items-center px-3 py-1 text-left text-sm
+					class="flex w-full items-center px-3 py-1 text-left text-base
 						transition-colors hover:bg-outlineLight hover:bg-opacity-20
-						dark:hover:bg-outlineDark dark:hover:bg-opacity-30"
+						lg:text-sm dark:hover:bg-outlineDark dark:hover:bg-opacity-30"
 					class:bg-outlineLight={highlightedProfIndex === index}
 					class:bg-opacity-20={highlightedProfIndex === index}
 					on:mouseenter={() => (highlightedProfIndex = index)}
@@ -187,9 +188,9 @@ Copyright (C) 2026 Andrew Cupps
 			{#each deptSuggestions as deptOption, index}
 				<button
 					type="button"
-					class="flex w-full items-end px-3 py-1 text-left text-sm
+					class="flex w-full items-end px-3 py-1 text-left text-base
 						transition-colors hover:bg-outlineLight hover:bg-opacity-20
-						dark:hover:bg-outlineDark dark:hover:bg-opacity-30"
+						lg:text-sm dark:hover:bg-outlineDark dark:hover:bg-opacity-30"
 					class:bg-outlineLight={highlightedDeptIndex === index}
 					class:bg-opacity-20={highlightedDeptIndex === index}
 					on:mouseenter={() => (highlightedDeptIndex = index)}
