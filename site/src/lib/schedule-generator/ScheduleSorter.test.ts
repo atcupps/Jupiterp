@@ -77,6 +77,13 @@ describe('sortedByCriterion', () => {
 		expect(sorted[0]).toBe(early);
 	});
 
+	test('earliest end puts untimed last', () => {
+		const timed = withMetrics({ latestEndMinutes: 14 * 60 });
+		const untimed = withMetrics({ latestEndMinutes: null });
+		const sorted = sortedByCriterion([untimed, timed], 'earliestEnd');
+		expect(sorted).toEqual([timed, untimed]);
+	});
+
 	test('most credits sorts by max credits descending', () => {
 		const light = withMetrics({ maxCredits: 12 });
 		const heavy = withMetrics({ maxCredits: 17 });
