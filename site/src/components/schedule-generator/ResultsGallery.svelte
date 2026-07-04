@@ -16,6 +16,7 @@ Copyright (C) 2026 Andrew Cupps
 	import {
 		GenerationStateStore,
 		GeneratorRequirementsStore,
+		GeneratorSortChosenByUserStore,
 		GeneratorSortStore,
 		type GenerationState,
 		type GeneratorRequirement
@@ -55,12 +56,13 @@ Copyright (C) 2026 Andrew Cupps
 	}));
 
 	function setSort(value: string) {
+		GeneratorSortChosenByUserStore.set(true);
 		GeneratorSortStore.set(value as SortCriterion);
 	}
 </script>
 
 <div class="flex flex-col gap-3">
-	<!-- Generate bar -->
+	<!-- Generate bar  -->
 	<div class="flex flex-row items-center gap-3">
 		<button
 			class="rounded-lg border border-orange px-4 py-1.5 font-semibold text-orange

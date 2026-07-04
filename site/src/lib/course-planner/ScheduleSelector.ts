@@ -41,6 +41,31 @@ export function uniqueScheduleName(
 }
 
 /**
+ * The first numbered name of the form `base`, `base 2`, `base 3`, … not taken
+ * by an existing schedule. With `alwaysNumber`, counting starts at `base 1`
+ * and the bare `base` is never used.
+ *
+ * @param base The name to uniquify, e.g. "Shared schedule"
+ * @param existing The schedules whose names are already taken
+ * @param alwaysNumber Whether the first candidate is `base 1` instead of `base`
+ */
+export function uniqueNumberedName(
+	base: string,
+	existing: StoredSchedule[],
+	alwaysNumber: boolean = false
+): string {
+	const taken = new Set(existing.map((s) => s.scheduleName));
+	if (!alwaysNumber && !taken.has(base)) {
+		return base;
+	}
+	let n = alwaysNumber ? 1 : 2;
+	while (taken.has(`${base} ${n}`)) {
+		n++;
+	}
+	return `${base} ${n}`;
+}
+
+/**
  * Delete a specific schedule from an array of non-selected schedules.
  * @param schedule The schedule to be deleted
  * @param nonselectedSchedules The array from which to delete `schedule`.

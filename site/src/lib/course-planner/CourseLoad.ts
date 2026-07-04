@@ -18,6 +18,8 @@ import type {
 	StoredSchedule
 } from '../../types';
 import { assignColorNumbers, modernizeSelections } from './Modernization';
+import { uniqueNumberedName } from './ScheduleSelector';
+import { buildSharedSelections, decodeSchedule } from './ShareLink';
 import { client } from '$lib/client';
 import { CurrentScheduleStore, NonselectedScheduleStore } from '../../stores/CoursePlannerStores';
 
@@ -218,6 +220,35 @@ async function getUpToDateCourses(courseCodes: Set<string>): Promise<Record<stri
 	return courseRecord;
 }
 
+/**
+ * Reconcile stored selections against up-to-date course data: refresh each
+ * course selection via `diffAndUpdate` (dropping ones whose course or section
+ * no longer exists) and pass UserEvents through untouched.
+ */
+function updateSelections(
+	selections: ScheduleBlock[],
+	upToDateCourses: Record<string, Course>
+): ScheduleBlock[] {
+	const updatedSelections: ScheduleBlock[] = [];
+	selections.forEach((selection) => {
+		// Push UserEvents through without updates
+		if (!('course' in selection)) {
+			updatedSelections.push(selection);
+			return;
+		}
+		const upToDate: Course = upToDateCourses[selection.course.courseCode];
+		if (!upToDate) {
+			// Course no longer exists, skip
+			return;
+		}
+		const updated = diffAndUpdate(selection, upToDate);
+		if (updated !== null) {
+			updatedSelections.push(updated);
+		}
+	});
+	return updatedSelections;
+}
+
 export async function ensureUpToDateAndSetStores(
 	current: StoredSchedule,
 	nonselected: StoredSchedule[]
@@ -237,60 +268,90 @@ export async function ensureUpToDateAndSetStores(
 		return;
 	}
 
-	const updatedCurrentSelections: ScheduleBlock[] = [];
-	current.selections.forEach((selection) => {
-		// Push UserEvents through without updates
-		if (!('course' in selection)) {
-			updatedCurrentSelections.push(selection);
-			return;
-		}
-		const upToDate: Course = upToDateCourses[selection.course.courseCode];
-		if (!upToDate) {
-			// Course no longer exists, skip
-			return;
-		}
-		const updated = diffAndUpdate(selection, upToDate);
-		if (updated !== null) {
-			updatedCurrentSelections.push(updated);
-		}
-	});
-
-	const updatedNonSelectedSchedules: StoredSchedule[] = [];
-	nonselected.forEach((stored) => {
-		const updatedSelections: ScheduleBlock[] = [];
-		stored.selections.forEach((selection) => {
-			// Push UserEvents through without updates
-			if (!('course' in selection)) {
-				updatedSelections.push(selection);
-				return;
-			}
-			const upToDate: Course = upToDateCourses[selection.course.courseCode];
-			if (!upToDate) {
-				// Course no longer exists, skip
-				return;
-			}
-			const updated = diffAndUpdate(selection, upToDate);
-			if (updated !== null) {
-				updatedSelections.push(updated);
-			}
-		});
-		updatedNonSelectedSchedules.push({
-			scheduleName: stored.scheduleName,
-			selections: updatedSelections
-		});
-	});
-
 	CurrentScheduleStore.set({
 		scheduleName: current.scheduleName,
-		selections: assignColorNumbers(updatedCurrentSelections)
+		selections: assignColorNumbers(updateSelections(current.selections, upToDateCourses))
 	});
 
 	NonselectedScheduleStore.set(
-		updatedNonSelectedSchedules.map((stored) => {
+		nonselected.map((stored) => {
 			return {
 				scheduleName: stored.scheduleName,
-				selections: assignColorNumbers(stored.selections)
+				selections: assignColorNumbers(updateSelections(stored.selections, upToDateCourses))
 			};
 		})
 	);
+}
+
+/**
+ * Apply a shared schedule (from a `?s=` link) as a new named schedule, keeping
+ * the user's existing schedules intact by demoting them to non-selected ones.
+ * If the token yields no valid sections, falls back to the normal load so the
+ * user's own schedules still appear.
+ *
+ * @returns `true` if the share param was consumed (the caller should strip it),
+ *          or `false` if a transient course-data fetch failed (the caller should
+ *          keep the param so a refresh can retry the import).
+ * @param param The raw `s` query parameter from a shared link.
+ * @param existingCurrent The active schedule read from local storage.
+ * @param existingNonselected The saved schedules read from local storage.
+ */
+export async function applySharedScheduleToStores(
+	param: string,
+	existingCurrent: StoredSchedule,
+	existingNonselected: StoredSchedule[]
+): Promise<boolean> {
+	const pairs = decodeSchedule(param);
+	if (pairs.length === 0) {
+		// Empty or unparseable token: nothing to retry. Load the user's own
+		// schedules and let the caller drop the useless param.
+		await ensureUpToDateAndSetStores(existingCurrent, existingNonselected);
+		return true;
+	}
+
+	// Fetch the shared schedule's courses together with the user's own, so
+	// the preserved schedules get the same up-to-date reconciliation a normal
+	// (non-shared) load performs.
+	const coursesToRetrieve = getCoursesToRetrieve(existingCurrent, existingNonselected);
+	pairs.forEach((p) => coursesToRetrieve.add(p.courseCode));
+
+	let courses: Record<string, Course>;
+	try {
+		courses = await getUpToDateCourses(coursesToRetrieve);
+	} catch (e) {
+		console.error('Failed to load shared schedule course data:', e);
+		// Transient failure: show the user's own schedules but keep the param so
+		// a refresh can retry the import.
+		await ensureUpToDateAndSetStores(existingCurrent, existingNonselected);
+		return false;
+	}
+
+	const shared = buildSharedSelections(pairs, courses);
+	if (shared.length === 0) {
+		// Decoded and fetched fine, but none of the sections still exist.
+		// Nothing to retry — drop the param.
+		await ensureUpToDateAndSetStores(existingCurrent, existingNonselected);
+		return true;
+	}
+
+	// Preserve the user's existing active schedule alongside their saved ones,
+	// reconciled against current course data like any other load.
+	const preserved = (
+		existingCurrent.selections.length > 0
+			? [existingCurrent, ...existingNonselected]
+			: existingNonselected
+	).map((stored) => {
+		return {
+			scheduleName: stored.scheduleName,
+			selections: assignColorNumbers(updateSelections(stored.selections, courses))
+		};
+	});
+
+	CurrentScheduleStore.set({
+		scheduleName: uniqueNumberedName('Shared schedule', preserved),
+		selections: assignColorNumbers(shared)
+	});
+
+	NonselectedScheduleStore.set(preserved);
+	return true;
 }

@@ -76,8 +76,9 @@ function comparatorFor(criterion: SortCriterion): Comparator {
 				byDesc(ratingOrUnrated)
 			);
 		case 'earliestEnd':
+			// No timed meetings means there is no "finish" to rank; sort last.
 			return chain(
-				byAsc((s) => s.metrics.latestEndMinutes ?? 0),
+				byAsc((s) => s.metrics.latestEndMinutes ?? Number.MAX_SAFE_INTEGER),
 				byDesc(ratingOrUnrated)
 			);
 		case 'mostCredits':

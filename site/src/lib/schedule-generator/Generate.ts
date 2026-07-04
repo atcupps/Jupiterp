@@ -18,6 +18,7 @@ import {
 	GenerationStateStore,
 	GeneratorConstraintsStore,
 	GeneratorRequirementsStore,
+	GeneratorSortChosenByUserStore,
 	GeneratorSortStore,
 	type GeneratorRequirement,
 	type RelaxationHint
@@ -132,8 +133,9 @@ export async function runGeneration(): Promise<void> {
 		const result = generate(requests, constraints, ratings);
 
 		if (result.schedules.length > 0) {
-			// With optional courses in play, lead with the fullest schedules.
-			if (requests.some((r) => !r.required)) {
+			// With optional courses in play, lead with the fullest schedules —
+			// but never override a sort the user picked themselves.
+			if (requests.some((r) => !r.required) && !get(GeneratorSortChosenByUserStore)) {
 				GeneratorSortStore.set('mostClasses');
 			}
 			GenerationStateStore.set({

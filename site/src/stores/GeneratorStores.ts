@@ -67,6 +67,13 @@ export const GeneratorConstraintsStore: Writable<HardConstraints> = writable(def
 /** The criterion by which results are currently ranked. */
 export const GeneratorSortStore: Writable<SortCriterion> = writable('bestRating');
 
+/**
+ * Whether the user has explicitly picked a sort criterion. While false,
+ * a generation run with optional courses may switch the sort to
+ * "most classes"; once true, the user's choice is never overridden.
+ */
+export const GeneratorSortChosenByUserStore: Writable<boolean> = writable(false);
+
 /** The current generation state. */
 export const GenerationStateStore: Writable<GenerationState> = writable({
 	kind: 'idle'
