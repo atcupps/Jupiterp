@@ -26,6 +26,7 @@ Copyright (C) 2026 Andrew Cupps
 	import type { CourseBasic, Section } from '@jupiterp/jupiterp';
 	import { chainScroll } from '../../../lib/course-planner/ChainScroll';
 	import { PlannerState } from '../../../stores/CoursePlannerStores';
+	import { loadCourseGrades } from '../../../lib/course-planner/GradesLoader';
 
 	let plannerState: { isDesktop: boolean; chainScrollParent: HTMLElement | null } = {
 		isDesktop: false,
@@ -116,6 +117,12 @@ Copyright (C) 2026 Andrew Cupps
 				courseInfoSection = found.section;
 			}
 		}
+	}
+
+	// Load grade data for the course shown in the info panel so its
+	// instructor GPA chips have data available
+	$: if (courseInfoCourse !== null) {
+		void loadCourseGrades(courseInfoCourse.courseCode);
 	}
 
 	let elt: HTMLDivElement;
@@ -256,7 +263,12 @@ Copyright (C) 2026 Andrew Cupps
 			{/if}
 
 			{#each courseInfoSection.instructors as instructor}
-				<InstructorListing {instructor} profsHover={false} removeHoverSection={() => {}} />
+				<InstructorListing
+					{instructor}
+					courseCode={courseInfoCourse.courseCode}
+					profsHover={false}
+					removeHoverSection={() => {}}
+				/>
 			{/each}
 
 			<div class="text-sm 2xl:text-base">

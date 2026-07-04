@@ -201,7 +201,8 @@ Copyright (C) 2026 Andrew Cupps
 	<div class="w-full">
 		<!-- Instructors -->
 		{#each section.instructors as instructor}
-			<InstructorListing {instructor} bind:profsHover {removeHoverSection} />
+			<!-- format-check exempt 1 8 -->
+			<InstructorListing {instructor} {courseCode} bind:profsHover {removeHoverSection} />
 		{/each}
 
 		<!-- Seats info -->

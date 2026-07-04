@@ -1,4 +1,4 @@
-<!-- 
+<!--
 This file is part of Jupiterp. For terms of use, please see the file
 called LICENSE at the top level of the Jupiterp source tree (online at
 https://github.com/atcupps/Jupiterp/LICENSE).
@@ -6,10 +6,21 @@ Copyright (C) 2026 Andrew Cupps
 -->
 <script lang="ts">
 	import type { Instructor } from '@jupiterp/jupiterp';
+	import { clickoutside } from '@svelte-put/clickoutside';
 	import { ptLinkFromSlug } from '../../../lib/course-planner/Professors';
+	import { CourseGradesStore } from '../../../stores/CoursePlannerStores';
 	import { ProfsLookupStore } from '../../../stores/CoursePlannerStores';
+	import { gpaTier, ptCourseLink } from '../../../lib/course-planner/Grades';
+	import type { GpaTier } from '../../../lib/course-planner/Grades';
+	import GradesPopover from './GradesPopover.svelte';
 
 	export let instructor: string = 'No instructor';
+
+	/**
+	 * Course code used to look up this instructor's grade data in
+	 * `CourseGradesStore`; without it, no GPA chip is shown.
+	 */
+	export let courseCode: string | undefined = undefined;
 
 	let profs: Record<string, Instructor>;
 	ProfsLookupStore.subscribe((lookup) => {
@@ -31,6 +42,64 @@ Copyright (C) 2026 Andrew Cupps
 
 	export let profsHover: boolean;
 	export let removeHoverSection: () => void;
+
+	// Grade data for this instructor in this course, if loaded
+	$: entry = courseCode != null ? $CourseGradesStore[courseCode] : undefined;
+	$: profDist =
+		entry !== undefined && entry.status === 'loaded'
+			? (entry.grades.byProfessor[instructor] ?? null)
+			: null;
+
+	let gpaOpen: boolean = false;
+
+	// Static tier -> class map; Tailwind requires literal class names
+	const chipTierClasses: Record<GpaTier, string> = {
+		good: [
+			'border-gpaGoodLight text-gpaGoodLight',
+			'dark:border-gpaGoodDark dark:text-gpaGoodDark'
+		].join(' '),
+		mid: [
+			'border-gpaMidLight text-gpaMidLight',
+			'dark:border-gpaMidDark dark:text-gpaMidDark'
+		].join(' '),
+		low: [
+			'border-gpaLowLight text-gpaLowLight',
+			'dark:border-gpaLowDark dark:text-gpaLowDark'
+		].join(' ')
+	};
+
+	$: chipTitle =
+		profDist != null && profDist.gpa != null
+			? 'Avg. GPA ' +
+				profDist.gpa.toFixed(2) +
+				' for ' +
+				instructor +
+				(courseCode != null ? ' in ' + courseCode : '') +
+				' (PlanetTerp)'
+			: '';
+
+	$: ptGpaLink =
+		instructor in profs
+			? ptLinkFromSlug(profs[instructor].slug)
+			: courseCode != null
+				? ptCourseLink(courseCode)
+				: 'https://planetterp.com';
+
+	function handleChipClick(event: MouseEvent) {
+		event.stopPropagation();
+		// Only ever open on click; closing is handled by mouseleave on
+		// desktop and clickoutside on touch devices, so the mouseenter
+		// that precedes a tap's click doesn't cancel it out.
+		gpaOpen = true;
+	}
+
+	function handleChipKeydown(event: KeyboardEvent) {
+		if (event.key === 'Enter' || event.key === ' ') {
+			event.preventDefault();
+			event.stopPropagation();
+			gpaOpen = !gpaOpen;
+		}
+	}
 </script>
 
 <div class="text-sm xl:text-base">
@@ -77,6 +146,42 @@ Copyright (C) 2026 Andrew Cupps
 		</span>
 	{:else}
 		{instructor}
+	{/if}
+	{#if profDist != null && profDist.gpa != null}
+		<!-- svelte-ignore a11y-no-static-element-interactions -->
+		<span
+			class="relative inline-block"
+			use:clickoutside
+			on:clickoutside={() => (gpaOpen = false)}
+			on:mouseenter={() => {
+				profsHover = true;
+				removeHoverSection();
+				gpaOpen = true;
+			}}
+			on:mouseleave={() => {
+				profsHover = false;
+				removeHoverSection();
+				gpaOpen = false;
+			}}
+		>
+			<span
+				role="button"
+				tabindex="0"
+				aria-expanded={gpaOpen}
+				class="ml-1 cursor-pointer rounded-md border px-1 align-[2px]
+                    text-[0.625rem] font-bold leading-tight 2xl:text-xs
+                    {chipTierClasses[gpaTier(profDist.gpa)]}"
+				title={chipTitle}
+				on:click={handleChipClick}
+				on:keydown={handleChipKeydown}
+			>
+				{profDist.gpa.toFixed(2)}
+			</span>
+			{#if gpaOpen}
+				<!-- format-check exempt 1 8 -->
+				<GradesPopover heading={instructor} distribution={profDist} ptLink={ptGpaLink} />
+			{/if}
+		</span>
 	{/if}
 </div>
 

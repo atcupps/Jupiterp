@@ -31,7 +31,21 @@ export default {
 			divBorderDark: '#252E3E',
 			outlineDark: '#47526A',
 			secCodesDark: '#667085',
-			hoverDark: '#30374a'
+			hoverDark: '#30374a',
+
+			/* GPA chip tiers (paired light/dark) */
+			gpaGoodLight: '#15803D',
+			gpaGoodDark: '#4ADE80',
+			gpaMidLight: '#A16207',
+			gpaMidDark: '#FACC15',
+			gpaLowLight: '#B91C1C',
+			gpaLowDark: '#F87171',
+
+			/* grade distribution bar fills */
+			gradeA: '#2FA85E',
+			gradeB: '#93B83C',
+			gradeC: '#E0B63C',
+			gradeF: '#E5534B'
 		},
 		extend: {
 			keyframes: {
