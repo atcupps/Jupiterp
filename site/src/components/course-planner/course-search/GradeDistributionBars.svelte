@@ -7,36 +7,68 @@ Copyright (C) 2026 Andrew Cupps
 <script lang="ts">
 	import {
 		bucketPercent,
+		BUCKET_LETTERS,
 		GRADE_BUCKETS,
 		type GradeBucket,
-		type GradeDistribution
+		type GradeDistribution,
+		type LetterGrade
 	} from '$lib/course-planner/Grades';
 
 	export let distribution: GradeDistribution;
 
-	// Static bucket -> class map; Tailwind requires literal class names
-	const fillClasses: Record<GradeBucket, string> = {
+	interface BarSegment {
+		letter: LetterGrade;
+		fillClass: string;
+		width: number;
+		count: number;
+	}
+
+	type BucketSegments = Record<GradeBucket, BarSegment[]>;
+
+	// Static letter -> class map; Tailwind requires literal class names.
+	// Within a bucket, plus grades are darkest and minus grades lightest.
+	const fillClasses: Partial<Record<LetterGrade, string>> = {
+		'A+': 'bg-gradeAPlus',
 		A: 'bg-gradeA',
+		'A-': 'bg-gradeAMinus',
+		'B+': 'bg-gradeBPlus',
 		B: 'bg-gradeB',
+		'B-': 'bg-gradeBMinus',
+		'C+': 'bg-gradeCPlus',
 		C: 'bg-gradeC',
+		'C-': 'bg-gradeCMinus',
+		'D+': 'bg-gradeDPlus',
 		D: 'bg-orange',
+		'D-': 'bg-gradeDMinus',
 		F: 'bg-gradeF',
 		W: 'bg-midGray'
 	};
 
-	function computeWidths(dist: GradeDistribution): Record<GradeBucket, number> {
-		const widths = {} as Record<GradeBucket, number>;
+	function computeSegments(dist: GradeDistribution): BucketSegments {
+		const segments = {} as BucketSegments;
 		for (const bucket of GRADE_BUCKETS) {
+			segments[bucket] = [];
 			if (dist.totalStudents === 0) {
-				widths[bucket] = 0;
-			} else {
-				widths[bucket] = (dist.buckets[bucket] / dist.totalStudents) * 100;
+				continue;
+			}
+			// Reversed so segments run minus -> plus (light -> dark)
+			for (const letter of [...BUCKET_LETTERS[bucket]].reverse()) {
+				const count = dist.letters[letter];
+				if (count === 0) {
+					continue;
+				}
+				segments[bucket].push({
+					letter,
+					fillClass: fillClasses[letter] ?? '',
+					width: (count / dist.totalStudents) * 100,
+					count
+				});
 			}
 		}
-		return widths;
+		return segments;
 	}
 
-	$: widths = computeWidths(distribution);
+	$: segments = computeSegments(distribution);
 </script>
 
 <div class="flex flex-col gap-[3px]">
@@ -46,11 +78,16 @@ Copyright (C) 2026 Andrew Cupps
 				{bucket}
 			</span>
 			<div
-				class="h-2 flex-1 overflow-hidden rounded-sm bg-hoverLight
-                    dark:bg-hoverDark"
+				class="flex h-2 flex-1 flex-row overflow-hidden rounded-sm
+                    bg-hoverLight dark:bg-hoverDark"
 			>
-				<!-- format-check exempt 1 16 -->
-				<div class="h-full rounded-sm {fillClasses[bucket]}" style="width: {widths[bucket]}%"></div>
+				{#each segments[bucket] as segment}
+					<div
+						class="h-full {segment.fillClass}"
+						style="width: {segment.width}%"
+						title="{segment.letter}: {segment.count}"
+					></div>
+				{/each}
 			</div>
 			<span
 				class="w-9 text-right text-[10px] tabular-nums

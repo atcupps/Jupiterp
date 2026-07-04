@@ -41,10 +41,19 @@ export default {
 			gpaLowLight: '#B91C1C',
 			gpaLowDark: '#F87171',
 
-			/* grade distribution bar fills */
+			/* grade distribution bar fills; within a bucket, plus grades
+			are darkest and minus grades lightest. D reuses `orange`. */
+			gradeAPlus: '#147A3D',
 			gradeA: '#2FA85E',
+			gradeAMinus: '#6FCB93',
+			gradeBPlus: '#6E8F24',
 			gradeB: '#93B83C',
+			gradeBMinus: '#B7D06E',
+			gradeCPlus: '#B8901F',
 			gradeC: '#E0B63C',
+			gradeCMinus: '#ECCF7C',
+			gradeDPlus: '#C9511F',
+			gradeDMinus: '#FA9E77',
 			gradeF: '#E5534B'
 		},
 		extend: {

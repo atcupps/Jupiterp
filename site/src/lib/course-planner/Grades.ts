@@ -128,7 +128,8 @@ const GPA_WEIGHTS: LetterCounts = {
 	Other: 0
 };
 
-const BUCKET_LETTERS: Record<GradeBucket, LetterGrade[]> = {
+/** Letters belonging to each bucket, ordered best grade first */
+export const BUCKET_LETTERS: Record<GradeBucket, LetterGrade[]> = {
 	A: ['A+', 'A', 'A-'],
 	B: ['B+', 'B', 'B-'],
 	C: ['C+', 'C', 'C-'],
