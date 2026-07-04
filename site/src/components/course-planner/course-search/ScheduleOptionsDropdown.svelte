@@ -84,10 +84,7 @@ Copyright (C) 2026 Andrew Cupps
 	}
 </script>
 
-<button
-	class="rounded-md px-0.5 hover:bg-hoverLight dark:hover:bg-hoverDark"
-	title="Schedule options"
->
+<button class="rounded-md hover:bg-hoverLight dark:hover:bg-hoverDark" title="Schedule options">
 	<DotsVerticalOutline class="h-5 w-5" />
 </button>
 
@@ -117,11 +114,4 @@ Copyright (C) 2026 Andrew Cupps
 	>
 		<FileCopyOutline class="z-50 mr-1 h-3 w-3" /> Duplicate
 	</DropdownItem>
-
-	<!-- TODO(@atcupps): Add share schedule feature -->
-	<!-- <DropdownItem class="hover:bg-hoverLight dark:hover:bg-hoverDark px-2
-                        flex justify-start items-center"
-                    on:click={() => (dropdownOpen = false)}>
-        <ForwardOutline class="w-3 h-3 mr-1" /> Share
-    </DropdownItem> -->
 </Dropdown>

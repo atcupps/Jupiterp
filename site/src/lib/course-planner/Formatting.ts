@@ -48,7 +48,7 @@ export function formatClasstime(time: Classtime): string {
  * @returns A string representation of the credit range
  */
 export function formatCredits(minCredits: number, maxCredits: number | null): string {
-	if (maxCredits !== null) {
+	if (maxCredits !== null && maxCredits !== minCredits) {
 		return minCredits + ' - ' + maxCredits;
 	} else {
 		return minCredits.toString();

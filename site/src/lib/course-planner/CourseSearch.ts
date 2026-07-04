@@ -7,7 +7,13 @@
  * @fileoverview Functions relating to searching for courses in Jupiterp.
  */
 
-import type { Course, Instructor } from '@jupiterp/jupiterp';
+import type {
+	Course,
+	Instructor,
+	InstructorsConfig,
+	InstructorsResponse
+} from '@jupiterp/jupiterp';
+import { client } from '$lib/client';
 import { CourseDataCache, type RequestInput } from './CourseDataCache';
 import {
 	DepartmentsStore,
@@ -381,4 +387,42 @@ export function matchingStandardizedProfessorNames(partial: string): string[] {
 		}
 	}
 	return matches;
+}
+
+/**
+ * Fetch all active instructors from the API (paginated) and populate the
+ * `ProfsLookupStore` with a name -> `Instructor` lookup. Used by both the
+ * course planner and the schedule generator pages so instructor ratings are
+ * available wherever they are needed. Errors are logged and swallowed so a
+ * ratings failure never blocks the rest of the page.
+ */
+export async function loadInstructorLookup(): Promise<void> {
+	try {
+		const limit = 500;
+		let offset = 0;
+		let allInstructors: Instructor[] = [];
+		const config: InstructorsConfig = { limit, offset };
+		let complete = false;
+		while (!complete) {
+			const response: InstructorsResponse = await client.activeInstructors(config);
+			if (response.ok() && response.data != null) {
+				allInstructors = [...allInstructors, ...response.data];
+				if (response.data.length < limit) {
+					complete = true;
+					break;
+				}
+				offset += limit;
+				config.offset = offset;
+			} else {
+				// format-check exempt 3
+				throw new Error(
+					`Failed to fetch instructors: ${response.statusCode} ` +
+						`${response.statusMessage} ${response.errorBody}`
+				);
+			}
+		}
+		ProfsLookupStore.set(getProfsLookup(allInstructors));
+	} catch (error) {
+		console.error('Error fetching professor data:', error);
+	}
 }

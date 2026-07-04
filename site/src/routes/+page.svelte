@@ -10,25 +10,25 @@ Copyright (C) 2026 Andrew Cupps
 	import CourseSearch from '../components/course-planner/course-search/CourseSearch.svelte';
 	import { onMount } from 'svelte';
 	import {
-		ensureUpToDateAndSetStores,
-		resolveSelections,
-		resolveStoredSchedules
+		applySharedScheduleToStores,
+		ensureUpToDateAndSetStores
 	} from '../lib/course-planner/CourseLoad';
-	import { getProfsLookup } from '$lib/course-planner/CourseSearch';
+	import {
+		readStoredCurrentSchedule,
+		readStoredNonselectedSchedules,
+		saveCurrentSchedule,
+		saveNonselectedSchedules
+	} from '../lib/course-planner/SchedulePersistence';
+	import { SHARE_PARAM } from '$lib/course-planner/ShareLink';
+	import { loadInstructorLookup } from '$lib/course-planner/CourseSearch';
 	import { handlePlannerShortcutKeydown } from '../lib/course-planner/PlannerShortcuts';
 	import {
-		ProfsLookupStore,
 		CurrentScheduleStore,
 		NonselectedScheduleStore,
 		DepartmentsStore
 	} from '../stores/CoursePlannerStores';
 	import { client } from '$lib/client';
-	import {
-		type Instructor,
-		type InstructorsConfig,
-		type InstructorsResponse
-	} from '@jupiterp/jupiterp';
-	import type { ScheduleBlock, StoredSchedule } from '../types';
+	import type { StoredSchedule } from '../types';
 	import IsDesktop from '../components/course-planner/IsDesktop.svelte';
 	import { PlannerState } from '../stores/CoursePlannerStores';
 
@@ -42,42 +42,6 @@ Copyright (C) 2026 Andrew Cupps
 			chainScrollParent: plannerContainer
 		})
 	);
-
-	// Function to retrieve professor data; called in `onMount`.
-	async function fetchProfessorData() {
-		try {
-			let limit = 500;
-			let offset = 0;
-			let allInstructors: Instructor[] = [];
-			let config: InstructorsConfig = {
-				limit: limit,
-				offset: offset
-			};
-			let complete = false;
-			while (!complete) {
-				const response: InstructorsResponse = await client.activeInstructors(config);
-				if (response.ok() && response.data != null) {
-					allInstructors = [...allInstructors, ...response.data];
-					if (response.data.length < limit) {
-						complete = true;
-						break;
-					}
-					offset += limit;
-					config.offset = offset;
-				} else {
-					// format-check exempt 1
-					throw new Error(
-						`Failed to fetch data: ${response.statusCode} ${response.statusMessage} ${response.errorBody}`
-					);
-				}
-			}
-
-			// Update the ProfsLookupStore with the fetched data
-			ProfsLookupStore.set(getProfsLookup(allInstructors));
-		} catch (error) {
-			console.error('Error fetching professor data:', error);
-		}
-	}
 
 	// Function to get list of department codes as an array of strings
 	// and set the DepartmentsStore.
@@ -101,8 +65,7 @@ Copyright (C) 2026 Andrew Cupps
 			// Save to local storage
 			if (currentSchedule) {
 				if (typeof window !== 'undefined') {
-					localStorage.setItem('selectedSections', jsonifySections(currentSchedule.selections));
-					localStorage.setItem('scheduleName', currentSchedule.scheduleName);
+					saveCurrentSchedule(currentSchedule);
 				}
 			}
 		}
@@ -117,7 +80,7 @@ Copyright (C) 2026 Andrew Cupps
 			// Save to local storage
 			if (nonselectedSchedules) {
 				if (typeof window !== 'undefined') {
-					localStorage.setItem('nonselectedSchedules', JSON.stringify(nonselectedSchedules));
+					saveNonselectedSchedules(nonselectedSchedules);
 				}
 			}
 		}
@@ -125,7 +88,7 @@ Copyright (C) 2026 Andrew Cupps
 
 	onMount(() => {
 		// Fetch instructor data from API
-		fetchProfessorData();
+		loadInstructorLookup();
 
 		// Fetch department codes from API
 		fetchDeptCodes();
@@ -133,43 +96,37 @@ Copyright (C) 2026 Andrew Cupps
 		// Retrieve data from client local storage
 		try {
 			if (typeof window !== 'undefined') {
-				// Get stored selections from local storage
-				const storedSelectionsOption = localStorage.getItem('selectedSections');
-				let storedSelections: ScheduleBlock[];
-				if (storedSelectionsOption) {
-					storedSelections = resolveSelections(storedSelectionsOption);
-				} else {
-					storedSelections = [];
-				}
+				// Get the stored current and non-selected schedules
+				const currentSchedule: StoredSchedule = readStoredCurrentSchedule();
+				const storedNonselectedSchedules: StoredSchedule[] = readStoredNonselectedSchedules();
 
-				// Get stored current schedule name from local storage
-				const storedScheduleNameOption = localStorage.getItem('scheduleName');
-				let storedScheduleName: string;
-				if (storedScheduleNameOption) {
-					storedScheduleName = storedScheduleNameOption;
-				} else {
-					storedScheduleName = 'Schedule 1';
-				}
-
-				const currentSchedule: StoredSchedule = {
-					scheduleName: storedScheduleName,
-					selections: storedSelections
-				};
-
-				// Get stored non-selected schedules from local storage
-				const storedNonselectedSchedulesOption = localStorage.getItem('nonselectedSchedules');
-				let storedNonselectedSchedules: StoredSchedule[];
-				if (storedNonselectedSchedulesOption) {
-					storedNonselectedSchedules = resolveStoredSchedules(storedNonselectedSchedulesOption);
-				} else {
-					storedNonselectedSchedules = [];
-				}
-
-				// Find differences between stored selections and
-				// most up-to-date course data, and update accordingly.
-				ensureUpToDateAndSetStores(currentSchedule, storedNonselectedSchedules);
-
+				// Allow store subscriptions to persist whatever we load below.
 				hasReadLocalStorage = true;
+
+				// If the page was opened from a shared link, load that schedule
+				// as a new named schedule (preserving the user's own), then
+				// strip the param so a refresh doesn't re-import it.
+				const shareParam = new URLSearchParams(window.location.search).get(SHARE_PARAM);
+				if (shareParam) {
+					(async () => {
+						const consumed = await applySharedScheduleToStores(
+							shareParam,
+							currentSchedule,
+							storedNonselectedSchedules
+						);
+						if (consumed) {
+							// Strip the param so a refresh doesn't re-import; on a
+							// transient fetch failure (consumed === false) keep it so
+							// a refresh can retry.
+							const cleanUrl = window.location.pathname + window.location.hash;
+							window.history.replaceState(window.history.state, '', cleanUrl);
+						}
+					})().catch((e) => console.error('Failed to apply shared schedule:', e));
+				} else {
+					// Find differences between stored selections and
+					// most up-to-date course data, and update accordingly.
+					ensureUpToDateAndSetStores(currentSchedule, storedNonselectedSchedules);
+				}
 			}
 		} catch (e) {
 			console.log('Unable to retrieve courses: ' + e);
@@ -180,10 +137,6 @@ Copyright (C) 2026 Andrew Cupps
 			NonselectedScheduleStore.set([]);
 		}
 	});
-
-	function jsonifySections(sections: ScheduleBlock[]): string {
-		return JSON.stringify(sections.filter((s) => !('course' in s) || !s.hover));
-	}
 
 	function handlePlannerKeydown(event: KeyboardEvent) {
 		handlePlannerShortcutKeydown(event, isDesktop);
