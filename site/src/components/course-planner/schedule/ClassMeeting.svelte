@@ -72,6 +72,8 @@ Copyright (C) 2026 Andrew Cupps
 				location = formatLocation(meeting.meeting.location);
 			} else if (meeting.meeting.location.building === 'OnlineSync') {
 				location = 'ONLINE';
+			} else if (meeting.meeting.location.building === 'TBA'){
+				location = 'Location TBA';
 			} else {
 				location = meeting.meeting.location.building;
 			}
