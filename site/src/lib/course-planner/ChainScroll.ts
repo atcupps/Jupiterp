@@ -33,109 +33,109 @@
 const LISTENER_OPTIONS = { passive: true } as const;
 
 export type ChainScrollProps = {
-	isDesktop: boolean;
-	chainScrollParent?: HTMLElement | null;
+  isDesktop: boolean;
+  chainScrollParent?: HTMLElement | null;
 };
 
 export type ChainScrollParams = {
-	parent: HTMLElement | null;
-	enabled: boolean;
-	element: HTMLElement;
+  parent: HTMLElement | null;
+  enabled: boolean;
+  element: HTMLElement | null | undefined;
 };
 
 function getUnconsumedDelta(element: HTMLElement, deltaY: number): number {
-	const maxScrollTop = element.scrollHeight - element.clientHeight;
-	if (maxScrollTop <= 0) {
-		return deltaY;
-	}
+  const maxScrollTop = element.scrollHeight - element.clientHeight;
+  if (maxScrollTop <= 0) {
+    return deltaY;
+  }
 
-	const start = element.scrollTop;
-	const clampedEnd = Math.min(maxScrollTop, Math.max(0, start + deltaY));
-	const consumedByElement = clampedEnd - start;
-	return deltaY - consumedByElement;
+  const start = element.scrollTop;
+  const clampedEnd = Math.min(maxScrollTop, Math.max(0, start + deltaY));
+  const consumedByElement = clampedEnd - start;
+  return deltaY - consumedByElement;
 }
 
 function applyClampedScrollDelta(element: HTMLElement, deltaY: number) {
-	const maxScrollTop = element.scrollHeight - element.clientHeight;
-	if (maxScrollTop <= 0) {
-		return;
-	}
+  const maxScrollTop = element.scrollHeight - element.clientHeight;
+  if (maxScrollTop <= 0) {
+    return;
+  }
 
-	const clampedEnd = Math.min(maxScrollTop, Math.max(0, element.scrollTop + deltaY));
-	element.scrollTop = clampedEnd;
+  const clampedEnd = Math.min(maxScrollTop, Math.max(0, element.scrollTop + deltaY));
+  element.scrollTop = clampedEnd;
 }
 
 function isAtScrollBoundary(element: HTMLElement, deltaY: number): boolean {
-	const maxScrollTop = element.scrollHeight - element.clientHeight;
-	if (maxScrollTop <= 0) {
-		return true;
-	}
+  const maxScrollTop = element.scrollHeight - element.clientHeight;
+  if (maxScrollTop <= 0) {
+    return true;
+  }
 
-	if (deltaY < 0 && element.scrollTop <= 0.5) {
-		return true;
-	}
-	if (deltaY > 0 && element.scrollTop >= maxScrollTop - 0.5) {
-		return true;
-	}
-	return false;
+  if (deltaY < 0 && element.scrollTop <= 0.5) {
+    return true;
+  }
+  if (deltaY > 0 && element.scrollTop >= maxScrollTop - 0.5) {
+    return true;
+  }
+  return false;
 }
 
 export function chainScroll(node: HTMLElement, params: ChainScrollParams) {
-	let current = params;
-	let previousTouchY = 0;
+  let current = params;
+  let previousTouchY = 0;
 
-	const applyToParent = (deltaY: number) => {
-		if (!current.enabled || !current.parent) {
-			return;
-		}
+  const applyToParent = (deltaY: number) => {
+    if (!current.enabled || !current.parent || !current.element) {
+      return;
+    }
 
-		if (!isAtScrollBoundary(current.element, deltaY)) {
-			return;
-		}
+    if (!isAtScrollBoundary(current.element, deltaY)) {
+      return;
+    }
 
-		const unconsumedDelta = getUnconsumedDelta(current.element, deltaY);
-		if (Math.abs(unconsumedDelta) <= 0.5) {
-			return;
-		}
+    const unconsumedDelta = getUnconsumedDelta(current.element, deltaY);
+    if (Math.abs(unconsumedDelta) <= 0.5) {
+      return;
+    }
 
-		applyClampedScrollDelta(current.parent, unconsumedDelta);
-	};
+    applyClampedScrollDelta(current.parent, unconsumedDelta);
+  };
 
-	const handleWheel = (event: WheelEvent) => {
-		applyToParent(event.deltaY);
-	};
+  const handleWheel = (event: WheelEvent) => {
+    applyToParent(event.deltaY);
+  };
 
-	const handleTouchStart = (event: TouchEvent) => {
-		if (event.touches.length !== 1) {
-			return;
-		}
+  const handleTouchStart = (event: TouchEvent) => {
+    if (event.touches.length !== 1) {
+      return;
+    }
 
-		previousTouchY = event.touches[0].clientY;
-	};
+    previousTouchY = event.touches[0].clientY;
+  };
 
-	const handleTouchMove = (event: TouchEvent) => {
-		if (event.touches.length !== 1) {
-			return;
-		}
+  const handleTouchMove = (event: TouchEvent) => {
+    if (event.touches.length !== 1) {
+      return;
+    }
 
-		const currentTouchY = event.touches[0].clientY;
-		const deltaY = previousTouchY - currentTouchY;
-		previousTouchY = currentTouchY;
-		applyToParent(deltaY);
-	};
+    const currentTouchY = event.touches[0].clientY;
+    const deltaY = previousTouchY - currentTouchY;
+    previousTouchY = currentTouchY;
+    applyToParent(deltaY);
+  };
 
-	node.addEventListener('wheel', handleWheel, LISTENER_OPTIONS);
-	node.addEventListener('touchstart', handleTouchStart, LISTENER_OPTIONS);
-	node.addEventListener('touchmove', handleTouchMove, LISTENER_OPTIONS);
+  node.addEventListener('wheel', handleWheel, LISTENER_OPTIONS);
+  node.addEventListener('touchstart', handleTouchStart, LISTENER_OPTIONS);
+  node.addEventListener('touchmove', handleTouchMove, LISTENER_OPTIONS);
 
-	return {
-		update(nextParams: ChainScrollParams) {
-			current = nextParams;
-		},
-		destroy() {
-			node.removeEventListener('wheel', handleWheel);
-			node.removeEventListener('touchstart', handleTouchStart);
-			node.removeEventListener('touchmove', handleTouchMove);
-		}
-	};
+  return {
+    update(nextParams: ChainScrollParams) {
+      current = nextParams;
+    },
+    destroy() {
+      node.removeEventListener('wheel', handleWheel);
+      node.removeEventListener('touchstart', handleTouchStart);
+      node.removeEventListener('touchmove', handleTouchMove);
+    },
+  };
 }

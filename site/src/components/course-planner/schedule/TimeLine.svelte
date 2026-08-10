@@ -5,21 +5,24 @@ https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2026 Andrew Cupps
 -->
 <script lang="ts">
-	export let number: string = '';
-	export let position: number = 0;
+  interface Props {
+    number?: string;
+    position?: number;
+  }
+
+  let { number = '', position = 0 }: Props = $props();
 </script>
 
-<div class="absolute h-[28px] w-full" style="top: {position * 100}%">
-	<div
-		class="absolute w-[34px] text-right
+<div style="top: {position * 100}%" class="absolute h-[28px] w-full">
+  <div
+    style="left: -4px; top: 50%; transform: translateY(-50%);"
+    class="absolute w-[34px] text-right
                     text-xs font-light 2xl:w-[40px] 2xl:text-sm"
-		style="left: -4px; top: 50%; transform: translateY(-50%);"
-	>
-		{number}
-	</div>
-	<div
-		class="absolute left-9
-	        h-[1px] w-[calc(100%-36px)] bg-divBorderLight 2xl:left-11 2xl:w-[calc(100%-44px)] dark:bg-divBorderDark"
-		style="top: 50%;"
-	/>
+  >
+    {number}
+  </div>
+  <div
+    style="top: 50%;"
+    class="bg-divBorderLight dark:bg-divBorderDark absolute left-9 h-px w-[calc(100%-36px)] 2xl:left-11 2xl:w-[calc(100%-44px)]"
+  ></div>
 </div>

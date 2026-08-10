@@ -1,85 +1,162 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-/* using https://github.com/IdreesInc/Minecraft-Font for minecraft font */
-@font-face {
-	font-family: 'Minecraft';
-	src: url('https://cdn.jsdelivr.net/gh/IdreesInc/Minecraft-Font@master/Minecraft.otf')
-		format('opentype');
-	font-weight: normal;
-	font-style: normal;
+@plugin '@tailwindcss/forms';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-transparent: transparent;
+  --color-current: currentColor;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-orange: #f6743c;
+  --color-lightOrange: #ffc4ab;
+  --color-midGray: #888888;
+  --color-bgLight: white;
+  --color-bgSecondaryLight: #ebebeb;
+  --color-textLight: black;
+  --color-divBorderLight: #f1f1f1;
+  --color-outlineLight: #a2aabd;
+  --color-secCodesLight: #667085;
+  --color-hoverLight: #d8d8d8;
+  --color-bgDark: #151922;
+  --color-bgSecondaryDark: #141721;
+  --color-textDark: #d9dfea;
+  --color-divBorderDark: #252e3e;
+  --color-outlineDark: #47526a;
+  --color-secCodesDark: #667085;
+  --color-hoverDark: #30374a;
+
+  --animate-fadeOut: fadeOut 0.75s forwards;
+
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+      display: visible;
+    }
+    to {
+      opacity: 0;
+      display: hidden;
+    }
+  }
 }
 
-html {
-	/* prevents pull-to-refresh */
-	overscroll-behavior: none;
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
 }
 
-body {
-	height: 100svh;
-	overscroll-behavior: none;
-	font-family: 'Cabin', Arial, sans-serif;
+@utility chain-scroll-only {
+  @apply max-lg:overscroll-none;
 }
 
-html.minecraft body,
-html.minecraft * {
-	font-family: 'Minecraft', sans-serif;
+@utility custom-scrollbar {
+  /* Please apply "custom-scrollbar" class for scrollable elements 
+    (elements with class of overflow-scroll or overflow-auto) */
+  scrollbar-width: thin;
+  scrollbar-color: #cccccc white;
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: white;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #cccccc;
+    border-radius: 8px;
+  }
+
+  &::-webkit-scrollbar-corner {
+    background: rgba(0, 0, 0, 0);
+  }
+
+  html.dark & {
+    scrollbar-width: thin;
+    scrollbar-color: #3f475a #151922;
+
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #151922;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #3f475a;
+      border-radius: 8px;
+    }
+  }
+}
+
+@utility dark {
+  &html .custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #3f475a #151922;
+
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #151922;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #3f475a;
+      border-radius: 8px;
+    }
+  }
+}
+
+@utility no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 @layer utilities {
-	.chain-scroll-only {
-		@apply max-lg:overscroll-none;
-	}
+  /* using https://github.com/IdreesInc/Minecraft-Font for minecraft font */
+  @font-face {
+    font-family: 'Minecraft';
+    src: url('https://cdn.jsdelivr.net/gh/IdreesInc/Minecraft-Font@master/Minecraft.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
 
-	/* Please apply "custom-scrollbar" class for scrollable elements 
-    (elements with class of overflow-scroll or overflow-auto) */
-	.custom-scrollbar {
-		scrollbar-width: thin;
-		scrollbar-color: #cccccc white;
+  html {
+    /* prevents pull-to-refresh */
+    overscroll-behavior: none;
+  }
 
-		&::-webkit-scrollbar {
-			width: 4px;
-		}
+  body {
+    height: 100svh;
+    overscroll-behavior: none;
+    font-family: 'Cabin', Arial, sans-serif;
+  }
 
-		&::-webkit-scrollbar-track {
-			background: white;
-		}
-
-		&::-webkit-scrollbar-thumb {
-			background-color: #cccccc;
-			border-radius: 8px;
-		}
-
-		&::-webkit-scrollbar-corner {
-			background: rgba(0, 0, 0, 0);
-		}
-	}
-
-	html.dark .custom-scrollbar {
-		scrollbar-width: thin;
-		scrollbar-color: #3f475a #151922;
-
-		&::-webkit-scrollbar {
-			width: 4px;
-		}
-
-		&::-webkit-scrollbar-track {
-			background: #151922;
-		}
-
-		&::-webkit-scrollbar-thumb {
-			background-color: #3f475a;
-			border-radius: 8px;
-		}
-	}
-
-	.no-scrollbar {
-		scrollbar-width: none;
-		-ms-overflow-style: none;
-
-		&::-webkit-scrollbar {
-			display: none;
-		}
-	}
+  html.minecraft body,
+  html.minecraft * {
+    font-family: 'Minecraft', sans-serif;
+  }
 }

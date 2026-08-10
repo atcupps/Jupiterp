@@ -1,3 +1,5 @@
+<!-- @migration-task Error while migrating Svelte code: This migration would change the name of a slot (before-input to before_input) making the component unusable -->
+<!-- @migration-task Error while migrating Svelte code: This migration would change the name of a slot (before-input to before_input) making the component unusable -->
 <!--
 This file is part of Jupiterp. For terms of use, please see the file
 called LICENSE at the top level of the Jupiterp source tree (online at
@@ -11,171 +13,195 @@ Copyright (C) 2026 Andrew Cupps
 	supplies the results rendering via the default slot.
 -->
 <script lang="ts">
-	import {
-		deptCodeToName,
-		matchingStandardizedProfessorNames,
-		pendingResults,
-		setSearchResults
-	} from '../../../lib/course-planner/CourseSearch';
-	import {
-		applyProfessorSelection,
-		getProfPartial
-	} from '../../../lib/course-planner/CourseSuggestions';
-	import { DeptSuggestionsStore, SearchResultsStore } from '../../../stores/CoursePlannerStores';
-	import type { Course } from '@jupiterp/jupiterp';
-	import CourseFilters from './CourseFilters.svelte';
+  import type { Snippet } from 'svelte';
+  import {
+    deptCodeToName,
+    matchingStandardizedProfessorNames,
+    pendingResults,
+    setSearchResults,
+  } from '../../../lib/course-planner/CourseSearch';
+  import { applyProfessorSelection, getProfPartial } from '../../../lib/course-planner/CourseSuggestions';
+  import { DeptSuggestionsStore, SearchResultsStore } from '../../../stores/CoursePlannerStores';
+  import type { Course } from '@jupiterp/jupiterp';
+  import CourseFilters from './CourseFilters.svelte';
 
-	/** Current search text. Two-way bound so the parent can read/clear it. */
-	export let searchInput = '';
-	/** Whether the gen-ed filter menu is open; forwarded to CourseFilters. */
-	export let genEdMenuOpen = false;
-	/** Optional id for the input element (the planner relies on this). */
-	export let inputId: string | undefined = undefined;
-	/** Optional placeholder text for the input element. */
-	export let placeholder = "Search courses (e.g. 'MATH140') or @professor";
-	/** Bound back to the parent so it can manage focus (mobile activation). */
-	export let inputElement: HTMLInputElement | null = null;
-	/** Focus/blur handlers for the planner's mobile keyboard activation. */
-	export let onFocus: (event: FocusEvent) => void = () => {};
-	export let onBlur: (event: FocusEvent) => void = () => {};
-	/** Styling for the suggestion dropdown container. */
+  interface Props {
+    /** Current search text. Two-way bound so the parent can read/clear it. */
+    searchInput?: string;
+    /** Whether the gen-ed filter menu is open; forwarded to CourseFilters. */
+    genEdMenuOpen?: boolean;
+    /** Optional id for the input element (the planner relies on this). */
+    inputId?: string;
+    /** Optional placeholder text for the input element. */
+    placeholder?: string;
+    /** Bound back to the parent so it can manage focus (mobile activation). */
+    inputElement?: HTMLInputElement | null;
+    /** Focus/blur handlers for the planner's mobile keyboard activation. */
+    onFocus?: (event: FocusEvent) => void;
+    onBlur?: (event: FocusEvent) => void;
 
-	let searchResults: Course[] = [];
-	SearchResultsStore.subscribe((results) => {
-		searchResults = results;
-	});
+    /** The default slot for the search results. */
+    children?: Snippet<
+      [
+        {
+          searchResults: Course[];
+          isPending: boolean;
+          profSuggestions: string[];
+        },
+      ]
+    >;
+    /** Replaces <slot name="beforeInput" /> */
+    beforeInput?: Snippet;
+  }
 
-	// Department suggestions shown for ambiguous partial department codes.
-	let deptSuggestions: string[] = [];
-	DeptSuggestionsStore.subscribe((suggestions) => {
-		deptSuggestions = suggestions;
-	});
+  // Destructure props with their original default values
+  let {
+    searchInput = $bindable(''), // $bindable allows two-way binding back to parent
+    genEdMenuOpen = $bindable(false),
+    inputId = undefined,
+    placeholder = "Search courses (e.g. 'MATH140') or @professor",
+    inputElement = $bindable(null),
+    onFocus = () => {},
+    onBlur = () => {},
 
-	// Professor suggestions shown when the user types @partial in the search.
-	let profSuggestions: string[] = [];
+    children = undefined,
+    beforeInput = undefined,
+  }: Props = $props();
 
-	$: {
-		const partial = getProfPartial(searchInput);
-		profSuggestions = partial ? matchingStandardizedProfessorNames(partial) : [];
-	}
+  let searchResults: Course[] = $state([]);
+  SearchResultsStore.subscribe((results) => {
+    searchResults = results;
+  });
 
-	// Unified suggestion type (exclusive OR): either a prof or a dept
-	type Suggestion = { kind: 'prof'; value: string } | { kind: 'dept'; value: string };
-	let suggestionItems: Suggestion[] = [];
-	let highlightedIndex = -1;
+  // Department suggestions shown for ambiguous partial department codes.
+  let deptSuggestions: string[] = $state([]);
+  DeptSuggestionsStore.subscribe((suggestions) => {
+    deptSuggestions = suggestions;
+  });
 
-	$: suggestionItems =
-		profSuggestions.length > 0
-			? profSuggestions.map((name) => ({ kind: 'prof', value: name }))
-			: searchInput.length > 0 && deptSuggestions.length > 1
-				? deptSuggestions.map((code) => ({ kind: 'dept', value: code }))
-				: [];
+  // Professor suggestions shown when the user types @partial in the search.
+  let profSuggestions = $derived.by(() => {
+    const partial = getProfPartial(searchInput);
+    return partial ? matchingStandardizedProfessorNames(partial) : [];
+  });
 
-	$: {
-		if (suggestionItems.length === 0) highlightedIndex = -1;
-		else if (highlightedIndex >= suggestionItems.length)
-			highlightedIndex = suggestionItems.length - 1;
-	}
+  // Unified suggestion type (exclusive OR): either a prof or a dept
+  type Suggestion = { kind: 'prof'; value: string } | { kind: 'dept'; value: string };
 
-	// Whether the most recent search is still awaiting results.
-	let isPending = false;
-	$: if (searchInput.length > 0 && searchResults.length === 0) {
-		isPending = pendingResults();
-	} else {
-		isPending = false;
-	}
+  // 1. Ordinary mutable state uses $state
+  let highlightedIndex = $state(-1);
+  let isPending = $state(false);
 
-	/**
-	 * Replaces the @partial token with @"Full Name" (multi-word) or @Name
-	 * (single-word) and triggers a new search.
-	 * @param name The standardized professor name to insert
-	 */
-	function selectProfessor(name: string) {
-		if (getProfPartial(searchInput) === null) return;
-		searchInput = applyProfessorSelection(searchInput, name);
-		highlightedIndex = -1;
-		setSearchResults(searchInput);
-	}
+  // 2. Computed arrays use $derived
+  const suggestionItems = $derived<Suggestion[]>(
+    profSuggestions.length > 0
+      ? profSuggestions.map((name) => ({ kind: 'prof', value: name }))
+      : searchInput.length > 0 && deptSuggestions.length > 1
+        ? deptSuggestions.map((code) => ({ kind: 'dept', value: code }))
+        : []
+  );
 
-	function selectDepartment(dept: string) {
-		searchInput = dept;
-		highlightedIndex = -1;
-		setSearchResults(dept);
-	}
+  // 3. Side effects and state synchronization use $effect
+  $effect(() => {
+    if (suggestionItems.length === 0) {
+      highlightedIndex = -1;
+    } else if (highlightedIndex >= suggestionItems.length) {
+      highlightedIndex = suggestionItems.length - 1;
+    }
+  });
 
-	function selectSuggestionByIndex(index: number) {
-		const s = suggestionItems[index];
-		if (!s) return;
-		if (s.kind === 'prof') selectProfessor(s.value);
-		else selectDepartment(s.value);
-	}
+  $effect(() => {
+    if (searchInput.length > 0 && searchResults.length === 0) {
+      isPending = pendingResults();
+    } else {
+      isPending = false;
+    }
+  });
 
-	function handleKeydown(event: KeyboardEvent) {
-		if (suggestionItems.length === 0) return;
+  /**
+   * Replaces the @partial token with @"Full Name" (multi-word) or @Name
+   * (single-word) and triggers a new search.
+   * @param name The standardized professor name to insert
+   */
+  function selectProfessor(name: string) {
+    if (getProfPartial(searchInput) === null) return;
+    searchInput = applyProfessorSelection(searchInput, name);
+    highlightedIndex = -1;
+    setSearchResults(searchInput);
+  }
 
-		if (event.key === 'ArrowDown') {
-			event.preventDefault();
-			highlightedIndex = (highlightedIndex + 1) % suggestionItems.length;
-		} else if (event.key === 'ArrowUp') {
-			event.preventDefault();
-			highlightedIndex = highlightedIndex > 0 ? highlightedIndex - 1 : suggestionItems.length - 1;
-		} else if (event.key === 'Enter' && highlightedIndex >= 0) {
-			event.preventDefault();
-			selectSuggestionByIndex(highlightedIndex);
-		}
-	}
+  function selectDepartment(dept: string) {
+    searchInput = dept;
+    highlightedIndex = -1;
+    setSearchResults(dept);
+  }
+
+  function selectSuggestionByIndex(index: number) {
+    const s = suggestionItems[index];
+    if (!s) return;
+    if (s.kind === 'prof') selectProfessor(s.value);
+    else selectDepartment(s.value);
+  }
+
+  function handleKeydown(event: KeyboardEvent) {
+    if (suggestionItems.length === 0) return;
+
+    if (event.key === 'ArrowDown') {
+      event.preventDefault();
+      highlightedIndex = (highlightedIndex + 1) % suggestionItems.length;
+    } else if (event.key === 'ArrowUp') {
+      event.preventDefault();
+      highlightedIndex = highlightedIndex > 0 ? highlightedIndex - 1 : suggestionItems.length - 1;
+    } else if (event.key === 'Enter' && highlightedIndex >= 0) {
+      event.preventDefault();
+      selectSuggestionByIndex(highlightedIndex);
+    }
+  }
 </script>
 
 <div class="relative flex w-full flex-col">
-	<slot name="before-input" />
-	<input
-		type="text"
-		id={inputId}
-		bind:this={inputElement}
-		bind:value={searchInput}
-		on:focus={onFocus}
-		on:blur={onBlur}
-		on:input={() => setSearchResults(searchInput)}
-		on:keydown={handleKeydown}
-		class="w-full rounded-lg border-2 border-solid border-outlineLight bg-transparent px-2 py-0 text-xl placeholder:text-base lg:text-base lg:placeholder:text-sm dark:border-outlineDark"
-		autocomplete="off"
-		{placeholder}
-	/>
+  {@render beforeInput?.()}
+  <input
+    type="text"
+    bind:this={inputElement}
+    id={inputId}
+    bind:value={searchInput}
+    onfocus={onFocus}
+    onblur={onBlur}
+    oninput={() => setSearchResults(searchInput)}
+    onkeydown={handleKeydown}
+    class="border-outlineLight dark:border-outlineDark w-full rounded-lg border-2 border-solid bg-transparent px-2 py-0 text-xl placeholder:text-base lg:text-base lg:placeholder:text-sm"
+    autocomplete="off"
+    {placeholder}
+  />
 
-	<CourseFilters bind:showGenEdMenu={genEdMenuOpen} />
+  <CourseFilters bind:showGenEdMenu={genEdMenuOpen} />
 
-	<!-- Unified suggestions (professor OR department) -->
-	{#if suggestionItems.length > 0}
-		<div
-			class="overflow-clip border border-outlineLight bg-bgLight shadow-lg dark:border-outlineDark dark:bg-bgDark"
-		>
-			<div class="custom-scrollbar h-[50svh] max-h-72 min-h-16 overflow-y-auto">
-				{#each suggestionItems as item, index}
-					<button
-						type="button"
-						class={'flex w-full ' +
-							(item.kind === 'dept' ? 'items-end ' : 'items-center ') +
-							'px-3 py-1 text-left text-base transition-colors hover:bg-outlineLight hover:bg-opacity-20 lg:text-sm dark:hover:bg-outlineDark dark:hover:bg-opacity-30'}
-						class:bg-outlineLight={highlightedIndex === index}
-						class:bg-opacity-20={highlightedIndex === index}
-						on:mouseenter={() => (highlightedIndex = index)}
-						on:click={() => selectSuggestionByIndex(index)}
-					>
-						{#if item.kind === 'prof'}
-							<span class="grow truncate font-black"
-								><span class="font-normal">@</span>{item.value}</span
-							>
-						{:else}
-							<span class="min-w-[17%] shrink-0 font-black">{item.value}</span>
-							<span class="grow self-center truncate text-xs italic"
-								>{deptCodeToName[item.value]}</span
-							>
-						{/if}
-					</button>
-				{/each}
-			</div>
-		</div>
-	{/if}
+  <!-- Unified suggestions (professor OR department) -->
+  {#if suggestionItems.length > 0}
+    <div class="border-outlineLight bg-bgLight dark:border-outlineDark dark:bg-bgDark overflow-clip border shadow-lg">
+      <div class="custom-scrollbar h-[50svh] max-h-72 min-h-16 overflow-y-auto">
+        {#each suggestionItems as item, index}
+          <button
+            type="button"
+            class={'hover:bg-outlineLight dark:hover:bg-outlineDark flex w-full px-3 py-1 text-left text-base transition-colors hover:bg-opacity-20 dark:hover:bg-opacity-30 lg:text-sm' +
+              (item.kind === 'dept' ? 'items-end ' : 'items-center ')}
+            class:bg-outlineLight={highlightedIndex === index}
+            class:bg-opacity-20={highlightedIndex === index}
+            onmouseenter={() => (highlightedIndex = index)}
+            onclick={() => selectSuggestionByIndex(index)}
+          >
+            {#if item.kind === 'prof'}
+              <span class="grow truncate font-black"><span class="font-normal">@</span>{item.value}</span>
+            {:else}
+              <span class="min-w-[17%] shrink-0 font-black">{item.value}</span>
+              <span class="grow self-center truncate text-xs italic">{deptCodeToName[item.value]}</span>
+            {/if}
+          </button>
+        {/each}
+      </div>
+    </div>
+  {/if}
 
-	<slot {searchResults} {isPending} {profSuggestions} />
+  {@render children?.({ searchResults, isPending, profSuggestions })}
 </div>

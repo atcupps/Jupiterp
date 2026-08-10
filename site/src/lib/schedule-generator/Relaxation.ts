@@ -18,57 +18,57 @@ import type { HardConstraints, Relaxation } from './types';
  * becomes its own actionable suggestion.
  */
 export function singleRelaxations(constraints: HardConstraints): Relaxation[] {
-	const relaxations: Relaxation[] = [];
+  const relaxations: Relaxation[] = [];
 
-	if (constraints.earliestStartMinutes !== null) {
-		relaxations.push({
-			kind: 'earliestStart',
-			day: null,
-			constraints: { ...constraints, earliestStartMinutes: null }
-		});
-	}
+  if (constraints.earliestStartMinutes !== null) {
+    relaxations.push({
+      kind: 'earliestStart',
+      day: null,
+      constraints: { ...constraints, earliestStartMinutes: null },
+    });
+  }
 
-	if (constraints.latestEndMinutes !== null) {
-		relaxations.push({
-			kind: 'latestEnd',
-			day: null,
-			constraints: { ...constraints, latestEndMinutes: null }
-		});
-	}
+  if (constraints.latestEndMinutes !== null) {
+    relaxations.push({
+      kind: 'latestEnd',
+      day: null,
+      constraints: { ...constraints, latestEndMinutes: null },
+    });
+  }
 
-	for (const day of constraints.daysOff) {
-		const daysOff = new Set(constraints.daysOff);
-		daysOff.delete(day);
-		relaxations.push({
-			kind: 'dayOff',
-			day,
-			constraints: { ...constraints, daysOff }
-		});
-	}
+  for (const day of constraints.daysOff) {
+    const daysOff = new Set(constraints.daysOff);
+    daysOff.delete(day);
+    relaxations.push({
+      kind: 'dayOff',
+      day,
+      constraints: { ...constraints, daysOff },
+    });
+  }
 
-	if (constraints.onlyOpenSeats) {
-		relaxations.push({
-			kind: 'openSeats',
-			day: null,
-			constraints: { ...constraints, onlyOpenSeats: false }
-		});
-	}
+  if (constraints.onlyOpenSeats) {
+    relaxations.push({
+      kind: 'openSeats',
+      day: null,
+      constraints: { ...constraints, onlyOpenSeats: false },
+    });
+  }
 
-	if (constraints.minGapMinutes > 0) {
-		relaxations.push({
-			kind: 'minGap',
-			day: null,
-			constraints: { ...constraints, minGapMinutes: 0 }
-		});
-	}
+  if (constraints.minGapMinutes > 0) {
+    relaxations.push({
+      kind: 'minGap',
+      day: null,
+      constraints: { ...constraints, minGapMinutes: 0 },
+    });
+  }
 
-	if (constraints.minCredits !== null) {
-		relaxations.push({
-			kind: 'minCredits',
-			day: null,
-			constraints: { ...constraints, minCredits: null }
-		});
-	}
+  if (constraints.minCredits !== null) {
+    relaxations.push({
+      kind: 'minCredits',
+      day: null,
+      constraints: { ...constraints, minCredits: null },
+    });
+  }
 
-	return relaxations;
+  return relaxations;
 }

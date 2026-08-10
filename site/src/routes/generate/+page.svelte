@@ -5,55 +5,53 @@ https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2026 Andrew Cupps
 -->
 <script lang="ts">
-	import { onMount } from 'svelte';
-	import { loadInstructorLookup } from '$lib/course-planner/CourseSearch';
-	import { client } from '$lib/client';
-	import { DepartmentsStore } from '../../stores/CoursePlannerStores';
-	import CourseWishlist from '../../components/schedule-generator/CourseWishlist.svelte';
-	import ConstraintsPanel from '../../components/schedule-generator/ConstraintsPanel.svelte';
-	import ResultsGallery from '../../components/schedule-generator/ResultsGallery.svelte';
+  import { onMount } from 'svelte';
+  import { loadInstructorLookup } from '$lib/course-planner/CourseSearch';
+  import { client } from '$lib/client';
+  import { DepartmentsStore } from '../../stores/CoursePlannerStores';
+  import CourseWishlist from '../../components/schedule-generator/CourseWishlist.svelte';
+  import ConstraintsPanel from '../../components/schedule-generator/ConstraintsPanel.svelte';
+  import ResultsGallery from '../../components/schedule-generator/ResultsGallery.svelte';
 
-	// Departments are needed so the course search can resolve department codes.
-	async function fetchDeptCodes() {
-		const res = await client.deptList();
-		if (res.ok() && res.data != null) {
-			DepartmentsStore.set(res.data);
-		} else {
-			console.error('Error fetching department codes:', res.errorBody);
-		}
-	}
+  // Departments are needed so the course search can resolve department codes.
+  async function fetchDeptCodes() {
+    const res = await client.deptList();
+    if (res.ok() && res.data != null) {
+      DepartmentsStore.set(res.data);
+    } else {
+      console.error('Error fetching department codes:', res.errorBody);
+    }
+  }
 
-	onMount(() => {
-		loadInstructorLookup();
-		fetchDeptCodes();
-	});
+  onMount(() => {
+    loadInstructorLookup();
+    fetchDeptCodes();
+  });
 </script>
 
 <svelte:head>
-	<title>Schedule Generator | Jupiterp</title>
-	<meta
-		name="description"
-		content="Automatically generate conflict-free UMD course schedules
+  <title>Schedule Generator | Jupiterp</title>
+  <meta
+    name="description"
+    content="Automatically generate conflict-free UMD course schedules
 			from your desired courses and constraints."
-	/>
+  />
 </svelte:head>
 
 <div
-	class="custom-scrollbar fixed bottom-0 top-12 w-full flex-col overflow-y-auto px-3 lg:grid lg:grid-cols-[22rem_1fr]"
+  class="custom-scrollbar fixed bottom-0 top-12 w-full flex-col overflow-y-auto px-3 lg:grid lg:grid-cols-[22rem_1fr]"
 >
-	<!-- Inputs: wishlist + constraints -->
-	<div
-		class="custom-scrollbar scrollbar-gutter-stable flex w-full flex-col px-1 py-2 lg:overflow-y-auto lg:pr-2"
-	>
-		<CourseWishlist />
-		<div class="border-t-2 border-divBorderLight dark:border-divBorderDark">
-			<h2 class="mb-1 text-lg font-bold">Constraints</h2>
-			<ConstraintsPanel />
-		</div>
-	</div>
+  <!-- Inputs: wishlist + constraints -->
+  <div class="custom-scrollbar scrollbar-gutter-stable flex w-full flex-col px-1 py-2 lg:overflow-y-auto lg:pr-2">
+    <CourseWishlist />
+    <div class="border-divBorderLight dark:border-divBorderDark border-t-2">
+      <h2 class="mb-1 text-lg font-bold">Constraints</h2>
+      <ConstraintsPanel />
+    </div>
+  </div>
 
-	<!-- Results -->
-	<div class="custom-scrollbar px-1 py-2 lg:overflow-y-auto">
-		<ResultsGallery />
-	</div>
+  <!-- Results -->
+  <div class="custom-scrollbar px-1 py-2 lg:overflow-y-auto">
+    <ResultsGallery />
+  </div>
 </div>

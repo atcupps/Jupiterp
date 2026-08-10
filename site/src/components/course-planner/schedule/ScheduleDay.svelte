@@ -5,29 +5,33 @@ https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2026 Andrew Cupps
 -->
 <script lang="ts">
-	import type { ClassMeetingExtended } from '../../../types';
-	import ClassMeeting from './ClassMeeting.svelte';
+  import type { ClassMeetingExtended } from '../../../types';
+  import ClassMeeting from './ClassMeeting.svelte';
 
-	export let name: string;
-	export let classes: ClassMeetingExtended[];
-	export let earliestClassStart: number = 0;
-	export let latestClassEnd: number = 0;
-	export let bgHeight: number;
-	export let type: string = 'Day';
+  interface Props {
+    name: string;
+    classes: ClassMeetingExtended[];
+    earliestClassStart?: number;
+    latestClassEnd?: number;
+    bgHeight?: number;
+    type?: string;
+  }
+
+  let {
+    name,
+    classes,
+    earliestClassStart = $bindable(0),
+    latestClassEnd = $bindable(0),
+    bgHeight = $bindable(0),
+    type = 'Day',
+  }: Props = $props();
 </script>
 
 <div class="z-10 flex h-full w-full flex-col px-1">
-	<div>
-		{name}
-	</div>
-	<div class="relative top-[10px]" style="height: {bgHeight}px;">
-		{#each classes as classMeeting, index (`${index}-${classMeeting.instructors}`)}
-			<ClassMeeting
-				meeting={classMeeting}
-				isInOther={type === 'Other'}
-				bind:earliestClassStart
-				bind:latestClassEnd
-			/>
-		{/each}
-	</div>
+  <div>{name}</div>
+  <div style="height: {bgHeight}px;" class="relative top-2.5">
+    {#each classes as classMeeting, index (`${index}-${classMeeting.instructors}`)}
+      <ClassMeeting meeting={classMeeting} isInOther={type === 'Other'} bind:earliestClassStart bind:latestClassEnd />
+    {/each}
+  </div>
 </div>

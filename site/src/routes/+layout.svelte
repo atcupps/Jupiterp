@@ -5,22 +5,25 @@ https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2026 Andrew Cupps
  -->
 <script lang="ts">
-	import '../app.css';
-	import Analytics from '../components/layout/Analytics.svelte';
-	import SiteLinks from '../components/layout/SiteLinks.svelte';
+  import '../app.css';
+  import Analytics from '../components/layout/Analytics.svelte';
+  import SiteLinks from '../components/layout/SiteLinks.svelte';
+  interface Props {
+    children?: import('svelte').Snippet;
+  }
+
+  let { children }: Props = $props();
 </script>
 
 <Analytics />
 
-<div class="fixed z-[50] w-full px-4">
-	<div
-		class="flex h-12 flex-row justify-start border-b-2 border-divBorderLight dark:border-divBorderDark"
-	>
-		<a href="/" class="flex py-1">
-			<img src="logo.svg" alt="Jupiterp Beta logo" />
-		</a>
-		<SiteLinks />
-	</div>
+<div class="fixed z-50 w-full px-4">
+  <div class="border-divBorderLight dark:border-divBorderDark flex h-12 flex-row justify-start border-b-2">
+    <a href="/" class="flex py-1">
+      <img src="logo.svg" alt="Jupiterp Beta logo" />
+    </a>
+    <SiteLinks />
+  </div>
 </div>
 
-<slot />
+{@render children?.()}
