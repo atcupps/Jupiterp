@@ -35,6 +35,7 @@ Copyright (C) 2026 Andrew Cupps
 <CourseSearchBox
 	bind:searchInput
 	bind:genEdMenuOpen
+	inputId="planner-course-search-input"
 	let:searchResults
 	let:isPending
 	let:profSuggestions
@@ -42,11 +43,10 @@ Copyright (C) 2026 Andrew Cupps
 	<!-- Show results whenever there is a query OR an active filter has produced
 		results (e.g. selecting a gen-ed with an empty search bar). -->
 	{#if searchInput.length > 0 || searchResults.length > 0}
-		<div class="custom-scrollbar mt-2 max-h-72 overflow-y-auto">
+		<div class="custom-scrollbar relative max-h-72 overflow-y-auto">
 			{#each searchResults as course (course.courseCode)}
 				<div
-					class="flex flex-row items-center gap-2 border-b
-						border-divBorderLight px-1 py-1 dark:border-divBorderDark"
+					class="flex flex-row items-center gap-2 border-b border-divBorderLight px-1 py-0 dark:border-divBorderDark"
 				>
 					<div class="flex grow flex-col overflow-hidden">
 						<span class="truncate text-sm font-bold">

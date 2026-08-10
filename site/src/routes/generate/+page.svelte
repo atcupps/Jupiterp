@@ -6,10 +6,12 @@ Copyright (C) 2026 Andrew Cupps
 -->
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import GeneratorView from '../../components/schedule-generator/GeneratorView.svelte';
 	import { loadInstructorLookup } from '$lib/course-planner/CourseSearch';
 	import { client } from '$lib/client';
 	import { DepartmentsStore } from '../../stores/CoursePlannerStores';
+	import CourseWishlist from '../../components/schedule-generator/CourseWishlist.svelte';
+	import ConstraintsPanel from '../../components/schedule-generator/ConstraintsPanel.svelte';
+	import ResultsGallery from '../../components/schedule-generator/ResultsGallery.svelte';
 
 	// Departments are needed so the course search can resolve department codes.
 	async function fetchDeptCodes() {
@@ -37,8 +39,21 @@ Copyright (C) 2026 Andrew Cupps
 </svelte:head>
 
 <div
-	class="custom-scrollbar fixed bottom-0 top-12 w-full overflow-y-auto
-		px-4 py-3 text-textLight dark:text-textDark"
+	class="custom-scrollbar fixed bottom-0 top-12 w-full flex-col overflow-y-auto px-3 lg:grid lg:grid-cols-[22rem_1fr]"
 >
-	<GeneratorView />
+	<!-- Inputs: wishlist + constraints -->
+	<div
+		class="custom-scrollbar scrollbar-gutter-stable flex w-full flex-col px-1 py-2 lg:overflow-y-auto lg:pr-2"
+	>
+		<CourseWishlist />
+		<div class="border-t-2 border-divBorderLight dark:border-divBorderDark">
+			<h2 class="mb-1 text-lg font-bold">Constraints</h2>
+			<ConstraintsPanel />
+		</div>
+	</div>
+
+	<!-- Results -->
+	<div class="custom-scrollbar px-1 py-2 lg:overflow-y-auto">
+		<ResultsGallery />
+	</div>
 </div>

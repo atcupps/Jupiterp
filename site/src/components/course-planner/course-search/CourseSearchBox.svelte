@@ -31,10 +31,7 @@ Copyright (C) 2026 Andrew Cupps
 	export let genEdMenuOpen = false;
 	/** Optional id for the input element (the planner relies on this). */
 	export let inputId: string | undefined = undefined;
-	/** Styling for the input element; defaults to the generator's sizing. */
-	export let inputClass =
-		'w-full rounded-lg border-2 border-solid border-outlineLight bg-transparent px-2 py-1 ' +
-		'text-base placeholder:text-sm focus:outline-none dark:border-outlineDark';
+	/** Optional placeholder text for the input element. */
 	export let placeholder = "Search courses (e.g. 'MATH140') or @professor";
 	/** Bound back to the parent so it can manage focus (mobile activation). */
 	export let inputElement: HTMLInputElement | null = null;
@@ -42,10 +39,6 @@ Copyright (C) 2026 Andrew Cupps
 	export let onFocus: (event: FocusEvent) => void = () => {};
 	export let onBlur: (event: FocusEvent) => void = () => {};
 	/** Styling for the suggestion dropdown container. */
-	export let dropdownClass =
-		'custom-scrollbar mt-2 max-h-72 overflow-y-auto rounded-lg border ' +
-		'border-outlineLight bg-bgLight shadow-lg ' +
-		'dark:border-outlineDark dark:bg-bgDark';
 
 	let searchResults: Course[] = [];
 	SearchResultsStore.subscribe((results) => {
@@ -54,37 +47,34 @@ Copyright (C) 2026 Andrew Cupps
 
 	// Department suggestions shown for ambiguous partial department codes.
 	let deptSuggestions: string[] = [];
-	let highlightedDeptIndex = -1;
 	DeptSuggestionsStore.subscribe((suggestions) => {
 		deptSuggestions = suggestions;
-		if (suggestions.length === 0) {
-			highlightedDeptIndex = -1;
-		} else if (highlightedDeptIndex >= suggestions.length) {
-			highlightedDeptIndex = suggestions.length - 1;
-		}
 	});
 
 	// Professor suggestions shown when the user types @partial in the search.
 	let profSuggestions: string[] = [];
-	let highlightedProfIndex = -1;
 
 	$: {
 		const partial = getProfPartial(searchInput);
-		if (partial) {
-			profSuggestions = matchingStandardizedProfessorNames(partial);
-			if (profSuggestions.length === 0) {
-				highlightedProfIndex = -1;
-			} else if (highlightedProfIndex >= profSuggestions.length) {
-				highlightedProfIndex = profSuggestions.length - 1;
-			}
-		} else {
-			profSuggestions = [];
-			highlightedProfIndex = -1;
-		}
+		profSuggestions = partial ? matchingStandardizedProfessorNames(partial) : [];
 	}
 
-	$: if (searchInput.length <= 1 || deptSuggestions.length <= 1) {
-		highlightedDeptIndex = -1;
+	// Unified suggestion type (exclusive OR): either a prof or a dept
+	type Suggestion = { kind: 'prof'; value: string } | { kind: 'dept'; value: string };
+	let suggestionItems: Suggestion[] = [];
+	let highlightedIndex = -1;
+
+	$: suggestionItems =
+		profSuggestions.length > 0
+			? profSuggestions.map((name) => ({ kind: 'prof', value: name }))
+			: searchInput.length > 0 && deptSuggestions.length > 1
+				? deptSuggestions.map((code) => ({ kind: 'dept', value: code }))
+				: [];
+
+	$: {
+		if (suggestionItems.length === 0) highlightedIndex = -1;
+		else if (highlightedIndex >= suggestionItems.length)
+			highlightedIndex = suggestionItems.length - 1;
 	}
 
 	// Whether the most recent search is still awaiting results.
@@ -103,46 +93,35 @@ Copyright (C) 2026 Andrew Cupps
 	function selectProfessor(name: string) {
 		if (getProfPartial(searchInput) === null) return;
 		searchInput = applyProfessorSelection(searchInput, name);
-		highlightedProfIndex = -1;
+		highlightedIndex = -1;
 		setSearchResults(searchInput);
 	}
 
 	function selectDepartment(dept: string) {
 		searchInput = dept;
-		highlightedDeptIndex = -1;
+		highlightedIndex = -1;
 		setSearchResults(dept);
 	}
 
-	function handleKeydown(event: KeyboardEvent) {
-		// Professor suggestions take priority when visible.
-		if (profSuggestions.length > 0) {
-			if (event.key === 'ArrowDown') {
-				event.preventDefault();
-				highlightedProfIndex = (highlightedProfIndex + 1) % profSuggestions.length;
-			} else if (event.key === 'ArrowUp') {
-				event.preventDefault();
-				highlightedProfIndex =
-					highlightedProfIndex > 0 ? highlightedProfIndex - 1 : profSuggestions.length - 1;
-			} else if (event.key === 'Enter' && highlightedProfIndex >= 0) {
-				event.preventDefault();
-				selectProfessor(profSuggestions[highlightedProfIndex]);
-			}
-			return;
-		}
+	function selectSuggestionByIndex(index: number) {
+		const s = suggestionItems[index];
+		if (!s) return;
+		if (s.kind === 'prof') selectProfessor(s.value);
+		else selectDepartment(s.value);
+	}
 
-		if (deptSuggestions.length <= 1 || searchInput.length <= 1) {
-			return;
-		}
+	function handleKeydown(event: KeyboardEvent) {
+		if (suggestionItems.length === 0) return;
+
 		if (event.key === 'ArrowDown') {
 			event.preventDefault();
-			highlightedDeptIndex = (highlightedDeptIndex + 1) % deptSuggestions.length;
+			highlightedIndex = (highlightedIndex + 1) % suggestionItems.length;
 		} else if (event.key === 'ArrowUp') {
 			event.preventDefault();
-			highlightedDeptIndex =
-				highlightedDeptIndex > 0 ? highlightedDeptIndex - 1 : deptSuggestions.length - 1;
-		} else if (event.key === 'Enter' && highlightedDeptIndex >= 0) {
+			highlightedIndex = highlightedIndex > 0 ? highlightedIndex - 1 : suggestionItems.length - 1;
+		} else if (event.key === 'Enter' && highlightedIndex >= 0) {
 			event.preventDefault();
-			selectDepartment(deptSuggestions[highlightedDeptIndex]);
+			selectSuggestionByIndex(highlightedIndex);
 		}
 	}
 </script>
@@ -158,50 +137,43 @@ Copyright (C) 2026 Andrew Cupps
 		on:blur={onBlur}
 		on:input={() => setSearchResults(searchInput)}
 		on:keydown={handleKeydown}
+		class="w-full rounded-lg border-2 border-solid border-outlineLight bg-transparent px-2 py-0 text-xl placeholder:text-base lg:text-base lg:placeholder:text-sm dark:border-outlineDark"
+		autocomplete="off"
 		{placeholder}
-		class={inputClass}
 	/>
 
 	<CourseFilters bind:showGenEdMenu={genEdMenuOpen} />
 
-	<!-- Professor suggestions (shown when @partial is detected) -->
-	{#if profSuggestions.length > 0}
-		<div class={dropdownClass}>
-			{#each profSuggestions as profName, index}
-				<button
-					type="button"
-					class="flex w-full items-center px-3 py-1 text-left text-base
-						transition-colors hover:bg-outlineLight hover:bg-opacity-20
-						lg:text-sm dark:hover:bg-outlineDark dark:hover:bg-opacity-30"
-					class:bg-outlineLight={highlightedProfIndex === index}
-					class:bg-opacity-20={highlightedProfIndex === index}
-					on:mouseenter={() => (highlightedProfIndex = index)}
-					on:click={() => selectProfessor(profName)}
-				>
-					<span class="grow truncate font-black">@{profName}</span>
-				</button>
-			{/each}
-		</div>
-		<!-- Department suggestions -->
-	{:else if searchInput.length > 0 && deptSuggestions.length > 1}
-		<div class={dropdownClass}>
-			{#each deptSuggestions as deptOption, index}
-				<button
-					type="button"
-					class="flex w-full items-end px-3 py-1 text-left text-base
-						transition-colors hover:bg-outlineLight hover:bg-opacity-20
-						lg:text-sm dark:hover:bg-outlineDark dark:hover:bg-opacity-30"
-					class:bg-outlineLight={highlightedDeptIndex === index}
-					class:bg-opacity-20={highlightedDeptIndex === index}
-					on:mouseenter={() => (highlightedDeptIndex = index)}
-					on:click={() => selectDepartment(deptOption)}
-				>
-					<span class="min-w-[17%] shrink-0 font-black">{deptOption}</span>
-					<span class="inline-block grow truncate text-xs italic">
-						{deptCodeToName[deptOption]}
-					</span>
-				</button>
-			{/each}
+	<!-- Unified suggestions (professor OR department) -->
+	{#if suggestionItems.length > 0}
+		<div
+			class="overflow-clip border border-outlineLight bg-bgLight shadow-lg dark:border-outlineDark dark:bg-bgDark"
+		>
+			<div class="custom-scrollbar h-[50svh] max-h-72 min-h-16 overflow-y-auto">
+				{#each suggestionItems as item, index}
+					<button
+						type="button"
+						class={'flex w-full ' +
+							(item.kind === 'dept' ? 'items-end ' : 'items-center ') +
+							'px-3 py-1 text-left text-base transition-colors hover:bg-outlineLight hover:bg-opacity-20 lg:text-sm dark:hover:bg-outlineDark dark:hover:bg-opacity-30'}
+						class:bg-outlineLight={highlightedIndex === index}
+						class:bg-opacity-20={highlightedIndex === index}
+						on:mouseenter={() => (highlightedIndex = index)}
+						on:click={() => selectSuggestionByIndex(index)}
+					>
+						{#if item.kind === 'prof'}
+							<span class="grow truncate font-black"
+								><span class="font-normal">@</span>{item.value}</span
+							>
+						{:else}
+							<span class="min-w-[17%] shrink-0 font-black">{item.value}</span>
+							<span class="grow self-center truncate text-xs italic"
+								>{deptCodeToName[item.value]}</span
+							>
+						{/if}
+					</button>
+				{/each}
+			</div>
 		</div>
 	{/if}
 

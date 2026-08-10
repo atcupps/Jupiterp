@@ -16,7 +16,7 @@ Copyright (C) 2026 Andrew Cupps
 	});
 </script>
 
-<div class="flex flex-col gap-2">
+<div class="flex flex-col gap-1">
 	<h2 class="text-lg font-bold">Courses</h2>
 	<GeneratorCourseSearch />
 
@@ -25,7 +25,9 @@ Copyright (C) 2026 Andrew Cupps
 			Search for courses above and add the ones you want to schedule.
 		</p>
 	{:else}
-		<div class="flex flex-col gap-2">
+		<div
+			class="flex flex-col gap-2 border-t-2 border-divBorderLight py-1 dark:border-divBorderDark"
+		>
 			{#each requirements as requirement, index (requirement.course.courseCode)}
 				<WishlistItem {requirement} {index} />
 			{/each}

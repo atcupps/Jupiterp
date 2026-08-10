@@ -140,7 +140,7 @@ Copyright (C) 2026 Andrew Cupps
 
 <!-- Course Search -->
 <div
-	class="order-2 min-h-80 w-full flex-col border-solid border-divBorderLight bg-bgLight lg:order-1 lg:grid lg:h-[100svh-3rem] lg:grid-cols-1 lg:grid-rows-[auto_minmax(0,1fr)] dark:border-divBorderDark dark:bg-bgDark"
+	class="order-2 min-h-80 w-full flex-col border-solid border-divBorderLight bg-bgLight lg:order-1 lg:grid lg:h-[100svh-3rem] lg:max-h-[100svh-3rem] lg:grid-cols-1 lg:grid-rows-[auto_minmax(0,1fr)] dark:border-divBorderDark dark:bg-bgDark"
 >
 	<!-- Course search input and filters [height of 7.5rem] -->
 	<div id="planner-course-search" class="px-1 pt-1">
@@ -162,7 +162,6 @@ Copyright (C) 2026 Andrew Cupps
 				bind:genEdMenuOpen
 				bind:inputElement={searchInputElement}
 				inputId="planner-course-search-input"
-				inputClass="w-full rounded-lg border-2 border-solid border-outlineLight bg-transparent px-2 py-0 text-xl placeholder:text-base lg:text-base lg:placeholder:text-sm dark:border-outlineDark"
 				onFocus={searchActivation.handleSearchFocus}
 				onBlur={searchActivation.handleSearchBlur}
 			>
