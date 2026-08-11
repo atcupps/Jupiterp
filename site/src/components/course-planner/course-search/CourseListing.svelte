@@ -39,13 +39,13 @@ Copyright (C) 2026 Andrew Cupps
 
 <div
   id="results-{course.courseCode}"
-  class="border-outlineLight bg-bgSecondaryLight dark:border-outlineDark dark:bg-bgSecondaryDark my-2 flex scroll-mt-2 flex-col rounded-lg border-2 border-solid px-2"
+  class="border-outline bg-bg-secondary my-2 flex scroll-mt-2 flex-col rounded-lg border-2 border-solid px-2"
 >
   <div
     role="button"
     tabindex="0"
     onfocus={scrollToCourseTop}
-    class="border-outlineLight bg-bgSecondaryLight dark:border-outlineDark dark:bg-bgSecondaryDark top-0 z-10 border-b-2 border-solid px-2 text-left"
+    class="border-outline bg-bg-secondary top-0 z-10 border-b-2 border-solid px-2 text-left"
   >
     <!-- Course code and credit count -->
     <div class="flex flex-row align-middle">
@@ -61,7 +61,7 @@ Copyright (C) 2026 Andrew Cupps
       <div class="align-center my-1 flex w-full flex-row justify-start">
         {#each course.genEds as genEd (genEd.code)}
           <a
-            class="border-orange text-orange hover:bg-orange hover:text-bgSecondaryLight hover:dark:text-bgSecondaryDark mr-1 rounded-xl border px-1 text-[0.625rem] font-bold leading-tight transition 2xl:text-xs"
+            class="border-orange text-orange hover:bg-orange hover:text-bg-secondary mr-1 rounded-xl border px-1 text-[0.625rem] font-bold leading-tight 2xl:text-xs"
             href={`https://app.testudo.umd.edu/soc/gen-ed/202608/` + genEd.code}
             rel="external noopener noreferrer"
             target="_blank"
@@ -74,7 +74,7 @@ Copyright (C) 2026 Andrew Cupps
     {/if}
 
     <button
-      class="text-secCodesLight hover:text-secCodesDark flex w-full flex-row content-center text-left text-sm dark:text-[#8892a8] 2xl:text-base"
+      class="text-text-secondary hover:text-text-primary flex w-full flex-row content-center text-left text-sm 2xl:text-base"
       title={!showMoreInfo ? 'Show more course details' : 'Hide course details'}
       onclick={() => {
         showMoreInfo = !showMoreInfo;

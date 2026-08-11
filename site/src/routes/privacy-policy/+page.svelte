@@ -5,12 +5,12 @@ https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2024 Andrew Cupps
  -->
 <script lang="ts">
-  const h1Classes = 'text-2xl border-b-2 border-divBorderLight dark:border-divBorderDark';
-  const h2Classes = 'text-xl border-b-2 border-divBorderLight dark:border-divBorderDark border-t-0 mt-6';
-  const pClasses = 'my-2 text-normal leading-5 text-textLight dark:text-textDark';
+  const h1Classes = 'text-2xl border-b-2 border-border';
+  const h2Classes = 'text-xl border-b-2 border-border border-t-0 mt-6';
+  const pClasses = 'my-2 text-normal leading-5 text-text-primary';
 </script>
 
-<div class="text-textLight fixed bottom-0 top-12 overflow-y-scroll px-8 py-2 dark:text-white lg:top-14 xl:top-16">
+<div class="text-text-primary fixed bottom-0 top-12 overflow-y-scroll px-8 py-2 lg:top-14 xl:top-16">
   <h1 class={h1Classes}>Privacy Policy for Jupiterp</h1>
 
   Last Updated: April 20, 2026
@@ -66,7 +66,7 @@ Copyright (C) 2024 Andrew Cupps
   <h2 class={h2Classes}>Contact Us</h2>
   <p class={pClasses}>
     For any questions or concerns regarding these policies, please contact us at <code
-      class="bg-bgSecondaryLight dark:bg-bgSecondaryDark ml-1 rounded-md p-1 text-sm"
+      class="bg-bg-secondary ml-1 rounded-md p-1 text-sm"
     >
       admin@jupiterp.com</code
     >.

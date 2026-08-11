@@ -187,8 +187,8 @@ Copyright (C) 2026 Andrew Cupps
   onfocusin={isDesktop ? addHoverSection : null}
   onfocusout={isDesktop ? removeHoverSection : null}
   onblur={isDesktop ? removeHoverSection : null}
-  class="border-outlineLight dark:border-outlineDark not-last:border-b grid grid-cols-[auto_1fr] transition
-  {sectionAdded ? 'bg-hoverLight dark:bg-hoverDark' : 'hover:bg-hoverLight/50 dark:hover:bg-hoverDark/50'}"
+  class="border-outline not-last:border-b grid grid-cols-[auto_1fr] pb-1
+  {sectionAdded ? 'bg-hover' : 'hover:bg-hover/50'}"
 >
   <!-- Section code (click to view) -->
   <!-- onclick triggers addSectionToSchedule and then scrollToTopPlannerTop -->
@@ -197,7 +197,7 @@ Copyright (C) 2026 Andrew Cupps
       addSectionToSchedule();
       scrollToTopPlannerTop();
     }}
-    class="text-secCodesLight dark:text-secCodesDark w-12 text-sm font-semibold xl:w-14 xl:text-base"
+    class="text-text-secondary w-12 text-sm font-semibold xl:w-14 xl:text-base"
   >
     <div class="h-full align-top">
       {section.sectionCode}

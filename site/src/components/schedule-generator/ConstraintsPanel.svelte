@@ -84,7 +84,7 @@ Copyright (C) 2026 Andrew Cupps
 </script>
 
 <div class="flex flex-col">
-  <div class="flex flex-row items-center justify-between gap-1 py-0.5">
+  <div class="flew-row space-between flex py-0.5">
     <button
       class="hover:text-orange flex grow flex-row items-center text-sm"
       onclick={() => (showMenu = !showMenu)}
@@ -93,7 +93,9 @@ Copyright (C) 2026 Andrew Cupps
       <AdjustmentsHorizontalOutline class="mr-1 h-4 w-4" />
       {activeCount} constraint{activeCount === 1 ? '' : 's'} applied
     </button>
-    <button class="hover:text-orange text-right text-sm" onclick={reset} title="Clear all constraints"> Clear </button>
+    <button class="hover:text-orange px-1 text-right text-sm" onclick={reset} title="Clear all constraints"
+      >Clear</button
+    >
   </div>
 
   {#if showMenu}
@@ -128,7 +130,7 @@ Copyright (C) 2026 Andrew Cupps
         <div class="flex flex-row gap-1">
           {#each ENGINE_DAYS as day (day)}
             <button
-              class="border-outlineLight dark:border-outlineDark rounded-md border
+              class="border-outline rounded-md border
 								px-1.5 py-0.5 text-xs"
               class:bg-orange={constraints.daysOff.has(day)}
               class:text-white={constraints.daysOff.has(day)}
@@ -147,7 +149,7 @@ Copyright (C) 2026 Andrew Cupps
           type="checkbox"
           checked={constraints.onlyOpenSeats}
           onchange={(e) => patch({ onlyOpenSeats: e.currentTarget.checked })}
-          class="border-outlineLight text-orange focus:ring-orange dark:border-outlineDark rounded-md"
+          class="bg-bg-secondary border-text-secondary checked:bg-orange focus:ring-orange rounded-md"
         />
         <span class="opacity-80">Only open sections</span>
       </label>
@@ -164,7 +166,7 @@ Copyright (C) 2026 Andrew Cupps
               patch({
                 minGapMinutes: setNumberOrNull(e.currentTarget.value) ?? 0,
               })}
-            class="border-outlineLight bg-bgLight dark:border-outlineDark dark:bg-bgDark w-16 rounded-md border px-1 py-0.5"
+            class="border-outline bg-bg-primary w-16 rounded-md border px-1 py-0.5"
           />
         </label>
         <label class="flex flex-row items-center gap-2">
@@ -178,7 +180,7 @@ Copyright (C) 2026 Andrew Cupps
               patch({
                 minCredits: setNumberOrNull(e.currentTarget.value),
               })}
-            class="border-outlineLight bg-bgLight dark:border-outlineDark dark:bg-bgDark w-16 rounded-md border px-1 py-0.5"
+            class="border-outline bg-bg-primary w-16 rounded-md border px-1 py-0.5"
           />
         </label>
       </div>

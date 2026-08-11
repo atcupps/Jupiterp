@@ -168,7 +168,7 @@ Copyright (C) 2026 Andrew Cupps
     onblur={onBlur}
     oninput={() => setSearchResults(searchInput)}
     onkeydown={handleKeydown}
-    class="border-outlineLight dark:border-outlineDark w-full rounded-lg border-2 border-solid bg-transparent px-2 py-0 text-xl placeholder:text-base lg:text-base lg:placeholder:text-sm"
+    class="border-outline w-full rounded-lg border-2 border-solid bg-transparent px-2 py-0 text-xl placeholder:text-base lg:text-base lg:placeholder:text-sm"
     autocomplete="off"
     {placeholder}
   />
@@ -177,15 +177,16 @@ Copyright (C) 2026 Andrew Cupps
 
   <!-- Unified suggestions (professor OR department) -->
   {#if suggestionItems.length > 0}
-    <div class="border-outlineLight bg-bgLight dark:border-outlineDark dark:bg-bgDark overflow-clip border shadow-lg">
-      <div class="custom-scrollbar h-[50svh] max-h-72 min-h-16 overflow-y-auto">
+    <div class="border-outline bg-bg-primary mb-0.5 overflow-clip rounded-lg border shadow-lg">
+      <div class="custom-scrollbar max-h-72 overflow-y-auto">
         {#each suggestionItems as item, index (item.value)}
           <button
             type="button"
-            class={'hover:bg-outlineLight dark:hover:bg-outlineDark flex w-full px-3 py-1 text-left text-base transition-colors hover:bg-opacity-20 dark:hover:bg-opacity-30 lg:text-sm' +
-              (item.kind === 'dept' ? 'items-end ' : 'items-center ')}
-            class:bg-outlineLight={highlightedIndex === index}
-            class:bg-opacity-20={highlightedIndex === index}
+            class={[
+              'hover:bg-border flex w-full px-3 py-1 text-left text-base transition-colors lg:text-sm',
+              item.kind === 'dept' ? 'items-end' : 'items-center',
+              highlightedIndex === index && 'bg-outline/20',
+            ]}
             onmouseenter={() => (highlightedIndex = index)}
             onclick={() => selectSuggestionByIndex(index)}
           >

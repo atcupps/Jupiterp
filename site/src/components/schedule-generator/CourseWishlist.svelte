@@ -23,7 +23,7 @@ Copyright (C) 2026 Andrew Cupps
   {#if requirements.length === 0}
     <p class="py-2 text-sm opacity-60">Search for courses above and add the ones you want to schedule.</p>
   {:else}
-    <div class="border-divBorderLight dark:border-divBorderDark flex flex-col gap-2 border-t-2 py-1">
+    <div class="border-border flex flex-col gap-2 border-t-2 py-1">
       {#each requirements as requirement, index (requirement.course.courseCode)}
         <WishlistItem {requirement} {index} />
       {/each}

@@ -141,7 +141,7 @@ Copyright (C) 2026 Andrew Cupps
 <div
   bind:this={scheduleElement}
   id="planner-schedule"
-  class="chain-scroll-only custom-scrollbar -pl-3 relative order-1 flex h-[calc(100svh-11rem)] min-h-80 w-full flex-row overflow-auto text-center text-lg font-medium text-black dark:text-white lg:order-2 lg:mr-1 lg:h-[calc(100svh-3rem)]"
+  class="chain-scroll-only custom-scrollbar -pl-3 relative order-1 flex h-[calc(100svh-11rem)] min-h-80 w-full flex-row overflow-auto text-center text-lg font-medium lg:order-2 lg:mr-1 lg:h-[calc(100svh-3rem)]"
   use:chainScroll={{
     parent: plannerState.chainScrollParent,
     enabled: !plannerState.isDesktop,
@@ -181,7 +181,7 @@ Copyright (C) 2026 Andrew Cupps
   <!-- Course info panel -->
   {#if showCourseInfo !== null && courseInfoCourse !== null && courseInfoSection !== null}
     <div
-      class={`border-outlineLight bg-bgSecondaryLight dark:border-outlineDark dark:bg-bgSecondaryDark absolute z-10 mb-2 w-full rounded-xl border-2 px-2 py-1 text-left shadow-md ${
+      class={`border-outline bg-bg-secondary absolute z-10 mb-2 w-full rounded-xl border-2 px-2 py-1 text-left shadow-md ${
         infoPanelAtTop ? 'top-0' : 'bottom-0'
       }`}
       bind:clientHeight={courseInfoPanelHeight}
@@ -199,7 +199,7 @@ Copyright (C) 2026 Andrew Cupps
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 384 512"
           style="transform: translateX(-50%) translateY(-50%);"
-          class="absolute left-[50%] top-[50%] h-5 w-5 fill-black stroke-black dark:fill-white dark:stroke-white 2xl:h-6 2xl:w-6"
+          class="fill-text-primary stroke-text-primary absolute left-[50%] top-[50%] h-5 w-5 2xl:h-6 2xl:w-6"
         >
           <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path
             d="M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206 56.6 43.5C45.3 29.9 25.1 28.1 11.5 39.4S-3.9 70.9 7.4 84.5L150.3 256 7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306 327.4 468.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256 376.6 84.5z"

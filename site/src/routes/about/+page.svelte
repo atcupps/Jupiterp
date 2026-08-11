@@ -6,9 +6,9 @@ Copyright (C) 2026 Andrew Cupps
  -->
 <script lang="ts">
   import { resolve } from '$app/paths';
-  const h1Classes = 'text-2xl border-b-2 border-divBorderLight dark:border-divBorderDark';
-  const h2Classes = 'text-xl border-b-2 border-divBorderLight dark:border-divBorderDark';
-  const h3Classes = 'text-l border-b-2 border-divBorderLight dark:border-divBorderDark';
+  const h1Classes = 'text-2xl border-b-2 border-border';
+  const h2Classes = 'text-xl border-b-2 border-border';
+  const h3Classes = 'text-l border-b-2 border-border';
   const pClasses = 'my-2 text-normal leading-5';
 </script>
 
@@ -73,17 +73,17 @@ Copyright (C) 2026 Andrew Cupps
       Andrew Cupps</a
     >. Jupiterp is run at personal cost, and doesn't make any money from ads, selling data, etc., so if you want to
     support continued work on Jupiterp, please consider
-    <a href="https://buymeacoffee.com/jupiterp" target="_blank" rel="external noopener noreferrer" class="text-orange underline">
+    <a
+      href="https://buymeacoffee.com/jupiterp"
+      target="_blank"
+      rel="external noopener noreferrer"
+      class="text-orange underline"
+    >
       donating</a
     > a small amount!
   </p>
   <h2 class={h2Classes}>Contact</h2>
   <p class={pClasses}>
-    To contact the Jupiterp team, email <code
-      class="bg-bgSecondaryLight dark:bg-bgSecondaryDark
-                    rounded-md text-sm"
-    >
-      admin@jupiterp.com</code
-    >.
+    To contact the Jupiterp team, email <code class="bg-bg-secondary rounded-md text-sm"> admin@jupiterp.com</code>.
   </p>
 </div>

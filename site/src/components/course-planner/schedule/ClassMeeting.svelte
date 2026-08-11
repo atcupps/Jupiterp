@@ -181,7 +181,7 @@ Copyright (C) 2026 Andrew Cupps
                 opacity: {meeting.hover ? 0.4 : 1.0};
                 width: {(1 / meeting.conflictTotal) * 100}%;
                 left: {((meeting.conflictIndex - 1) / meeting.conflictTotal) * 100}%;"
-  class="absolute flex w-full flex-col justify-center justify-items-center rounded-lg pb-1 text-black"
+  class="absolute flex w-full flex-col justify-center justify-items-center rounded-lg pb-1"
   onclick={toggleEventInfo}
   class:otherCategoryClassMeeting={isInOther}
   title={meeting.userEvent ? 'Click to edit event' : 'Click to show more course info'}

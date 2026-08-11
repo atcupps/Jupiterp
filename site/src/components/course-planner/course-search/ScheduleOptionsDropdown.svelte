@@ -79,29 +79,27 @@ Copyright (C) 2026 Andrew Cupps
   }
 </script>
 
-<button class="hover:bg-hoverLight dark:hover:bg-hoverDark rounded-md" title="Schedule options">
+<button class="hover:bg-hover rounded-md" title="Schedule options">
   <DotsVerticalOutline class="h-5 w-5" />
 </button>
 
-<Dropdown class="bg-bgLight dark:bg-divBorderDark w-24 rounded-md" bind:isOpen={dropdownOpen}>
+<Dropdown class="bg-bg-primary w-24 rounded-md" bind:isOpen={dropdownOpen}>
   <DropdownItem
-    class="hover:bg-hoverLight dark:hover:bg-hoverDark flex items-center justify-start px-2"
+    class="hover:bg-hover flex items-center justify-start px-2"
     title="Add custom event to schedule"
     onclick={addCustomEvent}
   >
     <PlusOutline class="z-50 mr-1 h-3 w-3" /> Add Event
   </DropdownItem>
   <DropdownItem
-    class="hover:bg-hoverLight dark:hover:bg-hoverDark flex
-                            items-center justify-start px-2"
+    class="hover:bg-hover flex items-center justify-start px-2"
     title="Delete current schedule"
     onclick={deleteCurrentSchedule}
   >
     <TrashBinOutline class="z-50 mr-1 h-3 w-3" /> Delete
   </DropdownItem>
   <DropdownItem
-    class="hover:bg-hoverLight dark:hover:bg-hoverDark flex
-                            items-center justify-start px-2"
+    class="hover:bg-hover flex items-center justify-start px-2"
     title="Duplicate current schedule"
     onclick={duplicateSchedule}
   >

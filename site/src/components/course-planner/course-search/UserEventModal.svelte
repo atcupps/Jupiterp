@@ -100,10 +100,10 @@ Copyright (C) 2026 Andrew Cupps
 </script>
 
 <!-- Backdrop -->
-<button class="fixed inset-0 z-50 mt-12 bg-black bg-opacity-40" onclick={onClose} aria-label="Close Modal"></button>
+<button class="fixed inset-0 z-50 mt-12 bg-black/40" onclick={onClose} aria-label="Close Modal"></button>
 <!-- Modal -->
 <div
-  class="z-60 border-outlineLight bg-bgLight dark:border-outlineDark dark:bg-bgDark w-100 fixed left-1/2 top-1/2 max-w-[90vw] -translate-x-1/2 -translate-y-1/2 rounded-lg border p-4 shadow-xl"
+  class="z-60 border-outline bg-bg-primary w-100 fixed left-1/2 top-1/2 max-w-[90vw] -translate-x-1/2 -translate-y-1/2 rounded-lg border p-4 shadow-xl"
 >
   <h2 class="mb-3 text-base font-semibold">{initialEventData ? 'Edit Event' : 'Add Custom Event'}</h2>
   <!-- Name -->
@@ -114,7 +114,7 @@ Copyright (C) 2026 Andrew Cupps
       type="text"
       bind:value={name}
       placeholder="Event name"
-      class="border-outlineLight dark:border-outlineDark w-full rounded-lg border border-solid bg-transparent px-2 py-1 text-sm"
+      class="border-outline w-full rounded-lg border border-solid bg-transparent px-2 py-1 text-sm"
     />
   </div>
 
@@ -127,8 +127,8 @@ Copyright (C) 2026 Andrew Cupps
           type="button"
           title={expandDayString(day)}
           class="rounded border px-2.5 py-1 text-sm transition-colors {selectedDays.includes(day)
-            ? 'border-outlineLight bg-outlineLight dark:border-outlineDark dark:bg-outlineDark dark:text-textDark text-black'
-            : 'border-outlineLight hover:bg-hoverLight dark:border-outlineDark dark:hover:bg-hoverDark'}"
+            ? 'border-outline bg-outline'
+            : 'border-outline hover:bg-hover'}"
           onclick={() => toggleDay(day)}
         >
           {day}
@@ -145,7 +145,7 @@ Copyright (C) 2026 Andrew Cupps
         id="user-event-start"
         type="time"
         bind:value={startTime}
-        class="border-outlineLight dark:border-outlineDark dark:scheme-dark w-full rounded-lg border border-solid bg-transparent px-2 py-1 text-sm"
+        class="border-outline w-full rounded-lg border border-solid bg-transparent px-2 py-1 text-sm"
       />
     </div>
     <div class="flex-1">
@@ -154,7 +154,7 @@ Copyright (C) 2026 Andrew Cupps
         id="user-event-end"
         type="time"
         bind:value={endTime}
-        class="border-outlineLight dark:border-outlineDark dark:scheme-dark w-full rounded-lg border border-solid bg-transparent px-2 py-1 text-sm"
+        class="border-outline w-full rounded-lg border border-solid bg-transparent px-2 py-1 text-sm"
       />
     </div>
   </div>
@@ -167,7 +167,7 @@ Copyright (C) 2026 Andrew Cupps
       type="text"
       bind:value={location}
       placeholder="Optional"
-      class="border-outlineLight dark:border-outlineDark w-full rounded-lg border border-solid bg-transparent px-2 py-1 text-sm"
+      class="border-outline w-full rounded-lg border border-solid bg-transparent px-2 py-1 text-sm"
     />
   </div>
 
@@ -179,8 +179,7 @@ Copyright (C) 2026 Andrew Cupps
       bind:value={notes}
       placeholder="Optional"
       rows="2"
-      class="border-outlineLight dark:border-outlineDark w-full rounded-lg border border-solid bg-transparent px-2 py-1 text-sm"
-    ></textarea>
+      class="border-outline w-full rounded-lg border border-solid bg-transparent px-2 py-1 text-sm"></textarea>
   </div>
 
   <!-- Validation errors -->
@@ -194,18 +193,8 @@ Copyright (C) 2026 Andrew Cupps
   {/if}
   <!-- Actions -->
   <div class="flex justify-end gap-2">
-    <button
-      type="button"
-      onclick={onClose}
-      class="hover:bg-hoverLight dark:hover:bg-hoverDark rounded-sm px-3 py-1.5 text-sm"
-    >
-      Cancel
-    </button>
-    <button
-      type="button"
-      onclick={handleSubmit}
-      class="bg-outlineLight hover:bg-hoverLight dark:bg-outlineDark dark:text-textDark dark:hover:bg-hoverDark rounded-sm px-3 py-1.5 text-sm text-black"
-    >
+    <button type="button" onclick={onClose} class="hover:bg-hover rounded-sm px-3 py-1.5 text-sm"> Cancel </button>
+    <button type="button" onclick={handleSubmit} class="bg-outline hover:bg-hover rounded-sm px-3 py-1.5 text-sm">
       {initialEventData ? 'Save Event' : 'Add Event'}
     </button>
   </div>

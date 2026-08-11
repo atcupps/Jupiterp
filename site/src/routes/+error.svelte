@@ -9,7 +9,7 @@ Copyright (C) 2026 Andrew Cupps
 </script>
 
 <div class="fixed left-1/2 top-1/2 w-full -translate-x-1/2 -translate-y-1/2 pl-16">
-  <h1 class="text-[3rem] font-bold text-black dark:text-white">
+  <h1 class="text-primary text-[3rem] font-bold">
     Error {page.status}: {page.error?.message}
   </h1>
 </div>

@@ -55,7 +55,7 @@ Copyright (C) 2026 Andrew Cupps
       href={ptLinkFromSlug(currentProf.slug)}
       rel="external noopener noreferrer"
       target="_blank"
-      class="text-orange hover:bg-hoverLight hover:dark:bg-hoverDark inline-flex flex-wrap rounded-md underline transition"
+      class="text-orange hover:bg-hover inline-flex flex-wrap rounded-md underline"
       onmouseenter={() => {
         profsHover = true; // Mutating properties directly updates parent binding
         removeHoverSection();
@@ -80,7 +80,7 @@ Copyright (C) 2026 Andrew Cupps
     </a>
     <span
       style={currentProf.starsStyle}
-      class="stars text-orange align-[2px] text-[8px] font-bold xl:text-[10px] 2xl:text-base"
+      class="stars text-orange text-xs font-bold xl:text-sm 2xl:text-base"
       title="{currentProf.rating} out of 5"
     >
       ★★★★★

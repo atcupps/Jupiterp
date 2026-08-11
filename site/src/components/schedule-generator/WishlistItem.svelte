@@ -44,9 +44,7 @@ Copyright (C) 2026 Andrew Cupps
   }
 </script>
 
-<div
-  class="border-divBorderLight bg-bgSecondaryLight dark:border-divBorderDark dark:bg-bgSecondaryDark flex flex-col gap-1 rounded-lg border px-2 py-1.5"
->
+<div class="border-border bg-bg-secondary flex flex-col gap-1 rounded-lg border px-2 py-1.5">
   <div class="flex flex-row items-center gap-2">
     <div class="flex min-w-0 grow flex-col overflow-hidden">
       <span class="truncate text-sm font-bold"> {splitCourseCode(requirement.course.courseCode)} </span>
@@ -56,9 +54,7 @@ Copyright (C) 2026 Andrew Cupps
     </div>
 
     <!-- Required / Optional toggle -->
-    <div
-      class="border-outlineLight dark:border-outlineDark flex shrink-0 flex-row overflow-hidden rounded-md border text-xs"
-    >
+    <div class="border-outline flex shrink-0 flex-row overflow-hidden rounded-md border text-xs">
       <button
         class="px-2 py-0.5"
         class:bg-orange={requirement.required}
@@ -87,7 +83,7 @@ Copyright (C) 2026 Andrew Cupps
   <!-- Pin control -->
   <div class="flex flex-row flex-wrap items-center gap-2 text-xs">
     <span class="opacity-70">Pin to:</span>
-    <div class="border-outlineLight dark:border-outlineDark flex flex-row overflow-hidden rounded-md border">
+    <div class="border-outline flex flex-row overflow-hidden rounded-md border">
       <button
         class="px-2 py-0.5"
         class:bg-orange={pinMode === 'none'}
@@ -98,7 +94,7 @@ Copyright (C) 2026 Andrew Cupps
         Any
       </button>
       <button
-        class="border-outlineLight dark:border-outlineDark border-l px-2 py-0.5"
+        class="border-outline border-l px-2 py-0.5"
         class:bg-orange={pinMode === 'bySection'}
         class:text-white={pinMode === 'bySection'}
         onclick={() => setPinMode('bySection')}
@@ -107,7 +103,7 @@ Copyright (C) 2026 Andrew Cupps
         Section
       </button>
       <button
-        class="border-outlineLight dark:border-outlineDark border-l px-2 py-0.5"
+        class="border-outline border-l px-2 py-0.5"
         class:bg-orange={pinMode === 'byInstructor'}
         class:text-white={pinMode === 'byInstructor'}
         onclick={() => setPinMode('byInstructor')}

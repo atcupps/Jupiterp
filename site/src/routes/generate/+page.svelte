@@ -44,7 +44,7 @@ Copyright (C) 2026 Andrew Cupps
   <!-- Inputs: wishlist + constraints -->
   <div class="custom-scrollbar scrollbar-gutter-stable flex w-full flex-col px-1 py-2 lg:overflow-y-auto lg:pr-2">
     <CourseWishlist />
-    <div class="border-divBorderLight dark:border-divBorderDark border-t-2">
+    <div class="border-border border-t-2">
       <h2 class="mb-1 text-lg font-bold">Constraints</h2>
       <ConstraintsPanel />
     </div>

@@ -26,10 +26,10 @@ Copyright (C) 2026 Andrew Cupps
     href={link}
     {target}
     rel={target === '_blank' ? 'noopener noreferrer' : 'canonical'}
-    class="inline-flex items-center transition"
+    class="inline-flex items-center hover:transition-colors"
   >
     <span
-      class={`${isOnPage ? 'siteLinkUnderline text-orange' : 'text-textLight hover:text-orange dark:hover:text-lightOrange dark:text-white'}`}
+      class={`${isOnPage ? 'siteLinkUnderline text-orange' : 'text-text-primary hover:text-orange dark:hover:text-light-orange'}`}
     >
       {text}
     </span>
@@ -37,12 +37,12 @@ Copyright (C) 2026 Andrew Cupps
   <!-- eslint-enable svelte/no-navigation-without-resolve -->
   <button
     title="Show more links"
-    class="text-textLight hover:text-orange group-focus-within:text-orange group-hover:text-orange dark:text-textDark dark:hover:text-lightOrange group-focus-within:dark:text-lightOrange group-hover:dark:text-lightOrange transition group-focus-within:rotate-180 group-hover:rotate-180"
+    class="text-text-primary hover:text-orange group-focus-within:text-orange group-hover:text-orange dark:hover:text-light-orange group-focus-within:dark:text-light-orange group-hover:dark:text-light-orange transition-transform group-focus-within:rotate-180 group-hover:rotate-180"
   >
     <AngleDownOutline class="ml h-3.5 w-3.5" />
   </button>
   <div
-    class="transition-visibility border-divBorderLight bg-bgLight dark:border-divBorderDark dark:bg-bgDark invisible absolute top-full flex min-w-12 translate-x-[-12%] flex-col gap-2 rounded-lg border-2 p-2 group-focus-within:visible group-hover:visible"
+    class="transition-visibility border-border bg-bg-primary invisible absolute top-full flex min-w-12 translate-x-[-12%] flex-col gap-2 rounded-lg border-2 p-2 group-focus-within:visible group-hover:visible"
   >
     {@render children?.()}
   </div>

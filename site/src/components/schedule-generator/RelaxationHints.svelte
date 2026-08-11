@@ -25,10 +25,7 @@ Copyright (C) 2026 Andrew Cupps
 
 <div class="flex flex-col gap-3">
   {#if coursesWithNoValidSections.length > 0}
-    <div
-      class="border-orange bg-lightOrange rounded-lg border bg-opacity-30
-				px-3 py-2 text-sm"
-    >
+    <div class="border-orange bg-light-orange/30 rounded-lg border px-3 py-2 text-sm">
       No sections fit for:
       <span class="font-semibold"> {coursesWithNoValidSections.join(', ')} </span>. Try relaxing a constraint or
       unpinning a section.
@@ -41,7 +38,7 @@ Copyright (C) 2026 Andrew Cupps
            day off, so the day has to be part of the key. -->
       {#each hints as hint (hint.relaxation.kind + ':' + hint.relaxation.day)}
         <button
-          class="border-divBorderLight hover:border-orange dark:border-divBorderDark flex flex-row
+          class="border-border hover:border-orange flex flex-row
 						items-center justify-between gap-2 rounded-lg border
 						px-3 py-2 text-left
 						text-sm"

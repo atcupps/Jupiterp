@@ -80,10 +80,7 @@ Copyright (C) 2026 Andrew Cupps
   {#if $GenerationStateStore.kind === 'idle'}
     <p class="py-8 text-center text-sm opacity-60">Add courses and set any constraints, then generate schedules.</p>
   {:else if $GenerationStateStore.kind === 'failed'}
-    <div
-      class="border-orange bg-lightOrange rounded-lg border
-				bg-opacity-30 px-3 py-2 text-sm"
-    >
+    <div class="border-orange bg-light-orange/30 rounded-lg border px-3 py-2 text-sm">
       {$GenerationStateStore.message}
     </div>
   {:else if $GenerationStateStore.kind === 'noSchedules'}
@@ -98,10 +95,7 @@ Copyright (C) 2026 Andrew Cupps
       </div>
     {/if}
     {#if $GenerationStateStore.pinNotices.length > 0}
-      <div
-        class="border-orange bg-lightOrange flex flex-col gap-1 rounded-lg
-					border bg-opacity-20 px-3 py-2 text-xs"
-      >
+      <div class="border-orange bg-light-orange/20 flex flex-col gap-1 rounded-lg border px-3 py-2 text-xs">
         {#each $GenerationStateStore.pinNotices as notice (notice.courseCode + notice.sectionCode)}
           <div>
             <span class="font-semibold"> {notice.courseCode} ({notice.sectionCode}) </span> was pinned even though it {notice.overriddenFilters
@@ -119,7 +113,7 @@ Copyright (C) 2026 Andrew Cupps
 
     {#if visibleCount < sortedSchedules.length}
       <button
-        class="border-outlineLight hover:border-orange hover:text-orange dark:border-outlineDark mx-auto mt-1 rounded-lg border px-4 py-1.5 text-sm"
+        class="border-outline hover:border-orange hover:text-orange mx-auto mt-1 rounded-lg border px-4 py-1.5 text-sm"
         onclick={() => (visibleCount += PAGE_SIZE)}
       >
         Show more ({sortedSchedules.length - visibleCount} more)

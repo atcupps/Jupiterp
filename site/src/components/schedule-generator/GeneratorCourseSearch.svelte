@@ -43,9 +43,7 @@ Copyright (C) 2026 Andrew Cupps
     {#if searchInput.length > 0 || searchResults.length > 0}
       <div class="custom-scrollbar relative max-h-72 overflow-y-auto">
         {#each searchResults as course (course.courseCode)}
-          <div
-            class="border-divBorderLight dark:border-divBorderDark flex flex-row items-center gap-2 border-b px-1 py-0"
-          >
+          <div class="border-border flex flex-row items-center gap-2 border-b px-1 py-0">
             <div class="flex grow flex-col overflow-hidden">
               <span class="truncate text-sm font-bold">
                 {splitCourseCode(course.courseCode)}

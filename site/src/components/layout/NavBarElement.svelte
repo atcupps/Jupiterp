@@ -23,13 +23,12 @@ Copyright (C) 2026 Andrew Cupps
     href={link}
     {target}
     rel={target === '_blank' ? 'noopener noreferrer' : 'canonical'}
-    class="text-nowrap transition"
+    class="text-nowrap hover:transition-colors"
     class:siteLinkUnderline={isOnPage}
     class:text-orange={isOnPage}
     class:hover:text-orange={!isOnPage}
-    class:dark:hover:text-lightOrange={!isOnPage}
-    class:text-textLight={!isOnPage}
-    class:dark:text-white={!isOnPage}
+    class:dark:hover:text-light-orange={!isOnPage}
+    class:text-text-primary={!isOnPage}
   >
     {text}
   </a>

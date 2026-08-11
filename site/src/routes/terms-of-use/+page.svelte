@@ -5,8 +5,8 @@ https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2026 Andrew Cupps
  -->
 <script lang="ts">
-  const h1Classes = 'text-2xl border-b-2 border-divBorderLight dark:border-divBorderDark';
-  const h2Classes = 'text-xl border-b-2 border-divBorderLight dark:border-divBorderDark';
+  const h1Classes = 'text-2xl border-b-2 border-border';
+  const h2Classes = 'text-xl border-b-2 border-border';
   const pClasses = 'my-2 text-normal leading-5';
 </script>
 
@@ -62,7 +62,7 @@ Copyright (C) 2026 Andrew Cupps
 
   <p class={pClasses}>
     For any questions or concerns regarding these Terms, please contact us at
-    <code class="bg-bgSecondaryLight dark:bg-bgSecondaryDark rounded-md text-sm"> admin@jupiterp.com</code>.
+    <code class="bg-bg-secondary rounded-md text-sm"> admin@jupiterp.com</code>.
   </p>
 
   <p class={pClasses}>

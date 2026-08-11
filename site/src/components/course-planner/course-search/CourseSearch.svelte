@@ -151,7 +151,7 @@ Copyright (C) 2026 Andrew Cupps
 
 <!-- Course Search -->
 <div
-  class="border-divBorderLight bg-bgLight dark:border-divBorderDark dark:bg-bgDark order-2 min-h-80 w-full flex-col border-solid lg:order-1 lg:grid lg:h-[100svh-3rem] lg:max-h-[100svh-3rem] lg:grid-cols-1 lg:grid-rows-[auto_minmax(0,1fr)]"
+  class="bg-bg-primary order-2 min-h-80 w-full flex-col border-solid lg:order-1 lg:grid lg:h-[100svh-3rem] lg:max-h-[100svh-3rem] lg:grid-cols-1 lg:grid-rows-[auto_minmax(0,1fr)]"
 >
   <!-- Course search input and filters [height of 7.5rem] -->
   <div id="planner-course-search" class="px-1 pt-1">
@@ -160,9 +160,7 @@ Copyright (C) 2026 Andrew Cupps
       <div class="grow text-right">Credits: {totalCredits}</div>
     </div>
     <ScheduleSelector />
-    <div
-      class="border-divBorderLight dark:border-divBorderDark relative flex w-full flex-col border-b-2 border-t-2 border-solid pt-1"
-    >
+    <div class="relative flex w-full flex-col border-b-2 border-t-2 border-solid pt-1">
       <!-- Course search box (input, filters, and dept/prof suggestions) -->
       <CourseSearchBox
         bind:searchInput
@@ -205,7 +203,7 @@ Copyright (C) 2026 Andrew Cupps
     {/each}
     {#if isPendingResults}
       <div class="flex items-center justify-center py-8">
-        <SolarSystemLoader size={120} color="currentColor" />
+        <SolarSystemLoader size={120} />
       </div>
     {/if}
   </div>
