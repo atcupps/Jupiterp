@@ -201,7 +201,10 @@ Copyright (C) 2026 Andrew Cupps
     <!-- Section info -->
     <div class="w-full">
       <!-- Instructors -->
-      {#each section.instructors as instructor (instructor)}
+      <!-- Keyed by index: instructor names and meetings are NOT unique within
+           a section (e.g. PSYC100 0201 lists "OnlineAsync" twice), and a
+           duplicate key is a fatal runtime error in Svelte 5. -->
+      {#each section.instructors as instructor, i (i)}
         <InstructorListing {instructor} bind:profsHover {removeHoverSection} />
       {/each}
 
@@ -209,7 +212,7 @@ Copyright (C) 2026 Andrew Cupps
       <SeatData {section} />
 
       <!-- Class meetings -->
-      {#each section.meetings as meeting (meeting)}
+      {#each section.meetings as meeting, i (i)}
         <MeetingListing {meeting} bind:locationHover {removeHoverSection} />
       {/each}
     </div>

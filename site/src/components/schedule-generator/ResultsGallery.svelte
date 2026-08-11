@@ -1,7 +1,3 @@
-<!-- @migration-task Error while migrating Svelte code: can't migrate `let state: GenerationState = { kind: 'idle' };` to `$state` because there's a variable named state.
-     Rename the variable and try again or migrate by hand. -->
-<!-- @migration-task Error while migrating Svelte code: can't migrate `let state: GenerationState = { kind: 'idle' };` to `$state` because there's a variable named state.
-     Rename the variable and try again or migrate by hand. -->
 <!--
 This file is part of Jupiterp. For terms of use, please see the file
 called LICENSE at the top level of the Jupiterp source tree (online at

@@ -1,7 +1,3 @@
-<!-- @migration-task Error while migrating Svelte code: `<button>` cannot be a child of `<button>`. The browser will 'repair' the HTML (by moving, removing, or inserting elements) which breaks Svelte's assumptions about the structure of your components.
-https://svelte.dev/e/node_invalid_placement -->
-<!-- @migration-task Error while migrating Svelte code: `<button>` cannot be a child of `<button>`. The browser will 'repair' the HTML (by moving, removing, or inserting elements) which breaks Svelte's assumptions about the structure of your components.
-https://svelte.dev/e/node_invalid_placement -->
 <!-- 
 This file is part of Jupiterp. For terms of use, please see the file
 called LICENSE at the top level of the Jupiterp source tree (online at
@@ -98,7 +94,9 @@ Copyright (C) 2026 Andrew Cupps
         </div>
 
         {#if course.conditions != null && course.conditions.length > 0}
-          {#each course.conditions as condition (condition)}
+          <!-- Keyed by index: condition strings are not guaranteed unique,
+               and a duplicate key is a fatal runtime error in Svelte 5. -->
+          {#each course.conditions as condition, i (i)}
             <CourseCondition {condition} />
           {/each}
         {/if}

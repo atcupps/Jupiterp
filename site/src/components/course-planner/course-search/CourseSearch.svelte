@@ -6,6 +6,7 @@ Copyright (C) 2026 Andrew Cupps
 -->
 <script lang="ts">
   import { run } from 'svelte/legacy';
+  import { untrack } from 'svelte';
 
   import CourseListing from './CourseListing.svelte';
   import { pendingResults } from '../../../lib/course-planner/CourseSearch';
@@ -31,7 +32,13 @@ Copyright (C) 2026 Andrew Cupps
 
   const FILTER_SCROLL_COLLAPSE_THRESHOLD = 100;
   let searchResultsElement: HTMLDivElement | null = $state(null);
-  let blockSearchInputPointer = $derived(!plannerState.isDesktop);
+  // Seeded once from the initial layout, then owned by the activation
+  // controller. This must NOT be $derived: the controller clears it when the
+  // user taps the search box on mobile, and a derived would recompute that
+  // override away on the next PlannerState update. `untrack` makes the
+  // read-once intent explicit; the `run` block below still clears it on
+  // desktop.
+  let blockSearchInputPointer = $state(untrack(() => !plannerState.isDesktop));
 
   let hoveredSection: ScheduleSelection | null = $state(null);
   HoveredSectionStore.subscribe((hovered) => {
@@ -170,7 +177,6 @@ Copyright (C) 2026 Andrew Cupps
           <input
             bind:this={keyboardPrimeElement}
             id="mobile-keyboard-prime"
-            slot="beforeInput"
             type="text"
             tabindex="-1"
             autocomplete="off"

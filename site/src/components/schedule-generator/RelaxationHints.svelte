@@ -37,7 +37,9 @@ Copyright (C) 2026 Andrew Cupps
   {#if hints.length > 0}
     <p class="text-sm opacity-80">No schedules fit all your constraints. Loosening one would help:</p>
     <div class="flex flex-col gap-2">
-      {#each hints as hint (hint.relaxation.kind)}
+      <!-- `kind` alone is not unique: one "dayOff" relaxation is produced per
+           day off, so the day has to be part of the key. -->
+      {#each hints as hint (hint.relaxation.kind + ':' + hint.relaxation.day)}
         <button
           class="border-divBorderLight hover:border-orange dark:border-divBorderDark flex flex-row
 						items-center justify-between gap-2 rounded-lg border
