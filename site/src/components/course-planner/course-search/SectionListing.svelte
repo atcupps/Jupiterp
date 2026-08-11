@@ -21,10 +21,19 @@ Copyright (C) 2026 Andrew Cupps
   import { noDifferences } from '$lib/course-planner/Schedule';
   import { firstAvailableColor } from '$lib/course-planner/ColorSelector';
 
-  export let courseCode: string;
-  export let section: Section;
-  export let course: CourseBasic;
-  export let isDesktop: boolean;
+  interface Props {
+    courseCode: string;
+    section: Section;
+    course: CourseBasic;
+    isDesktop: boolean;
+  }
+
+  let {
+    courseCode = $bindable(''),
+    section = $bindable({} as Section),
+    course = $bindable({} as CourseBasic),
+    isDesktop = $bindable(false),
+  }: Props = $props();
 
   let hoveredSection: ScheduleSelection | null;
   HoveredSectionStore.subscribe((store) => {
@@ -50,14 +59,16 @@ Copyright (C) 2026 Andrew Cupps
     differences: noDifferences(),
     colorNumber: -1,
   };
-  let sectionAdded: boolean;
-  $: if (selectionsList || hoveredSection || onlyShowingOpen || false) {
-    if (onlyShowingOpen && section.openSeats === 0) {
-      sectionAdded = false;
-    } else {
-      sectionAdded = selectionsList.some((obj) => selectionEquals(obj));
+
+  let sectionAdded: boolean = $derived.by(() => {
+    if (selectionsList || hoveredSection || onlyShowingOpen) {
+      if (onlyShowingOpen && section.openSeats === 0) {
+        return false;
+      }
+      return selectionsList.some((obj) => selectionEquals(obj));
     }
-  }
+    return false;
+  });
 
   let hoverSection: ScheduleSelection = {
     course,
@@ -81,8 +92,8 @@ Copyright (C) 2026 Andrew Cupps
     }
   }
 
-  let addAlertVisible: boolean = false;
-  let removeAlertVisible: boolean = false;
+  let addAlertVisible: boolean = $state(false);
+  let removeAlertVisible: boolean = $state(false);
 
   // Function to show or fade
   // format-check exempt 8
@@ -161,8 +172,8 @@ Copyright (C) 2026 Andrew Cupps
     );
   }
 
-  let profsHover: boolean = false;
-  let locationHover: boolean = false;
+  let profsHover: boolean = $state(false);
+  let locationHover: boolean = $state(false);
 
   const alertClasses: string = `fixed left-[50%] translate-x-[-50%] z-50 w-[40%] top-14 min-w-72 h-8 rounded-lg text-center text-white lg:hidden bg-orange shadow-lg content-center transition-opacity duration-500`;
 </script>

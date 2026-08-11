@@ -13,43 +13,35 @@ Copyright (C) 2026 Andrew Cupps
   import { SORT_CRITERIA, SORT_CRITERION_LABELS } from '../../lib/schedule-generator/types';
   import type { GeneratedSchedule, SortCriterion } from '../../lib/schedule-generator/types';
   import { overriddenFilterLabel } from '../../lib/schedule-generator/GeneratorFormat';
-  import {
-    GenerationStateStore,
-    GeneratorRequirementsStore,
-    GeneratorSortChosenByUserStore,
+  import { 
+    GenerationStateStore, 
+    GeneratorRequirementsStore, 
+    GeneratorSortChosenByUserStore, 
     GeneratorSortStore,
-    type GenerationState,
-    type GeneratorRequirement,
   } from '../../stores/GeneratorStores';
 
-  let state: GenerationState = { kind: 'idle' };
-  GenerationStateStore.subscribe((s) => {
-    state = s;
+  const PAGE_SIZE: number = 12;
+  
+  // Use state rune for mutable local variables
+  let visibleCount: number = $state(PAGE_SIZE);
+
+  // Reset the visible window whenever a new generation state completes
+  $effect(() => {
+    if ($GenerationStateStore) {
+      visibleCount = PAGE_SIZE;
+    }
   });
 
-  let sort: SortCriterion = 'bestRating';
-  GeneratorSortStore.subscribe((s) => {
-    sort = s;
-  });
+  // Derived state replaces old $: reactivity
+  let sortedSchedules: GeneratedSchedule[] = $derived(
+    $GenerationStateStore.kind === 'done' 
+      ? sortedByCriterion($GenerationStateStore.schedules, $GeneratorSortStore) 
+      : ([] as GeneratedSchedule[])
+  );
 
-  let requirements: GeneratorRequirement[] = [];
-  GeneratorRequirementsStore.subscribe((r) => {
-    requirements = r;
-  });
+  let visibleSchedules: GeneratedSchedule[] = $derived(sortedSchedules.slice(0, visibleCount));
 
-  // Render results in pages so a large result set (up to 1000 schedules,
-  // each a small grid) never blocks the main thread on first paint.
-  const PAGE_SIZE = 12;
-  let visibleCount = PAGE_SIZE;
-  // Reset the visible window whenever a new generation completes.
-  $: if (state) {
-    visibleCount = PAGE_SIZE;
-  }
-
-  $: sortedSchedules = state.kind === 'done' ? sortedByCriterion(state.schedules, sort) : ([] as GeneratedSchedule[]);
-  $: visibleSchedules = sortedSchedules.slice(0, visibleCount);
-
-  const sortOptions = SORT_CRITERIA.map((criterion) => ({
+  const sortOptions: { value: SortCriterion; label: string }[] = SORT_CRITERIA.map((criterion) => ({
     value: criterion,
     label: SORT_CRITERION_LABELS[criterion],
   }));
@@ -65,18 +57,18 @@ Copyright (C) 2026 Andrew Cupps
   <div class="flex flex-row items-center gap-3">
     <button
       class="border-orange text-orange enabled:hover:bg-orange rounded-lg border px-4 py-1.5 font-semibold enabled:hover:text-white disabled:opacity-40"
-      disabled={requirements.length === 0 || state.kind === 'loading'}
+      disabled={$GeneratorRequirementsStore.length === 0 || $GenerationStateStore.kind === 'loading'}
       onclick={() => runGeneration()}
     >
-      {state.kind === 'loading' ? 'Generating…' : 'Generate schedules'}
+      {$GenerationStateStore.kind === 'loading' ? 'Generating…' : 'Generate schedules'}
     </button>
 
-    {#if state.kind === 'done' && state.schedules.length > 0}
+    {#if $GenerationStateStore.kind === 'done' && $GenerationStateStore.schedules.length > 0}
       <div class="flex flex-row items-center gap-2 text-sm">
         <span class="opacity-70">Sort by</span>
         <GeneratorSelect
           options={sortOptions}
-          value={sort}
+          value={$GeneratorSortStore}
           onChange={setSort}
           buttonClass="min-w-36"
           title="Sort schedules by"
@@ -85,29 +77,29 @@ Copyright (C) 2026 Andrew Cupps
     {/if}
   </div>
 
-  {#if state.kind === 'idle'}
+  {#if $GenerationStateStore.kind === 'idle'}
     <p class="py-8 text-center text-sm opacity-60">Add courses and set any constraints, then generate schedules.</p>
-  {:else if state.kind === 'failed'}
+  {:else if $GenerationStateStore.kind === 'failed'}
     <div
       class="border-orange bg-lightOrange rounded-lg border
 				bg-opacity-30 px-3 py-2 text-sm"
     >
-      {state.message}
+      {$GenerationStateStore.message}
     </div>
-  {:else if state.kind === 'noSchedules'}
-    <RelaxationHints hints={state.hints} coursesWithNoValidSections={state.coursesWithNoValidSections} />
-  {:else if state.kind === 'done'}
-    {#if state.truncated}
+  {:else if $GenerationStateStore.kind === 'noSchedules'}
+    <RelaxationHints hints={$GenerationStateStore.hints} coursesWithNoValidSections={$GenerationStateStore.coursesWithNoValidSections} />
+  {:else if $GenerationStateStore.kind === 'done'}
+    {#if $GenerationStateStore.truncated}
       <div class="text-xs italic opacity-60">
-        Showing the first {state.schedules.length} schedules; more exist. Add constraints to narrow them down.
+        Showing the first {$GenerationStateStore.schedules.length} schedules; more exist. Add constraints to narrow them down.
       </div>
     {/if}
-    {#if state.pinNotices.length > 0}
+    {#if $GenerationStateStore.pinNotices.length > 0}
       <div
         class="border-orange bg-lightOrange flex flex-col gap-1 rounded-lg
 					border bg-opacity-20 px-3 py-2 text-xs"
       >
-        {#each state.pinNotices as notice (notice.courseCode + notice.sectionCode)}
+        {#each $GenerationStateStore.pinNotices as notice (notice.courseCode + notice.sectionCode)}
           <div>
             <span class="font-semibold"> {notice.courseCode} ({notice.sectionCode}) </span> was pinned even though it {notice.overriddenFilters
               .map(overriddenFilterLabel)
@@ -125,7 +117,7 @@ Copyright (C) 2026 Andrew Cupps
     {#if visibleCount < sortedSchedules.length}
       <button
         class="border-outlineLight hover:border-orange hover:text-orange dark:border-outlineDark mx-auto mt-1 rounded-lg border px-4 py-1.5 text-sm"
-        onclick={() => (visibleCount += PAGE_SIZE)}
+        onclick={() => visibleCount += PAGE_SIZE}
       >
         Show more ({sortedSchedules.length - visibleCount} more)
       </button>
