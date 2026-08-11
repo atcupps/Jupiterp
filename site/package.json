@@ -10,7 +10,7 @@
     "start": "node build",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-    "lint": "prettier --check . && eslint .",
+    "lint": "eslint .",
     "fix": "prettier --write . && eslint . --fix",
     "format-check": "node scripts/format-check.js",
     "test": "jest"

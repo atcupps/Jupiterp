@@ -14,7 +14,6 @@ Copyright (C) 2026 Andrew Cupps
     earliestClassStart?: number;
     latestClassEnd?: number;
     bgHeight?: number;
-    type?: string;
   }
 
   let {
@@ -23,7 +22,6 @@ Copyright (C) 2026 Andrew Cupps
     earliestClassStart = $bindable(0),
     latestClassEnd = $bindable(0),
     bgHeight = $bindable(0),
-    type = 'Day',
   }: Props = $props();
 </script>
 
@@ -31,7 +29,7 @@ Copyright (C) 2026 Andrew Cupps
   <div>{name}</div>
   <div style="height: {bgHeight}px;" class="relative top-2.5">
     {#each classes as classMeeting, index (`${index}-${classMeeting.instructors}`)}
-      <ClassMeeting meeting={classMeeting} isInOther={type === 'Other'} bind:earliestClassStart bind:latestClassEnd />
+      <ClassMeeting meeting={classMeeting} isInOther={false} {earliestClassStart} {latestClassEnd} />
     {/each}
   </div>
 </div>

@@ -5,13 +5,34 @@ https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2026 Andrew Cupps
 -->
 <script lang="ts">
-  import type { Instructor } from '@jupiterp/jupiterp';
   import { ptLinkFromSlug } from '../../../lib/course-planner/Professors';
   import { ProfsLookupStore } from '../../../stores/CoursePlannerStores';
 
-  let profs: Record<string, Instructor> = $state({});
-  ProfsLookupStore.subscribe((lookup) => {
-    profs = lookup;
+  // 1. Properly define the component props type contract
+  interface Props {
+    instructor?: string;
+    profsHover: boolean;
+    removeHoverSection: () => void;
+  }
+
+  // eslint-disable-next-line no-useless-assignment
+  let { instructor = 'No instructor', profsHover = $bindable(), removeHoverSection }: Props = $props();
+
+  let profs = $derived($ProfsLookupStore);
+
+  let currentProf = $derived.by(() => {
+    const name = instructor ?? 'No instructor';
+    const profData = profs?.[name];
+
+    if (profData && profData.average_rating != null) {
+      return {
+        name,
+        slug: profData.slug,
+        rating: profData.average_rating,
+        starsStyle: `--rating: ${convertRating(profData.average_rating)}%`,
+      };
+    }
+    return null;
   });
 
   // Convert rating to a percentage for CSS
@@ -26,25 +47,17 @@ Copyright (C) 2026 Andrew Cupps
     // Prevent the event from propagating to the button
     event.stopPropagation();
   }
-
-  interface Props {
-    instructor?: string;
-    profsHover: boolean;
-    removeHoverSection: () => void;
-  }
-
-  let { instructor = 'No instructor', profsHover = $bindable(), removeHoverSection }: Props = $props();
 </script>
 
 <div class="text-sm xl:text-base">
-  {#if instructor in profs && profs[instructor].average_rating != null}
+  {#if currentProf}
     <a
-      href={ptLinkFromSlug(profs[instructor].slug)}
+      href={ptLinkFromSlug(currentProf.slug)}
       rel="external"
       target="_blank"
       class="text-orange hover:bg-hoverLight hover:dark:bg-hoverDark inline-flex flex-wrap rounded-md underline transition"
       onmouseenter={() => {
-        profsHover = true;
+        profsHover = true; // Mutating properties directly updates parent binding
         removeHoverSection();
       }}
       onmouseleave={() => {
@@ -54,7 +67,7 @@ Copyright (C) 2026 Andrew Cupps
       onclick={handleLinkClick}
       title="View Instructor on PlanetTerp"
     >
-      {instructor}
+      {currentProf.name}
       <!-- format-check exempt 3 -->
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="mt-1 h-3 w-3">
         <path
@@ -66,14 +79,14 @@ Copyright (C) 2026 Andrew Cupps
       </svg>
     </a>
     <span
-      style="--rating: {convertRating(profs[instructor].average_rating) + '%'}"
+      style={currentProf.starsStyle}
       class="stars text-orange align-[2px] text-[8px] font-bold xl:text-[10px] 2xl:text-base"
-      title="{profs[instructor].average_rating} out of 5"
+      title="{currentProf.rating} out of 5"
     >
       ★★★★★
     </span>
   {:else}
-    {instructor}
+    {instructor ?? 'No instructor'}
   {/if}
 </div>
 

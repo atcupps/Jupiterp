@@ -48,8 +48,8 @@ Copyright (C) 2026 Andrew Cupps
   <div
     role="button"
     tabindex="0"
-    on:focus={scrollToCourseTop}
-    class="border-outlineLight bg-bgSecondaryLight dark:border-outlineDark dark:bg-bgSecondaryDark top-0 z-10 mb-0.5 border-b-2 border-solid px-2 text-left"
+    onfocus={scrollToCourseTop}
+    class="border-outlineLight bg-bgSecondaryLight dark:border-outlineDark dark:bg-bgSecondaryDark top-0 z-10 border-b-2 border-solid px-2 text-left"
   >
     <!-- Course code and credit count -->
     <div class="flex flex-row align-middle">
@@ -78,10 +78,9 @@ Copyright (C) 2026 Andrew Cupps
     {/if}
 
     <button
-      tabindex="0"
       class="text-secCodesLight hover:text-secCodesDark flex w-full flex-row content-center text-left text-sm dark:text-[#8892a8] 2xl:text-base"
       title={!showMoreInfo ? 'Show more course details' : 'Hide course details'}
-      on:click={() => {
+      onclick={() => {
         showMoreInfo = !showMoreInfo;
       }}
     >

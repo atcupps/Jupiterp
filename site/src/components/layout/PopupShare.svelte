@@ -1,10 +1,10 @@
 <script lang="ts">
-  import { createEventDispatcher } from 'svelte';
+  import { SvelteDate } from 'svelte/reactivity';
   import { CurrentScheduleStore } from '../../stores/CoursePlannerStores';
   import type { ScheduleSelection, UserEvent } from '../../types';
   import Tooltip from '../course-planner/schedule/Tooltip.svelte';
 
-  const dispatch = createEventDispatcher();
+  let { onCloseExport } = $props<{ onCloseExport?: () => void }>();
   let selections: ScheduleSelection[] = [];
   let selectionsCustom: UserEvent[] = [];
 
@@ -14,7 +14,7 @@
   });
 
   function closePopup() {
-    dispatch('close-export');
+    onCloseExport?.();
   }
 
   function formatDecimalTime(decimalTime: number): string {
@@ -57,7 +57,7 @@
     const year = parseInt(startStr.substring(0, 4));
     const month = parseInt(startStr.substring(4, 6)) - 1;
     const day = parseInt(startStr.substring(6, 8));
-    let date = new Date(year, month, day);
+    let date = new SvelteDate(year, month, day);
 
     const dayMap: Record<string, number> = { MO: 1, TU: 2, WE: 3, TH: 4, FR: 5, SA: 6, SU: 0 };
 

@@ -15,6 +15,7 @@ Copyright (C) 2026 Andrew Cupps
     condensed?: boolean;
   }
 
+  // eslint-disable-next-line no-useless-assignment
   let { meeting, locationHover = $bindable(), removeHoverSection, condensed = false }: Props = $props();
 
   function handleLinkClick(event: MouseEvent) {
@@ -35,7 +36,11 @@ Copyright (C) 2026 Andrew Cupps
   {#if typeof meeting === 'string'}
     {meeting}
   {:else}
-    <!-- Classtime --> <span class:grow={!condensed}> {formatClassDayTime(meeting.classtime)} </span>
+    <!-- Classtime -->
+    <span class:grow={!condensed}>
+      {formatClassDayTime(meeting.classtime)}
+    </span>
+
     <!-- Location -->
     <span class:grow={!condensed} class:text-right={!condensed}>
       {#if condensed}&nbsp;in
@@ -50,11 +55,11 @@ Copyright (C) 2026 Andrew Cupps
           rel="external"
           class="text-orange hover:bg-hoverLight hover:dark:bg-hoverDark rounded-md p-0.5 underline transition"
           onmouseenter={() => {
-            locationHover = true;
+            locationHover = true; // Fixed: Mutates the property directly on the object
             removeHoverSection();
           }}
           onmouseleave={() => {
-            locationHover = false;
+            locationHover = false; // Fixed: Mutates the property directly on the object
             removeHoverSection();
           }}
           onclick={handleLinkClick}

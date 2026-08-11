@@ -5,8 +5,6 @@ https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2026 Andrew Cupps
 -->
 <script lang="ts">
-  import { stopPropagation } from 'svelte/legacy';
-
   import type { UserEvent } from '../../../types';
 
   interface Props {

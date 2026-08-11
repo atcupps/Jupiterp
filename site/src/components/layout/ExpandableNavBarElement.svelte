@@ -12,14 +12,16 @@ Copyright (C) 2026 Andrew Cupps
     text: string;
     target?: string;
     isOnPage?: boolean;
+    reduceXMargin?: boolean; // Added to prevent TypeScript errors from parent usage
     children?: import('svelte').Snippet;
   }
 
-  let { link, text, target = '_self', isOnPage = false, children }: Props = $props();
+  let { link, text, target = '_self', isOnPage = false, reduceXMargin = false, children }: Props = $props();
 </script>
 
-<div class="group relative mx-4 px-1 font-normal">
-  <a href={link} {target} class="inline-flex items-center transition">
+<div class={`${reduceXMargin ? 'mx-1' : 'mx-4'} group relative px-1 font-normal`}>
+  <!-- BUG: This should be 'canonical' if isOnPage is true, but that cause resolve error -->
+  <a href={link} {target} rel="external" class="inline-flex items-center transition">
     <span
       class={`${isOnPage ? 'siteLinkUnderline text-orange' : 'text-textLight hover:text-orange dark:hover:text-lightOrange dark:text-white'}`}
     >

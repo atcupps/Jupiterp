@@ -181,7 +181,7 @@ Copyright (C) 2026 Andrew Cupps
   {#if suggestionItems.length > 0}
     <div class="border-outlineLight bg-bgLight dark:border-outlineDark dark:bg-bgDark overflow-clip border shadow-lg">
       <div class="custom-scrollbar h-[50svh] max-h-72 min-h-16 overflow-y-auto">
-        {#each suggestionItems as item, index}
+        {#each suggestionItems as item, index (item.value)}
           <button
             type="button"
             class={'hover:bg-outlineLight dark:hover:bg-outlineDark flex w-full px-3 py-1 text-left text-base transition-colors hover:bg-opacity-20 dark:hover:bg-opacity-30 lg:text-sm' +

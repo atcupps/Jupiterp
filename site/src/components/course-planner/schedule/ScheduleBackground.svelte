@@ -5,12 +5,7 @@ https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2026 Andrew Cupps
 -->
 <script lang="ts">
-  import { run } from 'svelte/legacy';
-
   import TimeLine from './TimeLine.svelte';
-
-  let displayTimes: number[] = $state([]);
-  let numBars: number = $state(17);
 
   function formatDecTime(decTime: number): string {
     let decTimeInDay = decTime % 24;
@@ -30,23 +25,30 @@ Copyright (C) 2026 Andrew Cupps
   let elt: HTMLDivElement | null = $state(null);
   let innerHeight: number = $state(0);
   let innerWidth: number = $state(0);
+
   interface Props {
     earliest?: number;
     latest?: number;
     h?: number;
   }
 
-  let { earliest = $bindable(0), latest = $bindable(0), h = $bindable() }: Props = $props();
-  run(() => {
+  // eslint-disable-next-line
+  let { earliest = $bindable(0), latest = $bindable(0), h = $bindable(0) }: Props = $props();
+
+  let displayTimes: number[] = $derived.by(() => {
     if (earliest || latest) {
-      displayTimes = [];
+      let times: number[] = [];
       for (let i = earliest; i <= latest; i++) {
-        displayTimes = [...displayTimes, i];
+        times.push(i);
       }
-      numBars = Math.min(21, (latest - earliest) * 2 + 1);
+      return times;
     }
+    return [];
   });
-  run(() => {
+
+  let numBars: number = $derived(earliest || latest ? Math.min(21, (latest - earliest) * 2 + 1) : 17);
+
+  $effect(() => {
     if (elt && innerHeight && innerWidth) {
       h = (elt.offsetHeight * (latest - earliest) * 2) / numBars;
     }
@@ -57,7 +59,7 @@ Copyright (C) 2026 Andrew Cupps
 
 <div bind:this={elt} class="h-full">
   <TimeLine number={formatDecTime(earliest)} position={0} />
-  {#each displayTimes.slice(1, displayTimes.length) as time}
+  {#each displayTimes.slice(1, displayTimes.length) as time (time)}
     <TimeLine position={((time - earliest) * 2 - 1) / numBars} />
     <TimeLine number={formatDecTime(time)} position={((time - earliest) * 2) / numBars} />
   {/each}

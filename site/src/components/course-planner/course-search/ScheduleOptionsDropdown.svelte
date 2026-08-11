@@ -87,7 +87,7 @@ Copyright (C) 2026 Andrew Cupps
   <DropdownItem
     class="hover:bg-hoverLight dark:hover:bg-hoverDark flex items-center justify-start px-2"
     title="Add custom event to schedule"
-    on:click={addCustomEvent}
+    onclick={addCustomEvent}
   >
     <PlusOutline class="z-50 mr-1 h-3 w-3" /> Add Event
   </DropdownItem>
@@ -95,7 +95,7 @@ Copyright (C) 2026 Andrew Cupps
     class="hover:bg-hoverLight dark:hover:bg-hoverDark flex
                             items-center justify-start px-2"
     title="Delete current schedule"
-    on:click={deleteCurrentSchedule}
+    onclick={deleteCurrentSchedule}
   >
     <TrashBinOutline class="z-50 mr-1 h-3 w-3" /> Delete
   </DropdownItem>
@@ -103,7 +103,7 @@ Copyright (C) 2026 Andrew Cupps
     class="hover:bg-hoverLight dark:hover:bg-hoverDark flex
                             items-center justify-start px-2"
     title="Duplicate current schedule"
-    on:click={duplicateSchedule}
+    onclick={duplicateSchedule}
   >
     <FileCopyOutline class="z-50 mr-1 h-3 w-3" /> Duplicate
   </DropdownItem>

@@ -213,6 +213,6 @@ Copyright (C) 2026 Andrew Cupps
   {/if}
 
   {#if sharePopUpOpen}
-    <PopupShare on:close-export={() => (sharePopUpOpen = false)} />
+    <PopupShare onCloseExport={() => (sharePopUpOpen = false)} />
   {/if}
 </div>

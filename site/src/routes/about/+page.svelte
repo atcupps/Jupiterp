@@ -5,6 +5,7 @@ https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2026 Andrew Cupps
  -->
 <script lang="ts">
+  import { resolve } from '$app/paths';
   const h1Classes = 'text-2xl border-b-2 border-divBorderLight dark:border-divBorderDark';
   const h2Classes = 'text-xl border-b-2 border-divBorderLight dark:border-divBorderDark';
   const h3Classes = 'text-l border-b-2 border-divBorderLight dark:border-divBorderDark';
@@ -19,6 +20,7 @@ Copyright (C) 2026 Andrew Cupps
     search for courses, see sections complete with instructor reviews from <a
       href="https://planetterp.com"
       target="_blank"
+      rel="external"
       class="text-orange underline">PlanetTerp</a
     >, and visualize their course schedule. Unlike other course planners, Jupiterp is built specifically by and for
     students at UMD, because we know that students here know best what they need; that's why Jupiterp is also completely
@@ -30,10 +32,11 @@ Copyright (C) 2026 Andrew Cupps
     meantime, if you find something wrong on our site, please report it as an issue <a
       href="https://github.com/atcupps/Jupiterp/issues"
       target="_blank"
+      rel="external"
       class="text-orange underline">here</a
     >.
   </p>
-  <a href="/changelog" class="text-orange underline">View changelog</a>
+  <a href={resolve('/changelog')} aria-label="View changelog" class="text-orange underline">View changelog</a>
   <h2 class={h2Classes}>Professor Ratings</h2>
   <p class={pClasses}>
     Stars next to a professor's name indicate their average rating as shown on PlanetTerp. These ratings are based on
@@ -47,6 +50,7 @@ Copyright (C) 2026 Andrew Cupps
     Jupiterp is open-source and accepting contributions. Please visit our <a
       href="https://github.com/atcupps/Jupiterp"
       target="_blank"
+      aria-label="Visit our GitHub"
       class="text-orange underline">GitHub</a
     > to make contributions.
   </p>
@@ -60,6 +64,8 @@ Copyright (C) 2026 Andrew Cupps
     Jupiterp is open-source, so anyone can contribute! It is primarily maintained by <a
       href="https://atcupps.github.io/"
       target="_blank"
+      aria-label="Visit Andrew Cupps's website"
+      rel="external"
       class="text-orange underline"
     >
       Andrew Cupps</a

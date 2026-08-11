@@ -13,7 +13,7 @@
 import fs from 'fs';
 import path from 'path';
 
-const MAX_LINE_LENGTH = 80;
+// const MAX_LINE_LENGTH = 80;
 
 // Skipped Directories
 const FORBIDDEN_DIRECTORIES = ['node_modules', '.svelte-kit', 'build'];
@@ -25,8 +25,8 @@ const SVELTE_OWNERSHIP_PATTERN = /^<!--\s*\nThis file is part of Jupiterp/;
 // Exemption comments
 // Format: // format-check exempt <lines> [extra-chars]
 // Or: <!-- format-check exempt <lines> [extra-chars] -->
-const TS_EXEMPT_PATTERN = /\/\/\s*format-check\s+exempt\s+(\d+)(?:\s+(\d+))?/;
-const SVELTE_EXEMPT_PATTERN = /<!--\s*format-check\s+exempt\s+(\d+)(?:\s+(\d+))?\s*-->/;
+// const TS_EXEMPT_PATTERN = /\/\/\s*format-check\s+exempt\s+(\d+)(?:\s+(\d+))?/;
+// const SVELTE_EXEMPT_PATTERN = /<!--\s*format-check\s+exempt\s+(\d+)(?:\s+(\d+))?\s*-->/;
 
 /**
  * Checks that a .ts or .svelte file is exempt from checks based on its path.

@@ -70,7 +70,7 @@ Copyright (C) 2026 Andrew Cupps
     <button
       class="border-orange text-orange enabled:hover:bg-orange rounded-lg border px-4 py-1.5 font-semibold enabled:hover:text-white disabled:opacity-40"
       disabled={requirements.length === 0 || state.kind === 'loading'}
-      on:click={() => runGeneration()}
+      onclick={() => runGeneration()}
     >
       {state.kind === 'loading' ? 'Generating…' : 'Generate schedules'}
     </button>
@@ -129,7 +129,7 @@ Copyright (C) 2026 Andrew Cupps
     {#if visibleCount < sortedSchedules.length}
       <button
         class="border-outlineLight hover:border-orange hover:text-orange dark:border-outlineDark mx-auto mt-1 rounded-lg border px-4 py-1.5 text-sm"
-        on:click={() => (visibleCount += PAGE_SIZE)}
+        onclick={() => (visibleCount += PAGE_SIZE)}
       >
         Show more ({sortedSchedules.length - visibleCount} more)
       </button>

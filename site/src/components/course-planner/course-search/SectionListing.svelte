@@ -1,7 +1,3 @@
-<!-- @migration-task Error while migrating Svelte code: `<button>` cannot be a child of `<button>`. The browser will 'repair' the HTML (by moving, removing, or inserting elements) which breaks Svelte's assumptions about the structure of your components.
-https://svelte.dev/e/node_invalid_placement -->
-<!-- @migration-task Error while migrating Svelte code: `<button>` cannot be a child of `<button>`. The browser will 'repair' the HTML (by moving, removing, or inserting elements) which breaks Svelte's assumptions about the structure of your components.
-https://svelte.dev/e/node_invalid_placement -->
 <!-- 
 This file is part of Jupiterp. For terms of use, please see the file
 called LICENSE at the top level of the Jupiterp source tree (online at
@@ -77,7 +73,7 @@ Copyright (C) 2026 Andrew Cupps
     plannerContainer = document.getElementById('planner-container');
   });
   function scrollToTopPlannerTop() {
-    if (plannerContainer) {
+    if (!isDesktop && plannerContainer) {
       plannerContainer.scrollTo({
         top: 0,
         behavior: 'smooth',
@@ -172,48 +168,53 @@ Copyright (C) 2026 Andrew Cupps
 </script>
 
 <!-- Ignoring a11y for mouseover because it's a non-essential feature -->
-<!-- svelte-ignore a11y-mouse-events-have-key-events -->
-<section
-  aria-label="{sectionAdded ? 'Remove course from' : 'Add course to'} schedule"
-  on:mouseover={isDesktop ? addHoverSection : null}
-  on:mouseout={isDesktop ? removeHoverSection : null}
-  on:focusin={isDesktop ? addHoverSection : null}
-  on:focusout={isDesktop ? removeHoverSection : null}
-  class="border-outlineLight dark:border-outlineDark relative flex w-full flex-row border-t-2 pb-1 text-left transition {sectionAdded
-    ? 'bg-hoverLight dark:bg-hoverDark'
-    : ''}"
-  class:lg:hover:bg-hoverLight={!profsHover && !locationHover}
-  class:lg:hover:dark:bg-hoverDark={!profsHover && !locationHover}
-  title="{sectionAdded ? 'Remove course from' : 'Add course to'} schedule"
+<div
+  role="listitem"
+  onmouseover={isDesktop ? addHoverSection : null}
+  onmouseout={isDesktop ? removeHoverSection : null}
+  onfocus={isDesktop ? addHoverSection : null}
+  onfocusin={isDesktop ? addHoverSection : null}
+  onfocusout={isDesktop ? removeHoverSection : null}
+  onblur={isDesktop ? removeHoverSection : null}
+  class="border-outlineLight dark:border-outlineDark not-last:border-b grid grid-cols-[auto_1fr] transition
+  {sectionAdded ? 'bg-hoverLight dark:bg-hoverDark' : 'hover:bg-hoverLight/50 dark:hover:bg-hoverDark/50'}"
 >
-  <!-- 2. Main Action Button: Covers the row background but stays structurally separate -->
+  <!-- Section code (click to view) -->
+  <!-- onclick triggers addSectionToSchedule and then scrollToTopPlannerTop -->
   <button
-    type="button"
-    class="absolute inset-0 z-0 h-full w-full cursor-pointer opacity-0"
-    on:click={addSectionToSchedule}
-    aria-label="{sectionAdded ? 'Remove course from' : 'Add course to'} schedule"
-  ></button>
-
-  <!-- 3. Section code button (Bring to front with z-10 so it remains clickable) -->
-  <button
-    type="button"
-    on:click={isDesktop ? null : scrollToTopPlannerTop}
-    class="text-secCodesLight dark:text-secCodesDark relative z-10 w-12 text-sm font-semibold xl:w-14 xl:text-base"
+    onclick={() => {
+      addSectionToSchedule();
+      scrollToTopPlannerTop();
+    }}
+    class="text-secCodesLight dark:text-secCodesDark w-12 text-sm font-semibold xl:w-14 xl:text-base"
   >
-    <div class="h-full align-top">{section.sectionCode}</div>
+    <div class="h-full align-top">
+      {section.sectionCode}
+    </div>
   </button>
 
-  <!-- Section info (Bring to front with z-10 so inner items stay clickable) -->
-  <div class="relative z-10 w-full">
-    {#each section.instructors as instructor}
-      <InstructorListing {instructor} bind:profsHover {removeHoverSection} />
-    {/each}
-    <SeatData {section} />
-    {#each section.meetings as meeting}
-      <MeetingListing {meeting} bind:locationHover {removeHoverSection} />
-    {/each}
-  </div>
-</section>
+  <button
+    onclick={addSectionToSchedule}
+    title="{sectionAdded ? 'Remove course from' : 'Add course to'} schedule"
+    class="w-full text-left"
+  >
+    <!-- Section info -->
+    <div class="w-full">
+      <!-- Instructors -->
+      {#each section.instructors as instructor (instructor)}
+        <InstructorListing {instructor} bind:profsHover {removeHoverSection} />
+      {/each}
+
+      <!-- Seats info -->
+      <SeatData {section} />
+
+      <!-- Class meetings -->
+      {#each section.meetings as meeting (meeting)}
+        <MeetingListing {meeting} bind:locationHover {removeHoverSection} />
+      {/each}
+    </div>
+  </button>
+</div>
 
 {#if addAlertVisible}
   <div class={alertClasses} out:fade={{ duration: 300 }}>

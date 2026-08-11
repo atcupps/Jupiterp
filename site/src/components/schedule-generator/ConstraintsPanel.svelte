@@ -12,6 +12,7 @@ Copyright (C) 2026 Andrew Cupps
   import type { HardConstraints } from '../../lib/schedule-generator/types';
   import type { EngineDay } from '../../lib/schedule-generator/types';
   import { ENGINE_DAYS, timeSlotOptions } from '../../lib/schedule-generator/GeneratorFormat';
+  import { SvelteSet } from 'svelte/reactivity';
 
   const ANY_TIME = { value: '', label: 'Any time' };
   const timeOptions = [ANY_TIME, ...timeSlotOptions()];
@@ -54,7 +55,7 @@ Copyright (C) 2026 Andrew Cupps
 
   function toggleDay(day: EngineDay) {
     GeneratorConstraintsStore.update((c) => {
-      const daysOff = new Set(c.daysOff);
+      const daysOff = new SvelteSet<EngineDay>(c.daysOff);
       if (daysOff.has(day)) {
         daysOff.delete(day);
       } else {
@@ -69,7 +70,7 @@ Copyright (C) 2026 Andrew Cupps
       ...c,
       earliestStartMinutes: null,
       latestEndMinutes: null,
-      daysOff: new Set<EngineDay>(),
+      daysOff: new SvelteSet<EngineDay>(),
       minGapMinutes: 0,
       minCredits: null,
     }));

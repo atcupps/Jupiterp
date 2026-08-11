@@ -5,13 +5,10 @@ https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2026 Andrew Cupps
 -->
 <script lang="ts">
-  import { run } from 'svelte/legacy';
-
   import { getClasstimeBounds, schedulify, appendHoveredSection } from '../../../lib/course-planner/Schedule';
   import ScheduleDay from './ScheduleDay.svelte';
   import ScheduleBackground from './ScheduleBackground.svelte';
   import { formatCredits, testudoLink } from '../../../lib/course-planner/Formatting';
-  import { resolve } from '$app/paths';
   import InstructorListing from '../course-search/InstructorListing.svelte';
   import { HoveredSectionStore, CurrentScheduleStore, CourseInfoPairStore } from '../../../stores/CoursePlannerStores';
   import MeetingListing from '../course-search/MeetingListing.svelte';
@@ -22,66 +19,75 @@ Copyright (C) 2026 Andrew Cupps
   import { chainScroll } from '../../../lib/course-planner/ChainScroll';
   import { PlannerState } from '../../../stores/CoursePlannerStores';
 
+  let { earliest = $bindable(8), latest = $bindable(16), h = $bindable(0) } = $props();
+
+  // Internal reactive states for schedule dimensions
+  let earliestClassStart = $state(earliest);
+  let latestClassEnd = $state(latest);
+  let bgHeight = $state(h);
+
+  // Synchronize internal calculations upward back into the $bindable props safely
+  $effect.pre(() => {
+    earliest = earliestClassStart;
+  });
+  $effect.pre(() => {
+    latest = latestClassEnd;
+  });
+  $effect.pre(() => {
+    h = bgHeight;
+  });
+
   let plannerState: { isDesktop: boolean; chainScrollParent: HTMLElement | null } = $state({
     isDesktop: false,
     chainScrollParent: null,
   });
-  PlannerState.subscribe((state: { isDesktop: boolean; chainScrollParent: HTMLElement | null }) => {
+  PlannerState.subscribe((state) => {
     plannerState = state;
   });
 
   let hoveredSection: ScheduleSelection | null = $state(null);
-  let selections: ScheduleBlock[] = $state([]);
-
-  let schedule: Schedule = $derived(schedulify(appendHoveredSection(selections, hoveredSection)));
-
   HoveredSectionStore.subscribe((stored) => {
     hoveredSection = stored;
-    schedule = schedulify(appendHoveredSection(selections, hoveredSection));
   });
 
+  let selections: ScheduleBlock[] = $state([]);
   CurrentScheduleStore.subscribe((stored) => {
     selections = stored.selections;
-    schedule = schedulify(appendHoveredSection(selections, hoveredSection));
   });
 
-  let bgHeight: number = $state(0);
+  // Calculate schedule strictly as a $derived rune
+  let schedule: Schedule = $derived(schedulify(appendHoveredSection(selections, hoveredSection)));
 
-  // Keep track of the range of times to display on the Schedule
-  let earliestClassStart: number = $state(8);
-  let latestClassEnd: number = $state(16);
+  $effect(() => {
+    const selectionsWithHovered = appendHoveredSection(selections, hoveredSection);
 
-  // In order for Svelte to recreate `schedule` reactively as the user
-  // selects new classes, this if block is needed to run `schedulify`
-  // if `selections` changes.
-  run(() => {
-    if (selections || hoveredSection) {
-      const selectionsWithHovered = appendHoveredSection(selections, hoveredSection);
-      schedule = schedulify(selectionsWithHovered);
-      if (selectionsWithHovered.length === 0) {
-        earliestClassStart = 8;
-        latestClassEnd = 16;
-      } else {
-        const bounds = getClasstimeBounds(schedule);
-        earliestClassStart = bounds.earliestStart;
-        latestClassEnd = bounds.latestEnd;
-        const boundDiff = latestClassEnd - earliestClassStart;
-        if (boundDiff < 8) {
-          earliestClassStart -= Math.floor((8 - boundDiff) / 2);
-          latestClassEnd += Math.floor((8 - boundDiff) / 2);
-        }
+    if (selectionsWithHovered.length === 0) {
+      earliestClassStart = 8;
+      latestClassEnd = 16;
+    } else {
+      const bounds = getClasstimeBounds(schedule);
+      let localStart = bounds.earliestStart;
+      let localEnd = bounds.latestEnd;
+
+      const boundDiff = localEnd - localStart;
+      if (boundDiff < 8) {
+        localStart -= Math.floor((8 - boundDiff) / 2);
+        localEnd += Math.floor((8 - boundDiff) / 2);
       }
-      if (earliestClassStart === -5 && latestClassEnd === 5) {
-        earliestClassStart = 8;
-        latestClassEnd = 16;
+
+      if (localStart === -5 && localEnd === 5) {
+        localStart = 8;
+        localEnd = 16;
       }
+
+      // Avoid layout loops by checking equality before setting states
+      if (earliestClassStart !== localStart) earliestClassStart = localStart;
+      if (latestClassEnd !== localEnd) latestClassEnd = localEnd;
     }
   });
 
   let showCourseInfo: string | null = $state(null);
   let showSectionInfo: string | null = $state(null);
-  let courseInfoCourse: CourseBasic | null = $state(null);
-  let courseInfoSection: Section | null = $state(null);
 
   CourseInfoPairStore.subscribe((pair) => {
     if (pair === null) {
@@ -93,27 +99,32 @@ Copyright (C) 2026 Andrew Cupps
     }
   });
 
-  run(() => {
-    if (showCourseInfo !== null) {
-      let index = selections.findIndex((selection) => {
-        return (
+  // Lookup target course using $derived.by
+  let selectedSelection = $derived.by(() => {
+    if (showCourseInfo === null) return null;
+    return (
+      selections.find(
+        (selection) =>
           'course' in selection &&
           selection.course.courseCode === showCourseInfo &&
           selection.section.sectionCode === showSectionInfo
-        );
-      });
-      if (index === -1) {
-        showCourseInfo = null;
-        showSectionInfo = null;
-        courseInfoCourse = null;
-        courseInfoSection = null;
-      } else {
-        const found = selections[index];
-        if ('course' in found) {
-          courseInfoCourse = found.course;
-          courseInfoSection = found.section;
-        }
-      }
+      ) || null
+    );
+  });
+
+  // Derived course profiles for child panels
+  let courseInfoCourse: CourseBasic | null = $derived(
+    selectedSelection && 'course' in selectedSelection ? selectedSelection.course : null
+  );
+  let courseInfoSection: Section | null = $derived(
+    selectedSelection && 'course' in selectedSelection ? selectedSelection.section : null
+  );
+
+  // Clean state up cleanly if target course disappears from parent collection
+  $effect(() => {
+    if (showCourseInfo !== null && !selectedSelection) {
+      showCourseInfo = null;
+      showSectionInfo = null;
     }
   });
 
@@ -149,7 +160,7 @@ Copyright (C) 2026 Andrew Cupps
     <!-- format-check exempt 2 -->
     <div
       style="width: {schedule.other.length == 0 ? 'calc(100% - 8px)' : '83.3%'};"
-      class="absolute bottom-0 left-[4px] top-6 z-0"
+      class="absolute bottom-0 left-1 top-6 z-0"
     >
       <ScheduleBackground bind:earliest={earliestClassStart} bind:latest={latestClassEnd} bind:h={bgHeight} />
     </div>
@@ -163,7 +174,7 @@ Copyright (C) 2026 Andrew Cupps
 
     <!-- 'Other' classes (OnlineAsync, Unspecified) -->
     {#if schedule.other.length > 0}
-      <ScheduleDay name="Other" classes={schedule.other} type="Other" {bgHeight} />
+      <ScheduleDay name="Other" classes={schedule.other} {bgHeight} />
     {/if}
   </div>
 

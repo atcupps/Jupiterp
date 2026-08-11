@@ -46,7 +46,7 @@ Copyright (C) 2026 Andrew Cupps
       class="hover:bg-hoverLight dark:hover:bg-hoverDark px-3 py-1 text-left text-sm {option.value === value
         ? 'text-orange font-semibold'
         : ''}"
-      on:click={() => choose(option.value)}
+      onclick={() => choose(option.value)}
     >
       {option.label}
     </DropdownItem>
