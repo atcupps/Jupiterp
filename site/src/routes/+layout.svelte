@@ -20,7 +20,7 @@ Copyright (C) 2026 Andrew Cupps
 
 <div class="fixed z-50 w-full px-4">
   <div class="border-divBorderLight dark:border-divBorderDark flex h-12 flex-row justify-start border-b-2">
-    <a href={resolve('/', {})} aria-label="Home" rel="canonical" class="flex py-1">
+    <a href={resolve('/')} aria-label="Home" rel="canonical" class="flex py-1">
       <img src="logo.svg" alt="Jupiterp Beta logo" />
     </a>
     <SiteLinks />

@@ -214,7 +214,7 @@ Copyright (C) 2026 Andrew Cupps
         </span>
         <span class="font-normal"> - {courseInfoCourse.name} </span>
         <span class="text-orange mx-1 text-base font-normal underline 2xl:text-lg">
-          <a href={testudoLink(courseInfoCourse.courseCode)} rel="noopener noreferrer" target="_blank">
+          <a href={testudoLink(courseInfoCourse.courseCode)} rel="external noopener noreferrer" target="_blank">
             (view on Testudo)
           </a>
         </span>

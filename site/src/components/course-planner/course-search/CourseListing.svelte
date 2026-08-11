@@ -63,7 +63,7 @@ Copyright (C) 2026 Andrew Cupps
           <a
             class="border-orange text-orange hover:bg-orange hover:text-bgSecondaryLight hover:dark:text-bgSecondaryDark mr-1 rounded-xl border px-1 text-[0.625rem] font-bold leading-tight transition 2xl:text-xs"
             href={`https://app.testudo.umd.edu/soc/gen-ed/202608/` + genEd.code}
-            rel="noopener noreferrer"
+            rel="external noopener noreferrer"
             target="_blank"
             title={'GenEd: ' + genEd.name}
           >
@@ -91,7 +91,7 @@ Copyright (C) 2026 Andrew Cupps
           <a
             href={testudoLink(course.courseCode)}
             class="text-orange underline"
-            rel="noopener noreferrer"
+            rel="external noopener noreferrer"
             target="_blank"
           >
             View on Testudo

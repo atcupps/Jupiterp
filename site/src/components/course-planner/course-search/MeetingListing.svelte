@@ -52,7 +52,7 @@ Copyright (C) 2026 Andrew Cupps
       {:else}
         <a
           href={generateMapURL(meeting.location.building)}
-          rel="noopener noreferrer"
+          rel="external noopener noreferrer"
           class="text-orange hover:bg-hoverLight hover:dark:bg-hoverDark rounded-md p-0.5 underline transition"
           onmouseenter={() => {
             locationHover = true; // Fixed: Mutates the property directly on the object

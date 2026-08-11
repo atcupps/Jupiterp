@@ -5,7 +5,6 @@ https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2026 Andrew Cupps
 -->
 <script lang="ts">
-  import { resolve } from '$app/paths';
   import { AngleDownOutline } from 'flowbite-svelte-icons';
 
   interface Props {
@@ -21,8 +20,10 @@ Copyright (C) 2026 Andrew Cupps
 </script>
 
 <div class={`${reduceXMargin ? 'mx-1' : 'mx-4'} group relative px-1 font-normal`}>
+  <!-- ERROR: Navigation without resolve as link can be external AND internal -->
+  <!-- eslint-disable svelte/no-navigation-without-resolve -->
   <a
-    href={resolve(link, {})}
+    href={link}
     {target}
     rel={target === '_blank' ? 'noopener noreferrer' : 'canonical'}
     class="inline-flex items-center transition"
@@ -33,6 +34,7 @@ Copyright (C) 2026 Andrew Cupps
       {text}
     </span>
   </a>
+  <!-- eslint-enable svelte/no-navigation-without-resolve -->
   <button
     title="Show more links"
     class="text-textLight hover:text-orange group-focus-within:text-orange group-hover:text-orange dark:text-textDark dark:hover:text-lightOrange group-focus-within:dark:text-lightOrange group-hover:dark:text-lightOrange transition group-focus-within:rotate-180 group-hover:rotate-180"

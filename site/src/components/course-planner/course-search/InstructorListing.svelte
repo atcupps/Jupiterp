@@ -53,7 +53,7 @@ Copyright (C) 2026 Andrew Cupps
   {#if currentProf}
     <a
       href={ptLinkFromSlug(currentProf.slug)}
-      rel="noopener noreferrer"
+      rel="external noopener noreferrer"
       target="_blank"
       class="text-orange hover:bg-hoverLight hover:dark:bg-hoverDark inline-flex flex-wrap rounded-md underline transition"
       onmouseenter={() => {

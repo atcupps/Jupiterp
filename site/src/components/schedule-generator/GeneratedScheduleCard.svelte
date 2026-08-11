@@ -35,7 +35,7 @@ Copyright (C) 2026 Andrew Cupps
 
   function apply() {
     applyGeneratedSchedule(schedule);
-    goto(resolve('/', {}));
+    goto(resolve('/'));
   }
 </script>
 

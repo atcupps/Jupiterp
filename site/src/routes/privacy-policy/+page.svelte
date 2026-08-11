@@ -46,7 +46,7 @@ Copyright (C) 2024 Andrew Cupps
   <p class={pClasses}>
     Jupiterp's use and transfer to any other app of information received from Google APIs will adhere to the <a
       href="https://developers.google.com/terms/api-services-user-data-policy"
-      rel="noopener noreferrer"
+      rel="external noopener noreferrer"
       target="_blank"
       class="text-orange font-semibold hover:underline">Google API Services User Data Policy</a
     >, including the Limited Use requirements.

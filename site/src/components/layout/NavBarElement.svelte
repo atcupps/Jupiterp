@@ -5,7 +5,6 @@ https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2026 Andrew Cupps
 -->
 <script lang="ts">
-  import { resolve } from '$app/paths';
   interface Props {
     link: string;
     text: string;
@@ -18,8 +17,10 @@ Copyright (C) 2026 Andrew Cupps
 </script>
 
 <div class="mx-4 px-1 font-normal" class:mx-0={reduceXMargin}>
+  <!-- ERROR: Navigation without resolve as link can be external AND internal -->
+  <!-- eslint-disable svelte/no-navigation-without-resolve -->
   <a
-    href={resolve(link, {})}
+    href={link}
     {target}
     rel={target === '_blank' ? 'noopener noreferrer' : 'canonical'}
     class="text-nowrap transition"
@@ -32,6 +33,7 @@ Copyright (C) 2026 Andrew Cupps
   >
     {text}
   </a>
+  <!-- eslint-enable svelte/no-navigation-without-resolve -->
 </div>
 
 <style>
