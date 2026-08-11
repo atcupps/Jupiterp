@@ -1,5 +1,3 @@
-<!-- @migration-task Error while migrating Svelte code: This migration would change the name of a slot (before-input to before_input) making the component unusable -->
-<!-- @migration-task Error while migrating Svelte code: This migration would change the name of a slot (before-input to before_input) making the component unusable -->
 <!--
 This file is part of Jupiterp. For terms of use, please see the file
 called LICENSE at the top level of the Jupiterp source tree (online at

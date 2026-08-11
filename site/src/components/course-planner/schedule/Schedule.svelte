@@ -174,7 +174,7 @@ Copyright (C) 2026 Andrew Cupps
 
     <!-- 'Other' classes (OnlineAsync, Unspecified) -->
     {#if schedule.other.length > 0}
-      <ScheduleDay name="Other" classes={schedule.other} {bgHeight} />
+      <ScheduleDay name="Other" classes={schedule.other} type="Other" {bgHeight} />
     {/if}
   </div>
 
@@ -227,11 +227,13 @@ Copyright (C) 2026 Andrew Cupps
           {courseInfoCourse.genEds.map((g) => g.code).join(', ')}
         </div>
       {/if}
-      {#each courseInfoSection.instructors as instructor (instructor)}
+      <!-- Keyed by index: instructor names, meetings and conditions are not
+           guaranteed unique, and a duplicate key is fatal in Svelte 5. -->
+      {#each courseInfoSection.instructors as instructor, i (i)}
         <InstructorListing {instructor} profsHover={false} removeHoverSection={() => {}} />
       {/each}
       <div class="text-sm 2xl:text-base">
-        {#each courseInfoSection.meetings as meeting (meeting)}
+        {#each courseInfoSection.meetings as meeting, i (i)}
           <MeetingListing {meeting} condensed={true} locationHover={false} removeHoverSection={() => {}} />
         {/each}
       </div>
@@ -241,7 +243,7 @@ Copyright (C) 2026 Andrew Cupps
       <div class="text-base leading-5 2xl:text-lg">
         {#if courseInfoCourse.conditions != null && courseInfoCourse.conditions.length > 0}
           <div class="pb-2 text-sm 2xl:text-base">
-            {#each courseInfoCourse.conditions as condition (condition)}
+            {#each courseInfoCourse.conditions as condition, i (i)}
               <CourseCondition {condition} />
             {/each}
           </div>

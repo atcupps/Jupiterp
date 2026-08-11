@@ -186,7 +186,8 @@ Copyright (C) 2026 Andrew Cupps
   <!-- Validation errors -->
   {#if errors.length > 0}
     <div style="color: #ef4444;" class="mb-2 text-xs">
-      {#each errors as error (error)}
+      <!-- Keyed by index: two validation errors can share the same message. -->
+      {#each errors as error, i (i)}
         <div>{error}</div>
       {/each}
     </div>
