@@ -13,15 +13,15 @@ Copyright (C) 2026 Andrew Cupps
   import { SORT_CRITERIA, SORT_CRITERION_LABELS } from '../../lib/schedule-generator/types';
   import type { GeneratedSchedule, SortCriterion } from '../../lib/schedule-generator/types';
   import { overriddenFilterLabel } from '../../lib/schedule-generator/GeneratorFormat';
-  import { 
-    GenerationStateStore, 
-    GeneratorRequirementsStore, 
-    GeneratorSortChosenByUserStore, 
+  import {
+    GenerationStateStore,
+    GeneratorRequirementsStore,
+    GeneratorSortChosenByUserStore,
     GeneratorSortStore,
   } from '../../stores/GeneratorStores';
 
   const PAGE_SIZE: number = 12;
-  
+
   // Use state rune for mutable local variables
   let visibleCount: number = $state(PAGE_SIZE);
 
@@ -34,8 +34,8 @@ Copyright (C) 2026 Andrew Cupps
 
   // Derived state replaces old $: reactivity
   let sortedSchedules: GeneratedSchedule[] = $derived(
-    $GenerationStateStore.kind === 'done' 
-      ? sortedByCriterion($GenerationStateStore.schedules, $GeneratorSortStore) 
+    $GenerationStateStore.kind === 'done'
+      ? sortedByCriterion($GenerationStateStore.schedules, $GeneratorSortStore)
       : ([] as GeneratedSchedule[])
   );
 
@@ -87,7 +87,10 @@ Copyright (C) 2026 Andrew Cupps
       {$GenerationStateStore.message}
     </div>
   {:else if $GenerationStateStore.kind === 'noSchedules'}
-    <RelaxationHints hints={$GenerationStateStore.hints} coursesWithNoValidSections={$GenerationStateStore.coursesWithNoValidSections} />
+    <RelaxationHints
+      hints={$GenerationStateStore.hints}
+      coursesWithNoValidSections={$GenerationStateStore.coursesWithNoValidSections}
+    />
   {:else if $GenerationStateStore.kind === 'done'}
     {#if $GenerationStateStore.truncated}
       <div class="text-xs italic opacity-60">
@@ -117,7 +120,7 @@ Copyright (C) 2026 Andrew Cupps
     {#if visibleCount < sortedSchedules.length}
       <button
         class="border-outlineLight hover:border-orange hover:text-orange dark:border-outlineDark mx-auto mt-1 rounded-lg border px-4 py-1.5 text-sm"
-        onclick={() => visibleCount += PAGE_SIZE}
+        onclick={() => (visibleCount += PAGE_SIZE)}
       >
         Show more ({sortedSchedules.length - visibleCount} more)
       </button>

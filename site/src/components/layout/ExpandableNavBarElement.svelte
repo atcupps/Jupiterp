@@ -5,6 +5,7 @@ https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2026 Andrew Cupps
 -->
 <script lang="ts">
+  import { resolve } from '$app/paths';
   import { AngleDownOutline } from 'flowbite-svelte-icons';
 
   interface Props {
@@ -20,8 +21,12 @@ Copyright (C) 2026 Andrew Cupps
 </script>
 
 <div class={`${reduceXMargin ? 'mx-1' : 'mx-4'} group relative px-1 font-normal`}>
-  <!-- BUG: This should be 'canonical' if isOnPage is true, but that cause resolve error -->
-  <a href={link} {target} rel="external" class="inline-flex items-center transition">
+  <a
+    href={resolve(link, {})}
+    {target}
+    rel={target === '_blank' ? 'noopener noreferrer' : 'canonical'}
+    class="inline-flex items-center transition"
+  >
     <span
       class={`${isOnPage ? 'siteLinkUnderline text-orange' : 'text-textLight hover:text-orange dark:hover:text-lightOrange dark:text-white'}`}
     >

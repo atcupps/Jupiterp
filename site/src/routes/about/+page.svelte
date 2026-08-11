@@ -20,7 +20,7 @@ Copyright (C) 2026 Andrew Cupps
     search for courses, see sections complete with instructor reviews from <a
       href="https://planetterp.com"
       target="_blank"
-      rel="external"
+      rel="noopener noreferrer"
       class="text-orange underline">PlanetTerp</a
     >, and visualize their course schedule. Unlike other course planners, Jupiterp is built specifically by and for
     students at UMD, because we know that students here know best what they need; that's why Jupiterp is also completely
@@ -32,11 +32,13 @@ Copyright (C) 2026 Andrew Cupps
     meantime, if you find something wrong on our site, please report it as an issue <a
       href="https://github.com/atcupps/Jupiterp/issues"
       target="_blank"
-      rel="external"
+      rel="noopener noreferrer"
       class="text-orange underline">here</a
     >.
   </p>
-  <a href={resolve('/changelog')} aria-label="View changelog" class="text-orange underline">View changelog</a>
+  <a href={resolve('/changelog', {})} aria-label="View changelog" rel="canonical" class="text-orange underline"
+    >View changelog</a
+  >
   <h2 class={h2Classes}>Professor Ratings</h2>
   <p class={pClasses}>
     Stars next to a professor's name indicate their average rating as shown on PlanetTerp. These ratings are based on
@@ -65,13 +67,15 @@ Copyright (C) 2026 Andrew Cupps
       href="https://atcupps.github.io/"
       target="_blank"
       aria-label="Visit Andrew Cupps's website"
-      rel="external"
+      rel="noopener noreferrer"
       class="text-orange underline"
     >
       Andrew Cupps</a
     >. Jupiterp is run at personal cost, and doesn't make any money from ads, selling data, etc., so if you want to
     support continued work on Jupiterp, please consider
-    <a href="https://buymeacoffee.com/jupiterp" target="_blank" class="text-orange underline"> donating</a> a small amount!
+    <a href="https://buymeacoffee.com/jupiterp" target="_blank" rel="noopener noreferrer" class="text-orange underline">
+      donating</a
+    > a small amount!
   </p>
   <h2 class={h2Classes}>Contact</h2>
   <p class={pClasses}>

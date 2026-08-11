@@ -5,6 +5,7 @@ https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2026 Andrew Cupps
 -->
 <script lang="ts">
+  import { resolve } from '$app/paths';
   interface Props {
     link: string;
     text: string;
@@ -17,11 +18,10 @@ Copyright (C) 2026 Andrew Cupps
 </script>
 
 <div class="mx-4 px-1 font-normal" class:mx-0={reduceXMargin}>
-  <!-- BUG: This should be 'canonical' if isOnPage is true, but that cause resolve error -->
   <a
-    href={link}
+    href={resolve(link, {})}
     {target}
-    rel="external"
+    rel={target === '_blank' ? 'noopener noreferrer' : 'canonical'}
     class="text-nowrap transition"
     class:siteLinkUnderline={isOnPage}
     class:text-orange={isOnPage}
