@@ -26,9 +26,20 @@ Copyright (C) 2026 Andrew Cupps
   function removeCourse(course: Course) {
     GeneratorRequirementsStore.update((reqs) => removeRequirement(reqs, course.courseCode));
   }
+
+  // keyboard shortcut to focus the search input (/)
+  let inputElement: HTMLInputElement | null = $state(null);
+  function handleKeydown(event: KeyboardEvent) {
+    if (event.key === '/' && document.activeElement !== inputElement) {
+      event.preventDefault();
+      inputElement?.focus();
+    }
+  }
 </script>
 
-<CourseSearchBox bind:searchInput bind:genEdMenuOpen inputId="planner-course-search-input">
+<svelte:window onkeydown={handleKeydown} />
+
+<CourseSearchBox bind:searchInput bind:genEdMenuOpen bind:inputElement inputId="generator-course-search-input">
   {#snippet children({
     searchResults,
     isPending,
