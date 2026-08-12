@@ -172,8 +172,8 @@ Copyright (C) 2026 Andrew Cupps
             type="text"
             autocomplete="off"
             aria-label="Mobile keyboard trigger"
-            inert
-            class="sr-only"
+            tabindex="-1"
+            class="pointer-events-none fixed left-0 top-0 h-0 w-0 opacity-0"
           />
         {/snippet}
       </CourseSearchBox>
