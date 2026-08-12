@@ -6,7 +6,6 @@ Copyright (C) 2026 Andrew Cupps
 -->
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { run } from 'svelte/legacy';
 
   import {
     AngleRightOutline,
@@ -31,9 +30,12 @@ Copyright (C) 2026 Andrew Cupps
 
   let currentScheduleName: string = $state('');
   let currentScheduleSelections: ScheduleBlock[];
-  CurrentScheduleStore.subscribe((stored) => {
-    currentScheduleName = stored.scheduleName;
-    currentScheduleSelections = stored.selections;
+  
+  $effect(() => {
+    return CurrentScheduleStore.subscribe((stored) => {
+      currentScheduleName = stored.scheduleName;
+      currentScheduleSelections = stored.selections;
+    });
   });
 
   function changeScheduleName() {
@@ -54,15 +56,18 @@ Copyright (C) 2026 Andrew Cupps
   }
 
   let scheduleNameElement: HTMLInputElement | null = $state(null);
-  run(() => {
+
+  $effect(() => {
     if (currentScheduleName && scheduleNameElement) {
       scheduleNameElement.value = currentScheduleName;
     }
   });
 
   let nonselectedSchedules: StoredSchedule[] = $state([]);
-  NonselectedScheduleStore.subscribe((stored) => {
-    nonselectedSchedules = stored;
+  $effect(() => {
+    return NonselectedScheduleStore.subscribe((stored) => {
+      nonselectedSchedules = stored;
+    });
   });
 
   let containerElement: HTMLDivElement | null = null;

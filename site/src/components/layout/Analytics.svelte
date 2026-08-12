@@ -6,19 +6,15 @@ Copyright (C) 2026 Andrew Cupps
 -->
 
 <script lang="ts">
-  import { run } from 'svelte/legacy';
-
   import { page } from '$app/state';
 
-  run(() => {
-    if (typeof window !== 'undefined') {
-      const gtagMaybe = (window as Window & { gtag?: (...args: unknown[]) => void }).gtag;
-      if (typeof gtagMaybe !== 'undefined') {
-        gtagMaybe('config', 'MEASUREMENT_ID', {
-          page_title: document.title,
-          page_path: page.url.pathname,
-        });
-      }
+  $effect(() => {
+    const gtagMaybe = (window as Window & { gtag?: (...args: unknown[]) => void }).gtag;
+    if (typeof gtagMaybe !== 'undefined') {
+      gtagMaybe('config', 'MEASUREMENT_ID', {
+        page_title: document.title,
+        page_path: page.url.pathname,
+      });
     }
   });
 </script>

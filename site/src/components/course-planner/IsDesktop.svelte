@@ -5,8 +5,6 @@ https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2026 Andrew Cupps
 -->
 <script lang="ts">
-  import { run } from 'svelte/legacy';
-
   interface Props {
     isDesktop?: boolean;
   }
@@ -15,7 +13,8 @@ Copyright (C) 2026 Andrew Cupps
 
   let innerWidth: number = $state(0);
 
-  run(() => {
+  // Replaced run() with $effect to handle the side effect on the client
+  $effect(() => {
     isDesktop = innerWidth >= 1024;
   });
 

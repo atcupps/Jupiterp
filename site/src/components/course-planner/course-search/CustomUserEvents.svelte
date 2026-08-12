@@ -4,41 +4,41 @@ called LICENSE at the top level of the Jupiterp source tree (online at
 https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2026 Andrew Cupps
 -->
-
 <script lang="ts">
-  import { run } from 'svelte/legacy';
-
   import { AddCustomEventStore, CurrentScheduleStore, EventEditStore } from '../../../stores/CoursePlannerStores';
   import type { ScheduleBlock, UserEvent } from '../../../types';
   import UserEventModal from './UserEventModal.svelte';
   import { firstAvailableColor } from '$lib/course-planner/ColorSelector';
 
   let showCustomEventModal = $state(false);
-  AddCustomEventStore.subscribe((val) => {
-    showCustomEventModal = val;
+  $effect(() => {
+    return AddCustomEventStore.subscribe((val) => {
+      showCustomEventModal = val;
+    });
   });
 
   // get selections and user events from store
   let selectionsList: ScheduleBlock[] = $state([]);
   let scheduleName: string = $state('');
-  CurrentScheduleStore.subscribe((stored) => {
-    selectionsList = stored.selections;
-    scheduleName = stored.scheduleName;
+  $effect(() => {
+    return CurrentScheduleStore.subscribe((stored) => {
+      selectionsList = stored.selections;
+      scheduleName = stored.scheduleName;
+    });
   });
 
   let eventEditVal: { eventId: string } | null = $state(null);
-  EventEditStore.subscribe((val) => {
-    eventEditVal = val;
+  $effect(() => {
+    return EventEditStore.subscribe((val) => {
+      eventEditVal = val;
+    });
   });
 
-  // resolved UserEvent for the edit modal — computed here because Svelte
-  // template expressions don't support TypeScript type assertions
-  let editEventData: UserEvent | null = $state(null);
-  run(() => {
-    editEventData = eventEditVal
+  let editEventData: UserEvent | null = $derived(
+    eventEditVal
       ? (selectionsList.find((s) => !('course' in s) && s.id === eventEditVal!.eventId) as UserEvent) || null
-      : null;
-  });
+      : null
+  );
 
   // function to add user event from UserEventModal
   function addUserEvent(event: UserEvent) {

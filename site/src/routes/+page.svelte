@@ -5,8 +5,6 @@ https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2026 Andrew Cupps
  -->
 <script lang="ts">
-  import { run } from 'svelte/legacy';
-
   // format-check exempt 2
   import Schedule from '../components/course-planner/schedule/Schedule.svelte';
   import CourseSearch from '../components/course-planner/course-search/CourseSearch.svelte';
@@ -30,7 +28,8 @@ Copyright (C) 2026 Andrew Cupps
   let isDesktop: boolean = $state(false);
   let plannerContainer: HTMLDivElement | null = $state(null);
 
-  run(() => {
+  // Replaced run() with $effect to handle updating the store on the client
+  $effect(() => {
     PlannerState.update((state: { isDesktop: boolean; chainScrollParent: HTMLElement | null }) => ({
       ...state,
       isDesktop,

@@ -5,8 +5,6 @@ https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2026 Andrew Cupps
 -->
 <script lang="ts">
-  import { run } from 'svelte/legacy';
-
   import { GenEd } from '@jupiterp/jupiterp';
   import { AdjustmentsHorizontalOutline, AngleDownOutline, CloseOutline } from 'flowbite-svelte-icons';
   import { slide } from 'svelte/transition';
@@ -28,7 +26,8 @@ Copyright (C) 2026 Andrew Cupps
   let minCredits: number = $state(defaultMinCredits);
   let maxCredits: number = $state(defaultMaxCredits);
 
-  run(() => {
+  // Replaced run() with $effect to manage internal counter updates and external store side-effects
+  $effect(() => {
     const params: FilterParams = {
       serverSideFilters: {},
       clientSideFilters: {},
