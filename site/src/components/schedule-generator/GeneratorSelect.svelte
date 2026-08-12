@@ -37,9 +37,10 @@ Copyright (C) 2026 Andrew Cupps
   <AngleDownOutline class="h-3 w-3 shrink-0 opacity-70" />
 </button>
 
+<!-- TEMP FIX: Added "-translate-y-2" to fix dropdown positioning -->
 <Dropdown
   bind:isOpen={dropdownOpen}
-  class="border-outline bg-bg-primary z-30 max-h-60 overflow-y-auto rounded-md border shadow-lg"
+  class="bg-border text-text-primary border-outline scrollbar-track-border scrollbar-thumb-bg-primary z-30 max-h-60 -translate-y-2 overflow-y-auto rounded-md border shadow-lg"
 >
   {#each options as option (option.value)}
     <DropdownItem

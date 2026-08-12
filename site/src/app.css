@@ -63,6 +63,7 @@
     font-synthesis-weight: none;
     text-rendering: optimizeLegibility;
     height: 100svh;
+    overflow-y: clip;
   }
 }
 

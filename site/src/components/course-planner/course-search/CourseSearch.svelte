@@ -33,7 +33,7 @@ Copyright (C) 2026 Andrew Cupps
 
   const FILTER_SCROLL_COLLAPSE_THRESHOLD = 100;
   let searchResultsElement: HTMLDivElement | null = $state(null);
-  
+
   let blockSearchInputPointer = $state(untrack(() => !plannerState.isDesktop));
 
   let hoveredSection: ScheduleSelection | null = $state(null);
@@ -58,9 +58,7 @@ Copyright (C) 2026 Andrew Cupps
     });
   });
 
-  let isPendingResults = $derived(
-    searchInput.length > 0 && searchResults.length === 0 ? pendingResults() : false
-  );
+  let isPendingResults = $derived(searchInput.length > 0 && searchResults.length === 0 ? pendingResults() : false);
 
   let genEdMenuOpen = $state(false);
   let searchInputElement: HTMLInputElement | null = $state(null);
@@ -172,9 +170,10 @@ Copyright (C) 2026 Andrew Cupps
             bind:this={keyboardPrimeElement}
             id="mobile-keyboard-prime"
             type="text"
-            tabindex="-1"
             autocomplete="off"
-            class="pointer-events-none fixed left-0 top-0 h-0 w-0 opacity-0"
+            aria-label="Mobile keyboard trigger"
+            inert
+            class="sr-only"
           />
         {/snippet}
       </CourseSearchBox>

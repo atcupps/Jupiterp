@@ -83,7 +83,8 @@ Copyright (C) 2026 Andrew Cupps
   <DotsVerticalOutline class="h-5 w-5" />
 </button>
 
-<Dropdown class="bg-bg-primary w-24 rounded-md" bind:isOpen={dropdownOpen}>
+<!-- TEMP FIX: Added "-translate-y-2" to fix dropdown positioning -->
+<Dropdown class="bg-border text-text-primary w-24 -translate-y-2 rounded-md" bind:isOpen={dropdownOpen}>
   <DropdownItem
     class="hover:bg-hover flex items-center justify-start px-2"
     title="Add custom event to schedule"

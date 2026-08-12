@@ -71,7 +71,7 @@ Copyright (C) 2026 Andrew Cupps
   }
 </script>
 
-<div class="text-text-secondary flex flex-col">
+<div class="text-text-primary/70 flex flex-col">
   <!-- Filters button -->
   <div class="mt-1 flex flex-row items-center justify-between gap-1 py-0.5">
     <button

@@ -30,7 +30,7 @@ Copyright (C) 2026 Andrew Cupps
 
   let currentScheduleName: string = $state('');
   let currentScheduleSelections: ScheduleBlock[];
-  
+
   $effect(() => {
     return CurrentScheduleStore.subscribe((stored) => {
       currentScheduleName = stored.scheduleName;
@@ -144,7 +144,12 @@ Copyright (C) 2026 Andrew Cupps
 <div bind:this={containerElement} class="flex w-full flex-col">
   <div class="2xl:text-md flex w-full flex-row pb-1 text-sm" title="Toggle schedule dropdown">
     <div class="hover:bg-hover flex grow flex-row justify-start rounded-md px-0.5 py-1 text-left">
-      <button class:rotate-90={dropdownOpen} class="origin-center" onclick={() => (dropdownOpen = !dropdownOpen)}>
+      <button
+        title="Show other available schedules"
+        class:rotate-90={dropdownOpen}
+        class="origin-center"
+        onclick={() => (dropdownOpen = !dropdownOpen)}
+      >
         <AngleRightOutline class="h-5 w-5" />
       </button>
 

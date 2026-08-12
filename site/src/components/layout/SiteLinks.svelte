@@ -40,8 +40,9 @@ Copyright (C) 2026 Andrew Cupps
   <DarkModeToggle />
 </div>
 
-<!-- Button to toggle course search on mobile -->
+<!-- Button to toggle site links on mobile -->
 <button
+  title="Toggle site links"
   class="z-52 visible absolute right-5 top-3 h-6 w-6 lg:hidden"
   onclick={() => {
     siteLinksSelected = !siteLinksSelected;

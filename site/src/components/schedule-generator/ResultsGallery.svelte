@@ -56,9 +56,10 @@ Copyright (C) 2026 Andrew Cupps
   <!-- Generate bar -->
   <div class="flex flex-row items-center gap-3">
     <button
-      class="border-orange text-orange enabled:hover:bg-orange rounded-lg border px-4 py-1.5 font-semibold enabled:hover:text-white disabled:opacity-40"
-      disabled={$GeneratorRequirementsStore.length === 0 || $GenerationStateStore.kind === 'loading'}
-      onclick={() => runGeneration()}
+      class="border-orange text-orange hover:bg-orange aria-disabled:hover:text-orange rounded-lg border px-4 py-1.5 font-semibold hover:text-white aria-disabled:pointer-events-none aria-disabled:opacity-40 aria-disabled:hover:bg-transparent"
+      aria-disabled={$GeneratorRequirementsStore.length === 0 || $GenerationStateStore.kind === 'loading'}
+      onclick={() =>
+        !($GeneratorRequirementsStore.length === 0 || $GenerationStateStore.kind === 'loading') && runGeneration()}
     >
       {$GenerationStateStore.kind === 'loading' ? 'Generating…' : 'Generate schedules'}
     </button>
