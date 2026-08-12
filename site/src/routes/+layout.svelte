@@ -9,12 +9,21 @@ Copyright (C) 2026 Andrew Cupps
   import '../app.css';
   import Analytics from '../components/layout/Analytics.svelte';
   import SiteLinks from '../components/layout/SiteLinks.svelte';
+
   interface Props {
     children?: import('svelte').Snippet;
   }
 
   let { children }: Props = $props();
 </script>
+
+<svelte:head>
+  <title>Jupiterp Course Planner</title>
+  <meta
+    name="description"
+    content="Jupiterp, a free, open-source, web-based program to assist students at the University of Maryland - College Park in planning their schedules."
+  />
+</svelte:head>
 
 <Analytics />
 

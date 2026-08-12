@@ -12,6 +12,10 @@ Copyright (C) 2026 Andrew Cupps
   const pClasses = 'my-2 text-normal leading-5';
 </script>
 
+<svelte:head>
+  <title>About | Jupiterp</title>
+</svelte:head>
+
 <div class="custom-scrollbar fixed bottom-0 top-12 overflow-y-auto px-4 py-2">
   <h1 class={h1Classes}>About Jupiterp</h1>
   <p class={pClasses}>

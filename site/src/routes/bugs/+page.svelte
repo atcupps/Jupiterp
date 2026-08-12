@@ -4,6 +4,10 @@ called LICENSE at the top level of the Jupiterp source tree (online at
 https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2026 Andrew Cupps
  -->
+<svelte:head>
+  <title>Bugs | Jupiterp</title>
+</svelte:head>
+
 <div class="fixed bottom-0 top-12 w-full px-4 py-2">
   <!-- format-check exempt 5 -->
   <iframe

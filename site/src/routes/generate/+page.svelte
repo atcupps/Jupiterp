@@ -31,11 +31,6 @@ Copyright (C) 2026 Andrew Cupps
 
 <svelte:head>
   <title>Schedule Generator | Jupiterp</title>
-  <meta
-    name="description"
-    content="Automatically generate conflict-free UMD course schedules
-			from your desired courses and constraints."
-  />
 </svelte:head>
 
 <div

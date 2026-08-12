@@ -10,6 +10,10 @@ Copyright (C) 2024 Andrew Cupps
   const pClasses = 'my-2 text-normal leading-5 text-text-primary';
 </script>
 
+<svelte:head>
+  <title>Privacy Policy | Jupiterp</title>
+</svelte:head>
+
 <div class="text-text-primary fixed bottom-0 top-12 overflow-y-scroll px-8 py-2 lg:top-14 xl:top-16">
   <h1 class={h1Classes}>Privacy Policy for Jupiterp</h1>
 
