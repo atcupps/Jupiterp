@@ -143,14 +143,14 @@ Copyright (C) 2026 Andrew Cupps
 
 <div bind:this={containerElement} class="flex w-full flex-col">
   <div class="2xl:text-md flex w-full flex-row pb-1 text-sm" title="Toggle schedule dropdown">
-    <div class="hover:bg-hover flex grow flex-row justify-start rounded-md px-0.5 py-1 text-left">
+    <div class="hover:bg-hover flex grow flex-row justify-start rounded-md pr-1 py-1 text-left">
       <button
-        title="Show other available schedules"
+        title="Show other schedules"
         class:rotate-90={dropdownOpen}
-        class="origin-center"
+        class="origin-center p-1 -my-1"
         onclick={() => (dropdownOpen = !dropdownOpen)}
       >
-        <AngleRightOutline class="h-5 w-5" />
+        <AngleRightOutline class="h-4 w-4" />
       </button>
 
       <input
@@ -159,31 +159,31 @@ Copyright (C) 2026 Andrew Cupps
         contenteditable="true"
         onblur={changeScheduleName}
         title="Schedule name"
-        class="2xl:text-md bg-bg-primary outline-hidden mr-1 grow cursor-text rounded-sm border-none px-0.5 py-0 text-sm"
+        class="2xl:text-md bg-bg-primary outline-hidden grow cursor-text rounded-sm border-none px-0.5 py-0 text-sm"
       />
     </div>
     <ScheduleOptionsDropdown />
-    <button class="hover:bg-hover h-7 rounded-md" title="Create new schedule" onclick={createNewSchedule}>
-      <PlusOutline class="h-5 w-5 px-0.5" />
+    <button class="hover:bg-hover px-1 rounded-md" title="Create new schedule" onclick={createNewSchedule}>
+      <PlusOutline class="h-4 w-4" />
     </button>
     <button
-      class="hover:bg-hover h-7 rounded-md"
+      class="hover:bg-hover px-1 rounded-md"
       title={linkCopied ? 'Link copied!' : 'Copy shareable link'}
       onclick={copyShareLink}
     >
       {#if linkCopied}
-        <ClipboardCheckOutline class="h-5 w-5 px-0.5" />
+        <ClipboardCheckOutline class="h-4 w-4" />
       {:else}
-        <LinkOutline class="h-5 w-5 px-0.5" />
+        <LinkOutline class="h-4 w-4" />
       {/if}
     </button>
 
     <button
-      class="hover:bg-hover h-7 rounded-md"
+      class="hover:bg-hover px-1 rounded-md"
       title="Export schedule"
       onclick={() => (sharePopUpOpen = !sharePopUpOpen)}
     >
-      <ForwardOutline class="h-5 w-5 px-0.5" />
+      <ForwardOutline class="h-4 w-4" />
     </button>
   </div>
   {#if dropdownOpen}

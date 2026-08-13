@@ -79,7 +79,7 @@ Copyright (C) 2026 Andrew Cupps
   }
 </script>
 
-<button class="hover:bg-hover rounded-md" title="Schedule options">
+<button class="hover:bg-hover rounded-md px-0.5" title="Schedule options">
   <DotsVerticalOutline class="h-5 w-5" />
 </button>
 
