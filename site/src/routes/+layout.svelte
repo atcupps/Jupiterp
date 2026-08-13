@@ -27,8 +27,8 @@ Copyright (C) 2026 Andrew Cupps
 
 <Analytics />
 
-<div class="fixed z-50 w-full px-4">
-  <div class="border-border flex h-12 flex-row justify-start border-b-2">
+<header class="fixed z-50 w-full px-4">
+  <nav class="border-border flex h-12 flex-row justify-start border-b-2">
     <a href={resolve('/')} aria-label="Home" rel="canonical" class="flex py-1">
       <img
         src="logo.svg"
@@ -41,7 +41,7 @@ Copyright (C) 2026 Andrew Cupps
       />
     </a>
     <SiteLinks />
-  </div>
-</div>
+  </nav>
+</header>
 
 {@render children?.()}

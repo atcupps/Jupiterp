@@ -8,7 +8,7 @@ Copyright (C) 2026 Andrew Cupps
   <title>Bugs | Jupiterp</title>
 </svelte:head>
 
-<div class="fixed bottom-0 top-12 w-full px-4 py-2">
+<main class="fixed bottom-0 top-12 w-full px-4 py-2">
   <!-- format-check exempt 5 -->
   <iframe
     title="Jupiterp Issue/Bug Report Form"
@@ -19,4 +19,4 @@ Copyright (C) 2026 Andrew Cupps
   >
     Loading…
   </iframe>
-</div>
+</main>

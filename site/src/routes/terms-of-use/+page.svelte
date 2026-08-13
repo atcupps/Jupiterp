@@ -14,62 +14,64 @@ Copyright (C) 2026 Andrew Cupps
   <title>Terms of Use | Jupiterp</title>
 </svelte:head>
 
-<div class="custom-scrollbar fixed bottom-0 top-12 overflow-y-auto px-4 py-2">
-  <h1 class={h1Classes}>Terms of Use for Jupiterp</h1>
-  Last Updated: March 9th, 2024
-  <h2 class={h2Classes}>Introduction</h2>
-  <p class={pClasses}>
-    Welcome to Jupiterp. These Terms of Use ("Terms") govern your use of the Jupiterp website, a course planner for
-    students at the University of Maryland. Jupiterp is not affiliated with the University of Maryland. By accessing or
-    using our website, you agree to be bound by these Terms.
-  </p>
+<main class="custom-scrollbar fixed bottom-0 top-12 overflow-y-auto px-4 py-2">
+  <article>
+    <h1 class={h1Classes}>Terms of Use for Jupiterp</h1>
+    Last Updated: March 9th, 2024
+    <h2 class={h2Classes}>Introduction</h2>
+    <p class={pClasses}>
+      Welcome to Jupiterp. These Terms of Use ("Terms") govern your use of the Jupiterp website, a course planner for
+      students at the University of Maryland. Jupiterp is not affiliated with the University of Maryland. By accessing
+      or using our website, you agree to be bound by these Terms.
+    </p>
 
-  <h2 class={h2Classes}>Use of Jupiterp</h2>
+    <h2 class={h2Classes}>Use of Jupiterp</h2>
 
-  <p class={pClasses}>
-    Jupiterp provides a platform for planning university courses by aggregating data from the University of Maryland's
-    website and professor ratings and reviews from PlanetTerp's public API. Jupiterp aims to assist in course planning
-    but does not guarantee the accuracy or completeness of the information provided.
-  </p>
+    <p class={pClasses}>
+      Jupiterp provides a platform for planning university courses by aggregating data from the University of Maryland's
+      website and professor ratings and reviews from PlanetTerp's public API. Jupiterp aims to assist in course planning
+      but does not guarantee the accuracy or completeness of the information provided.
+    </p>
 
-  <h2 class={h2Classes}>Intellectual Property</h2>
+    <h2 class={h2Classes}>Intellectual Property</h2>
 
-  <p class={pClasses}>
-    All content displayed on Jupiterp, including but not limited to text, graphics, logos, and the compilation thereof,
-    is owned by Andrew Tae Cupps or used with permission. The course data and professor ratings are sourced from public
-    APIs and are subject to the terms and conditions of those respective platforms.
-  </p>
+    <p class={pClasses}>
+      All content displayed on Jupiterp, including but not limited to text, graphics, logos, and the compilation
+      thereof, is owned by Andrew Tae Cupps or used with permission. The course data and professor ratings are sourced
+      from public APIs and are subject to the terms and conditions of those respective platforms.
+    </p>
 
-  <h2 class={h2Classes}>Disclaimer of Liability</h2>
+    <h2 class={h2Classes}>Disclaimer of Liability</h2>
 
-  <p class={pClasses}>
-    Jupiterp does not guarantee the accuracy, timeliness, or completeness of any information on this site. The
-    information is provided "as is" without warranty of any kind. Jupiterp shall not be liable for any inaccuracies or
-    discrepancies in course or professor information.
-  </p>
+    <p class={pClasses}>
+      Jupiterp does not guarantee the accuracy, timeliness, or completeness of any information on this site. The
+      information is provided "as is" without warranty of any kind. Jupiterp shall not be liable for any inaccuracies or
+      discrepancies in course or professor information.
+    </p>
 
-  <h2 class={h2Classes}>Changes to Terms of Use</h2>
+    <h2 class={h2Classes}>Changes to Terms of Use</h2>
 
-  <p class={pClasses}>
-    Jupiterp reserves the right to modify these Terms at any time without direct notification to users. By continuing to
-    access or use our website after those revisions become effective, you agree to be bound by the revised terms.
-  </p>
+    <p class={pClasses}>
+      Jupiterp reserves the right to modify these Terms at any time without direct notification to users. By continuing
+      to access or use our website after those revisions become effective, you agree to be bound by the revised terms.
+    </p>
 
-  <h2 class={h2Classes}>Governing Law</h2>
+    <h2 class={h2Classes}>Governing Law</h2>
 
-  <p class={pClasses}>
-    These Terms shall be governed and construed in accordance with the laws of Maryland, United States, without regard
-    to its conflict of law provisions.
-  </p>
+    <p class={pClasses}>
+      These Terms shall be governed and construed in accordance with the laws of Maryland, United States, without regard
+      to its conflict of law provisions.
+    </p>
 
-  <h2 class={h2Classes}>Contact Us</h2>
+    <h2 class={h2Classes}>Contact Us</h2>
 
-  <p class={pClasses}>
-    For any questions or concerns regarding these Terms, please contact us at
-    <code class="bg-bg-secondary rounded-md text-sm"> admin@jupiterp.com</code>.
-  </p>
+    <p class={pClasses}>
+      For any questions or concerns regarding these Terms, please contact us at
+      <code class="bg-bg-secondary rounded-md text-sm"> admin@jupiterp.com</code>.
+    </p>
 
-  <p class={pClasses}>
-    By using Jupiterp, you acknowledge that you have read, understood, and agree to be bound by these Terms.
-  </p>
-</div>
+    <p class={pClasses}>
+      By using Jupiterp, you acknowledge that you have read, understood, and agree to be bound by these Terms.
+    </p>
+  </article>
+</main>

@@ -143,11 +143,11 @@ Copyright (C) 2026 Andrew Cupps
 
 <div bind:this={containerElement} class="flex w-full flex-col">
   <div class="2xl:text-md flex w-full flex-row pb-1 text-sm" title="Toggle schedule dropdown">
-    <div class="hover:bg-hover flex grow flex-row justify-start rounded-md pr-1 py-1 text-left">
+    <div class="hover:bg-hover flex grow flex-row justify-start rounded-md py-1 pr-1 text-left">
       <button
         title="Show other schedules"
         class:rotate-90={dropdownOpen}
-        class="origin-center p-1 -my-1"
+        class="-my-1 origin-center p-1"
         onclick={() => (dropdownOpen = !dropdownOpen)}
       >
         <AngleRightOutline class="h-4 w-4" />
@@ -163,11 +163,11 @@ Copyright (C) 2026 Andrew Cupps
       />
     </div>
     <ScheduleOptionsDropdown />
-    <button class="hover:bg-hover px-1 rounded-md" title="Create new schedule" onclick={createNewSchedule}>
+    <button class="hover:bg-hover rounded-md px-1" title="Create new schedule" onclick={createNewSchedule}>
       <PlusOutline class="h-4 w-4" />
     </button>
     <button
-      class="hover:bg-hover px-1 rounded-md"
+      class="hover:bg-hover rounded-md px-1"
       title={linkCopied ? 'Link copied!' : 'Copy shareable link'}
       onclick={copyShareLink}
     >
@@ -179,7 +179,7 @@ Copyright (C) 2026 Andrew Cupps
     </button>
 
     <button
-      class="hover:bg-hover px-1 rounded-md"
+      class="hover:bg-hover rounded-md px-1"
       title="Export schedule"
       onclick={() => (sharePopUpOpen = !sharePopUpOpen)}
     >

@@ -50,6 +50,6 @@ Copyright (C) 2026 Andrew Cupps
     left: 0;
     transform: scaleX(95%);
     transform-origin: center;
-    background-color: #f6743c;
+    background-color: #f5692e;
   }
 </style>

@@ -15,7 +15,7 @@ Copyright (C) 2026 Andrew Cupps
   let { title, version, date, children }: Props = $props();
 </script>
 
-<div class="border-border mx-2 border-l-2 py-2">
+<article class="border-border mx-2 border-l-2 py-2">
   <div class="flex flex-col px-4">
     <div class="static flex flex-row items-end">
       <div class="bg-bg-primary -translate-x-6.75 absolute h-5 w-5 -translate-y-1 p-1.5">
@@ -34,4 +34,4 @@ Copyright (C) 2026 Andrew Cupps
       {@render children?.()}
     </div>
   </div>
-</div>
+</article>

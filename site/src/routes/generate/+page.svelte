@@ -33,7 +33,7 @@ Copyright (C) 2026 Andrew Cupps
   <title>Schedule Generator | Jupiterp</title>
 </svelte:head>
 
-<div
+<main
   class="custom-scrollbar fixed bottom-0 top-12 w-full flex-col overflow-y-auto px-3 lg:grid lg:grid-cols-[22rem_1fr]"
 >
   <!-- Inputs: wishlist + constraints -->
@@ -49,4 +49,4 @@ Copyright (C) 2026 Andrew Cupps
   <div class="custom-scrollbar px-1 py-2 lg:overflow-y-auto">
     <ResultsGallery />
   </div>
-</div>
+</main>
