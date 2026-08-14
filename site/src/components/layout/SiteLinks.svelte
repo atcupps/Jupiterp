@@ -36,9 +36,12 @@ Copyright (C) 2026 Andrew Cupps
 
 <input type="checkbox" id="nav-menu-toggle" class="peer hidden" />
 
-<label for="nav-menu-toggle" class="-mr-4 flex cursor-pointer items-center px-4">
-  <BarsOutline class="h-6 w-6 peer-checked:hidden" />
-  <CloseOutline class="hidden h-6 w-6 peer-checked:block" />
+<label for="nav-menu-toggle" class="-mr-4 flex cursor-pointer items-center px-4 peer-checked:hidden">
+  <BarsOutline class="h-6 w-6" />
+</label>
+
+<label for="nav-menu-toggle" class="-mr-4 hidden cursor-pointer items-center px-4 peer-checked:flex">
+  <CloseOutline class="h-6 w-6" />
 </label>
 
 <aside
@@ -47,23 +50,29 @@ Copyright (C) 2026 Andrew Cupps
   <ul class="flex flex-col gap-2">
     {#each navLinks as item, i (i)}
       {#if item.children}
-        <li class="nav-list-wrapper">
+        <li class="nav-list-wrapper relative">
           <!-- Hidden Checkbox acting as state toggle -->
-          <input type="checkbox" id="nav-list-{i}" class="hidden" />
+          <input type="checkbox" id="nav-list-{i}" class="peer hidden" />
 
           <!-- Label acts as the clickable summary header -->
           <label for="nav-list-{i}" class="relative flex cursor-pointer items-center justify-between">
             <NavBarLink link={item.link} class="grow" current={currentPath === item.link}>
               {item.text}
             </NavBarLink>
-            <span class="hover:text-orange dark:hover:text-light-orange absolute right-0 p-0.5 transition-transform"
-              ><AngleDownOutline height="1.5rem" width="1.5rem" />
-            </span>
           </label>
 
-          <ul style="transition: height 0.3s;" class="flex flex-col gap-2 overflow-clip pl-4 pt-1">
+          <label
+            for="nav-list-{i}"
+            class="hover:text-orange dark:hover:text-light-orange absolute right-0 top-0 p-0.5 transition-transform peer-checked:rotate-180"
+            ><AngleDownOutline height="1.5rem" width="1.5rem" />
+          </label>
+
+          <ul
+            style="transition: height 0.3s;"
+            class="border-y -mt-0.5 sm:mt-0 sm:border-y-0 flex h-auto flex-col overflow-clip pl-4 peer-checked:h-0 sm:h-0 sm:peer-checked:h-auto"
+          >
             {#each item.children as child, j (j)}
-              <NavBarLink link={child.link} current={currentPath === child.link}>
+              <NavBarLink link={child.link} current={currentPath === child.link} class="my-1">
                 <span class="text-text-primary mr-2 select-none">-</span>
                 {child.text}
               </NavBarLink>
@@ -96,50 +105,15 @@ Copyright (C) 2026 Andrew Cupps
         <GithubSolid class="h-6 w-6" />
       </a>
     </div>
-    <p class="text-text-secondary text-sm my-2">Made with ❤ by the Jupiterp Team.</p>
+    <p class="text-text-secondary my-2 text-sm">Made with ❤ by the Jupiterp Team.</p>
   </div>
 </aside>
 
 <style>
+  /* TEMP: Just to make sure height:auto can be calculated and animated */
   li.nav-list-wrapper {
     @supports (interpolate-size: allow-keywords) {
       interpolate-size: allow-keywords;
-    }
-
-    > label > span {
-      transform: rotate(0deg);
-    }
-    > ul {
-      height: 0;
-    }
-
-    &:has(> input:checked) {
-      > label > span {
-        transform: rotate(180deg);
-      }
-      > ul {
-        height: auto;
-      }
-    }
-  }
-
-  @media (max-width: 30rem) {
-    :global(.nav-list-wrapper:has(> ul > a[aria-current='true'])) {
-      > label > span {
-        transform: rotate(180deg);
-      }
-      > ul {
-        height: auto;
-      }
-
-      &:has(> input:checked) {
-        > label > span {
-          transform: rotate(0deg);
-        }
-        > ul {
-          height: 0;
-        }
-      }
     }
   }
 </style>
