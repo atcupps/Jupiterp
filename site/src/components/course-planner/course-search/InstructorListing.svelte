@@ -1,4 +1,4 @@
-<!-- 
+<!--
 This file is part of Jupiterp. For terms of use, please see the file
 called LICENSE at the top level of the Jupiterp source tree (online at
 https://github.com/atcupps/Jupiterp/LICENSE).
@@ -6,9 +6,9 @@ Copyright (C) 2026 Andrew Cupps
 -->
 <script lang="ts">
   import { clickoutside } from '@svelte-put/clickoutside';
-  import { ptLinkFromSlug } from '../../../lib/course-planner/Professors';
+  import { resolve } from '$app/paths';
   import { CourseGradesStore, ProfsLookupStore } from '../../../stores/CoursePlannerStores';
-  import { gpaTier, ptCourseLink, type GpaTier } from '../../../lib/course-planner/Grades';
+  import { gpaTier, hasEnoughForGpa, type GpaTier } from '../../../lib/course-planner/Grades';
   import GradesPopover from './GradesPopover.svelte';
 
   // 1. Properly define the component props type contract
@@ -61,11 +61,21 @@ Copyright (C) 2026 Andrew Cupps
     event.stopPropagation();
   }
 
-  // Grade data for this instructor in this course, if loaded
+  // Grade data for this instructor in this course, if loaded.
+  //
+  // Matched by slug rather than by name. The distributions are keyed on the
+  // instructor's Jupiterp slug, and Testudo's spelling of a name routinely
+  // differs from the registrar's -- "Shane Walsh" against "Shane Bolles
+  // Walsh". Matching on the raw string is what made per-professor grade data
+  // silently absent for a large share of instructors.
   let entry = $derived(courseCode != null ? $CourseGradesStore[courseCode] : undefined);
+  let profSlug = $derived(profs?.[instructor]?.slug);
   let profDist = $derived(
-    entry !== undefined && entry.status === 'loaded' ? (entry.grades.byProfessor[instructor] ?? null) : null
+    entry !== undefined && entry.status === 'loaded' && profSlug !== undefined
+      ? (entry.grades.byInstructorSlug[profSlug] ?? null)
+      : null
   );
+  let showChip = $derived(profDist != null && hasEnoughForGpa(profDist));
 
   let gpaOpen = $state(false);
 
@@ -78,21 +88,8 @@ Copyright (C) 2026 Andrew Cupps
 
   let chipTitle = $derived(
     profDist != null && profDist.gpa != null
-      ? 'Avg. GPA ' +
-          profDist.gpa.toFixed(2) +
-          ' for ' +
-          instructor +
-          (courseCode != null ? ' in ' + courseCode : '') +
-          ' (PlanetTerp)'
+      ? 'Avg. GPA ' + profDist.gpa.toFixed(2) + ' for ' + instructor + (courseCode != null ? ' in ' + courseCode : '')
       : ''
-  );
-
-  let ptGpaLink = $derived(
-    instructor in profs
-      ? ptLinkFromSlug(profs[instructor].slug)
-      : courseCode != null
-        ? ptCourseLink(courseCode)
-        : 'https://planetterp.com'
   );
 
   function handleChipClick(event: MouseEvent) {
@@ -114,10 +111,9 @@ Copyright (C) 2026 Andrew Cupps
 
 <div class="text-sm xl:text-base">
   {#if currentProf}
+    <!-- Internal professor page, not an outbound PlanetTerp link. -->
     <a
-      href={ptLinkFromSlug(currentProf.slug)}
-      rel="external noopener noreferrer"
-      target="_blank"
+      href={resolve('/professor/[slug]', { slug: currentProf.slug })}
       class="text-orange hover:bg-hover inline-flex flex-wrap rounded-md underline"
       onmouseenter={() => {
         profsHover = true; // Mutating properties directly updates parent binding
@@ -128,30 +124,24 @@ Copyright (C) 2026 Andrew Cupps
         removeHoverSection();
       }}
       onclick={handleLinkClick}
-      title="View Instructor on PlanetTerp"
+      title="View {currentProf.name} on Jupiterp"
     >
       {currentProf.name}
-      <!-- format-check exempt 3 -->
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="mt-1 h-3 w-3">
-        <path
-          d="M6.22 8.72a.75.75 0 0 0 1.06 1.06l5.22-5.22v1.69a.75.75 0 0 0 1.5 0v-3.5a.75.75 0 0 0-.75-.75h-3.5a.75.75 0 0 0 0 1.5h1.69L6.22 8.72Z"
-        />
-        <path
-          d="M3.5 6.75c0-.69.56-1.25 1.25-1.25H7A.75.75 0 0 0 7 4H4.75A2.75 2.75 0 0 0 2 6.75v4.5A2.75 2.75 0 0 0 4.75 14h4.5A2.75 2.75 0 0 0 12 11.25V9a.75.75 0 0 0-1.5 0v2.25c0 .69-.56 1.25-1.25 1.25h-4.5c-.69 0-1.25-.56-1.25-1.25v-4.5Z"
-        />
-      </svg>
     </a>
     <span
       style={currentProf.starsStyle}
       class="stars text-orange text-xs font-bold xl:text-sm 2xl:text-base"
-      title="{currentProf.rating} out of 5"
+      aria-hidden="true"
     >
       ★★★★★
     </span>
+    <!-- The stars are a CSS gradient over text; the value itself has to be
+         readable by a screen reader some other way. -->
+    <span class="sr-only">Rated {currentProf.rating} out of 5</span>
   {:else}
     {instructor ?? 'No instructor'}
   {/if}
-  {#if profDist != null && profDist.gpa != null}
+  {#if showChip && profDist != null && profDist.gpa != null}
     <!-- svelte-ignore a11y_no_static_element_interactions -->
     <span
       class="relative inline-block"
@@ -182,7 +172,7 @@ Copyright (C) 2026 Andrew Cupps
         {profDist.gpa.toFixed(2)}
       </span>
       {#if gpaOpen}
-        <GradesPopover heading={instructor} distribution={profDist} ptLink={ptGpaLink} />
+        <GradesPopover heading={instructor} distribution={profDist} slug={profSlug} onclose={() => (gpaOpen = false)} />
       {/if}
     </span>
   {/if}

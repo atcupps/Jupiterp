@@ -52,7 +52,7 @@ Copyright (C) 2026 Andrew Cupps
     const segments = {} as BucketSegments;
     for (const bucket of GRADE_BUCKETS) {
       segments[bucket] = [];
-      if (dist.totalStudents === 0) {
+      if (dist.barTotal === 0) {
         continue;
       }
       // Reversed so segments run minus -> plus (light -> dark)
@@ -64,7 +64,7 @@ Copyright (C) 2026 Andrew Cupps
         segments[bucket].push({
           letter,
           fillClass: fillClasses[letter] ?? '',
-          width: (count / dist.totalStudents) * 100,
+          width: (count / dist.barTotal) * 100,
           count,
         });
       }
