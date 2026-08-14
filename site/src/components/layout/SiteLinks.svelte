@@ -5,124 +5,141 @@ https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2026 Andrew Cupps
 -->
 <script lang="ts">
-  import { fade } from 'svelte/transition';
   import { page } from '$app/state';
-  import NavBarElement from './NavBarElement.svelte';
+  import type { Pathname } from '$app/types';
+  import NavBarLink from './NavBarLink.svelte';
   import DarkModeToggle from './DarkModeToggle.svelte';
-  import ExpandableNavBarElement from './ExpandableNavBarElement.svelte';
+  import { BarsOutline, CloseOutline, AngleDownOutline, GithubSolid, BugSolid } from 'flowbite-svelte-icons';
 
-  let siteLinksSelected: boolean = $state(false);
+  interface NavLink {
+    link: Pathname;
+    text: string;
+    children?: { link: Pathname; text: string }[];
+  }
 
-  let currentPage = $derived(page.url.pathname);
+  const navLinks: NavLink[] = [
+    { link: '/', text: 'Course Planner' },
+    { link: '/generate', text: 'Schedule Generator' },
+    {
+      link: '/about',
+      text: 'About',
+      children: [
+        { link: '/terms-of-use', text: 'Terms of Use' },
+        { link: '/privacy-policy', text: 'Privacy Policy' },
+        { link: '/changelog', text: 'Changelog' },
+      ],
+    },
+  ];
+
+  const currentPath: string = $derived(page.url.pathname);
 </script>
 
-<!-- For larger screens -->
-<div class="hidden grow justify-end self-center lg:flex">
-  <NavBarElement link="./" text="Course Planner" isOnPage={currentPage == '/'} />
-  <NavBarElement link="./generate" text="Schedule Generator" isOnPage={currentPage == '/generate'} />
-  <NavBarElement link="./bugs" text="Report an Issue" isOnPage={currentPage == '/bugs'} />
-  <ExpandableNavBarElement link="./about" text="About" isOnPage={currentPage == '/about'}>
-    <NavBarElement
-      link="./terms-of-use"
-      text="Terms of Use"
-      reduceXMargin={true}
-      isOnPage={currentPage == '/terms-of-use'}
-    />
-    <NavBarElement
-      link="./privacy-policy"
-      text="Privacy Policy"
-      reduceXMargin={true}
-      isOnPage={currentPage == '/privacy-policy'}
-    />
-    <NavBarElement link="./changelog" text="Changelog" reduceXMargin={true} isOnPage={currentPage == '/changelog'} />
-  </ExpandableNavBarElement>
-  <NavBarElement link="https://github.com/atcupps/Jupiterp" text="GitHub" target="_blank" />
-  <DarkModeToggle />
-</div>
+<input type="checkbox" id="nav-menu-toggle" class="peer hidden" />
 
-<!-- Button to toggle site links on mobile -->
-<button
-  title="Toggle site links"
-  class="z-52 visible absolute right-5 top-3 h-6 w-6 lg:hidden"
-  onclick={() => {
-    siteLinksSelected = !siteLinksSelected;
-  }}
+<label for="nav-menu-toggle" class="-mr-4 flex cursor-pointer items-center px-4">
+  <BarsOutline class="h-6 w-6 peer-checked:hidden" />
+  <CloseOutline class="hidden h-6 w-6 peer-checked:block" />
+</label>
+
+<aside
+  class="bg-bg-primary scrollbar-gutter-both custom-scrollbar fixed bottom-0 right-0 top-12 flex min-w-60 translate-x-full flex-col overflow-y-scroll border-l-2 px-4 py-2 text-lg font-bold transition-transform duration-300 peer-checked:translate-x-0"
 >
-  <!-- format-check exempt 10 -->
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 448 512"
-    class="fill-text-primary visible h-full w-full transition"
-    class:hidden={siteLinksSelected}
-  >
-    <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path
-      d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"
-    /></svg
-  >
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 384 512"
-    class="fill-text-primary visible h-full w-full"
-    class:hidden={!siteLinksSelected}
-  >
-    <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path
-      d="M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206 56.6 43.5C45.3 29.9 25.1 28.1 11.5 39.4S-3.9 70.9 7.4 84.5L150.3 256 7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306 327.4 468.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256 376.6 84.5z"
-    /></svg
-  >
-</button>
+  <ul class="flex flex-col gap-2">
+    {#each navLinks as item, i (i)}
+      {#if item.children}
+        <li class="nav-list-wrapper">
+          <!-- Hidden Checkbox acting as state toggle -->
+          <input type="checkbox" id="nav-list-{i}" class="hidden" />
 
-<!-- Using this method to avoid having to listen to a variable on Schedule -->
-{#if siteLinksSelected}
-  <button
-    aria-label="Close Site Links"
-    style="height: calc(100% - 3rem);"
-    class="z-55 visible fixed top-12 -mx-4 w-full bg-black/20 lg:hidden"
-    in:fade={{ duration: 150 }}
-    out:fade={{ duration: 150 }}
-    onclick={() => (siteLinksSelected = false)}
-  ></button>
-{/if}
+          <!-- Label acts as the clickable summary header -->
+          <label for="nav-list-{i}" class="relative flex cursor-pointer items-center justify-between">
+            <NavBarLink link={item.link} class="grow" current={currentPath === item.link}>
+              {item.text}
+            </NavBarLink>
+            <span class="hover:text-orange dark:hover:text-light-orange absolute right-0 p-0.5 transition-transform"
+              ><AngleDownOutline height="1.5rem" width="1.5rem" />
+            </span>
+          </label>
 
-<!-- Mobile site links -->
-<div
-  class="site-links z-61 border-border bg-bg-primary w-75 visible fixed right-0 top-12 flex flex-col border-l-2 border-solid p-2 transition-transform duration-300 lg:hidden"
-  class:site-links-transition={!siteLinksSelected}
-  class:shadow-lg={siteLinksSelected}
->
-  <div class="my-2 w-full text-lg">
-    <NavBarElement link="./" text="Course Planner" />
+          <ul style="transition: height 0.3s;" class="flex flex-col gap-2 overflow-clip pl-4 pt-1">
+            {#each item.children as child, j (j)}
+              <NavBarLink link={child.link} current={currentPath === child.link}>
+                <span class="text-text-primary mr-2 select-none">-</span>
+                {child.text}
+              </NavBarLink>
+            {/each}
+          </ul>
+        </li>
+      {:else}
+        <NavBarLink link={item.link} current={currentPath === item.link}>
+          {item.text}
+        </NavBarLink>
+      {/if}
+    {/each}
+  </ul>
+  <div class="mt-auto pt-4">
+    <div class="flex flex-row justify-between">
+      <DarkModeToggle />
+      <NavBarLink
+        link={'/bugs' as Pathname}
+        class="hover:bg-hover rounded-lg px-4 py-1"
+        current={currentPath === '/report-bug'}
+      >
+        <BugSolid class="h-6 w-6" />
+      </NavBarLink>
+      <a
+        href="https://github.com/Jupiterp/Jupiterp"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="hover:text-orange dark:hover:text-light-orange hover:bg-hover rounded-lg px-4 py-1"
+      >
+        <GithubSolid class="h-6 w-6" />
+      </a>
+    </div>
+    <p class="text-text-secondary text-sm my-2">Made with ❤ by the Jupiterp Team.</p>
   </div>
-  <div class="my-2 w-full text-lg">
-    <NavBarElement link="./generate" text="Schedule Generator" />
-  </div>
-  <div class="my-2 w-full text-lg">
-    <NavBarElement link="./bugs" text="Report an Issue" />
-  </div>
-  <div class="my-2 w-full text-lg">
-    <NavBarElement link="./about" text="About" />
-  </div>
-  <div class="my-2 w-full text-lg">
-    <NavBarElement link="./terms-of-use" text="Terms of Use" />
-  </div>
-  <div class="my-2 w-full text-lg">
-    <NavBarElement link="./privacy-policy" text="Privacy Policy" />
-  </div>
-  <div class="my-2 w-full text-lg">
-    <NavBarElement link="https://github.com/atcupps/Jupiterp" text="GitHub" target="_blank" />
-  </div>
-</div>
+</aside>
 
 <style>
-  @media screen and (max-width: 1023px) {
-    .site-links {
-      height: calc(100svh - 3rem);
+  li.nav-list-wrapper {
+    @supports (interpolate-size: allow-keywords) {
+      interpolate-size: allow-keywords;
     }
 
-    .site-links-transition {
-      transition-property: transform;
-      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-      transition-duration: 150ms;
-      transform: translateX(100%);
+    > label > span {
+      transform: rotate(0deg);
+    }
+    > ul {
+      height: 0;
+    }
+
+    &:has(> input:checked) {
+      > label > span {
+        transform: rotate(180deg);
+      }
+      > ul {
+        height: auto;
+      }
+    }
+  }
+
+  @media (max-width: 30rem) {
+    :global(.nav-list-wrapper:has(> ul > a[aria-current='true'])) {
+      > label > span {
+        transform: rotate(180deg);
+      }
+      > ul {
+        height: auto;
+      }
+
+      &:has(> input:checked) {
+        > label > span {
+          transform: rotate(0deg);
+        }
+        > ul {
+          height: 0;
+        }
+      }
     }
   }
 </style>

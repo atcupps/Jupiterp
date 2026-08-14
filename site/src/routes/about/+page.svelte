@@ -10,6 +10,7 @@ Copyright (C) 2026 Andrew Cupps
   const h2Classes = 'text-xl border-b-2 border-border';
   const h3Classes = 'text-l border-b-2 border-border';
   const pClasses = 'my-2 text-normal leading-5';
+  let resolvedChangelogLink = $derived(resolve('/changelog'));
 </script>
 
 <svelte:head>
@@ -40,7 +41,7 @@ Copyright (C) 2026 Andrew Cupps
         class="text-orange underline">here</a
       >.
     </p>
-    <a href={resolve('/changelog')} aria-label="View changelog" rel="canonical" class="text-orange underline"
+    <a href={resolvedChangelogLink} aria-label="View changelog" rel="canonical" class="text-orange underline"
       >View changelog</a
     >
     <h2 class={h2Classes}>Professor Ratings</h2>

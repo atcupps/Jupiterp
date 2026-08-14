@@ -14,7 +14,7 @@ Copyright (C) 2024 Andrew Cupps
   <title>Privacy Policy | Jupiterp</title>
 </svelte:head>
 
-<main class="fixed bottom-0 top-12 overflow-y-scroll px-8 py-2 lg:top-14 xl:top-16">
+<main class="custom-scrollbar fixed bottom-0 top-12 overflow-y-scroll px-8 py-2 lg:top-14 xl:top-16">
   <article>
     <h1 class={h1Classes}>Privacy Policy for Jupiterp</h1>
 
