@@ -5,18 +5,31 @@ https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2026 Andrew Cupps
 -->
 <script lang="ts">
+  import { clickoutside } from '@svelte-put/clickoutside';
   import { ptLinkFromSlug } from '../../../lib/course-planner/Professors';
-  import { ProfsLookupStore } from '../../../stores/CoursePlannerStores';
+  import { CourseGradesStore, ProfsLookupStore } from '../../../stores/CoursePlannerStores';
+  import { gpaTier, ptCourseLink, type GpaTier } from '../../../lib/course-planner/Grades';
+  import GradesPopover from './GradesPopover.svelte';
 
   // 1. Properly define the component props type contract
   interface Props {
     instructor?: string;
+    /**
+     * Course code used to look up this instructor's grade data in
+     * `CourseGradesStore`; without it, no GPA chip is shown.
+     */
+    courseCode?: string;
     profsHover: boolean;
     removeHoverSection: () => void;
   }
 
-  // eslint-disable-next-line no-useless-assignment
-  let { instructor = 'No instructor', profsHover = $bindable(), removeHoverSection }: Props = $props();
+  let {
+    instructor = 'No instructor',
+    courseCode = undefined,
+    // eslint-disable-next-line no-useless-assignment
+    profsHover = $bindable(),
+    removeHoverSection,
+  }: Props = $props();
 
   let profs = $derived($ProfsLookupStore);
 
@@ -46,6 +59,56 @@ Copyright (C) 2026 Andrew Cupps
   function handleLinkClick(event: MouseEvent) {
     // Prevent the event from propagating to the button
     event.stopPropagation();
+  }
+
+  // Grade data for this instructor in this course, if loaded
+  let entry = $derived(courseCode != null ? $CourseGradesStore[courseCode] : undefined);
+  let profDist = $derived(
+    entry !== undefined && entry.status === 'loaded' ? (entry.grades.byProfessor[instructor] ?? null) : null
+  );
+
+  let gpaOpen = $state(false);
+
+  // Static tier -> class map; Tailwind requires literal class names
+  const chipTierClasses: Record<GpaTier, string> = {
+    good: 'border-gpa-good text-gpa-good',
+    mid: 'border-gpa-mid text-gpa-mid',
+    low: 'border-gpa-low text-gpa-low',
+  };
+
+  let chipTitle = $derived(
+    profDist != null && profDist.gpa != null
+      ? 'Avg. GPA ' +
+          profDist.gpa.toFixed(2) +
+          ' for ' +
+          instructor +
+          (courseCode != null ? ' in ' + courseCode : '') +
+          ' (PlanetTerp)'
+      : ''
+  );
+
+  let ptGpaLink = $derived(
+    instructor in profs
+      ? ptLinkFromSlug(profs[instructor].slug)
+      : courseCode != null
+        ? ptCourseLink(courseCode)
+        : 'https://planetterp.com'
+  );
+
+  function handleChipClick(event: MouseEvent) {
+    event.stopPropagation();
+    // Only ever open on click; closing is handled by mouseleave on
+    // desktop and clickoutside on touch devices, so the mouseenter
+    // that precedes a tap's click doesn't cancel it out.
+    gpaOpen = true;
+  }
+
+  function handleChipKeydown(event: KeyboardEvent) {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      event.stopPropagation();
+      gpaOpen = !gpaOpen;
+    }
   }
 </script>
 
@@ -87,6 +150,41 @@ Copyright (C) 2026 Andrew Cupps
     </span>
   {:else}
     {instructor ?? 'No instructor'}
+  {/if}
+  {#if profDist != null && profDist.gpa != null}
+    <!-- svelte-ignore a11y_no_static_element_interactions -->
+    <span
+      class="relative inline-block"
+      use:clickoutside
+      onclickoutside={() => (gpaOpen = false)}
+      onmouseenter={() => {
+        profsHover = true;
+        removeHoverSection();
+        gpaOpen = true;
+      }}
+      onmouseleave={() => {
+        profsHover = false;
+        removeHoverSection();
+        gpaOpen = false;
+      }}
+    >
+      <span
+        role="button"
+        tabindex="0"
+        aria-expanded={gpaOpen}
+        class="ml-1 cursor-pointer rounded-md border px-1 align-[2px] text-[0.625rem] font-bold leading-tight 2xl:text-xs {chipTierClasses[
+          gpaTier(profDist.gpa)
+        ]}"
+        title={chipTitle}
+        onclick={handleChipClick}
+        onkeydown={handleChipKeydown}
+      >
+        {profDist.gpa.toFixed(2)}
+      </span>
+      {#if gpaOpen}
+        <GradesPopover heading={instructor} distribution={profDist} ptLink={ptGpaLink} />
+      {/if}
+    </span>
   {/if}
 </div>
 

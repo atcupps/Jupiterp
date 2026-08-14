@@ -9,11 +9,31 @@ Copyright (C) 2026 Andrew Cupps
   import { formatCredits, testudoLink } from '../../../lib/course-planner/Formatting';
   import { slide } from 'svelte/transition';
   import CourseCondition from './CourseCondition.svelte';
+  import GradeDistributionBars from './GradeDistributionBars.svelte';
   import { AngleRightOutline } from 'flowbite-svelte-icons';
   import type { Course, Section } from '@jupiterp/jupiterp';
+  import { formatSemester, gpaTier, ptCourseLink, type GpaTier } from '../../../lib/course-planner/Grades';
+  import { gradesAutoload, loadCourseGrades } from '../../../lib/course-planner/GradesLoader';
+  import { CourseGradesStore } from '../../../stores/CoursePlannerStores';
 
   export let course: Course;
   export let isDesktop: boolean;
+
+  $: entry = $CourseGradesStore[course.courseCode];
+  $: courseDist = entry?.status === 'loaded' ? entry.grades.course : null;
+  $: courseSemRange =
+    courseDist?.earliestSemester != null && courseDist?.latestSemester != null
+      ? courseDist.earliestSemester === courseDist.latestSemester
+        ? formatSemester(courseDist.earliestSemester)
+        : formatSemester(courseDist.earliestSemester) + ' – ' + formatSemester(courseDist.latestSemester)
+      : null;
+
+  // Static tier -> class map; Tailwind requires literal class names
+  const gpaTierClasses: Record<GpaTier, string> = {
+    good: 'text-gpa-good',
+    mid: 'text-gpa-mid',
+    low: 'text-gpa-low',
+  };
 
   function pseudoSection(): Section {
     return {
@@ -40,6 +60,7 @@ Copyright (C) 2026 Andrew Cupps
 <div
   id="results-{course.courseCode}"
   class="border-outline bg-bg-secondary my-2 flex scroll-mt-2 flex-col rounded-lg border-2 border-solid px-2"
+  use:gradesAutoload={course.courseCode}
 >
   <div
     role="button"
@@ -78,6 +99,9 @@ Copyright (C) 2026 Andrew Cupps
       title={!showMoreInfo ? 'Show more course details' : 'Hide course details'}
       onclick={() => {
         showMoreInfo = !showMoreInfo;
+        if (showMoreInfo) {
+          void loadCourseGrades(course.courseCode, { retryError: true });
+        }
       }}
     >
       <div class="-ml-1 h-full self-center transition-transform" class:rotate-90={showMoreInfo}>
@@ -97,6 +121,41 @@ Copyright (C) 2026 Andrew Cupps
             View on Testudo
           </a>
         </div>
+
+        <!-- Course-wide grade data from PlanetTerp -->
+        {#if courseDist != null && courseDist.gpa != null}
+          <div class="pb-1">
+            <div>
+              Avg. GPA:
+              <b class={gpaTierClasses[gpaTier(courseDist.gpa)]}>
+                {courseDist.gpa.toFixed(2)}
+              </b>
+              &middot;
+              {courseDist.totalStudents.toLocaleString()}
+              students
+            </div>
+            <div class="max-w-63.5 xl:max-w-78.5 2xl:max-w-98.5 py-1">
+              <GradeDistributionBars distribution={courseDist} />
+            </div>
+            <div class="text-text-secondary text-xs">
+              {#if courseSemRange != null}
+                {courseSemRange} &middot;
+              {/if}
+              <a
+                href={ptCourseLink(course.courseCode)}
+                rel="external noopener noreferrer"
+                target="_blank"
+                class="text-orange underline"
+              >
+                Data from PlanetTerp
+              </a>
+            </div>
+          </div>
+        {:else if entry?.status === 'loading'}
+          <div class="text-text-secondary pb-1 text-xs">Loading grade data&hellip;</div>
+        {:else}
+          <div class="text-text-secondary pb-1 text-xs">No grade data available.</div>
+        {/if}
 
         {#if course.conditions != null && course.conditions.length > 0}
           <!-- Keyed by index: condition strings are not guaranteed unique,

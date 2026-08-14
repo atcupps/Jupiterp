@@ -47,6 +47,25 @@
   --color-outline: var(--outline);
   --color-hover: var(--hover);
 
+  /* GPA tiers */
+  --color-gpa-good: var(--gpa-good);
+  --color-gpa-mid: var(--gpa-mid);
+  --color-gpa-low: var(--gpa-low);
+
+  /* Grade distribution bar fills */
+  --color-grade-a-plus: var(--grade-a-plus);
+  --color-grade-a: var(--grade-a);
+  --color-grade-a-minus: var(--grade-a-minus);
+  --color-grade-b-plus: var(--grade-b-plus);
+  --color-grade-b: var(--grade-b);
+  --color-grade-b-minus: var(--grade-b-minus);
+  --color-grade-c-plus: var(--grade-c-plus);
+  --color-grade-c: var(--grade-c);
+  --color-grade-c-minus: var(--grade-c-minus);
+  --color-grade-d-plus: var(--grade-d-plus);
+  --color-grade-d-minus: var(--grade-d-minus);
+  --color-grade-f: var(--grade-f);
+
   /* Animations */
   --animate-fade-out: fadeOut 0.75s forwards;
 

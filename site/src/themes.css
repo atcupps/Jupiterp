@@ -8,6 +8,22 @@
   --light-orange: #ffc4ab;
   --mid-gray: #888888;
 
+  /* Grade distribution bar fills (universal; identical in both themes).
+     Within a bucket, plus grades are darkest and minus grades lightest.
+     D reuses `--orange`. */
+  --grade-a-plus: #147a3d;
+  --grade-a: #2fa85e;
+  --grade-a-minus: #6fcb93;
+  --grade-b-plus: #6e8f24;
+  --grade-b: #93b83c;
+  --grade-b-minus: #b7d06e;
+  --grade-c-plus: #b8901f;
+  --grade-c: #e0b63c;
+  --grade-c-minus: #eccf7c;
+  --grade-d-plus: #c9511f;
+  --grade-d-minus: #fa9e77;
+  --grade-f: #e5534b;
+
   /* Semantic Light Tokens (Default) */
   --bg-primary: #ffffff;
   --bg-secondary: #ebebeb;
@@ -16,6 +32,12 @@
   --border: #f1f1f1;
   --outline: #a2aabd;
   --hover: #d8d8d8;
+
+  /* GPA tier accents. These carry meaning, so they are darkened on light
+     backgrounds and lightened on dark ones to hold contrast either way. */
+  --gpa-good: #15803d;
+  --gpa-mid: #a16207;
+  --gpa-low: #b91c1c;
 
   transition-property:
     --bg-primary 300ms ease,
@@ -36,6 +58,9 @@
   --border: #252e3e;
   --outline: #47526a;
   --hover: #30374a;
+  --gpa-good: #4ade80;
+  --gpa-mid: #facc15;
+  --gpa-low: #f87171;
 }
 
 /* CSS Custom Properties for theme changes (make it unaffected by normal transitions) */
@@ -79,4 +104,22 @@
   syntax: '<color>';
   inherits: true;
   initial-value: #d8d8d8;
+}
+
+@property --gpa-good {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #15803d;
+}
+
+@property --gpa-mid {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #a16207;
+}
+
+@property --gpa-low {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #b91c1c;
 }
