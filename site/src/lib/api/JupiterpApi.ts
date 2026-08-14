@@ -27,6 +27,8 @@ import type {
   InstructorGradeSummary,
   InstructorTermGradeSummary,
   Page,
+  Review,
+  ReviewSubmission,
 } from './types';
 
 type Fetch = typeof globalThis.fetch;
@@ -256,3 +258,101 @@ export async function instructorBySlug(slug: string, fetchFn?: Fetch): Promise<I
 }
 
 export { normalizeName as normalizeSearchTerm };
+
+/* =============================== reviews ================================ */
+
+/**
+ * Approved reviews for one professor.
+ *
+ * Served from a database view that cannot express an unapproved row and does
+ * not contain the submitter's identity columns at all, so there is no filter
+ * here that could be forgotten.
+ */
+export async function reviewsFor(
+  instructorSlug: string,
+  options: { courseCode?: string; limit?: number; offset?: number } = {},
+  fetchFn?: Fetch
+): Promise<Page<Review>> {
+  return get<Review>(
+    '/v1/reviews',
+    build({
+      instructorSlug,
+      courseCode: options.courseCode,
+      limit: options.limit ?? 25,
+      offset: options.offset,
+    }),
+    fetchFn
+  );
+}
+
+/** The API's reply to a submission, or to a validation failure. */
+export interface SubmitResult {
+  ok: boolean;
+  /** Present on failure. Safe to show: the API writes these for humans. */
+  error?: string;
+  /** True when the caller should wait and retry rather than change anything. */
+  rateLimited?: boolean;
+}
+
+/**
+ * Submit a review.
+ *
+ * The API answers identically whether or not this address has already reviewed
+ * this professor, so a caller cannot use it to find out. Do not try to
+ * interpret the response as anything finer than "accepted".
+ */
+export async function submitReview(review: ReviewSubmission, fetchFn: Fetch = fetch): Promise<SubmitResult> {
+  const response = await fetchFn(`${client.dbUrl}/v1/reviews`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(review),
+  });
+
+  if (response.ok) {
+    return { ok: true };
+  }
+  const payload = await response.json().catch(() => ({ error: 'Something went wrong.' }));
+  return {
+    ok: false,
+    error: payload.error ?? 'Something went wrong.',
+    rateLimited: response.status === 429,
+  };
+}
+
+/** Confirm an emailed verification link. Returns the manage key, once. */
+export async function verifyReview(
+  token: string,
+  fetchFn: Fetch = fetch
+): Promise<{ ok: boolean; manageKey?: string; message: string }> {
+  const response = await fetchFn(`${client.dbUrl}/v1/reviews/verify/${encodeURIComponent(token)}`);
+  const payload = await response.json().catch(() => ({}));
+  return {
+    ok: response.ok,
+    manageKey: payload.manage_key,
+    message: payload.message ?? payload.error ?? 'Something went wrong.',
+  };
+}
+
+/** Withdraw a review using its manage key. */
+export async function withdrawReview(id: string, manageKey: string, fetchFn: Fetch = fetch): Promise<boolean> {
+  const response = await fetchFn(`${client.dbUrl}/v1/reviews/${encodeURIComponent(id)}`, {
+    method: 'DELETE',
+    headers: { Authorization: `Bearer ${manageKey}` },
+  });
+  return response.ok;
+}
+
+/** Report a published review for breaching the content policy. */
+export async function reportReview(
+  id: string,
+  reason: string,
+  detail: string,
+  fetchFn: Fetch = fetch
+): Promise<boolean> {
+  const response = await fetchFn(`${client.dbUrl}/v1/reviews/${encodeURIComponent(id)}/report`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ reason, detail }),
+  });
+  return response.ok;
+}

@@ -159,3 +159,32 @@ export interface Page<T> {
    */
   total: number | null;
 }
+
+/** A published review, as returned by `GET /v1/reviews`. */
+export interface Review {
+  id: string;
+  instructor_id: number;
+  instructor_slug: string;
+  course_code: string | null;
+  term: number | null;
+  /** 1-5 in half steps. A decimal, never an integer. */
+  rating: number;
+  expected_grade: string | null;
+  title: string | null;
+  body: string | null;
+  submitted_at: string;
+  edited_at: string | null;
+}
+
+/** What the review form sends. */
+export interface ReviewSubmission {
+  instructor_slug: string;
+  course_code?: string;
+  term?: number;
+  rating: number;
+  expected_grade?: string;
+  title?: string;
+  body?: string;
+  email: string;
+  captcha_token?: string;
+}

@@ -12,6 +12,7 @@ import { client } from '../../lib/client';
 const STATIC_PAGES = [
   { url: '/', changefreq: 'daily', priority: 0.7 },
   { url: '/professors', changefreq: 'weekly', priority: 0.6 },
+  { url: '/review-policy', changefreq: 'monthly', priority: 0.4 },
   { url: '/about', changefreq: 'monthly', priority: 0.3 },
   { url: '/bugs', changefreq: 'monthly', priority: 0.2 },
   { url: '/terms-of-use', changefreq: 'monthly', priority: 0.1 },

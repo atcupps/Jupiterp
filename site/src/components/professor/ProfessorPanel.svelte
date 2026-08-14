@@ -14,6 +14,8 @@ renders it.
   import { ratingBreakdown, type ProfessorData } from '../../lib/professor/ProfessorData';
   import GradeDistributionBars from '../course-planner/course-search/GradeDistributionBars.svelte';
   import GradeTrend from './GradeTrend.svelte';
+  import ReviewForm from './ReviewForm.svelte';
+  import ReviewList from './ReviewList.svelte';
 
   interface Props {
     data: ProfessorData;
@@ -35,6 +37,8 @@ renders it.
 
   /** Courses worth showing a GPA for, largest first. */
   let courses = $derived(data.courses);
+
+  let showForm = $state(false);
 
   let ptAsOf = $derived(
     rating.planetterpAsOf
@@ -175,6 +179,32 @@ renders it.
       </ul>
     </section>
   {/if}
+
+  <!-- Reviews -->
+  <ReviewList instructorSlug={data.instructor.slug} />
+
+  <section aria-label="Write a review" class="flex flex-col gap-2">
+    {#if showForm}
+      <ReviewForm
+        instructorSlug={data.instructor.slug}
+        instructorName={data.instructor.name}
+        courseCodes={data.courses.map((course) => course.courseCode)}
+      />
+      <button class="text-text-secondary self-start text-sm underline" onclick={() => (showForm = false)}>
+        Cancel
+      </button>
+    {:else}
+      <button
+        class="bg-orange text-bg-primary self-start rounded-lg px-4 py-2 font-bold"
+        onclick={() => (showForm = true)}
+      >
+        Write a review
+      </button>
+      <p class="text-text-secondary text-xs">
+        Requires a UMD email address. Every review is read by a moderator before it appears.
+      </p>
+    {/if}
+  </section>
 
   <!-- Caveats. These generate "your numbers are wrong" reports if left
        implicit, because every one of them is invisible in the figures. -->
