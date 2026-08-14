@@ -69,7 +69,14 @@ Copyright (C) 2026 Andrew Cupps
     >
       {currentProf.name}
       <!-- format-check exempt 3 -->
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="mt-1 h-3 w-3">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 16 16"
+        fill="currentColor"
+        height="12"
+        width="12"
+        class="mt-1"
+      >
         <path
           d="M6.22 8.72a.75.75 0 0 0 1.06 1.06l5.22-5.22v1.69a.75.75 0 0 0 1.5 0v-3.5a.75.75 0 0 0-.75-.75h-3.5a.75.75 0 0 0 0 1.5h1.69L6.22 8.72Z"
         />
