@@ -21,8 +21,8 @@ Copyright (C) 2026 Andrew Cupps
 </script>
 
 <button
-  class="hover:bg-hover hover:text-orange dark:hover:text-light-orange rounded-lg px-4 py-1"
-  title="Toggle Dark Mode"
+  class="hover:bg-hover hover:text-orange dark:hover:text-light-orange rounded-lg px-4 py-1 sm:p-1"
+  title="Toggle Theme"
   onclick={toggleDarkMode}
 >
   <SunOutline class="h-6 w-6 dark:hidden" />

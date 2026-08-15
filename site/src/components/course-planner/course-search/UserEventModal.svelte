@@ -100,7 +100,7 @@ Copyright (C) 2026 Andrew Cupps
 </script>
 
 <!-- Backdrop -->
-<button class="fixed inset-0 z-50 mt-12 bg-black/40" onclick={onClose} aria-label="Close Modal"></button>
+<button class="fixed inset-0 z-50 mt-12 bg-black/50" onclick={onClose} aria-label="Close Modal"></button>
 <!-- Modal -->
 <div
   class="z-60 border-outline bg-bg-primary w-100 fixed left-1/2 top-1/2 max-w-[90vw] -translate-x-1/2 -translate-y-1/2 rounded-lg border p-4 shadow-xl"
