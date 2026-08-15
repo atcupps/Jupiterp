@@ -26,7 +26,7 @@ Copyright (C) 2026 Andrew Cupps
   rel="canonical"
   class="hover:text-orange dark:hover:text-light-orange aria-current:text-orange aria-current:underline text-nowrap underline-offset-4 hover:transition-colors {className}"
   aria-current={current}
-  title={title}
+  {title}
 >
   {@render children?.()}
 </a>
