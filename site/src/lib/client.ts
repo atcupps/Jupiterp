@@ -6,6 +6,6 @@
  *
  * @fileoverview Creates an API client instance for use elsewhere.
  */
-import { JupiterpClientV0 } from '@jupiterp/jupiterp';
+import { JupiterpClientV1 } from '@jupiterp/jupiterp';
 
-export const client = JupiterpClientV0.createDefault();
+export const client = JupiterpClientV1.createDefault();

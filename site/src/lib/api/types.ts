@@ -57,7 +57,7 @@ export interface GradeSummary extends GradeCounts {
   section_count: number;
 }
 
-/** One row of `/v0/grades/summary?groupBy=course`. */
+/** One row of `/v1/grades/summary?groupBy=course`. */
 export interface CourseGradeSummary extends GradeSummary {
   course_code: string;
   term_count: number;
@@ -65,13 +65,13 @@ export interface CourseGradeSummary extends GradeSummary {
   last_term: number;
 }
 
-/** One row of `/v0/grades/summary?groupBy=term`. */
+/** One row of `/v1/grades/summary?groupBy=term`. */
 export interface CourseTermGradeSummary extends GradeSummary {
   course_code: string;
   term: number;
 }
 
-/** One row of `/v0/grades/summary?groupBy=instructor` (course x instructor). */
+/** One row of `/v1/grades/summary?groupBy=instructor` (course x instructor). */
 export interface CourseInstructorGradeSummary extends GradeSummary {
   course_code: string;
   instructor_id: number;
@@ -82,7 +82,7 @@ export interface CourseInstructorGradeSummary extends GradeSummary {
   last_term: number;
 }
 
-/** One row of `/v0/grades/summary?groupBy=instructorOverall`. */
+/** One row of `/v1/grades/summary?groupBy=instructorOverall`. */
 export interface InstructorGradeSummary extends GradeSummary {
   instructor_id: number;
   instructor: string;
@@ -93,7 +93,7 @@ export interface InstructorGradeSummary extends GradeSummary {
   last_term: number;
 }
 
-/** One row of `/v0/grades/summary?groupBy=instructorTerm`. */
+/** One row of `/v1/grades/summary?groupBy=instructorTerm`. */
 export interface InstructorTermGradeSummary extends GradeSummary {
   instructor_id: number;
   instructor: string;
@@ -102,7 +102,7 @@ export interface InstructorTermGradeSummary extends GradeSummary {
   course_count: number;
 }
 
-/** One row of `/v0/grades/terms`. */
+/** One row of `/v1/grades/terms`. */
 export interface GradeTerm {
   term: number;
   section_count: number;

@@ -101,7 +101,7 @@ export interface CourseGradesConfig {
 /** Course-wide grade distributions, one row per course. */
 export async function courseGradeSummary(cfg: CourseGradesConfig, fetchFn?: Fetch): Promise<Page<CourseGradeSummary>> {
   return get<CourseGradeSummary>(
-    '/v0/grades/summary',
+    '/v1/grades/summary',
     build({
       groupBy: 'course',
       courseCodes: cfg.courseCodes,
@@ -128,7 +128,7 @@ export async function courseInstructorGradeSummary(
   fetchFn?: Fetch
 ): Promise<Page<CourseInstructorGradeSummary>> {
   return get<CourseInstructorGradeSummary>(
-    '/v0/grades/summary',
+    '/v1/grades/summary',
     build({
       groupBy: 'instructor',
       includeCarried: cfg.includeCarried,
@@ -153,7 +153,7 @@ export async function instructorGradeSummary(
   fetchFn?: Fetch
 ): Promise<InstructorGradeSummary | null> {
   const page = await get<InstructorGradeSummary>(
-    '/v0/grades/summary',
+    '/v1/grades/summary',
     build({ groupBy: 'instructorOverall', instructorSlug, limit: 1 }),
     fetchFn
   );
@@ -166,7 +166,7 @@ export async function instructorTermGradeSummary(
   fetchFn?: Fetch
 ): Promise<Page<InstructorTermGradeSummary>> {
   return get<InstructorTermGradeSummary>(
-    '/v0/grades/summary',
+    '/v1/grades/summary',
     build({
       groupBy: 'instructorTerm',
       instructorSlug,
@@ -184,7 +184,7 @@ export async function instructorCourseGradeSummary(
   fetchFn?: Fetch
 ): Promise<Page<CourseInstructorGradeSummary>> {
   return get<CourseInstructorGradeSummary>(
-    '/v0/grades/summary',
+    '/v1/grades/summary',
     build({
       groupBy: 'instructor',
       instructorSlug,
@@ -202,7 +202,7 @@ export async function courseTermGradeSummary(
   fetchFn?: Fetch
 ): Promise<Page<CourseTermGradeSummary>> {
   return get<CourseTermGradeSummary>(
-    '/v0/grades/summary',
+    '/v1/grades/summary',
     build({ groupBy: 'term', courseCodes, sortBy: 'term.asc', limit: 200 }),
     fetchFn
   );
@@ -210,7 +210,7 @@ export async function courseTermGradeSummary(
 
 /** Every term for which grade data exists, newest first. */
 export async function gradeTerms(fetchFn?: Fetch): Promise<Page<GradeTerm>> {
-  return get<GradeTerm>('/v0/grades/terms', build({}), fetchFn);
+  return get<GradeTerm>('/v1/grades/terms', build({}), fetchFn);
 }
 
 /* ============================ instructors =============================== */
@@ -235,7 +235,7 @@ export interface InstructorSearchConfig {
  */
 export async function searchInstructors(cfg: InstructorSearchConfig, fetchFn?: Fetch): Promise<Page<InstructorFull>> {
   return get<InstructorFull>(
-    '/v0/instructors',
+    '/v1/instructors',
     build({
       // The server matches against a normalized column, so an
       // un-normalized query finds nothing: "O'Brien" against the stored
@@ -265,7 +265,7 @@ export async function searchInstructors(cfg: InstructorSearchConfig, fetchFn?: F
  */
 export async function currentCourseCodesFor(slug: string, fetchFn?: Fetch): Promise<string[]> {
   const page = await get<{ course_code: string }>(
-    '/v0/sections',
+    '/v1/sections',
     build({ instructorSlug: slug, limit: 500 }),
     fetchFn
   );
@@ -274,7 +274,7 @@ export async function currentCourseCodesFor(slug: string, fetchFn?: Fetch): Prom
 
 /** Fetch one instructor by slug, or null when there is no such professor. */
 export async function instructorBySlug(slug: string, fetchFn?: Fetch): Promise<InstructorFull | null> {
-  const page = await get<InstructorFull>('/v0/instructors', build({ instructorSlugs: slug, limit: 1 }), fetchFn);
+  const page = await get<InstructorFull>('/v1/instructors', build({ instructorSlugs: slug, limit: 1 }), fetchFn);
   return page.data[0] ?? null;
 }
 
