@@ -5,7 +5,7 @@ https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2026 Andrew Cupps
  -->
 <script lang="ts">
-  import { resolve } from '$app/paths';
+  import { asset, resolve } from '$app/paths';
   import '../app.css';
   import Analytics from '../components/layout/Analytics.svelte';
   import SiteLinks from '../components/layout/SiteLinks.svelte';
@@ -31,7 +31,10 @@ Copyright (C) 2026 Andrew Cupps
   <nav class="border-border flex h-12 flex-row justify-start border-b-2">
     <a href={resolve('/')} aria-label="Home" rel="canonical" class="flex py-1">
       <img
-        src="logo.svg"
+        <!-- `asset()`, not a bare "logo.svg". A relative src resolves against
+             the current route, so the logo loaded on / and 404'd on
+             /professor/... and /admin/... -- every page except the root. -->
+        src={asset('/logo.svg')}
         alt="Jupiterp Logo"
         width="143.75"
         height="38"

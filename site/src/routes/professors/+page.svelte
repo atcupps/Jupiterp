@@ -89,7 +89,14 @@ instructor set.
   />
 </svelte:head>
 
-<main class="mx-auto w-full max-w-3xl px-4 py-6">
+<!--
+  `fixed top-12 bottom-0` with its own scroll container, matching the other
+  document pages -- see the note on the professor route. Without it the search
+  heading runs through the fixed header's rule and long result lists are
+  clipped at the fold with no way to scroll.
+-->
+<main class="custom-scrollbar fixed inset-x-0 bottom-0 top-12 overflow-y-auto">
+  <div class="mx-auto w-full max-w-3xl px-4 py-6">
   <h1 class="text-2xl font-bold">Professors</h1>
   <p class="text-text-secondary pt-1 text-sm">Search by name to see grade distributions and ratings.</p>
 
@@ -166,4 +173,5 @@ instructor set.
       No professors matched. Names are matched without accents or punctuation, so "obrien" finds "O'Brien".
     </p>
   {/if}
+  </div>
 </main>

@@ -183,7 +183,16 @@ through a queue without reaching for the mouse.
 
 <svelte:window onkeydown={handleKeydown} />
 
-<main class="mx-auto w-full max-w-5xl px-4 py-6">
+<!--
+  `fixed top-12 bottom-0` with its own scroll container, matching the other
+  document pages. `body` is `height: 100svh; overflow-y: clip` for the planner,
+  so a plain <main> begins underneath the fixed header and its rule.
+
+  Top-aligned rather than centred, unlike the verify page: the queue is a
+  working list that can run long, and a moderator reads it from the top.
+-->
+<main class="custom-scrollbar fixed inset-x-0 bottom-0 top-12 overflow-y-auto">
+  <div class="mx-auto w-full max-w-5xl px-4 py-6">
   <h1 class="text-2xl font-bold">Moderation queue</h1>
 
   {#if !authed}
@@ -322,4 +331,5 @@ through a queue without reaching for the mouse.
       </div>
     {/if}
   {/if}
+  </div>
 </main>

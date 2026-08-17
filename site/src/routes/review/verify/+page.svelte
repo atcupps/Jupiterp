@@ -47,7 +47,18 @@ one browser session.
   <meta name="robots" content="noindex" />
 </svelte:head>
 
-<main class="mx-auto w-full max-w-2xl px-4 py-10">
+<!--
+  `fixed top-12 bottom-0` with its own scroll container, matching every other
+  document page. `body` is `height: 100svh; overflow-y: clip` for the planner,
+  so a plain <main> starts underneath the fixed header and its rule -- which is
+  what put this page's heading through the divider.
+
+  The inner wrapper is `min-h-full` and centred, so a short confirmation sits in
+  the middle of the space rather than jammed against the top, and a long one
+  (the failure message plus the manage key) still scrolls normally.
+-->
+<main class="custom-scrollbar fixed inset-x-0 bottom-0 top-12 overflow-y-auto">
+  <div class="mx-auto flex min-h-full w-full max-w-2xl flex-col justify-center px-4 py-10">
   {#if status === 'working'}
     <h1 class="text-2xl font-bold">Confirming…</h1>
   {:else if status === 'failed'}
@@ -77,4 +88,5 @@ one browser session.
       <a href={resolve('/review-policy')} class="text-orange underline">review policy</a>.
     </p>
   {/if}
+  </div>
 </main>
