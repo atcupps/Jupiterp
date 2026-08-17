@@ -30,10 +30,12 @@ Copyright (C) 2026 Andrew Cupps
 <header class="fixed z-50 w-full px-4">
   <nav class="border-border flex h-12 flex-row justify-start border-b-2">
     <a href={resolve('/')} aria-label="Home" rel="canonical" class="flex py-1">
+      <!-- `asset()`, not a bare "logo.svg". A relative src resolves against the
+           current route, so the logo loaded on / and 404'd on /professor/... and
+           /admin/... -- every page except the root. `asset()` is the counterpart
+           to the `resolve()` used for links, and stays correct under a base
+           path. -->
       <img
-        <!-- `asset()`, not a bare "logo.svg". A relative src resolves against
-             the current route, so the logo loaded on / and 404'd on
-             /professor/... and /admin/... -- every page except the root. -->
         src={asset('/logo.svg')}
         alt="Jupiterp Logo"
         width="143.75"

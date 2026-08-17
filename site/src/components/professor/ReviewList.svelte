@@ -96,7 +96,6 @@ Copyright (C) 2026 Andrew Cupps
             {#if review.term}<span>{formatSemester(review.term)}</span>{/if}
             {#if review.expected_grade}<span>Grade: {review.expected_grade}</span>{/if}
             <span>{formatDate(review.submitted_at)}</span>
-            {#if review.edited_at}<span>(edited)</span>{/if}
           </div>
 
           {#if review.body}
