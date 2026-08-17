@@ -105,10 +105,24 @@ the professor is in the panel, which the planner's modal shows too.
   {@html LD_OPEN + jsonLd + LD_CLOSE}
 </svelte:head>
 
-<main class="mx-auto w-full max-w-3xl px-4 py-6">
-  <nav class="text-text-secondary pb-4 text-sm">
-    <a href={resolve('/professors')} class="text-orange underline">All professors</a>
-  </nav>
+<!--
+  `fixed top-12 bottom-0` with its own `overflow-y-auto`, matching every other
+  document page on the site (/about, /changelog, the policies).
 
-  <ProfessorPanel data={professor} headingLevel={1} />
+  It is not optional styling. `body` is `height: 100svh; overflow-y: clip` so
+  the planner occupies exactly one viewport and never scrolls, which means a
+  page that scrolls has to own its scroll container. Without this the professor
+  page was clipped at the fold with no way to reach the rest -- the grade
+  history, the reviews, and the review form were all rendered and all
+  unreachable -- and `top-12` is what keeps the first line out from under the
+  fixed header.
+-->
+<main class="custom-scrollbar fixed inset-x-0 bottom-0 top-12 overflow-y-auto">
+  <div class="mx-auto w-full max-w-3xl px-4 py-6">
+    <nav class="text-text-secondary pb-4 text-sm">
+      <a href={resolve('/professors')} class="text-orange underline">All professors</a>
+    </nav>
+
+    <ProfessorPanel data={professor} headingLevel={1} />
+  </div>
 </main>

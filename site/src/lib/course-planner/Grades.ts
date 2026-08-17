@@ -53,8 +53,6 @@ export type GradeBucket = 'A' | 'B' | 'C' | 'D' | 'F' | 'W';
 export type LetterCounts = Record<LetterGrade, number>;
 
 /** Tier used to color-code average GPAs */
-export type GpaTier = 'good' | 'mid' | 'low';
-
 /**
  * A grade distribution ready to render.
  *
@@ -194,21 +192,6 @@ export function formatSemesterRange(dist: GradeDistribution): string | null {
     return formatSemester(dist.firstTerm);
   }
   return `${formatSemester(dist.firstTerm)} – ${formatSemester(dist.lastTerm)}`;
-}
-
-/**
- * Classify an average GPA into a tier for color coding.
- * @param gpa An average GPA
- * @returns 'good' (>= 3.3), 'mid' (>= 2.8), or 'low'
- */
-export function gpaTier(gpa: number): GpaTier {
-  if (gpa >= 3.3) {
-    return 'good';
-  } else if (gpa >= 2.8) {
-    return 'mid';
-  } else {
-    return 'low';
-  }
 }
 
 /**

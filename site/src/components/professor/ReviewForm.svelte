@@ -18,18 +18,6 @@ Copyright (C) 2026 Andrew Cupps
 
   let { instructorSlug, instructorName, courseCodes = [] }: Props = $props();
 
-  let rating = $state(4);
-  let courseCode = $state('');
-  let term = $state('');
-  let expectedGrade = $state('');
-  let title = $state('');
-  let body = $state('');
-  let email = $state('');
-  let agreed = $state(false);
-
-  let status = $state<'idle' | 'sending' | 'sent' | 'error'>('idle');
-  let errorMessage = $state('');
-
   const GRADES = ['A+', 'A', 'A-', 'B+', 'B', 'B-', 'C+', 'C', 'C-', 'D+', 'D', 'D-', 'F', 'W', 'Other'];
 
   /**
@@ -49,6 +37,29 @@ Copyright (C) 2026 Andrew Cupps
     }
     return out.filter((t) => t.value <= year * 100 + (now.getMonth() >= 7 ? 8 : 1));
   })();
+
+  /**
+   * The term in progress, which is the one nearly every review is about.
+   *
+   * TERMS is newest-first and already truncated to terms that have started, so
+   * its first entry is the current one. Prefilled rather than left blank
+   * because the alternative is a form where the most common answer is the one
+   * requiring the most work, and an unset term makes a review much less useful
+   * to the next student reading it.
+   */
+  const CURRENT_TERM = TERMS.length > 0 ? String(TERMS[0].value) : '';
+
+  let rating = $state(4);
+  let courseCode = $state('');
+  let term = $state(CURRENT_TERM);
+  let expectedGrade = $state('');
+  let title = $state('');
+  let body = $state('');
+  let email = $state('');
+  let agreed = $state(false);
+
+  let status = $state<'idle' | 'sending' | 'sent' | 'error'>('idle');
+  let errorMessage = $state('');
 
   let bodyLength = $derived([...body].length);
   let titleLength = $derived([...title].length);
@@ -113,17 +124,24 @@ Copyright (C) 2026 Andrew Cupps
     <div class="flex flex-row flex-wrap gap-3">
       <label class="flex flex-col gap-1">
         <span class="text-sm font-bold">Course <span class="text-text-secondary">(optional)</span></span>
-        <input
-          list="review-course-codes"
-          bind:value={courseCode}
-          placeholder="CMSC132"
-          class="border-outline bg-bg-primary rounded-md border-2 px-2 py-1"
-        />
-        <datalist id="review-course-codes">
+        <!--
+          A select, matching Term and Grade beside it. This was an input with a
+          datalist, which renders as a text box with a browser-drawn suggestion
+          popup: a different height, a different control, and a dropdown that
+          floats away from the field rather than under it.
+
+          Nothing is lost by closing the list. The options are every course this
+          professor is teaching now plus every one they have grade history for,
+          so a student reviewing a course they took has it; and the field is
+          optional, so a course that is somehow missing is left blank rather
+          than blocking the review.
+        -->
+        <select bind:value={courseCode} class="border-outline bg-bg-primary rounded-md border-2 px-2 py-1">
+          <option value="">—</option>
           {#each courseCodes as code (code)}
-            <option value={code}></option>
+            <option value={code}>{code}</option>
           {/each}
-        </datalist>
+        </select>
       </label>
 
       <label class="flex flex-col gap-1">
@@ -198,7 +216,7 @@ Copyright (C) 2026 Andrew Cupps
     </label>
 
     {#if status === 'error'}
-      <p class="text-gpa-low text-sm" role="alert">{errorMessage}</p>
+      <p class="text-danger text-sm" role="alert">{errorMessage}</p>
     {/if}
 
     <button

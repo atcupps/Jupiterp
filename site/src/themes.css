@@ -9,20 +9,19 @@
   --mid-gray: #888888;
 
   /* Grade distribution bar fills (universal; identical in both themes).
-     Within a bucket, plus grades are darkest and minus grades lightest.
-     D reuses `--orange`. */
-  --grade-a-plus: #147a3d;
-  --grade-a: #2fa85e;
-  --grade-a-minus: #6fcb93;
-  --grade-b-plus: #6e8f24;
-  --grade-b: #93b83c;
-  --grade-b-minus: #b7d06e;
-  --grade-c-plus: #b8901f;
-  --grade-c: #e0b63c;
-  --grade-c-minus: #eccf7c;
-  --grade-d-plus: #c9511f;
-  --grade-d-minus: #fa9e77;
-  --grade-f: #e5534b;
+
+     One hue -- the brand orange -- with the shade carrying the modifier rather
+     than the letter, so A- and B- are the same, A and B are the same, and so
+     on. The bars are drawn in fixed order and labelled, so the letter is
+     already unambiguous from position; the shade only separates one segment
+     from the next, and repeating dark/mid/light per letter group gives that a
+     rhythm the eye can follow.
+
+     F takes the strong shade: it has no modifier, it sits next to the light
+     D-, and being the heaviest fill matches its weight in the data. */
+  --grade-strong: #c2440f;
+  --grade-mid: #f5692e;
+  --grade-soft: #ffc4ab;
 
   /* Semantic Light Tokens (Default) */
   --bg-primary: #ffffff;
@@ -33,11 +32,17 @@
   --outline: #a2aabd;
   --hover: #d8d8d8;
 
-  /* GPA tier accents. These carry meaning, so they are darkened on light
-     backgrounds and lightened on dark ones to hold contrast either way. */
-  --gpa-good: #15803d;
-  --gpa-mid: #a16207;
-  --gpa-low: #b91c1c;
+  /* UI state accents: an error message, a destructive action, a confirmation.
+     Darkened on light backgrounds and lightened on dark ones to hold contrast
+     either way.
+
+     Formerly the GPA tier colours. GPA values are no longer colour-coded --
+     a green 3.8 and a red 2.1 read as a verdict on the professor rather than
+     as a number, and the same three colours doing double duty as error and
+     success states made both meanings weaker. */
+  --success: #15803d;
+  --warning: #a16207;
+  --danger: #b91c1c;
 
   transition-property:
     --bg-primary 300ms ease,
@@ -58,9 +63,9 @@
   --border: #252e3e;
   --outline: #47526a;
   --hover: #30374a;
-  --gpa-good: #4ade80;
-  --gpa-mid: #facc15;
-  --gpa-low: #f87171;
+  --success: #4ade80;
+  --warning: #facc15;
+  --danger: #f87171;
 }
 
 /* CSS Custom Properties for theme changes (make it unaffected by normal transitions) */
@@ -106,19 +111,19 @@
   initial-value: #d8d8d8;
 }
 
-@property --gpa-good {
+@property --success {
   syntax: '<color>';
   inherits: true;
   initial-value: #15803d;
 }
 
-@property --gpa-mid {
+@property --warning {
   syntax: '<color>';
   inherits: true;
   initial-value: #a16207;
 }
 
-@property --gpa-low {
+@property --danger {
   syntax: '<color>';
   inherits: true;
   initial-value: #b91c1c;

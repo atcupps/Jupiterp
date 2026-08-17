@@ -208,7 +208,7 @@ through a queue without reaching for the mouse.
         Keep it for this tab
       </label>
       {#if errorMessage}
-        <p class="text-gpa-low text-sm" role="alert">{errorMessage}</p>
+        <p class="text-danger text-sm" role="alert">{errorMessage}</p>
       {/if}
       <button class="bg-orange text-bg-primary rounded-lg px-4 py-2 font-bold" type="submit">
         {status === 'loading' ? 'Checking…' : 'Open queue'}
@@ -222,7 +222,7 @@ through a queue without reaching for the mouse.
     </div>
 
     {#if errorMessage}
-      <p class="text-gpa-low my-2 text-sm" role="alert">{errorMessage}</p>
+      <p class="text-danger my-2 text-sm" role="alert">{errorMessage}</p>
     {/if}
 
     {#if rows.length === 0}
@@ -299,13 +299,13 @@ through a queue without reaching for the mouse.
 
             <div class="flex flex-row flex-wrap gap-2">
               <button
-                class="bg-gpa-good text-bg-primary rounded-md px-3 py-2 text-sm font-bold"
+                class="bg-success text-bg-primary rounded-md px-3 py-2 text-sm font-bold"
                 onclick={() => decide('approve')}
               >
                 Approve (a)
               </button>
               <button
-                class="bg-gpa-low text-bg-primary rounded-md px-3 py-2 text-sm font-bold"
+                class="bg-danger text-bg-primary rounded-md px-3 py-2 text-sm font-bold"
                 onclick={() => decide('reject')}
               >
                 Reject (r)

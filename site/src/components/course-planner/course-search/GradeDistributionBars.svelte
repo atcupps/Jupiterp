@@ -30,21 +30,29 @@ Copyright (C) 2026 Andrew Cupps
   type BucketSegments = Record<GradeBucket, BarSegment[]>;
 
   // Static letter -> class map; Tailwind requires literal class names.
-  // Within a bucket, plus grades are darkest and minus grades lightest.
+  //
+  // One hue, three shades, keyed to the modifier rather than the letter: every
+  // plus is strong, every bare letter is mid, every minus is soft. A- and B-
+  // are deliberately identical. Segments are drawn in fixed order and
+  // labelled, so position already says which grade it is; the shade only has
+  // to separate each segment from its neighbours.
+  //
+  // W is grey because a withdrawal is not a grade and should not read as part
+  // of the distribution.
   const fillClasses: Partial<Record<LetterGrade, string>> = {
-    'A+': 'bg-grade-a-plus',
-    A: 'bg-grade-a',
-    'A-': 'bg-grade-a-minus',
-    'B+': 'bg-grade-b-plus',
-    B: 'bg-grade-b',
-    'B-': 'bg-grade-b-minus',
-    'C+': 'bg-grade-c-plus',
-    C: 'bg-grade-c',
-    'C-': 'bg-grade-c-minus',
-    'D+': 'bg-grade-d-plus',
-    D: 'bg-orange',
-    'D-': 'bg-grade-d-minus',
-    F: 'bg-grade-f',
+    'A+': 'bg-grade-strong',
+    A: 'bg-grade-mid',
+    'A-': 'bg-grade-soft',
+    'B+': 'bg-grade-strong',
+    B: 'bg-grade-mid',
+    'B-': 'bg-grade-soft',
+    'C+': 'bg-grade-strong',
+    C: 'bg-grade-mid',
+    'C-': 'bg-grade-soft',
+    'D+': 'bg-grade-strong',
+    D: 'bg-grade-mid',
+    'D-': 'bg-grade-soft',
+    F: 'bg-grade-strong',
     W: 'bg-mid-gray',
   };
 

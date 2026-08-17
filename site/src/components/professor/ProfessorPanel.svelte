@@ -10,7 +10,7 @@ Neither knows about the other -- this takes a fully-loaded data object and
 renders it.
 -->
 <script lang="ts">
-  import { formatSemester, gpaTier, hasEnoughForGpa, type GpaTier } from '../../lib/course-planner/Grades';
+  import { formatSemester, hasEnoughForGpa } from '../../lib/course-planner/Grades';
   import { ratingBreakdown, type ProfessorData } from '../../lib/professor/ProfessorData';
   import GradeDistributionBars from '../course-planner/course-search/GradeDistributionBars.svelte';
   import GradeTrend from './GradeTrend.svelte';
@@ -25,12 +25,6 @@ renders it.
 
   let { data, headingLevel = 1 }: Props = $props();
 
-  const tierClasses: Record<GpaTier, string> = {
-    good: 'text-gpa-good',
-    mid: 'text-gpa-mid',
-    low: 'text-gpa-low',
-  };
-
   let rating = $derived(ratingBreakdown(data.instructor));
   let overall = $derived(data.overall);
   let showOverallGpa = $derived(overall !== null && hasEnoughForGpa(overall));
@@ -39,15 +33,6 @@ renders it.
   let courses = $derived(data.courses);
 
   let showForm = $state(false);
-
-  let ptAsOf = $derived(
-    rating.planetterpAsOf
-      ? new Date(rating.planetterpAsOf).toLocaleDateString(undefined, {
-          month: 'short',
-          year: 'numeric',
-        })
-      : null
-  );
 </script>
 
 <article class="flex flex-col gap-4">
@@ -79,19 +64,6 @@ renders it.
         <span class="text-orange text-3xl font-bold">{rating.combined.toFixed(1)}</span>
         <span class="text-text-secondary text-sm">out of 5</span>
       </div>
-      <p class="text-text-secondary text-xs">
-        {#if rating.jupiterpCount > 0 && rating.jupiterp !== null}
-          {rating.jupiterp.toFixed(1)} from {rating.jupiterpCount}
-          Jupiterp {rating.jupiterpCount === 1 ? 'review' : 'reviews'}
-        {/if}
-        {#if rating.jupiterpCount > 0 && rating.planetterpCount > 0}
-          &middot;
-        {/if}
-        {#if rating.planetterpCount > 0 && rating.planetterp !== null}
-          {rating.planetterp.toFixed(1)} from {rating.planetterpCount} PlanetTerp
-          {rating.planetterpCount === 1 ? 'review' : 'reviews'}{#if ptAsOf}, as of {ptAsOf}{/if}
-        {/if}
-      </p>
     {:else}
       <p class="text-text-secondary text-sm">Not enough reviews yet.</p>
     {/if}
@@ -110,7 +82,7 @@ renders it.
     {:else}
       <div class="flex flex-row flex-wrap items-baseline gap-3">
         {#if showOverallGpa && overall.gpa !== null}
-          <span class="text-3xl font-bold {tierClasses[gpaTier(overall.gpa)]}">
+          <span class="text-3xl font-bold">
             {overall.gpa.toFixed(2)}
           </span>
           <span class="text-text-secondary text-sm">
@@ -135,8 +107,7 @@ renders it.
         {#if overall.firstTerm !== null && overall.lastTerm !== null}
           {formatSemester(overall.firstTerm)} – {formatSemester(overall.lastTerm)} &middot;
         {/if}
-        Percentages are over {overall.barTotal.toLocaleString()} students including withdrawals; the GPA excludes withdrawals,
-        matching how a transcript GPA is computed.
+        {overall.barTotal.toLocaleString()} students
       </p>
     {/if}
   </section>
@@ -159,7 +130,7 @@ renders it.
             <div class="flex flex-row flex-wrap items-baseline gap-2">
               <span class="font-bold">{course.courseCode}</span>
               {#if hasEnoughForGpa(course.distribution) && course.distribution.gpa !== null}
-                <span class="font-bold {tierClasses[gpaTier(course.distribution.gpa)]}">
+                <span class="font-bold">
                   {course.distribution.gpa.toFixed(2)}
                 </span>
               {:else}
@@ -188,7 +159,9 @@ renders it.
       <ReviewForm
         instructorSlug={data.instructor.slug}
         instructorName={data.instructor.name}
-        courseCodes={data.courses.map((course) => course.courseCode)}
+        courseCodes={[
+          ...new Set([...data.currentCourseCodes, ...data.courses.map((course) => course.courseCode)]),
+        ]}
       />
       <button class="text-text-secondary self-start text-sm underline" onclick={() => (showForm = false)}>
         Cancel

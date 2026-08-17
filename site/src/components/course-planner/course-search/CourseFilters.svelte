@@ -11,7 +11,6 @@ Copyright (C) 2026 Andrew Cupps
   import type { FilterParams } from '../../../types';
   import { CourseSearchFilterStore } from '../../../stores/CoursePlannerStores';
 
-  let appliedFiltersCount = $state(0);
   let showFiltersMenu = $state(false);
   interface Props {
     showGenEdMenu?: boolean;
@@ -26,41 +25,46 @@ Copyright (C) 2026 Andrew Cupps
   let minCredits: number = $state(defaultMinCredits);
   let maxCredits: number = $state(defaultMaxCredits);
 
-  // Replaced run() with $effect to manage internal counter updates and external store side-effects
-  $effect(() => {
-    const params: FilterParams = {
-      serverSideFilters: {},
-      clientSideFilters: {},
-    };
-    appliedFiltersCount = 0;
+  /**
+   * The filter set, derived rather than assembled inside the effect.
+   *
+   * The effect used to build this *and* maintain `appliedFiltersCount` by
+   * assigning to it and then reading it back. An effect that writes state it
+   * also reads re-runs itself, and every re-run called
+   * `CourseSearchFilterStore.set`, whose subscriber issues a fresh search. So
+   * one checkbox produced several searches, and which one won was a race.
+   *
+   * Now the effect has exactly one job: publish. Everything it publishes is
+   * computed from the inputs, so it runs once per real change.
+   */
+  let filterParams: FilterParams = $derived.by(() => {
+    const params: FilterParams = { serverSideFilters: {}, clientSideFilters: {} };
 
     if (genEdSelections.length > 0) {
-      appliedFiltersCount += 1;
-      params.serverSideFilters.genEds = genEdSelections.sort((a, b) => a.code.localeCompare(b.code));
+      // Sorted copy: `Array.prototype.sort` mutates, and `genEdSelections` is
+      // `$state`, so sorting it in place was another write-to-own-dependency.
+      params.serverSideFilters.genEds = [...genEdSelections].sort((a, b) => a.code.localeCompare(b.code));
     }
-    if (minCredits !== 0) {
-      appliedFiltersCount += 1;
+    if (minCredits !== defaultMinCredits) {
       params.clientSideFilters.minCredits = minCredits;
     }
-    if (maxCredits !== 20) {
-      appliedFiltersCount += 1;
+    if (maxCredits !== defaultMaxCredits) {
       params.clientSideFilters.maxCredits = maxCredits;
     }
     if (onlyOpenSections) {
-      appliedFiltersCount += 1;
       params.clientSideFilters.onlyOpen = onlyOpenSections;
     }
+    return params;
+  });
 
-    if (appliedFiltersCount > 0) {
-      CourseSearchFilterStore.set({
-        ...params,
-      });
-    } else {
-      CourseSearchFilterStore.set({
-        serverSideFilters: {},
-        clientSideFilters: {},
-      });
-    }
+  // Counted off the same derived value, so the badge can never disagree with
+  // what was actually published.
+  let appliedFiltersCount = $derived(
+    Object.keys(filterParams.serverSideFilters).length + Object.keys(filterParams.clientSideFilters).length
+  );
+
+  $effect(() => {
+    CourseSearchFilterStore.set(filterParams);
   });
 
   function resetFilters() {

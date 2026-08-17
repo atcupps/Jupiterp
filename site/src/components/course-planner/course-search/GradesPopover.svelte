@@ -7,10 +7,8 @@ Copyright (C) 2026 Andrew Cupps
 <script lang="ts">
   import {
     formatSemesterRange,
-    gpaTier,
     hasEnoughForGpa,
     MIN_GRADED_FOR_GPA,
-    type GpaTier,
     type GradeDistribution,
   } from '../../../lib/course-planner/Grades';
   import GradeDistributionBars from './GradeDistributionBars.svelte';
@@ -29,12 +27,6 @@ Copyright (C) 2026 Andrew Cupps
   let { heading, distribution, slug = undefined, onclose = undefined }: Props = $props();
 
   // Static tier -> class map; Tailwind requires literal class names
-  const tierClasses: Record<GpaTier, string> = {
-    good: 'text-gpa-good',
-    mid: 'text-gpa-mid',
-    low: 'text-gpa-low',
-  };
-
   let semesterRange = $derived(formatSemesterRange(distribution));
   let showGpa = $derived(hasEnoughForGpa(distribution));
 
@@ -71,7 +63,7 @@ Copyright (C) 2026 Andrew Cupps
 
   {#if showGpa && distribution.gpa != null}
     <div class="flex flex-row items-baseline gap-1 pb-1">
-      <span class="text-lg font-bold {tierClasses[gpaTier(distribution.gpa)]}">
+      <span class="text-lg font-bold">
         {distribution.gpa.toFixed(2)}
       </span>
       <span class="text-text-secondary text-xs">

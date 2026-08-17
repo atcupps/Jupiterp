@@ -251,6 +251,27 @@ export async function searchInstructors(cfg: InstructorSearchConfig, fetchFn?: F
   );
 }
 
+/**
+ * Course codes this professor is scheduled to teach right now.
+ *
+ * Filtered by `instructorSlug`, not by name: the API resolves each section's
+ * instructors through the alias table, so this finds a professor whose Testudo
+ * spelling differs from their canonical record.
+ *
+ * Distinct from the courses on a professor page, which come from grade data
+ * and are therefore always at least a term behind. A student writing a review
+ * is usually writing about the course they are in now, which by definition has
+ * no grades yet.
+ */
+export async function currentCourseCodesFor(slug: string, fetchFn?: Fetch): Promise<string[]> {
+  const page = await get<{ course_code: string }>(
+    '/v0/sections',
+    build({ instructorSlug: slug, limit: 500 }),
+    fetchFn
+  );
+  return [...new Set(page.data.map((row) => row.course_code))].sort();
+}
+
 /** Fetch one instructor by slug, or null when there is no such professor. */
 export async function instructorBySlug(slug: string, fetchFn?: Fetch): Promise<InstructorFull | null> {
   const page = await get<InstructorFull>('/v0/instructors', build({ instructorSlugs: slug, limit: 1 }), fetchFn);

@@ -13,6 +13,7 @@
  */
 
 import {
+  currentCourseCodesFor,
   instructorBySlug,
   instructorCourseGradeSummary,
   instructorGradeSummary,
@@ -42,6 +43,15 @@ export interface ProfessorData {
   /** Across every course. Null when no grade data links to this professor. */
   overall: GradeDistribution | null;
   courses: ProfessorCourse[];
+  /**
+   * Course codes this professor is scheduled to teach this term.
+   *
+   * Kept separate from `courses`, which is derived from grade data and so is
+   * always at least a term behind. A student reviewing the course they are
+   * sitting in needs to find it in the picker, and that course has no grades
+   * yet by definition.
+   */
+  currentCourseCodes: string[];
   terms: ProfessorTerm[];
   /**
    * Four-letter department codes inferred from the courses taught. Jupiterp
@@ -69,10 +79,13 @@ export async function loadProfessor(slug: string, fetchFn?: Fetch): Promise<Prof
 
   // Requested together: they are independent queries against different views,
   // and serialising them would make the page wait three round trips deep.
-  const [overallRow, coursePage, termPage] = await Promise.all([
+  const [overallRow, coursePage, termPage, currentCourseCodes] = await Promise.all([
     instructorGradeSummary(slug, fetchFn),
     instructorCourseGradeSummary(slug, {}, fetchFn),
     instructorTermGradeSummary(slug, fetchFn),
+    // Never fatal: a professor page without a course picker is worth far more
+    // than a 500, and this is the one query here that is not about grades.
+    currentCourseCodesFor(slug, fetchFn).catch(() => [] as string[]),
   ]);
 
   const courses: ProfessorCourse[] = coursePage.data.map((row) => ({
@@ -91,6 +104,7 @@ export async function loadProfessor(slug: string, fetchFn?: Fetch): Promise<Prof
     instructor,
     overall: overallRow === null ? null : toDistribution(overallRow),
     courses,
+    currentCourseCodes,
     terms,
     departments: departmentsOf(courses),
   };
@@ -130,15 +144,6 @@ export interface RatingBreakdown {
   displayable: boolean;
 }
 
-/**
- * Minimum weighted reviews before a combined rating is shown.
- *
- * Below this, "4.9" means one person had a good semester. Showing
- * "Not enough reviews yet" is more informative than showing a number that
- * looks precise.
- */
-export const MIN_REVIEWS_FOR_RATING = 3;
-
 export function ratingBreakdown(instructor: InstructorFull): RatingBreakdown {
   const jupiterpCount = instructor.jupiterp_review_count ?? 0;
   const planetterpCount = instructor.pt_review_count ?? 0;
@@ -151,7 +156,17 @@ export function ratingBreakdown(instructor: InstructorFull): RatingBreakdown {
     planetterp: instructor.pt_average_rating,
     planetterpCount,
     planetterpAsOf: instructor.pt_snapshot_at,
-    displayable: combined !== null && jupiterpCount + planetterpCount >= MIN_REVIEWS_FOR_RATING,
+    // Whether a rating is worth showing is the model's decision, not this
+    // function's. `refresh_instructor_ratings` returns null unless the combined
+    // weight clears `rating_config.min_weight_to_display`, and it already
+    // returns null when there are no reviews at all.
+    //
+    // There used to be a second threshold here -- a hardcoded three reviews --
+    // which meant the policy lived in two places that could disagree. It did:
+    // lowering the database threshold changed nothing on the page, because this
+    // constant still demanded three. One source of truth, and it is the one
+    // that can be tuned without a deploy.
+    displayable: combined !== null,
   };
 }
 

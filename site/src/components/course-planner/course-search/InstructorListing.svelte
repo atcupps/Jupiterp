@@ -8,12 +8,19 @@ Copyright (C) 2026 Andrew Cupps
   import { clickoutside } from '@svelte-put/clickoutside';
   import { resolve } from '$app/paths';
   import { CourseGradesStore, ProfsLookupStore } from '../../../stores/CoursePlannerStores';
-  import { gpaTier, hasEnoughForGpa, type GpaTier } from '../../../lib/course-planner/Grades';
+  import { hasEnoughForGpa } from '../../../lib/course-planner/Grades';
   import GradesPopover from './GradesPopover.svelte';
 
   // 1. Properly define the component props type contract
   interface Props {
     instructor?: string;
+    /**
+     * The professor page slug for this instructor, resolved by the API from
+     * `section.instructorSlugs`. Null when the name has not been resolved yet
+     * (a new spelling awaiting triage), in which case the name renders as
+     * plain text.
+     */
+    slug?: string | null;
     /**
      * Course code used to look up this instructor's grade data in
      * `CourseGradesStore`; without it, no GPA chip is shown.
@@ -25,6 +32,7 @@ Copyright (C) 2026 Andrew Cupps
 
   let {
     instructor = 'No instructor',
+    slug = null,
     courseCode = undefined,
     // eslint-disable-next-line no-useless-assignment
     profsHover = $bindable(),
@@ -33,19 +41,38 @@ Copyright (C) 2026 Andrew Cupps
 
   let profs = $derived($ProfsLookupStore);
 
+  /**
+   * The professor as the planner needs them: a link target, and a rating only
+   * if one exists.
+   *
+   * These used to be one condition. A professor was linked only when
+   * `average_rating != null`, which made the link a side effect of having been
+   * rated -- reasonable when the destination was a PlanetTerp page that existed
+   * because of those ratings, and wrong now that the destination is a Jupiterp
+   * page built mostly from grade data. 1,009 of 2,976 active instructors have
+   * no rating, and every one of them has a page with their full grade history
+   * that nothing in the planner pointed at.
+   *
+   * So the link is gated on having a slug, and the stars are gated separately
+   * on having a rating.
+   */
   let currentProf = $derived.by(() => {
     const name = instructor ?? 'No instructor';
-    const profData = profs?.[name];
-
-    if (profData && profData.average_rating != null) {
-      return {
-        name,
-        slug: profData.slug,
-        rating: profData.average_rating,
-        starsStyle: `--rating: ${convertRating(profData.average_rating)}%`,
-      };
+    if (!slug) {
+      return null;
     }
-    return null;
+    // Looked up by slug, never by name. The API resolves each section's
+    // instructors through the alias table, so this works for a professor whose
+    // Testudo spelling differs from their canonical record, and for two
+    // professors who share a name.
+    const profData = profs?.[slug];
+    const rating = profData?.average_rating ?? null;
+    return {
+      name,
+      slug,
+      rating,
+      starsStyle: rating != null ? `--rating: ${convertRating(rating)}%` : undefined,
+    };
   });
 
   // Convert rating to a percentage for CSS
@@ -69,7 +96,9 @@ Copyright (C) 2026 Andrew Cupps
   // Walsh". Matching on the raw string is what made per-professor grade data
   // silently absent for a large share of instructors.
   let entry = $derived(courseCode != null ? $CourseGradesStore[courseCode] : undefined);
-  let profSlug = $derived(profs?.[instructor]?.slug);
+  // The slug comes straight from the section now, rather than from a name
+  // lookup, so the chip appears for the same set of professors the link does.
+  let profSlug = $derived(slug ?? undefined);
   let profDist = $derived(
     entry !== undefined && entry.status === 'loaded' && profSlug !== undefined
       ? (entry.grades.byInstructorSlug[profSlug] ?? null)
@@ -78,13 +107,6 @@ Copyright (C) 2026 Andrew Cupps
   let showChip = $derived(profDist != null && hasEnoughForGpa(profDist));
 
   let gpaOpen = $state(false);
-
-  // Static tier -> class map; Tailwind requires literal class names
-  const chipTierClasses: Record<GpaTier, string> = {
-    good: 'border-gpa-good text-gpa-good',
-    mid: 'border-gpa-mid text-gpa-mid',
-    low: 'border-gpa-low text-gpa-low',
-  };
 
   let chipTitle = $derived(
     profDist != null && profDist.gpa != null
@@ -128,16 +150,18 @@ Copyright (C) 2026 Andrew Cupps
     >
       {currentProf.name}
     </a>
-    <span
-      style={currentProf.starsStyle}
-      class="stars text-orange text-xs font-bold xl:text-sm 2xl:text-base"
-      aria-hidden="true"
-    >
-      ★★★★★
-    </span>
-    <!-- The stars are a CSS gradient over text; the value itself has to be
-         readable by a screen reader some other way. -->
-    <span class="sr-only">Rated {currentProf.rating} out of 5</span>
+    {#if currentProf.rating != null}
+      <span
+        style={currentProf.starsStyle}
+        class="stars text-orange text-xs font-bold xl:text-sm 2xl:text-base"
+        aria-hidden="true"
+      >
+        ★★★★★
+      </span>
+      <!-- The stars are a CSS gradient over text; the value itself has to be
+           readable by a screen reader some other way. -->
+      <span class="sr-only">Rated {currentProf.rating} out of 5</span>
+    {/if}
   {:else}
     {instructor ?? 'No instructor'}
   {/if}
@@ -162,9 +186,7 @@ Copyright (C) 2026 Andrew Cupps
         role="button"
         tabindex="0"
         aria-expanded={gpaOpen}
-        class="ml-1 cursor-pointer rounded-md border px-1 align-[2px] text-[0.625rem] font-bold leading-tight 2xl:text-xs {chipTierClasses[
-          gpaTier(profDist.gpa)
-        ]}"
+        class="border-outline ml-1 cursor-pointer rounded-md border px-1 align-[2px] text-[0.625rem] font-bold leading-tight 2xl:text-xs"
         title={chipTitle}
         onclick={handleChipClick}
         onkeydown={handleChipKeydown}

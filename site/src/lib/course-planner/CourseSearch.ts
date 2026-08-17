@@ -36,7 +36,9 @@ DepartmentsStore.subscribe((depts) => {
 let profNames: string[] = [];
 let profNamesReverse: string[] = [];
 ProfsLookupStore.subscribe((profs) => {
-  profNames = Object.keys(profs);
+  // The store is keyed by slug now, so the names for the `@professor` search
+  // come from the values.
+  profNames = Object.values(profs).map((prof) => prof.name);
   profNames.sort();
 
   profNamesReverse = profNames.map((name) => {
@@ -315,25 +317,27 @@ export async function setSearchResults(input: string) {
 }
 
 /**
- * Creates and returns an object mapping instructor names to `Instructor`s.
- * If there are multiple `Instructor`s in `profs` with the same `name`,
- * neither will be in the result because in `CourseSearch`, instructors'
- * ratings and slugs will only be looked for on the basis of their name, absent
- * of any additional information like what course they are teaching.
+ * Creates and returns an object mapping instructor *slugs* to `Instructor`s.
+ *
+ * Keyed on slug rather than name. A name is not an identifier: Testudo's
+ * spelling and the canonical instructor record disagree often enough to matter
+ * ("Aaron Kyei-Asare" against "Aaron Kyei-asare"), and two real professors can
+ * share one name outright -- there are two Douglas Hamiltons and two William
+ * Martins. The previous version keyed on name and deleted both entries on a
+ * collision, so those four professors were unreachable from the planner
+ * entirely, and every spelling mismatch silently lost its link.
+ *
+ * Callers get the slug from `section.instructorSlugs`, which the API resolves
+ * through the alias table rather than by matching strings.
+ *
  * @param profs An array `Instructor[]` to be included in a lookup
- * @returns A `Record<string, Instructor>` where instructor names as `string`s
- *              are mapped to `Instructor` objects.
+ * @returns A `Record<string, Instructor>` keyed by slug.
  */
 export function getProfsLookup(profs: Instructor[]): Record<string, Instructor> {
   const result: Record<string, Instructor> = {};
-  const names: Set<string> = new Set<string>();
   for (const prof of profs) {
-    const name = prof.name;
-    if (names.has(name)) {
-      delete result[name];
-    } else {
-      result[name] = prof;
-      names.add(name);
+    if (prof.slug) {
+      result[prof.slug] = prof;
     }
   }
   return result;

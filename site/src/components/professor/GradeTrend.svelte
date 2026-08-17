@@ -12,7 +12,7 @@ drawn in the theme's orange, and every point is also present in a
 visually-hidden table so the trend is not conveyed by shape alone.
 -->
 <script lang="ts">
-  import { formatSemester, gpaTier, type GpaTier } from '../../lib/course-planner/Grades';
+  import { formatSemester } from '../../lib/course-planner/Grades';
   import { MIN_GRADED_FOR_GPA } from '../../lib/course-planner/Grades';
   import type { ProfessorTerm } from '../../lib/professor/ProfessorData';
 
@@ -26,12 +26,6 @@ visually-hidden table so the trend is not conveyed by shape alone.
   const HEIGHT = 160;
   const PAD_X = 8;
   const PAD_Y = 12;
-
-  const tierClasses: Record<GpaTier, string> = {
-    good: 'fill-gpa-good',
-    mid: 'fill-gpa-mid',
-    low: 'fill-gpa-low',
-  };
 
   // Terms with too few graded students are dropped rather than plotted: a
   // three-student section swinging the line to 4.0 reads as a real trend.
@@ -85,7 +79,7 @@ visually-hidden table so the trend is not conveyed by shape alone.
       />
       <path d={path} fill="none" class="stroke-orange" stroke-width="2" stroke-linejoin="round" />
       {#each points as point, i (point.term)}
-        <circle cx={x(i)} cy={y(point.gpa)} r="3.5" class={tierClasses[gpaTier(point.gpa)]}>
+        <circle cx={x(i)} cy={y(point.gpa)} r="3.5" class="fill-orange">
           <title>{formatSemester(point.term)}: {point.gpa.toFixed(2)} ({point.graded} graded)</title>
         </circle>
       {/each}

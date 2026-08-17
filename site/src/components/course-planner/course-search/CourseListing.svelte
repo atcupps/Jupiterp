@@ -12,7 +12,7 @@ Copyright (C) 2026 Andrew Cupps
   import GradeDistributionBars from './GradeDistributionBars.svelte';
   import { AngleRightOutline } from 'flowbite-svelte-icons';
   import type { Course, Section } from '@jupiterp/jupiterp';
-  import { formatSemesterRange, gpaTier, hasEnoughForGpa, type GpaTier } from '../../../lib/course-planner/Grades';
+  import { formatSemesterRange, hasEnoughForGpa } from '../../../lib/course-planner/Grades';
   import { gradesAutoload, loadCourseGrades } from '../../../lib/course-planner/GradesLoader';
   import { CourseGradesStore } from '../../../stores/CoursePlannerStores';
 
@@ -25,12 +25,6 @@ Copyright (C) 2026 Andrew Cupps
   $: showCourseGpa = courseDist != null && hasEnoughForGpa(courseDist);
 
   // Static tier -> class map; Tailwind requires literal class names
-  const gpaTierClasses: Record<GpaTier, string> = {
-    good: 'text-gpa-good',
-    mid: 'text-gpa-mid',
-    low: 'text-gpa-low',
-  };
-
   function pseudoSection(): Section {
     return {
       courseCode: course.courseCode,
@@ -124,7 +118,7 @@ Copyright (C) 2026 Andrew Cupps
             <div>
               {#if showCourseGpa && courseDist.gpa != null}
                 Avg. GPA:
-                <b class={gpaTierClasses[gpaTier(courseDist.gpa)]}>
+                <b>
                   {courseDist.gpa.toFixed(2)}
                 </b>
                 &middot;
