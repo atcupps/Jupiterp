@@ -11,7 +11,7 @@ Copyright (C) 2026 Andrew Cupps
 <main class="prose">
   <article>
     <h1>Terms of Use for Jupiterp</h1>
-    Last Updated: March 9th, 2024
+    <p class="subtitle">Last Updated: March 9th, 2024</p>
     <h2>Introduction</h2>
     <p>
       Welcome to Jupiterp. These Terms of Use ("Terms") govern your use of the Jupiterp website, a course planner for

@@ -10,28 +10,27 @@ Copyright (C) 2026 Andrew Cupps
     version: string;
     date: string;
     children?: import('svelte').Snippet;
-    index: number;
+    index?: number;
   }
 
-  let { title, version, date, children, index }: Props = $props();
+  let { title, version, date, children, index = 0 }: Props = $props();
+
+  // Cap the delay at 2000ms max so long lists don't stall the user experience
+  let computedDelay = $derived(Math.min(index * 100, 2000));
 </script>
 
-<!-- Article uses pure fade-in -->
-<article
-  style="animation-delay: {index * 100}ms;"
-  class="border-border hover:border-orange/50 animate-fade-in border-l-2 px-4 py-1 text-left opacity-0"
+<div
+  style="--delay: {computedDelay}ms;"
+  class="border-border hover:border-orange/50 animate-fade-in ml-2 border-l-2 px-4 py-1 text-left opacity-0"
 >
   <div class="relative mt-2 flex w-full flex-wrap items-baseline">
-    <!-- Dot uses pure fade-in -->
     <div
-      style="animation-delay: {index * 100}ms;"
       class="-left-6.75 bg-orange border-5 border-bg-primary animate-fade-in absolute top-1 h-5 w-5 rounded-2xl opacity-0"
     ></div>
 
-    <!-- Contained wrapper for the header text -->
     <div class="w-full overflow-hidden">
-      <div style="animation-delay: {index * 100}ms;" class="animate-fade-in-up flex w-full items-baseline opacity-0">
-        <h3 id={version} class="mr-auto mt-0 w-fit scroll-mt-4 pr-4 text-lg font-bold">
+      <div class="animate-fly-in flex w-full items-baseline opacity-0">
+        <h3 id={version} class="mr-auto mt-0 w-fit scroll-mt-4 pr-4 text-lg font-semibold">
           {title}
           <a href={`#${version}`} class="text-orange text-sm no-underline">
             v{version}
@@ -44,13 +43,12 @@ Copyright (C) 2026 Andrew Cupps
     </div>
   </div>
 
-  <!-- Contained wrapper for the paragraph -->
   <div class="overflow-hidden">
-    <p style="animation-delay: {index * 100}ms;" class="animate-fade-in-up opacity-0">
+    <p class="animate-fly-in opacity-0">
       {@render children?.()}
     </p>
   </div>
-</article>
+</div>
 
 <style>
   @keyframes fadeIn {
@@ -62,7 +60,7 @@ Copyright (C) 2026 Andrew Cupps
     }
   }
 
-  @keyframes fadeInUp {
+  @keyframes flyIn {
     from {
       opacity: 0;
       transform: translateY(1rem);
@@ -76,11 +74,13 @@ Copyright (C) 2026 Andrew Cupps
   @media (prefers-reduced-motion: no-preference) {
     .animate-fade-in {
       animation: fadeIn 0.5s ease-out forwards;
+      animation-delay: var(--delay, 0ms);
       will-change: opacity;
     }
 
-    .animate-fade-in-up {
-      animation: fadeInUp 0.5s ease-out forwards;
+    .animate-fly-in {
+      animation: flyIn 0.5s ease-out forwards;
+      animation-delay: var(--delay, 0ms);
       will-change: transform, opacity;
     }
   }

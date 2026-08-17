@@ -51,10 +51,10 @@ Copyright (C) 2026 Andrew Cupps
 <aside
   class="max-md:bg-bg-primary max-md:scrollbar-gutter-both custom-scrollbar flex py-2 text-lg max-md:fixed max-md:bottom-0 max-md:right-0 max-md:top-12 max-md:min-w-60 max-md:translate-x-full max-md:flex-col max-md:overflow-y-scroll max-md:border-l-2 max-md:px-4 max-md:transition-transform max-md:duration-300 max-md:peer-checked:translate-x-0 md:gap-2"
 >
-  <ul class="flex gap-2 max-md:flex-col md:gap-5">
+  <div class="flex gap-2 max-md:flex-col md:gap-5">
     {#each navLinks as item, i (i)}
       {#if item.children}
-        <li class="nav-list-wrapper relative">
+        <div class="nav-list-wrapper relative">
           <NavBarLink link={item.link} current={currentPath === item.link}>
             {item.text}
           </NavBarLink>
@@ -69,7 +69,7 @@ Copyright (C) 2026 Andrew Cupps
           <label for="nav-list-{i}" class="fixed inset-0 hidden bg-black/50 md:peer-checked:block"></label>
           <!-- [END] Nav List Toggle  -->
 
-          <ul
+          <div
             style="transition: height 0.3s;"
             class="md:-left-4.25 md:bg-bg-primary md:peer-checked:border-border md:mt-2.75 -mt-px flex h-auto flex-col overflow-clip peer-checked:h-0 max-md:border-y md:absolute md:h-0 md:rounded-lg md:border md:peer-checked:h-auto"
           >
@@ -78,15 +78,15 @@ Copyright (C) 2026 Andrew Cupps
                 {child.text}
               </NavBarLink>
             {/each}
-          </ul>
-        </li>
+          </div>
+        </div>
       {:else}
         <NavBarLink link={item.link} current={currentPath === item.link}>
           {item.text}
         </NavBarLink>
       {/if}
     {/each}
-  </ul>
+  </div>
   <div class="mt-auto max-md:pt-4">
     <div class="flex flex-row justify-between md:gap-1">
       <DarkModeToggle />

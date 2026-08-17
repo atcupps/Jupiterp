@@ -27,10 +27,11 @@ Copyright (C) 2026 Andrew Cupps
     </p>
     <p>
       Jupiterp is currently in beta phase - there may be issues. We are working to set up a system to report bugs; in
-      the meantime, if you find something wrong on our site, please report it as an issue <a
-        href="https://github.com"
+      the meantime, if you find something wrong on our site, please report it as <a
+        href="https://github.com/atcupps/Jupiterp/issues"
         target="_blank"
-        rel="external noopener noreferrer">here</a
+        aria-label="Report an issue on GitHub"
+        rel="external noopener noreferrer">an issue</a
       >.
     </p>
     <a href={resolvedChangelogLink} aria-label="View changelog" rel="canonical">View changelog</a>
@@ -45,7 +46,7 @@ Copyright (C) 2026 Andrew Cupps
     <h2>Open-Source</h2>
     <p>
       Jupiterp is open-source and accepting contributions. Please visit our <a
-        href="https://github.com"
+        href="https://github.com/atcupps/Jupiterp"
         target="_blank"
         aria-label="Visit our GitHub">GitHub</a
       > to make contributions.
@@ -58,13 +59,14 @@ Copyright (C) 2026 Andrew Cupps
     <h3>Core Team</h3>
     <p>
       Jupiterp is open-source, so anyone can contribute! It is primarily maintained by <a
-        href="https://github.io"
+        href="https://atcupps.github.io/"
         target="_blank"
         aria-label="Visit Andrew Cupps's website"
         rel="external noopener noreferrer">Andrew Cupps</a
       >. Jupiterp is run at personal cost, and doesn't make any money from ads, selling data, etc., so if you want to
       support continued work on Jupiterp, please consider
-      <a href="https://buymeacoffee.com" target="_blank" rel="external noopener noreferrer">donating</a> a small amount!
+      <a href="https://buymeacoffee.com/jupiterp" target="_blank" rel="external noopener noreferrer">donating</a> a small
+      amount!
     </p>
     <h2>Contact</h2>
     <p>

@@ -8,10 +8,10 @@ Copyright (C) 2024 Andrew Cupps
   <title>Privacy Policy | Jupiterp</title>
 </svelte:head>
 
-<main class="prose py-0">
+<main class="prose">
   <article>
     <h1>Privacy Policy for Jupiterp</h1>
-    <p class="text-text-secondary text-sm italic">Last Updated: April 20, 2026</p>
+    <p class="subtitle">Last Updated: April 20, 2026</p>
     <h2>Introduction</h2>
     <p>
       Welcome to Jupiterp. We are committed to protecting your personal information and your right to privacy. This
