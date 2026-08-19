@@ -5,7 +5,9 @@ https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2026 Andrew Cupps
 -->
 <script lang="ts">
+  import { onMount } from 'svelte';
   import { resolve } from '$app/paths';
+  import { env } from '$env/dynamic/public';
   import { submitReview } from '../../lib/api/JupiterpApi';
   import StarRatingInput from './StarRatingInput.svelte';
 
@@ -61,9 +63,108 @@ Copyright (C) 2026 Andrew Cupps
   let status = $state<'idle' | 'sending' | 'sent' | 'error'>('idle');
   let errorMessage = $state('');
 
+  /* ============================== captcha ============================== */
+
+  /**
+   * Cloudflare Turnstile.
+   *
+   * Read through `$env/dynamic/public`, not `import.meta.env`. Vite only
+   * exposes variables matching its `envPrefix`, which defaults to `VITE_` and
+   * is not overridden here, so `import.meta.env.PUBLIC_TURNSTILE_SITE_KEY` was
+   * `undefined` no matter what was configured.
+   *
+   * That was the smaller of two problems. The widget was a bare
+   * `<div class="cf-turnstile">` and nothing ever loaded Cloudflare's script,
+   * so no widget was rendered, the hidden input the old code read was never
+   * created, and `captcha_token` was `undefined` on every submission. The API
+   * treats an empty `TURNSTILE_SECRET_KEY` as "captcha satisfied", which is
+   * why this passed a browser walkthrough - and why setting that secret in
+   * production, which the rollout runbook instructs, would have made every
+   * submission fail with "captcha verification failed".
+   *
+   * Rendered explicitly rather than by Cloudflare's implicit scan: the form is
+   * mounted by client-side navigation long after any inline script has run.
+   */
+  const siteKey = env.PUBLIC_TURNSTILE_SITE_KEY ?? '';
+  const TURNSTILE_SRC = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
+
+  let captchaToken = $state('');
+  let captchaEl = $state<HTMLDivElement | null>(null);
+  let captchaFailed = $state(false);
+  let widgetId: string | undefined;
+
+  function loadTurnstile(): Promise<void> {
+    if (window.turnstile !== undefined) {
+      return Promise.resolve();
+    }
+    const existing = document.querySelector<HTMLScriptElement>(`script[src="${TURNSTILE_SRC}"]`);
+    const script = existing ?? document.createElement('script');
+    const ready = new Promise<void>((resolve, reject) => {
+      script.addEventListener('load', () => resolve());
+      script.addEventListener('error', () => reject(new Error('Turnstile script failed to load')));
+    });
+    if (existing === null) {
+      script.src = TURNSTILE_SRC;
+      script.async = true;
+      script.defer = true;
+      document.head.appendChild(script);
+    }
+    return ready;
+  }
+
+  onMount(() => {
+    // No key configured: development, or a deployment that has deliberately
+    // left captcha off. The API is the thing that decides whether a token is
+    // required, so this only has to not get in the way.
+    if (siteKey === '') {
+      return;
+    }
+    let cancelled = false;
+    loadTurnstile()
+      .then(() => {
+        if (cancelled || window.turnstile === undefined || captchaEl === null) {
+          return;
+        }
+        widgetId = window.turnstile.render(captchaEl, {
+          sitekey: siteKey,
+          callback: (token: string) => {
+            captchaToken = token;
+            captchaFailed = false;
+          },
+          // Turnstile tokens expire after a few minutes. Someone writing a
+          // considered review will routinely take longer than that, so this
+          // has to clear the token rather than let a stale one be submitted.
+          'expired-callback': () => {
+            captchaToken = '';
+          },
+          'error-callback': () => {
+            captchaToken = '';
+            captchaFailed = true;
+          },
+        });
+      })
+      .catch((error) => {
+        // Do not silently allow the submission: the API will refuse it anyway,
+        // and a form that says nothing while failing is worse than one that
+        // explains itself.
+        console.error('Turnstile did not load:', error);
+        captchaFailed = true;
+      });
+
+    return () => {
+      cancelled = true;
+      if (widgetId !== undefined) {
+        window.turnstile?.remove(widgetId);
+      }
+    };
+  });
+
+  /** A token is only required when a site key is actually configured. */
+  let captchaReady = $derived(siteKey === '' || captchaToken !== '');
+
   let bodyLength = $derived([...body].length);
   let titleLength = $derived([...title].length);
-  let canSubmit = $derived(status !== 'sending' && email.trim() !== '' && agreed);
+  let canSubmit = $derived(status !== 'sending' && email.trim() !== '' && agreed && captchaReady);
 
   async function handleSubmit(event: SubmitEvent) {
     event.preventDefault();
@@ -82,11 +183,10 @@ Copyright (C) 2026 Andrew Cupps
       title: title.trim() || undefined,
       body: body.trim() || undefined,
       email: email.trim(),
-      // Turnstile renders a token into a hidden input named cf-turnstile-response
-      // when the widget script is present. Absent in development, where the
-      // API treats captcha as satisfied.
-      captcha_token:
-        (document.querySelector('[name="cf-turnstile-response"]') as HTMLInputElement | null)?.value ?? undefined,
+      // Held in state by the widget's callback rather than scraped out of the
+      // DOM. Undefined only when no site key is configured, which is the case
+      // the API treats as captcha satisfied.
+      captcha_token: captchaToken === '' ? undefined : captchaToken,
     });
 
     if (result.ok) {
@@ -95,6 +195,15 @@ Copyright (C) 2026 Andrew Cupps
     }
     status = 'error';
     errorMessage = result.error ?? 'Something went wrong.';
+
+    // A Turnstile token is single-use. Without this the retry after any
+    // failure - a rate limit, a typo in the address - resubmits a token the
+    // server has already consumed, and the second attempt fails on the captcha
+    // instead of on whatever the user just fixed.
+    if (widgetId !== undefined) {
+      captchaToken = '';
+      window.turnstile?.reset(widgetId);
+    }
   }
 </script>
 
@@ -202,8 +311,16 @@ Copyright (C) 2026 Andrew Cupps
       </span>
     </label>
 
-    <!-- Cloudflare Turnstile mounts here when the site key is configured. -->
-    <div class="cf-turnstile" data-sitekey={import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? ''}></div>
+    <!-- Cloudflare Turnstile is rendered into this element on mount, when a
+         site key is configured. Nothing is shown at all when it is not. -->
+    {#if siteKey !== ''}
+      <div bind:this={captchaEl}></div>
+      {#if captchaFailed}
+        <p class="text-danger text-sm" role="alert">
+          The human check could not load. Reload the page and try again — reviews cannot be submitted without it.
+        </p>
+      {/if}
+    {/if}
 
     <label class="flex flex-row items-start gap-2 text-sm">
       <input type="checkbox" bind:checked={agreed} class="accent-orange mt-1" required />

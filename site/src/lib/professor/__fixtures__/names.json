@@ -271,5 +271,54 @@
       "expected": "maria",
       "why": "known-wrong for reordered particle names; documented because it makes the resolver more conservative, never less"
     }
+  ],
+  "natural_name": [
+    {
+      "input": "Walsh, Shane Bolles",
+      "expected": "Shane Bolles Walsh"
+    },
+    {
+      "input": "Koppel",
+      "expected": "Koppel",
+      "why": "no comma, returned unchanged"
+    },
+    {
+      "input": "  Walsh,   Shane  ",
+      "expected": "Shane Walsh",
+      "why": "surrounding and inner padding collapse"
+    },
+    {
+      "input": "",
+      "expected": null,
+      "why": "blank is None, not an empty string"
+    },
+    {
+      "input": "   ",
+      "expected": null
+    },
+    {
+      "input": "O'Brien, Erin",
+      "expected": "Erin O'Brien",
+      "why": "punctuation is untouched here; normalization happens after"
+    },
+    {
+      "input": "Garcia, Jose Luis",
+      "expected": "Jose Luis Garcia"
+    },
+    {
+      "input": "Smith Jr., John",
+      "expected": "John Smith Jr.",
+      "why": "only the FIRST comma splits, so a suffix on the surname survives"
+    },
+    {
+      "input": "Walsh,",
+      "expected": "Walsh",
+      "why": "trailing comma with no given name"
+    },
+    {
+      "input": ", Shane",
+      "expected": "Shane",
+      "why": "leading comma with no surname"
+    }
   ]
 }

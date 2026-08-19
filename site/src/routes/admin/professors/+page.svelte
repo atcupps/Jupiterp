@@ -136,6 +136,30 @@ never the default action.
     }
   }
 
+  /**
+   * Confirm before creating a professor.
+   *
+   * Creating is the only action here that publishes something: it mints a page
+   * at a permanent slug, which then goes into the sitemap. Linking and
+   * dismissing both act on records that already exist. A `confirm` is a blunt
+   * instrument, and it is the right weight for an irreversible action that was
+   * previously one keypress away.
+   */
+  function confirmCreate() {
+    const entry = current;
+    if (!entry || busy) {
+      return;
+    }
+    const ok = window.confirm(
+      `Create a new professor for "${entry.observed}"?\n\n` +
+        'This publishes a page at a permanent URL and cannot be undone from here. ' +
+        'Check the candidates and the search results first.'
+    );
+    if (ok) {
+      void decide('create');
+    }
+  }
+
   async function decide(action: 'link' | 'create' | 'dismiss', instructorId?: number) {
     const entry = current;
     if (!entry || busy) {
@@ -145,9 +169,13 @@ never the default action.
     errorMessage = '';
     notice = '';
     try {
+      // No `actor`. The API records whoever the admin key resolves to, which is
+      // the whole point of naming keys in REVIEW_MODERATOR_KEYS — sending a
+      // literal "moderator" from here overrode it, so every merge in the audit
+      // trail looked identical no matter who made it.
       const response = await call(`/v1/admin/instructors/queue/${entry.id}`, {
         method: 'POST',
-        body: JSON.stringify({ action, instructor_id: instructorId, actor: 'moderator' }),
+        body: JSON.stringify({ action, instructor_id: instructorId }),
       });
       if (!response.ok) {
         const body = await response.json().catch(() => ({}));
@@ -186,16 +214,36 @@ never the default action.
     return 'Dismissed.';
   }
 
+  /**
+   * True while the user is typing somewhere the shortcuts must not fire.
+   *
+   * `HTMLInputElement` alone missed textareas, selects, and anything
+   * contenteditable — and one of these shortcuts creates a professor page at a
+   * permanent, indexed URL.
+   */
+  function isTyping(target: EventTarget | null): boolean {
+    return (
+      target instanceof HTMLInputElement ||
+      target instanceof HTMLTextAreaElement ||
+      target instanceof HTMLSelectElement ||
+      (target instanceof HTMLElement && target.isContentEditable)
+    );
+  }
+
   function onKey(event: KeyboardEvent) {
-    if (!authed || event.target instanceof HTMLInputElement) {
+    if (!authed || isTyping(event.target) || event.metaKey || event.ctrlKey || event.altKey) {
       return;
     }
     if (event.key === 'j') {
       selected = Math.min(selected + 1, entries.length - 1);
+    } else if (event.key === 'n') {
+      // Deliberately asymmetric with the rest. `j`/`k`/`x` are all reversible
+      // or harmless; this one mints a professor page at a URL that is meant to
+      // be permanent and is submitted to search engines, off a single
+      // keystroke with no undo.
+      confirmCreate();
     } else if (event.key === 'k') {
       selected = Math.max(selected - 1, 0);
-    } else if (event.key === 'n') {
-      void decide('create');
     } else if (event.key === 'x') {
       void decide('dismiss');
     } else if (/^[1-9]$/.test(event.key)) {
@@ -282,9 +330,7 @@ never the default action.
             {#each entries as entry, index (entry.id)}
               <li>
                 <button
-                  class="w-full border-b px-3 py-2 text-left text-sm {index === selected
-                    ? 'bg-hover font-bold'
-                    : ''}"
+                  class="w-full border-b px-3 py-2 text-left text-sm {index === selected ? 'bg-hover font-bold' : ''}"
                   onclick={() => (selected = index)}
                 >
                   <span class="block truncate">{entry.observed}</span>
@@ -392,7 +438,7 @@ never the default action.
                 <button
                   class="border-orange text-orange rounded-md border px-3 py-1 text-sm font-bold"
                   disabled={busy}
-                  onclick={() => decide('create')}
+                  onclick={confirmCreate}
                 >
                   New professor
                 </button>
@@ -405,8 +451,8 @@ never the default action.
                 </button>
               </div>
               <p class="text-text-secondary mt-2 text-xs">
-                Linking moves every grade row under this spelling onto that professor and teaches the scraper the
-                same answer. It cannot be undone from here.
+                Linking moves every grade row under this spelling onto that professor and teaches the scraper the same
+                answer. It cannot be undone from here.
               </p>
             </div>
           {/if}

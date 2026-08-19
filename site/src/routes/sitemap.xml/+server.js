@@ -34,13 +34,40 @@ const PAGE_SIZE = 500;
 const MAX_PROFESSOR_URLS = 45000;
 
 /**
- * Collect every professor slug.
+ * Does this professor have a page worth putting in front of a crawler?
  *
- * Only instructors that Jupiterp has a page worth indexing for; a record with
- * no grade data and no rating is a name in a table, and filling the sitemap
- * with thousands of near-empty pages is how a site earns a thin-content
- * problem. Sorted by slug so the output is stable between requests, which
- * makes a diff meaningful when something changes.
+ * A rating, or a section this term. Everything else is a name in a table with
+ * "Not enough reviews yet" under it and no grade data — thousands of those is
+ * how a site earns a thin-content problem, which is the one thing a sitemap
+ * can actively make worse.
+ *
+ * `is_active` rather than a grade lookup because it is one column on a row
+ * already being fetched, where per-professor grade counts would be fifteen
+ * thousand extra queries to build one file. It is a proxy and it is the cheap
+ * one: a professor teaching right now has a page students are looking for even
+ * before any grades are attributed to them.
+ *
+ * @param {{ combined_rating?: number | null, is_active?: boolean }} instructor
+ * @returns {boolean}
+ */
+function worthIndexing(instructor) {
+  return (
+    (typeof instructor.combined_rating === 'number' && Number.isFinite(instructor.combined_rating)) ||
+    instructor.is_active === true
+  );
+}
+
+/**
+ * Collect every professor slug worth indexing.
+ *
+ * This is what the filter above is for. The docstring here used to claim the
+ * filtering already happened — "only instructors that Jupiterp has a page worth
+ * indexing for" — while the query applied no condition at all and emitted every
+ * one of the 15,152 instructor records, including the empty ones the same
+ * comment warned about.
+ *
+ * Sorted by slug so the output is stable between requests, which makes a diff
+ * meaningful when something changes.
  *
  * @param {typeof globalThis.fetch} fetchFn
  * @returns {Promise<string[]>}
@@ -55,8 +82,14 @@ async function professorSlugs(fetchFn) {
       limit: String(PAGE_SIZE),
       offset: String(offset),
       sortBy: 'slug.asc',
+      // Only the columns this needs. The rest of the row is seventeen columns
+      // of provenance and timestamps, fetched thirty times over and discarded.
+      columns: 'slug,combined_rating,is_active',
     });
-    const response = await fetchFn(`${client.dbUrl}/v0/instructors?${params.toString()}`);
+    // `/v1`, like the rest of the site. This was the last `/v0` caller left in
+    // the site after the planner moved, which quietly made "the site makes zero
+    // /v0 requests" untrue.
+    const response = await fetchFn(`${client.dbUrl}/v1/instructors?${params.toString()}`);
     if (!response.ok) {
       // A sitemap missing its professor pages is far better than a 500 that
       // makes a crawler drop the whole file, so this degrades rather than
@@ -71,7 +104,10 @@ async function professorSlugs(fetchFn) {
     }
 
     for (const instructor of page) {
-      if (typeof instructor?.slug === 'string' && instructor.slug !== '') {
+      if (typeof instructor?.slug !== 'string' || instructor.slug === '') {
+        continue;
+      }
+      if (worthIndexing(instructor)) {
         slugs.push(instructor.slug);
       }
     }
