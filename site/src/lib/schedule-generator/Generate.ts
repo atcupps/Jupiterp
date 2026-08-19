@@ -71,12 +71,14 @@ function buildRatings(requests: CourseRequest[]): Map<string, number> {
         if (!slug) {
           return;
         }
+        // `average_rating` is a number: the column is a Postgres `real` and
+        // PostgREST sends it as JSON. It was declared `string` in the client
+        // until now, so this used to go through parseFloat, which coerced it
+        // and hid the mismatch. The finite check stays -- a null or a NaN
+        // should leave the professor unrated rather than poison the sort.
         const raw = lookup[slug]?.average_rating;
-        if (raw != null) {
-          const value = parseFloat(raw);
-          if (!Number.isNaN(value)) {
-            ratings.set(name, value);
-          }
+        if (raw != null && Number.isFinite(raw)) {
+          ratings.set(name, raw);
         }
       });
     }

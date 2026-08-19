@@ -75,12 +75,16 @@ Copyright (C) 2026 Andrew Cupps
     };
   });
 
-  // Convert rating to a percentage for CSS
-  function convertRating(rating: string | null): number {
+  // Convert rating to a percentage for CSS.
+  //
+  // Takes a number: `average_rating` is a Postgres `real` and arrives as JSON,
+  // so the parseFloat this used to do was coercing a value that was already
+  // numeric. The caller only reaches here when the rating is non-null.
+  function convertRating(rating: number | null): number {
     if (rating == null) {
       throw Error('Rating was null in `convertRating`; this should never happen!');
     }
-    return parseFloat(rating) * 20;
+    return rating * 20;
   }
 
   function handleLinkClick(event: MouseEvent) {

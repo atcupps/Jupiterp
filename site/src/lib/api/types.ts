@@ -116,10 +116,15 @@ export interface GradeTerm {
  * An instructor, with the fields added by the PlanetTerp migration.
  *
  * Supersedes `Instructor` from `@jupiterp/jupiterp` v0.8.5, which had only
- * `{ slug, name, average_rating }` and typed the rating as a string because
- * PostgREST returns numerics that way. The new numeric fields are typed as
- * numbers; the API keeps `average_rating` string-typed and aliased to
- * `combined_rating` so existing v0 clients do not break.
+ * `{ slug, name, average_rating }`.
+ *
+ * `average_rating` is a number here, not a string. Both this interface and the
+ * npm client declared it as a string on the belief that PostgREST returns
+ * numerics that way; it does not for this column. `instructors.average_rating`
+ * is a Postgres `real` -- see scraper migration 0020, which fixed a cast that
+ * assumed otherwise -- so it arrives as a JSON number. The string typing was
+ * survivable only because every consumer happened to run it through
+ * `parseFloat`, which coerces.
  */
 export interface InstructorFull {
   id: number;
@@ -131,7 +136,7 @@ export interface InstructorFull {
   name: string;
 
   /** Retained for v0 compatibility. Prefer `combined_rating`. */
-  average_rating: string | null;
+  average_rating: number | null;
 
   /** PlanetTerp's rating, frozen at `pt_snapshot_at` and never updated. */
   pt_average_rating: number | null;

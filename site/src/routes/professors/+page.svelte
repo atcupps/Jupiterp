@@ -71,11 +71,10 @@ instructor set.
     if (instructor.combined_rating !== null && instructor.combined_rating !== undefined) {
       return instructor.combined_rating;
     }
-    if (instructor.average_rating === null) {
+    if (instructor.average_rating == null || !Number.isFinite(instructor.average_rating)) {
       return null;
     }
-    const parsed = Number.parseFloat(instructor.average_rating);
-    return Number.isNaN(parsed) ? null : parsed;
+    return instructor.average_rating;
   }
 
   let hasMore = $derived(total !== null && offset < total);

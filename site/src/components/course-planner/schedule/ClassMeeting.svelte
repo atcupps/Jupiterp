@@ -14,7 +14,7 @@ Copyright (C) 2026 Andrew Cupps
   import { getColorFromNumber } from '../../../lib/course-planner/ClassMeetingUtils';
   import Tooltip from './Tooltip.svelte';
   import { CourseInfoPairStore, CurrentScheduleStore, EventEditStore } from '../../../stores/CoursePlannerStores';
-  import type { ClassMeetingExtended, CourseSectionPair, ScheduleBlock, SelectionDifferences } from '../../../types';
+  import type { ClassMeetingExtended, ScheduleBlock, SelectionDifferences } from '../../../types';
 
   interface Props {
     meeting: ClassMeetingExtended;

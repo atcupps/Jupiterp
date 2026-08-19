@@ -170,10 +170,9 @@ export function ratingBreakdown(instructor: InstructorFull): RatingBreakdown {
   };
 }
 
-function numeric(value: string | null): number | null {
-  if (value === null) {
+function numeric(value: number | null | undefined): number | null {
+  if (value == null || !Number.isFinite(value)) {
     return null;
   }
-  const parsed = Number.parseFloat(value);
-  return Number.isNaN(parsed) ? null : parsed;
+  return value;
 }

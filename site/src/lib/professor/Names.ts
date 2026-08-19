@@ -47,8 +47,18 @@ const UNACCENT_EXTRA: Record<string, string> = {
   ı: 'i',
 };
 
-/** Combining diacritical marks, left behind by NFKD decomposition. */
-const COMBINING_MARKS = /[̀-ͯ]/g;
+/**
+ * Combining marks left behind by NFKD decomposition.
+ *
+ * `\p{M}` rather than the U+0300-U+036F block. Python's half of this contract
+ * uses `unicodedata.combining()`, which covers every combining mark in every
+ * script, while the block covers only Combining Diacritical Marks. The two
+ * agree on Latin names -- NFKD of a Latin letter never produces a mark outside
+ * that block, which is why the shared fixtures never caught it -- and disagree
+ * on names in scripts the fixtures do not reach. Matching Python here removes
+ * a drift the tests could not see.
+ */
+const COMBINING_MARKS = /\p{M}/gu;
 
 /** Anything that is not an ASCII letter or digit, after unaccenting. */
 const NON_ALNUM = /[^a-z0-9]+/g;

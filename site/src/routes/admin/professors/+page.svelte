@@ -19,6 +19,7 @@ why every candidate is shown with how much data it carries, and why `link` is
 never the default action.
 -->
 <script lang="ts">
+  import { resolve } from '$app/paths';
   import { client } from '../../../lib/client';
   import { formatSemester } from '../../../lib/course-planner/Grades';
 
@@ -262,7 +263,7 @@ never the default action.
           <kbd>x</kbd> dismiss
         </span>
         <button class="text-orange underline" onclick={() => load()}>Reload</button>
-        <a class="text-orange underline" href="/admin/reviews">Review queue</a>
+        <a class="text-orange underline" href={resolve('/admin/reviews')}>Review queue</a>
       </div>
 
       {#if notice}
@@ -321,7 +322,7 @@ never the default action.
                     <li class="border-outline flex flex-row flex-wrap items-center gap-2 rounded-md border p-2">
                       <kbd class="text-text-secondary text-xs">{index + 1}</kbd>
                       <a
-                        href="/professor/{candidate.slug}"
+                        href={resolve('/professor/[slug]', { slug: candidate.slug })}
                         target="_blank"
                         rel="noopener"
                         class="text-orange font-bold underline"
@@ -368,7 +369,7 @@ never the default action.
                   {#each searchResults as result (result.id)}
                     <li class="flex flex-row items-center gap-2 text-sm">
                       <a
-                        href="/professor/{result.slug}"
+                        href={resolve('/professor/[slug]', { slug: result.slug })}
                         target="_blank"
                         rel="noopener"
                         class="text-orange underline"
