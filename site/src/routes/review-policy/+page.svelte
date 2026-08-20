@@ -99,15 +99,25 @@ old decisions become unreproducible.
 
     <h2 class={h2Classes}>If your review is rejected</h2>
     <p class={pClasses}>
-      You will be told why, and you can reply to that email to have a person look again. You can also edit and resubmit.
-      An edited review goes back through moderation.
+      You will be told why, and you can reply to that email to have a person look again. You can also write a new
+      review, which goes through moderation like any other.
     </p>
 
-    <h2 class={h2Classes}>Editing and removing your own review</h2>
+    <!--
+      Renamed from "Editing and removing your own review". There is no editing:
+      no route, no UI, removed deliberately. Naming it here, and in the emails,
+      described a feature nobody could find because it does not exist.
+    -->
+    <h2 class={h2Classes}>Withdrawing your own review</h2>
     <p class={pClasses}>
-      When you confirm your review we give you a management key, once. Keep it: it is the only way to edit or withdraw
-      the review later, and we cannot recover it for you — by design, there is nothing linking it back to you.
-      Withdrawing deletes the text.
+      When you confirm your review we give you a management key, once. Keep it: it is the only way to withdraw the
+      review later, and we cannot recover it for you — by design, there is nothing linking it back to you. Withdrawing
+      deletes the text rather than hiding it, and cannot be undone; you are free to write a new review afterwards.
+    </p>
+    <p class={pClasses}>
+      To withdraw a review, paste your key at
+      <a href={resolve('/review/withdraw')} class="text-orange underline">jupiterp.com/review/withdraw</a>. You will be
+      shown the review before anything is removed.
     </p>
 
     <h2 class={h2Classes}>If you are the professor</h2>

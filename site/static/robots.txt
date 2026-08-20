@@ -8,5 +8,6 @@ User-agent: *
 Allow: /
 Disallow: /admin
 Disallow: /review/verify
+Disallow: /review/withdraw
 
 Sitemap: https://www.jupiterp.com/sitemap.xml

@@ -264,11 +264,7 @@ export async function searchInstructors(cfg: InstructorSearchConfig, fetchFn?: F
  * no grades yet.
  */
 export async function currentCourseCodesFor(slug: string, fetchFn?: Fetch): Promise<string[]> {
-  const page = await get<{ course_code: string }>(
-    '/v1/sections',
-    build({ instructorSlug: slug, limit: 500 }),
-    fetchFn
-  );
+  const page = await get<{ course_code: string }>('/v1/sections', build({ instructorSlug: slug, limit: 500 }), fetchFn);
   return [...new Set(page.data.map((row) => row.course_code))].sort();
 }
 
@@ -352,6 +348,42 @@ export async function verifyReview(
     manageKey: payload.manage_key,
     message: payload.message ?? payload.error ?? 'Something went wrong.',
   };
+}
+
+/** The review a manage key controls, as the withdrawal page needs to show it. */
+export interface ManagedReview {
+  id: string;
+  instructor: string;
+  instructor_slug: string;
+  course_code: string | null;
+  term: number | null;
+  rating: number;
+  title: string | null;
+  body: string | null;
+  status: string;
+  submitted_at: string;
+  /** False once there is nothing left to retract. */
+  withdrawable: boolean;
+}
+
+/**
+ * Look up the review a manage key controls.
+ *
+ * The key alone identifies it. A reviewer is never told their review's id — not
+ * in the verification response, not in the email — so a withdrawal flow that
+ * needed one could not be completed by the only person entitled to use it.
+ *
+ * Returns null for a key the server does not recognise, which is the same
+ * answer it gives for a key that is simply wrong.
+ */
+export async function manageReview(manageKey: string, fetchFn: Fetch = fetch): Promise<ManagedReview | null> {
+  const response = await fetchFn(`${client.dbUrl}/v1/reviews/manage`, {
+    headers: { Authorization: `Bearer ${manageKey}` },
+  });
+  if (!response.ok) {
+    return null;
+  }
+  return (await response.json()) as ManagedReview;
 }
 
 /** Withdraw a review using its manage key. */
