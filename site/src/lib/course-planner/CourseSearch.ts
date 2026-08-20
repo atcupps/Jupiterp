@@ -38,7 +38,17 @@ let profNamesReverse: string[] = [];
 ProfsLookupStore.subscribe((profs) => {
   // The store is keyed by slug now, so the names for the `@professor` search
   // come from the values.
-  profNames = Object.values(profs).map((prof) => prof.name);
+  //
+  // Filtered rather than mapped straight across. A subscriber that throws takes
+  // every subscriber registered after it down with it, because `set` notifies
+  // them in order -- so when the column list stopped requesting `name`, this
+  // callback did not just lose the professor search, it silently stopped the
+  // rest of the planner being told the lookup had loaded at all. Skipping a row
+  // with no name degrades to "that professor is unsearchable", which is a
+  // proportionate failure for a missing field.
+  profNames = Object.values(profs)
+    .map((prof) => prof.name)
+    .filter((name): name is string => typeof name === 'string' && name.length > 0);
   profNames.sort();
 
   profNamesReverse = profNames.map((name) => {
@@ -395,10 +405,19 @@ export async function loadInstructorLookup(): Promise<void> {
   try {
     const limit = 500;
 
-    // Only the two columns this lookup reads. The rest of the row -- the
-    // PlanetTerp provenance columns, the timestamps, the normalized name -- was
-    // being downloaded and discarded, which was about 94% of 1.3MB.
-    const columns = ['slug', 'average_rating'];
+    // Only the columns this lookup reads. The rest of the row -- the PlanetTerp
+    // provenance columns, the timestamps, the normalized name -- was being
+    // downloaded and discarded, which was about 94% of 1.3MB.
+    //
+    // `name` is one of them, and leaving it out broke the planner outright.
+    // Two of the three consumers of `ProfsLookupStore` need only the slug and
+    // the rating, which is what this list was trimmed to; the third is the
+    // subscriber above that builds `profNames` for the `@professor` search, and
+    // it reads `prof.name`. Without it every name was `undefined`, and the
+    // `.split(' ')` that builds the reversed "Last, First" list threw inside
+    // `ProfsLookupStore.set`, so every subscriber registered after that one
+    // stopped being notified.
+    const columns = ['slug', 'name', 'average_rating'];
 
     // The first page also asks for the total, which is what makes the rest
     // parallel. Without it the only way to find the end is to request pages
@@ -409,7 +428,7 @@ export async function loadInstructorLookup(): Promise<void> {
       limit,
       offset: 0,
       columns,
-      count: true
+      count: true,
     });
     if (!first.ok() || first.data == null) {
       // format-check exempt 3
