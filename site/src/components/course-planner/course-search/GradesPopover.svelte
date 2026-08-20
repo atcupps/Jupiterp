@@ -27,33 +27,91 @@ Copyright (C) 2026 Andrew Cupps
   let { heading, distribution, slug = undefined, onclose = undefined }: Props = $props();
 
   /**
-   * Which side the popover opens toward.
+   * Where the popover sits horizontally.
    *
-   * `right-0` by default, so it grows leftward and the search results
-   * container -- which clips on the right -- cannot cut it off. That breaks in
-   * one case: a long instructor name wraps the GPA chip onto a second line,
-   * where the chip sits near the left edge of the panel, and 15rem of popover
-   * growing leftward from there runs off the screen.
+   * It wants its right edge aligned with the GPA chip's, growing leftward. What
+   * stops that being the whole story is the search results panel: it is
+   * `overflow-y-scroll`, and CSS turns the other axis from `visible` into
+   * `auto` whenever one axis is not `visible` -- so the panel clips
+   * horizontally too, and its scrollbar takes ~10px of that width.
    *
-   * So the side is measured rather than assumed. Decided once per open and
-   * never revisited: flipping back and forth on each measurement would be a
-   * loop, and a popover that moves while being read is worse than one on the
-   * unexpected side.
+   * This used to be a binary left/right flip decided by whether the popover
+   * would land within 8px of the *window's* left edge. Both halves were wrong
+   * frames of reference. The panel is not the window -- on a desktop layout it
+   * is a ~350px column -- so a popover could sit comfortably inside the window
+   * and still be cut off by the panel. And flipping rightward was never checked
+   * against anything at all: at a 1100px viewport a flipped popover measured
+   * 201px to 441px against a content edge at 354px, so 87px of it was hidden
+   * behind and past the scrollbar.
+   *
+   * So rather than choosing a side, this clamps: take the preferred position,
+   * then push it back inside whichever ancestor actually does the clipping.
+   * Measured once per open, like the flip it replaces -- a popover that moves
+   * while being read is worse than one on the unexpected side -- and safe to
+   * measure once because vertical scrolling does not change any of these
+   * numbers.
    */
   let popover = $state<HTMLDivElement | undefined>(undefined);
-  let opensRightward = $state(false);
-  let sideDecided = false;
+  let leftOffset = $state<number | null>(null);
+  let placed = false;
+
+  /** A small gap, so the popover never sits flush against the clipping edge. */
+  const EDGE_MARGIN = 4;
+
+  /**
+   * The nearest ancestor that clips overflow, which is what actually decides
+   * whether this is visible. Found by walking up rather than by naming the
+   * panel, so moving the popover somewhere else does not silently reintroduce
+   * the bug.
+   */
+  function clippingAncestor(element: HTMLElement): HTMLElement | null {
+    let node = element.parentElement;
+    while (node) {
+      const style = getComputedStyle(node);
+      if (style.overflowX !== 'visible' || style.overflowY !== 'visible') {
+        return node;
+      }
+      node = node.parentElement;
+    }
+    return null;
+  }
 
   $effect(() => {
     const element = popover;
-    if (!element || sideDecided) {
+    if (!element || placed) {
       return;
     }
-    sideDecided = true;
-    // A small margin, so it does not sit flush against the window edge.
-    if (element.getBoundingClientRect().left < 8) {
-      opensRightward = true;
+    placed = true;
+
+    const anchor = element.offsetParent as HTMLElement | null;
+    if (anchor === null) {
+      return;
     }
+    const anchorRect = anchor.getBoundingClientRect();
+    const width = element.offsetWidth;
+
+    const clip = clippingAncestor(element);
+    // `clientLeft` is the border, and `clientWidth` excludes the scrollbar, so
+    // these two are the inside edges of the box that actually clips -- the
+    // right one being the edge of the scrollbar rather than of the element.
+    const bounds =
+      clip === null
+        ? { left: 0, right: window.innerWidth }
+        : (() => {
+            const rect = clip.getBoundingClientRect();
+            const inner = rect.left + clip.clientLeft;
+            return { left: inner, right: inner + clip.clientWidth };
+          })();
+
+    // Preferred: right edge aligned with the chip's. Then pulled inside the
+    // right edge, then pushed inside the left -- in that order, so that a
+    // container too narrow to fit the popover at all pins it to the left and
+    // overflows right, which is the readable half.
+    let left = anchorRect.right - width;
+    left = Math.min(left, bounds.right - width - EDGE_MARGIN);
+    left = Math.max(left, bounds.left + EDGE_MARGIN);
+
+    leftOffset = left - anchorRect.left;
   });
 
   let semesterRange = $derived(formatSemesterRange(distribution));
@@ -69,17 +127,20 @@ Copyright (C) 2026 Andrew Cupps
 
 <svelte:window onkeydown={handleKeydown} />
 
-<!-- Opens leftward (`right-0`) so the search results scroll container, which
-     clips on the right, cannot cut it off -- unless that would put it off the
-     left of the screen, in which case it opens rightward instead. See the note
-     on `opensRightward`. -->
+<!-- `right-0` is the starting position: aligned with the chip, growing leftward.
+     The effect above then measures it against whatever ancestor clips overflow
+     -- the search results panel, whose scrollbar eats into its own width -- and
+     replaces it with a clamped `left`. Hidden for that one frame, so it is
+     never painted in the unclamped position. See the note on `leftOffset`. -->
 <!-- svelte-ignore a11y_no_static_element_interactions -->
 <!-- svelte-ignore a11y_click_events_have_key_events -->
 <div
   bind:this={popover}
-  class="border-outline bg-bg-primary text-text-primary absolute top-full z-50 mt-1 w-60 cursor-default rounded-lg border-2 p-2 text-left font-normal normal-case shadow-lg {opensRightward
-    ? 'left-0'
-    : 'right-0'}"
+  style={leftOffset === null ? undefined : `left: ${leftOffset}px; right: auto;`}
+  class="border-outline bg-bg-primary text-text-primary absolute top-full z-50 mt-1 w-60 cursor-default rounded-lg border-2 p-2 text-left font-normal normal-case shadow-lg {leftOffset ===
+  null
+    ? 'invisible right-0'
+    : ''}"
   aria-label="Grade distribution for {heading}"
   onclick={(event) => event.stopPropagation()}
 >
