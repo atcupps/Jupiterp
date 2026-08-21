@@ -60,12 +60,12 @@ function buildRatings(requests: CourseRequest[]): Map<string, number> {
           continue;
         }
         const instructor = lookup[name];
-        const raw = instructor?.average_rating;
-        if (raw != null) {
-          const value = parseFloat(raw);
-          if (!Number.isNaN(value)) {
-            ratings.set(name, value);
-          }
+        // `average_rating` is a JSON number, not a string. It was typed
+        // `string | null` through 0.8.5 and `parseFloat` hid the mismatch; the
+        // 1.0.0 types declare what the API actually sends.
+        const value = instructor?.average_rating;
+        if (value != null && !Number.isNaN(value)) {
+          ratings.set(name, value);
         }
       }
     }
