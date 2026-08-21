@@ -84,23 +84,23 @@ Copyright (C) 2026 Andrew Cupps
 </button>
 
 <!-- TEMP FIX: Added "-translate-y-2" to fix dropdown positioning -->
-<Dropdown class="bg-border text-text-primary w-24 -translate-y-2 rounded-md" bind:isOpen={dropdownOpen}>
+<Dropdown class="bg-border text-text-primary w-24 -translate-y-2 gap-0 rounded-md" bind:isOpen={dropdownOpen}>
   <DropdownItem
-    class="hover:bg-hover flex items-center justify-start px-2"
+    class="hover:bg-hover flex items-center justify-start p-2"
     title="Add custom event to schedule"
     onclick={addCustomEvent}
   >
     <PlusOutline class="z-50 mr-1 h-3 w-3" /> Add Event
   </DropdownItem>
   <DropdownItem
-    class="hover:bg-hover flex items-center justify-start px-2"
+    class="hover:bg-hover flex items-center justify-start p-2"
     title="Delete current schedule"
     onclick={deleteCurrentSchedule}
   >
     <TrashBinOutline class="z-50 mr-1 h-3 w-3" /> Delete
   </DropdownItem>
   <DropdownItem
-    class="hover:bg-hover flex items-center justify-start px-2"
+    class="hover:bg-hover flex items-center justify-start p-2"
     title="Duplicate current schedule"
     onclick={duplicateSchedule}
   >
