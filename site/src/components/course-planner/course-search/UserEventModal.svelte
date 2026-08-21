@@ -32,15 +32,7 @@ Copyright (C) 2026 Andrew Cupps
   // Bound element references to inspect partial/existing browser values
   let startInputRef: HTMLInputElement | undefined = $state();
   let endInputRef: HTMLInputElement | undefined = $state();
-
   let lastChanged: 'start' | 'end' | null = null;
-  let dialogRef: HTMLDialogElement | undefined = $state();
-
-  $effect(() => {
-    if (dialogRef && !dialogRef.open) {
-      dialogRef.showModal();
-    }
-  });
 
   $effect(() => {
     if (initialEventData) {
@@ -115,7 +107,6 @@ Copyright (C) 2026 Andrew Cupps
     }
 
     if (!digits) return;
-
     let hour = parseInt(digits, 10);
     if (isNaN(hour)) return;
 
@@ -131,8 +122,8 @@ Copyright (C) 2026 Andrew Cupps
     }
 
     const calculatedTime = `${hour.toString().padStart(2, '0')}:${targetMinutes}`;
-
     lastChanged = type;
+
     if (type === 'start') {
       startTime = calculatedTime;
     } else {
@@ -143,7 +134,6 @@ Copyright (C) 2026 Andrew Cupps
   function handleDirectChange(type: 'start' | 'end', event: Event) {
     const val = (event.target as HTMLInputElement).value;
     if (!val) return;
-
     lastChanged = type;
     if (type === 'start') {
       startTime = val;
@@ -186,18 +176,12 @@ Copyright (C) 2026 Andrew Cupps
     }
   }
 
-  function handleNativeClose() {
-    dialogRef?.close();
-    onClose();
-  }
-
   function handleSubmit() {
     errors = [];
     if (!name.trim()) errors.push('Name is required');
     if (selectedDays.length === 0) errors.push('Select at least one day');
     if (!startTime) errors.push('Start time is required');
     if (!endTime) errors.push('End time is required');
-
     if (startTime && endTime && timeStringToDecimal(startTime) >= timeStringToDecimal(endTime)) {
       errors.push('End time must be after start time');
     }
@@ -216,22 +200,30 @@ Copyright (C) 2026 Andrew Cupps
     };
 
     onSubmit(event);
-    handleNativeClose();
+    onClose();
   }
 </script>
 
-<dialog
-  bind:this={dialogRef}
-  onclose={handleNativeClose}
-  closedby="any"
-  style="top:clamp(3.5rem, 50vh - 11rem, 12rem); max-height: calc(100vh - 4rem);"
-  class="border-outline text-text-primary bg-bg-primary w-100 backdrop:z-5 fixed left-1/2 z-10 m-0 max-w-[90vw] -translate-x-1/2 rounded-lg border p-4 shadow-xl backdrop:fixed backdrop:inset-x-0 backdrop:bottom-0 backdrop:top-12 backdrop:cursor-pointer backdrop:bg-black/40"
+<!-- Backdrop overlay button -->
+<button
+  type="button"
+  class="fixed inset-x-0 bottom-0 top-12 z-10 cursor-pointer bg-black/40"
+  onclick={onClose}
+  aria-label="Close modal background"
+></button>
+
+<!-- Main Modal Content Container -->
+<div
+  style="top:clamp(3.5rem, 50svh - 13rem, 12rem); max-height: calc(100svh - 4rem);"
+  class="border-outline text-text-primary bg-bg-primary w-100 fixed left-1/2 z-20 m-0 max-w-[90vw] -translate-x-1/2 overflow-y-scroll rounded-lg border p-4 shadow-xl"
 >
-  <h2 class="mb-3 text-base font-semibold">{initialEventData ? 'Edit Event' : 'Add Custom Event'}</h2>
+  <h2 class="mb-3 text-base font-semibold">
+    {initialEventData ? 'Edit Event' : 'Add Custom Event'}
+  </h2>
 
   <!-- Name -->
   <div class="mb-2">
-    <label class="mb-0.5 block text-sm" for="user-event-name">Name</label>
+    <label class="mb-0.5 block text-sm" for="user-event-name">Name<span class="text-red-500">*</span></label>
     <input
       id="user-event-name"
       type="text"
@@ -243,7 +235,7 @@ Copyright (C) 2026 Andrew Cupps
 
   <!-- Days -->
   <div class="mb-2">
-    <p class="mb-0.5 text-sm">Days</p>
+    <label class="mb-0.5 block text-sm" for="user-event-days">Days<span class="text-red-500">*</span></label>
     <div class="flex gap-1.5">
       {#each DAYS as day (day)}
         <button
@@ -263,7 +255,7 @@ Copyright (C) 2026 Andrew Cupps
   <!-- Start / End time fields -->
   <div class="mb-2 flex gap-2">
     <div class="flex-1">
-      <label class="mb-0.5 block text-sm" for="user-event-start">Start</label>
+      <label class="mb-0.5 block text-sm" for="user-event-start">Start<span class="text-red-500">*</span></label>
       <input
         bind:this={startInputRef}
         id="user-event-start"
@@ -276,7 +268,7 @@ Copyright (C) 2026 Andrew Cupps
       />
     </div>
     <div class="flex-1">
-      <label class="mb-0.5 block text-sm" for="user-event-end">End</label>
+      <label class="mb-0.5 block text-sm" for="user-event-end">End<span class="text-red-500">*</span></label>
       <input
         bind:this={endInputRef}
         id="user-event-end"
@@ -315,7 +307,7 @@ Copyright (C) 2026 Andrew Cupps
 
   <!-- Validation errors -->
   {#if errors.length > 0}
-    <div style="color: #ef4444;" class="mb-2 text-xs">
+    <div class="mb-2 text-xs text-red-500">
       {#each errors as error, i (i)}
         <div>{error}</div>
       {/each}
@@ -324,11 +316,9 @@ Copyright (C) 2026 Andrew Cupps
 
   <!-- Actions -->
   <div class="flex justify-end gap-2">
-    <button type="button" onclick={handleNativeClose} class="hover:bg-hover rounded-sm px-3 py-1.5 text-sm">
-      Cancel
-    </button>
+    <button type="button" onclick={onClose} class="hover:bg-hover rounded-sm px-3 py-1.5 text-sm"> Cancel </button>
     <button type="button" onclick={handleSubmit} class="bg-outline hover:bg-hover rounded-sm px-3 py-1.5 text-sm">
       {initialEventData ? 'Save Event' : 'Add Event'}
     </button>
   </div>
-</dialog>
+</div>
