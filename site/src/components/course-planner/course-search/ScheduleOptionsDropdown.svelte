@@ -77,7 +77,7 @@ Copyright (C) 2026 Andrew Cupps
 
 <!-- TEMP FIX: Added "-translate-y-2" to fix dropdown positioning -->
 <Dropdown
-  class="bg-border text-text-primary border-outline -translate-y-2 rounded-md border shadow-lg"
+  class="bg-border text-text-primary border-outline -translate-y-2 list-none rounded-md border shadow-lg"
   bind:isOpen={dropdownOpen}
 >
   {#each menuItems as item (item.label)}
