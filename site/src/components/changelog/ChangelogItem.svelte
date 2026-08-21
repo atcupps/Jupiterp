@@ -5,32 +5,33 @@ https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2026 Andrew Cupps
  -->
 <script lang="ts">
-	export let title: string;
-	export let version: string;
-	export let date: string;
+  interface Props {
+    title: string;
+    version: string;
+    date: string;
+    children?: import('svelte').Snippet;
+  }
+
+  let { title, version, date, children }: Props = $props();
 </script>
 
-<div class="mx-2 border-l-2 border-divBorderLight py-2 dark:border-divBorderDark">
-	<div class="flex flex-col px-4">
-		<div class="static flex flex-row items-end">
-			<div
-				class="absolute h-5 w-5 translate-x-[-27px] translate-y-[-4px] bg-bgLight p-1.5 dark:bg-bgDark"
-			>
-				<div class="h-full w-full rounded-full bg-orange"></div>
-			</div>
-			<span class="mr-2 text-xl font-bold dark:text-white">
-				{title}
-			</span>
-			<span class="font-light text-secCodesLight dark:text-secCodesDark">
-				{version}
-			</span>
-		</div>
-		<span class="align-top text-sm italic">
-			{date}
-		</span>
+<article class="border-border mx-2 border-l-2 py-2">
+  <div class="flex flex-col px-4">
+    <div class="static flex flex-row items-end">
+      <div class="bg-bg-primary -translate-x-6.75 absolute h-5 w-5 -translate-y-1 p-1.5">
+        <div class="bg-orange h-full w-full rounded-full"></div>
+      </div>
+      <span class="mr-2 text-xl font-bold dark:text-white">
+        {title}
+      </span>
+      <span class="text-text-secondary font-light"> {version} </span>
+    </div>
+    <span class="align-top text-sm italic">
+      {date}
+    </span>
 
-		<div>
-			<slot />
-		</div>
-	</div>
-</div>
+    <div>
+      {@render children?.()}
+    </div>
+  </div>
+</article>

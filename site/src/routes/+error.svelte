@@ -5,27 +5,15 @@ https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2026 Andrew Cupps
  -->
 <script>
-	import { page } from '$app/stores';
+  import { page } from '$app/state';
 </script>
 
-<div class="error">
-	<h1 class="error-message text-black dark:text-white">
-		Error {$page.status}:
-		{$page.error?.message}
-	</h1>
+<svelte:head>
+  <title>Error {page.status} | Jupiterp</title>
+</svelte:head>
+
+<div class="fixed left-1/2 top-1/2 w-full -translate-x-1/2 -translate-y-1/2 pl-16">
+  <h1 class="text-primary text-[3rem] font-bold">
+    Error {page.status}: {page.error?.message}
+  </h1>
 </div>
-
-<style>
-	.error {
-		position: fixed;
-		left: 50%;
-		top: 50%;
-		transform: translateX(-50%) translateY(-50%);
-		width: 100%;
-		padding-left: 4rem;
-	}
-
-	.error-message {
-		font-size: 3rem;
-	}
-</style>

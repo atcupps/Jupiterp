@@ -13,12 +13,12 @@ import type { Course } from '@jupiterp/jupiterp';
 import { writable, type Writable } from 'svelte/store';
 import { defaultConstraints } from '$lib/schedule-generator/types';
 import type {
-	GeneratedSchedule,
-	HardConstraints,
-	PinNotice,
-	Relaxation,
-	SectionPin,
-	SortCriterion
+  GeneratedSchedule,
+  HardConstraints,
+  PinNotice,
+  Relaxation,
+  SectionPin,
+  SortCriterion,
 } from '$lib/schedule-generator/types';
 
 /**
@@ -26,9 +26,9 @@ import type {
  * is required and any pin narrowing it to a section or professor.
  */
 export interface GeneratorRequirement {
-	course: Course;
-	required: boolean;
-	pin: SectionPin;
+  course: Course;
+  required: boolean;
+  pin: SectionPin;
 }
 
 /**
@@ -36,27 +36,27 @@ export interface GeneratorRequirement {
  * unlock, used to explain zero-result generations.
  */
 export interface RelaxationHint {
-	relaxation: Relaxation;
-	scheduleCount: number;
-	truncated: boolean;
+  relaxation: Relaxation;
+  scheduleCount: number;
+  truncated: boolean;
 }
 
 /** The outcome of a generation run, used to drive the results UI. */
 export type GenerationState =
-	| { kind: 'idle' }
-	| { kind: 'loading' }
-	| {
-			kind: 'done';
-			schedules: GeneratedSchedule[];
-			truncated: boolean;
-			pinNotices: PinNotice[];
-	  }
-	| {
-			kind: 'noSchedules';
-			hints: RelaxationHint[];
-			coursesWithNoValidSections: string[];
-	  }
-	| { kind: 'failed'; message: string };
+  | { kind: 'idle' }
+  | { kind: 'loading' }
+  | {
+      kind: 'done';
+      schedules: GeneratedSchedule[];
+      truncated: boolean;
+      pinNotices: PinNotice[];
+    }
+  | {
+      kind: 'noSchedules';
+      hints: RelaxationHint[];
+      coursesWithNoValidSections: string[];
+    }
+  | { kind: 'failed'; message: string };
 
 /** The course wishlist the generator builds schedules from. */
 export const GeneratorRequirementsStore: Writable<GeneratorRequirement[]> = writable([]);
@@ -76,5 +76,5 @@ export const GeneratorSortChosenByUserStore: Writable<boolean> = writable(false)
 
 /** The current generation state. */
 export const GenerationStateStore: Writable<GenerationState> = writable({
-	kind: 'idle'
+  kind: 'idle',
 });

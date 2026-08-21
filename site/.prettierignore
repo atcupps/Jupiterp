@@ -5,5 +5,14 @@ yarn.lock
 bun.lock
 bun.lockb
 
-# Miscellaneous
+# Dependencies and Build Directories
+node_modules/
+.svelte-kit/
+.vercel/
+build/
+dist/
+
+# Miscellaneous and Static Assets
 /static/
+.env
+.env.*

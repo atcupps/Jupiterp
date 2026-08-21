@@ -31,3 +31,4 @@ rust-project.json
 __pycache__/
 
 /plans
+node_modules
