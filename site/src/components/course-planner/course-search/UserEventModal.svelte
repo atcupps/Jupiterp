@@ -223,6 +223,7 @@ Copyright (C) 2026 Andrew Cupps
 <dialog
   bind:this={dialogRef}
   onclose={handleNativeClose}
+  closedby="any"
   style="top:clamp(3.5rem, 50vh - 11rem, 12rem); max-height: calc(100vh - 4rem);"
   class="border-outline text-text-primary bg-bg-primary w-100 backdrop:z-5 fixed left-1/2 z-10 m-0 max-w-[90vw] -translate-x-1/2 rounded-lg border p-4 shadow-xl backdrop:fixed backdrop:inset-x-0 backdrop:bottom-0 backdrop:top-12 backdrop:bg-black/40"
 >
