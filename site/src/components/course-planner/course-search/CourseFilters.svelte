@@ -11,13 +11,13 @@ Copyright (C) 2026 Andrew Cupps
   import type { FilterParams } from '../../../types';
   import { CourseSearchFilterStore } from '../../../stores/CoursePlannerStores';
 
-  let appliedFiltersCount = $state(0);
   let showFiltersMenu = $state(false);
+
   interface Props {
     showGenEdMenu?: boolean;
   }
-
   let { showGenEdMenu = $bindable(false) }: Props = $props();
+
   let genEdSelections: GenEd[] = $state([]);
   let onlyOpenSections = $state(false);
 
@@ -26,35 +26,36 @@ Copyright (C) 2026 Andrew Cupps
   let minCredits: number = $state(defaultMinCredits);
   let maxCredits: number = $state(defaultMaxCredits);
 
-  // Replaced run() with $effect to manage internal counter updates and external store side-effects
+  // 1. Automatically calculate the filter count based on active states safely
+  let appliedFiltersCount = $derived(
+    (genEdSelections.length > 0 ? 1 : 0) +
+    (minCredits !== defaultMinCredits ? 1 : 0) +
+    (maxCredits !== defaultMaxCredits ? 1 : 0) +
+    (onlyOpenSections ? 1 : 0)
+  );
+
+  // 2. Synchronize external store changes without reacting to counter mutations
   $effect(() => {
     const params: FilterParams = {
       serverSideFilters: {},
       clientSideFilters: {},
     };
-    appliedFiltersCount = 0;
 
     if (genEdSelections.length > 0) {
-      appliedFiltersCount += 1;
-      params.serverSideFilters.genEds = genEdSelections.sort((a, b) => a.code.localeCompare(b.code));
+      params.serverSideFilters.genEds = [...genEdSelections].sort((a, b) => a.code.localeCompare(b.code));
     }
     if (minCredits !== 0) {
-      appliedFiltersCount += 1;
       params.clientSideFilters.minCredits = minCredits;
     }
     if (maxCredits !== 20) {
-      appliedFiltersCount += 1;
       params.clientSideFilters.maxCredits = maxCredits;
     }
     if (onlyOpenSections) {
-      appliedFiltersCount += 1;
       params.clientSideFilters.onlyOpen = onlyOpenSections;
     }
 
     if (appliedFiltersCount > 0) {
-      CourseSearchFilterStore.set({
-        ...params,
-      });
+      CourseSearchFilterStore.set({ ...params });
     } else {
       CourseSearchFilterStore.set({
         serverSideFilters: {},
@@ -146,12 +147,12 @@ Copyright (C) 2026 Andrew Cupps
                 <div class="flex flex-row items-center">
                   <input
                     type="checkbox"
-                    checked={genEdSelections.includes(genEd)}
+                    checked={genEdSelections.some((g) => g.code === genEd.code)}
                     id={'gened-' + genEd.code}
                     class="bg-bg-secondary border-text-secondary checked:bg-orange focus:ring-orange mr-2 mt-0.5 rounded-md hover:cursor-pointer"
                     onclick={() => {
-                      if (genEdSelections.includes(genEd)) {
-                        genEdSelections = genEdSelections.filter((g) => g !== genEd);
+                      if (genEdSelections.some((g) => g.code === genEd.code)) {
+                        genEdSelections = genEdSelections.filter((g) => g.code !== genEd.code);
                       } else {
                         genEdSelections = [...genEdSelections, genEd];
                       }
@@ -172,13 +173,14 @@ Copyright (C) 2026 Andrew Cupps
         <div class="flex flex-row items-center text-xs">
           <span class="min-w-16"> Min credits: </span>
           <input
+            id="Minimum credits"
             type="number"
             min="0"
             step="1"
             max="20"
             placeholder="0"
             bind:value={minCredits}
-            class="bg-bg-primary focus:outline-hidden focus:ring-3 w-12 rounded-md border px-1 text-xs"
+            class="bg-bg-primary focus:outline-hidden focus:ring-3 w-12 rounded-md border px-1 py-0 text-xs"
           />
         </div>
 
@@ -186,13 +188,14 @@ Copyright (C) 2026 Andrew Cupps
         <div class="flex flex-row items-center text-xs">
           <span class="min-w-16"> Max credits: </span>
           <input
+            id="Maximum credits"
             type="number"
             min="0"
             max="20"
             step="1"
             placeholder="10"
             bind:value={maxCredits}
-            class="bg-bg-primary focus:outline-hidden focus:ring-3 w-12 rounded-md border px-1 text-xs"
+            class="bg-bg-primary focus:outline-hidden focus:ring-3 w-12 rounded-md border px-1 py-0 text-xs"
           />
         </div>
       </div>
