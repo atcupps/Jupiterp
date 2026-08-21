@@ -5,11 +5,21 @@ https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2026 Andrew Cupps
 -->
 <script lang="ts">
-	export let isDesktop: boolean = false;
+  import { run } from 'svelte/legacy';
 
-	let innerWidth: number = 0;
+  interface Props {
+    isDesktop?: boolean;
+  }
 
-	$: isDesktop = innerWidth >= 1024;
+  let { isDesktop = $bindable(false) }: Props = $props();
+
+  let innerWidth: number = $state(0);
+
+  run(() => {
+    isDesktop = innerWidth >= 1024;
+  });
+
+  export { isDesktop };
 </script>
 
 <svelte:window bind:innerWidth />

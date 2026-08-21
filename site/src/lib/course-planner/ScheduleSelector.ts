@@ -20,24 +20,20 @@ import type { StoredSchedule } from '../../types';
  * @param uniquifier The string to append to the beginning
  * @returns A unique schedule name based on `defaultname`
  */
-export function uniqueScheduleName(
-	defaultName: string,
-	uniquifier: string,
-	schedules: StoredSchedule[]
-): string {
-	const scheduleNames: Set<string> = new Set<string>();
-	schedules.forEach((elt) => {
-		scheduleNames.add(elt.scheduleName);
-	});
-	if (scheduleNames.has(defaultName)) {
-		let curName = defaultName;
-		while (scheduleNames.has(curName)) {
-			curName = uniquifier + curName;
-		}
-		return curName;
-	} else {
-		return defaultName;
-	}
+export function uniqueScheduleName(defaultName: string, uniquifier: string, schedules: StoredSchedule[]): string {
+  const scheduleNames: Set<string> = new Set<string>();
+  schedules.forEach((elt) => {
+    scheduleNames.add(elt.scheduleName);
+  });
+  if (scheduleNames.has(defaultName)) {
+    let curName = defaultName;
+    while (scheduleNames.has(curName)) {
+      curName = uniquifier + curName;
+    }
+    return curName;
+  } else {
+    return defaultName;
+  }
 }
 
 /**
@@ -49,20 +45,16 @@ export function uniqueScheduleName(
  * @param existing The schedules whose names are already taken
  * @param alwaysNumber Whether the first candidate is `base 1` instead of `base`
  */
-export function uniqueNumberedName(
-	base: string,
-	existing: StoredSchedule[],
-	alwaysNumber: boolean = false
-): string {
-	const taken = new Set(existing.map((s) => s.scheduleName));
-	if (!alwaysNumber && !taken.has(base)) {
-		return base;
-	}
-	let n = alwaysNumber ? 1 : 2;
-	while (taken.has(`${base} ${n}`)) {
-		n++;
-	}
-	return `${base} ${n}`;
+export function uniqueNumberedName(base: string, existing: StoredSchedule[], alwaysNumber: boolean = false): string {
+  const taken = new Set(existing.map((s) => s.scheduleName));
+  if (!alwaysNumber && !taken.has(base)) {
+    return base;
+  }
+  let n = alwaysNumber ? 1 : 2;
+  while (taken.has(`${base} ${n}`)) {
+    n++;
+  }
+  return `${base} ${n}`;
 }
 
 /**
@@ -73,16 +65,13 @@ export function uniqueNumberedName(
  * array, this function will cause a side effect in the `nonselectedSchedules`
  * array used as an argument to this function.
  */
-export function deleteNonselectedSchedule(
-	schedule: StoredSchedule,
-	nonselectedSchedules: StoredSchedule[]
-) {
-	const index = nonselectedSchedules.indexOf(schedule);
-	if (index === -1) {
-		// This should not be possible
-		console.log('Could not find schedule: ' + schedule.scheduleName);
-	} else {
-		nonselectedSchedules.splice(index, 1);
-		NonselectedScheduleStore.set(nonselectedSchedules);
-	}
+export function deleteNonselectedSchedule(schedule: StoredSchedule, nonselectedSchedules: StoredSchedule[]) {
+  const index = nonselectedSchedules.indexOf(schedule);
+  if (index === -1) {
+    // This should not be possible
+    console.log('Could not find schedule: ' + schedule.scheduleName);
+  } else {
+    nonselectedSchedules.splice(index, 1);
+    NonselectedScheduleStore.set(nonselectedSchedules);
+  }
 }

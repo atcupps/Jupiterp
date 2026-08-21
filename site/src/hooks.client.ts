@@ -11,8 +11,8 @@ import * as Sentry from '@sentry/sveltekit';
 
 // format-check exempt 2
 Sentry.init({
-	dsn: 'https://24e8b736fa56aa42958e5ea40774e21a@o4507562502782976.ingest.us.sentry.io/4507562512023552',
-	tracesSampleRate: 1.0
+  dsn: 'https://24e8b736fa56aa42958e5ea40774e21a@o4507562502782976.ingest.us.sentry.io/4507562512023552',
+  tracesSampleRate: 1.0,
 });
 
 // If you have a custom error handler, pass it to `handleErrorWithSentry`

@@ -64,25 +64,25 @@ const PACKABLE_SECTION = /^\d{4}$/;
 
 /** Encode `n` as a fixed-width base62 string (left-padded with `0`s). */
 function toBase62(n: number, width: number): string {
-	let out = '';
-	for (let i = 0; i < width; i++) {
-		out = BASE62[n % 62] + out;
-		n = Math.floor(n / 62);
-	}
-	return out;
+  let out = '';
+  for (let i = 0; i < width; i++) {
+    out = BASE62[n % 62] + out;
+    n = Math.floor(n / 62);
+  }
+  return out;
 }
 
 /** Decode a base62 string, or return `-1` if it contains an invalid character. */
 function fromBase62(s: string): number {
-	let n = 0;
-	for (const ch of s) {
-		const digit = BASE62.indexOf(ch);
-		if (digit === -1) {
-			return -1;
-		}
-		n = n * 62 + digit;
-	}
-	return n;
+  let n = 0;
+  for (const ch of s) {
+    const digit = BASE62.indexOf(ch);
+    if (digit === -1) {
+      return -1;
+    }
+    n = n * 62 + digit;
+  }
+  return n;
 }
 
 /**
@@ -92,16 +92,16 @@ function fromBase62(s: string): number {
  * (4-digit numbers, lettered sections, etc.).
  */
 function encodeSegment(courseCode: string, sectionCode: string): string {
-	const course = PACKABLE_COURSE.exec(courseCode);
-	if (course && PACKABLE_SECTION.test(sectionCode)) {
-		const dept = course[1];
-		const number = parseInt(course[2], 10);
-		const suffix = course[3] ? course[3].toUpperCase().charCodeAt(0) - 64 : 0; // A=1..Z=26
-		const section = parseInt(sectionCode, 10);
-		const packed = (number << (SUFFIX_BITS + SECTION_BITS)) | (suffix << SECTION_BITS) | section;
-		return dept + toBase62(packed, PACKED_WIDTH);
-	}
-	return `${courseCode}${FIELD_SEPARATOR}${sectionCode}`;
+  const course = PACKABLE_COURSE.exec(courseCode);
+  if (course && PACKABLE_SECTION.test(sectionCode)) {
+    const dept = course[1];
+    const number = parseInt(course[2], 10);
+    const suffix = course[3] ? course[3].toUpperCase().charCodeAt(0) - 64 : 0; // A=1..Z=26
+    const section = parseInt(sectionCode, 10);
+    const packed = (number << (SUFFIX_BITS + SECTION_BITS)) | (suffix << SECTION_BITS) | section;
+    return dept + toBase62(packed, PACKED_WIDTH);
+  }
+  return `${courseCode}${FIELD_SEPARATOR}${sectionCode}`;
 }
 
 /**
@@ -116,78 +116,78 @@ function encodeSegment(courseCode: string, sectionCode: string): string {
  *          sections to share.
  */
 export function encodeSchedule(selections: ScheduleBlock[]): string {
-	const segments = selections
-		.filter((s): s is ScheduleSelection => 'course' in s && !s.hover)
-		.map((s) => encodeSegment(s.course.courseCode, s.section.sectionCode));
+  const segments = selections
+    .filter((s): s is ScheduleSelection => 'course' in s && !s.hover)
+    .map((s) => encodeSegment(s.course.courseCode, s.section.sectionCode));
 
-	if (segments.length === 0) {
-		return '';
-	}
+  if (segments.length === 0) {
+    return '';
+  }
 
-	return `${SCHEMA_VERSION}${VERSION_SEPARATOR}${segments.join(PAIR_SEPARATOR)}`;
+  return `${SCHEMA_VERSION}${VERSION_SEPARATOR}${segments.join(PAIR_SEPARATOR)}`;
 }
 
 /** Decode a literal `courseCode-sectionCode` segment, or `null` if malformed. */
 function decodeLiteralSegment(token: string): CourseSectionPair | null {
-	// Course codes never contain `-`, so the last `-` splits course/section.
-	const split = token.lastIndexOf(FIELD_SEPARATOR);
-	if (split <= 0 || split === token.length - 1) {
-		return null;
-	}
-	return {
-		courseCode: token.slice(0, split),
-		sectionCode: token.slice(split + 1)
-	};
+  // Course codes never contain `-`, so the last `-` splits course/section.
+  const split = token.lastIndexOf(FIELD_SEPARATOR);
+  if (split <= 0 || split === token.length - 1) {
+    return null;
+  }
+  return {
+    courseCode: token.slice(0, split),
+    sectionCode: token.slice(split + 1),
+  };
 }
 
 /** Decode a `DEPT` + packed-token segment, or `null` if malformed. */
 function decodePackedSegment(token: string): CourseSectionPair | null {
-	const dept = token.slice(0, -PACKED_WIDTH);
-	if (!dept) {
-		return null;
-	}
-	const packed = fromBase62(token.slice(-PACKED_WIDTH));
-	if (packed < 0) {
-		return null;
-	}
+  const dept = token.slice(0, -PACKED_WIDTH);
+  if (!dept) {
+    return null;
+  }
+  const packed = fromBase62(token.slice(-PACKED_WIDTH));
+  if (packed < 0) {
+    return null;
+  }
 
-	const number = (packed >> (SUFFIX_BITS + SECTION_BITS)) & 0x3ff; // 10 bits
-	const suffix = (packed >> SECTION_BITS) & 0x1f; // 5 bits
-	const section = packed & 0x3fff; // 14 bits
-	const suffixLetter = suffix >= 1 && suffix <= 26 ? String.fromCharCode(64 + suffix) : '';
+  const number = (packed >> (SUFFIX_BITS + SECTION_BITS)) & 0x3ff; // 10 bits
+  const suffix = (packed >> SECTION_BITS) & 0x1f; // 5 bits
+  const section = packed & 0x3fff; // 14 bits
+  const suffixLetter = suffix >= 1 && suffix <= 26 ? String.fromCharCode(64 + suffix) : '';
 
-	return {
-		courseCode: dept + String(number).padStart(3, '0') + suffixLetter,
-		sectionCode: String(section).padStart(4, '0')
-	};
+  return {
+    courseCode: dept + String(number).padStart(3, '0') + suffixLetter,
+    sectionCode: String(section).padStart(4, '0'),
+  };
 }
 
 /** v1 payload: literal pairs only. */
 function decodeV1(payload: string): CourseSectionPair[] {
-	const pairs: CourseSectionPair[] = [];
-	for (const token of payload.split(PAIR_SEPARATOR)) {
-		const pair = decodeLiteralSegment(token);
-		if (pair) {
-			pairs.push(pair);
-		}
-	}
-	return pairs;
+  const pairs: CourseSectionPair[] = [];
+  for (const token of payload.split(PAIR_SEPARATOR)) {
+    const pair = decodeLiteralSegment(token);
+    if (pair) {
+      pairs.push(pair);
+    }
+  }
+  return pairs;
 }
 
 /** v2 payload: a segment with `-` is literal; otherwise it is packed. */
 function decodeV2(payload: string): CourseSectionPair[] {
-	const pairs: CourseSectionPair[] = [];
-	for (const token of payload.split(PAIR_SEPARATOR)) {
-		const pair = token.includes(FIELD_SEPARATOR)
-			? decodeLiteralSegment(token)
-			: token.length > PACKED_WIDTH
-				? decodePackedSegment(token)
-				: null;
-		if (pair) {
-			pairs.push(pair);
-		}
-	}
-	return pairs;
+  const pairs: CourseSectionPair[] = [];
+  for (const token of payload.split(PAIR_SEPARATOR)) {
+    const pair = token.includes(FIELD_SEPARATOR)
+      ? decodeLiteralSegment(token)
+      : token.length > PACKED_WIDTH
+        ? decodePackedSegment(token)
+        : null;
+    if (pair) {
+      pairs.push(pair);
+    }
+  }
+  return pairs;
 }
 
 /**
@@ -202,28 +202,28 @@ function decodeV2(payload: string): CourseSectionPair[] {
  * @returns The decoded `CourseSectionPair[]` (possibly empty).
  */
 export function decodeSchedule(param: string): CourseSectionPair[] {
-	if (!param) {
-		return [];
-	}
+  if (!param) {
+    return [];
+  }
 
-	const versionEnd = param.indexOf(VERSION_SEPARATOR);
-	if (versionEnd === -1) {
-		return [];
-	}
+  const versionEnd = param.indexOf(VERSION_SEPARATOR);
+  if (versionEnd === -1) {
+    return [];
+  }
 
-	const version = param.slice(0, versionEnd);
-	const payload = param.slice(versionEnd + 1);
-	if (!payload) {
-		return [];
-	}
+  const version = param.slice(0, versionEnd);
+  const payload = param.slice(versionEnd + 1);
+  if (!payload) {
+    return [];
+  }
 
-	if (version === '1') {
-		return decodeV1(payload);
-	}
-	if (version === '2') {
-		return decodeV2(payload);
-	}
-	return [];
+  if (version === '1') {
+    return decodeV1(payload);
+  }
+  if (version === '2') {
+    return decodeV2(payload);
+  }
+  return [];
 }
 
 /**
@@ -240,38 +240,38 @@ export function decodeSchedule(param: string): CourseSectionPair[] {
  * @returns The reconstructed selections (color numbers assigned by index).
  */
 export function buildSharedSelections(
-	pairs: CourseSectionPair[],
-	courses: Record<string, Course>
+  pairs: CourseSectionPair[],
+  courses: Record<string, Course>
 ): ScheduleSelection[] {
-	const result: ScheduleSelection[] = [];
+  const result: ScheduleSelection[] = [];
 
-	pairs.forEach((pair) => {
-		const course = courses[pair.courseCode];
-		if (!course || !course.sections) {
-			return;
-		}
+  pairs.forEach((pair) => {
+    const course = courses[pair.courseCode];
+    if (!course || !course.sections) {
+      return;
+    }
 
-		const section = course.sections.find((s) => s.sectionCode === pair.sectionCode);
-		if (!section) {
-			return;
-		}
+    const section = course.sections.find((s) => s.sectionCode === pair.sectionCode);
+    if (!section) {
+      return;
+    }
 
-		result.push({
-			course: {
-				courseCode: course.courseCode,
-				name: course.name,
-				minCredits: course.minCredits,
-				maxCredits: course.maxCredits,
-				description: course.description,
-				genEds: course.genEds,
-				conditions: course.conditions
-			},
-			section,
-			hover: false,
-			differences: noDifferences(),
-			colorNumber: result.length
-		});
-	});
+    result.push({
+      course: {
+        courseCode: course.courseCode,
+        name: course.name,
+        minCredits: course.minCredits,
+        maxCredits: course.maxCredits,
+        description: course.description,
+        genEds: course.genEds,
+        conditions: course.conditions,
+      },
+      section,
+      hover: false,
+      differences: noDifferences(),
+      colorNumber: result.length,
+    });
+  });
 
-	return result;
+  return result;
 }

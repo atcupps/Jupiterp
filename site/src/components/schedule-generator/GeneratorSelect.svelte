@@ -5,50 +5,50 @@ https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2026 Andrew Cupps
 -->
 <script lang="ts">
-	import { Dropdown, DropdownItem } from 'flowbite-svelte';
-	import { AngleDownOutline } from 'flowbite-svelte-icons';
+  import { Dropdown, DropdownItem } from 'flowbite-svelte';
+  import { AngleDownOutline } from 'flowbite-svelte-icons';
 
-	export let options: { value: string; label: string }[] = [];
-	export let value: string;
-	export let onChange: (value: string) => void;
-	export let title = '';
-	// Extra classes for the trigger button (e.g. width control).
-	export let buttonClass = '';
+  interface Props {
+    options?: { value: string; label: string }[];
+    value: string;
+    onChange: (value: string) => void;
+    title?: string;
+    // Extra classes for the trigger button (e.g. width control).
+    buttonClass?: string;
+  }
 
-	let open = false;
-	$: selected = options.find((o) => o.value === value);
+  let { options = [], value, onChange, title = '', buttonClass = '' }: Props = $props();
 
-	function choose(next: string) {
-		open = false;
-		onChange(next);
-	}
+  let selected = $derived(options.find((o) => o.value === value));
+  let dropdownOpen = $state(false);
+
+  function choose(next: string) {
+    dropdownOpen = false;
+    onChange(next);
+  }
 </script>
 
 <button
-	type="button"
-	class="flex items-center justify-between gap-1 rounded-md border
-		border-outlineLight bg-bgLight px-2 py-0.5 text-left
-		hover:border-orange dark:border-outlineDark dark:bg-bgDark {buttonClass}"
-	{title}
+  type="button"
+  class="border-outlineLight bg-bgLight hover:border-orange dark:border-outlineDark dark:bg-bgDark flex items-center justify-between gap-1 rounded-md border px-2 py-0.5 text-left {buttonClass}"
+  {title}
 >
-	<span class="truncate">{selected ? selected.label : value}</span>
-	<AngleDownOutline class="h-3 w-3 shrink-0 opacity-70" />
+  <span class="truncate">{selected ? selected.label : value}</span>
+  <AngleDownOutline class="h-3 w-3 shrink-0 opacity-70" />
 </button>
 
 <Dropdown
-	bind:open
-	class="z-30 max-h-60 overflow-y-auto rounded-md border border-outlineLight
-		bg-bgLight shadow-lg dark:border-outlineDark dark:bg-divBorderDark"
+  bind:isOpen={dropdownOpen}
+  class="border-outlineLight bg-bgLight dark:border-outlineDark dark:bg-divBorderDark z-30 max-h-60 overflow-y-auto rounded-md border shadow-lg"
 >
-	{#each options as option}
-		<DropdownItem
-			class="px-3 py-1 text-left text-sm hover:bg-hoverLight dark:hover:bg-hoverDark {option.value ===
-			value
-				? 'font-semibold text-orange'
-				: ''}"
-			on:click={() => choose(option.value)}
-		>
-			{option.label}
-		</DropdownItem>
-	{/each}
+  {#each options as option (option.value)}
+    <DropdownItem
+      class="hover:bg-hoverLight dark:hover:bg-hoverDark px-3 py-1 text-left text-sm {option.value === value
+        ? 'text-orange font-semibold'
+        : ''}"
+      onclick={() => choose(option.value)}
+    >
+      {option.label}
+    </DropdownItem>
+  {/each}
 </Dropdown>

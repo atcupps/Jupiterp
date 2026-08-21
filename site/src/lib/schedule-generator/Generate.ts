@@ -15,13 +15,13 @@ import type { Course, CoursesConfig } from '@jupiterp/jupiterp';
 import { client } from '$lib/client';
 import { ProfsLookupStore } from '../../stores/CoursePlannerStores';
 import {
-	GenerationStateStore,
-	GeneratorConstraintsStore,
-	GeneratorRequirementsStore,
-	GeneratorSortChosenByUserStore,
-	GeneratorSortStore,
-	type GeneratorRequirement,
-	type RelaxationHint
+  GenerationStateStore,
+  GeneratorConstraintsStore,
+  GeneratorRequirementsStore,
+  GeneratorSortChosenByUserStore,
+  GeneratorSortStore,
+  type GeneratorRequirement,
+  type RelaxationHint,
 } from '../../stores/GeneratorStores';
 import { generate } from './ScheduleGenerator';
 import { singleRelaxations } from './Relaxation';
@@ -37,59 +37,56 @@ const RELAXATION_MAX_NODES = 50_000;
 
 /** Fetch full, up-to-date courses (with all sections) by course code. */
 async function fetchFullCourses(courseCodes: Set<string>): Promise<Record<string, Course>> {
-	const config: CoursesConfig = { courseCodes };
-	const response = await client.coursesWithSections(config);
-	if (!response.ok() || !response.data) {
-		throw new Error('Could not load course data');
-	}
-	const record: Record<string, Course> = {};
-	for (const course of response.data) {
-		record[course.courseCode] = course;
-	}
-	return record;
+  const config: CoursesConfig = { courseCodes };
+  const response = await client.coursesWithSections(config);
+  if (!response.ok() || !response.data) {
+    throw new Error('Could not load course data');
+  }
+  const record: Record<string, Course> = {};
+  for (const course of response.data) {
+    record[course.courseCode] = course;
+  }
+  return record;
 }
 
 /** Build a name -> average-rating map from the loaded instructor lookup. */
 function buildRatings(requests: CourseRequest[]): Map<string, number> {
-	const lookup = get(ProfsLookupStore);
-	const ratings = new Map<string, number>();
-	for (const request of requests) {
-		for (const section of request.course.sections ?? []) {
-			for (const name of section.instructors) {
-				if (ratings.has(name)) {
-					continue;
-				}
-				const instructor = lookup[name];
-				const raw = instructor?.average_rating;
-				if (raw != null) {
-					const value = parseFloat(raw);
-					if (!Number.isNaN(value)) {
-						ratings.set(name, value);
-					}
-				}
-			}
-		}
-	}
-	return ratings;
+  const lookup = get(ProfsLookupStore);
+  const ratings = new Map<string, number>();
+  for (const request of requests) {
+    for (const section of request.course.sections ?? []) {
+      for (const name of section.instructors) {
+        if (ratings.has(name)) {
+          continue;
+        }
+        const instructor = lookup[name];
+        // `average_rating` is a JSON number, not a string. It was typed
+        // `string | null` through 0.8.5 and `parseFloat` hid the mismatch; the
+        // 1.0.0 types declare what the API actually sends.
+        const value = instructor?.average_rating;
+        if (value != null && !Number.isNaN(value)) {
+          ratings.set(name, value);
+        }
+      }
+    }
+  }
+  return ratings;
 }
 
 /** Build engine requests from the wishlist using refetched full courses. */
-function buildRequests(
-	requirements: GeneratorRequirement[],
-	fullCourses: Record<string, Course>
-): CourseRequest[] {
-	const requests: CourseRequest[] = [];
-	for (const requirement of requirements) {
-		const course = fullCourses[requirement.course.courseCode];
-		if (course) {
-			requests.push({
-				course,
-				required: requirement.required,
-				pin: requirement.pin
-			});
-		}
-	}
-	return requests;
+function buildRequests(requirements: GeneratorRequirement[], fullCourses: Record<string, Course>): CourseRequest[] {
+  const requests: CourseRequest[] = [];
+  for (const requirement of requirements) {
+    const course = fullCourses[requirement.course.courseCode];
+    if (course) {
+      requests.push({
+        course,
+        required: requirement.required,
+        pin: requirement.pin,
+      });
+    }
+  }
+  return requests;
 }
 
 /**
@@ -97,78 +94,76 @@ function buildRequests(
  * instructor ratings, updating `GenerationStateStore` with the outcome.
  */
 export async function runGeneration(): Promise<void> {
-	const requirements = get(GeneratorRequirementsStore);
-	if (requirements.length === 0) {
-		return;
-	}
-	const constraints = get(GeneratorConstraintsStore);
+  const requirements = get(GeneratorRequirementsStore);
+  if (requirements.length === 0) {
+    return;
+  }
+  const constraints = get(GeneratorConstraintsStore);
 
-	GenerationStateStore.set({ kind: 'loading' });
+  GenerationStateStore.set({ kind: 'loading' });
 
-	let fullCourses: Record<string, Course>;
-	try {
-		const courseCodes = new Set(requirements.map((r) => r.course.courseCode));
-		fullCourses = await fetchFullCourses(courseCodes);
-	} catch (error) {
-		const message = error instanceof Error ? error.message : 'Could not load courses';
-		GenerationStateStore.set({ kind: 'failed', message });
-		return;
-	}
+  let fullCourses: Record<string, Course>;
+  try {
+    const courseCodes = new Set(requirements.map((r) => r.course.courseCode));
+    fullCourses = await fetchFullCourses(courseCodes);
+  } catch (error) {
+    const message = error instanceof Error ? error.message : 'Could not load courses';
+    GenerationStateStore.set({ kind: 'failed', message });
+    return;
+  }
 
-	const missing = requirements
-		.filter((r) => !fullCourses[r.course.courseCode])
-		.map((r) => r.course.courseCode);
-	if (missing.length > 0) {
-		GenerationStateStore.set({
-			kind: 'failed',
-			message: `Couldn't find: ${missing.join(', ')}`
-		});
-		return;
-	}
+  const missing = requirements.filter((r) => !fullCourses[r.course.courseCode]).map((r) => r.course.courseCode);
+  if (missing.length > 0) {
+    GenerationStateStore.set({
+      kind: 'failed',
+      message: `Couldn't find: ${missing.join(', ')}`,
+    });
+    return;
+  }
 
-	const requests = buildRequests(requirements, fullCourses);
-	const ratings = buildRatings(requests);
+  const requests = buildRequests(requirements, fullCourses);
+  const ratings = buildRatings(requests);
 
-	try {
-		const result = generate(requests, constraints, ratings);
+  try {
+    const result = generate(requests, constraints, ratings);
 
-		if (result.schedules.length > 0) {
-			// With optional courses in play, lead with the fullest schedules —
-			// but never override a sort the user picked themselves.
-			if (requests.some((r) => !r.required) && !get(GeneratorSortChosenByUserStore)) {
-				GeneratorSortStore.set('mostClasses');
-			}
-			GenerationStateStore.set({
-				kind: 'done',
-				schedules: result.schedules,
-				truncated: result.truncated,
-				pinNotices: result.pinNotices
-			});
-			return;
-		}
+    if (result.schedules.length > 0) {
+      // With optional courses in play, lead with the fullest schedules —
+      // but never override a sort the user picked themselves.
+      if (requests.some((r) => !r.required) && !get(GeneratorSortChosenByUserStore)) {
+        GeneratorSortStore.set('mostClasses');
+      }
+      GenerationStateStore.set({
+        kind: 'done',
+        schedules: result.schedules,
+        truncated: result.truncated,
+        pinNotices: result.pinNotices,
+      });
+      return;
+    }
 
-		// Nothing fits: explain which single constraint to loosen.
-		const hints: RelaxationHint[] = [];
-		for (const relaxation of singleRelaxations(constraints)) {
-			const rerun = generate(requests, relaxation.constraints, ratings, 50, RELAXATION_MAX_NODES);
-			if (rerun.schedules.length > 0) {
-				hints.push({
-					relaxation,
-					scheduleCount: rerun.schedules.length,
-					truncated: rerun.truncated
-				});
-			}
-		}
-		GenerationStateStore.set({
-			kind: 'noSchedules',
-			hints,
-			coursesWithNoValidSections: result.coursesWithNoValidSections
-		});
-	} catch (error) {
-		console.error('Schedule generation failed:', error);
-		GenerationStateStore.set({
-			kind: 'failed',
-			message: 'Something went wrong while generating schedules.'
-		});
-	}
+    // Nothing fits: explain which single constraint to loosen.
+    const hints: RelaxationHint[] = [];
+    for (const relaxation of singleRelaxations(constraints)) {
+      const rerun = generate(requests, relaxation.constraints, ratings, 50, RELAXATION_MAX_NODES);
+      if (rerun.schedules.length > 0) {
+        hints.push({
+          relaxation,
+          scheduleCount: rerun.schedules.length,
+          truncated: rerun.truncated,
+        });
+      }
+    }
+    GenerationStateStore.set({
+      kind: 'noSchedules',
+      hints,
+      coursesWithNoValidSections: result.coursesWithNoValidSections,
+    });
+  } catch (error) {
+    console.error('Schedule generation failed:', error);
+    GenerationStateStore.set({
+      kind: 'failed',
+      message: 'Something went wrong while generating schedules.',
+    });
+  }
 }
