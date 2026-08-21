@@ -70,6 +70,66 @@ never the default action.
 
   let current = $derived(entries[selected] ?? null);
 
+  // Candidates ticked for a merge, and which of them survives it.
+  //
+  // Several candidates are routinely the same professor: PlanetTerp imported
+  // one spelling, the registrar another, and 0022's slug rewrite surfaced five
+  // such pairs at once. Linking to one of them resolves the queue entry and
+  // leaves the split it was queued for still in place, so the queue looks
+  // shorter without the data being any less broken.
+  let picked = $state<number[]>([]);
+  let keepId = $state<number | null>(null);
+
+  // A merge the database judged to be probably-two-people. Held here rather
+  // than fired at `window.confirm`, because the answer depends on two
+  // PlanetTerp ratings the moderator has to actually read.
+  let mergeWarning = $state<MergeWarning | null>(null);
+
+  interface MergeWarning {
+    detail: string;
+    keep: { id: number; name: string; slug: string; pt_average_rating: number | null };
+    conflicts: { id: number; name: string; slug: string; pt_average_rating: number | null }[];
+  }
+
+  let pickedCandidates = $derived(
+    (current?.candidates ?? []).filter((candidate) => picked.includes(candidate.id))
+  );
+
+  // Moving to another entry has to clear the selection. Carrying ticks across
+  // entries would arm a merge against a professor the moderator is no longer
+  // looking at, and the ids are hidden behind names that may well match.
+  $effect(() => {
+    const id = current?.id;
+    void id;
+    picked = [];
+    keepId = null;
+    mergeWarning = null;
+  });
+
+  function togglePick(candidate: Candidate) {
+    if (picked.includes(candidate.id)) {
+      picked = picked.filter((id) => id !== candidate.id);
+      if (keepId === candidate.id) {
+        keepId = null;
+      }
+    } else {
+      picked = [...picked, candidate.id];
+    }
+    mergeWarning = null;
+
+    // Default the survivor to whichever ticked record carries the most grade
+    // rows. That is the one whose slug the most existing links point at, and
+    // making the safe choice the pre-selected one is worth more here than
+    // making the moderator choose every time -- they can still override it,
+    // and the panel spells out what survives before anything happens.
+    if (keepId === null || !picked.includes(keepId)) {
+      const best = (current?.candidates ?? [])
+        .filter((row) => picked.includes(row.id))
+        .sort((a, b) => b.grade_rows - a.grade_rows || b.sections - a.sections)[0];
+      keepId = best?.id ?? null;
+    }
+  }
+
   $effect(() => {
     const saved = sessionStorage.getItem(STORAGE_KEY);
     if (saved && !authed) {
@@ -160,7 +220,31 @@ never the default action.
     }
   }
 
-  async function decide(action: 'link' | 'create' | 'dismiss', instructorId?: number) {
+  /**
+   * Fold the ticked duplicates into the chosen survivor, then resolve the entry.
+   *
+   * One request, because the database does both halves in one transaction: a
+   * merge that committed without the link would leave this entry open and
+   * naming candidate ids that no longer exist.
+   */
+  function mergePicked(force = false) {
+    if (picked.length < 2 || keepId === null) {
+      return;
+    }
+    void decide(
+      'merge',
+      keepId,
+      picked.filter((id) => id !== keepId),
+      force
+    );
+  }
+
+  async function decide(
+    action: 'link' | 'merge' | 'create' | 'dismiss',
+    instructorId?: number,
+    mergeIds?: number[],
+    force = false
+  ) {
     const entry = current;
     if (!entry || busy) {
       return;
@@ -175,7 +259,11 @@ never the default action.
       // trail looked identical no matter who made it.
       const response = await call(`/v1/admin/instructors/queue/${entry.id}`, {
         method: 'POST',
-        body: JSON.stringify({ action, instructor_id: instructorId }),
+        body: JSON.stringify({
+          action,
+          instructor_id: instructorId,
+          ...(mergeIds ? { merge_ids: mergeIds, force } : {}),
+        }),
       });
       if (!response.ok) {
         const body = await response.json().catch(() => ({}));
@@ -183,7 +271,17 @@ never the default action.
         return;
       }
       const result = await response.json();
+
+      // A refusal, not a failure: nothing was written and the entry is still
+      // open. Show the two ratings and let the moderator decide, rather than
+      // dropping the row as though the merge had happened.
+      if (result.status === 'needs_confirmation') {
+        mergeWarning = result as MergeWarning;
+        return;
+      }
+
       notice = describe(result);
+      mergeWarning = null;
 
       // Drop it locally rather than reloading: the queue is worked top to
       // bottom, and a reload would move everything under the cursor.
@@ -207,6 +305,21 @@ never the default action.
     }
     if (result.status === 'linked') {
       return `Linked to ${result.slug} and moved ${rows}.`;
+    }
+    if (result.status === 'merged') {
+      const merge = (result.merge ?? {}) as Record<string, unknown>;
+      const count = Array.isArray(merge.merged) ? merge.merged.length : 0;
+      const reviews = Number(merge.moved_reviews ?? 0);
+      const parts = [
+        `Merged ${count} duplicate ${count === 1 ? 'record' : 'records'} into ${result.slug}`,
+        `moved ${Number(merge.moved_grade_rows ?? 0).toLocaleString()} grade rows`,
+      ];
+      // Called out separately because it is the part that cannot be rebuilt
+      // from a scrape if it turns out to have been the wrong call.
+      if (reviews > 0) {
+        parts.push(`carried ${reviews} ${reviews === 1 ? 'review' : 'reviews'} over`);
+      }
+      return `${parts.join(', ')}.`;
     }
     if (result.status === 'already_resolved') {
       return 'Someone else already decided that one.';
@@ -246,12 +359,28 @@ never the default action.
       selected = Math.max(selected - 1, 0);
     } else if (event.key === 'x') {
       void decide('dismiss');
+    } else if (event.key === 'm') {
+      mergePicked();
     } else if (/^[1-9]$/.test(event.key)) {
       const candidate = current?.candidates[Number(event.key) - 1];
-      if (candidate) {
+      if (!candidate) {
+        return;
+      }
+      // Numbers keep linking outright while nothing is ticked, which is the
+      // shortcut this screen was worked with. The moment a box is ticked the
+      // moderator is assembling a merge, and having a number key resolve the
+      // entry to one record mid-assembly would silently discard the rest of
+      // the selection -- so from then on the same key toggles instead.
+      if (picked.length > 0) {
+        togglePick(candidate);
+      } else {
         void decide('link', candidate.id);
       }
     }
+  }
+
+  function keepName(): string {
+    return pickedCandidates.find((candidate) => candidate.id === keepId)?.name ?? 'the survivor';
   }
 
   function terms(c: Candidate): string {
@@ -307,8 +436,8 @@ never the default action.
       <div class="text-text-secondary my-2 flex flex-row flex-wrap gap-3 text-sm">
         <span>{entries.length} awaiting a decision</span>
         <span>
-          <kbd>j</kbd>/<kbd>k</kbd> move · <kbd>1</kbd>–<kbd>9</kbd> link · <kbd>n</kbd> new professor ·
-          <kbd>x</kbd> dismiss
+          <kbd>j</kbd>/<kbd>k</kbd> move · <kbd>1</kbd>–<kbd>9</kbd> link, or tick once a box is
+          ticked · <kbd>m</kbd> merge ticked · <kbd>n</kbd> new professor · <kbd>x</kbd> dismiss
         </span>
         <button class="text-orange underline" onclick={() => load()}>Reload</button>
         <a class="text-orange underline" href={resolve('/admin/reviews')}>Review queue</a>
@@ -365,7 +494,20 @@ never the default action.
               {:else}
                 <ul class="my-2 flex flex-col gap-2">
                   {#each current.candidates as candidate, index (candidate.id)}
-                    <li class="border-outline flex flex-row flex-wrap items-center gap-2 rounded-md border p-2">
+                    <li
+                      class="flex flex-row flex-wrap items-center gap-2 rounded-md border p-2 {picked.includes(
+                        candidate.id
+                      )
+                        ? 'border-orange'
+                        : 'border-outline'}"
+                    >
+                      <input
+                        type="checkbox"
+                        class="accent-orange"
+                        checked={picked.includes(candidate.id)}
+                        onchange={() => togglePick(candidate)}
+                        aria-label="Select {candidate.name} to merge"
+                      />
                       <kbd class="text-text-secondary text-xs">{index + 1}</kbd>
                       <a
                         href={resolve('/professor/[slug]', { slug: candidate.slug })}
@@ -396,6 +538,97 @@ never the default action.
                     </li>
                   {/each}
                 </ul>
+              {/if}
+
+              {#if picked.length >= 2}
+                <!--
+                  Shown only once a merge is actually possible. The panel spells
+                  out the survivor and what disappears, because this is the one
+                  action on the screen that destroys records rather than
+                  pointing a name at one: the duplicates' reviews, grades,
+                  aliases and section links are reassigned and the rows are then
+                  deleted, and there is no undo from the merged state.
+                -->
+                <div class="border-orange mt-4 rounded-lg border-2 p-3">
+                  <h3 class="text-sm font-bold">
+                    Merge {picked.length} records into one
+                  </h3>
+                  <p class="text-text-secondary mt-1 text-xs">
+                    Everything the others carry moves to the record you keep, and their rows are
+                    deleted. Their spellings become aliases of the survivor, so the next scrape
+                    will not recreate them.
+                  </p>
+
+                  <fieldset class="mt-3">
+                    <legend class="text-xs font-bold">Keep which record?</legend>
+                    <div class="mt-1 flex flex-col gap-1">
+                      {#each pickedCandidates as candidate (candidate.id)}
+                        <label class="flex flex-row items-center gap-2 text-sm">
+                          <input
+                            type="radio"
+                            name="merge-survivor"
+                            class="accent-orange"
+                            checked={keepId === candidate.id}
+                            onchange={() => (keepId = candidate.id)}
+                          />
+                          <span class={keepId === candidate.id ? 'font-bold' : ''}>
+                            {candidate.name}
+                          </span>
+                          <span class="text-text-secondary text-xs">
+                            {candidate.grade_rows.toLocaleString()} grade rows · {candidate.sections}
+                            sections
+                          </span>
+                        </label>
+                      {/each}
+                    </div>
+                  </fieldset>
+
+                  {#if mergeWarning}
+                    <!--
+                      0023's reasoning, surfaced: two different PlanetTerp
+                      ratings mean students told the two records apart, which is
+                      evidence of two people sharing a name rather than one
+                      person recorded twice.
+                    -->
+                    <div class="border-danger text-danger mt-3 rounded-md border p-2" role="alert">
+                      <p class="text-xs font-bold">Check this one first</p>
+                      <p class="mt-1 text-xs">{mergeWarning.detail}</p>
+                      <ul class="mt-1 text-xs">
+                        <li>
+                          Keeping <b>{mergeWarning.keep.name}</b> — PlanetTerp
+                          {mergeWarning.keep.pt_average_rating}
+                        </li>
+                        {#each mergeWarning.conflicts as conflict (conflict.id)}
+                          <li>
+                            Merging away <b>{conflict.name}</b> — PlanetTerp
+                            {conflict.pt_average_rating}
+                          </li>
+                        {/each}
+                      </ul>
+                    </div>
+                  {/if}
+
+                  <div class="mt-3 flex flex-row flex-wrap gap-2">
+                    <button
+                      class="bg-orange text-bg-primary rounded-md px-3 py-1 text-sm font-bold"
+                      disabled={busy || keepId === null}
+                      onclick={() => mergePicked(mergeWarning !== null)}
+                    >
+                      {mergeWarning ? 'Merge anyway' : `Merge & link to ${keepName()}`}
+                    </button>
+                    <button
+                      class="border-outline rounded-md border px-3 py-1 text-sm"
+                      disabled={busy}
+                      onclick={() => {
+                        picked = [];
+                        keepId = null;
+                        mergeWarning = null;
+                      }}
+                    >
+                      Clear
+                    </button>
+                  </div>
+                </div>
               {/if}
 
               <h3 class="mt-4 text-sm font-bold">Or find someone else</h3>
