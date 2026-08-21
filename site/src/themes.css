@@ -1,6 +1,7 @@
 @import 'tailwindcss';
 
 :root {
+  color-scheme: light;
   /* Brand Colors (Universal) */
   --white: #ffffff;
   --black: #000000;
@@ -29,6 +30,7 @@
 
 /* Dark Mode Overrides */
 .dark {
+  color-scheme: dark;
   --bg-primary: #151922;
   --bg-secondary: #141721;
   --text-primary: #d9dfea;
