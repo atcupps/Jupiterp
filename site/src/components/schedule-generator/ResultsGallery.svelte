@@ -50,16 +50,17 @@ Copyright (C) 2026 Andrew Cupps
     GeneratorSortChosenByUserStore.set(true);
     GeneratorSortStore.set(value as SortCriterion);
   }
+
+  let isDisabled = $derived($GeneratorRequirementsStore.length === 0 || $GenerationStateStore.kind === 'loading');
 </script>
 
 <div class="flex flex-col gap-3">
   <!-- Generate bar -->
   <div class="flex flex-row items-center gap-3">
     <button
-      class="border-orange text-orange hover:bg-orange aria-disabled:hover:text-orange rounded-lg border px-4 py-1.5 font-semibold hover:text-white aria-disabled:pointer-events-none aria-disabled:opacity-40 aria-disabled:hover:bg-transparent"
-      aria-disabled={$GeneratorRequirementsStore.length === 0 || $GenerationStateStore.kind === 'loading'}
-      onclick={() =>
-        !($GeneratorRequirementsStore.length === 0 || $GenerationStateStore.kind === 'loading') && runGeneration()}
+      class="border-orange text-orange hover:bg-orange disabled:hover:text-orange rounded-lg border px-4 py-1.5 font-semibold hover:text-white disabled:opacity-40 disabled:hover:bg-transparent"
+      disabled={isDisabled}
+      onclick={runGeneration}
     >
       {$GenerationStateStore.kind === 'loading' ? 'Generating…' : 'Generate schedules'}
     </button>

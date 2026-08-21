@@ -151,7 +151,7 @@ Copyright (C) 2026 Andrew Cupps
           onchange={(e) => patch({ onlyOpenSeats: e.currentTarget.checked })}
           class="bg-bg-secondary border-text-secondary checked:bg-orange focus:ring-orange rounded-md"
         />
-        <span class="opacity-80">Only open sections</span>
+        <span class="cursor-pointer opacity-80">Only open sections</span>
       </label>
       <!-- Min gap & min credits -->
       <div class="flex flex-row flex-wrap items-center gap-4">

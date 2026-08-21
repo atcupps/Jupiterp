@@ -29,9 +29,9 @@ Copyright (C) 2026 Andrew Cupps
   // 1. Automatically calculate the filter count based on active states safely
   let appliedFiltersCount = $derived(
     (genEdSelections.length > 0 ? 1 : 0) +
-    (minCredits !== defaultMinCredits ? 1 : 0) +
-    (maxCredits !== defaultMaxCredits ? 1 : 0) +
-    (onlyOpenSections ? 1 : 0)
+      (minCredits !== defaultMinCredits ? 1 : 0) +
+      (maxCredits !== defaultMaxCredits ? 1 : 0) +
+      (onlyOpenSections ? 1 : 0)
   );
 
   // 2. Synchronize external store changes without reacting to counter mutations
@@ -103,7 +103,7 @@ Copyright (C) 2026 Andrew Cupps
             <!-- Show/hide gen-eds menu button -->
             <!-- format-check exempt 21 10 -->
             <button
-              class="border-text-secondary hover:bg-hover focus-visible:ring-3 dark:border-border dark:hover:bg-border flex h-full grow flex-row items-center rounded-l-md border text-left"
+              class="border-text-secondary hover:bg-hover focus-visible:ring-3 flex h-full grow flex-row items-center rounded-l-md border text-left"
               title="Show/hide Gen Ed selection menu"
               onclick={() => {
                 showGenEdMenu = !showGenEdMenu;
@@ -149,7 +149,7 @@ Copyright (C) 2026 Andrew Cupps
                     type="checkbox"
                     checked={genEdSelections.some((g) => g.code === genEd.code)}
                     id={'gened-' + genEd.code}
-                    class="bg-bg-secondary border-text-secondary checked:bg-orange focus:ring-orange mr-2 mt-0.5 rounded-md hover:cursor-pointer"
+                    class="bg-bg-secondary border-text-secondary checked:bg-orange focus:ring-orange mr-2 mt-0.5 rounded-md"
                     onclick={() => {
                       if (genEdSelections.some((g) => g.code === genEd.code)) {
                         genEdSelections = genEdSelections.filter((g) => g.code !== genEd.code);
@@ -158,7 +158,7 @@ Copyright (C) 2026 Andrew Cupps
                       }
                     }}
                   />
-                  <label for={'gened-' + genEd.code} class="text-xs hover:cursor-pointer">
+                  <label for={'gened-' + genEd.code} class="cursor-pointer text-xs">
                     {genEd.code} - {genEd.name}
                   </label>
                 </div>
@@ -205,10 +205,10 @@ Copyright (C) 2026 Andrew Cupps
         <input
           type="checkbox"
           id="only-open-sections"
-          class="border-text-secondary bg-border text-orange focus:ring-orange mr-2 rounded-md hover:cursor-pointer"
+          class="border-text-secondary bg-border text-orange focus:ring-orange checked:bg-orange mr-2 rounded-md"
           bind:checked={onlyOpenSections}
         />
-        <label for="only-open-sections" class="text-xs hover:cursor-pointer"> Only show open sections </label>
+        <label for="only-open-sections" class="cursor-pointer text-xs"> Only show open sections </label>
       </div>
     </div>
   {/if}

@@ -159,7 +159,7 @@ Copyright (C) 2026 Andrew Cupps
         contenteditable="true"
         onblur={changeScheduleName}
         title="Schedule name"
-        class="2xl:text-md bg-bg-primary outline-hidden grow cursor-text rounded-sm border-none px-0.5 py-0 text-sm"
+        class="2xl:text-md bg-bg-primary outline-hidden grow rounded-sm border-none px-0.5 py-0 text-sm"
       />
     </div>
     <ScheduleOptionsDropdown />

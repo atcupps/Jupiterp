@@ -93,6 +93,33 @@
     height: 100svh;
     overflow-y: clip;
   }
+
+  /* Clickable interactive elements */
+  button,
+  input[type='button'],
+  input[type='submit'],
+  input[type='reset'],
+  input[type='checkbox'],
+  input[type='radio'] {
+    cursor: pointer;
+  }
+
+  /* Typing inputs (including Number and Time) */
+  input[type='text'],
+  input[type='email'],
+  input[type='password'],
+  input[type='number'],
+  input[type='time'],
+  textarea {
+    cursor: text;
+  }
+
+  /* Disabled state override */
+  button:disabled,
+  input:disabled,
+  textarea:disabled {
+    cursor: not-allowed;
+  }
 }
 
 /* --- Minecraft Module --- */
