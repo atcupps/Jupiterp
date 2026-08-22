@@ -81,11 +81,9 @@ Copyright (C) 2026 Andrew Cupps
   bind:isOpen={dropdownOpen}
 >
   {#each menuItems as item (item.label)}
-    <DropdownItem class="hover:bg-hover p-2 text-sm" onclick={item.onclick}>
-      <span class="flex items-center">
-        <item.icon class="mr-1" height="16" width="16" />
-        {item.label}
-      </span>
+    <DropdownItem class="hover:bg-hover flex items-center p-2 text-sm" onclick={item.onclick}>
+      <item.icon class="mr-1" height="16" width="16" />
+      {item.label}
     </DropdownItem>
   {/each}
 </Dropdown>

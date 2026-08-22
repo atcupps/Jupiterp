@@ -187,8 +187,8 @@ Copyright (C) 2026 Andrew Cupps
   onfocusin={isDesktop ? addHoverSection : null}
   onfocusout={isDesktop ? removeHoverSection : null}
   onblur={isDesktop ? removeHoverSection : null}
-  class="border-outline not-last:border-b grid grid-cols-[auto_1fr] pb-1
-  {sectionAdded ? 'bg-hover' : 'hover:bg-hover/50'}"
+  style="border-top: 1px solid var(--color-outline); display: grid; grid-template-columns: auto 1fr; padding-bottom: 0.25rem;"
+  class={sectionAdded ? 'bg-hover' : 'hover:bg-hover/50'}
 >
   <!-- Section code (click to view) -->
   <!-- onclick triggers addSectionToSchedule and then scrollToTopPlannerTop -->
