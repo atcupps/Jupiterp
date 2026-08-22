@@ -11,9 +11,10 @@
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "lint": "eslint .",
-    "fix": "prettier --write . && eslint . --fix",
+    "fix": "eslint . --fix && prettier --write .",
     "format-check": "node scripts/format-check.js",
-    "test": "jest"
+    "test": "jest",
+    "prepare": "cd .. && husky site/.husky"
   },
   "dependencies": {
     "@jupiterp/jupiterp": "^0.8.5",
@@ -52,9 +53,11 @@
     "eslint-plugin-prettier": "^5.2.3",
     "eslint-plugin-svelte": "^3.22.0",
     "globals": "^17.9.0",
+    "husky": "^9.1.7",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
     "jiti": "^2.7.0",
+    "lint-staged": "^16.4.0",
     "postcss": "^8.5.1",
     "prettier": "^3.9.6",
     "prettier-plugin-svelte": "^4.1.1",

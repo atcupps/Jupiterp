@@ -1,0 +1,2 @@
+cd site
+npx lint-staged --config .lintstagedrc.mjs
