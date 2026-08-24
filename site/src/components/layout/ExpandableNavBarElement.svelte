@@ -5,53 +5,64 @@ https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2026 Andrew Cupps
 -->
 <script lang="ts">
-	import { AngleDownOutline } from 'flowbite-svelte-icons';
+  import { AngleDownOutline } from 'flowbite-svelte-icons';
 
-	export let link: string;
-	export let text: string;
-	export let target: string = '_self';
-	export let isOnPage: boolean = false;
+  interface Props {
+    link: string;
+    text: string;
+    target?: string;
+    isOnPage?: boolean;
+    reduceXMargin?: boolean; // Added to prevent TypeScript errors from parent usage
+    children?: import('svelte').Snippet;
+  }
+
+  let { link, text, target = '_self', isOnPage = false, reduceXMargin = false, children }: Props = $props();
 </script>
 
-<div class="group relative mx-4 px-1 font-normal">
-	<a href={link} {target} class="inline-flex items-center transition">
-		<span
-			class={`${isOnPage ? 'siteLinkUnderline text-orange' : 'text-textLight hover:text-orange dark:text-white dark:hover:text-lightOrange'}`}
-		>
-			{text}
-		</span>
-	</a>
-	<button
-		title="Show more links"
-		class="text-textLight transition hover:text-orange group-focus-within:rotate-180 group-focus-within:text-orange group-hover:rotate-180 group-hover:text-orange dark:text-textDark dark:hover:text-lightOrange group-focus-within:dark:text-lightOrange group-hover:dark:text-lightOrange"
-	>
-		<AngleDownOutline class="ml h-3.5 w-3.5" />
-	</button>
-	<div
-		class="transition-visibility invisible absolute top-full flex min-w-12
-                translate-x-[-12%] flex-col gap-2 rounded-lg border-2
-                border-divBorderLight bg-bgLight p-2 group-focus-within:visible
-                group-hover:visible dark:border-divBorderDark dark:bg-bgDark"
-	>
-		<slot />
-	</div>
+<div class={`${reduceXMargin ? 'mx-1' : 'mx-4'} group relative flex px-1 font-normal`}>
+  <!-- ERROR: Navigation without resolve as link can be external AND internal -->
+  <!-- eslint-disable svelte/no-navigation-without-resolve -->
+  <a
+    href={link}
+    {target}
+    rel={target === '_blank' ? 'noopener noreferrer' : 'canonical'}
+    class="inline-flex items-center hover:transition-colors"
+  >
+    <span
+      class={`${isOnPage ? 'siteLinkUnderline text-orange' : 'text-text-primary hover:text-orange dark:hover:text-light-orange'}`}
+    >
+      {text}
+    </span>
+  </a>
+  <!-- eslint-enable svelte/no-navigation-without-resolve -->
+  <button
+    title="Show more links"
+    class="text-text-primary hover:text-orange group-focus-within:text-orange group-hover:text-orange dark:hover:text-light-orange group-focus-within:dark:text-light-orange group-hover:dark:text-light-orange -mr-2 px-1 transition-transform group-focus-within:rotate-180 group-hover:rotate-180"
+  >
+    <AngleDownOutline class="h-4 w-4" />
+  </button>
+  <div
+    class="transition-visibility border-border bg-bg-primary invisible absolute top-full flex min-w-12 translate-x-[-12%] flex-col gap-2 rounded-lg border-2 p-2 group-focus-within:visible group-hover:visible"
+  >
+    {@render children?.()}
+  </div>
 </div>
 
 <style>
-	.siteLinkUnderline {
-		display: inline-block;
-		position: relative;
-	}
+  .siteLinkUnderline {
+    display: inline-block;
+    position: relative;
+  }
 
-	.siteLinkUnderline::after {
-		content: '';
-		position: absolute;
-		width: 100%;
-		height: 2px;
-		bottom: 0;
-		left: 0;
-		transform: scaleX(95%);
-		transform-origin: center;
-		background-color: #f6743c;
-	}
+  .siteLinkUnderline::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    transform: scaleX(95%);
+    transform-origin: center;
+    background-color: var(--color-orange);
+  }
 </style>

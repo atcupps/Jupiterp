@@ -5,113 +5,85 @@ https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2026 Andrew Cupps
  -->
 <script lang="ts">
-	import { Dropdown, DropdownItem } from 'flowbite-svelte';
-	import {
-		DotsVerticalOutline,
-		TrashBinOutline,
-		FileCopyOutline,
-		PlusOutline
-	} from 'flowbite-svelte-icons';
-	import {
-		AddCustomEventStore,
-		CurrentScheduleStore,
-		NonselectedScheduleStore
-	} from '../../../stores/CoursePlannerStores';
-	import { uniqueScheduleName } from '$lib/course-planner/ScheduleSelector';
-	import type { ScheduleBlock, StoredSchedule } from '../../../types';
+  import { Dropdown, DropdownItem } from 'flowbite-svelte';
+  import { DotsVerticalOutline, TrashBinOutline, FileCopyOutline, PlusOutline } from 'flowbite-svelte-icons';
+  import {
+    AddCustomEventStore,
+    CurrentScheduleStore,
+    NonselectedScheduleStore,
+  } from '../../../stores/CoursePlannerStores';
+  import { uniqueScheduleName } from '$lib/course-planner/ScheduleSelector';
 
-	let dropdownOpen = false;
+  let dropdownOpen = $state(false);
 
-	let currentScheduleName: string;
-	let currentScheduleSelections: ScheduleBlock[];
-	CurrentScheduleStore.subscribe((stored) => {
-		currentScheduleName = stored.scheduleName;
-		currentScheduleSelections = stored.selections;
-	});
+  // Core operations using modern $store reactive syntax
+  function addCustomEvent() {
+    dropdownOpen = false;
+    AddCustomEventStore.set(true);
+  }
 
-	let nonselectedSchedules: StoredSchedule[];
-	NonselectedScheduleStore.subscribe((stored) => {
-		nonselectedSchedules = stored;
-	});
+  function deleteCurrentSchedule() {
+    dropdownOpen = false;
 
-	function deleteCurrentSchedule() {
-		dropdownOpen = false;
+    if ($NonselectedScheduleStore.length > 0) {
+      // Create a shallow copy to safely update state without direct mutation side-effects
+      const updatedNonselected = [...$NonselectedScheduleStore];
+      const nextSchedule = updatedNonselected.shift()!; // Removes and captures first item
 
-		if (nonselectedSchedules.length > 0) {
-			currentScheduleName = nonselectedSchedules[0].scheduleName;
-			currentScheduleSelections = nonselectedSchedules[0].selections;
-			nonselectedSchedules.splice(0, 1);
+      CurrentScheduleStore.set({
+        scheduleName: nextSchedule.scheduleName,
+        selections: nextSchedule.selections,
+      });
+      NonselectedScheduleStore.set(updatedNonselected);
+    } else {
+      CurrentScheduleStore.set({
+        scheduleName: 'My schedule',
+        selections: [],
+      });
+    }
+  }
 
-			CurrentScheduleStore.set({
-				scheduleName: currentScheduleName,
-				selections: currentScheduleSelections
-			});
+  function duplicateSchedule() {
+    dropdownOpen = false;
 
-			NonselectedScheduleStore.set(nonselectedSchedules);
-		} else {
-			currentScheduleName = 'My schedule';
-			currentScheduleSelections = [];
+    const currentName = $CurrentScheduleStore.scheduleName;
+    const currentSelections = $CurrentScheduleStore.selections;
 
-			CurrentScheduleStore.set({
-				scheduleName: currentScheduleName,
-				selections: currentScheduleSelections
-			});
-		}
-	}
+    const updatedNonselected = [
+      { scheduleName: currentName, selections: currentSelections },
+      ...$NonselectedScheduleStore,
+    ];
 
-	function duplicateSchedule() {
-		dropdownOpen = false;
+    const newName = uniqueScheduleName(currentName, 'Copy of ', updatedNonselected);
 
-		nonselectedSchedules = [
-			{
-				scheduleName: currentScheduleName,
-				selections: currentScheduleSelections
-			},
-			...nonselectedSchedules
-		];
-		currentScheduleName = uniqueScheduleName(currentScheduleName, 'Copy of ', nonselectedSchedules);
+    NonselectedScheduleStore.set(updatedNonselected);
+    CurrentScheduleStore.set({
+      scheduleName: newName,
+      selections: currentSelections,
+    });
+  }
 
-		NonselectedScheduleStore.set(nonselectedSchedules);
-		CurrentScheduleStore.set({
-			scheduleName: currentScheduleName,
-			selections: currentScheduleSelections
-		});
-	}
-
-	function addCustomEvent() {
-		dropdownOpen = false;
-		AddCustomEventStore.set(true);
-	}
+  // JSON configuration array mapping actions and metadata
+  const menuItems = [
+    { label: 'Add Event', icon: PlusOutline, onclick: addCustomEvent },
+    { label: 'Delete', icon: TrashBinOutline, onclick: deleteCurrentSchedule },
+    { label: 'Duplicate', icon: FileCopyOutline, onclick: duplicateSchedule },
+  ];
 </script>
 
-<button class="rounded-md hover:bg-hoverLight dark:hover:bg-hoverDark" title="Schedule options">
-	<DotsVerticalOutline class="h-5 w-5" />
+<button class="hover:bg-hover rounded-md px-0.5" title="Schedule options">
+  <DotsVerticalOutline class="h-5 w-5" />
 </button>
 
-<Dropdown class="w-24 rounded-md bg-bgLight dark:bg-divBorderDark" bind:open={dropdownOpen}>
-	<DropdownItem
-		class="flex items-center justify-start px-2 hover:bg-hoverLight dark:hover:bg-hoverDark"
-		title="Add custom event to schedule"
-		on:click={addCustomEvent}
-	>
-		<PlusOutline class="z-50 mr-1 h-3 w-3" /> Add Event
-	</DropdownItem>
-
-	<DropdownItem
-		class="flex items-center justify-start
-                            px-2 hover:bg-hoverLight dark:hover:bg-hoverDark"
-		title="Delete current schedule"
-		on:click={deleteCurrentSchedule}
-	>
-		<TrashBinOutline class="z-50 mr-1 h-3 w-3" /> Delete
-	</DropdownItem>
-
-	<DropdownItem
-		class="flex items-center justify-start
-                            px-2 hover:bg-hoverLight dark:hover:bg-hoverDark"
-		title="Duplicate current schedule"
-		on:click={duplicateSchedule}
-	>
-		<FileCopyOutline class="z-50 mr-1 h-3 w-3" /> Duplicate
-	</DropdownItem>
+<!-- TEMP FIX: Added "-translate-y-2" to fix dropdown positioning -->
+<Dropdown
+  class="bg-border text-text-primary border-outline -translate-y-2 list-none rounded-md border shadow-lg"
+  bind:isOpen={dropdownOpen}
+>
+  {#each menuItems as item (item.label)}
+    <DropdownItem class="hover:bg-hover flex items-center p-2 text-sm" onclick={item.onclick}>
+      <item.icon class="mr-1" height="16" width="16" />
+      {item.label}
+    </DropdownItem>
+  {/each}
 </Dropdown>

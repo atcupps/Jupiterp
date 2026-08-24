@@ -14,6 +14,6 @@
  * @returns A `string` incorporating `slug` into a PlanetTerp link
  */
 export function ptLinkFromSlug(slug: string): string {
-	const link = 'https://planetterp.com/professor/' + slug;
-	return link;
+  const link = 'https://planetterp.com/professor/' + slug;
+  return link;
 }

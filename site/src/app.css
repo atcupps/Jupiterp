@@ -1,85 +1,174 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+@import './themes.css';
 
-/* using https://github.com/IdreesInc/Minecraft-Font for minecraft font */
+@plugin '@tailwindcss/forms';
+
+/* --- Fonts (latin only since only English is supported) --- */
+/* If latin-ext is needed, please add from https://fonts.googleapis.com/css2?family=Cabin&display=swap */
 @font-face {
-	font-family: 'Minecraft';
-	src: url('https://cdn.jsdelivr.net/gh/IdreesInc/Minecraft-Font@master/Minecraft.otf')
-		format('opentype');
-	font-weight: normal;
-	font-style: normal;
+  font-family: 'Cabin';
+  font-style: normal;
+  font-weight: 400 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/cabin/v35/u-4i0qWljRw-PfU81xCKCpdpbgZJl6Xvqdns.woff2) format('woff2');
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC,
+    U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-html {
-	/* prevents pull-to-refresh */
-	overscroll-behavior: none;
+@font-face {
+  font-family: 'Cabin';
+  font-style: italic;
+  font-weight: 400 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/cabin/v35/u-4g0qWljRw-Pd815fNqc8T_wAFcX-c37OnuHXg.woff2) format('woff2');
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC,
+    U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-body {
-	height: 100svh;
-	overscroll-behavior: none;
-	font-family: 'Cabin', Arial, sans-serif;
+:root {
+  font-family: 'Cabin', Arial, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
 }
 
-html.minecraft body,
-html.minecraft * {
-	font-family: 'Minecraft', sans-serif;
+/* --- Theme Configuration --- */
+@custom-variant dark (&:is(.dark *));
+@custom-variant minecraft (&:is(.minecraft *));
+
+@theme inline {
+  /* System Colors */
+  --color-transparent: transparent;
+  --color-current: currentColor;
+
+  /* Brand Colors (Universal) */
+  --color-white: var(--white);
+  --color-black: var(--black);
+  --color-orange: var(--orange);
+  --color-light-orange: var(--light-orange);
+  --color-mid-gray: var(--mid-gray);
+
+  /* Semantic Colors */
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-border: var(--border);
+  --color-outline: var(--outline);
+  --color-hover: var(--hover);
+
+  /* Animations */
+  --animate-fade-out: fadeOut 0.75s forwards;
+
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+      visibility: visible;
+    }
+    to {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
 }
 
+/* --- Base Layout --- */
+@layer base {
+  * {
+    @apply border-border outline-orange/50;
+  }
+
+  html {
+    @apply min-w-96 scroll-smooth;
+  }
+
+  body {
+    @apply bg-bg-primary text-text-primary m-0 p-0 text-left text-sm leading-normal xl:text-base;
+    word-wrap: break-word;
+    font-synthesis-weight: none;
+    text-rendering: optimizeLegibility;
+    height: 100svh;
+    overflow-y: clip;
+  }
+
+  /* Clickable interactive elements */
+  button,
+  input[type='button'],
+  input[type='submit'],
+  input[type='reset'],
+  input[type='checkbox'],
+  input[type='radio'] {
+    cursor: pointer;
+  }
+
+  /* Typing inputs (including Number and Time) */
+  input[type='text'],
+  input[type='email'],
+  input[type='password'],
+  input[type='number'],
+  input[type='time'],
+  textarea {
+    cursor: text;
+  }
+
+  /* Disabled state override */
+  button:disabled,
+  input:disabled,
+  textarea:disabled {
+    cursor: not-allowed;
+  }
+}
+
+/* --- Minecraft Module --- */
 @layer utilities {
-	.chain-scroll-only {
-		@apply max-lg:overscroll-none;
-	}
+  @font-face {
+    font-family: 'Minecraft';
+    src: url('https://cdn.jsdelivr.net/gh/IdreesInc/Minecraft-Font@master/Minecraft.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+}
 
-	/* Please apply "custom-scrollbar" class for scrollable elements 
-    (elements with class of overflow-scroll or overflow-auto) */
-	.custom-scrollbar {
-		scrollbar-width: thin;
-		scrollbar-color: #cccccc white;
+@utility minecraft {
+  font-family: 'Minecraft', 'Cabin', sans-serif !important;
 
-		&::-webkit-scrollbar {
-			width: 4px;
-		}
+  & * {
+    font-family: 'Minecraft', 'Cabin', sans-serif !important;
+  }
+}
 
-		&::-webkit-scrollbar-track {
-			background: white;
-		}
+/* --- Layout & Scroll Utilities --- */
+@utility chain-scroll-only {
+  @apply max-lg:overscroll-none;
+}
 
-		&::-webkit-scrollbar-thumb {
-			background-color: #cccccc;
-			border-radius: 8px;
-		}
+@utility no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
 
-		&::-webkit-scrollbar-corner {
-			background: rgba(0, 0, 0, 0);
-		}
-	}
+@utility custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border) var(--color-bg-primary);
 
-	html.dark .custom-scrollbar {
-		scrollbar-width: thin;
-		scrollbar-color: #3f475a #151922;
-
-		&::-webkit-scrollbar {
-			width: 4px;
-		}
-
-		&::-webkit-scrollbar-track {
-			background: #151922;
-		}
-
-		&::-webkit-scrollbar-thumb {
-			background-color: #3f475a;
-			border-radius: 8px;
-		}
-	}
-
-	.no-scrollbar {
-		scrollbar-width: none;
-		-ms-overflow-style: none;
-
-		&::-webkit-scrollbar {
-			display: none;
-		}
-	}
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+  &::-webkit-scrollbar-track {
+    background: var(--color-bg-primary);
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--color-border);
+    border-radius: 8px;
+  }
+  &::-webkit-scrollbar-corner {
+    background: rgba(0, 0, 0, 0);
+  }
 }

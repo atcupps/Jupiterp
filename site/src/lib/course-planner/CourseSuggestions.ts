@@ -16,9 +16,9 @@
  * @param input Raw search input string
  */
 export function getProfPartial(input: string): string | null {
-	const withoutQuoted = input.replace(/@"[^"]*"/g, '');
-	const match = /@(\S*)/.exec(withoutQuoted);
-	return match && match[1].length >= 1 ? match[1] : null;
+  const withoutQuoted = input.replace(/@"[^"]*"/g, '');
+  const match = /@(\S*)/.exec(withoutQuoted);
+  return match && match[1].length >= 1 ? match[1] : null;
 }
 
 /**
@@ -29,9 +29,9 @@ export function getProfPartial(input: string): string | null {
  * @param name The standardized professor name to insert
  */
 export function applyProfessorSelection(input: string, name: string): string {
-	const partial = getProfPartial(input);
-	if (partial === null) return input;
-	const token = `@${partial}`;
-	const replacement = name.includes(' ') ? `@"${name}"` : `@${name}`;
-	return input.replace(token, replacement);
+  const partial = getProfPartial(input);
+  if (partial === null) return input;
+  const token = `@${partial}`;
+  const replacement = name.includes(' ') ? `@"${name}"` : `@${name}`;
+  return input.replace(token, replacement);
 }

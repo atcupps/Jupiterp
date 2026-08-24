@@ -12,10 +12,10 @@
  */
 
 import {
-	readStoredCurrentSchedule,
-	readStoredNonselectedSchedules,
-	saveCurrentSchedule,
-	saveNonselectedSchedules
+  readStoredCurrentSchedule,
+  readStoredNonselectedSchedules,
+  saveCurrentSchedule,
+  saveNonselectedSchedules,
 } from '../course-planner/SchedulePersistence';
 import { uniqueNumberedName } from '../course-planner/ScheduleSelector';
 import type { GeneratedSchedule } from './types';
@@ -26,19 +26,19 @@ import type { GeneratedSchedule } from './types';
  * any selections. Returns the name assigned to the new schedule.
  */
 export function applyGeneratedSchedule(schedule: GeneratedSchedule): string {
-	const current = readStoredCurrentSchedule();
-	const nonselected = readStoredNonselectedSchedules();
+  const current = readStoredCurrentSchedule();
+  const nonselected = readStoredNonselectedSchedules();
 
-	// Preserve the existing active schedule alongside the others.
-	const preserved = current.selections.length > 0 ? [current, ...nonselected] : nonselected;
+  // Preserve the existing active schedule alongside the others.
+  const preserved = current.selections.length > 0 ? [current, ...nonselected] : nonselected;
 
-	// Name the new schedule against what is actually being kept, so a discarded
-	// empty active schedule never forces an unnecessary suffix.
-	const name = uniqueNumberedName('Generated', preserved, true);
+  // Name the new schedule against what is actually being kept, so a discarded
+  // empty active schedule never forces an unnecessary suffix.
+  const name = uniqueNumberedName('Generated', preserved, true);
 
-	// The engine already assigned each selection its color number.
-	saveCurrentSchedule({ scheduleName: name, selections: schedule.selections });
-	saveNonselectedSchedules(preserved);
+  // The engine already assigned each selection its color number.
+  saveCurrentSchedule({ scheduleName: name, selections: schedule.selections });
+  saveNonselectedSchedules(preserved);
 
-	return name;
+  return name;
 }

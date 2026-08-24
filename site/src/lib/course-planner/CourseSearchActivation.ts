@@ -10,76 +10,66 @@
 import { tick } from 'svelte';
 
 export interface CourseSearchActivationControllerOptions {
-	isDesktop: () => boolean;
-	blockSearchInputPointer: () => boolean;
-	setBlockSearchInputPointer: (value: boolean) => void;
-	searchActivationInProgress: () => boolean;
-	setSearchActivationInProgress: (value: boolean) => void;
-	suppressSearchBlurReset: () => boolean;
-	setSuppressSearchBlurReset: (value: boolean) => void;
-	searchInputElement: () => HTMLInputElement | null;
-	keyboardPrimeElement: () => HTMLInputElement | null;
-	scrollToSearch: () => void;
+  isDesktop: () => boolean;
+  blockSearchInputPointer: () => boolean;
+  setBlockSearchInputPointer: (value: boolean) => void;
+  searchActivationInProgress: () => boolean;
+  setSearchActivationInProgress: (value: boolean) => void;
+  suppressSearchBlurReset: () => boolean;
+  setSuppressSearchBlurReset: (value: boolean) => void;
+  searchInputElement: () => HTMLInputElement | null;
+  keyboardPrimeElement: () => HTMLInputElement | null;
+  scrollToSearch: () => void;
 }
 
 function waitForScrollToFinish(delayMs = 250) {
-	return new Promise<void>((resolve) => {
-		setTimeout(() => resolve(), delayMs);
-	});
+  return new Promise<void>((resolve) => {
+    setTimeout(() => resolve(), delayMs);
+  });
 }
 
 function primeMobileKeyboard(keyboardPrimeElement: HTMLInputElement | null) {
-	keyboardPrimeElement?.focus({ preventScroll: true });
+  keyboardPrimeElement?.focus({ preventScroll: true });
 }
 
-export function createCourseSearchActivationController(
-	options: CourseSearchActivationControllerOptions
-) {
-	function canActivateSearchInput() {
-		return (
-			!options.isDesktop() &&
-			options.blockSearchInputPointer() &&
-			!options.searchActivationInProgress()
-		);
-	}
+export function createCourseSearchActivationController(options: CourseSearchActivationControllerOptions) {
+  function canActivateSearchInput() {
+    return !options.isDesktop() && options.blockSearchInputPointer() && !options.searchActivationInProgress();
+  }
 
-	async function activateSearchInput() {
-		if (!canActivateSearchInput()) {
-			return;
-		}
+  async function activateSearchInput() {
+    if (!canActivateSearchInput()) {
+      return;
+    }
 
-		options.setSearchActivationInProgress(true);
-		options.setSuppressSearchBlurReset(true);
-		options.scrollToSearch();
-		primeMobileKeyboard(options.keyboardPrimeElement());
-		await waitForScrollToFinish();
-		options.setBlockSearchInputPointer(false);
-		await tick();
-		options.searchInputElement()?.focus({ preventScroll: true });
-		options.setSearchActivationInProgress(false);
-	}
+    options.setSearchActivationInProgress(true);
+    options.setSuppressSearchBlurReset(true);
+    options.scrollToSearch();
+    primeMobileKeyboard(options.keyboardPrimeElement());
+    await waitForScrollToFinish();
+    options.setBlockSearchInputPointer(false);
+    await tick();
+    options.searchInputElement()?.focus({ preventScroll: true });
+    options.setSearchActivationInProgress(false);
+  }
 
-	function handleSearchFocus(event: FocusEvent) {
-		if (
-			!options.isDesktop() &&
-			options.blockSearchInputPointer() &&
-			!options.searchActivationInProgress()
-		) {
-			event.preventDefault();
-			void activateSearchInput();
-		}
-	}
+  function handleSearchFocus(event: FocusEvent) {
+    if (!options.isDesktop() && options.blockSearchInputPointer() && !options.searchActivationInProgress()) {
+      event.preventDefault();
+      void activateSearchInput();
+    }
+  }
 
-	function handleSearchBlur() {
-		if (!options.isDesktop() && !options.suppressSearchBlurReset()) {
-			options.setBlockSearchInputPointer(true);
-		}
-		options.setSuppressSearchBlurReset(false);
-	}
+  function handleSearchBlur() {
+    if (!options.isDesktop() && !options.suppressSearchBlurReset()) {
+      options.setBlockSearchInputPointer(true);
+    }
+    options.setSuppressSearchBlurReset(false);
+  }
 
-	return {
-		activateSearchInput,
-		handleSearchFocus,
-		handleSearchBlur
-	};
+  return {
+    activateSearchInput,
+    handleSearchFocus,
+    handleSearchBlur,
+  };
 }

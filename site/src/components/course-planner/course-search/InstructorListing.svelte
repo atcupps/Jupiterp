@@ -5,101 +5,111 @@ https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2026 Andrew Cupps
 -->
 <script lang="ts">
-	import type { Instructor } from '@jupiterp/jupiterp';
-	import { ptLinkFromSlug } from '../../../lib/course-planner/Professors';
-	import { ProfsLookupStore } from '../../../stores/CoursePlannerStores';
+  import { ptLinkFromSlug } from '../../../lib/course-planner/Professors';
+  import { ProfsLookupStore } from '../../../stores/CoursePlannerStores';
 
-	export let instructor: string = 'No instructor';
+  // 1. Properly define the component props type contract
+  interface Props {
+    instructor?: string;
+    profsHover: boolean;
+    removeHoverSection: () => void;
+  }
 
-	let profs: Record<string, Instructor>;
-	ProfsLookupStore.subscribe((lookup) => {
-		profs = lookup;
-	});
+  // eslint-disable-next-line no-useless-assignment
+  let { instructor = 'No instructor', profsHover = $bindable(), removeHoverSection }: Props = $props();
 
-	// Convert rating to a percentage for CSS
-	function convertRating(rating: string | null): number {
-		if (rating == null) {
-			throw Error('Rating was null in `convertRating`; this should never happen!');
-		}
-		return parseFloat(rating) * 20;
-	}
+  let profs = $derived($ProfsLookupStore);
 
-	function handleLinkClick(event: MouseEvent) {
-		// Prevent the event from propagating to the button
-		event.stopPropagation();
-	}
+  let currentProf = $derived.by(() => {
+    const name = instructor ?? 'No instructor';
+    const profData = profs?.[name];
 
-	export let profsHover: boolean;
-	export let removeHoverSection: () => void;
+    if (profData && profData.average_rating != null) {
+      return {
+        name,
+        slug: profData.slug,
+        rating: profData.average_rating,
+        starsStyle: `--rating: ${convertRating(profData.average_rating)}%`,
+      };
+    }
+    return null;
+  });
+
+  // Convert rating to a percentage for CSS
+  function convertRating(rating: string | null): number {
+    if (rating == null) {
+      throw Error('Rating was null in `convertRating`; this should never happen!');
+    }
+    return parseFloat(rating) * 20;
+  }
+
+  function handleLinkClick(event: MouseEvent) {
+    // Prevent the event from propagating to the button
+    event.stopPropagation();
+  }
 </script>
 
 <div class="text-sm xl:text-base">
-	{#if instructor in profs && profs[instructor].average_rating != null}
-		<a
-			href={ptLinkFromSlug(profs[instructor].slug)}
-			target="_blank"
-			class="inline-flex flex-wrap rounded-md
-                            text-orange underline transition
-                            hover:bg-hoverLight hover:dark:bg-hoverDark"
-			on:mouseenter={() => {
-				profsHover = true;
-				removeHoverSection();
-			}}
-			on:mouseleave={() => {
-				profsHover = false;
-				removeHoverSection();
-			}}
-			on:click={handleLinkClick}
-			title="View Instructor on PlanetTerp"
-		>
-			{instructor}
-			<!-- format-check exempt 3 -->
-			<svg
-				xmlns="http://www.w3.org/2000/svg"
-				viewBox="0 0 16 16"
-				fill="currentColor"
-				class="mt-[0.25rem] h-3 w-3"
-			>
-				<path
-					d="M6.22 8.72a.75.75 0 0 0 1.06 1.06l5.22-5.22v1.69a.75.75 0 0 0 1.5 0v-3.5a.75.75 0 0 0-.75-.75h-3.5a.75.75 0 0 0 0 1.5h1.69L6.22 8.72Z"
-				/>
-				<path
-					d="M3.5 6.75c0-.69.56-1.25 1.25-1.25H7A.75.75 0 0 0 7 4H4.75A2.75 2.75 0 0 0 2 6.75v4.5A2.75 2.75 0 0 0 4.75 14h4.5A2.75 2.75 0 0 0 12 11.25V9a.75.75 0 0 0-1.5 0v2.25c0 .69-.56 1.25-1.25 1.25h-4.5c-.69 0-1.25-.56-1.25-1.25v-4.5Z"
-				/>
-			</svg>
-		</a>
-		<span
-			style="--rating: {convertRating(profs[instructor].average_rating) + '%'}"
-			class="stars align-[2px] text-[8px] font-bold text-orange xl:text-[10px] 2xl:text-base"
-			title="{profs[instructor].average_rating} out of 5"
-		>
-			★★★★★
-		</span>
-	{:else}
-		{instructor}
-	{/if}
+  {#if currentProf}
+    <a
+      href={ptLinkFromSlug(currentProf.slug)}
+      rel="external noopener noreferrer"
+      target="_blank"
+      class="text-orange hover:bg-hover inline-flex flex-wrap rounded-md underline"
+      onmouseenter={() => {
+        profsHover = true; // Mutating properties directly updates parent binding
+        removeHoverSection();
+      }}
+      onmouseleave={() => {
+        profsHover = false;
+        removeHoverSection();
+      }}
+      onclick={handleLinkClick}
+      title="View Instructor on PlanetTerp"
+    >
+      {currentProf.name}
+      <!-- format-check exempt 3 -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="mt-1 h-3 w-3">
+        <path
+          d="M6.22 8.72a.75.75 0 0 0 1.06 1.06l5.22-5.22v1.69a.75.75 0 0 0 1.5 0v-3.5a.75.75 0 0 0-.75-.75h-3.5a.75.75 0 0 0 0 1.5h1.69L6.22 8.72Z"
+        />
+        <path
+          d="M3.5 6.75c0-.69.56-1.25 1.25-1.25H7A.75.75 0 0 0 7 4H4.75A2.75 2.75 0 0 0 2 6.75v4.5A2.75 2.75 0 0 0 4.75 14h4.5A2.75 2.75 0 0 0 12 11.25V9a.75.75 0 0 0-1.5 0v2.25c0 .69-.56 1.25-1.25 1.25h-4.5c-.69 0-1.25-.56-1.25-1.25v-4.5Z"
+        />
+      </svg>
+    </a>
+    <span
+      style={currentProf.starsStyle}
+      class="stars text-orange text-xs font-bold xl:text-sm 2xl:text-base"
+      title="{currentProf.rating} out of 5"
+    >
+      ★★★★★
+    </span>
+  {:else}
+    {instructor ?? 'No instructor'}
+  {/if}
 </div>
 
 <style>
-	.stars {
-		background: rgb(246, 116, 60);
-		background: linear-gradient(
-			90deg,
-			rgba(246, 116, 60, 1) 0%,
-			rgba(246, 116, 60, 1) var(--rating),
-			rgba(115, 53, 26, 1) var(--rating),
-			rgba(115, 53, 26, 1) 100%
-		);
+  .stars {
+    background: rgb(246, 116, 60);
+    background: linear-gradient(
+      90deg,
+      rgba(246, 116, 60, 1) 0%,
+      rgba(246, 116, 60, 1) var(--rating),
+      rgba(115, 53, 26, 1) var(--rating),
+      rgba(115, 53, 26, 1) 100%
+    );
 
-		/* Set the background size and repeat properties. */
-		background-size: 100%;
-		background-repeat: repeat;
+    /* Set the background size and repeat properties. */
+    background-size: 100%;
+    background-repeat: repeat;
 
-		/* Use the text as a mask for the background. */
-		/* This will show the gradient as a text color. */
-		background-clip: text;
-		-webkit-text-fill-color: transparent;
-		-moz-background-clip: text;
-		-moz-text-fill-color: transparent;
-	}
+    /* Use the text as a mask for the background. */
+    /* This will show the gradient as a text color. */
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+  }
 </style>

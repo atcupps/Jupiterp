@@ -6,32 +6,30 @@ Copyright (C) 2026 Andrew Cupps
 -->
 
 <script lang="ts">
-	import { page } from '$app/stores';
+  import { page } from '$app/state';
 
-	$: {
-		if (typeof window !== 'undefined') {
-			const gtagMaybe = (window as Window & { gtag?: (...args: unknown[]) => void }).gtag;
-			if (typeof gtagMaybe !== 'undefined') {
-				gtagMaybe('config', 'MEASUREMENT_ID', {
-					page_title: document.title,
-					page_path: $page.url.pathname
-				});
-			}
-		}
-	}
+  $effect(() => {
+    const gtagMaybe = (window as Window & { gtag?: (...args: unknown[]) => void }).gtag;
+    if (typeof gtagMaybe !== 'undefined') {
+      gtagMaybe('config', 'MEASUREMENT_ID', {
+        page_title: document.title,
+        page_path: page.url.pathname,
+      });
+    }
+  });
 </script>
 
 <svelte:head>
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-8QVE1DKK4L">
-	</script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8QVE1DKK4L">
+  </script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
 
-		function gtag() {
-			dataLayer.push(arguments);
-		}
+    function gtag() {
+      dataLayer.push(arguments);
+    }
 
-		gtag('js', new Date());
-		gtag('config', 'G-8QVE1DKK4L');
-	</script>
+    gtag('js', new Date());
+    gtag('config', 'G-8QVE1DKK4L');
+  </script>
 </svelte:head>
