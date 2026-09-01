@@ -179,7 +179,7 @@ Copyright (C) 2026 Andrew Cupps
     {/if}
 
     <!-- Current time indicator; last so it paints over the class blocks -->
-    <CurrentTimeLine {earliestClassStart} {latestClassEnd} {bgHeight} hasOther={schedule.other.length > 0} />
+    <CurrentTimeLine {earliestClassStart} {latestClassEnd} {bgHeight} {schedule} hasOther={schedule.other.length > 0} />
   </div>
 
   <!-- Course info panel -->

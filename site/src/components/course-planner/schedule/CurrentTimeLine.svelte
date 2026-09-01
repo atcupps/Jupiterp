@@ -5,6 +5,8 @@ https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2026 Andrew Cupps
 -->
 <script lang="ts">
+  import type { Schedule } from '../../../types';
+
   interface Props {
     /** Earliest hour shown on the schedule, as a decimal hour. */
     earliestClassStart: number;
@@ -21,9 +23,20 @@ Copyright (C) 2026 Andrew Cupps
 
     /** Whether the schedule is currently showing an "Other" column. */
     hasOther: boolean;
+
+    /**
+     * The full schedule, used to work out how long is left in the current
+     * class or event and when the next one starts. `schedulify` has already
+     * flattened course sections and user events into the same
+     * `ClassMeetingExtended` shape, so both are handled identically here.
+     */
+    schedule: Schedule;
   }
 
-  let { earliestClassStart, latestClassEnd, bgHeight, hasOther }: Props = $props();
+  let { earliestClassStart, latestClassEnd, bgHeight, hasOther, schedule }: Props = $props();
+
+  /** Weekday keys of `Schedule`, indexed the same way as the day columns. */
+  const DAY_KEYS = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday'] as const;
 
   /**
    * Tick once a minute so the line follows the clock. Created inside an
@@ -66,6 +79,67 @@ Copyright (C) 2026 Andrew Cupps
     const hour = now.getHours() % 12 === 0 ? 12 : now.getHours() % 12;
     return `${hour}:${String(now.getMinutes()).padStart(2, '0')}`;
   });
+
+  /**
+   * Today's meetings, excluding hover previews so that pointing at a section
+   * in course search never changes the countdown.
+   */
+  let todayMeetings = $derived(todayColumn < 0 ? [] : schedule[DAY_KEYS[todayColumn]].filter((m) => !m.hover));
+
+  /**
+   * Render a duration given in decimal hours as a compact `1h 23m` label.
+   * Rounded up, so a countdown never reads `0m` while it is still running.
+   */
+  function formatDuration(hours: number): string {
+    const totalMinutes = Math.ceil(hours * 60);
+    const wholeHours = Math.floor(totalMinutes / 60);
+    const minutes = totalMinutes % 60;
+    if (wholeHours === 0) {
+      return `${minutes}m`;
+    }
+    if (minutes === 0) {
+      return `${wholeHours}h`;
+    }
+    return `${wholeHours}h ${minutes}m`;
+  }
+
+  /**
+   * The status tag shown on today's line: how long is left in whatever is
+   * happening now, otherwise how long until the next thing starts, otherwise
+   * that the day is over. `null` when there is nothing scheduled today at
+   * all, so an empty schedule shows no tag rather than "done today!".
+   */
+  let tagLabel: string | null = $derived.by(() => {
+    if (todayColumn < 0 || todayMeetings.length === 0) {
+      return null;
+    }
+
+    // The soonest end among things happening now, and the soonest start
+    // among things still to come.
+    let currentEnd: number | null = null;
+    let nextStart: number | null = null;
+
+    for (const block of todayMeetings) {
+      const meeting = block.meeting;
+      if (typeof meeting === 'string') {
+        continue;
+      }
+      const { start, end } = meeting.classtime;
+      if (start <= nowDecimal && nowDecimal < end) {
+        currentEnd = currentEnd === null ? end : Math.min(currentEnd, end);
+      } else if (start > nowDecimal) {
+        nextStart = nextStart === null ? start : Math.min(nextStart, start);
+      }
+    }
+
+    if (currentEnd !== null) {
+      return `${formatDuration(currentEnd - nowDecimal)} left`;
+    }
+    if (nextStart !== null) {
+      return `${formatDuration(nextStart - nowDecimal)} until`;
+    }
+    return 'done today!';
+  });
 </script>
 
 {#if visible}
@@ -87,6 +161,16 @@ Copyright (C) 2026 Andrew Cupps
                 : 'bg-red-500/30'}"
             ></div>
           {/if}
+
+          <!-- Status tag, pinned to the right end of today's solid segment -->
+          {#if columnIndex === todayColumn && tagLabel !== null}
+            <div
+              style="top: {topPercent}%"
+              class="absolute right-0 -translate-y-1/2 whitespace-nowrap rounded-full bg-red-500 px-1.5 py-0.5 text-[0.625rem] font-semibold leading-none text-white"
+            >
+              {tagLabel}
+            </div>
+          {/if}
         </div>
       {/each}
     </div>
@@ -94,7 +178,7 @@ Copyright (C) 2026 Andrew Cupps
     <!-- Current time bubble, sitting over the hour labels -->
     <div
       style="top: {topPercent}%"
-      class="absolute left-0 -translate-y-1/2 rounded-full bg-red-500 px-1.5 py-0.5 text-center text-[0.7rem] font-semibold leading-none text-white 2xl:text-xs"
+      class="absolute left-0 -translate-y-1/2 rounded-full bg-red-500 px-1.5 py-0.5 text-center text-[0.625rem] font-semibold leading-none text-white 2xl:text-xs"
     >
       {label}
     </div>
