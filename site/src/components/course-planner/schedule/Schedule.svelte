@@ -168,12 +168,12 @@ Copyright (C) 2026 Andrew Cupps
     <!-- Vertical lines delimiting each day column -->
     <div
       style="height: {bgHeight}px;"
-      class="border-border top-9.5 pointer-events-none absolute left-9 z-0 grid w-[calc(100%-2.25rem)] border-r 2xl:left-11 2xl:w-[calc(100%-2.75rem)]"
+      class="border-border top-9.5 pointer-events-none absolute left-9 z-0 grid w-[calc(100%-2.25rem)] 2xl:left-11 2xl:w-[calc(100%-2.75rem)]"
       class:grid-cols-5={schedule.other.length == 0}
       class:grid-cols-6={schedule.other.length > 0}
     >
       {#each Array.from({ length: schedule.other.length > 0 ? 6 : 5 }, (_, i) => i) as columnIndex (columnIndex)}
-        <div class="border-border border-l"></div>
+        <div class="border-border border-l" class:border-r={columnIndex === 4 && schedule.other.length == 0}></div>
       {/each}
     </div>
 
