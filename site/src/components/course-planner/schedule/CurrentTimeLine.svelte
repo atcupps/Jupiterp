@@ -39,15 +39,14 @@ Copyright (C) 2026 Andrew Cupps
   const DAY_KEYS = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday'] as const;
 
   /**
-   * Tick once a minute so the line follows the clock. Created inside an
-   * `$effect` so the interval only ever exists in the browser and is cleared
-   * when the component is destroyed.
+   * Tick once a second to keep the time line up to date, even if the page
+   * was loaded in the middle of a minute.
    */
   let now = $state(new Date());
   $effect(() => {
     const interval = setInterval(() => {
       now = new Date();
-    }, 60_000);
+    }, 1000);
     return () => clearInterval(interval);
   });
 
