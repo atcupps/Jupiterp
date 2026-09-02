@@ -175,10 +175,12 @@ Copyright (C) 2026 Andrew Cupps
       {/each}
     </div>
 
-    <!-- Current time bubble, sitting over the hour labels -->
+    <!-- Current time bubble. Anchored by its right edge to where the day
+         columns (and so the red line) begin, so it stays flush against the
+         line and grows leftwards as the label gets wider. -->
     <div
       style="top: {topPercent}%"
-      class="absolute left-0 -translate-y-1/2 rounded-full bg-red-500 px-1.5 py-0.5 text-center text-[0.625rem] font-semibold leading-none text-white 2xl:text-xs"
+      class="absolute right-[calc(100%-2.25rem)] -translate-y-1/2 whitespace-nowrap rounded-full bg-red-500 px-1.5 py-0.5 text-center text-[0.625rem] font-semibold leading-none text-white 2xl:right-[calc(100%-2.75rem)] 2xl:text-xs"
     >
       {label}
     </div>
