@@ -48,6 +48,7 @@ Copyright (C) 2026 Andrew Cupps
   let hoveredSection: ScheduleSelection | null = $state(null);
   HoveredSectionStore.subscribe((stored) => {
     hoveredSection = stored;
+    console.log("jupiterp!");
   });
 
   let selections: ScheduleBlock[] = $state([]);
