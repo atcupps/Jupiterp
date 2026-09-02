@@ -72,7 +72,6 @@ def main() -> int:
                 "--platform",
                 "managed",
                 "--allow-unauthenticated",
-                "--build-env-vars=GOOGLE_NODE_INSTALL_MODE=install",
             ]
         )
     finally:
