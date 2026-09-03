@@ -50,8 +50,11 @@ Copyright (C) 2026 Andrew Cupps
     return () => clearInterval(interval);
   });
 
-  /** The current time as a decimal hour, matching `Classtime.start`/`.end`. */
-  let nowDecimal = $derived(now.getHours() + now.getMinutes() / 60);
+  /**
+   * The current time as a decimal hour, matching `Classtime.start`/`.end`.
+   * Includes seconds for the sub-minute countdown as well.
+   */
+  let nowDecimal = $derived(now.getHours() + now.getMinutes() / 60 + now.getSeconds() / 3600);
 
   /**
    * Index of today's column, where 0 is Monday. `-1` on a weekend, in which
@@ -86,11 +89,19 @@ Copyright (C) 2026 Andrew Cupps
   let todayMeetings = $derived(todayColumn < 0 ? [] : schedule[DAY_KEYS[todayColumn]].filter((m) => !m.hover));
 
   /**
-   * Render a duration given in decimal hours as a compact `1h 23m` label.
-   * Rounded up, so a countdown never reads `0m` while it is still running.
+   * Render a duration given in decimal hours as a compact `1h 23m` label,
+   * counting down in seconds once under a minute is left. Rounded up, so a
+   * countdown never reads `0s` while it is still running.
    */
   function formatDuration(hours: number): string {
-    const totalMinutes = Math.ceil(hours * 60);
+    // Normalise to whole milliseconds first: `hours` is a difference of
+    // decimal hours, so an exact 59s arrives as 59.00000000000001 seconds and
+    // would otherwise round up to a full minute.
+    const totalSeconds = Math.ceil(Math.round(hours * 3_600_000) / 1000);
+    if (totalSeconds < 60) {
+      return `${totalSeconds}s`;
+    }
+    const totalMinutes = Math.ceil(totalSeconds / 60);
     const wholeHours = Math.floor(totalMinutes / 60);
     const minutes = totalMinutes % 60;
     if (wholeHours === 0) {
