@@ -1,0 +1,362 @@
+{
+  "AJC": {
+    "campus": "college-park",
+    "lat": 38.991965,
+    "lon": -76.937262,
+    "name": "A. James Clark Hall"
+  },
+  "ANA": {
+    "campus": "college-park",
+    "lat": 38.98595,
+    "lon": -76.946732,
+    "name": "Anne Arundel Hall"
+  },
+  "ANS": {
+    "campus": "college-park",
+    "lat": 38.991646,
+    "lon": -76.939459,
+    "name": "Animal Science/Agricultural Engineering Building"
+  },
+  "ARC": {
+    "campus": "college-park",
+    "lat": 38.984236,
+    "lon": -76.947546,
+    "name": "Architecture Building"
+  },
+  "ARM": {
+    "campus": "college-park",
+    "lat": 38.986027,
+    "lon": -76.938966,
+    "name": "Reckord Armory"
+  },
+  "ASY": {
+    "campus": "college-park",
+    "lat": 38.985281,
+    "lon": -76.947895,
+    "name": "Art-Sociology Building"
+  },
+  "ATL": {
+    "campus": "college-park",
+    "lat": 38.990984,
+    "lon": -76.942556,
+    "name": "Atlantic"
+  },
+  "AVW": {
+    "campus": "college-park",
+    "lat": 38.990799,
+    "lon": -76.936342,
+    "name": "A.V. Williams Building"
+  },
+  "BLD2": {
+    "campus": "shady-grove",
+    "lat": 39.09315,
+    "lon": -77.19979,
+    "name": "Universities at Shady Grove (Building II)"
+  },
+  "BLD3": {
+    "campus": "shady-grove",
+    "lat": 39.09315,
+    "lon": -77.19979,
+    "name": "Universities at Shady Grove (Building III)"
+  },
+  "BLD4": {
+    "campus": "shady-grove",
+    "lat": 39.09315,
+    "lon": -77.19979,
+    "name": "Universities at Shady Grove (Building IV)"
+  },
+  "BPS": {
+    "campus": "college-park",
+    "lat": 38.988723,
+    "lon": -76.942593,
+    "name": "Biology-Psychology Building"
+  },
+  "BRB": {
+    "campus": "college-park",
+    "lat": 38.988976,
+    "lon": -76.942809,
+    "name": "Biosciences Research Building"
+  },
+  "CBD": {
+    "campus": "college-park",
+    "lat": 38.992261,
+    "lon": -76.943924,
+    "name": "Cumberland Hall (Residence Hall)"
+  },
+  "CCC": {
+    "campus": "college-park",
+    "lat": 38.992178,
+    "lon": -76.942998,
+    "name": "Cambridge Community Center"
+  },
+  "CEN": {
+    "campus": "college-park",
+    "lat": 38.992271,
+    "lon": -76.942125,
+    "name": "Centreville Hall (Residence Hall)"
+  },
+  "CHE": {
+    "campus": "college-park",
+    "lat": 38.990609,
+    "lon": -76.939537,
+    "name": "Chemical and Nuclear Engineering Building"
+  },
+  "CHM": {
+    "campus": "college-park",
+    "lat": 38.989595,
+    "lon": -76.940172,
+    "name": "Chemistry Building"
+  },
+  "CSI": {
+    "campus": "college-park",
+    "lat": 38.989995,
+    "lon": -76.936195,
+    "name": "Computer Science Instructional Center"
+  },
+  "DOR": {
+    "campus": "college-park",
+    "lat": 38.986774,
+    "lon": -76.946181,
+    "name": "Dorchester Hall (Residence Hall)"
+  },
+  "EAF": {
+    "campus": "college-park",
+    "lat": 38.990348,
+    "lon": -76.938037,
+    "name": "E.A. Fernandez IDEA Factory"
+  },
+  "EDU": {
+    "campus": "college-park",
+    "lat": 38.98671,
+    "lon": -76.947422,
+    "name": "Benjamin Building"
+  },
+  "EGL": {
+    "campus": "college-park",
+    "lat": 38.989262,
+    "lon": -76.937947,
+    "name": "Engineering Laboratory Building"
+  },
+  "EGR": {
+    "campus": "college-park",
+    "lat": 38.988869,
+    "lon": -76.937974,
+    "name": "Martin Hall"
+  },
+  "ESJ": {
+    "campus": "college-park",
+    "lat": 38.986699,
+    "lon": -76.941914,
+    "name": "Edward St. John Learning and Teaching Center"
+  },
+  "GEO": {
+    "campus": "college-park",
+    "lat": 38.98813,
+    "lon": -76.94091,
+    "name": "Geology Building"
+  },
+  "GLF": {
+    "campus": "college-park",
+    "lat": 38.991133,
+    "lon": -76.954707,
+    "name": "Golf Course Clubhouse"
+  },
+  "HBK": {
+    "campus": "college-park",
+    "lat": 38.988177,
+    "lon": -76.941574,
+    "name": "Hornbake Library"
+  },
+  "HJP": {
+    "campus": "college-park",
+    "lat": 38.987085,
+    "lon": -76.943277,
+    "name": "H.J. Patterson Hall"
+  },
+  "IPT": {
+    "campus": "college-park",
+    "lat": 38.990828,
+    "lon": -76.941283,
+    "name": "Institute for Physical Science and Technology Storage"
+  },
+  "IRB": {
+    "campus": "college-park",
+    "lat": 38.989161,
+    "lon": -76.936444,
+    "name": "Brendan Iribe Center"
+  },
+  "JMP": {
+    "campus": "college-park",
+    "lat": 38.990518,
+    "lon": -76.940295,
+    "name": "J.M. Patterson Building"
+  },
+  "JMZ": {
+    "campus": "college-park",
+    "lat": 38.986787,
+    "lon": -76.94455,
+    "name": "Jimenez Hall"
+  },
+  "KEB": {
+    "campus": "college-park",
+    "lat": 38.99091,
+    "lon": -76.938026,
+    "name": "Jeong H. Kim Engineering Building"
+  },
+  "KEY": {
+    "campus": "college-park",
+    "lat": 38.985062,
+    "lon": -76.943089,
+    "name": "Francis Scott Key Hall"
+  },
+  "KNI": {
+    "campus": "college-park",
+    "lat": 38.986773,
+    "lon": -76.948419,
+    "name": "Knight Hall"
+  },
+  "LEF": {
+    "campus": "college-park",
+    "lat": 38.983685,
+    "lon": -76.943635,
+    "name": "LeFrak Hall"
+  },
+  "LPA": {
+    "campus": "college-park",
+    "lat": 38.99245,
+    "lon": -76.945891,
+    "name": "LaPlata Hall (Residence Hall)"
+  },
+  "MCB": {
+    "campus": "college-park",
+    "lat": 38.988115,
+    "lon": -76.943403,
+    "name": "Microbiology Building"
+  },
+  "MCK": {
+    "campus": "college-park",
+    "lat": 38.985982,
+    "lon": -76.9451,
+    "name": "McKeldin Library"
+  },
+  "MMH": {
+    "campus": "college-park",
+    "lat": 38.985001,
+    "lon": -76.940758,
+    "name": "Marie Mount Hall"
+  },
+  "MTH": {
+    "campus": "college-park",
+    "lat": 38.988623,
+    "lon": -76.939069,
+    "name": "Mathematics Building"
+  },
+  "PAC": {
+    "campus": "college-park",
+    "lat": 38.990681,
+    "lon": -76.950443,
+    "name": "Clarice Smith Performing Arts Center"
+  },
+  "PHY": {
+    "campus": "college-park",
+    "lat": 38.988697,
+    "lon": -76.940077,
+    "name": "Physics Building"
+  },
+  "PKT": {
+    "campus": "college-park",
+    "lat": 38.984451,
+    "lon": -76.946132,
+    "name": "Preinkert Field House"
+  },
+  "PLS": {
+    "campus": "college-park",
+    "lat": 38.988737,
+    "lon": -76.94136,
+    "name": "Plant Science Building"
+  },
+  "QAN": {
+    "campus": "college-park",
+    "lat": 38.98519,
+    "lon": -76.946007,
+    "name": "Queen Annes Hall"
+  },
+  "SHM": {
+    "campus": "college-park",
+    "lat": 38.983938,
+    "lon": -76.942745,
+    "name": "Shoemaker Building"
+  },
+  "SKN": {
+    "campus": "college-park",
+    "lat": 38.98481,
+    "lon": -76.941841,
+    "name": "Skinner Building"
+  },
+  "SOM": {
+    "campus": "college-park",
+    "lat": 38.985003,
+    "lon": -76.945547,
+    "name": "Somerset Hall (Residence Hall)"
+  },
+  "SPH": {
+    "campus": "college-park",
+    "lat": 38.993492,
+    "lon": -76.943163,
+    "name": "School of Public Health"
+  },
+  "SQH": {
+    "campus": "college-park",
+    "lat": 38.982075,
+    "lon": -76.94375,
+    "name": "Susquehanna Hall"
+  },
+  "SYM": {
+    "campus": "college-park",
+    "lat": 38.987081,
+    "lon": -76.940646,
+    "name": "Symons Hall"
+  },
+  "TLF": {
+    "campus": "college-park",
+    "lat": 38.984846,
+    "lon": -76.943095,
+    "name": "Taliaferro Hall"
+  },
+  "TMH": {
+    "campus": "college-park",
+    "lat": 38.986141,
+    "lon": -76.937337,
+    "name": "Turner Hall (Dairy/Visitor Center)"
+  },
+  "TWS": {
+    "campus": "college-park",
+    "lat": 38.985986,
+    "lon": -76.948324,
+    "name": "Tawes Fine Arts Building"
+  },
+  "TYD": {
+    "campus": "college-park",
+    "lat": 38.984852,
+    "lon": -76.944001,
+    "name": "Tydings Hall"
+  },
+  "VMH": {
+    "campus": "college-park",
+    "lat": 38.983047,
+    "lon": -76.947038,
+    "name": "Van Munching Hall"
+  },
+  "WDS": {
+    "campus": "college-park",
+    "lat": 38.985111,
+    "lon": -76.941845,
+    "name": "Woods Hall"
+  },
+  "YDH": {
+    "campus": "college-park",
+    "lat": 38.991074,
+    "lon": -76.944615,
+    "name": "Yahentamitsi"
+  }
+}
