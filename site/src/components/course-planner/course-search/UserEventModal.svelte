@@ -25,6 +25,15 @@ Copyright (C) 2026 Andrew Cupps
   let notes = $state('');
   let errors: string[] = $state([]);
 
+  // Keystroke caches to catch lone digits typed by the user
+  let rawStartKeys = '';
+  let rawEndKeys = '';
+
+  // Bound element references to inspect partial/existing browser values
+  let startInputRef: HTMLInputElement | undefined = $state();
+  let endInputRef: HTMLInputElement | undefined = $state();
+  let lastChanged: 'start' | 'end' | null = null;
+
   $effect(() => {
     if (initialEventData) {
       name = initialEventData.name;
@@ -36,7 +45,29 @@ Copyright (C) 2026 Andrew Cupps
     }
   });
 
+  // Automatically enforce 1-hour relative buffers reactively when values change
+  $effect(() => {
+    if (startTime) {
+      if (lastChanged === 'start' || !endTime) {
+        if (!endTime || timeStringToDecimal(startTime) >= timeStringToDecimal(endTime)) {
+          endTime = addHour(startTime, 1);
+        }
+      }
+    }
+  });
+
+  $effect(() => {
+    if (endTime) {
+      if (lastChanged === 'end' || !startTime) {
+        if (!startTime || timeStringToDecimal(startTime) >= timeStringToDecimal(endTime)) {
+          startTime = addHour(endTime, -1);
+        }
+      }
+    }
+  });
+
   function timeStringToDecimal(timeStr: string): number {
+    if (!timeStr.includes(':')) return 0;
     const [hours, minutes] = timeStr.split(':').map(Number);
     return hours + minutes / 60;
   }
@@ -45,6 +76,79 @@ Copyright (C) 2026 Andrew Cupps
     const hours = Math.floor(decimal);
     const minutes = Math.round((decimal - hours) * 60);
     return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
+  }
+
+  // Intercept keystroke streams to catch single-digit hour input overrides
+  function handleKeyDown(type: 'start' | 'end', event: KeyboardEvent) {
+    if (event.key >= '0' && event.key <= '9') {
+      if (type === 'start') rawStartKeys += event.key;
+      else rawEndKeys += event.key;
+    } else if (event.key === 'Backspace') {
+      if (type === 'start') rawStartKeys = rawStartKeys.slice(0, -1);
+      else rawEndKeys = rawEndKeys.slice(0, -1);
+    }
+  }
+
+  function handleBlur(type: 'start' | 'end') {
+    const digits = type === 'start' ? rawStartKeys : rawEndKeys;
+    const inputRef = type === 'start' ? startInputRef : endInputRef;
+    const existingValue = type === 'start' ? startTime : endTime;
+
+    // Flush the key buffers for the next entry sequence
+    if (type === 'start') rawStartKeys = '';
+    else rawEndKeys = '';
+
+    // Extract any existing minutes if the input already has a value
+    let targetMinutes = '00';
+    if (existingValue && existingValue.includes(':')) {
+      targetMinutes = existingValue.split(':')[1];
+    } else if (inputRef && inputRef.value.includes(':')) {
+      targetMinutes = inputRef.value.split(':')[1];
+    }
+
+    if (!digits) return;
+    let hour = parseInt(digits, 10);
+    if (isNaN(hour)) return;
+
+    // Core rule mapping: 8-11 -> AM; all others default to PM
+    if (hour >= 8 && hour <= 11) {
+      // Stays standard AM
+    } else if (hour >= 1 && hour <= 7) {
+      hour += 12; // Afternoon mapping
+    } else if (hour === 9) {
+      hour = 21; // 9 PM mapping
+    } else if (hour === 12) {
+      hour = 12; // Noon mapping
+    }
+
+    const calculatedTime = `${hour.toString().padStart(2, '0')}:${targetMinutes}`;
+    lastChanged = type;
+
+    if (type === 'start') {
+      startTime = calculatedTime;
+    } else {
+      endTime = calculatedTime;
+    }
+  }
+
+  function handleDirectChange(type: 'start' | 'end', event: Event) {
+    const val = (event.target as HTMLInputElement).value;
+    if (!val) return;
+    lastChanged = type;
+    if (type === 'start') {
+      startTime = val;
+      rawStartKeys = '';
+    } else {
+      endTime = val;
+      rawEndKeys = '';
+    }
+  }
+
+  function addHour(timeStr: string, delta: number): string {
+    let decimal = timeStringToDecimal(timeStr) + delta;
+    if (decimal < 0) decimal = 0;
+    if (decimal > 24) decimal = 24;
+    return decimalToTimeString(decimal);
   }
 
   function toggleDay(day: string) {
@@ -81,6 +185,7 @@ Copyright (C) 2026 Andrew Cupps
     if (startTime && endTime && timeStringToDecimal(startTime) >= timeStringToDecimal(endTime)) {
       errors.push('End time must be after start time');
     }
+
     if (errors.length > 0) return;
 
     const event: UserEvent = {
@@ -99,36 +204,46 @@ Copyright (C) 2026 Andrew Cupps
   }
 </script>
 
-<!-- Backdrop -->
-<button class="fixed inset-0 z-50 mt-12 bg-black bg-opacity-40" onclick={onClose} aria-label="Close Modal"></button>
-<!-- Modal -->
+<!-- Backdrop overlay button -->
+<button
+  type="button"
+  class="fixed inset-x-0 bottom-0 top-12 z-10 cursor-pointer bg-black/40"
+  onclick={onClose}
+  aria-label="Close modal background"
+></button>
+
+<!-- Main Modal Content Container -->
 <div
-  class="z-60 border-outlineLight bg-bgLight dark:border-outlineDark dark:bg-bgDark w-100 fixed left-1/2 top-1/2 max-w-[90vw] -translate-x-1/2 -translate-y-1/2 rounded-lg border p-4 shadow-xl"
+  style="top:clamp(3.5rem, 50svh - 13rem, 12rem); max-height: calc(100svh - 4rem);"
+  class="border-outline text-text-primary bg-bg-primary w-100 fixed left-1/2 z-20 m-0 max-w-[90vw] -translate-x-1/2 overflow-y-scroll rounded-lg border p-4 shadow-xl"
 >
-  <h2 class="mb-3 text-base font-semibold">{initialEventData ? 'Edit Event' : 'Add Custom Event'}</h2>
+  <h2 class="mb-3 text-base font-semibold">
+    {initialEventData ? 'Edit Event' : 'Add Custom Event'}
+  </h2>
+
   <!-- Name -->
   <div class="mb-2">
-    <label class="mb-0.5 block text-sm" for="user-event-name">Name</label>
+    <label class="mb-0.5 block text-sm" for="user-event-name">Name<span class="text-red-500">*</span></label>
     <input
       id="user-event-name"
       type="text"
       bind:value={name}
       placeholder="Event name"
-      class="border-outlineLight dark:border-outlineDark w-full rounded-lg border border-solid bg-transparent px-2 py-1 text-sm"
+      class="border-outline w-full rounded-lg border border-solid bg-transparent px-2 py-1 text-sm"
     />
   </div>
 
   <!-- Days -->
   <div class="mb-2">
-    <p class="mb-0.5 text-sm">Days</p>
+    <label class="mb-0.5 block text-sm" for="user-event-days">Days<span class="text-red-500">*</span></label>
     <div class="flex gap-1.5">
       {#each DAYS as day (day)}
         <button
           type="button"
           title={expandDayString(day)}
           class="rounded border px-2.5 py-1 text-sm transition-colors {selectedDays.includes(day)
-            ? 'border-outlineLight bg-outlineLight dark:border-outlineDark dark:bg-outlineDark dark:text-textDark text-black'
-            : 'border-outlineLight hover:bg-hoverLight dark:border-outlineDark dark:hover:bg-hoverDark'}"
+            ? 'border-outline bg-outline'
+            : 'border-outline hover:bg-hover'}"
           onclick={() => toggleDay(day)}
         >
           {day}
@@ -137,24 +252,32 @@ Copyright (C) 2026 Andrew Cupps
     </div>
   </div>
 
-  <!-- Start / End time -->
+  <!-- Start / End time fields -->
   <div class="mb-2 flex gap-2">
     <div class="flex-1">
-      <label class="mb-0.5 block text-sm" for="user-event-start">Start</label>
+      <label class="mb-0.5 block text-sm" for="user-event-start">Start<span class="text-red-500">*</span></label>
       <input
+        bind:this={startInputRef}
         id="user-event-start"
         type="time"
-        bind:value={startTime}
-        class="border-outlineLight dark:border-outlineDark dark:scheme-dark w-full rounded-lg border border-solid bg-transparent px-2 py-1 text-sm"
+        value={startTime}
+        onkeydown={(e) => handleKeyDown('start', e)}
+        onblur={() => handleBlur('start')}
+        onchange={(e) => handleDirectChange('start', e)}
+        class="border-outline w-full rounded-lg border border-solid bg-transparent px-2 py-1 text-sm"
       />
     </div>
     <div class="flex-1">
-      <label class="mb-0.5 block text-sm" for="user-event-end">End</label>
+      <label class="mb-0.5 block text-sm" for="user-event-end">End<span class="text-red-500">*</span></label>
       <input
+        bind:this={endInputRef}
         id="user-event-end"
         type="time"
-        bind:value={endTime}
-        class="border-outlineLight dark:border-outlineDark dark:scheme-dark w-full rounded-lg border border-solid bg-transparent px-2 py-1 text-sm"
+        value={endTime}
+        onkeydown={(e) => handleKeyDown('end', e)}
+        onblur={() => handleBlur('end')}
+        onchange={(e) => handleDirectChange('end', e)}
+        class="border-outline w-full rounded-lg border border-solid bg-transparent px-2 py-1 text-sm"
       />
     </div>
   </div>
@@ -167,7 +290,7 @@ Copyright (C) 2026 Andrew Cupps
       type="text"
       bind:value={location}
       placeholder="Optional"
-      class="border-outlineLight dark:border-outlineDark w-full rounded-lg border border-solid bg-transparent px-2 py-1 text-sm"
+      class="border-outline w-full rounded-lg border border-solid bg-transparent px-2 py-1 text-sm"
     />
   </div>
 
@@ -179,33 +302,22 @@ Copyright (C) 2026 Andrew Cupps
       bind:value={notes}
       placeholder="Optional"
       rows="2"
-      class="border-outlineLight dark:border-outlineDark w-full rounded-lg border border-solid bg-transparent px-2 py-1 text-sm"
-    ></textarea>
+      class="border-outline w-full rounded-lg border border-solid bg-transparent px-2 py-1 text-sm"></textarea>
   </div>
 
   <!-- Validation errors -->
   {#if errors.length > 0}
-    <div style="color: #ef4444;" class="mb-2 text-xs">
-      <!-- Keyed by index: two validation errors can share the same message. -->
+    <div class="mb-2 text-xs text-red-500">
       {#each errors as error, i (i)}
         <div>{error}</div>
       {/each}
     </div>
   {/if}
+
   <!-- Actions -->
   <div class="flex justify-end gap-2">
-    <button
-      type="button"
-      onclick={onClose}
-      class="hover:bg-hoverLight dark:hover:bg-hoverDark rounded-sm px-3 py-1.5 text-sm"
-    >
-      Cancel
-    </button>
-    <button
-      type="button"
-      onclick={handleSubmit}
-      class="bg-outlineLight hover:bg-hoverLight dark:bg-outlineDark dark:text-textDark dark:hover:bg-hoverDark rounded-sm px-3 py-1.5 text-sm text-black"
-    >
+    <button type="button" onclick={onClose} class="hover:bg-hover rounded-sm px-3 py-1.5 text-sm"> Cancel </button>
+    <button type="button" onclick={handleSubmit} class="bg-outline hover:bg-hover rounded-sm px-3 py-1.5 text-sm">
       {initialEventData ? 'Save Event' : 'Add Event'}
     </button>
   </div>

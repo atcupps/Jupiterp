@@ -97,7 +97,7 @@ Copyright (C) 2026 Andrew Cupps
   </div>
   {#if hasOther}
     <div
-      class="border-divBorderLight dark:border-divBorderDark mt-1 flex flex-row flex-wrap
+      class="border-border mt-1 flex flex-row flex-wrap
 				gap-1 border-t pt-1"
     >
       {#each schedule.other as cm (cm)}

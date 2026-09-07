@@ -5,8 +5,6 @@ https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2026 Andrew Cupps
  -->
 <script lang="ts">
-  import { run } from 'svelte/legacy';
-
   // format-check exempt 2
   import Schedule from '../components/course-planner/schedule/Schedule.svelte';
   import CourseSearch from '../components/course-planner/course-search/CourseSearch.svelte';
@@ -28,9 +26,10 @@ Copyright (C) 2026 Andrew Cupps
   import { PlannerState } from '../stores/CoursePlannerStores';
 
   let isDesktop: boolean = $state(false);
-  let plannerContainer: HTMLDivElement | null = $state(null);
+  let plannerContainer: HTMLElement | null = $state(null);
 
-  run(() => {
+  // Replaced run() with $effect to handle updating the store on the client
+  $effect(() => {
     PlannerState.update((state: { isDesktop: boolean; chainScrollParent: HTMLElement | null }) => ({
       ...state,
       isDesktop,
@@ -138,11 +137,11 @@ Copyright (C) 2026 Andrew Cupps
 
 <svelte:window onkeydown={handlePlannerKeydown} />
 
-<div
+<main
   bind:this={plannerContainer}
   id="planner-container"
   class="custom-scrollbar fixed bottom-0 top-12 w-full flex-col overflow-y-auto px-3 lg:grid lg:grid-cols-[22rem_1fr]"
 >
   <Schedule />
   <CourseSearch />
-</div>
+</main>

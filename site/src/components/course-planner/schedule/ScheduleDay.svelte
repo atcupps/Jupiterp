@@ -34,7 +34,7 @@ Copyright (C) 2026 Andrew Cupps
 
 <div class="z-10 flex h-full w-full flex-col px-1">
   <div>{name}</div>
-  <div style="height: {bgHeight}px;" class="relative top-2.5">
+  <div style="height: {bgHeight}px;" class="relative top-2.5 text-black">
     {#each classes as classMeeting, index (`${index}-${classMeeting.instructors}`)}
       <ClassMeeting meeting={classMeeting} isInOther={type === 'Other'} {earliestClassStart} {latestClassEnd} />
     {/each}

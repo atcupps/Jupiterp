@@ -12,16 +12,15 @@ Copyright (C) 2026 Andrew Cupps
      * based on Marvin Rudolph's Orbit Loader
      */
     size?: number; // Default size in pixels
-    color?: string; // Default stroke color
   }
 
-  let { size = 260, color = '#ffffff' }: Props = $props();
+  let { size = 120 }: Props = $props();
 </script>
 
 <div
   style="
     --wrapper-size: {size}px;
-    --stroke-color: {color};
+    --stroke-color: var(--color-text-secondary);
   "
   class="solar-system-wrapper"
   role="status"

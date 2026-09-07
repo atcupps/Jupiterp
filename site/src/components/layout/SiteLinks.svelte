@@ -40,8 +40,9 @@ Copyright (C) 2026 Andrew Cupps
   <DarkModeToggle />
 </div>
 
-<!-- Button to toggle course search on mobile -->
+<!-- Button to toggle site links on mobile -->
 <button
+  title="Toggle site links"
   class="z-52 visible absolute right-5 top-3 h-6 w-6 lg:hidden"
   onclick={() => {
     siteLinksSelected = !siteLinksSelected;
@@ -51,7 +52,7 @@ Copyright (C) 2026 Andrew Cupps
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 448 512"
-    class="fill-textLight dark:fill-textDark visible h-full w-full transition"
+    class="fill-text-primary visible h-full w-full transition"
     class:hidden={siteLinksSelected}
   >
     <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path
@@ -61,7 +62,7 @@ Copyright (C) 2026 Andrew Cupps
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 384 512"
-    class="fill-textLight dark:fill-textDark visible h-full w-full transition"
+    class="fill-text-primary visible h-full w-full"
     class:hidden={!siteLinksSelected}
   >
     <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path
@@ -75,7 +76,7 @@ Copyright (C) 2026 Andrew Cupps
   <button
     aria-label="Close Site Links"
     style="height: calc(100% - 3rem);"
-    class="z-55 visible fixed top-12 -mx-4 w-full bg-black bg-opacity-20 lg:hidden"
+    class="z-55 visible fixed top-12 -mx-4 w-full bg-black/20 lg:hidden"
     in:fade={{ duration: 150 }}
     out:fade={{ duration: 150 }}
     onclick={() => (siteLinksSelected = false)}
@@ -84,7 +85,7 @@ Copyright (C) 2026 Andrew Cupps
 
 <!-- Mobile site links -->
 <div
-  class="site-links z-61 border-divBorderLight bg-bgLight dark:border-divBorderDark dark:bg-bgDark visible fixed right-0 top-12 flex w-[300px] flex-col border-l-2 border-solid p-2 transition-transform duration-300 lg:hidden"
+  class="site-links z-61 border-border bg-bg-primary w-75 visible fixed right-0 top-12 flex flex-col border-l-2 border-solid p-2 transition-transform duration-300 lg:hidden"
   class:site-links-transition={!siteLinksSelected}
   class:shadow-lg={siteLinksSelected}
 >

@@ -5,21 +5,19 @@ https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2026 Andrew Cupps
 -->
 <script lang="ts">
-  import { run } from 'svelte/legacy';
-
   import { GenEd } from '@jupiterp/jupiterp';
   import { AdjustmentsHorizontalOutline, AngleDownOutline, CloseOutline } from 'flowbite-svelte-icons';
   import { slide } from 'svelte/transition';
   import type { FilterParams } from '../../../types';
   import { CourseSearchFilterStore } from '../../../stores/CoursePlannerStores';
 
-  let appliedFiltersCount = $state(0);
   let showFiltersMenu = $state(false);
+
   interface Props {
     showGenEdMenu?: boolean;
   }
-
   let { showGenEdMenu = $bindable(false) }: Props = $props();
+
   let genEdSelections: GenEd[] = $state([]);
   let onlyOpenSections = $state(false);
 
@@ -28,34 +26,36 @@ Copyright (C) 2026 Andrew Cupps
   let minCredits: number = $state(defaultMinCredits);
   let maxCredits: number = $state(defaultMaxCredits);
 
-  run(() => {
+  // 1. Automatically calculate the filter count based on active states safely
+  let appliedFiltersCount = $derived(
+    (genEdSelections.length > 0 ? 1 : 0) +
+      (minCredits !== defaultMinCredits ? 1 : 0) +
+      (maxCredits !== defaultMaxCredits ? 1 : 0) +
+      (onlyOpenSections ? 1 : 0)
+  );
+
+  // 2. Synchronize external store changes without reacting to counter mutations
+  $effect(() => {
     const params: FilterParams = {
       serverSideFilters: {},
       clientSideFilters: {},
     };
-    appliedFiltersCount = 0;
 
     if (genEdSelections.length > 0) {
-      appliedFiltersCount += 1;
-      params.serverSideFilters.genEds = genEdSelections.sort((a, b) => a.code.localeCompare(b.code));
+      params.serverSideFilters.genEds = [...genEdSelections].sort((a, b) => a.code.localeCompare(b.code));
     }
     if (minCredits !== 0) {
-      appliedFiltersCount += 1;
       params.clientSideFilters.minCredits = minCredits;
     }
     if (maxCredits !== 20) {
-      appliedFiltersCount += 1;
       params.clientSideFilters.maxCredits = maxCredits;
     }
     if (onlyOpenSections) {
-      appliedFiltersCount += 1;
       params.clientSideFilters.onlyOpen = onlyOpenSections;
     }
 
     if (appliedFiltersCount > 0) {
-      CourseSearchFilterStore.set({
-        ...params,
-      });
+      CourseSearchFilterStore.set({ ...params });
     } else {
       CourseSearchFilterStore.set({
         serverSideFilters: {},
@@ -72,11 +72,11 @@ Copyright (C) 2026 Andrew Cupps
   }
 </script>
 
-<div class="text-secCodesLight flex flex-col dark:text-[#8892a8]">
+<div class="text-text-primary/70 flex flex-col">
   <!-- Filters button -->
-  <div class="mt-1 flex flex-row items-center justify-between gap-1 px-1 py-0.5">
+  <div class="mt-1 flex flex-row items-center justify-between gap-1 py-0.5">
     <button
-      class="hover:text-textLight dark:hover:text-textDark flex grow flex-row items-center rounded-md text-sm"
+      class="hover:text-text-primary flex grow flex-row items-center rounded-md text-sm"
       title="Show/hide course search filters"
       onclick={() => {
         showFiltersMenu = !showFiltersMenu;
@@ -86,12 +86,7 @@ Copyright (C) 2026 Andrew Cupps
       <!-- format-check exempt 1 -->
       {appliedFiltersCount} filter{appliedFiltersCount === 1 ? '' : 's'} applied
     </button>
-    <button
-      class="hover:text-textLight dark:hover:text-textDark
-                    text-right text-sm"
-      onclick={resetFilters}
-      title="Clear all filters"
-    >
+    <button class="hover:text-text-primary px-1 text-right text-sm" onclick={resetFilters} title="Clear all filters">
       Clear filters
     </button>
   </div>
@@ -108,21 +103,16 @@ Copyright (C) 2026 Andrew Cupps
             <!-- Show/hide gen-eds menu button -->
             <!-- format-check exempt 21 10 -->
             <button
-              class="border-secCodesLight hover:bg-hoverLight focus-visible:ring-3 dark:border-divBorderDark
-                                    dark:hover:bg-divBorderDark flex
-                                    h-full grow flex-row
-                                    items-center rounded-l-md border border-b
-                                    border-l border-t
-                                    text-left"
+              class="border-text-secondary hover:bg-hover focus-visible:ring-3 flex h-full grow flex-row items-center rounded-l-md border text-left"
               title="Show/hide Gen Ed selection menu"
               onclick={() => {
                 showGenEdMenu = !showGenEdMenu;
               }}
             >
-              <span class="border-secCodesDark dark:border-divBorderDark h-full content-center border border-r px-0.5">
+              <span class="border-text-secondary h-full content-center border-r px-0.5">
                 <AngleDownOutline class="h-4 w-4" />
               </span>
-              <span class="bg-bgLight dark:bg-bgDark w-full px-1">
+              <span class="bg-bg-primary w-full px-1">
                 {#if Array.from(genEdSelections).length === 0}
                   Select Gen Eds
                 {:else}
@@ -135,7 +125,7 @@ Copyright (C) 2026 Andrew Cupps
 
             <!-- Clear gen-ed filters -->
             <button
-              class="border-secCodesDark hover:bg-hoverLight dark:border-divBorderDark hover:dark:bg-hoverDark h-full self-end rounded-r-md border px-0.5"
+              class="border-text-secondary hover:bg-hover h-full self-end rounded-r-md border px-0.5"
               title="Clear Gen Ed filters"
               onclick={() => {
                 genEdSelections = [];
@@ -157,18 +147,18 @@ Copyright (C) 2026 Andrew Cupps
                 <div class="flex flex-row items-center">
                   <input
                     type="checkbox"
-                    checked={genEdSelections.includes(genEd)}
+                    checked={genEdSelections.some((g) => g.code === genEd.code)}
                     id={'gened-' + genEd.code}
-                    class="border-secCodesDark bg-divBorderLight text-orange focus:ring-orange dark:border-divBorderDark dark:bg-divBorderDark mr-2 mt-0.5 rounded-md hover:cursor-pointer"
+                    class="bg-bg-secondary border-text-secondary checked:bg-orange focus:ring-orange mr-2 mt-0.5 rounded-md"
                     onclick={() => {
-                      if (genEdSelections.includes(genEd)) {
-                        genEdSelections = genEdSelections.filter((g) => g !== genEd);
+                      if (genEdSelections.some((g) => g.code === genEd.code)) {
+                        genEdSelections = genEdSelections.filter((g) => g.code !== genEd.code);
                       } else {
                         genEdSelections = [...genEdSelections, genEd];
                       }
                     }}
                   />
-                  <label for={'gened-' + genEd.code} class="text-xs hover:cursor-pointer">
+                  <label for={'gened-' + genEd.code} class="cursor-pointer text-xs">
                     {genEd.code} - {genEd.name}
                   </label>
                 </div>
@@ -183,13 +173,14 @@ Copyright (C) 2026 Andrew Cupps
         <div class="flex flex-row items-center text-xs">
           <span class="min-w-16"> Min credits: </span>
           <input
+            id="Minimum credits"
             type="number"
             min="0"
             step="1"
             max="20"
             placeholder="0"
             bind:value={minCredits}
-            class="border-secCodesDark bg-bgLight focus:outline-hidden focus:ring-3 dark:border-divBorderDark dark:bg-bgDark w-12 rounded-md border px-1 text-xs"
+            class="bg-bg-primary focus:outline-hidden focus:ring-3 w-12 rounded-md border px-1 py-0 text-xs"
           />
         </div>
 
@@ -197,13 +188,14 @@ Copyright (C) 2026 Andrew Cupps
         <div class="flex flex-row items-center text-xs">
           <span class="min-w-16"> Max credits: </span>
           <input
+            id="Maximum credits"
             type="number"
             min="0"
             max="20"
             step="1"
             placeholder="10"
             bind:value={maxCredits}
-            class="border-secCodesDark bg-bgLight focus:outline-hidden focus:ring-3 dark:border-divBorderDark dark:bg-bgDark w-12 rounded-md border px-1 text-xs"
+            class="bg-bg-primary focus:outline-hidden focus:ring-3 w-12 rounded-md border px-1 py-0 text-xs"
           />
         </div>
       </div>
@@ -213,10 +205,10 @@ Copyright (C) 2026 Andrew Cupps
         <input
           type="checkbox"
           id="only-open-sections"
-          class="border-secCodesDark bg-divBorderLight text-orange focus:ring-orange dark:border-divBorderDark dark:bg-divBorderDark mr-2 rounded-md hover:cursor-pointer"
+          class="border-text-secondary bg-border text-orange focus:ring-orange checked:bg-orange mr-2 rounded-md"
           bind:checked={onlyOpenSections}
         />
-        <label for="only-open-sections" class="text-xs hover:cursor-pointer"> Only show open sections </label>
+        <label for="only-open-sections" class="cursor-pointer text-xs"> Only show open sections </label>
       </div>
     </div>
   {/if}

@@ -26,9 +26,7 @@ Copyright (C) 2026 Andrew Cupps
   {text}
   {#if tooltipVisible}
     <div
-      class="pointer-events-none absolute bottom-full left-1/2 z-50 mb-2 w-[160px]
-                -translate-x-1/2 text-wrap rounded-md bg-black px-2 py-1.5 text-center
-                text-xs text-white shadow-lg"
+      class="pointer-events-none absolute bottom-full left-1/2 z-50 mb-2 w-40 -translate-x-1/2 text-wrap rounded-md bg-black px-2 py-1.5 text-center text-xs text-white shadow-lg"
     >
       {tooltipText}
     </div>

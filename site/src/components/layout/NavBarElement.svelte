@@ -17,21 +17,22 @@ Copyright (C) 2026 Andrew Cupps
 </script>
 
 <div class="mx-4 px-1 font-normal" class:mx-0={reduceXMargin}>
-  <!-- BUG: This should be 'canonical' if isOnPage is true, but that cause resolve error -->
+  <!-- ERROR: Navigation without resolve as link can be external AND internal -->
+  <!-- eslint-disable svelte/no-navigation-without-resolve -->
   <a
     href={link}
     {target}
-    rel="external"
-    class="text-nowrap transition"
+    rel={target === '_blank' ? 'noopener noreferrer' : 'canonical'}
+    class="text-nowrap hover:transition-colors"
     class:siteLinkUnderline={isOnPage}
     class:text-orange={isOnPage}
     class:hover:text-orange={!isOnPage}
-    class:dark:hover:text-lightOrange={!isOnPage}
-    class:text-textLight={!isOnPage}
-    class:dark:text-white={!isOnPage}
+    class:dark:hover:text-light-orange={!isOnPage}
+    class:text-text-primary={!isOnPage}
   >
     {text}
   </a>
+  <!-- eslint-enable svelte/no-navigation-without-resolve -->
 </div>
 
 <style>
@@ -49,6 +50,6 @@ Copyright (C) 2026 Andrew Cupps
     left: 0;
     transform: scaleX(95%);
     transform-origin: center;
-    background-color: #f6743c;
+    background-color: #f5692e;
   }
 </style>

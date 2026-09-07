@@ -8,7 +8,7 @@ import eslintConfigPrettier from 'eslint-config-prettier';
 
 export default defineConfig([
   {
-    ignores: ['build/**', '.svelte-kit/**', 'node_modules/**'],
+    ignores: ['build/**', '.svelte-kit/**', 'node_modules/**', 'dist/**'],
   },
   js.configs.recommended,
   ...tseslint.configs.recommended,
@@ -27,6 +27,8 @@ export default defineConfig([
     files: ['**/*.{svelte,svelte.ts,svelte.js}'],
     languageOptions: {
       parserOptions: {
+        // Tells the TypeScript service exactly where to look for tsconfig
+        tsconfigRootDir: import.meta.dirname,
         projectService: true,
         extraFileExtensions: ['.svelte'],
         parser: tseslint.parser,
@@ -49,7 +51,7 @@ export default defineConfig([
             ['style', 'style:'],
             'class',
             'class:',
-            'ATTRIBUTE', // Catch-all for regular HTML attributes
+            'ATTRIBUTE',
             ['bind:', 'on:'],
             'use:',
             ['transition:', 'in:', 'out:'],

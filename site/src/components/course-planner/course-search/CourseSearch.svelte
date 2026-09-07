@@ -5,7 +5,6 @@ https://github.com/atcupps/Jupiterp/LICENSE).
 Copyright (C) 2026 Andrew Cupps
 -->
 <script lang="ts">
-  import { run } from 'svelte/legacy';
   import { untrack } from 'svelte';
 
   import CourseListing from './CourseListing.svelte';
@@ -26,52 +25,48 @@ Copyright (C) 2026 Andrew Cupps
     isDesktop: false,
     chainScrollParent: null,
   });
-  PlannerState.subscribe((state: { isDesktop: boolean; chainScrollParent: HTMLElement | null }) => {
-    plannerState = state;
+  $effect(() => {
+    return PlannerState.subscribe((state) => {
+      plannerState = state;
+    });
   });
 
   const FILTER_SCROLL_COLLAPSE_THRESHOLD = 100;
   let searchResultsElement: HTMLDivElement | null = $state(null);
-  // Seeded once from the initial layout, then owned by the activation
-  // controller. This must NOT be $derived: the controller clears it when the
-  // user taps the search box on mobile, and a derived would recompute that
-  // override away on the next PlannerState update. `untrack` makes the
-  // read-once intent explicit; the `run` block below still clears it on
-  // desktop.
+
   let blockSearchInputPointer = $state(untrack(() => !plannerState.isDesktop));
 
   let hoveredSection: ScheduleSelection | null = $state(null);
-  HoveredSectionStore.subscribe((hovered) => {
-    hoveredSection = hovered;
+  $effect(() => {
+    return HoveredSectionStore.subscribe((hovered) => {
+      hoveredSection = hovered;
+    });
   });
 
   let selections: ScheduleBlock[] = $state([]);
-  CurrentScheduleStore.subscribe((stored) => {
-    selections = stored.selections;
+  $effect(() => {
+    return CurrentScheduleStore.subscribe((stored) => {
+      selections = stored.selections;
+    });
   });
 
-  // Variable and function for handling course search input
   let searchInput = $state('');
   let searchResults: Course[] = $state([]);
-  SearchResultsStore.subscribe((results) => {
-    searchResults = results;
+  $effect(() => {
+    return SearchResultsStore.subscribe((results) => {
+      searchResults = results;
+    });
   });
 
-  let isPendingResults = $state(false);
-  run(() => {
-    if (searchInput.length > 0 && searchResults.length === 0) {
-      isPendingResults = pendingResults();
-    } else {
-      isPendingResults = false;
-    }
-  });
+  let isPendingResults = $derived(searchInput.length > 0 && searchResults.length === 0 ? pendingResults() : false);
 
   let genEdMenuOpen = $state(false);
   let searchInputElement: HTMLInputElement | null = $state(null);
   let keyboardPrimeElement: HTMLInputElement | null = $state(null);
   let searchActivationInProgress = false;
   let suppressSearchBlurReset = false;
-  run(() => {
+
+  $effect(() => {
     if (plannerState.isDesktop) {
       blockSearchInputPointer = false;
     }
@@ -96,9 +91,8 @@ Copyright (C) 2026 Andrew Cupps
     scrollToSearch,
   });
 
-  // export let courseSearchSelected: boolean = false;
-
-  run(() => {
+  // RUN 3 REPLACEMENT: Modifying an external store state -> converted to $effect
+  $effect(() => {
     if (hoveredSection) {
       let index = searchResults.findIndex((course) => {
         return hoveredSection && course.courseCode === hoveredSection.section.courseCode;
@@ -109,17 +103,17 @@ Copyright (C) 2026 Andrew Cupps
     }
   });
 
-  let totalCredits: number = $state(0);
-  run(() => {
+  let totalCredits: number = $derived.by(() => {
+    let credits = 0;
     if (selections || hoveredSection) {
-      totalCredits = 0;
-      let selectionsWithHovered: ScheduleBlock[] = appendHoveredSection(selections, hoveredSection);
+      let selectionsWithHovered = appendHoveredSection(selections, hoveredSection);
       selectionsWithHovered.forEach((selection) => {
         if ('course' in selection) {
-          totalCredits += selection.course.minCredits;
+          credits += selection.course.minCredits;
         }
       });
     }
+    return credits;
   });
 
   let scrollAcc = 0;
@@ -151,7 +145,7 @@ Copyright (C) 2026 Andrew Cupps
 
 <!-- Course Search -->
 <div
-  class="border-divBorderLight bg-bgLight dark:border-divBorderDark dark:bg-bgDark order-2 min-h-80 w-full flex-col border-solid lg:order-1 lg:grid lg:h-[100svh-3rem] lg:max-h-[100svh-3rem] lg:grid-cols-1 lg:grid-rows-[auto_minmax(0,1fr)]"
+  class="bg-bg-primary order-2 min-h-80 w-full flex-col border-solid lg:order-1 lg:grid lg:h-[100svh-3rem] lg:max-h-[100svh-3rem] lg:grid-cols-1 lg:grid-rows-[auto_minmax(0,1fr)]"
 >
   <!-- Course search input and filters [height of 7.5rem] -->
   <div id="planner-course-search" class="px-1 pt-1">
@@ -160,9 +154,7 @@ Copyright (C) 2026 Andrew Cupps
       <div class="grow text-right">Credits: {totalCredits}</div>
     </div>
     <ScheduleSelector />
-    <div
-      class="border-divBorderLight dark:border-divBorderDark relative flex w-full flex-col border-b-2 border-t-2 border-solid pt-1"
-    >
+    <div class="relative flex w-full flex-col border-b-2 border-t-2 border-solid pt-1">
       <!-- Course search box (input, filters, and dept/prof suggestions) -->
       <CourseSearchBox
         bind:searchInput
@@ -178,8 +170,9 @@ Copyright (C) 2026 Andrew Cupps
             bind:this={keyboardPrimeElement}
             id="mobile-keyboard-prime"
             type="text"
-            tabindex="-1"
             autocomplete="off"
+            aria-label="Mobile keyboard trigger"
+            tabindex="-1"
             class="pointer-events-none fixed left-0 top-0 h-0 w-0 opacity-0"
           />
         {/snippet}
@@ -205,7 +198,7 @@ Copyright (C) 2026 Andrew Cupps
     {/each}
     {#if isPendingResults}
       <div class="flex items-center justify-center py-8">
-        <SolarSystemLoader size={120} color="currentColor" />
+        <SolarSystemLoader size={120} />
       </div>
     {/if}
   </div>

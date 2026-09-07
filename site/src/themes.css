@@ -1,0 +1,84 @@
+@import 'tailwindcss';
+
+:root {
+  color-scheme: light;
+  /* Brand Colors (Universal) */
+  --white: #ffffff;
+  --black: #000000;
+  --orange: #f5692e;
+  --light-orange: #ffc4ab;
+  --mid-gray: #888888;
+
+  /* Semantic Light Tokens (Default) */
+  --bg-primary: #ffffff;
+  --bg-secondary: #ebebeb;
+  --text-primary: #000000;
+  --text-secondary: #667085;
+  --border: #f1f1f1;
+  --outline: #a2aabd;
+  --hover: #d8d8d8;
+
+  transition-property:
+    --bg-primary 300ms ease,
+    --bg-secondary 300ms ease,
+    --text-primary 300ms ease,
+    --text-secondary 300ms ease,
+    --border 300ms ease,
+    --outline 300ms ease,
+    --hover 300ms ease;
+}
+
+/* Dark Mode Overrides */
+.dark {
+  color-scheme: dark;
+  --bg-primary: #151922;
+  --bg-secondary: #141721;
+  --text-primary: #d9dfea;
+  --text-secondary: #667085;
+  --border: #252e3e;
+  --outline: #47526a;
+  --hover: #30374a;
+}
+
+/* CSS Custom Properties for theme changes (make it unaffected by normal transitions) */
+@property --bg-primary {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #ffffff;
+}
+
+@property --bg-secondary {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #ebebeb;
+}
+
+@property --text-primary {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #000000;
+}
+
+@property --text-secondary {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #667085;
+}
+
+@property --border {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #f1f1f1;
+}
+
+@property --outline {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #a2aabd;
+}
+
+@property --hover {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #d8d8d8;
+}

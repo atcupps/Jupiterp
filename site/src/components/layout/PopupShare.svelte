@@ -221,9 +221,7 @@
 </script>
 
 <div class="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
-  <div
-    class="border-divBorderLight bg-bgLight dark:border-divBorderDark dark:bg-bgDark flex w-96 flex-col gap-4 rounded-lg border p-6 shadow-lg"
-  >
+  <div class="border-border bg-bg-primary flex w-96 flex-col gap-4 rounded-lg border p-6 shadow-lg">
     <div class="flex items-center justify-between">
       <h2 class="text-base font-bold">Export Schedule</h2>
 
@@ -231,15 +229,12 @@
     </div>
 
     <p class="mb-2 text-left text-sm">Download your schedule as a .ics file and import it into your favorite app.</p>
-    <button
-      class="bg-outlineLight hover:bg-hoverLight dark:bg-outlineDark dark:hover:bg-hoverDark mt-2 w-full rounded-md px-4 py-3 font-medium transition"
-      onclick={exportCalender}
-    >
+    <button class="bg-outline hover:bg-hover mt-2 w-full rounded-md px-4 py-3 font-medium" onclick={exportCalender}>
       Export
     </button>
 
     <button
-      class="mt-1 rounded-md px-4 py-2 text-gray-500 underline decoration-transparent transition hover:text-gray-800 hover:decoration-current dark:text-gray-400 dark:hover:text-gray-200"
+      class="text-text-secondary hover:text-text-primary mt-1 rounded-md px-4 py-2 underline decoration-transparent hover:decoration-current"
       onclick={closePopup}
     >
       Cancel

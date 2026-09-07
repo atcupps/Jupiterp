@@ -39,9 +39,7 @@ Copyright (C) 2026 Andrew Cupps
   }
 </script>
 
-<div
-  class="border-divBorderLight bg-bgLight shadow-xs dark:border-divBorderDark dark:bg-bgDark flex flex-col gap-2 rounded-xl border p-3"
->
+<div class="border-border bg-bg-primary shadow-xs flex flex-col gap-2 rounded-xl border p-3">
   <div class="flex flex-row items-center justify-between">
     <span class="text-sm font-semibold opacity-60">#{rank}</span>
     <button

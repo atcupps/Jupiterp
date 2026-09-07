@@ -6,7 +6,6 @@ Copyright (C) 2026 Andrew Cupps
 -->
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { run } from 'svelte/legacy';
 
   import {
     AngleRightOutline,
@@ -31,9 +30,12 @@ Copyright (C) 2026 Andrew Cupps
 
   let currentScheduleName: string = $state('');
   let currentScheduleSelections: ScheduleBlock[];
-  CurrentScheduleStore.subscribe((stored) => {
-    currentScheduleName = stored.scheduleName;
-    currentScheduleSelections = stored.selections;
+
+  $effect(() => {
+    return CurrentScheduleStore.subscribe((stored) => {
+      currentScheduleName = stored.scheduleName;
+      currentScheduleSelections = stored.selections;
+    });
   });
 
   function changeScheduleName() {
@@ -54,15 +56,18 @@ Copyright (C) 2026 Andrew Cupps
   }
 
   let scheduleNameElement: HTMLInputElement | null = $state(null);
-  run(() => {
+
+  $effect(() => {
     if (currentScheduleName && scheduleNameElement) {
       scheduleNameElement.value = currentScheduleName;
     }
   });
 
   let nonselectedSchedules: StoredSchedule[] = $state([]);
-  NonselectedScheduleStore.subscribe((stored) => {
-    nonselectedSchedules = stored;
+  $effect(() => {
+    return NonselectedScheduleStore.subscribe((stored) => {
+      nonselectedSchedules = stored;
+    });
   });
 
   let containerElement: HTMLDivElement | null = null;
@@ -138,15 +143,14 @@ Copyright (C) 2026 Andrew Cupps
 
 <div bind:this={containerElement} class="flex w-full flex-col">
   <div class="2xl:text-md flex w-full flex-row pb-1 text-sm" title="Toggle schedule dropdown">
-    <div
-      class="hover:bg-hoverLight hover:dark:bg-hoverDark flex grow flex-row justify-start rounded-md px-0.5 py-1 text-left"
-    >
+    <div class="hover:bg-hover flex grow flex-row justify-start rounded-md py-1 pr-1 text-left">
       <button
+        title="Show other schedules"
         class:rotate-90={dropdownOpen}
-        class="origin-center transition"
+        class="-my-1 origin-center p-1"
         onclick={() => (dropdownOpen = !dropdownOpen)}
       >
-        <AngleRightOutline class="h-5 w-5" />
+        <AngleRightOutline class="h-4 w-4" />
       </button>
 
       <input
@@ -155,35 +159,31 @@ Copyright (C) 2026 Andrew Cupps
         contenteditable="true"
         onblur={changeScheduleName}
         title="Schedule name"
-        class="2xl:text-md bg-bgLight outline-hidden dark:bg-bgDark mr-1 grow cursor-text rounded-sm border-none px-0.5 py-0 text-sm"
+        class="2xl:text-md bg-bg-primary outline-hidden grow rounded-sm border-none px-0.5 py-0 text-sm"
       />
     </div>
     <ScheduleOptionsDropdown />
-    <button
-      class="hover:bg-hoverLight dark:hover:bg-hoverDark h-7 rounded-md"
-      title="Create new schedule"
-      onclick={createNewSchedule}
-    >
-      <PlusOutline class="h-5 w-5 px-0.5" />
+    <button class="hover:bg-hover rounded-md px-1" title="Create new schedule" onclick={createNewSchedule}>
+      <PlusOutline class="h-4 w-4" />
     </button>
     <button
-      class="hover:bg-hoverLight dark:hover:bg-hoverDark h-7 rounded-md"
+      class="hover:bg-hover rounded-md px-1"
       title={linkCopied ? 'Link copied!' : 'Copy shareable link'}
       onclick={copyShareLink}
     >
       {#if linkCopied}
-        <ClipboardCheckOutline class="h-5 w-5 px-0.5" />
+        <ClipboardCheckOutline class="h-4 w-4" />
       {:else}
-        <LinkOutline class="h-5 w-5 px-0.5" />
+        <LinkOutline class="h-4 w-4" />
       {/if}
     </button>
 
     <button
-      class="hover:bg-hoverLight dark:hover:bg-hoverDark h-7 rounded-md"
+      class="hover:bg-hover rounded-md px-1"
       title="Export schedule"
       onclick={() => (sharePopUpOpen = !sharePopUpOpen)}
     >
-      <ForwardOutline class="h-5 w-5 px-0.5" />
+      <ForwardOutline class="h-4 w-4" />
     </button>
   </div>
   {#if dropdownOpen}
@@ -192,7 +192,7 @@ Copyright (C) 2026 Andrew Cupps
       {#each nonselectedSchedules as schedule (schedule.scheduleName)}
         <div class="flex h-6 w-full flex-row">
           <button
-            class="hover:bg-hoverLight dark:hover:bg-hoverDark h-6 min-w-0 grow items-center rounded-md pl-1.5 text-left text-sm"
+            class="hover:bg-hover h-6 min-w-0 grow items-center rounded-md pl-1.5 text-left text-sm"
             title={'Switch to ' + schedule.scheduleName}
             onclick={() => changeSchedule(schedule)}
           >
@@ -201,7 +201,7 @@ Copyright (C) 2026 Andrew Cupps
             </span>
           </button>
           <button
-            class="hover:bg-hoverLight dark:hover:bg-hoverDark flex h-6 w-6 shrink-0 items-center justify-center rounded-md"
+            class="hover:bg-hover flex h-6 w-6 shrink-0 items-center justify-center rounded-md"
             title={'Delete ' + schedule.scheduleName}
             onclick={() => deleteNonselectedSchedule(schedule, nonselectedSchedules)}
           >

@@ -30,22 +30,21 @@ Copyright (C) 2026 Andrew Cupps
 
 <button
   type="button"
-  class="border-outlineLight bg-bgLight hover:border-orange dark:border-outlineDark dark:bg-bgDark flex items-center justify-between gap-1 rounded-md border px-2 py-0.5 text-left {buttonClass}"
+  class="border-outline bg-bg-primary hover:border-orange flex items-center justify-between gap-1 rounded-md border px-2 py-0.5 text-left {buttonClass}"
   {title}
 >
   <span class="truncate">{selected ? selected.label : value}</span>
   <AngleDownOutline class="h-3 w-3 shrink-0 opacity-70" />
 </button>
 
+<!-- TEMP FIX: Added "-translate-y-2" to fix dropdown positioning -->
 <Dropdown
   bind:isOpen={dropdownOpen}
-  class="border-outlineLight bg-bgLight dark:border-outlineDark dark:bg-divBorderDark z-30 max-h-60 overflow-y-auto rounded-md border shadow-lg"
+  class="bg-border text-text-primary border-outline scrollbar-track-border scrollbar-thumb-bg-primary z-30 max-h-60 -translate-y-2 overflow-y-auto rounded-md border shadow-lg"
 >
   {#each options as option (option.value)}
     <DropdownItem
-      class="hover:bg-hoverLight dark:hover:bg-hoverDark px-3 py-1 text-left text-sm {option.value === value
-        ? 'text-orange font-semibold'
-        : ''}"
+      class="hover:bg-hover px-3 py-1 text-left text-sm {option.value === value ? 'text-orange font-semibold' : ''}"
       onclick={() => choose(option.value)}
     >
       {option.label}
