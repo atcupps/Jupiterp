@@ -12,11 +12,12 @@ Copyright (C) 2026 Andrew Cupps
   import { CourseSearchFilterStore } from '../../../stores/CoursePlannerStores';
 
   let showFiltersMenu = $state(false);
+
   interface Props {
     showGenEdMenu?: boolean;
   }
-
   let { showGenEdMenu = $bindable(false) }: Props = $props();
+
   let genEdSelections: GenEd[] = $state([]);
   let onlyOpenSections = $state(false);
 
@@ -106,7 +107,7 @@ Copyright (C) 2026 Andrew Cupps
             <!-- Show/hide gen-eds menu button -->
             <!-- format-check exempt 21 10 -->
             <button
-              class="border-text-secondary hover:bg-hover focus-visible:ring-3 dark:border-border dark:hover:bg-border flex h-full grow flex-row items-center rounded-l-md border text-left"
+              class="border-text-secondary hover:bg-hover focus-visible:ring-3 flex h-full grow flex-row items-center rounded-l-md border text-left"
               title="Show/hide Gen Ed selection menu"
               onclick={() => {
                 showGenEdMenu = !showGenEdMenu;
@@ -150,18 +151,18 @@ Copyright (C) 2026 Andrew Cupps
                 <div class="flex flex-row items-center">
                   <input
                     type="checkbox"
-                    checked={genEdSelections.includes(genEd)}
+                    checked={genEdSelections.some((g) => g.code === genEd.code)}
                     id={'gened-' + genEd.code}
-                    class="bg-bg-secondary border-text-secondary checked:bg-orange focus:ring-orange mr-2 mt-0.5 rounded-md hover:cursor-pointer"
+                    class="bg-bg-secondary border-text-secondary checked:bg-orange focus:ring-orange mr-2 mt-0.5 rounded-md"
                     onclick={() => {
-                      if (genEdSelections.includes(genEd)) {
-                        genEdSelections = genEdSelections.filter((g) => g !== genEd);
+                      if (genEdSelections.some((g) => g.code === genEd.code)) {
+                        genEdSelections = genEdSelections.filter((g) => g.code !== genEd.code);
                       } else {
                         genEdSelections = [...genEdSelections, genEd];
                       }
                     }}
                   />
-                  <label for={'gened-' + genEd.code} class="text-xs hover:cursor-pointer">
+                  <label for={'gened-' + genEd.code} class="cursor-pointer text-xs">
                     {genEd.code} - {genEd.name}
                   </label>
                 </div>
@@ -176,13 +177,14 @@ Copyright (C) 2026 Andrew Cupps
         <div class="flex flex-row items-center text-xs">
           <span class="min-w-16"> Min credits: </span>
           <input
+            id="Minimum credits"
             type="number"
             min="0"
             step="1"
             max="20"
             placeholder="0"
             bind:value={minCredits}
-            class="bg-bg-primary focus:outline-hidden focus:ring-3 w-12 rounded-md border px-1 text-xs"
+            class="bg-bg-primary focus:outline-hidden focus:ring-3 w-12 rounded-md border px-1 py-0 text-xs"
           />
         </div>
 
@@ -190,13 +192,14 @@ Copyright (C) 2026 Andrew Cupps
         <div class="flex flex-row items-center text-xs">
           <span class="min-w-16"> Max credits: </span>
           <input
+            id="Maximum credits"
             type="number"
             min="0"
             max="20"
             step="1"
             placeholder="10"
             bind:value={maxCredits}
-            class="bg-bg-primary focus:outline-hidden focus:ring-3 w-12 rounded-md border px-1 text-xs"
+            class="bg-bg-primary focus:outline-hidden focus:ring-3 w-12 rounded-md border px-1 py-0 text-xs"
           />
         </div>
       </div>
@@ -206,10 +209,10 @@ Copyright (C) 2026 Andrew Cupps
         <input
           type="checkbox"
           id="only-open-sections"
-          class="border-text-secondary bg-border text-orange focus:ring-orange mr-2 rounded-md hover:cursor-pointer"
+          class="border-text-secondary bg-border text-orange focus:ring-orange checked:bg-orange mr-2 rounded-md"
           bind:checked={onlyOpenSections}
         />
-        <label for="only-open-sections" class="text-xs hover:cursor-pointer"> Only show open sections </label>
+        <label for="only-open-sections" class="cursor-pointer text-xs"> Only show open sections </label>
       </div>
     </div>
   {/if}

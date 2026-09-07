@@ -13,43 +13,32 @@ Copyright (C) 2026 Andrew Cupps
     NonselectedScheduleStore,
   } from '../../../stores/CoursePlannerStores';
   import { uniqueScheduleName } from '$lib/course-planner/ScheduleSelector';
-  import type { ScheduleBlock, StoredSchedule } from '../../../types';
 
   let dropdownOpen = $state(false);
 
-  let currentScheduleName: string;
-  let currentScheduleSelections: ScheduleBlock[];
-  CurrentScheduleStore.subscribe((stored) => {
-    currentScheduleName = stored.scheduleName;
-    currentScheduleSelections = stored.selections;
-  });
-
-  let nonselectedSchedules: StoredSchedule[];
-  NonselectedScheduleStore.subscribe((stored) => {
-    nonselectedSchedules = stored;
-  });
+  // Core operations using modern $store reactive syntax
+  function addCustomEvent() {
+    dropdownOpen = false;
+    AddCustomEventStore.set(true);
+  }
 
   function deleteCurrentSchedule() {
     dropdownOpen = false;
 
-    if (nonselectedSchedules.length > 0) {
-      currentScheduleName = nonselectedSchedules[0].scheduleName;
-      currentScheduleSelections = nonselectedSchedules[0].selections;
-      nonselectedSchedules.splice(0, 1);
+    if ($NonselectedScheduleStore.length > 0) {
+      // Create a shallow copy to safely update state without direct mutation side-effects
+      const updatedNonselected = [...$NonselectedScheduleStore];
+      const nextSchedule = updatedNonselected.shift()!; // Removes and captures first item
 
       CurrentScheduleStore.set({
-        scheduleName: currentScheduleName,
-        selections: currentScheduleSelections,
+        scheduleName: nextSchedule.scheduleName,
+        selections: nextSchedule.selections,
       });
-
-      NonselectedScheduleStore.set(nonselectedSchedules);
+      NonselectedScheduleStore.set(updatedNonselected);
     } else {
-      currentScheduleName = 'My schedule';
-      currentScheduleSelections = [];
-
       CurrentScheduleStore.set({
-        scheduleName: currentScheduleName,
-        selections: currentScheduleSelections,
+        scheduleName: 'My schedule',
+        selections: [],
       });
     }
   }
@@ -57,26 +46,29 @@ Copyright (C) 2026 Andrew Cupps
   function duplicateSchedule() {
     dropdownOpen = false;
 
-    nonselectedSchedules = [
-      {
-        scheduleName: currentScheduleName,
-        selections: currentScheduleSelections,
-      },
-      ...nonselectedSchedules,
-    ];
-    currentScheduleName = uniqueScheduleName(currentScheduleName, 'Copy of ', nonselectedSchedules);
+    const currentName = $CurrentScheduleStore.scheduleName;
+    const currentSelections = $CurrentScheduleStore.selections;
 
-    NonselectedScheduleStore.set(nonselectedSchedules);
+    const updatedNonselected = [
+      { scheduleName: currentName, selections: currentSelections },
+      ...$NonselectedScheduleStore,
+    ];
+
+    const newName = uniqueScheduleName(currentName, 'Copy of ', updatedNonselected);
+
+    NonselectedScheduleStore.set(updatedNonselected);
     CurrentScheduleStore.set({
-      scheduleName: currentScheduleName,
-      selections: currentScheduleSelections,
+      scheduleName: newName,
+      selections: currentSelections,
     });
   }
 
-  function addCustomEvent() {
-    dropdownOpen = false;
-    AddCustomEventStore.set(true);
-  }
+  // JSON configuration array mapping actions and metadata
+  const menuItems = [
+    { label: 'Add Event', icon: PlusOutline, onclick: addCustomEvent },
+    { label: 'Delete', icon: TrashBinOutline, onclick: deleteCurrentSchedule },
+    { label: 'Duplicate', icon: FileCopyOutline, onclick: duplicateSchedule },
+  ];
 </script>
 
 <button class="hover:bg-hover rounded-md px-0.5" title="Schedule options">
@@ -84,26 +76,14 @@ Copyright (C) 2026 Andrew Cupps
 </button>
 
 <!-- TEMP FIX: Added "-translate-y-2" to fix dropdown positioning -->
-<Dropdown class="bg-border text-text-primary w-24 -translate-y-2 rounded-md" bind:isOpen={dropdownOpen}>
-  <DropdownItem
-    class="hover:bg-hover flex items-center justify-start px-2"
-    title="Add custom event to schedule"
-    onclick={addCustomEvent}
-  >
-    <PlusOutline class="z-50 mr-1 h-3 w-3" /> Add Event
-  </DropdownItem>
-  <DropdownItem
-    class="hover:bg-hover flex items-center justify-start px-2"
-    title="Delete current schedule"
-    onclick={deleteCurrentSchedule}
-  >
-    <TrashBinOutline class="z-50 mr-1 h-3 w-3" /> Delete
-  </DropdownItem>
-  <DropdownItem
-    class="hover:bg-hover flex items-center justify-start px-2"
-    title="Duplicate current schedule"
-    onclick={duplicateSchedule}
-  >
-    <FileCopyOutline class="z-50 mr-1 h-3 w-3" /> Duplicate
-  </DropdownItem>
+<Dropdown
+  class="bg-border text-text-primary border-outline -translate-y-2 list-none rounded-md border shadow-lg"
+  bind:isOpen={dropdownOpen}
+>
+  {#each menuItems as item (item.label)}
+    <DropdownItem class="hover:bg-hover flex items-center p-2 text-sm" onclick={item.onclick}>
+      <item.icon class="mr-1" height="16" width="16" />
+      {item.label}
+    </DropdownItem>
+  {/each}
 </Dropdown>
