@@ -27,7 +27,12 @@ Copyright (C) 2026 Andrew Cupps
     if (profData && profData.average_rating != null) {
       return {
         name,
-        slug: profData.slug,
+        // `pt_slug`, not `slug`: this link goes to PlanetTerp, and `slug`
+        // becomes Jupiterp's own `first-last` form once the instructor
+        // migration lands, which PlanetTerp 404s on. `pt_slug` keeps the
+        // original `lastname_firstname` value, and is absent against an API
+        // predating the migration, where `slug` is still the right one.
+        slug: profData.pt_slug ?? profData.slug,
         rating: profData.average_rating,
         starsStyle: `--rating: ${convertRating(profData.average_rating)}%`,
       };
@@ -36,11 +41,11 @@ Copyright (C) 2026 Andrew Cupps
   });
 
   // Convert rating to a percentage for CSS
-  function convertRating(rating: string | null): number {
+  function convertRating(rating: number | null): number {
     if (rating == null) {
       throw Error('Rating was null in `convertRating`; this should never happen!');
     }
-    return parseFloat(rating) * 20;
+    return rating * 20;
   }
 
   function handleLinkClick(event: MouseEvent) {
